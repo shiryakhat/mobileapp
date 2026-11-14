@@ -1,0 +1,51 @@
+# Supabase CLI config for local development (`supabase start`) and for
+# `supabase link` / `supabase db push` against the hosted project.
+# Reference: https://supabase.com/docs/guides/local-development/cli/config
+#
+# Secrets are never written here. Values wrapped in env(...) are read from the
+# shell environment or from supabase/.env (git-ignore that file).
+
+project_id = "shiryakhat"
+
+[api]
+enabled = true
+port = 54321
+schemas = ["public", "graphql_public"]
+extra_search_path = ["public", "extensions"]
+max_rows = 1000
+
+[db]
+port = 54322
+shadow_port = 54320
+# Must match the hosted project: run `show server_version;` there and adjust.
+major_version = 17
+
+[realtime]
+enabled = true
+
+[studio]
+enabled = true
+port = 54323
+
+[auth]
+enabled = true
+# The app is mobile-only; the deep link is the canonical return target.
+site_url = "shiryakhat://auth/callback"
+# Exact-match allow list for OAuth redirects.
+additional_redirect_urls = ["shiryakhat://auth/callback"]
+jwt_expiry = 3600
+enable_refresh_token_rotation = true
+enable_signup = true
+# Sign-in is GitHub-only; anonymous users would bypass that.
+enable_anonymous_sign_ins = false
+
+[auth.email]
+# Email/password is not used by the app.
+enable_signup = false
+
+[auth.external.github]
+enabled = true
+client_id = "env(SUPABASE_AUTH_EXTERNAL_GITHUB_CLIENT_ID)"
+secret = "env(SUPABASE_AUTH_EXTERNAL_GITHUB_SECRET)"
+# Empty = use the default <api-url>/auth/v1/callback.
+redirect_uri = ""
