@@ -1,0 +1,175 @@
+{
+  "id": "sp01",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:13:32.395Z",
+  "summaryFa": "شایان اسکندری، هم‌بنیان‌گذار کوین‌ایران و پادکست شیر یا خط، در این اپیزود از برنامهٔ اسکریپت درباره‌ی مسیر ورودش به بیتکوین از سال ۲۰۱۱، تحصیل دکترا در دانشگاه کانکوردیا با موضوع بلاک‌چین، و تجربه‌ی کار در کانسنسیس دیلیجنس به عنوان ممیز قراردادهای هوشمند صحبت می‌کند. گفت‌وگو موضوعاتی چون فرهنگ هودل در جامعهٔ بیتکوین، رابطهٔ کانسنسیس با اتریوم و نگرانی از تمرکزگرایی از طریق اینفیورا و متامسک، شخصیت ویتالیک بوترین، وضعیت اتریوم ۲ و بمب سختی، و پروژهٔ فارسی‌سازی مستندات اتریوم را دربر می‌گیرد. این اپیزود برای علاقه‌مندان به تاریخ جامعهٔ رمزارز ایران و تحلیل فنی اکوسیستم اتریوم ارزش ویژه‌ای دارد.",
+  "summaryEn": "Shayan Eskandari, co-founder of CoinIran and the Shir ya Khat podcast, traces his path from first encountering Bitcoin in 2011, through a PhD at Concordia University focused on blockchain security, to his role as a smart contract auditor at ConsenSys Diligence. The conversation covers the HODL culture debate, ConsenSys's relationship with Ethereum and centralization concerns around Infura and MetaMask, Vitalik Buterin's personality and deliberate withdrawal from decision-making, the Ethereum 2 difficulty bomb mechanism, and the ongoing community effort to translate Ethereum documentation into Persian. The episode offers a rare insider perspective on both the technical and human dimensions of Ethereum's ecosystem.",
+  "quotes": [
+    {
+      "startSec": 917,
+      "fa": "بیشتر قطعات پازل رو خوب با هم جا داده. کار اصلی که کرده اینه که پروژه رو پیاده‌سازی کرده و اوپن‌سورس گذاشته بیرون.",
+      "en": "More than anything, he fit the puzzle pieces together well. The main thing he did was actually implement the project and release it open source.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 1296,
+      "fa": "یه چیزی هست به اسم «تلسم اطلاعات» — اگه اطلاعاتی داشته باشی و خیلی زیاد داشته باشی، هیچ‌جوری نمی‌تونی مثل کسی که این اطلاعات رو نداره به موضوع نگاه کنی.",
+      "en": "There's something called the curse of knowledge — if you have a lot of information, there's no way you can look at a topic the way someone who doesn't have that information does.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 1818,
+      "fa": "هودل کردن مرحلهٔ دو است. ما باید این مرحله رو می‌داشتیم، نگهش داریم که از این مرحله بگذره، بعد تبدیل بشه به واسطهٔ مبادلاتی که باهاش خرید بکنیم.",
+      "en": "HODLing is phase two. We had to have this phase — hold it so it passes through, then it becomes a medium of exchange we actually buy things with.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 2658,
+      "fa": "سعی کرد خودشو از این مرکزیت در بیاره. ولی تا وقتی که هست، فرض کنید ساتوشی هم اگه اون موقع بود، همه حرفشو گوش می‌دادن.",
+      "en": "He tried to pull himself out of that centrality. But as long as he's there — imagine even if Satoshi had stayed, everyone would have listened to what he said.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 2768,
+      "fa": "مثل اینه که بخواین بستنی رو با طلا مقایسه کنین. یکیش خیلی خوشمزه‌تره، یکیش خب همه‌جور قشنگیش رو باید بزنیش کنار.",
+      "en": "It's like comparing ice cream with gold. One of them is much tastier; the other, for all its beauty, you just set aside.",
+      "speaker": "شایان"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Proof of Work",
+      "termFa": "اثبات کار",
+      "definitionEn": "A consensus mechanism where miners solve computationally hard puzzles to validate transactions and earn block rewards.",
+      "definitionFa": "روشی برای تأیید تراکنش‌ها که در آن ماینرها با حل معادلات سخت محاسباتی بلوک جدید اضافه می‌کنند."
+    },
+    {
+      "term": "Proof of Stake",
+      "termFa": "اثبات سهام",
+      "definitionEn": "A consensus mechanism where validators lock up cryptocurrency as collateral to earn the right to validate blocks.",
+      "definitionFa": "روشی برای تأیید بلوک‌ها که در آن اعتبارسنج‌ها به جای قدرت محاسباتی، مقداری رمزارز را به عنوان وثیقه قفل می‌کنند."
+    },
+    {
+      "term": "Smart Contract",
+      "termFa": "قرارداد هوشمند",
+      "definitionEn": "Self-executing code stored on a blockchain that automatically enforces the terms of an agreement.",
+      "definitionFa": "کدی که روی بلاک‌چین ذخیره می‌شود و شرایط یک توافق را به‌صورت خودکار اجرا می‌کند."
+    },
+    {
+      "term": "ConsenSys",
+      "termFa": "کانسنسیس",
+      "definitionEn": "A blockchain technology company founded by Ethereum co-founder Joseph Lubin, home to projects like MetaMask and Infura.",
+      "definitionFa": "شرکتی در حوزهٔ بلاک‌چین که توسط جوزف لوبین، هم‌بنیان‌گذار اتریوم، تأسیس شده و پروژه‌هایی مثل متامسک و اینفیورا را در خود دارد."
+    },
+    {
+      "term": "Infura",
+      "termFa": "اینفیورا",
+      "definitionEn": "A ConsenSys service providing API access to Ethereum nodes, allowing developers to interact with the network without running their own node.",
+      "definitionFa": "سرویس کانسنسیس که از طریق API به نودهای اتریوم دسترسی می‌دهد و نیاز به اجرای نود شخصی را برطرف می‌کند."
+    },
+    {
+      "term": "MetaMask",
+      "termFa": "متامسک",
+      "definitionEn": "A browser-based Ethereum wallet developed by ConsenSys that lets users interact with decentralized applications.",
+      "definitionFa": "کیف پول مبتنی بر مرورگر ساخت کانسنسیس که کاربران را قادر می‌سازد با اپلیکیشن‌های غیرمتمرکز تعامل داشته باشند."
+    },
+    {
+      "term": "HODL",
+      "termFa": "هودل",
+      "definitionEn": "A strategy of holding cryptocurrency long-term rather than selling, originating from a misspelled forum post.",
+      "definitionFa": "استراتژی نگه‌داشتن رمزارز در بلندمدت به جای فروش، که از یک تایپ اشتباه در فروم بیتکوین‌تاک باب شد."
+    },
+    {
+      "term": "Difficulty Bomb",
+      "termFa": "بمب سختی",
+      "definitionEn": "A mechanism in Ethereum that progressively increases mining difficulty to eventually force the transition from Proof of Work to Proof of Stake.",
+      "definitionFa": "مکانیزمی در اتریوم که به تدریج سختی استخراج را آنقدر بالا می‌برد که شبکه مجبور به گذار از اثبات کار به اثبات سهام شود."
+    },
+    {
+      "term": "ASIC",
+      "termFa": "ایسیک",
+      "definitionEn": "Application-Specific Integrated Circuit — hardware designed solely to mine a particular cryptocurrency algorithm far more efficiently than general-purpose chips.",
+      "definitionFa": "تراشه‌ای که فقط برای اجرای یک الگوریتم استخراج خاص طراحی شده و بسیار بهینه‌تر از سخت‌افزار عمومی عمل می‌کند."
+    },
+    {
+      "term": "Polkadot",
+      "termFa": "پولکادات",
+      "definitionEn": "A multi-chain blockchain protocol founded by Ethereum co-founder Gavin Wood, designed to enable different blockchains to interoperate.",
+      "definitionFa": "پروتکل چندزنجیره‌ای بلاک‌چین که توسط گاوین وود، هم‌بنیان‌گذار اتریوم، ساخته شده و ارتباط بین بلاک‌چین‌های مختلف را ممکن می‌سازد."
+    },
+    {
+      "term": "Liquid Democracy",
+      "termFa": "دموکراسی سیال",
+      "definitionEn": "A voting system where citizens can either vote directly on issues or delegate their vote to a representative, and reclaim it at any time.",
+      "definitionFa": "سیستمی که در آن هر شهروند می‌تواند مستقیم رأی بدهد یا رأی خود را به نماینده‌ای تفویض کند و هر زمان پس بگیرد."
+    },
+    {
+      "term": "Radical Markets",
+      "termFa": "بازارهای رادیکال",
+      "definitionEn": "A book and intellectual movement proposing market-based reforms to land ownership, voting, and spectrum allocation to reduce monopoly and inequality.",
+      "definitionFa": "کتاب و جنبشی فکری که اصلاحات بازار-محور در مالکیت زمین، رأی‌گیری و طیف رادیویی را برای کاهش انحصار و نابرابری پیشنهاد می‌دهد."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "شیریاخد",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتریوم",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "en",
+      "wrong": "Aitrium",
+      "right": "Ethereum"
+    },
+    {
+      "lang": "en",
+      "wrong": "MetaMast",
+      "right": "MetaMask"
+    },
+    {
+      "lang": "en",
+      "wrong": "ViTalk",
+      "right": "Vitalik"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ویتالیک",
+      "right": "ویتالیک بوترین"
+    },
+    {
+      "lang": "en",
+      "wrong": "Nakamoto",
+      "right": "Satoshi Nakamoto"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ناکاموتو",
+      "right": "ساتوشی ناکاموتو"
+    },
+    {
+      "lang": "fa",
+      "wrong": "راجعه بر",
+      "right": "راجر ور"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پولکوداته",
+      "right": "پولکادات"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مانتکاکس",
+      "right": "مت‌گاکس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "گوین بود",
+      "right": "گاوین وود"
+    }
+  ]
+}

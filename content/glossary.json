@@ -1,0 +1,5292 @@
+[
+  {
+    "slug": "0x-protocol",
+    "term": "0x Protocol",
+    "termFa": "پروتکل زیرو ایکس",
+    "definitionEn": "An open messaging protocol on Ethereum enabling off-chain order relay and on-chain settlement for token trades.",
+    "definitionFa": "پروتکل پیام‌رسان متن‌باز روی اتریوم که سفارش‌ها را آف‌چین منتقل و تسویه را آن‌چین انجام می‌دهد.",
+    "aliases": [
+      "0x protocol",
+      "پروتکل زیرو ایکس"
+    ],
+    "episodes": [
+      "s04e03"
+    ]
+  },
+  {
+    "slug": "51-attack",
+    "term": "51% Attack",
+    "termFa": "حمله ۵۱ درصدی",
+    "definitionEn": "An attack where a single entity controls more than half the network's hash rate, enabling it to rewrite recent transaction history.",
+    "definitionFa": "حمله‌ای که در آن یک موجودیت بیش از نیمی از هش‌ریت شبکه را کنترل می‌کند و می‌تواند تاریخچه تراکنش‌های اخیر را بازنویسی کند.",
+    "aliases": [
+      "51% attack",
+      "حمله 51 درصدی",
+      "حمله 51 درصد"
+    ],
+    "episodes": [
+      "s03e01",
+      "s01e09"
+    ]
+  },
+  {
+    "slug": "account-abstraction",
+    "term": "Account Abstraction",
+    "termFa": "اکانت ابسترکشن",
+    "definitionEn": "Enabling standard wallets to behave like smart contracts, supporting features like batching, session keys, and gas sponsorship.",
+    "definitionFa": "قابلیتی که به کیف‌پول‌های معمولی اجازه می‌دهد مثل قراردادهای هوشمند رفتار کنند و امکاناتی مانند دسته‌بندی تراکنش و پرداخت گس توسط دیگران را فعال می‌کند.",
+    "aliases": [
+      "account abstraction",
+      "اکانت ابسترکشن",
+      "اکانت ابستراکشن"
+    ],
+    "episodes": [
+      "s07e05",
+      "s07e03"
+    ]
+  },
+  {
+    "slug": "actively-validated-service",
+    "term": "Actively Validated Service",
+    "termFa": "سرویس با اعتبارسنجی فعال",
+    "definitionEn": "Any decentralized service—such as a bridge, sequencer, or oracle—that uses EigenLayer's restaked security.",
+    "definitionFa": "هر سرویس غیرمتمرکز مانند بریج، سیکونسر یا اوراکل که از امنیت ری‌استیک‌شده‌ی آیگن‌لیر استفاده می‌کند.",
+    "aliases": [
+      "actively validated service",
+      "avs",
+      "سرویس با اعتبارسنجی فعال"
+    ],
+    "episodes": [
+      "s07e02"
+    ]
+  },
+  {
+    "slug": "ai-agent",
+    "term": "AI Agent",
+    "termFa": "عامل هوشمند (AI Agent)",
+    "definitionEn": "An LLM-powered system given a role, prompt, and tools (like API calls) so it can autonomously plan and execute multi-step tasks.",
+    "definitionFa": "سیستمی مبتنی بر LLM که با نقش، پرامپت و ابزارهایی مانند API کال مجهز می‌شود تا وظایف چندمرحله‌ای را خودکار برنامه‌ریزی و اجرا کند.",
+    "aliases": [
+      "ai agent",
+      "عامل هوشمند"
+    ],
+    "episodes": [
+      "s07e06"
+    ]
+  },
+  {
+    "slug": "airdrop",
+    "term": "Airdrop",
+    "termFa": "ایردراپ",
+    "definitionEn": "Free distribution of a new cryptocurrency token to holders of an existing coin, used to bootstrap a market.",
+    "definitionFa": "توزیع رایگان توکن یک رمزارز جدید به دارندگان یک کوین موجود، برای راه‌اندازی بازار اولیه.",
+    "aliases": [
+      "airdrop",
+      "ایردراپ"
+    ],
+    "episodes": [
+      "s02e02"
+    ]
+  },
+  {
+    "slug": "all-core-devs",
+    "term": "All Core Devs",
+    "termFa": "جلسه توسعه‌دهندگان هسته",
+    "definitionEn": "A biweekly open call where Ethereum client teams, researchers, and community members discuss and decide on protocol changes.",
+    "definitionFa": "جلسه دوهفته‌یک‌بار که تیم‌های کلاینت اتریوم، پژوهشگران و اعضای جامعه درباره تغییرات پروتکل بحث و تصمیم‌گیری می‌کنند.",
+    "aliases": [
+      "all core devs",
+      "acd",
+      "جلسه توسعه دهندگان هسته"
+    ],
+    "episodes": [
+      "s05e01"
+    ]
+  },
+  {
+    "slug": "altcoin",
+    "term": "Altcoin",
+    "termFa": "آلت‌کوین",
+    "definitionEn": "Any cryptocurrency other than Bitcoin, ranging from major protocols to experimental tokens.",
+    "definitionFa": "هر رمزارزی غیر از بیتکوین، از پروتکل‌های اصلی تا توکن‌های آزمایشی.",
+    "aliases": [
+      "altcoin",
+      "الت کوین"
+    ],
+    "episodes": [
+      "s02e01",
+      "s01e08",
+      "s01e01"
+    ]
+  },
+  {
+    "slug": "aml",
+    "term": "AML",
+    "termFa": "مبارزه با پول‌شویی",
+    "definitionEn": "Anti-Money Laundering: regulations requiring exchanges to monitor and report suspicious financial activity.",
+    "definitionFa": "مقرراتی که صرافی‌ها را ملزم می‌کند فعالیت‌های مالی مشکوک را رصد و گزارش کنند.",
+    "aliases": [
+      "aml",
+      "مبارزه با پول شویی"
+    ],
+    "episodes": [
+      "s01e01"
+    ]
+  },
+  {
+    "slug": "amm-cfmm",
+    "term": "AMM / CFMM",
+    "termFa": "بازارساز خودکار / بازارساز با تابع ثابت",
+    "definitionEn": "A protocol using a mathematical formula (e.g., x·y=k) to price assets automatically without an order book.",
+    "definitionFa": "پروتکلی که با فرمول ریاضی (مثلاً x·y=k) قیمت دارایی‌ها را بدون نیاز به دفتر سفارشات به‌صورت خودکار تعیین می‌کند.",
+    "aliases": [
+      "amm / cfmm",
+      "بازارساز خودکار / بازارساز با تابع ثابت"
+    ],
+    "episodes": [
+      "s04e03"
+    ]
+  },
+  {
+    "slug": "amp",
+    "term": "AMP",
+    "termFa": "پرداخت چندمسیره‌ی اتمیک",
+    "definitionEn": "A Lightning feature that splits a single payment into multiple partial payments routed along different paths and recombined at the destination.",
+    "definitionFa": "قابلیتی در لایتنینگ که یک پرداخت را به چند بخش تقسیم می‌کند، از مسیرهای مختلف می‌فرستد و در مقصد دوباره جمع می‌شوند.",
+    "aliases": [
+      "amp",
+      "atomic multi-path payment",
+      "پرداخت چندمسیره ی اتمیک"
+    ],
+    "episodes": [
+      "s06e04"
+    ]
+  },
+  {
+    "slug": "anarcho-capitalism",
+    "term": "Anarcho-Capitalism",
+    "termFa": "آنارکو-کاپیتالیسم",
+    "definitionEn": "A political philosophy advocating the elimination of the state in favor of free markets and individual sovereignty.",
+    "definitionFa": "فلسفه سیاسی که خواهان حذف دولت به نفع بازار آزاد و حاکمیت فردی است.",
+    "aliases": [
+      "anarcho-capitalism",
+      "انارکو-کاپیتالیسم"
+    ],
+    "episodes": [
+      "s03e07"
+    ]
+  },
+  {
+    "slug": "anchor-output",
+    "term": "Anchor Output",
+    "termFa": "انکر اوتپوت",
+    "definitionEn": "A small output added to Lightning commitment transactions that allows either party to fee-bump the transaction via CPFP after broadcast.",
+    "definitionFa": "یک خروجی کوچک در تراکنش‌های کامیتمنت که به هر طرف اجازه می‌دهد پس از انتشار، کارمزد را از طریق CPFP افزایش دهد.",
+    "aliases": [
+      "anchor output",
+      "انکر اوتپوت"
+    ],
+    "episodes": [
+      "s06e05"
+    ]
+  },
+  {
+    "slug": "api-key",
+    "term": "API Key",
+    "termFa": "کلید API",
+    "definitionEn": "A credential that lets a third party trade on your exchange account without being able to withdraw funds.",
+    "definitionFa": "اعتبارنامه‌ای که به شخص ثالث اجازه معامله در حساب صرافی شما را می‌دهد، بدون امکان برداشت وجه.",
+    "aliases": [
+      "api key",
+      "کلید api"
+    ],
+    "episodes": [
+      "s01e01"
+    ]
+  },
+  {
+    "slug": "apr-apy",
+    "term": "APR / APY",
+    "termFa": "نرخ بهره سالانه",
+    "definitionEn": "Annual Percentage Rate or Yield—the annualized interest rate earned or paid on an asset.",
+    "definitionFa": "نرخ بهره یا بازده سالانه‌ای که روی یک دارایی دریافت یا پرداخت می‌شود.",
+    "aliases": [
+      "apr / apy",
+      "نرخ بهره سالانه"
+    ],
+    "episodes": [
+      "s04e06"
+    ]
+  },
+  {
+    "slug": "arbitrage",
+    "term": "Arbitrage",
+    "termFa": "آربیتراژ",
+    "definitionEn": "Profiting from price differences for the same asset across different markets, which also helps equalize prices.",
+    "definitionFa": "کسب سود از تفاوت قیمت یک دارایی در بازارهای مختلف، که همزمان به برابرسازی قیمت‌ها کمک می‌کند.",
+    "aliases": [
+      "arbitrage",
+      "اربیتراژ"
+    ],
+    "episodes": [
+      "s04e01"
+    ]
+  },
+  {
+    "slug": "arbitrageur",
+    "term": "Arbitrageur",
+    "termFa": "آربیتراژور",
+    "definitionEn": "A trader who profits from price differences across markets, simultaneously restoring price balance in DEX pools.",
+    "definitionFa": "معامله‌گری که از اختلاف قیمت بین بازارها سود می‌برد و در عین حال تعادل قیمت را در استخرهای DEX بازمی‌گرداند.",
+    "aliases": [
+      "arbitrageur",
+      "اربیتراژور"
+    ],
+    "episodes": [
+      "s04e03"
+    ]
+  },
+  {
+    "slug": "asic",
+    "term": "ASIC",
+    "termFa": "آسیک",
+    "definitionEn": "Application-Specific Integrated Circuit — hardware designed solely to mine a specific cryptocurrency algorithm at maximum efficiency.",
+    "definitionFa": "مدار مجتمع اختصاصی که فقط برای استخراج الگوریتم یک رمزارز خاص طراحی شده و بیشترین بازدهی را دارد.",
+    "aliases": [
+      "asic",
+      "اسیک",
+      "دستگاه asic",
+      "application-specific integrated circuit",
+      "مدار مجتمع با کاربرد خاص",
+      "ایسیک"
+    ],
+    "episodes": [
+      "s03e04",
+      "s02e01",
+      "s01e09",
+      "s01e04",
+      "sp01"
+    ]
+  },
+  {
+    "slug": "asicboost",
+    "term": "ASICBoost",
+    "termFa": "ASICBoost",
+    "definitionEn": "A patented optimization technique used in some Bitmain miners that exploits Bitcoin's hashing algorithm to mine more efficiently.",
+    "definitionFa": "روش بهینه‌سازی اختراع‌شده در برخی ماینرهای بیت‌مین که از الگوریتم هش بیتکوین برای کاهش مصرف انرژی سوءاستفاده می‌کند.",
+    "aliases": [
+      "asicboost",
+      "ای سیک بوست"
+    ],
+    "episodes": [
+      "s01e10",
+      "s01e06"
+    ]
+  },
+  {
+    "slug": "atomic-swap",
+    "term": "Atomic Swap",
+    "termFa": "سواپ اتمی",
+    "definitionEn": "A smart-contract technique allowing two parties to exchange different cryptocurrencies directly without a centralized exchange.",
+    "definitionFa": "روشی مبتنی بر قرارداد هوشمند که به دو طرف اجازه می‌دهد بدون صرافی متمرکز، ارزهای دیجیتال مختلف را مستقیماً مبادله کنند.",
+    "aliases": [
+      "atomic swap",
+      "سواپ اتمی"
+    ],
+    "episodes": [
+      "s02e03"
+    ]
+  },
+  {
+    "slug": "atomic-transaction",
+    "term": "Atomic Transaction",
+    "termFa": "تراکنش اتمیک",
+    "definitionEn": "An Ethereum transaction that either fully succeeds or completely reverts, with no partial state changes.",
+    "definitionFa": "تراکنشی در اتریوم که یا کاملاً موفق می‌شود یا بازگردانده می‌شود و هیچ تغییر جزئی در وضعیت باقی نمی‌گذارد.",
+    "aliases": [
+      "atomic transaction",
+      "تراکنش اتمیک"
+    ],
+    "episodes": [
+      "s04e06"
+    ]
+  },
+  {
+    "slug": "automated-market-maker",
+    "term": "Automated Market Maker",
+    "termFa": "بازارساز خودکار",
+    "definitionEn": "A smart contract that sets token prices algorithmically using a formula, replacing traditional order books with liquidity pools.",
+    "definitionFa": "قراردادی هوشمند که با استفاده از یک فرمول ریاضی قیمت توکن‌ها را تعیین می‌کند و جایگزین دفتر سفارش‌های سنتی می‌شود.",
+    "aliases": [
+      "automated market maker",
+      "amm",
+      "بازارساز خودکار"
+    ],
+    "episodes": [
+      "s04e04",
+      "s04e01"
+    ]
+  },
+  {
+    "slug": "automation",
+    "term": "Automation",
+    "termFa": "اتوماسیون",
+    "definitionEn": "The use of AI and machines to perform tasks previously done by human workers, displacing labor.",
+    "definitionFa": "استفاده از هوش مصنوعی و ماشین‌ها برای انجام کارهایی که پیش‌تر توسط انسان انجام می‌شد.",
+    "aliases": [
+      "automation",
+      "اتوماسیون"
+    ],
+    "episodes": [
+      "s03e07"
+    ]
+  },
+  {
+    "slug": "avalanche-consensus",
+    "term": "Avalanche Consensus",
+    "termFa": "اجماع آوالانچ",
+    "definitionEn": "A probabilistic consensus protocol using repeated random sampling of nodes to reach fast, high-confidence finality.",
+    "definitionFa": "پروتکل اجماعی که با نمونه‌برداری تصادفی تکرارشونده از گره‌ها به سرعت به قطعیت بالا می‌رسد.",
+    "aliases": [
+      "avalanche consensus",
+      "اجماع اوالانچ"
+    ],
+    "episodes": [
+      "s06e02"
+    ]
+  },
+  {
+    "slug": "aztec",
+    "term": "AZTEC",
+    "termFa": "اَزتِک",
+    "definitionEn": "An Ethereum protocol using zk-SNARKs to enable confidential ERC-20 token transactions similar to Zcash's privacy model.",
+    "definitionFa": "پروتکلی روی اتریوم که با استفاده از zk-SNARKs تراکنش‌های محرمانه توکن‌های ERC-20 را مانند زی‌کش ممکن می‌سازد.",
+    "aliases": [
+      "aztec",
+      "ازتک"
+    ],
+    "episodes": [
+      "s03e03"
+    ]
+  },
+  {
+    "slug": "balancer",
+    "term": "Balancer",
+    "termFa": "بالانسر",
+    "definitionEn": "An AMM protocol allowing weighted pools of up to eight tokens, functioning like an automated, manager-free index fund.",
+    "definitionFa": "پروتکل AMM که استخرهای وزن‌دار تا هشت توکن را پشتیبانی می‌کند و مانند یک صندوق سرمایه‌گذاری شاخص خودکار بدون مدیر عمل می‌کند.",
+    "aliases": [
+      "balancer",
+      "بالانسر"
+    ],
+    "episodes": [
+      "s04e04"
+    ]
+  },
+  {
+    "slug": "base-fee",
+    "term": "Base Fee",
+    "termFa": "بیس‌فی",
+    "definitionEn": "The mandatory, algorithmically set minimum fee per gas that every transaction must pay; it is burned entirely.",
+    "definitionFa": "حداقل کارمزد اجباری به ازای هر واحد گس که هر تراکنش باید بپردازد و به‌طور کامل سوزانده می‌شود.",
+    "aliases": [
+      "base fee",
+      "بیس فی"
+    ],
+    "episodes": [
+      "s05e02"
+    ]
+  },
+  {
+    "slug": "beacon-chain",
+    "term": "Beacon Chain",
+    "termFa": "زنجیره‌ی بیکن",
+    "definitionEn": "The coordinator chain in Ethereum 2.0 that manages validators and synchronizes all shard chains.",
+    "definitionFa": "زنجیره‌ی هماهنگ‌کننده در اتریوم ۲ که اعتبارسنج‌ها را مدیریت و تمام شاردها را همگام می‌کند.",
+    "aliases": [
+      "beacon chain",
+      "زنجیره ی بیکن"
+    ],
+    "episodes": [
+      "s06e01"
+    ]
+  },
+  {
+    "slug": "bgp",
+    "term": "BGP",
+    "termFa": "پروتکل BGP",
+    "definitionEn": "The internet's main best-effort routing protocol where each router forwards packets based on local knowledge, not a pre-specified full path.",
+    "definitionFa": "پروتکل اصلی مسیریابی اینترنت که هر روتر بر اساس دانش محلی خود بسته‌ها را هدایت می‌کند، نه یک مسیر از پیش تعیین‌شده.",
+    "aliases": [
+      "bgp",
+      "border gateway protocol",
+      "پروتکل bgp"
+    ],
+    "episodes": [
+      "s06e04"
+    ]
+  },
+  {
+    "slug": "bip",
+    "term": "BIP",
+    "termFa": "بیپ (پیشنهاد بهبود بیتکوین)",
+    "definitionEn": "A formal design document for proposing new features or changes to the Bitcoin protocol.",
+    "definitionFa": "سندی رسمی برای پیشنهاد ویژگی‌ها یا تغییرات جدید در پروتکل بیتکوین.",
+    "aliases": [
+      "bip",
+      "bitcoin improvement proposal",
+      "بیپ",
+      "پیشنهاد بهبود بیتکوین"
+    ],
+    "episodes": [
+      "s02e02",
+      "s01e10"
+    ]
+  },
+  {
+    "slug": "bip-70-request-for-payment",
+    "term": "BIP 70 / Request For Payment",
+    "termFa": "بیپ ۷۰ / درخواست پرداخت",
+    "definitionEn": "A Bitcoin payment protocol where the merchant creates a signed transaction template specifying exact outputs, reducing double-spend risk.",
+    "definitionFa": "پروتکل پرداخت بیتکوین که در آن مرچند یک تمپلیت تراکنش امضاشده با خروجی‌های دقیق می‌سازد تا ریسک دابل‌اسپند کاهش یابد.",
+    "aliases": [
+      "bip 70 / request for payment",
+      "بیپ 70 / درخواست پرداخت"
+    ],
+    "episodes": [
+      "s03e01"
+    ]
+  },
+  {
+    "slug": "bip39-seed-phrase",
+    "term": "BIP39 Seed Phrase",
+    "termFa": "عبارت بازیابی BIP39",
+    "definitionEn": "A human-readable backup of 12 or 24 words that can regenerate an entire HD wallet's private keys.",
+    "definitionFa": "پشتیبانی خوانا از ۱۲ یا ۲۴ کلمه که می‌تواند تمام کلیدهای خصوصی یک HD wallet را بازسازی کند.",
+    "aliases": [
+      "bip39 seed phrase",
+      "عبارت بازیابی bip39"
+    ],
+    "episodes": [
+      "s01e07"
+    ]
+  },
+  {
+    "slug": "bitcoin",
+    "term": "Bitcoin",
+    "termFa": "بیت‌کوین",
+    "definitionEn": "The first decentralized cryptocurrency, created in 2009, designed to enable peer-to-peer payments without banks.",
+    "definitionFa": "اولین ارز دیجیتال غیرمتمرکز که در سال ۲۰۰۹ ایجاد شد تا پرداخت‌های همتا‌به‌همتا بدون بانک را ممکن سازد.",
+    "aliases": [
+      "bitcoin",
+      "بیت کوین"
+    ],
+    "episodes": [
+      "s03e07"
+    ]
+  },
+  {
+    "slug": "bitcoin-cash",
+    "term": "Bitcoin Cash",
+    "termFa": "بیتکوین کش",
+    "definitionEn": "A 2017 hard fork of Bitcoin that increased the block size limit to allow more transactions per block.",
+    "definitionFa": "هارد فورک بیتکوین در سال ۲۰۱۷ که محدودیت اندازۀ بلاک را افزایش داد تا تعداد تراکنش‌های بیشتری در هر بلاک جا بگیرد.",
+    "aliases": [
+      "bitcoin cash",
+      "بیتکوین کش"
+    ],
+    "episodes": [
+      "s02e03",
+      "s02e02"
+    ]
+  },
+  {
+    "slug": "bitcoin-unlimited",
+    "term": "Bitcoin Unlimited",
+    "termFa": "بیت‌کوین آنلیمیتد",
+    "definitionEn": "A Bitcoin client that removes the fixed 1 MB block size limit and lets miners and nodes signal their preferred maximum block size.",
+    "definitionFa": "یک کلاینت بیت‌کوین که محدودیت ثابت یک مگابایتی را حذف کرده و به ماینرها و نودها اجازه می‌دهد حداکثر سایز بلاک دلخواه را اعلام کنند.",
+    "aliases": [
+      "bitcoin unlimited",
+      "بیت کوین انلیمیتد"
+    ],
+    "episodes": [
+      "s01e05"
+    ]
+  },
+  {
+    "slug": "bitgo-instant",
+    "term": "BitGo Instant",
+    "termFa": "بیت‌گو اینستنت",
+    "definitionEn": "A BitGo service using 2-of-2 multisig wallets where BitGo co-signs and guarantees a transaction won't be double-spent, enabling safe 0-conf.",
+    "definitionFa": "سرویس BitGo با کیف‌پول‌های ۲-از-۲ مالتی‌سیگ که در آن BitGo تراکنش را امضا می‌کند و تضمین می‌دهد دابل‌اسپند نخواهد شد.",
+    "aliases": [
+      "bitgo instant",
+      "بیت گو اینستنت"
+    ],
+    "episodes": [
+      "s03e01"
+    ]
+  },
+  {
+    "slug": "bitmex",
+    "term": "BitMEX",
+    "termFa": "بیت‌مکس",
+    "definitionEn": "A major cryptocurrency derivatives exchange known for high-leverage Bitcoin futures trading and short liquidations.",
+    "definitionFa": "یکی از صرافی‌های بزرگ مشتقات رمزارز که به معاملات آتی بیت‌کوین با اهرم بالا و تسویه پوزیشن‌های شورت مشهور است.",
+    "aliases": [
+      "bitmex",
+      "بیت مکس"
+    ],
+    "episodes": [
+      "s03e05"
+    ]
+  },
+  {
+    "slug": "bitpesa",
+    "term": "BitPesa",
+    "termFa": "بیت‌پسا",
+    "definitionEn": "An African fintech platform that connects local mobile-money networks to Bitcoin for cross-border payments.",
+    "definitionFa": "پلتفرم مالی آفریقایی که شبکه‌های پرداخت موبایلی بومی را از طریق بیتکوین به شبکه‌ی بین‌المللی وصل می‌کند.",
+    "aliases": [
+      "bitpesa",
+      "بیت پسا"
+    ],
+    "episodes": [
+      "s02e01",
+      "s01e03"
+    ]
+  },
+  {
+    "slug": "blacklisting",
+    "term": "Blacklisting",
+    "termFa": "بلک‌لیستینگ",
+    "definitionEn": "A centralized stablecoin issuer's ability to freeze or block specific wallet addresses from using its token.",
+    "definitionFa": "قابلیت صادرکننده متمرکز استیبل‌کوین برای مسدود کردن آدرس‌های خاص کیف‌پول از استفاده توکن.",
+    "aliases": [
+      "blacklisting",
+      "بلک لیستینگ"
+    ],
+    "episodes": [
+      "s04e01"
+    ]
+  },
+  {
+    "slug": "blind-signature",
+    "term": "Blind Signature",
+    "termFa": "امضای کور",
+    "definitionEn": "A cryptographic scheme invented by David Chaum allowing a message to be signed without the signer seeing its content, enabling untraceable digital payments.",
+    "definitionFa": "طرح رمزنگاری اختراع دیوید چاوم که امکان امضای پیام بدون دیدن محتوا را می‌دهد و پرداخت‌های دیجیتال ردیابی‌ناپذیر را ممکن می‌سازد.",
+    "aliases": [
+      "blind signature",
+      "امضای کور"
+    ],
+    "episodes": [
+      "s03e04"
+    ]
+  },
+  {
+    "slug": "blob",
+    "term": "Blob",
+    "termFa": "بلاب",
+    "definitionEn": "A temporary, cheaper data attachment to Ethereum transactions used by Layer 2 rollups for data availability.",
+    "definitionFa": "نوعی داده‌ی موقت و ارزان‌قیمت که به تراکنش‌های اتریوم ضمیمه می‌شود و لایه‌های دو برای دسترس‌پذیری داده از آن استفاده می‌کنند.",
+    "aliases": [
+      "blob",
+      "بلاب"
+    ],
+    "episodes": [
+      "s07e05"
+    ]
+  },
+  {
+    "slug": "blob-transaction",
+    "term": "Blob Transaction",
+    "termFa": "بلاب ترنزکشن",
+    "definitionEn": "A new transaction type carrying a temporary data blob on the consensus layer, pruned after roughly two weeks, used by rollups for cheap data posting.",
+    "definitionFa": "نوع جدیدی از تراکنش که داده‌ای موقت روی لایه اجماع حمل می‌کند و پس از حدود دو هفته حذف می‌شود؛ رول‌آپ‌ها برای ارسال ارزان داده از آن استفاده می‌کنند.",
+    "aliases": [
+      "blob transaction",
+      "بلاب ترنزکشن"
+    ],
+    "episodes": [
+      "s07e01"
+    ]
+  },
+  {
+    "slug": "block-gas-limit",
+    "term": "Block Gas Limit",
+    "termFa": "بلاک گس لیمیت",
+    "definitionEn": "The maximum total gas all transactions in a single block can consume.",
+    "definitionFa": "حداکثر مجموع گسی که تمام تراکنش‌های یک بلاک می‌توانند مصرف کنند.",
+    "aliases": [
+      "block gas limit",
+      "بلاک گس لیمیت"
+    ],
+    "episodes": [
+      "s05e02"
+    ]
+  },
+  {
+    "slug": "block-reward",
+    "term": "Block Reward",
+    "termFa": "پاداش بلاک",
+    "definitionEn": "The amount of newly created Bitcoin awarded to the miner who successfully adds a block to the blockchain.",
+    "definitionFa": "مقدار بیت‌کوین تازه‌ضرب‌شده‌ای که به ماینری تعلق می‌گیرد که بلاک جدیدی را به زنجیره اضافه می‌کند.",
+    "aliases": [
+      "block reward",
+      "پاداش بلاک"
+    ],
+    "episodes": [
+      "s01e06"
+    ]
+  },
+  {
+    "slug": "block-size",
+    "term": "Block Size",
+    "termFa": "بلاک‌سایز",
+    "definitionEn": "The maximum data limit per Bitcoin block, currently 1 MB, which caps how many transactions fit in each block.",
+    "definitionFa": "حداکثر حجم داده در هر بلاک بیت‌کوین که تعداد تراکنش‌های قابل پردازش را محدود می‌کند.",
+    "aliases": [
+      "block size",
+      "بلاک سایز"
+    ],
+    "episodes": [
+      "s01e05"
+    ]
+  },
+  {
+    "slug": "blockchain",
+    "term": "Blockchain",
+    "termFa": "بلاک‌چین",
+    "definitionEn": "A distributed, immutable ledger that records transactions across a network without a central authority.",
+    "definitionFa": "دفتر کل توزیع‌شده و تغییرناپذیری که تراکنش‌ها را بدون نیاز به مرکز کنترل ثبت می‌کند.",
+    "aliases": [
+      "blockchain",
+      "بلاک چین",
+      "بلاکچین"
+    ],
+    "episodes": [
+      "s03e07",
+      "s02e01",
+      "s01e08"
+    ]
+  },
+  {
+    "slug": "blockchain-trilemma",
+    "term": "Blockchain Trilemma",
+    "termFa": "مثلث سه‌گانه‌ی بلاکچین",
+    "definitionEn": "The trade-off, described by Vitalik Buterin, where a blockchain can optimize at most two of three properties: decentralization, security, and scalability.",
+    "definitionFa": "مفهومی که ویتالیک بوترین مطرح کرده و می‌گوید هر بلاکچین می‌تواند حداکثر دو ویژگی از سه‌گانه‌ی عدم تمرکز، امنیت و مقیاس‌پذیری را به‌طور همزمان داشته باشد.",
+    "aliases": [
+      "blockchain trilemma",
+      "مثلث سه گانه ی بلاکچین"
+    ],
+    "episodes": [
+      "s06e01"
+    ]
+  },
+  {
+    "slug": "bls-signature",
+    "term": "BLS Signature",
+    "termFa": "امضای BLS",
+    "definitionEn": "A cryptographic signature scheme allowing multiple signatures to be aggregated into one, reducing Ethereum network bandwidth.",
+    "definitionFa": "روشی رمزنگاری که اجازه می‌دهد چندین امضا در یک امضا ادغام شوند و پهنای باند شبکه اتریوم کاهش یابد.",
+    "aliases": [
+      "bls signature",
+      "امضای bls"
+    ],
+    "episodes": [
+      "s07e05"
+    ]
+  },
+  {
+    "slug": "bolt-12",
+    "term": "BOLT 12",
+    "termFa": "بولت ۱۲",
+    "definitionEn": "A Lightning protocol proposal introducing static reusable offers and invoices, enabling recurring payments and enhanced metadata exchange.",
+    "definitionFa": "پیشنهادی برای پروتکل لایتنینگ که اینویس‌های استاتیک و قابل استفاده‌ی مجدد را معرفی می‌کند و پرداخت‌های دوره‌ای را ممکن می‌سازد.",
+    "aliases": [
+      "bolt 12",
+      "بولت 12"
+    ],
+    "episodes": [
+      "s06e05"
+    ]
+  },
+  {
+    "slug": "brain-wallet",
+    "term": "Brain Wallet",
+    "termFa": "کیف‌پول ذهنی",
+    "definitionEn": "A private key derived from a memorized passphrase, vulnerable to brute-force attacks if the phrase is guessable.",
+    "definitionFa": "کلید خصوصی‌ای که از یک عبارت حفظ‌شده مشتق می‌شود و در برابر حملات brute-force آسیب‌پذیر است.",
+    "aliases": [
+      "brain wallet",
+      "کیف پول ذهنی"
+    ],
+    "episodes": [
+      "s01e07"
+    ]
+  },
+  {
+    "slug": "breaking-the-buck",
+    "term": "Breaking the Buck",
+    "termFa": "شکستن پگ",
+    "definitionEn": "When a stablecoin or money-market fund falls below its $1 peg, signaling a loss of market confidence.",
+    "definitionFa": "زمانی که یک استیبل‌کوین یا صندوق بازار پول از پگ یک‌دلاری خود پایین‌تر می‌رود و نشان‌دهنده از دست رفتن اعتماد بازار است.",
+    "aliases": [
+      "breaking the buck",
+      "شکستن پگ"
+    ],
+    "episodes": [
+      "s04e01"
+    ]
+  },
+  {
+    "slug": "bsa",
+    "term": "BSA",
+    "termFa": "قانون رازداری بانکی",
+    "definitionEn": "US law requiring financial intermediaries to assist government agencies in detecting money laundering via KYC/AML compliance.",
+    "definitionFa": "قانون آمریکایی که واسطه‌های مالی را ملزم به همکاری با نهادهای دولتی از طریق رعایت KYC/AML برای مقابله با پولشویی می‌کند.",
+    "aliases": [
+      "bsa",
+      "bank secrecy act",
+      "قانون رازداری بانکی"
+    ],
+    "episodes": [
+      "s03e02"
+    ]
+  },
+  {
+    "slug": "bug-bounty",
+    "term": "Bug Bounty",
+    "termFa": "باگ‌بانتی",
+    "definitionEn": "A reward offered to anyone who discovers and reports a security vulnerability in software.",
+    "definitionFa": "جایزه‌ای که به کسی پرداخت می‌شود که آسیب‌پذیری امنیتی در نرم‌افزار پیدا و گزارش کند.",
+    "aliases": [
+      "bug bounty",
+      "باگ بانتی"
+    ],
+    "episodes": [
+      "s03e06"
+    ]
+  },
+  {
+    "slug": "cdp",
+    "term": "CDP",
+    "termFa": "موقعیت بدهی وثیقه‌گذاری‌شده",
+    "definitionEn": "A smart-contract position where a user locks crypto collateral to mint DAI, functioning like a leveraged trade.",
+    "definitionFa": "موقعیتی در قرارداد هوشمند که کاربر با قفل‌کردن وثیقهٔ کریپتو، دای چاپ می‌کند و مشابه معاملهٔ اهرم‌دار عمل می‌کند.",
+    "aliases": [
+      "cdp",
+      "collateralized debt position",
+      "موقعیت بدهی وثیقه گذاری شده"
+    ],
+    "episodes": [
+      "s04e02"
+    ]
+  },
+  {
+    "slug": "certificate-authority",
+    "term": "Certificate Authority",
+    "termFa": "مرجع صدور گواهی",
+    "definitionEn": "A trusted company that issues SSL/HTTPS certificates; roughly 1,400 exist globally, each a potential security weak point.",
+    "definitionFa": "شرکتی که گواهی‌های SSL/HTTPS صادر می‌کند؛ حدود ۱۴۰۰ مرجع در جهان وجود دارد و هر کدام نقطه ضعف امنیتی بالقوه‌ای هستند.",
+    "aliases": [
+      "certificate authority",
+      "مرجع صدور گواهی"
+    ],
+    "episodes": [
+      "s01e03"
+    ]
+  },
+  {
+    "slug": "chain-reorganization",
+    "term": "Chain Reorganization",
+    "termFa": "ری‌ارگ (بازسازماندهی زنجیره)",
+    "definitionEn": "When a miner with sufficient hash power mines a longer alternative chain, causing the network to abandon previously confirmed blocks.",
+    "definitionFa": "زمانی که ماینری با قدرت محاسباتی کافی زنجیره‌ای بلندتر می‌سازد و شبکه بلاک‌های قبلاً تأیید شده را رها می‌کند.",
+    "aliases": [
+      "chain reorganization",
+      "reorg",
+      "ری ارگ",
+      "بازسازماندهی زنجیره"
+    ],
+    "episodes": [
+      "s03e01"
+    ]
+  },
+  {
+    "slug": "chainalysis",
+    "term": "Chainalysis",
+    "termFa": "چین‌آنالیسیس",
+    "definitionEn": "A blockchain analytics firm that traces cryptocurrency transactions to identify wallet owners and detect illicit activity.",
+    "definitionFa": "شرکت تحلیل بلاکچین که با ردیابی تراکنش‌های رمزارزی هویت صاحبان کیف پول و فعالیت‌های غیرقانونی را شناسایی می‌کند.",
+    "aliases": [
+      "chainalysis",
+      "چین انالیسیس"
+    ],
+    "episodes": [
+      "s07e07"
+    ]
+  },
+  {
+    "slug": "chainlink-vrf",
+    "term": "Chainlink VRF",
+    "termFa": "چین‌لینک VRF",
+    "definitionEn": "A Chainlink service that provides verifiable, tamper-proof random numbers for smart contracts.",
+    "definitionFa": "سرویسی از چین‌لینک که اعداد تصادفی قابل‌اثبات و ضدتقلب را برای قراردادهای هوشمند فراهم می‌کند.",
+    "aliases": [
+      "chainlink vrf",
+      "چین لینک vrf"
+    ],
+    "episodes": [
+      "s07e03"
+    ]
+  },
+  {
+    "slug": "channel-state",
+    "term": "Channel State",
+    "termFa": "استیت کانال",
+    "definitionEn": "The current balance distribution between two parties in an open Lightning channel at any given moment.",
+    "definitionFa": "وضعیت لحظه‌ای توزیع موجودی بین دو طرف در یک کانال لایتنینگ باز.",
+    "aliases": [
+      "channel state",
+      "استیت کانال"
+    ],
+    "episodes": [
+      "s06e04"
+    ]
+  },
+  {
+    "slug": "circuit-breaker",
+    "term": "Circuit Breaker",
+    "termFa": "سیرکت‌بریکر (قطع‌کننده مدار)",
+    "definitionEn": "A stock-market rule that halts trading for 15 minutes when an index falls more than 7% to prevent panic-driven flash crashes.",
+    "definitionFa": "مکانیزمی در بازار سهام که هنگام ریزش بیش از ۷ درصد، معاملات را ۱۵ دقیقه متوقف می‌کند تا از سقوط ناگهانی جلوگیری شود.",
+    "aliases": [
+      "circuit breaker",
+      "سیرکت بریکر",
+      "قطع کننده مدار"
+    ],
+    "episodes": [
+      "s03e05"
+    ]
+  },
+  {
+    "slug": "cloud-mining",
+    "term": "Cloud Mining",
+    "termFa": "کلاد ماینینگ",
+    "definitionEn": "Renting remote computing power to mine cryptocurrency instead of owning hardware yourself.",
+    "definitionFa": "اجاره دادن توان محاسباتی از راه دور برای استخراج رمزارز، به‌جای داشتن دستگاه فیزیکی.",
+    "aliases": [
+      "cloud mining",
+      "کلاد ماینینگ"
+    ],
+    "episodes": [
+      "s01e01"
+    ]
+  },
+  {
+    "slug": "coinjoin",
+    "term": "CoinJoin",
+    "termFa": "کوین‌جوین",
+    "definitionEn": "A Bitcoin privacy technique that merges multiple users' transactions into one, making it harder to trace individual coins.",
+    "definitionFa": "روشی در بیتکوین که چند تراکنش مختلف را با هم ترکیب می‌کند تا ردیابی سکه‌های منفرد دشوارتر شود.",
+    "aliases": [
+      "coinjoin",
+      "کوین جوین"
+    ],
+    "episodes": [
+      "s07e07",
+      "s01e06"
+    ]
+  },
+  {
+    "slug": "collateral-factor",
+    "term": "Collateral Factor",
+    "termFa": "ضریب وثیقه (سی‌فکتور)",
+    "definitionEn": "A per-asset ratio in Compound that sets the maximum borrowing power as a percentage of deposited collateral value.",
+    "definitionFa": "نسبتی که در کامپاوند برای هر دارایی تعریف می‌شود و حداکثر میزان وام‌گیری را به‌صورت درصدی از ارزش وثیقه مشخص می‌کند.",
+    "aliases": [
+      "collateral factor",
+      "c factor",
+      "ضریب وثیقه",
+      "سی فکتور"
+    ],
+    "episodes": [
+      "s04e05"
+    ]
+  },
+  {
+    "slug": "collateralized-loan",
+    "term": "Collateralized Loan",
+    "termFa": "وام با وثیقه",
+    "definitionEn": "A loan where the borrower locks up assets worth more than the loan amount to guarantee repayment.",
+    "definitionFa": "وامی که وام‌گیرنده دارایی‌هایی بیش از مبلغ وام را به‌عنوان ضمانت قفل می‌کند.",
+    "aliases": [
+      "collateralized loan",
+      "وام با وثیقه"
+    ],
+    "episodes": [
+      "s03e06"
+    ]
+  },
+  {
+    "slug": "commit-chain",
+    "term": "Commit Chain",
+    "termFa": "زنجیره‌ی تعهد",
+    "definitionEn": "A Layer 2 design that periodically commits its state root and validator registrations to the main blockchain for security.",
+    "definitionFa": "طرحی لایه‌ی دوم که به‌صورت دوره‌ای ریشه‌ی حالت و اطلاعات ولیدیتورها را برای امنیت بیشتر روی بلاکچین اصلی ثبت می‌کند.",
+    "aliases": [
+      "commit chain",
+      "زنجیره ی تعهد"
+    ],
+    "episodes": [
+      "s06e02"
+    ]
+  },
+  {
+    "slug": "commitment-transaction",
+    "term": "Commitment Transaction",
+    "termFa": "تراکنش تعهد (کامیتمنت ترنزکشن)",
+    "definitionEn": "A pre-signed Bitcoin transaction representing one channel state, allowing either party to close the channel unilaterally.",
+    "definitionFa": "تراکنش بیت‌کوینی از پیش امضاشده که یک استیت کانال را نمایندگی می‌کند و به هر طرف اجازه می‌دهد کانال را یک‌طرفه ببندد.",
+    "aliases": [
+      "commitment transaction",
+      "تراکنش تعهد",
+      "کامیتمنت ترنزکشن",
+      "کامیتمنت"
+    ],
+    "episodes": [
+      "s06e04",
+      "s06e03"
+    ]
+  },
+  {
+    "slug": "composability",
+    "term": "Composability",
+    "termFa": "ترکیب‌پذیری / کامپوزیبیلیتی",
+    "definitionEn": "The ability to combine multiple DeFi protocols in a single transaction, like building with interoperable Lego blocks.",
+    "definitionFa": "قابلیت ترکیب چند پروتکل دیفای در یک تراکنش واحد، شبیه به ساختن با قطعات لگوی سازگار با هم.",
+    "aliases": [
+      "composability",
+      "ترکیب پذیری / کامپوزیبیلیتی"
+    ],
+    "episodes": [
+      "s04e02"
+    ]
+  },
+  {
+    "slug": "compound-finance",
+    "term": "Compound Finance",
+    "termFa": "کامپاوند فایننس",
+    "definitionEn": "A pioneer DeFi lending protocol on Ethereum where pooled assets earn interest and can be borrowed against collateral.",
+    "definitionFa": "یکی از نخستین پروتکل‌های وام‌دهی دیفای روی اتریوم که دارایی‌های جمع‌شده در استخر سود تولید می‌کنند و می‌توان در ازای وثیقه از آن‌ها وام گرفت.",
+    "aliases": [
+      "compound finance",
+      "کامپاوند فایننس"
+    ],
+    "episodes": [
+      "s04e05"
+    ]
+  },
+  {
+    "slug": "consensus-layer",
+    "term": "Consensus Layer",
+    "termFa": "لایه اجماع",
+    "definitionEn": "The part of an Ethereum full node running Casper FFG Proof of Stake, managing validators, slots, epochs, and block finality.",
+    "definitionFa": "بخشی از نود کامل اتریوم که پروف‌آف‌استیک Casper FFG را اجرا می‌کند و ولیدیتورها، اسلات‌ها، اپوک‌ها و نهایی‌شدن بلاک‌ها را مدیریت می‌کند.",
+    "aliases": [
+      "consensus layer",
+      "لایه اجماع"
+    ],
+    "episodes": [
+      "s07e01"
+    ]
+  },
+  {
+    "slug": "consensys",
+    "term": "ConsenSys",
+    "termFa": "کانسنسیس",
+    "definitionEn": "A blockchain technology company founded by Ethereum co-founder Joseph Lubin, home to projects like MetaMask and Infura.",
+    "definitionFa": "شرکتی در حوزهٔ بلاک‌چین که توسط جوزف لوبین، هم‌بنیان‌گذار اتریوم، تأسیس شده و پروژه‌هایی مثل متامسک و اینفیورا را در خود دارد.",
+    "aliases": [
+      "consensys",
+      "کانسنسیس"
+    ],
+    "episodes": [
+      "sp01"
+    ]
+  },
+  {
+    "slug": "constant-function-market-maker",
+    "term": "Constant Function Market Maker",
+    "termFa": "بازارساز با تابع ثابت",
+    "definitionEn": "An AMM type where a mathematical function of pool token quantities must remain constant before and after each trade.",
+    "definitionFa": "نوعی AMM که حاصل یک تابع ریاضی از مقادیر توکن‌های استخر باید قبل و بعد از هر معامله ثابت بماند.",
+    "aliases": [
+      "constant function market maker",
+      "cfmm",
+      "بازارساز با تابع ثابت"
+    ],
+    "episodes": [
+      "s04e04"
+    ]
+  },
+  {
+    "slug": "cooperative-close",
+    "term": "Cooperative Close",
+    "termFa": "بستن همکاری‌شده",
+    "definitionEn": "Both channel parties agree on a final balance, sign a closing transaction together, and broadcast it to the Bitcoin network.",
+    "definitionFa": "هر دو طرف کانال روی موجودی نهایی توافق می‌کنند و با همکاری هم تراکنش بستن را منتشر می‌کنند.",
+    "aliases": [
+      "cooperative close",
+      "بستن همکاری شده"
+    ],
+    "episodes": [
+      "s06e05"
+    ]
+  },
+  {
+    "slug": "counterparty-risk",
+    "term": "Counterparty Risk",
+    "termFa": "ریسک طرف مقابل",
+    "definitionEn": "The risk that a borrower defaults or disappears without repaying the loan, causing losses to lenders or the protocol.",
+    "definitionFa": "ریسکی که وام‌گیرنده بدون بازپرداخت وام ناپدید شود یا نکول کند و به وام‌دهندگان یا پروتکل زیان وارد کند.",
+    "aliases": [
+      "counterparty risk",
+      "ریسک طرف مقابل"
+    ],
+    "episodes": [
+      "s04e05"
+    ]
+  },
+  {
+    "slug": "cpfp",
+    "term": "CPFP",
+    "termFa": "فرزند برای پدر پرداخت می‌کند",
+    "definitionEn": "Child-Pays-For-Parent: a fee-bumping method where a new transaction spending an unconfirmed output pays a high fee to incentivize miners to confirm the parent.",
+    "definitionFa": "روشی برای افزایش کارمزد که در آن یک تراکنش جدید با کارمزد بالا ماینرها را تشویق می‌کند تا تراکنش والد تأییدنشده را ماین کنند.",
+    "aliases": [
+      "cpfp",
+      "فرزند برای پدر پرداخت می کند"
+    ],
+    "episodes": [
+      "s06e05"
+    ]
+  },
+  {
+    "slug": "cryptojacking",
+    "term": "Cryptojacking",
+    "termFa": "کریپتوجکینگ",
+    "definitionEn": "Covert use of a victim's device—via malicious JavaScript or malware—to mine cryptocurrency without consent.",
+    "definitionFa": "استفاده‌ی پنهانی از دستگاه قربانی—از طریق جاوااسکریپت یا بدافزار—برای استخراج رمزارز بدون اجازه.",
+    "aliases": [
+      "cryptojacking",
+      "کریپتوجکینگ"
+    ],
+    "episodes": [
+      "s02e01"
+    ]
+  },
+  {
+    "slug": "cryptokitties",
+    "term": "CryptoKitties",
+    "termFa": "کریپتوکیتیز",
+    "definitionEn": "One of Ethereum's first NFT games, born at a hackathon, which famously congested the network in 2017.",
+    "definitionFa": "یکی از اولین بازی‌های NFT اتریوم که در یک هکتان متولد شد و در ۲۰۱۷ شبکه را مشهورانه مسدود کرد.",
+    "aliases": [
+      "cryptokitties",
+      "کریپتوکیتیز"
+    ],
+    "episodes": [
+      "s07e03"
+    ]
+  },
+  {
+    "slug": "ctor",
+    "term": "CTOR",
+    "termFa": "سی‌تی‌اور",
+    "definitionEn": "A Bitcoin Cash ABC rule that orders transactions within a block by their hash, making the next block's transaction set predictable.",
+    "definitionFa": "قانونی در Bitcoin Cash ABC که تراکنش‌های داخل بلاک را بر اساس هششان مرتب می‌کند و مجموعه تراکنش‌های بلاک بعدی را قابل پیش‌بینی می‌سازد.",
+    "aliases": [
+      "ctor",
+      "canonical transaction ordering rule",
+      "سی تی اور"
+    ],
+    "episodes": [
+      "s03e01"
+    ]
+  },
+  {
+    "slug": "curve-finance",
+    "term": "Curve Finance",
+    "termFa": "کرو فایننس",
+    "definitionEn": "An AMM optimized for swapping stablecoins and pegged assets with minimal slippage using a specialized bonding curve.",
+    "definitionFa": "پروتکل AMM که با استفاده از منحنی پیوند ویژه، مبادله استیبل‌کوین‌ها و دارایی‌های وابسته را با کمترین لغزش قیمت انجام می‌دهد.",
+    "aliases": [
+      "curve finance",
+      "کرو فایننس"
+    ],
+    "episodes": [
+      "s04e04"
+    ]
+  },
+  {
+    "slug": "dag",
+    "term": "DAG",
+    "termFa": "دگ (فایل DAG)",
+    "definitionEn": "A large dataset loaded into GPU memory required to mine Ethereum; it grows with each epoch making old low-RAM cards obsolete.",
+    "definitionFa": "فایل بزرگی که باید روی حافظه کارت گرافیک بارگذاری شود تا بتوان اتریوم را ماین کرد و با هر epoch بزرگ‌تر می‌شود.",
+    "aliases": [
+      "dag",
+      "dagger-hashimoto",
+      "فایل dag"
+    ],
+    "episodes": [
+      "s01e09"
+    ]
+  },
+  {
+    "slug": "dai",
+    "term": "DAI",
+    "termFa": "دای",
+    "definitionEn": "A crypto-collateralized stablecoin issued by MakerDAO, pegged to one US dollar via over-collateralization.",
+    "definitionFa": "استیبل‌کوین با پشتوانهٔ کریپتو صادرشده توسط میکردائو که از طریق وثیقه‌گذاری بیش از حد روی یک دلار ثابت می‌ماند.",
+    "aliases": [
+      "dai",
+      "دای"
+    ],
+    "episodes": [
+      "s04e02",
+      "s03e06"
+    ]
+  },
+  {
+    "slug": "dao",
+    "term": "DAO",
+    "termFa": "سازمان خودگردان غیرمتمرکز",
+    "definitionEn": "An organization governed by smart contracts and token-holder votes, with no traditional management hierarchy.",
+    "definitionFa": "سازمانی که توسط قراردادهای هوشمند و رأی دارندگان توکن اداره می‌شود و سلسله‌مراتب مدیریتی سنتی ندارد.",
+    "aliases": [
+      "dao",
+      "decentralized autonomous organization",
+      "سازمان خودگردان غیرمتمرکز"
+    ],
+    "episodes": [
+      "s01e08"
+    ]
+  },
+  {
+    "slug": "data-availability",
+    "term": "Data Availability",
+    "termFa": "دیتا اولیبیلیتی",
+    "definitionEn": "The guarantee that transaction data needed to verify or challenge a rollup's state is publicly accessible for a sufficient period.",
+    "definitionFa": "تضمین اینکه داده‌های تراکنش مورد نیاز برای تأیید یا چالش وضعیت رول‌آپ برای مدت کافی به‌صورت عمومی در دسترس است.",
+    "aliases": [
+      "data availability",
+      "دیتا اولیبیلیتی",
+      "دسترس پذیری داده"
+    ],
+    "episodes": [
+      "s07e01",
+      "s06e02",
+      "s06e01"
+    ]
+  },
+  {
+    "slug": "decentralization",
+    "term": "Decentralization",
+    "termFa": "غیرمتمرکزی",
+    "definitionEn": "A system property where no single entity controls the network; contrasted with merely distributing data across servers.",
+    "definitionFa": "ویژگی‌ای در سیستم که هیچ نهاد واحدی کنترل شبکه را ندارد؛ در تضاد با صرفاً توزیع داده روی سرورهای مختلف.",
+    "aliases": [
+      "decentralization",
+      "غیرمتمرکزی"
+    ],
+    "episodes": [
+      "s01e08"
+    ]
+  },
+  {
+    "slug": "decentralized-dns",
+    "term": "Decentralized DNS",
+    "termFa": "DNS غیرمتمرکز",
+    "definitionEn": "A blockchain-based alternative to the traditional Domain Name System that removes central servers and censorship points.",
+    "definitionFa": "جایگزینی برای سیستم نام دامنه سنتی که با بلاکچین، سرورهای مرکزی و امکان فیلترینگ را حذف می‌کند.",
+    "aliases": [
+      "decentralized dns",
+      "dns غیرمتمرکز"
+    ],
+    "episodes": [
+      "s01e03"
+    ]
+  },
+  {
+    "slug": "defi",
+    "term": "DeFi",
+    "termFa": "دیفای / اقتصاد غیرمتمرکز",
+    "definitionEn": "Financial services — lending, trading, stablecoins — built as smart contracts on blockchain networks without intermediaries.",
+    "definitionFa": "خدمات مالی مانند وام‌دهی، معامله و استیبل‌کوین که بدون واسطه روی قراردادهای هوشمند بلاکچین ساخته شده‌اند.",
+    "aliases": [
+      "defi",
+      "decentralized finance",
+      "دیفای / اقتصاد غیرمتمرکز",
+      "دیفای",
+      "امور مالی غیرمتمرکز",
+      "مالیه غیرمتمرکز"
+    ],
+    "episodes": [
+      "s04e02",
+      "s04e01",
+      "s03e07",
+      "s03e06"
+    ]
+  },
+  {
+    "slug": "defi-legos",
+    "term": "DeFi Legos",
+    "termFa": "لگوهای دیفای",
+    "definitionEn": "The composability of DeFi protocols, allowing them to be stacked and combined like building blocks.",
+    "definitionFa": "قابلیت ترکیب پروتکل‌های دیفای با یکدیگر، مانند قطعات لگو، برای ساختن سیستم‌های پیچیده‌تر.",
+    "aliases": [
+      "defi legos",
+      "لگوهای دیفای"
+    ],
+    "episodes": [
+      "s04e06"
+    ]
+  },
+  {
+    "slug": "deflationary-pressure",
+    "term": "Deflationary Pressure",
+    "termFa": "فشار دیفلیشنری",
+    "definitionEn": "A force that reduces the circulating supply of ETH over time, caused by burning the base fee.",
+    "definitionFa": "نیرویی که با سوزاندن بیس‌فی، موجودی در گردش اتر را در طول زمان کاهش می‌دهد.",
+    "aliases": [
+      "deflationary pressure",
+      "فشار دیفلیشنری"
+    ],
+    "episodes": [
+      "s05e02"
+    ]
+  },
+  {
+    "slug": "delegated-proof-of-stake",
+    "term": "Delegated Proof of Stake",
+    "termFa": "اثبات سهام نمایندگی‌شده",
+    "definitionEn": "A consensus variant where token holders vote to elect a small set of validators who produce blocks on their behalf.",
+    "definitionFa": "نوعی اثبات سهام که در آن دارندگان توکن با رأی‌گیری تعداد کمی ولیدیتور انتخاب می‌کنند تا بلاک تولید کنند.",
+    "aliases": [
+      "delegated proof of stake",
+      "اثبات سهام نمایندگی شده"
+    ],
+    "episodes": [
+      "s06e02"
+    ]
+  },
+  {
+    "slug": "devcon",
+    "term": "Devcon",
+    "termFa": "دِوکان",
+    "definitionEn": "Ethereum Foundation's flagship developer conference, held every two years in a different global city.",
+    "definitionFa": "کنفرانس اصلی توسعه‌دهندگان اتریوم که هر دو سال یک‌بار در شهری متفاوت برگزار می‌شود.",
+    "aliases": [
+      "devcon",
+      "دوکان"
+    ],
+    "episodes": [
+      "s07e04"
+    ]
+  },
+  {
+    "slug": "devconnect",
+    "term": "Devconnect",
+    "termFa": "دِوکانکت",
+    "definitionEn": "A decentralized week-long gathering in off-years where many teams run their own co-located events.",
+    "definitionFa": "رویداد غیرمتمرکزِ هفتگی در سال‌های میانی که تیم‌های مختلف ایونت‌های موازی برگزار می‌کنند.",
+    "aliases": [
+      "devconnect",
+      "دوکانکت"
+    ],
+    "episodes": [
+      "s07e04"
+    ]
+  },
+  {
+    "slug": "devnet",
+    "term": "Devnet",
+    "termFa": "شبکه توسعه",
+    "definitionEn": "A short-lived, private test network used by developers to run initial tests on a new EIP before it reaches public testnets.",
+    "definitionFa": "شبکه آزمایشی خصوصی و موقتی که توسعه‌دهندگان پیش از انتشار عمومی، تست‌های اولیه یک EIP را روی آن انجام می‌دهند.",
+    "aliases": [
+      "devnet",
+      "شبکه توسعه"
+    ],
+    "episodes": [
+      "s05e01"
+    ]
+  },
+  {
+    "slug": "dex",
+    "term": "DEX",
+    "termFa": "صرافی غیرمتمرکز (دکس)",
+    "definitionEn": "A cryptocurrency exchange that operates via smart contracts without a central authority holding user funds.",
+    "definitionFa": "صرافی‌ای که بدون نگه‌داشتن دارایی کاربران، از طریق قراردادهای هوشمند معاملات را انجام می‌دهد.",
+    "aliases": [
+      "dex",
+      "decentralized exchange",
+      "صرافی غیرمتمرکز",
+      "دکس"
+    ],
+    "episodes": [
+      "s04e03",
+      "s04e01"
+    ]
+  },
+  {
+    "slug": "dex-aggregator",
+    "term": "DEX Aggregator",
+    "termFa": "تجمیع‌کننده صرافی غیرمتمرکز",
+    "definitionEn": "A platform that queries multiple DEXs simultaneously and routes a trade to whichever offers the best rate.",
+    "definitionFa": "پلتفرمی که چندین صرافی غیرمتمرکز را همزمان بررسی می‌کند و معامله را به آنکه بهترین نرخ را دارد هدایت می‌کند.",
+    "aliases": [
+      "dex aggregator",
+      "تجمیع کننده صرافی غیرمتمرکز"
+    ],
+    "episodes": [
+      "s04e04"
+    ]
+  },
+  {
+    "slug": "difficulty",
+    "term": "Difficulty",
+    "termFa": "سختی محاسباتی",
+    "definitionEn": "A network parameter adjusted every 2016 blocks in Bitcoin to keep average block time close to ten minutes.",
+    "definitionFa": "پارامتر شبکه که هر ۲۰۱۶ بلاک در بیت‌کوین تنظیم می‌شود تا میانگین زمان ایجاد هر بلاک نزدیک به ده دقیقه بماند.",
+    "aliases": [
+      "difficulty",
+      "سختی محاسباتی"
+    ],
+    "episodes": [
+      "s01e04"
+    ]
+  },
+  {
+    "slug": "difficulty-adjustment",
+    "term": "Difficulty Adjustment",
+    "termFa": "تنظیم سختی",
+    "definitionEn": "An automatic protocol rule that recalibrates mining difficulty every 2,016 blocks to keep average block time near ten minutes.",
+    "definitionFa": "قانون خودکار پروتکل که هر ۲۰۱۶ بلاک سختی ماینینگ را تنظیم می‌کند تا زمان میانگین بلاک نزدیک به ده دقیقه بماند.",
+    "aliases": [
+      "difficulty adjustment",
+      "تنظیم سختی"
+    ],
+    "episodes": [
+      "s01e06"
+    ]
+  },
+  {
+    "slug": "difficulty-bomb",
+    "term": "Difficulty Bomb",
+    "termFa": "بمب دشواری",
+    "definitionEn": "A mechanism built into Ethereum that gradually increases mining difficulty, forcing the network to transition from Proof of Work to Proof of Stake.",
+    "definitionFa": "مکانیزمی در اتریوم که به‌تدریج سختی استخراج را افزایش می‌دهد و شبکه را به سمت گذار از اثبات کار به اثبات سهام سوق می‌دهد.",
+    "aliases": [
+      "difficulty bomb",
+      "بمب دشواری",
+      "بمب سختی",
+      "بمب دیفیکالتی"
+    ],
+    "episodes": [
+      "s05e01",
+      "s03e03",
+      "s01e09",
+      "sp01"
+    ]
+  },
+  {
+    "slug": "digital-gold",
+    "term": "Digital Gold",
+    "termFa": "طلای دیجیتال",
+    "definitionEn": "A popular metaphor for Bitcoin, highlighting its fixed supply and store-of-value properties as analogous to physical gold.",
+    "definitionFa": "استعاره‌ای رایج برای بیت‌کوین که عرضه محدود و ویژگی ذخیره ارزش آن را به طلای فیزیکی تشبیه می‌کند.",
+    "aliases": [
+      "digital gold",
+      "طلای دیجیتال"
+    ],
+    "episodes": [
+      "s03e05"
+    ]
+  },
+  {
+    "slug": "dorahacks",
+    "term": "DoraHacks",
+    "termFa": "دوراهکس",
+    "definitionEn": "A platform that lists hackathons from various organizers; hackers must follow up with sponsors themselves for prizes.",
+    "definitionFa": "پلتفرمی که هکتان‌های سازمان‌دهندگان مختلف را فهرست می‌کند؛ هکرها باید خودشان برای دریافت جایزه با اسپانسرها پیگیری کنند.",
+    "aliases": [
+      "dorahacks",
+      "دوراهکس"
+    ],
+    "episodes": [
+      "s07e03"
+    ]
+  },
+  {
+    "slug": "double-spend-attack",
+    "term": "Double-Spend Attack",
+    "termFa": "حمله دابل‌اسپند",
+    "definitionEn": "An attempt to spend the same Bitcoin input twice by broadcasting a second conflicting transaction before the first is confirmed.",
+    "definitionFa": "تلاش برای خرج کردن یک ورودی بیتکوین دو بار، با ارسال تراکنش دوم متناقض پیش از تأیید تراکنش اول.",
+    "aliases": [
+      "double-spend attack",
+      "حمله دابل اسپند"
+    ],
+    "episodes": [
+      "s03e01"
+    ]
+  },
+  {
+    "slug": "dunning-kruger-effect",
+    "term": "Dunning-Kruger Effect",
+    "termFa": "افکت دانینگ-کروگر",
+    "definitionEn": "A cognitive bias where people with limited knowledge overestimate their competence in a domain.",
+    "definitionFa": "سوگیری شناختی که طی آن افراد با دانش محدود، شایستگی خود را بیش از حد تخمین می‌زنند.",
+    "aliases": [
+      "dunning-kruger effect",
+      "افکت دانینگ-کروگر"
+    ],
+    "episodes": [
+      "s07e04"
+    ]
+  },
+  {
+    "slug": "eigenlayer",
+    "term": "EigenLayer",
+    "termFa": "آیگن‌لیر",
+    "definitionEn": "A protocol that lets Ethereum validators opt into securing third-party services by extending their existing stake.",
+    "definitionFa": "پروتکلی که به ولیدیتورهای اتریوم اجازه می‌دهد با گسترش استیک موجود، امنیت سرویس‌های شخص ثالث را هم تأمین کنند.",
+    "aliases": [
+      "eigenlayer",
+      "ایگن لیر"
+    ],
+    "episodes": [
+      "s07e02"
+    ]
+  },
+  {
+    "slug": "eigenlayer-avs",
+    "term": "EigenLayer AVS",
+    "termFa": "سرویس اعتبارسنج فعال EigenLayer",
+    "definitionEn": "An EigenLayer module where restaked ETH validators run specialized off-chain services (Active Validator Services) with slashing guarantees for misbehavior.",
+    "definitionFa": "ماژولی از EigenLayer که اعتبارسنج‌های دارای ETH ریستیک‌شده، سرویس‌های تخصصی آف‌چین را با ضمانت جریمه در صورت تخلف اجرا می‌کنند.",
+    "aliases": [
+      "eigenlayer avs",
+      "سرویس اعتبارسنج فعال eigenlayer"
+    ],
+    "episodes": [
+      "s07e06"
+    ]
+  },
+  {
+    "slug": "eigenpod",
+    "term": "EigenPod",
+    "termFa": "آیگن‌پاد",
+    "definitionEn": "A unique smart contract per validator in EigenLayer that manages withdrawal credentials and AVS registration.",
+    "definitionFa": "قرارداد هوشمند منحصربه‌فردِ هر ولیدیتور در آیگن‌لیر که ویدرال کردنشیال و ثبت‌نام در AVS را مدیریت می‌کند.",
+    "aliases": [
+      "eigenpod",
+      "ایگن پاد"
+    ],
+    "episodes": [
+      "s07e02"
+    ]
+  },
+  {
+    "slug": "eip",
+    "term": "EIP",
+    "termFa": "پیشنهاد بهبود اتریوم",
+    "definitionEn": "A formal document proposing a change, standard, or process for the Ethereum protocol, modeled on Python's PEP and Bitcoin's BIP.",
+    "definitionFa": "سندی رسمی برای پیشنهاد تغییر، استاندارد یا فرایند در پروتکل اتریوم که از PEP پایتون و BIP بیت‌کوین الهام گرفته است.",
+    "aliases": [
+      "eip",
+      "ethereum improvement proposal",
+      "پیشنهاد بهبود اتریوم"
+    ],
+    "episodes": [
+      "s05e01"
+    ]
+  },
+  {
+    "slug": "eip-champion",
+    "term": "EIP Champion",
+    "termFa": "قهرمان EIP",
+    "definitionEn": "The person who authors and drives an EIP through every stage of the proposal process until it is finalized or withdrawn.",
+    "definitionFa": "فردی که یک EIP را می‌نویسد و آن را در تمام مراحل فرایند پیشنهاد تا نهایی شدن یا پس‌گرفتن پیش می‌برد.",
+    "aliases": [
+      "eip champion",
+      "قهرمان eip"
+    ],
+    "episodes": [
+      "s05e01"
+    ]
+  },
+  {
+    "slug": "eip-1559",
+    "term": "EIP-1559",
+    "termFa": "EIP-1559",
+    "definitionEn": "An Ethereum protocol change introducing a base fee burn and elastic block size, replacing the simple first-price auction for gas.",
+    "definitionFa": "تغییری در پروتکل اتریوم که کارمزد پایه را می‌سوزاند و سایز بلاک الاستیک را معرفی کرد و حراج ساده‌ی گس را جایگزین کرد.",
+    "aliases": [
+      "eip-1559"
+    ],
+    "episodes": [
+      "s06e01",
+      "s05e01"
+    ]
+  },
+  {
+    "slug": "eip-4337",
+    "term": "EIP-4337",
+    "termFa": "ای‌آی‌پی-۴۳۳۷",
+    "definitionEn": "Application-layer account abstraction standard using bundlers, paymasters, and user operations without protocol changes.",
+    "definitionFa": "استاندارد اکانت ابسترکشن در لایه اپلیکیشن که بدون تغییر پروتکل، از باندلرها، پیمسترها و عملیات کاربر استفاده می‌کند.",
+    "aliases": [
+      "eip-4337",
+      "ای ای پی-4337"
+    ],
+    "episodes": [
+      "s07e05"
+    ]
+  },
+  {
+    "slug": "eip-4844-proto-danksharding",
+    "term": "EIP-4844 / Proto-Danksharding",
+    "termFa": "پروتو-دنک‌شاردینگ / EIP-4844",
+    "definitionEn": "An Ethereum upgrade introducing blob transactions—temporary data chunks on the consensus layer that drastically cut Layer 2 data-availability costs.",
+    "definitionFa": "ارتقایی در اتریوم که بلاب ترنزکشن‌ها را معرفی می‌کند؛ داده‌های موقت روی لایه اجماع که هزینه دیتا اولیبیلیتی لایه دو را به‌شدت کاهش می‌دهد.",
+    "aliases": [
+      "eip-4844 / proto-danksharding",
+      "پروتو-دنک شاردینگ / eip-4844"
+    ],
+    "episodes": [
+      "s07e01"
+    ]
+  },
+  {
+    "slug": "eip-7002",
+    "term": "EIP-7002",
+    "termFa": "ای‌آی‌پی-۷۰۰۲",
+    "definitionEn": "Allows the withdrawal address of a validator to trigger an exit request from the execution layer, without needing validator key access.",
+    "definitionFa": "به آدرس برداشت یک ولیدیتور اجازه می‌دهد از طریق لایه اجرایی درخواست خروج بدهد، بدون نیاز به کلید ولیدیتور.",
+    "aliases": [
+      "eip-7002",
+      "ای ای پی-7002"
+    ],
+    "episodes": [
+      "s07e05"
+    ]
+  },
+  {
+    "slug": "eip-7251",
+    "term": "EIP-7251",
+    "termFa": "ای‌آی‌پی-۷۲۵۱",
+    "definitionEn": "Raises the maximum effective balance per validator from 32 ETH to 2048 ETH, reducing total validator count and network load.",
+    "definitionFa": "حداکثر موجودی مؤثر هر ولیدیتور را از ۳۲ به ۲۰۴۸ اتر افزایش می‌دهد و بار شبکه را کاهش می‌دهد.",
+    "aliases": [
+      "eip-7251",
+      "ای ای پی-7251"
+    ],
+    "episodes": [
+      "s07e05"
+    ]
+  },
+  {
+    "slug": "eip-7549",
+    "term": "EIP-7549",
+    "termFa": "ای‌آی‌پی-۷۵۴۹",
+    "definitionEn": "Removes the committee index from attestations, enabling full BLS signature aggregation and reducing data stored per slot.",
+    "definitionFa": "ایندکس کمیته را از تأییدیه‌ها حذف می‌کند تا امضاهای BLS به‌طور کامل ادغام شوند و حجم داده‌ی ذخیره‌شده در هر اسلات کاهش یابد.",
+    "aliases": [
+      "eip-7549",
+      "ای ای پی-7549"
+    ],
+    "episodes": [
+      "s07e05"
+    ]
+  },
+  {
+    "slug": "eip-7702",
+    "term": "EIP-7702",
+    "termFa": "ای‌آی‌پی-۷۷۰۲",
+    "definitionEn": "EIP allowing an EOA to temporarily delegate its behavior to a smart contract without changing its address.",
+    "definitionFa": "پیشنهادی که به یک EOA اجازه می‌دهد بدون تغییر آدرس، رفتار خود را به یک قرارداد هوشمند واگذار کند.",
+    "aliases": [
+      "eip-7702",
+      "ای ای پی-7702"
+    ],
+    "episodes": [
+      "s07e05"
+    ]
+  },
+  {
+    "slug": "elizaos",
+    "term": "ElizaOS",
+    "termFa": "الیزاOS",
+    "definitionEn": "An open-source AI agent framework popular in crypto that lets developers build agents with on-chain wallets and blockchain-specific plugins.",
+    "definitionFa": "فریم‌ورک متن‌باز عامل هوشمند که در حوزه کریپتو محبوب است و به توسعه‌دهندگان امکان ساخت عامل‌هایی با کیف پول آنچین و پلاگین‌های مختص بلاکچین را می‌دهد.",
+    "aliases": [
+      "elizaos",
+      "الیزاos"
+    ],
+    "episodes": [
+      "s07e06"
+    ]
+  },
+  {
+    "slug": "elliptic-curve-cryptography",
+    "term": "Elliptic Curve Cryptography",
+    "termFa": "رمزنگاری منحنی بیضوی (ECDSA)",
+    "definitionEn": "A public-key cryptography algorithm based on elliptic curves, used by Bitcoin to generate key pairs and verify transaction signatures.",
+    "definitionFa": "الگوریتم رمزنگاری کلید عمومی مبتنی بر منحنی‌های بیضوی که بیت‌کوین برای تولید جفت‌کلید و تأیید امضای تراکنش از آن استفاده می‌کند.",
+    "aliases": [
+      "elliptic curve cryptography",
+      "ecdsa",
+      "رمزنگاری منحنی بیضوی",
+      "elliptic curve digital signature algorithm",
+      "الگوریتم امضای دیجیتال منحنی بیضوی"
+    ],
+    "episodes": [
+      "s03e04",
+      "s03e02",
+      "s01e10"
+    ]
+  },
+  {
+    "slug": "equihash",
+    "term": "Equihash",
+    "termFa": "اکوی‌هش",
+    "definitionEn": "A memory-hard proof-of-work algorithm used by Bitcoin Gold, designed to resist ASIC mining and favor GPU miners.",
+    "definitionFa": "الگوریتم اثبات کار حافظه‌محور که در بیتکوین گلد استفاده می‌شود و در برابر ماینرهای ASIC مقاوم‌تر است.",
+    "aliases": [
+      "equihash",
+      "اکوی هش"
+    ],
+    "episodes": [
+      "s02e02"
+    ]
+  },
+  {
+    "slug": "erc",
+    "term": "ERC",
+    "termFa": "درخواست نظر اتریوم",
+    "definitionEn": "An application-layer EIP that defines standards for smart contracts, most famously the ERC-20 token interface.",
+    "definitionFa": "نوعی EIP در لایه اپلیکیشن که استانداردهایی برای قراردادهای هوشمند تعریف می‌کند؛ مشهورترین آن استاندارد توکن ERC-20 است.",
+    "aliases": [
+      "erc",
+      "ethereum request for comment",
+      "درخواست نظر اتریوم"
+    ],
+    "episodes": [
+      "s05e01"
+    ]
+  },
+  {
+    "slug": "erc-20",
+    "term": "ERC-20",
+    "termFa": "ERC-20",
+    "definitionEn": "The standard interface for fungible tokens on Ethereum, defining functions like transfer, balanceOf, approve, and allowance.",
+    "definitionFa": "استاندارد رابط توکن‌های مثلی در اتریوم که توابعی مانند transfer، balanceOf، approve و allowance را تعریف می‌کند.",
+    "aliases": [
+      "erc-20"
+    ],
+    "episodes": [
+      "s05e01"
+    ]
+  },
+  {
+    "slug": "erc-20-permit",
+    "term": "ERC-20 Permit",
+    "termFa": "پرمیت ERC-20",
+    "definitionEn": "An ERC-20 extension allowing token approval via a signed off-chain message instead of an on-chain transaction, commonly exploited by phishing sites.",
+    "definitionFa": "افزونه‌ای برای ERC-20 که اجازه می‌دهد توکن از طریق امضای پیام آفچین تأیید شود؛ سایت‌های فیشینگ اغلب از این ویژگی سوءاستفاده می‌کنند.",
+    "aliases": [
+      "erc-20 permit",
+      "پرمیت erc-20"
+    ],
+    "episodes": [
+      "s07e01"
+    ]
+  },
+  {
+    "slug": "etf",
+    "term": "ETF",
+    "termFa": "صندوق قابل معامله در بورس",
+    "definitionEn": "A regulated financial product tradeable on stock exchanges; a Bitcoin ETF would let investors gain exposure without holding the coin directly.",
+    "definitionFa": "یک محصول مالی تحت نظارت که روی بورس معامله می‌شود؛ ETF بیت‌کوین سرمایه‌گذاران را بدون نگهداری مستقیم کوین در معرض قیمت آن قرار می‌دهد.",
+    "aliases": [
+      "etf",
+      "exchange-traded fund",
+      "صندوق قابل معامله در بورس"
+    ],
+    "episodes": [
+      "s01e04",
+      "s01e03"
+    ]
+  },
+  {
+    "slug": "ethcc",
+    "term": "EthCC",
+    "termFa": "ایت‌سی‌سی",
+    "definitionEn": "Ethereum Community Conference, an annual European gathering focused on Ethereum research and development.",
+    "definitionFa": "کنفرانس سالانه اروپایی اتریوم با تمرکز بر تحقیق و توسعه، معمولاً در فرانسه یا بلژیک.",
+    "aliases": [
+      "ethcc",
+      "ایت سی سی"
+    ],
+    "episodes": [
+      "s07e04"
+    ]
+  },
+  {
+    "slug": "ethereum-cat-herders",
+    "term": "Ethereum Cat Herders",
+    "termFa": "گربه‌چران‌های اتریوم",
+    "definitionEn": "A community group founded in 2019 by Hudson Jameson to coordinate EIP processes, ACD calls, and hard fork logistics.",
+    "definitionFa": "گروه جامعه‌محوری که هادسون جیمسون در ۲۰۱۹ تأسیس کرد تا فرایند EIPها، جلسات ACD و لجستیک هارد فورک‌ها را هماهنگ کند.",
+    "aliases": [
+      "ethereum cat herders",
+      "گربه چران های اتریوم"
+    ],
+    "episodes": [
+      "s05e01"
+    ]
+  },
+  {
+    "slug": "ethereum-classic",
+    "term": "Ethereum Classic",
+    "termFa": "اتریوم کلاسیک",
+    "definitionEn": "The original Ethereum chain that continued without the 2016 hard fork, maintained by miners who opposed the rollback.",
+    "definitionFa": "زنجیره‌ی اصلی اتریوم که بدون هارد فورک ۲۰۱۶ ادامه یافت و توسط ماینرهایی که مخالف برگشت بودند حفظ شد.",
+    "aliases": [
+      "ethereum classic",
+      "اتریوم کلاسیک"
+    ],
+    "episodes": [
+      "s01e02"
+    ]
+  },
+  {
+    "slug": "ethereum-foundation-scholarship",
+    "term": "Ethereum Foundation Scholarship",
+    "termFa": "اسکالرشیپ ایتریوم فاندیشن",
+    "definitionEn": "Grants from the Ethereum Foundation covering travel, hotel, and ticket costs for underrepresented Devcon attendees.",
+    "definitionFa": "کمک‌هزینه‌ای از ایتریوم فاندیشن که هزینه سفر، هتل و بلیط Devcon را برای گروه‌های کمتر نمایان پوشش می‌دهد.",
+    "aliases": [
+      "ethereum foundation scholarship",
+      "اسکالرشیپ ایتریوم فاندیشن"
+    ],
+    "episodes": [
+      "s07e04"
+    ]
+  },
+  {
+    "slug": "ethereum-name-service",
+    "term": "Ethereum Name Service",
+    "termFa": "سرویس نام اتریوم",
+    "definitionEn": "A decentralized naming system that maps human-readable names like 'name.eth' to Ethereum addresses and other resources.",
+    "definitionFa": "سیستم نام‌گذاری غیرمتمرکزی که نام‌های خوانا مثل «name.eth» را به آدرس‌های اتریوم و منابع دیگر نگاشت می‌کند.",
+    "aliases": [
+      "ethereum name service",
+      "ens",
+      "سرویس نام اتریوم"
+    ],
+    "episodes": [
+      "s03e03"
+    ]
+  },
+  {
+    "slug": "ethglobal",
+    "term": "ETHGlobal",
+    "termFa": "ایت‌گلوبال",
+    "definitionEn": "Organization that runs Ethereum hackathons and 'ETH + city' events worldwide.",
+    "definitionFa": "سازمانی که هکاتون‌های اتریوم و رویدادهای «ETH + شهر» را در سراسر جهان برگزار می‌کند.",
+    "aliases": [
+      "ethglobal",
+      "ایت گلوبال"
+    ],
+    "episodes": [
+      "s07e04",
+      "s07e03"
+    ]
+  },
+  {
+    "slug": "ethlance",
+    "term": "ETHLance",
+    "termFa": "ایت‌لنس",
+    "definitionEn": "A fully decentralized freelancing dApp on Ethereum where project data is stored in smart contracts and no platform fee is charged.",
+    "definitionFa": "یک پلتفرم فریلنسینگ کاملاً غیرمتمرکز روی اتریوم که داده‌های پروژه را در قرارداد هوشمند ذخیره می‌کند و کارمزد پلتفرم نمی‌گیرد.",
+    "aliases": [
+      "ethlance",
+      "ایت لنس"
+    ],
+    "episodes": [
+      "s03e06"
+    ]
+  },
+  {
+    "slug": "evm",
+    "term": "EVM",
+    "termFa": "ای‌وی‌ام / ماشین مجازی اتریوم",
+    "definitionEn": "The stack-based virtual machine that executes smart contract opcodes on every Ethereum node.",
+    "definitionFa": "ماشین مجازی مبتنی بر پشته که کدهای قرارداد هوشمند را روی تمام نودهای اتریوم اجرا می‌کند.",
+    "aliases": [
+      "evm",
+      "ethereum virtual machine",
+      "ای وی ام / ماشین مجازی اتریوم"
+    ],
+    "episodes": [
+      "s05e02"
+    ]
+  },
+  {
+    "slug": "execution-layer",
+    "term": "Execution Layer",
+    "termFa": "لایه اجرا",
+    "definitionEn": "The part of an Ethereum full node (e.g., Geth, Nethermind) that runs the EVM, processes transactions, and maintains world state.",
+    "definitionFa": "بخشی از نود کامل اتریوم (مثل Geth یا Nethermind) که EVM را اجرا می‌کند، تراکنش‌ها را پردازش می‌کند و وضعیت شبکه را نگه می‌دارد.",
+    "aliases": [
+      "execution layer",
+      "لایه اجرا"
+    ],
+    "episodes": [
+      "s07e01"
+    ]
+  },
+  {
+    "slug": "facial-recognition",
+    "term": "Facial Recognition",
+    "termFa": "تشخیص چهره",
+    "definitionEn": "AI-powered surveillance technology that identifies individuals from camera footage, raising significant privacy concerns.",
+    "definitionFa": "فناوری نظارتی مبتنی بر هوش مصنوعی که افراد را از تصاویر دوربین شناسایی می‌کند و نگرانی‌های جدی حریم خصوصی ایجاد می‌کند.",
+    "aliases": [
+      "facial recognition",
+      "تشخیص چهره"
+    ],
+    "episodes": [
+      "s03e05"
+    ]
+  },
+  {
+    "slug": "factory-contract",
+    "term": "Factory Contract",
+    "termFa": "قرارداد کارخانه",
+    "definitionEn": "A master smart contract that deploys a new, independent pool contract for each token pair registered on a DEX.",
+    "definitionFa": "قرارداد هوشمند اصلی که برای هر جفت توکن ثبت‌شده روی یک صرافی غیرمتمرکز، یک قرارداد استخر مستقل جدید ایجاد می‌کند.",
+    "aliases": [
+      "factory contract",
+      "قرارداد کارخانه"
+    ],
+    "episodes": [
+      "s04e04"
+    ]
+  },
+  {
+    "slug": "fast-sync",
+    "term": "Fast Sync",
+    "termFa": "فست‌سینک (همگام‌سازی سریع)",
+    "definitionEn": "An Ethereum node sync method that downloads the current state directly from peers instead of replaying every historical transaction.",
+    "definitionFa": "روش همگام‌سازی نود اتریوم که وضعیت جاری را مستقیماً از نودهای دیگر دریافت می‌کند بدون اینکه تمام تراکنش‌های تاریخی را مجدداً اجرا کند.",
+    "aliases": [
+      "fast sync",
+      "فست سینک",
+      "همگام سازی سریع"
+    ],
+    "episodes": [
+      "s06e01"
+    ]
+  },
+  {
+    "slug": "fee-market",
+    "term": "Fee Market",
+    "termFa": "بازار کارمزد",
+    "definitionEn": "The competitive system where users bid transaction fees to have their transactions confirmed faster by miners.",
+    "definitionFa": "سیستم رقابتی که در آن کاربران برای تأیید سریع‌تر تراکنش‌هایشان توسط ماینرها، کارمزد پیشنهاد می‌دهند.",
+    "aliases": [
+      "fee market",
+      "بازار کارمزد"
+    ],
+    "episodes": [
+      "s02e03"
+    ]
+  },
+  {
+    "slug": "fiat-money",
+    "term": "Fiat Money",
+    "termFa": "پول فیات",
+    "definitionEn": "Government-issued currency not backed by a physical commodity, whose supply central banks can expand without limit.",
+    "definitionFa": "ارز صادرشده توسط دولت که پشتوانه کالایی ندارد و بانک‌های مرکزی می‌توانند بدون محدودیت آن را چاپ کنند.",
+    "aliases": [
+      "fiat money",
+      "پول فیات"
+    ],
+    "episodes": [
+      "s03e05"
+    ]
+  },
+  {
+    "slug": "fincen",
+    "term": "FinCEN",
+    "termFa": "فینسن",
+    "definitionEn": "The US Financial Crimes Enforcement Network, whose money-transmitter rules may apply to Lightning node operators.",
+    "definitionFa": "شبکه اجرای جرایم مالی آمریکا که قوانین انتقال پول آن ممکن است بر اپراتورهای نود لایتنینگ اعمال شود.",
+    "aliases": [
+      "fincen",
+      "فینسن"
+    ],
+    "episodes": [
+      "s03e02"
+    ]
+  },
+  {
+    "slug": "first-price-auction",
+    "term": "First-Price Auction",
+    "termFa": "حراج قیمت اولی",
+    "definitionEn": "The legacy fee mechanism where the highest bidder wins block inclusion, often causing overpayment.",
+    "definitionFa": "مکانیزم کارمزد قدیمی که در آن هرکس بیشترین قیمت را پیشنهاد دهد تراکنشش پذیرفته می‌شود و معمولاً منجر به اوورپی می‌شود.",
+    "aliases": [
+      "first-price auction",
+      "حراج قیمت اولی"
+    ],
+    "episodes": [
+      "s05e02"
+    ]
+  },
+  {
+    "slug": "flash-loan",
+    "term": "Flash Loan",
+    "termFa": "وام لحظه‌ای / فلش لون",
+    "definitionEn": "An uncollateralized loan borrowed and repaid within a single Ethereum transaction block.",
+    "definitionFa": "وامی بدون وثیقه که در یک تراکنش اتریوم گرفته و بازپرداخت می‌شود.",
+    "aliases": [
+      "flash loan",
+      "وام لحظه ای / فلش لون",
+      "وام انی / فلش لون",
+      "فلش لون",
+      "وام لحظه ای"
+    ],
+    "episodes": [
+      "s04e06",
+      "s04e02",
+      "s04e01"
+    ]
+  },
+  {
+    "slug": "force-close",
+    "term": "Force Close",
+    "termFa": "بستن یک‌طرفه",
+    "definitionEn": "One channel party unilaterally broadcasts the latest commitment transaction on-chain, triggering time-locks before funds can be spent.",
+    "definitionFa": "یکی از طرفین بدون رضایت دیگری آخرین تراکنش کامیتمنت را روی زنجیر منتشر می‌کند و تایم‌لاک فعال می‌شود.",
+    "aliases": [
+      "force close",
+      "بستن یک طرفه"
+    ],
+    "episodes": [
+      "s06e05"
+    ]
+  },
+  {
+    "slug": "fractional-reserve-banking",
+    "term": "Fractional Reserve Banking",
+    "termFa": "بانکداری ذخیره کسری",
+    "definitionEn": "A banking system where banks hold only a fraction of deposits as reserves and lend out the rest.",
+    "definitionFa": "سیستمی که در آن بانک‌ها تنها بخشی از سپرده‌ها را نگه می‌دارند و مابقی را وام می‌دهند.",
+    "aliases": [
+      "fractional reserve banking",
+      "بانکداری ذخیره کسری"
+    ],
+    "episodes": [
+      "s03e07"
+    ]
+  },
+  {
+    "slug": "front-running",
+    "term": "Front-Running",
+    "termFa": "جلو زدن (فرانت‌رانینگ)",
+    "definitionEn": "Exploiting advance knowledge of a pending transaction to place a competing order first and capture its profit.",
+    "definitionFa": "سوءاستفاده از اطلاع قبلی از یک تراکنش در انتظار، برای ثبت سفارش رقیب و کسب سود آن.",
+    "aliases": [
+      "front-running",
+      "جلو زدن",
+      "فرانت رانینگ"
+    ],
+    "episodes": [
+      "s04e03"
+    ]
+  },
+  {
+    "slug": "fully-homomorphic-encryption",
+    "term": "Fully Homomorphic Encryption",
+    "termFa": "رمزنگاری هومومورفیک کامل",
+    "definitionEn": "A cryptographic technique that allows computations to be performed directly on encrypted data, returning an encrypted result without exposing the plaintext.",
+    "definitionFa": "روشی رمزنگاری که اجازه می‌دهد محاسبات مستقیماً روی داده رمزشده انجام شود و نتیجه رمزشده بازگردد بدون آن‌که داده خام افشا شود.",
+    "aliases": [
+      "fully homomorphic encryption",
+      "fhe",
+      "رمزنگاری هومومورفیک کامل"
+    ],
+    "episodes": [
+      "s07e06"
+    ]
+  },
+  {
+    "slug": "fundamental-analysis",
+    "term": "Fundamental Analysis",
+    "termFa": "تحلیل فاندامنتال",
+    "definitionEn": "Evaluating a cryptocurrency based on news, project updates, team, and real-world adoption rather than price charts.",
+    "definitionFa": "ارزیابی یک رمزارز بر اساس اخبار، به‌روزرسانی پروژه، تیم و کاربرد واقعی، نه نمودار قیمت.",
+    "aliases": [
+      "fundamental analysis",
+      "تحلیل فاندامنتال"
+    ],
+    "episodes": [
+      "s01e01"
+    ]
+  },
+  {
+    "slug": "funding-transaction",
+    "term": "Funding Transaction",
+    "termFa": "تراکنش فاندینگ",
+    "definitionEn": "The on-chain transaction that locks funds into a 2-of-2 multisig address to open a Lightning channel.",
+    "definitionFa": "تراکنشی روی زنجیره که وجوه را در یک آدرس چند امضایی دو از دو قفل می‌کند تا کانال لایتنینگ باز شود.",
+    "aliases": [
+      "funding transaction",
+      "تراکنش فاندینگ"
+    ],
+    "episodes": [
+      "s06e03"
+    ]
+  },
+  {
+    "slug": "fungibility",
+    "term": "Fungibility",
+    "termFa": "تعویض‌پذیری (فانجیبیلیتی)",
+    "definitionEn": "The property that every unit of a currency is interchangeable and equal in value regardless of its history.",
+    "definitionFa": "ویژگی‌ای که بر اساس آن هر واحد از یک ارز صرف‌نظر از تاریخچه‌اش با واحد دیگر برابر و قابل تعویض است.",
+    "aliases": [
+      "fungibility",
+      "تعویض پذیری",
+      "فانجیبیلیتی"
+    ],
+    "episodes": [
+      "s07e07",
+      "s01e06"
+    ]
+  },
+  {
+    "slug": "gas",
+    "term": "Gas",
+    "termFa": "گس",
+    "definitionEn": "A unit measuring the computational effort required to execute operations on the Ethereum network.",
+    "definitionFa": "واحدی برای سنجش میزان تلاش محاسباتی لازم برای اجرای عملیات در شبکه‌ی اتریوم.",
+    "aliases": [
+      "gas"
+    ],
+    "episodes": [
+      "s05e02",
+      "s01e02"
+    ]
+  },
+  {
+    "slug": "gas-limit",
+    "term": "Gas Limit",
+    "termFa": "گس لیمیت",
+    "definitionEn": "The maximum amount of gas a user is willing to consume for a single transaction.",
+    "definitionFa": "حداکثر مقدار گسی که کاربر حاضر است برای یک تراکنش مصرف کند.",
+    "aliases": [
+      "gas limit",
+      "گس لیمیت"
+    ],
+    "episodes": [
+      "s05e02"
+    ]
+  },
+  {
+    "slug": "gas-price",
+    "term": "Gas Price",
+    "termFa": "گس پرایس",
+    "definitionEn": "The amount of ether a user offers to pay per unit of gas, used in the legacy fee model.",
+    "definitionFa": "مقدار اتری که کاربر حاضر است به ازای هر واحد گس بپردازد؛ مفهومی مربوط به مدل کارمزد قدیمی.",
+    "aliases": [
+      "gas price",
+      "گس پرایس"
+    ],
+    "episodes": [
+      "s05e02"
+    ]
+  },
+  {
+    "slug": "gcas",
+    "term": "GCAS",
+    "termFa": "مدرسه مطالعات عالی جهانی",
+    "definitionEn": "A Dublin-based peer-to-peer academic institution co-founded by Creston Davis, operating outside traditional university structures.",
+    "definitionFa": "نهاد آکادمیک همتا‌به‌همتا مستقر در دوبلین که کرستون دیویس از بنیان‌گذاران آن است و خارج از ساختار دانشگاه‌های سنتی فعالیت می‌کند.",
+    "aliases": [
+      "gcas",
+      "global center for advanced studies",
+      "مدرسه مطالعات عالی جهانی"
+    ],
+    "episodes": [
+      "s03e07"
+    ]
+  },
+  {
+    "slug": "gitcoin",
+    "term": "Gitcoin",
+    "termFa": "گیت‌کوین",
+    "definitionEn": "An Ethereum-based platform connecting developers to open-source bounties, grants, and bug-bounty rewards tied to GitHub issues.",
+    "definitionFa": "پلتفرمی مبتنی بر اتریوم که توسعه‌دهندگان را با باگ‌بانتی‌ها، گرنت‌ها و پروژه‌های متن‌باز روی گیت‌هاب مرتبط می‌کند.",
+    "aliases": [
+      "gitcoin",
+      "گیت کوین"
+    ],
+    "episodes": [
+      "s03e06",
+      "s03e03"
+    ]
+  },
+  {
+    "slug": "gossip-protocol",
+    "term": "Gossip Protocol",
+    "termFa": "پروتکل گاسیپ",
+    "definitionEn": "The peer-to-peer messaging system Lightning nodes use to broadcast node announcements, channel announcements, and channel updates across the network.",
+    "definitionFa": "سیستم پیام‌رسانی همتا‌به‌همتا که نودهای لایتنینگ با آن اطلاعات نود، کانال و به‌روزرسانی‌ها را در شبکه پخش می‌کنند.",
+    "aliases": [
+      "gossip protocol",
+      "پروتکل گاسیپ"
+    ],
+    "episodes": [
+      "s06e05"
+    ]
+  },
+  {
+    "slug": "governance-token",
+    "term": "Governance Token",
+    "termFa": "توکن حکمرانی",
+    "definitionEn": "A token that grants holders voting rights over protocol upgrades and parameter changes.",
+    "definitionFa": "توکنی که به دارندگانش حق رأی برای تغییر پارامترها و ارتقای پروتکل می‌دهد.",
+    "aliases": [
+      "governance token",
+      "توکن حکمرانی",
+      "توکن حاکمیتی"
+    ],
+    "episodes": [
+      "s04e06",
+      "s04e02"
+    ]
+  },
+  {
+    "slug": "gpu-mining",
+    "term": "GPU Mining",
+    "termFa": "ماینینگ با کارت گرافیک",
+    "definitionEn": "Using graphics cards to mine cryptocurrencies, offering flexibility across multiple algorithms and resale value.",
+    "definitionFa": "استفاده از کارت‌های گرافیک برای استخراج رمزارز، با قابلیت تعویض الگوریتم و فروش دست‌دوم.",
+    "aliases": [
+      "gpu mining",
+      "ماینینگ با کارت گرافیک"
+    ],
+    "episodes": [
+      "s01e09"
+    ]
+  },
+  {
+    "slug": "gresham-s-law",
+    "term": "Gresham's Law",
+    "termFa": "قانون گرشام",
+    "definitionEn": "The economic principle that 'bad money drives out good money' when both circulate at the same face value.",
+    "definitionFa": "اصل اقتصادی که می‌گوید «پول بد، پول خوب را از بازار حذف می‌کند» وقتی هر دو با ارزش اسمی یکسان در گردش باشند.",
+    "aliases": [
+      "gresham's law",
+      "قانون گرشام"
+    ],
+    "episodes": [
+      "s04e01"
+    ]
+  },
+  {
+    "slug": "halving",
+    "term": "Halving",
+    "termFa": "هاوینگ (نصف شدن پاداش)",
+    "definitionEn": "A pre-programmed Bitcoin event, occurring roughly every four years, that cuts the block reward miners receive in half.",
+    "definitionFa": "رویدادی از پیش برنامه‌ریزی‌شده در بیت‌کوین که هر چهار سال یک‌بار پاداش ماینرها را به نصف کاهش می‌دهد.",
+    "aliases": [
+      "halving",
+      "هاوینگ",
+      "نصف شدن پاداش"
+    ],
+    "episodes": [
+      "s03e05",
+      "s03e04",
+      "s01e06"
+    ]
+  },
+  {
+    "slug": "hard-cap",
+    "term": "Hard Cap",
+    "termFa": "سقف سخت",
+    "definitionEn": "The maximum amount of funds an ICO will accept; once reached, no further contributions are taken.",
+    "definitionFa": "حداکثر مبلغی که یک ICO می‌پذیرد؛ پس از رسیدن به آن، دیگر سرمایه‌ای دریافت نمی‌شود.",
+    "aliases": [
+      "hard cap",
+      "سقف سخت"
+    ],
+    "episodes": [
+      "s01e08"
+    ]
+  },
+  {
+    "slug": "hard-fork",
+    "term": "Hard Fork",
+    "termFa": "هارد فورک",
+    "definitionEn": "A backward-incompatible upgrade to a blockchain protocol requiring all nodes to update to continue on the main chain.",
+    "definitionFa": "ارتقایی ناسازگار با نسخه‌های قبلی پروتکل بلاکچین که همه نودها باید آن را اعمال کنند تا در زنجیره اصلی بمانند.",
+    "aliases": [
+      "hard fork",
+      "هارد فورک"
+    ],
+    "episodes": [
+      "s05e01",
+      "s03e04",
+      "s02e03",
+      "s02e02",
+      "s02e01",
+      "s01e05",
+      "s01e02"
+    ]
+  },
+  {
+    "slug": "hardware-wallet",
+    "term": "Hardware Wallet",
+    "termFa": "کیف‌پول سخت‌افزاری",
+    "definitionEn": "A physical device that stores private keys offline, protecting them from internet-based attacks.",
+    "definitionFa": "دستگاه فیزیکی که کلیدهای خصوصی را آفلاین نگه می‌دارد و آن‌ها را از حملات اینترنتی محافظت می‌کند.",
+    "aliases": [
+      "hardware wallet",
+      "کیف پول سخت افزاری"
+    ],
+    "episodes": [
+      "s02e03",
+      "s01e07"
+    ]
+  },
+  {
+    "slug": "hash-collision",
+    "term": "Hash Collision",
+    "termFa": "تصادم هش",
+    "definitionEn": "When two different inputs produce the same hash output, undermining a hash function's security.",
+    "definitionFa": "زمانی که دو ورودی متفاوت یک خروجی هش یکسان تولید می‌کنند و امنیت تابع هش را زیر سؤال می‌برد.",
+    "aliases": [
+      "hash collision",
+      "تصادم هش"
+    ],
+    "episodes": [
+      "s01e07"
+    ]
+  },
+  {
+    "slug": "hash-rate",
+    "term": "Hash Rate",
+    "termFa": "هش‌ریت",
+    "definitionEn": "The total computational power being used to mine and process Bitcoin transactions, reflecting network security and miner participation.",
+    "definitionFa": "مجموع توان محاسباتی که برای استخراج و پردازش تراکنش‌های بیت‌کوین استفاده می‌شود و نشان‌دهنده امنیت شبکه است.",
+    "aliases": [
+      "hash rate",
+      "هش ریت"
+    ],
+    "episodes": [
+      "s03e05"
+    ]
+  },
+  {
+    "slug": "hashcash",
+    "term": "Hashcash",
+    "termFa": "هش‌کش",
+    "definitionEn": "A proof-of-work algorithm invented by Adam Back in 1997 to limit email spam, later adapted as the foundation of Bitcoin mining.",
+    "definitionFa": "الگوریتم اثبات کاری که آدام بک در ۱۹۹۷ برای مقابله با اسپم ایمیل اختراع کرد و بعداً پایه ماینینگ بیت‌کوین شد.",
+    "aliases": [
+      "hashcash",
+      "هش کش"
+    ],
+    "episodes": [
+      "s03e04",
+      "s01e04"
+    ]
+  },
+  {
+    "slug": "hashrate",
+    "term": "Hashrate",
+    "termFa": "هش‌ریت",
+    "definitionEn": "The total computational power being used by all miners on the network to find valid block hashes.",
+    "definitionFa": "مجموع قدرت محاسباتی که همهٔ ماینرهای شبکه برای یافتن هش‌های معتبر به کار می‌برند.",
+    "aliases": [
+      "hashrate",
+      "هش ریت"
+    ],
+    "episodes": [
+      "s01e06"
+    ]
+  },
+  {
+    "slug": "hd-wallet",
+    "term": "HD Wallet",
+    "termFa": "کیف‌پول سلسله‌مراتبی-قطعی",
+    "definitionEn": "A wallet that generates an unlimited tree of key pairs from a single master seed, simplifying backup.",
+    "definitionFa": "کیف‌پولی که از یک seed اصلی، درختی نامحدود از جفت‌کلید تولید می‌کند و پشتیبان‌گیری را ساده می‌سازد.",
+    "aliases": [
+      "hd wallet",
+      "hierarchical deterministic wallet",
+      "کیف پول سلسله مراتبی-قطعی"
+    ],
+    "episodes": [
+      "s01e07"
+    ]
+  },
+  {
+    "slug": "hodl",
+    "term": "HODL",
+    "termFa": "هودل",
+    "definitionEn": "A strategy of holding cryptocurrency long-term rather than selling, originating from a misspelled forum post.",
+    "definitionFa": "استراتژی نگه‌داشتن رمزارز در بلندمدت به جای فروش، که از یک تایپ اشتباه در فروم بیتکوین‌تاک باب شد.",
+    "aliases": [
+      "hodl",
+      "هودل"
+    ],
+    "episodes": [
+      "sp01"
+    ]
+  },
+  {
+    "slug": "htlc",
+    "term": "HTLC",
+    "termFa": "قرارداد قفل زمانی-هشی",
+    "definitionEn": "Hash Time-Locked Contract: a conditional payment locked by both a secret hash and a time-limit, enabling trustless multi-hop Lightning routing.",
+    "definitionFa": "قراردادی که پرداخت را با یک هش مخفی و محدودیت زمانی قفل می‌کند و مسیریابی چندگامه‌ی لایتنینگ را ممکن می‌سازد.",
+    "aliases": [
+      "htlc",
+      "قرارداد قفل زمانی-هشی",
+      "hashed timelock contract",
+      "قرارداد هش تایم لاک",
+      "hash time locked contract",
+      "قرارداد قفل شده با هش و زمان"
+    ],
+    "episodes": [
+      "s06e05",
+      "s06e04",
+      "s06e03"
+    ]
+  },
+  {
+    "slug": "ico",
+    "term": "ICO",
+    "termFa": "عرضه اولیه سکه (ICO)",
+    "definitionEn": "Initial Coin Offering; a fundraising method where a project sells newly created tokens to the public.",
+    "definitionFa": "روشی برای جذب سرمایه که در آن یک پروژه توکن‌های جدید خود را به عموم می‌فروشد.",
+    "aliases": [
+      "ico",
+      "عرضه اولیه سکه",
+      "initial coin offering",
+      "عرضه اولیه کوین",
+      "ای سی او"
+    ],
+    "episodes": [
+      "s02e01",
+      "s01e10",
+      "s01e08",
+      "s01e03",
+      "s01e02",
+      "s01e01"
+    ]
+  },
+  {
+    "slug": "iexec",
+    "term": "iExec",
+    "termFa": "آی‌اکزک",
+    "definitionEn": "A decentralized cloud computing platform with a data-protection layer for confidential computing on-chain.",
+    "definitionFa": "پلتفرم محاسبات ابری غیرمتمرکز با لایه حفاظت از داده برای محاسبات محرمانه روی زنجیره.",
+    "aliases": [
+      "iexec",
+      "ای اکزک"
+    ],
+    "episodes": [
+      "s07e03"
+    ]
+  },
+  {
+    "slug": "impermanent-loss",
+    "term": "Impermanent Loss",
+    "termFa": "ضرر ناپایدار",
+    "definitionEn": "The temporary loss an LP experiences when the price ratio of pooled tokens diverges from their ratio at deposit time.",
+    "definitionFa": "زیانی موقت که فراهم‌آورنده نقدینگی هنگام تغییر نسبت قیمت توکن‌های استخر نسبت به زمان واریز تجربه می‌کند.",
+    "aliases": [
+      "impermanent loss",
+      "ضرر ناپایدار"
+    ],
+    "episodes": [
+      "s04e04"
+    ]
+  },
+  {
+    "slug": "inbound-liquidity",
+    "term": "Inbound Liquidity",
+    "termFa": "نقدینگی ورودی",
+    "definitionEn": "The capacity on the remote side of a Lightning channel that allows a node to receive payments from the network.",
+    "definitionFa": "ظرفیت موجود در سمت طرف مقابل کانال که به نود اجازه می‌دهد پرداخت دریافت کند.",
+    "aliases": [
+      "inbound liquidity",
+      "نقدینگی ورودی"
+    ],
+    "episodes": [
+      "s06e05"
+    ]
+  },
+  {
+    "slug": "infura",
+    "term": "Infura",
+    "termFa": "اینفیورا",
+    "definitionEn": "A ConsenSys service providing API access to Ethereum nodes, allowing developers to interact with the network without running their own node.",
+    "definitionFa": "سرویس کانسنسیس که از طریق API به نودهای اتریوم دسترسی می‌دهد و نیاز به اجرای نود شخصی را برطرف می‌کند.",
+    "aliases": [
+      "infura",
+      "اینفیورا"
+    ],
+    "episodes": [
+      "sp01"
+    ]
+  },
+  {
+    "slug": "invoice",
+    "term": "Invoice",
+    "termFa": "اینویس (صورت‌حساب)",
+    "definitionEn": "A payment request generated by the recipient containing a payment hash, amount, and expiry, typically encoded as a QR code.",
+    "definitionFa": "درخواست پرداختی که گیرنده تولید می‌کند و شامل هش پرداخت، مبلغ و زمان انقضاست؛ معمولاً به‌صورت QR کد نمایش داده می‌شود.",
+    "aliases": [
+      "invoice",
+      "اینویس",
+      "صورت حساب"
+    ],
+    "episodes": [
+      "s06e04"
+    ]
+  },
+  {
+    "slug": "ipfs",
+    "term": "IPFS",
+    "termFa": "آی‌پی‌اف‌اس",
+    "definitionEn": "A decentralized peer-to-peer file storage protocol that lets users share and retrieve data without centralized servers.",
+    "definitionFa": "پروتکل ذخیره‌سازی فایل غیرمتمرکز و همتا‌به‌همتا که امکان اشتراک و بازیابی داده بدون سرور مرکزی را فراهم می‌کند.",
+    "aliases": [
+      "ipfs",
+      "interplanetary file system",
+      "ای پی اف اس"
+    ],
+    "episodes": [
+      "s01e08"
+    ]
+  },
+  {
+    "slug": "ipo",
+    "term": "IPO",
+    "termFa": "عرضه اولیه عمومی (IPO)",
+    "definitionEn": "The first sale of a company's shares to the public on a stock exchange.",
+    "definitionFa": "اولین فروش سهام یک شرکت به عموم مردم در بورس اوراق بهادار.",
+    "aliases": [
+      "ipo",
+      "initial public offering",
+      "عرضه اولیه عمومی"
+    ],
+    "episodes": [
+      "s03e07"
+    ]
+  },
+  {
+    "slug": "knowledge-graph",
+    "term": "Knowledge Graph",
+    "termFa": "نالج‌گراف",
+    "definitionEn": "A structured network of entities and their relationships (subject–predicate–object triples) that gives AI agents richer, more logical memory than vector search alone.",
+    "definitionFa": "شبکه‌ای ساختاریافته از موجودیت‌ها و روابط آن‌ها (سه‌تایی‌های موضوع–محمول–مفعول) که حافظه‌ای غنی‌تر و منطقی‌تر از جستجوی برداری صرف به عامل‌های هوشمند می‌دهد.",
+    "aliases": [
+      "knowledge graph",
+      "نالج گراف"
+    ],
+    "episodes": [
+      "s07e06"
+    ]
+  },
+  {
+    "slug": "kyc",
+    "term": "KYC",
+    "termFa": "احراز هویت مشتری (کی‌وای‌سی)",
+    "definitionEn": "Regulatory requirements forcing financial and crypto platforms to verify users' identities before allowing transactions.",
+    "definitionFa": "الزامات نظارتی که پلتفرم‌های مالی و رمزارز را ملزم می‌کند پیش از انجام تراکنش، هویت کاربران را تأیید کنند.",
+    "aliases": [
+      "kyc",
+      "know your customer",
+      "احراز هویت مشتری",
+      "کی وای سی"
+    ],
+    "episodes": [
+      "s03e05"
+    ]
+  },
+  {
+    "slug": "kzg-commitment",
+    "term": "KZG Commitment",
+    "termFa": "تعهد KZG",
+    "definitionEn": "A cryptographic commitment scheme used in Ethereum blobs enabling efficient proof of data availability without storing all data.",
+    "definitionFa": "روشی رمزنگاری برای تعهد به داده که در بلاب‌های اتریوم استفاده می‌شود و اثبات دسترس‌پذیری داده را بدون ذخیره‌سازی کامل آن ممکن می‌سازد.",
+    "aliases": [
+      "kzg commitment",
+      "تعهد kzg",
+      "کامیتمنت kzg"
+    ],
+    "episodes": [
+      "s07e05",
+      "s07e01"
+    ]
+  },
+  {
+    "slug": "large-language-model",
+    "term": "Large Language Model",
+    "termFa": "مدل زبانی بزرگ",
+    "definitionEn": "A neural network trained on vast text data that can generate, translate, and reason over language for a wide range of tasks.",
+    "definitionFa": "شبکه عصبی آموزش‌دیده بر داده‌های متنی گسترده که می‌تواند زبان را برای طیف وسیعی از وظایف تولید، ترجمه و تحلیل کند.",
+    "aliases": [
+      "large language model",
+      "llm",
+      "مدل زبانی بزرگ"
+    ],
+    "episodes": [
+      "s07e06"
+    ]
+  },
+  {
+    "slug": "layer-2",
+    "term": "Layer 2",
+    "termFa": "لایه دوم",
+    "definitionEn": "Off-chain protocols built on top of a base blockchain to increase transaction throughput and reduce fees.",
+    "definitionFa": "پروتکل‌هایی که روی بلاک‌چین اصلی ساخته می‌شوند تا سرعت تراکنش‌ها را بالا ببرند و کارمزد را کاهش دهند.",
+    "aliases": [
+      "layer 2",
+      "لایه دوم"
+    ],
+    "episodes": [
+      "s03e03"
+    ]
+  },
+  {
+    "slug": "lazarus-group",
+    "term": "Lazarus Group",
+    "termFa": "گروه لازاروس",
+    "definitionEn": "A North Korean state-sponsored hacking group linked to major cryptocurrency heists including the Axie Infinity/Ronin hack.",
+    "definitionFa": "گروه هکری تحت حمایت دولت کره شمالی که به سرقت‌های بزرگ رمزارزی از جمله هک اکسی اینفینیتی/رونین مرتبط است.",
+    "aliases": [
+      "lazarus group",
+      "گروه لازاروس"
+    ],
+    "episodes": [
+      "s07e07"
+    ]
+  },
+  {
+    "slug": "lending-protocol",
+    "term": "Lending Protocol",
+    "termFa": "پروتکل وام‌دهی",
+    "definitionEn": "A smart-contract system that lets users deposit crypto as collateral and borrow a different asset against it.",
+    "definitionFa": "سیستمی مبتنی بر قرارداد هوشمند که به کاربران امکان می‌دهد رمزارز را به‌عنوان وثیقه بگذارند و در ازا، رمزارز دیگری قرض بگیرند.",
+    "aliases": [
+      "lending protocol",
+      "پروتکل وام دهی"
+    ],
+    "episodes": [
+      "s04e05"
+    ]
+  },
+  {
+    "slug": "lightning-network",
+    "term": "Lightning Network",
+    "termFa": "شبکه‌ی لایتنینگ",
+    "definitionEn": "A Layer 2 payment network on Bitcoin enabling fast, cheap off-chain transactions between channel partners.",
+    "definitionFa": "شبکه‌ای روی لایه‌ی دوم بیتکوین که تراکنش‌های سریع و ارزان خارج از زنجیره را بین طرفین کانال ممکن می‌کند.",
+    "aliases": [
+      "lightning network",
+      "شبکه ی لایتنینگ",
+      "لایتنینگ نتورک",
+      "شبکه لایتنینگ"
+    ],
+    "episodes": [
+      "s06e03",
+      "s06e02",
+      "s03e04",
+      "s03e02",
+      "s01e10",
+      "s01e06",
+      "s01e05"
+    ]
+  },
+  {
+    "slug": "liquid-democracy",
+    "term": "Liquid Democracy",
+    "termFa": "دموکراسی سیال",
+    "definitionEn": "A voting system where citizens can either vote directly on issues or delegate their vote to a representative, and reclaim it at any time.",
+    "definitionFa": "سیستمی که در آن هر شهروند می‌تواند مستقیم رأی بدهد یا رأی خود را به نماینده‌ای تفویض کند و هر زمان پس بگیرد.",
+    "aliases": [
+      "liquid democracy",
+      "دموکراسی سیال"
+    ],
+    "episodes": [
+      "sp01"
+    ]
+  },
+  {
+    "slug": "liquid-staking-derivative",
+    "term": "Liquid Staking Derivative",
+    "termFa": "توکن لیکوید استیکینگ",
+    "definitionEn": "A transferable token representing staked ETH, allowing holders to earn staking rewards while using the token in DeFi.",
+    "definitionFa": "توکن قابل انتقالی که نماینده‌ی اتریوم استیک‌شده است و به دارنده امکان می‌دهد همزمان ریوارد استیکینگ بگیرد و در دیفای استفاده کند.",
+    "aliases": [
+      "liquid staking derivative",
+      "lsd",
+      "توکن لیکوید استیکینگ"
+    ],
+    "episodes": [
+      "s07e02"
+    ]
+  },
+  {
+    "slug": "liquidation",
+    "term": "Liquidation",
+    "termFa": "نقد شدن / لیکوییدیشن",
+    "definitionEn": "Forced sale of a borrower's collateral when its value falls below the required collateral ratio.",
+    "definitionFa": "فروش اجباری وثیقه وام‌گیرنده هنگامی که ارزش آن از نسبت وثیقه مورد نیاز پایین‌تر بیاید.",
+    "aliases": [
+      "liquidation",
+      "نقد شدن / لیکوییدیشن",
+      "لیکوئیدیشن / شناوری",
+      "لیکوئید شدن"
+    ],
+    "episodes": [
+      "s04e06",
+      "s04e02",
+      "s03e06"
+    ]
+  },
+  {
+    "slug": "liquidity-mining",
+    "term": "Liquidity Mining",
+    "termFa": "استخراج نقدینگی (لیکوییدیتی ماینینگ)",
+    "definitionEn": "Earning rewards by supplying tokens to a DeFi protocol's liquidity pool, analogous to mining block rewards.",
+    "definitionFa": "کسب پاداش از طریق تأمین توکن برای استخر نقدینگی یک پروتکل DeFi، مشابه دریافت پاداش استخراج بلاک.",
+    "aliases": [
+      "liquidity mining",
+      "استخراج نقدینگی",
+      "لیکوییدیتی ماینینگ",
+      "ماینینگ نقدینگی"
+    ],
+    "episodes": [
+      "s04e03",
+      "s04e02"
+    ]
+  },
+  {
+    "slug": "liquidity-pool",
+    "term": "Liquidity Pool",
+    "termFa": "استخر نقدینگی",
+    "definitionEn": "A smart contract holding reserves of one or more tokens that users can lend to or borrow from.",
+    "definitionFa": "قراردادی هوشمند که ذخایر یک یا چند توکن را نگه می‌دارد و کاربران می‌توانند به آن وام بدهند یا از آن وام بگیرند.",
+    "aliases": [
+      "liquidity pool",
+      "استخر نقدینگی"
+    ],
+    "episodes": [
+      "s04e05",
+      "s04e03"
+    ]
+  },
+  {
+    "slug": "liquidity-provider",
+    "term": "Liquidity Provider",
+    "termFa": "فراهم‌آورنده نقدینگی",
+    "definitionEn": "A user who deposits tokens into an AMM pool, earning trading fees in return for enabling others to swap.",
+    "definitionFa": "کاربری که توکن‌هایش را در استخر AMM واریز می‌کند و در ازای امکان معامله برای دیگران، کارمزد دریافت می‌کند.",
+    "aliases": [
+      "liquidity provider",
+      "فراهم اورنده نقدینگی",
+      "تامین کننده ی نقدینگی"
+    ],
+    "episodes": [
+      "s04e04",
+      "s04e03"
+    ]
+  },
+  {
+    "slug": "localbitcoins",
+    "term": "LocalBitcoins",
+    "termFa": "لوکال بیتکوین",
+    "definitionEn": "A peer-to-peer Bitcoin trading platform that connects buyers and sellers directly for cash or other payment methods.",
+    "definitionFa": "پلتفرم معاملات همتا‌به‌همتای بیتکوین که خریداران و فروشندگان را مستقیماً برای پرداخت نقدی یا روش‌های دیگر به هم متصل می‌کند.",
+    "aliases": [
+      "localbitcoins",
+      "لوکال بیتکوین"
+    ],
+    "episodes": [
+      "s03e06"
+    ]
+  },
+  {
+    "slug": "locking-script",
+    "term": "Locking Script",
+    "termFa": "اسکریپت قفل (لاکینگ اسکریپت)",
+    "definitionEn": "A puzzle embedded in a UTXO that defines the conditions a spender must satisfy to claim the funds.",
+    "definitionFa": "معمایی که درون UTXO قرار می‌گیرد و شرایطی را تعریف می‌کند که خرج‌کننده باید برای دریافت وجوه برآورده کند.",
+    "aliases": [
+      "locking script",
+      "scriptpubkey",
+      "اسکریپت قفل",
+      "لاکینگ اسکریپت"
+    ],
+    "episodes": [
+      "s06e03"
+    ]
+  },
+  {
+    "slug": "luma",
+    "term": "Luma",
+    "termFa": "لوما",
+    "definitionEn": "An event-registration platform widely used to list and discover Web3 side events around conferences.",
+    "definitionFa": "پلتفرم ثبت‌نام رویداد که برای یافتن و ثبت ساید ایونت‌های وب۳ در اطراف کنفرانس‌ها به‌کار می‌رود.",
+    "aliases": [
+      "luma",
+      "لوما"
+    ],
+    "episodes": [
+      "s07e04"
+    ]
+  },
+  {
+    "slug": "makerdao",
+    "term": "MakerDAO",
+    "termFa": "میکردائو",
+    "definitionEn": "A decentralized protocol on Ethereum that lets users mint the DAI stablecoin by locking ETH as collateral.",
+    "definitionFa": "پروتکل غیرمتمرکز روی اتریوم که به کاربران امکان می‌دهد با قفل‌کردن اتر، استیبل‌کوین دای چاپ کنند.",
+    "aliases": [
+      "makerdao",
+      "میکردائو"
+    ],
+    "episodes": [
+      "s04e02",
+      "s03e06"
+    ]
+  },
+  {
+    "slug": "makerdao-dai",
+    "term": "MakerDAO / DAI",
+    "termFa": "میکردائو / دای",
+    "definitionEn": "A decentralized protocol on Ethereum that issues the DAI stablecoin backed by crypto collateral rather than bank dollars.",
+    "definitionFa": "پروتکل غیرمتمرکزی روی اتریوم که استیبل‌کوین دای را با پشتوانه رمزارز—نه دلار بانکی—صادر می‌کند.",
+    "aliases": [
+      "makerdao / dai",
+      "میکردائو / دای"
+    ],
+    "episodes": [
+      "s04e01"
+    ]
+  },
+  {
+    "slug": "mast",
+    "term": "MAST",
+    "termFa": "مست",
+    "definitionEn": "Merklized Abstract Syntax Tree: a Taproot component that lets complex spending conditions be committed in a Merkle tree, revealing only the executed branch.",
+    "definitionFa": "ساختار درخت مرکل برای اسکریپت بیتکوین که امکان قراردادهای هوشمند پیچیده‌تر را با افشای حداقلی شرایط فراهم می‌کند.",
+    "aliases": [
+      "mast",
+      "مست"
+    ],
+    "episodes": [
+      "s06e05"
+    ]
+  },
+  {
+    "slug": "mastering-ethereum",
+    "term": "Mastering Ethereum",
+    "termFa": "مسترینگ اتریوم",
+    "definitionEn": "An open-source reference book by Andreas Antonopoulos covering Ethereum development in depth.",
+    "definitionFa": "کتاب مرجع متن‌باز نوشته آندریاس آنتونوپولوس که توسعه اتریوم را به‌صورت عمیق پوشش می‌دهد.",
+    "aliases": [
+      "mastering ethereum",
+      "مسترینگ اتریوم"
+    ],
+    "episodes": [
+      "s03e06"
+    ]
+  },
+  {
+    "slug": "max-fee",
+    "term": "Max Fee",
+    "termFa": "مکس‌فی",
+    "definitionEn": "The maximum total amount per gas a user is willing to pay; unused portion is refunded.",
+    "definitionFa": "حداکثر مبلغی که کاربر به ازای هر گس حاضر به پرداخت است؛ مابقی آن به کاربر بازگردانده می‌شود.",
+    "aliases": [
+      "max fee",
+      "مکس فی"
+    ],
+    "episodes": [
+      "s05e02"
+    ]
+  },
+  {
+    "slug": "mempool",
+    "term": "Mempool",
+    "termFa": "ممپول",
+    "definitionEn": "The waiting area in each node where unconfirmed transactions sit until a miner selects them for inclusion in a block.",
+    "definitionFa": "صف انتظار در هر نود که تراکنش‌های تأیید نشده در آن می‌مانند تا ماینری آن‌ها را در بلاک قرار دهد.",
+    "aliases": [
+      "mempool",
+      "ممپول"
+    ],
+    "episodes": [
+      "s03e01"
+    ]
+  },
+  {
+    "slug": "merge-mining",
+    "term": "Merge Mining",
+    "termFa": "مرج ماینینگ",
+    "definitionEn": "A technique where miners simultaneously mine a parent chain and a child chain with the same computational work.",
+    "definitionFa": "تکنیکی که در آن ماینرها با همان کار محاسباتی، به‌طور همزمان یک چین والد و یک چین فرزند را ماین می‌کنند.",
+    "aliases": [
+      "merge mining",
+      "مرج ماینینگ"
+    ],
+    "episodes": [
+      "s07e02"
+    ]
+  },
+  {
+    "slug": "metamask",
+    "term": "MetaMask",
+    "termFa": "متامسک",
+    "definitionEn": "A browser-based Ethereum wallet developed by ConsenSys that lets users interact with decentralized applications.",
+    "definitionFa": "کیف پول مبتنی بر مرورگر ساخت کانسنسیس که کاربران را قادر می‌سازد با اپلیکیشن‌های غیرمتمرکز تعامل داشته باشند.",
+    "aliases": [
+      "metamask",
+      "متامسک"
+    ],
+    "episodes": [
+      "sp01"
+    ]
+  },
+  {
+    "slug": "mev",
+    "term": "MEV",
+    "termFa": "ارزش قابل استخراج ماینر / مف",
+    "definitionEn": "Profit miners can extract by reordering, inserting, or censoring transactions within a block.",
+    "definitionFa": "سودی که ماینرها می‌توانند با تغییر ترتیب، اضافه‌کردن یا سانسور تراکنش‌ها در یک بلاک به دست آورند.",
+    "aliases": [
+      "mev",
+      "miner extractable value",
+      "ارزش قابل استخراج ماینر / مف"
+    ],
+    "episodes": [
+      "s05e02"
+    ]
+  },
+  {
+    "slug": "mimblewimble",
+    "term": "Mimblewimble",
+    "termFa": "مینبل‌ویمبل",
+    "definitionEn": "A blockchain protocol proposal offering improved privacy and scalability, shared anonymously and peer-reviewed without an ICO.",
+    "definitionFa": "پیشنهاد پروتکل بلاکچینی با حریم خصوصی و مقیاس‌پذیری بهتر که به‌صورت ناشناس منتشر و بدون ICO توسط متخصصان بررسی شد.",
+    "aliases": [
+      "mimblewimble",
+      "مینبل ویمبل"
+    ],
+    "episodes": [
+      "s01e08"
+    ]
+  },
+  {
+    "slug": "mina-protocol",
+    "term": "Mina Protocol",
+    "termFa": "پروتکل مینا",
+    "definitionEn": "A blockchain that uses recursive zero-knowledge proofs to keep its entire chain state compressed to a constant small size.",
+    "definitionFa": "بلاکچینی که از اثبات‌های دانش صفر بازگشتی استفاده می‌کند تا حجم کل وضعیت زنجیره را ثابت و بسیار کوچک نگه دارد.",
+    "aliases": [
+      "mina protocol",
+      "پروتکل مینا"
+    ],
+    "episodes": [
+      "s06e01"
+    ]
+  },
+  {
+    "slug": "miner-tip",
+    "term": "Miner Tip",
+    "termFa": "ماینر تیپ / فی اولویت",
+    "definitionEn": "An optional fee paid directly to the miner to incentivize faster transaction inclusion.",
+    "definitionFa": "کارمزد اختیاری که مستقیماً به ماینر پرداخت می‌شود تا تراکنش زودتر در بلاک قرار گیرد.",
+    "aliases": [
+      "miner tip",
+      "priority fee",
+      "ماینر تیپ / فی اولویت"
+    ],
+    "episodes": [
+      "s05e02"
+    ]
+  },
+  {
+    "slug": "mining-pool",
+    "term": "Mining Pool",
+    "termFa": "استخر ماینینگ",
+    "definitionEn": "A collective of miners who combine their hash power and share block rewards proportionally, reducing income variance.",
+    "definitionFa": "گروهی از ماینرها که توان هش خود را با هم ترکیب می‌کنند و پاداش بلاک را به‌نسبت بین خود تقسیم می‌کنند.",
+    "aliases": [
+      "mining pool",
+      "استخر ماینینگ",
+      "ماینینگ پول"
+    ],
+    "episodes": [
+      "s03e04",
+      "s02e01",
+      "s01e09",
+      "s01e05",
+      "s01e04"
+    ]
+  },
+  {
+    "slug": "model-context-protocol",
+    "term": "Model Context Protocol",
+    "termFa": "پروتکل زمینه مدل (MCP)",
+    "definitionEn": "An open standard introduced by Anthropic that defines how an LLM connects to and calls external tools and data sources.",
+    "definitionFa": "استانداردی باز که توسط Anthropic معرفی شده و نحوه اتصال و فراخوانی ابزارها و منابع داده خارجی توسط یک LLM را تعریف می‌کند.",
+    "aliases": [
+      "model context protocol",
+      "mcp",
+      "پروتکل زمینه مدل"
+    ],
+    "episodes": [
+      "s07e06"
+    ]
+  },
+  {
+    "slug": "monero",
+    "term": "Monero",
+    "termFa": "مونرو",
+    "definitionEn": "A privacy-focused cryptocurrency designed to be mined efficiently on ordinary CPUs.",
+    "definitionFa": "رمزارزی با تمرکز بر حریم خصوصی که برای استخراج کارآمد روی پردازنده‌های معمولی طراحی شده است.",
+    "aliases": [
+      "monero",
+      "مونرو"
+    ],
+    "episodes": [
+      "s02e01"
+    ]
+  },
+  {
+    "slug": "money-multiplier",
+    "term": "Money Multiplier",
+    "termFa": "ضریب فزاینده خلق پول",
+    "definitionEn": "The factor by which an initial bank deposit expands into a larger money supply through repeated lending cycles.",
+    "definitionFa": "ضریبی که نشان می‌دهد یک سپرده اولیه بانکی از طریق چرخه‌های متوالی وام‌دهی چند برابر می‌شود.",
+    "aliases": [
+      "money multiplier",
+      "ضریب فزاینده خلق پول"
+    ],
+    "episodes": [
+      "s04e05"
+    ]
+  },
+  {
+    "slug": "money-service-business",
+    "term": "Money Service Business",
+    "termFa": "کسب‌وکار خدمات پولی",
+    "definitionEn": "A US regulatory category for entities that transmit or exchange money, requiring registration and AML compliance.",
+    "definitionFa": "دسته‌بندی قانونی آمریکا برای کسب‌وکارهایی که پول منتقل یا مبادله می‌کنند و نیازمند ثبت و رعایت مقررات ضد پول‌شویی هستند.",
+    "aliases": [
+      "money service business",
+      "msb",
+      "کسب وکار خدمات پولی"
+    ],
+    "episodes": [
+      "s07e07"
+    ]
+  },
+  {
+    "slug": "mono-repo",
+    "term": "Mono-repo",
+    "termFa": "مونو‌ریپو",
+    "definitionEn": "A single code repository containing all parts of a project (frontend, backend, contracts) to simplify integration.",
+    "definitionFa": "یک مخزن کد واحد که تمام بخش‌های پروژه را در خود دارد تا یکپارچه‌سازی ساده‌تر شود.",
+    "aliases": [
+      "mono-repo",
+      "مونو ریپو"
+    ],
+    "episodes": [
+      "s07e03"
+    ]
+  },
+  {
+    "slug": "multisig",
+    "term": "Multisig",
+    "termFa": "چند امضایی دو از دو",
+    "definitionEn": "A locking script requiring signatures from both of two specified keys before funds can be spent.",
+    "definitionFa": "اسکریپتی که برای خرج کردن وجوه، امضای هر دو کلید از دو کلید تعیین‌شده را الزامی می‌کند.",
+    "aliases": [
+      "multisig",
+      "2-of-2",
+      "چند امضایی دو از دو",
+      "multi-signature",
+      "چندامضایی",
+      "مالتی سیگ",
+      "مالتی سیگ / چندامضایی"
+    ],
+    "episodes": [
+      "s06e03",
+      "s04e05",
+      "s01e07"
+    ]
+  },
+  {
+    "slug": "musiccoin",
+    "term": "MusicCoin",
+    "termFa": "میوزیک‌کوین",
+    "definitionEn": "A blockchain music platform with no ICO or pre-mine that pays composers, singers, and musicians directly per stream.",
+    "definitionFa": "پلتفرم موسیقی مبتنی بر بلاکچین که بدون ICO یا پری‌ماین راه‌اندازی شد و درآمد را مستقیماً به هنرمندان پرداخت می‌کند.",
+    "aliases": [
+      "musiccoin",
+      "میوزیک کوین"
+    ],
+    "episodes": [
+      "s01e03"
+    ]
+  },
+  {
+    "slug": "mvp",
+    "term": "MVP",
+    "termFa": "MVP / حداقل محصول قابل‌ارائه",
+    "definitionEn": "The simplest working version of a product that demonstrates its core idea to users or judges.",
+    "definitionFa": "ساده‌ترین نسخه کارآمد یک محصول که ایده اصلی آن را به کاربران یا داوران نشان می‌دهد.",
+    "aliases": [
+      "mvp",
+      "minimum viable product",
+      "mvp / حداقل محصول قابل ارائه"
+    ],
+    "episodes": [
+      "s07e03"
+    ]
+  },
+  {
+    "slug": "myetherwallet",
+    "term": "MyEtherWallet",
+    "termFa": "مای‌اتر والت",
+    "definitionEn": "An open-source, client-side web wallet for Ethereum that never transmits your private key to any server.",
+    "definitionFa": "کیف‌پول وب اتریوم با کد باز که کاملاً سمت کلاینت اجرا می‌شود و کلید خصوصی را هرگز به سرور ارسال نمی‌کند.",
+    "aliases": [
+      "myetherwallet",
+      "مای اتر والت"
+    ],
+    "episodes": [
+      "s01e07"
+    ]
+  },
+  {
+    "slug": "namecoin",
+    "term": "Namecoin",
+    "termFa": "نیم‌کوین",
+    "definitionEn": "The first Bitcoin fork, launched October 2011, designed to provide a decentralized DNS with .bit domains.",
+    "definitionFa": "اولین فورک بیت‌کوین که در اکتبر ۲۰۱۱ راه‌اندازی شد و دامنه‌های غیرمتمرکز با پسوند .bit ارائه می‌دهد.",
+    "aliases": [
+      "namecoin",
+      "نیم کوین"
+    ],
+    "episodes": [
+      "s01e03"
+    ]
+  },
+  {
+    "slug": "network-effect",
+    "term": "Network Effect",
+    "termFa": "اثر شبکه",
+    "definitionEn": "The phenomenon where a cryptocurrency becomes more valuable and secure as more users, nodes, and miners join it.",
+    "definitionFa": "پدیده‌ای که طی آن یک ارز دیجیتال با پیوستن کاربران، نودها و ماینرهای بیشتر، ارزشمندتر و امن‌تر می‌شود.",
+    "aliases": [
+      "network effect",
+      "اثر شبکه"
+    ],
+    "episodes": [
+      "s02e03"
+    ]
+  },
+  {
+    "slug": "nicehash",
+    "term": "NiceHash",
+    "termFa": "نایس‌هش",
+    "definitionEn": "A hash-power marketplace where anyone can rent mining capacity, making it easier to temporarily amass hash rate for a 51% attack.",
+    "definitionFa": "بازاری برای اجاره قدرت ماینینگ که به هر کسی اجازه می‌دهد هش‌ریت موقت اجاره کند و حمله ۵۱ درصدی را آسان‌تر می‌کند.",
+    "aliases": [
+      "nicehash",
+      "نایس هش"
+    ],
+    "episodes": [
+      "s03e01"
+    ]
+  },
+  {
+    "slug": "non-custodial",
+    "term": "Non-Custodial",
+    "termFa": "غیرحضانتی",
+    "definitionEn": "A system where users retain full control of their private keys and funds, never handing them to a third party.",
+    "definitionFa": "سیستمی که در آن کاربر کنترل کلیدهای خصوصی و دارایی‌های خود را همیشه حفظ می‌کند.",
+    "aliases": [
+      "non-custodial",
+      "غیرحضانتی"
+    ],
+    "episodes": [
+      "s04e03"
+    ]
+  },
+  {
+    "slug": "nothing-at-stake",
+    "term": "Nothing at Stake",
+    "termFa": "هیچ چیز در خطر نیست",
+    "definitionEn": "A Proof-of-Stake vulnerability where validators can costlessly support multiple chain forks simultaneously, undermining consensus.",
+    "definitionFa": "آسیب‌پذیری اثبات سهام که در آن اعتبارسنج می‌تواند بدون هزینه روی چند شاخه همزمان رأی دهد و اجماع را تضعیف کند.",
+    "aliases": [
+      "nothing at stake",
+      "هیچ چیز در خطر نیست"
+    ],
+    "episodes": [
+      "s03e03"
+    ]
+  },
+  {
+    "slug": "nullifier",
+    "term": "Nullifier",
+    "termFa": "نالیفایر",
+    "definitionEn": "A unique value in zkSNARK-based mixers that prevents double-spending by marking a deposit note as already withdrawn.",
+    "definitionFa": "مقدار منحصربه‌فردی در میکسرهای مبتنی بر zkSNARK که از دوبار برداشت یک سپرده جلوگیری می‌کند.",
+    "aliases": [
+      "nullifier",
+      "نالیفایر"
+    ],
+    "episodes": [
+      "s07e07"
+    ]
+  },
+  {
+    "slug": "ofac",
+    "term": "OFAC",
+    "termFa": "اوفک",
+    "definitionEn": "The US Treasury's Office of Foreign Assets Control, which administers and enforces economic and trade sanctions.",
+    "definitionFa": "دفتر کنترل دارایی‌های خارجی وزارت خزانه‌داری آمریکا که مسئول اجرای تحریم‌های اقتصادی است.",
+    "aliases": [
+      "ofac",
+      "اوفک"
+    ],
+    "episodes": [
+      "s07e07"
+    ]
+  },
+  {
+    "slug": "onecoin",
+    "term": "OneCoin",
+    "termFa": "وان‌کوین",
+    "definitionEn": "A notorious fraudulent cryptocurrency scheme that raised billions globally through a pyramid sales structure.",
+    "definitionFa": "طرح تقلبی مشهوری که از طریق ساختار فروش هرمی میلیاردها دلار از سرمایه‌گذاران در سراسر جهان جمع‌آوری کرد.",
+    "aliases": [
+      "onecoin",
+      "وان کوین"
+    ],
+    "episodes": [
+      "s02e01",
+      "s01e03"
+    ]
+  },
+  {
+    "slug": "onion-routing-onion-packet",
+    "term": "Onion Routing / Onion Packet",
+    "termFa": "آنیون پکتینگ (مسیریابی پیازی)",
+    "definitionEn": "A privacy technique where each hop decrypts only its own layer of an encrypted packet, hiding the full route from intermediaries.",
+    "definitionFa": "تکنیک حریم‌خصوصی که هر گره فقط لایه‌ی رمزنگاری خود را باز می‌کند و مسیر کامل از واسطه‌ها پنهان می‌ماند.",
+    "aliases": [
+      "onion routing / onion packet",
+      "انیون پکتینگ",
+      "مسیریابی پیازی"
+    ],
+    "episodes": [
+      "s06e04"
+    ]
+  },
+  {
+    "slug": "op-checklocktimeverify",
+    "term": "OP_CHECKLOCKTIMEVERIFY",
+    "termFa": "چک‌لاک‌تایم‌وریفای",
+    "definitionEn": "An opcode introduced by BIP 65 that prevents a UTXO from being spent until a specified absolute block height or timestamp.",
+    "definitionFa": "عملگری که در BIP 65 معرفی شد و خرج کردن یک UTXO را تا رسیدن به ارتفاع بلاک یا زمان مطلق مشخص‌شده ممنوع می‌کند.",
+    "aliases": [
+      "op_checklocktimeverify",
+      "cltv",
+      "چک لاک تایم وریفای",
+      "checklocktimeverify"
+    ],
+    "episodes": [
+      "s06e03",
+      "s03e02"
+    ]
+  },
+  {
+    "slug": "op-checksequenceverify",
+    "term": "OP_CHECKSEQUENCEVERIFY",
+    "termFa": "چک‌سیکوینس‌وریفای",
+    "definitionEn": "An opcode enabling relative timelocks, preventing a UTXO from being spent until a set number of blocks after it was mined.",
+    "definitionFa": "عملگری که قفل زمانی نسبی ایجاد می‌کند و خرج کردن UTXO را تا گذشت تعداد مشخصی بلاک پس از استخراجش ممنوع می‌کند.",
+    "aliases": [
+      "op_checksequenceverify",
+      "csv",
+      "چک سیکوینس وریفای",
+      "checksequenceverify",
+      "چک سکوئنس وریفای"
+    ],
+    "episodes": [
+      "s06e03",
+      "s03e02"
+    ]
+  },
+  {
+    "slug": "open-source-observer",
+    "term": "Open Source Observer",
+    "termFa": "اوپن‌سورس آبزرور",
+    "definitionEn": "A project that scores open-source repositories by activity metrics to help funders allocate grants fairly.",
+    "definitionFa": "پروژه‌ای که مخازن متن‌باز را بر اساس معیارهای فعالیت امتیازدهی می‌کند تا تخصیص منصفانه کمک‌مالی را آسان کند.",
+    "aliases": [
+      "open source observer",
+      "اوپن سورس ابزرور"
+    ],
+    "episodes": [
+      "s07e03"
+    ]
+  },
+  {
+    "slug": "optimistic-rollup",
+    "term": "Optimistic Rollup",
+    "termFa": "رول‌آپ خوش‌بینانه",
+    "definitionEn": "A rollup that assumes off-chain computations are valid by default and relies on fraud proofs and a dispute window to catch errors.",
+    "definitionFa": "رول‌آپی که به‌طور پیش‌فرض محاسبات آف‌چین را معتبر می‌داند و برای کشف خطا بر اثبات تقلب و بازه‌ی اعتراض تکیه می‌کند.",
+    "aliases": [
+      "optimistic rollup",
+      "رول اپ خوش بینانه"
+    ],
+    "episodes": [
+      "s06e02"
+    ]
+  },
+  {
+    "slug": "oracle",
+    "term": "Oracle",
+    "termFa": "اوراکل",
+    "definitionEn": "A system that feeds real-world data such as asset prices into smart contracts on a blockchain.",
+    "definitionFa": "سیستمی که داده‌های دنیای واقعی مانند قیمت دارایی‌ها را به قراردادهای هوشمند درون بلاکچین می‌رساند.",
+    "aliases": [
+      "oracle",
+      "اوراکل"
+    ],
+    "episodes": [
+      "s04e02",
+      "s04e01",
+      "s03e06"
+    ]
+  },
+  {
+    "slug": "oracle-manipulation",
+    "term": "Oracle Manipulation",
+    "termFa": "دستکاری اوراکل",
+    "definitionEn": "Exploiting a protocol's reliance on a single on-chain price source to artificially move prices for profit.",
+    "definitionFa": "سوءاستفاده از وابستگی یک پروتکل به یک منبع قیمتی برای دستکاری قیمت و کسب سود.",
+    "aliases": [
+      "oracle manipulation",
+      "دستکاری اوراکل"
+    ],
+    "episodes": [
+      "s04e06"
+    ]
+  },
+  {
+    "slug": "order-book",
+    "term": "Order Book",
+    "termFa": "دفتر سفارشات (اردربوک)",
+    "definitionEn": "A list of buy and sell orders in a market, matched by an exchange engine to execute trades.",
+    "definitionFa": "فهرستی از سفارش‌های خرید و فروش که موتور صرافی آن‌ها را با هم تطبیق داده و معامله انجام می‌دهد.",
+    "aliases": [
+      "order book",
+      "دفتر سفارشات",
+      "اردربوک"
+    ],
+    "episodes": [
+      "s04e03"
+    ]
+  },
+  {
+    "slug": "orphan-uncle-rate",
+    "term": "Orphan/Uncle Rate",
+    "termFa": "نرخ بلاک‌های یتیم/عمو",
+    "definitionEn": "The proportion of valid blocks found too slowly to be accepted by the main chain, wasting miner effort.",
+    "definitionFa": "نسبت بلاک‌های معتبری که به خاطر تأخیر شبکه به زنجیره اصلی نرسیده و تلاش ماینر را هدر می‌دهند.",
+    "aliases": [
+      "orphan/uncle rate",
+      "نرخ بلاک های یتیم/عمو"
+    ],
+    "episodes": [
+      "s01e09"
+    ]
+  },
+  {
+    "slug": "orphaned-block",
+    "term": "Orphaned Block",
+    "termFa": "بلاک یتیم",
+    "definitionEn": "A valid block that loses the race to be added to the main chain because another block at the same height was accepted first.",
+    "definitionFa": "بلاک معتبری که در رقابت برای اضافه شدن به زنجیره اصلی بازنده می‌شود زیرا بلاک دیگری در همان ارتفاع زودتر پذیرفته شده است.",
+    "aliases": [
+      "orphaned block",
+      "بلاک یتیم"
+    ],
+    "episodes": [
+      "s01e05"
+    ]
+  },
+  {
+    "slug": "over-collateralization",
+    "term": "Over-collateralization",
+    "termFa": "وثیقه‌گذاری بیش از حد",
+    "definitionEn": "Depositing collateral worth more than the loan amount to protect the protocol against price drops.",
+    "definitionFa": "گذاشتن وثیقه‌ای با ارزش بیشتر از مبلغ وام برای محافظت از پروتکل در برابر کاهش قیمت.",
+    "aliases": [
+      "over-collateralization",
+      "وثیقه گذاری بیش از حد",
+      "بیش وثیقه گذاری",
+      "وثیقه گذاری بیش از اندازه"
+    ],
+    "episodes": [
+      "s04e06",
+      "s04e05",
+      "s04e02"
+    ]
+  },
+  {
+    "slug": "overlay-network",
+    "term": "Overlay Network",
+    "termFa": "شبکه‌ی انتزاعی (اورلی نتورک)",
+    "definitionEn": "A network built on top of an existing one, using its security while operating independently — here, Lightning on top of Bitcoin.",
+    "definitionFa": "شبکه‌ای که روی یک شبکه‌ی موجود ساخته می‌شود، از امنیت آن بهره می‌برد اما مستقل عمل می‌کند — در اینجا لایتنینگ روی بیتکوین.",
+    "aliases": [
+      "overlay network",
+      "شبکه ی انتزاعی",
+      "اورلی نتورک"
+    ],
+    "episodes": [
+      "s06e03"
+    ]
+  },
+  {
+    "slug": "p2pool",
+    "term": "P2Pool",
+    "termFa": "پی‌تو‌پول",
+    "definitionEn": "A decentralized Bitcoin mining pool where participants share work peer-to-peer without a central server controlling payouts.",
+    "definitionFa": "استخر استخراج غیرمتمرکز بیتکوین که شرکت‌کنندگان به صورت همتا‌به‌همتا کار را تقسیم می‌کنند بدون سرور مرکزی.",
+    "aliases": [
+      "p2pool",
+      "پی تو پول"
+    ],
+    "episodes": [
+      "s03e03",
+      "s01e09"
+    ]
+  },
+  {
+    "slug": "paper-wallet",
+    "term": "Paper Wallet",
+    "termFa": "کیف‌پول کاغذی",
+    "definitionEn": "A printed document containing a Bitcoin private key and address, kept entirely offline for cold storage.",
+    "definitionFa": "سندی چاپ‌شده حاوی کلید خصوصی و آدرس بیت‌کوین که به‌صورت کاملاً آفلاین نگهداری می‌شود.",
+    "aliases": [
+      "paper wallet",
+      "کیف پول کاغذی"
+    ],
+    "episodes": [
+      "s01e07"
+    ]
+  },
+  {
+    "slug": "payment-channel",
+    "term": "Payment Channel",
+    "termFa": "کانال پرداخت",
+    "definitionEn": "An off-chain mechanism where two parties lock funds on-chain and exchange signed balance updates without broadcasting each transaction.",
+    "definitionFa": "مکانیزمی آف‌چین که دو طرف وجوه را روی زنجیره قفل می‌کنند و به‌روزرسانی‌های موجودی را بدون ارسال هر تراکنش به شبکه تبادل می‌کنند.",
+    "aliases": [
+      "payment channel",
+      "کانال پرداخت"
+    ],
+    "episodes": [
+      "s06e02",
+      "s03e02",
+      "s01e05"
+    ]
+  },
+  {
+    "slug": "pectra",
+    "term": "Pectra",
+    "termFa": "پکترا",
+    "definitionEn": "Ethereum hard fork combining Prague (execution layer) and Electra (consensus layer) upgrades, expected mid-2025.",
+    "definitionFa": "هاردفورک اتریوم که از ادغام آپگریدهای «پراگ» (لایه اجرایی) و «الکترا» (لایه اجماع) تشکیل شده است.",
+    "aliases": [
+      "pectra",
+      "پکترا"
+    ],
+    "episodes": [
+      "s07e05"
+    ]
+  },
+  {
+    "slug": "peer-to-peer",
+    "term": "Peer-to-Peer",
+    "termFa": "همتا‌به‌همتا (P2P)",
+    "definitionEn": "A network model where participants interact directly with each other without a central server or intermediary.",
+    "definitionFa": "مدل شبکه‌ای که در آن کاربران مستقیماً با یکدیگر تعامل می‌کنند، بدون سرور یا واسطه مرکزی.",
+    "aliases": [
+      "peer-to-peer",
+      "p2p",
+      "همتا به همتا"
+    ],
+    "episodes": [
+      "s03e07"
+    ]
+  },
+  {
+    "slug": "peerdas",
+    "term": "PeerDAS",
+    "termFa": "پیرداس",
+    "definitionEn": "Data Availability Sampling protocol where each node only stores and verifies a portion of blob data, enabling greater scalability.",
+    "definitionFa": "پروتکل نمونه‌برداری از دسترس‌پذیری داده که هر نود تنها بخشی از داده‌های بلاب را نگه می‌دارد و مقیاس‌پذیری شبکه را افزایش می‌دهد.",
+    "aliases": [
+      "peerdas",
+      "پیرداس"
+    ],
+    "episodes": [
+      "s07e05"
+    ]
+  },
+  {
+    "slug": "plustoken",
+    "term": "PlusToken",
+    "termFa": "پلاس‌توکن",
+    "definitionEn": "A large Ponzi-scheme scam that accumulated over 70,000 BTC and whose operators' coin dumps contributed to Bitcoin price drops in 2019–2020.",
+    "definitionFa": "یک کلاهبرداری پانزی بزرگ که بیش از ۷۰٬۰۰۰ بیت‌کوین جمع‌آوری کرد و فروش آن‌ها در ۲۰۱۹–۲۰۲۰ به ریزش قیمت کمک کرد.",
+    "aliases": [
+      "plustoken",
+      "پلاس توکن"
+    ],
+    "episodes": [
+      "s03e05"
+    ]
+  },
+  {
+    "slug": "poap",
+    "term": "POAP",
+    "termFa": "پواپ",
+    "definitionEn": "Proof of Attendance Protocol—an NFT badge issued to verify someone participated in an event.",
+    "definitionFa": "پروتکل اثبات حضور: یک NFT که نشان می‌دهد فرد در رویدادی شرکت کرده است.",
+    "aliases": [
+      "poap",
+      "پواپ"
+    ],
+    "episodes": [
+      "s07e04"
+    ]
+  },
+  {
+    "slug": "polkadot",
+    "term": "Polkadot",
+    "termFa": "پولکادات",
+    "definitionEn": "A multi-chain blockchain protocol founded by Ethereum co-founder Gavin Wood, designed to enable different blockchains to interoperate.",
+    "definitionFa": "پروتکل چندزنجیره‌ای بلاک‌چین که توسط گاوین وود، هم‌بنیان‌گذار اتریوم، ساخته شده و ارتباط بین بلاک‌چین‌های مختلف را ممکن می‌سازد.",
+    "aliases": [
+      "polkadot",
+      "پولکادات"
+    ],
+    "episodes": [
+      "sp01"
+    ]
+  },
+  {
+    "slug": "ponzi-scheme",
+    "term": "Ponzi Scheme",
+    "termFa": "طرح پانزی",
+    "definitionEn": "A fraudulent investment structure that pays early participants using money from new investors, not genuine profit.",
+    "definitionFa": "ساختار سرمایه‌گذاری تقلبی که سود سرمایه‌گذاران اولیه را از پول سرمایه‌گذاران جدید می‌پردازد.",
+    "aliases": [
+      "ponzi scheme",
+      "طرح پانزی"
+    ],
+    "episodes": [
+      "s02e01",
+      "s01e01"
+    ]
+  },
+  {
+    "slug": "pooled-security",
+    "term": "Pooled Security",
+    "termFa": "پول سکیوریتی",
+    "definitionEn": "EigenLayer's model where the same staked ETH simultaneously backs multiple AVSs, multiplying effective economic security.",
+    "definitionFa": "مدل آیگن‌لیر که در آن اتریوم استیک‌شده‌ی یکسان به‌طور همزمان چندین AVS را پشتیبانی می‌کند و امنیت اقتصادی مؤثر را چند برابر می‌سازد.",
+    "aliases": [
+      "pooled security",
+      "پول سکیوریتی"
+    ],
+    "episodes": [
+      "s07e02"
+    ]
+  },
+  {
+    "slug": "pop-up-city",
+    "term": "Pop-up City",
+    "termFa": "پاپ‌آپ سیتی",
+    "definitionEn": "A temporary intentional community where participants live and work together to experiment with new governance and social models.",
+    "definitionFa": "جامعه موقتی و آزمایشی که شرکت‌کنندگان برای بررسی مدل‌های حاکمیتی و اجتماعی جدید در آن زندگی می‌کنند.",
+    "aliases": [
+      "pop-up city",
+      "پاپ اپ سیتی"
+    ],
+    "episodes": [
+      "s07e04"
+    ]
+  },
+  {
+    "slug": "post-truth",
+    "term": "Post-Truth",
+    "termFa": "پسا-حقیقت",
+    "definitionEn": "A media environment where emotional appeals and misinformation shape public opinion more than objective facts.",
+    "definitionFa": "فضای رسانه‌ای که در آن احساسات و اطلاعات نادرست بیشتر از واقعیت عینی افکار عمومی را شکل می‌دهند.",
+    "aliases": [
+      "post-truth",
+      "پسا-حقیقت"
+    ],
+    "episodes": [
+      "s03e07"
+    ]
+  },
+  {
+    "slug": "pplns",
+    "term": "PPLNS",
+    "termFa": "پرداخت به‌ازای آخرین N شر",
+    "definitionEn": "A mining pool reward scheme that pays based on the last N shares contributed before a block is found, rewarding loyal miners.",
+    "definitionFa": "روش پرداخت در ماینینگ پول که بر اساس آخرین N شر ارسال‌شده قبل از یافتن بلاک، پاداش می‌دهد.",
+    "aliases": [
+      "pplns",
+      "pay per last n shares",
+      "پرداخت به ازای اخرین n شر"
+    ],
+    "episodes": [
+      "s01e04"
+    ]
+  },
+  {
+    "slug": "pps",
+    "term": "PPS",
+    "termFa": "پرداخت به‌ازای هر شر",
+    "definitionEn": "A mining pool reward method that pays a fixed amount for every valid share submitted, regardless of whether the pool finds a block.",
+    "definitionFa": "روشی برای پرداخت پاداش در ماینینگ پول که به ازای هر شر معتبر، مبلغ ثابتی پرداخت می‌شود.",
+    "aliases": [
+      "pps",
+      "pay per share",
+      "پرداخت به ازای هر شر"
+    ],
+    "episodes": [
+      "s01e04"
+    ]
+  },
+  {
+    "slug": "pre-consensus",
+    "term": "Pre-consensus",
+    "termFa": "پری‌کانسنسوس",
+    "definitionEn": "A mechanism where miners reach informal agreement on which transactions to include in the next block before mining begins.",
+    "definitionFa": "مکانیزمی که در آن ماینرها پیش از شروع ماینینگ توافق غیررسمی روی تراکنش‌های بلاک بعدی دارند.",
+    "aliases": [
+      "pre-consensus",
+      "پری کانسنسوس"
+    ],
+    "episodes": [
+      "s03e01"
+    ]
+  },
+  {
+    "slug": "precompile",
+    "term": "Precompile",
+    "termFa": "پیش‌کامپایل",
+    "definitionEn": "A special contract built into Ethereum clients in native code for heavy cryptographic operations too expensive for the EVM.",
+    "definitionFa": "قراردادی که در کلاینت‌های اتریوم به زبان بومی پیاده‌سازی شده و عملیات رمزنگاری سنگین را با هزینه ثابت و کم انجام می‌دهد.",
+    "aliases": [
+      "precompile",
+      "پیش کامپایل"
+    ],
+    "episodes": [
+      "s07e05"
+    ]
+  },
+  {
+    "slug": "private-blockchain",
+    "term": "Private Blockchain",
+    "termFa": "بلاکچین خصوصی",
+    "definitionEn": "A blockchain where only authorized participants run nodes, used by enterprises for internal database synchronization.",
+    "definitionFa": "بلاکچینی که فقط شرکت‌کنندگان مجاز می‌توانند نود اجرا کنند و معمولاً برای همگام‌سازی پایگاه‌داده‌های داخلی سازمانی استفاده می‌شود.",
+    "aliases": [
+      "private blockchain",
+      "بلاکچین خصوصی"
+    ],
+    "episodes": [
+      "s01e03"
+    ]
+  },
+  {
+    "slug": "private-key",
+    "term": "Private Key",
+    "termFa": "کلید خصوصی",
+    "definitionEn": "A secret cryptographic code that proves ownership of a wallet and authorizes outgoing transactions.",
+    "definitionFa": "کدی رمزنگاری‌شده که مالکیت کیف‌پول را اثبات و تراکنش‌های خروجی را مجاز می‌کند.",
+    "aliases": [
+      "private key",
+      "کلید خصوصی"
+    ],
+    "episodes": [
+      "s02e03",
+      "s01e07"
+    ]
+  },
+  {
+    "slug": "prize-pool-bounty",
+    "term": "Prize Pool / Bounty",
+    "termFa": "پرایز پول / باونتی",
+    "definitionEn": "Funds set aside by hackathon sponsors to reward teams that build using their protocol or tools.",
+    "definitionFa": "مبالغی که اسپانسرهای هکتان کنار می‌گذارند تا تیم‌هایی را که با پروتکل یا ابزارشان کار کرده‌اند پاداش دهند.",
+    "aliases": [
+      "prize pool / bounty",
+      "پرایز پول / باونتی"
+    ],
+    "episodes": [
+      "s07e03"
+    ]
+  },
+  {
+    "slug": "progpow",
+    "term": "ProgPoW",
+    "termFa": "ProgPoW",
+    "definitionEn": "A proposed Proof-of-Work algorithm change for Ethereum intended to reduce ASIC mining advantage, ultimately rejected by miners.",
+    "definitionFa": "تغییر پیشنهادی الگوریتم اثبات کار اتریوم برای کاهش مزیت ماینرهای ASIC که در نهایت توسط ماینرها رد شد.",
+    "aliases": [
+      "progpow"
+    ],
+    "episodes": [
+      "s05e01"
+    ]
+  },
+  {
+    "slug": "proof-of-authority",
+    "term": "Proof of Authority",
+    "termFa": "اثبات اقتدار",
+    "definitionEn": "A consensus model where a fixed, pre-approved set of nodes validates transactions, trading decentralization for high throughput.",
+    "definitionFa": "مدل اجماعی که در آن تعداد محدودی گره‌ی از پیش تأیید‌شده تراکنش‌ها را تأیید می‌کنند؛ در ازای سرعت بالا، تمرکزگرایی زیادی دارد.",
+    "aliases": [
+      "proof of authority",
+      "اثبات اقتدار"
+    ],
+    "episodes": [
+      "s06e02"
+    ]
+  },
+  {
+    "slug": "proof-of-burn",
+    "term": "Proof of Burn",
+    "termFa": "اثبات سوختن",
+    "definitionEn": "A consensus method where coins are sent to an unspendable address to prove commitment, often used to bootstrap new cryptocurrencies.",
+    "definitionFa": "روش اجماعی که در آن کوین‌ها به آدرسی غیرقابل خرج ارسال می‌شوند تا ایجاد کوین جدید را اثبات کنند.",
+    "aliases": [
+      "proof of burn",
+      "اثبات سوختن"
+    ],
+    "episodes": [
+      "s01e04"
+    ]
+  },
+  {
+    "slug": "proof-of-stake",
+    "term": "Proof of Stake",
+    "termFa": "اثبات سهام",
+    "definitionEn": "A consensus mechanism where validators lock up cryptocurrency as collateral instead of expending computational energy.",
+    "definitionFa": "مکانیزمی که در آن اعتبارسنج‌ها به جای مصرف انرژی، مقداری ارز دیجیتال را به عنوان وثیقه قفل می‌کنند.",
+    "aliases": [
+      "proof of stake",
+      "اثبات سهام"
+    ],
+    "episodes": [
+      "s03e03",
+      "s01e09",
+      "s01e04",
+      "s01e02",
+      "sp01"
+    ]
+  },
+  {
+    "slug": "proof-of-work",
+    "term": "Proof of Work",
+    "termFa": "اثبات کار",
+    "definitionEn": "A consensus mechanism requiring miners to perform computationally expensive calculations to add new blocks to the blockchain.",
+    "definitionFa": "مکانیزمی اجماعی که در آن ماینرها باید محاسبات سنگین رایانه‌ای انجام دهند تا بلاک جدیدی به بلاکچین اضافه کنند.",
+    "aliases": [
+      "proof of work",
+      "اثبات کار"
+    ],
+    "episodes": [
+      "s03e04",
+      "s01e08",
+      "s01e06",
+      "s01e04",
+      "s01e03",
+      "s01e02",
+      "sp01"
+    ]
+  },
+  {
+    "slug": "pseudonymity",
+    "term": "Pseudonymity",
+    "termFa": "شبه‌ناشناسی",
+    "definitionEn": "Using an identifier (like a blockchain address) instead of a real name, while remaining traceable through transaction history.",
+    "definitionFa": "استفاده از یک شناسه مثل آدرس بلاکچین به‌جای نام واقعی، که ردیابی از طریق تاریخچه تراکنش‌ها همچنان امکان‌پذیر است.",
+    "aliases": [
+      "pseudonymity",
+      "شبه ناشناسی"
+    ],
+    "episodes": [
+      "s07e07"
+    ]
+  },
+  {
+    "slug": "pseudonymous",
+    "term": "Pseudonymous",
+    "termFa": "شبه‌ناشناس",
+    "definitionEn": "Transactions are publicly visible on the blockchain, but addresses are not automatically tied to real-world identities.",
+    "definitionFa": "تراکنش‌ها روی بلاک‌چین عمومی هستند، اما آدرس‌ها به‌طور خودکار به هویت واقعی افراد متصل نیستند.",
+    "aliases": [
+      "pseudonymous",
+      "شبه ناشناس"
+    ],
+    "episodes": [
+      "s01e06"
+    ]
+  },
+  {
+    "slug": "ptlc",
+    "term": "PTLC",
+    "termFa": "پی‌تی‌ال‌سی",
+    "definitionEn": "Point Time-Locked Contract: an HTLC upgrade using Schnorr/adaptor signatures that improves privacy by removing the correlation of the same hash across hops.",
+    "definitionFa": "نسخه‌ی ارتقاءیافته‌ی HTLC با امضاهای شنور که با حذف هش مشترک بین گام‌ها، حریم خصوصی مسیریابی را بهبود می‌دهد.",
+    "aliases": [
+      "ptlc",
+      "پی تی ال سی",
+      "point time locked contract",
+      "قرارداد قفل شده با نقطه و زمان"
+    ],
+    "episodes": [
+      "s06e05",
+      "s06e03"
+    ]
+  },
+  {
+    "slug": "public-key",
+    "term": "Public Key",
+    "termFa": "کلید عمومی",
+    "definitionEn": "The publicly shareable counterpart to the private key, used to verify signatures and derive a Bitcoin address.",
+    "definitionFa": "طرف قابل‌اشتراک‌گذاری کلید خصوصی که برای تأیید امضا و ساخت آدرس بیت‌کوین استفاده می‌شود.",
+    "aliases": [
+      "public key",
+      "کلید عمومی"
+    ],
+    "episodes": [
+      "s01e07"
+    ]
+  },
+  {
+    "slug": "pump-and-dump",
+    "term": "Pump and Dump",
+    "termFa": "پامپ و دامپ",
+    "definitionEn": "Artificially inflating a coin's price through hype, then selling holdings at the peak to leave others with losses.",
+    "definitionFa": "بالا بردن مصنوعی قیمت یک کوین از طریق تبلیغات، سپس فروش در اوج قیمت و ضرر دادن به دیگران.",
+    "aliases": [
+      "pump and dump",
+      "پامپ و دامپ"
+    ],
+    "episodes": [
+      "s01e01"
+    ]
+  },
+  {
+    "slug": "quadratic-voting",
+    "term": "Quadratic Voting",
+    "termFa": "رأی‌گیری درجه دو",
+    "definitionEn": "A voting mechanism where the cost of additional votes grows quadratically, balancing influence between small and large contributors.",
+    "definitionFa": "مکانیزم رأی‌گیری که هزینه هر رأی اضافی به صورت توانی افزایش می‌یابد تا تأثیر مشارکت‌کنندگان کوچک و بزرگ متعادل شود.",
+    "aliases": [
+      "quadratic voting",
+      "رای گیری درجه دو"
+    ],
+    "episodes": [
+      "s03e03"
+    ]
+  },
+  {
+    "slug": "quantitative-easing",
+    "term": "Quantitative Easing",
+    "termFa": "تسهیل کمّی (چاپ پول)",
+    "definitionEn": "A central bank policy of creating new money to purchase assets, expanding the money supply to stimulate the economy.",
+    "definitionFa": "سیاست بانک مرکزی برای خلق پول جدید و خرید دارایی‌ها به منظور افزایش عرضه پول و تحریک اقتصاد.",
+    "aliases": [
+      "quantitative easing",
+      "تسهیل کمی",
+      "چاپ پول"
+    ],
+    "episodes": [
+      "s03e05"
+    ]
+  },
+  {
+    "slug": "radical-markets",
+    "term": "Radical Markets",
+    "termFa": "بازارهای رادیکال",
+    "definitionEn": "A book and intellectual movement proposing market-based reforms to land ownership, voting, and spectrum allocation to reduce monopoly and inequality.",
+    "definitionFa": "کتاب و جنبشی فکری که اصلاحات بازار-محور در مالکیت زمین، رأی‌گیری و طیف رادیویی را برای کاهش انحصار و نابرابری پیشنهاد می‌دهد.",
+    "aliases": [
+      "radical markets",
+      "بازارهای رادیکال"
+    ],
+    "episodes": [
+      "sp01"
+    ]
+  },
+  {
+    "slug": "rainbow-table",
+    "term": "Rainbow Table",
+    "termFa": "جدول رنگین‌کمان",
+    "definitionEn": "A precomputed lookup table mapping hash outputs back to their inputs, used to reverse hash functions like password hashes.",
+    "definitionFa": "جدول از پیش محاسبه‌شده‌ای که خروجی‌های هش را به ورودی‌هایشان نگاشت می‌کند و برای معکوس کردن توابع هش مانند هش رمز عبور استفاده می‌شود.",
+    "aliases": [
+      "rainbow table",
+      "جدول رنگین کمان"
+    ],
+    "episodes": [
+      "s01e06"
+    ]
+  },
+  {
+    "slug": "randao",
+    "term": "RANDAO",
+    "termFa": "RANDAO",
+    "definitionEn": "Ethereum's on-chain randomness protocol that combines validator-contributed values to unpredictably select block proposers.",
+    "definitionFa": "پروتکل تصادفی‌سازی درون‌زنجیره‌ای اتریوم که مقادیر ارائه‌شده توسط ولیدیتورها را ترکیب می‌کند تا پروپوزر بلاک بعدی را غیرقابل پیش‌بینی انتخاب کند.",
+    "aliases": [
+      "randao"
+    ],
+    "episodes": [
+      "s07e02"
+    ]
+  },
+  {
+    "slug": "ransomware",
+    "term": "Ransomware",
+    "termFa": "باج‌افزار",
+    "definitionEn": "Malware that encrypts a victim's files and demands cryptocurrency payment for the decryption key.",
+    "definitionFa": "بدافزاری که فایل‌های قربانی را رمزنگاری می‌کند و برای ارائه کلید رمزگشایی، پرداخت رمزارز طلب می‌کند.",
+    "aliases": [
+      "ransomware",
+      "باج افزار"
+    ],
+    "episodes": [
+      "s03e04"
+    ]
+  },
+  {
+    "slug": "receiving-sending-capacity",
+    "term": "Receiving / Sending Capacity",
+    "termFa": "ظرفیت دریافت / ارسال",
+    "definitionEn": "The maximum amount a Lightning channel participant can receive or send at a given moment, determined by the balance on each side.",
+    "definitionFa": "حداکثر مقداری که یک طرف کانال لایتنینگ در لحظه‌ای مشخص می‌تواند دریافت یا ارسال کند؛ وابسته به موجودی هر طرف.",
+    "aliases": [
+      "receiving / sending capacity",
+      "ظرفیت دریافت / ارسال"
+    ],
+    "episodes": [
+      "s06e04"
+    ]
+  },
+  {
+    "slug": "rehypothecation",
+    "term": "Rehypothecation",
+    "termFa": "ری‌هایپوتکیشن (عرضی‌سازی مجدد)",
+    "definitionEn": "Reusing pledged collateral as collateral again, multiplying leverage and systemic risk across the financial stack.",
+    "definitionFa": "استفاده مجدد از وثیقه‌ای که قبلاً گرو گذاشته شده، که اهرم و ریسک سیستمیک را در کل زنجیره‌ی مالی چند برابر می‌کند.",
+    "aliases": [
+      "rehypothecation",
+      "ری هایپوتکیشن",
+      "عرضی سازی مجدد"
+    ],
+    "episodes": [
+      "s07e02"
+    ]
+  },
+  {
+    "slug": "relayer",
+    "term": "Relayer",
+    "termFa": "ریلیر",
+    "definitionEn": "A third-party node in Tornado Cash that submits withdrawals on a user's behalf, so the withdrawal address is not linked to the deposit.",
+    "definitionFa": "گره شخص ثالثی در تورنادو کش که برداشت را به نمایندگی از کاربر ارسال می‌کند تا آدرس برداشت به واریز مرتبط نشود.",
+    "aliases": [
+      "relayer",
+      "ریلیر"
+    ],
+    "episodes": [
+      "s07e07",
+      "s04e03"
+    ]
+  },
+  {
+    "slug": "renbtc",
+    "term": "renBTC",
+    "termFa": "رن‌بیتی‌سی",
+    "definitionEn": "A decentralized wrapped Bitcoin using multi-party computation (MPC) rather than a central custodian like BitGo.",
+    "definitionFa": "نسخه‌ای غیرمتمرکز از بیت‌کوین رپ‌شده که به‌جای متولی مرکزی از محاسبات چندطرفه (MPC) استفاده می‌کند.",
+    "aliases": [
+      "renbtc",
+      "رن بیتی سی",
+      "رن بیتکوین"
+    ],
+    "episodes": [
+      "s04e05",
+      "s04e04"
+    ]
+  },
+  {
+    "slug": "replace-by-fee",
+    "term": "Replace-By-Fee",
+    "termFa": "ریپلیس-بای-فی",
+    "definitionEn": "An opt-in Bitcoin feature allowing a sender to replace an unconfirmed transaction with a new one carrying a higher fee.",
+    "definitionFa": "قابلیتی اختیاری در بیتکوین که به فرستنده اجازه می‌دهد تراکنش تأیید نشده را با نسخه‌ای با کارمزد بالاتر جایگزین کند.",
+    "aliases": [
+      "replace-by-fee",
+      "rbf",
+      "ریپلیس-بای-فی"
+    ],
+    "episodes": [
+      "s03e01"
+    ]
+  },
+  {
+    "slug": "replay-attack",
+    "term": "Replay Attack",
+    "termFa": "حملۀ ری‌پلی",
+    "definitionEn": "After a fork, a transaction broadcast on one chain can be copied and replayed on the other chain, potentially draining funds.",
+    "definitionFa": "پس از فورک، یک تراکنش ارسال‌شده روی یک زنجیره می‌تواند روی زنجیرۀ دیگر تکرار شود و موجب از دست رفتن دارایی شود.",
+    "aliases": [
+      "replay attack",
+      "حمله ری پلی",
+      "حمله بازپخش",
+      "حمله ریپلی"
+    ],
+    "episodes": [
+      "s02e03",
+      "s01e10",
+      "s01e02"
+    ]
+  },
+  {
+    "slug": "replay-protection",
+    "term": "Replay Protection",
+    "termFa": "محافظت در برابر ری‌پلی",
+    "definitionEn": "A technical mechanism built into a forked chain to prevent transactions from being valid on both chains simultaneously.",
+    "definitionFa": "مکانیزمی فنی در زنجیرۀ فورک‌شده که از معتبر بودن تراکنش‌ها روی هر دو زنجیره به‌طور هم‌زمان جلوگیری می‌کند.",
+    "aliases": [
+      "replay protection",
+      "محافظت در برابر ری پلی"
+    ],
+    "episodes": [
+      "s02e03"
+    ]
+  },
+  {
+    "slug": "restaking",
+    "term": "Restaking",
+    "termFa": "ری‌استیکینگ",
+    "definitionEn": "Reusing already-staked ETH to simultaneously secure additional networks or services beyond Ethereum itself.",
+    "definitionFa": "استفاده مجدد از اتریوم استیک‌شده برای تأمین امنیت شبکه‌ها یا سرویس‌های دیگر، علاوه بر خود اتریوم.",
+    "aliases": [
+      "restaking",
+      "ری استیکینگ"
+    ],
+    "episodes": [
+      "s07e02"
+    ]
+  },
+  {
+    "slug": "retrieval-augmented-generation",
+    "term": "Retrieval-Augmented Generation",
+    "termFa": "تولید با بازیابی تقویت‌شده (RAG)",
+    "definitionEn": "A technique where an LLM retrieves relevant text chunks from an external database before generating a response, reducing hallucination and extending its knowledge.",
+    "definitionFa": "روشی که در آن LLM پیش از تولید پاسخ، بخش‌های متنی مرتبط را از پایگاه داده خارجی بازیابی می‌کند تا هالوسیناسیون کاهش یابد و دانش گسترش پیدا کند.",
+    "aliases": [
+      "retrieval-augmented generation",
+      "rag",
+      "تولید با بازیابی تقویت شده"
+    ],
+    "episodes": [
+      "s07e06"
+    ]
+  },
+  {
+    "slug": "revocation-key",
+    "term": "Revocation Key",
+    "termFa": "کلید ریووکیشن (ابطال)",
+    "definitionEn": "A secret shared after each new commitment that allows the other party to claim all channel funds if an old commitment is fraudulently broadcast.",
+    "definitionFa": "رازی که پس از هر تعهد جدید رد و بدل می‌شود و به طرف مقابل اجازه می‌دهد در صورت انتشار متقلبانه‌ی تعهد قدیمی، کل وجوه کانال را دریافت کند.",
+    "aliases": [
+      "revocation key",
+      "کلید ریووکیشن",
+      "ابطال"
+    ],
+    "episodes": [
+      "s06e03"
+    ]
+  },
+  {
+    "slug": "revocation-secret",
+    "term": "Revocation Secret",
+    "termFa": "راز ابطال (ریووکیشن سکرت)",
+    "definitionEn": "A secret exchanged when a channel state is updated; possessing it lets the honest party penalize a cheater broadcasting an old state.",
+    "definitionFa": "رازی که هنگام به‌روزرسانی استیت کانال رد و بدل می‌شود و به طرف صادق امکان تنبیه متقلب را می‌دهد.",
+    "aliases": [
+      "revocation secret",
+      "راز ابطال",
+      "ریووکیشن سکرت"
+    ],
+    "episodes": [
+      "s06e04"
+    ]
+  },
+  {
+    "slug": "roi",
+    "term": "ROI",
+    "termFa": "بازگشت سرمایه",
+    "definitionEn": "The time or ratio at which mining revenue recoups the initial hardware and operating costs.",
+    "definitionFa": "مدت زمان یا نسبتی که درآمد ماینینگ هزینه اولیه سخت‌افزار و برق را جبران می‌کند.",
+    "aliases": [
+      "roi",
+      "return on investment",
+      "بازگشت سرمایه"
+    ],
+    "episodes": [
+      "s01e09"
+    ]
+  },
+  {
+    "slug": "rollup",
+    "term": "Rollup",
+    "termFa": "رول‌آپ",
+    "definitionEn": "A Layer 2 scaling solution that batches transactions off-chain and posts compressed proofs or data to Ethereum Layer 1 for security.",
+    "definitionFa": "راهکار مقیاس‌پذیری لایه دو که تراکنش‌ها را خارج از زنجیر دسته‌بندی می‌کند و اثبات‌ها یا داده‌های فشرده را برای امنیت روی لایه یک اتریوم ثبت می‌کند.",
+    "aliases": [
+      "rollup",
+      "رول اپ"
+    ],
+    "episodes": [
+      "s07e01"
+    ]
+  },
+  {
+    "slug": "rootstock",
+    "term": "RootStock",
+    "termFa": "روت‌استاک",
+    "definitionEn": "A smart-contract platform that runs as a Bitcoin sidechain, aiming to bring Ethereum-like functionality to Bitcoin.",
+    "definitionFa": "پلتفرم قرارداد هوشمندی که به‌عنوان یک سایدچین بیت‌کوین اجرا می‌شود و هدف آن آوردن قابلیت‌های مشابه اتریوم به بیت‌کوین است.",
+    "aliases": [
+      "rootstock",
+      "روت استاک"
+    ],
+    "episodes": [
+      "s01e02"
+    ]
+  },
+  {
+    "slug": "satoshi",
+    "term": "Satoshi",
+    "termFa": "ساتوشی",
+    "definitionEn": "The smallest unit of Bitcoin, equal to one hundred-millionth of a BTC, enabling micropayments.",
+    "definitionFa": "کوچک‌ترین واحد بیتکوین، برابر با یک صدمیلیونم BTC، که امکان پرداخت‌های خرد را فراهم می‌کند.",
+    "aliases": [
+      "satoshi",
+      "ساتوشی"
+    ],
+    "episodes": [
+      "s02e02"
+    ]
+  },
+  {
+    "slug": "scaffold-eth",
+    "term": "Scaffold-ETH",
+    "termFa": "اسکفولد-ایت",
+    "definitionEn": "An open-source toolkit for rapidly prototyping Ethereum dApps with a pre-configured frontend and contracts.",
+    "definitionFa": "جعبه‌ابزار متن‌بازی برای نمونه‌سازی سریع dAppهای اتریوم با فرانت‌اند و قراردادهای از پیش‌تنظیم‌شده.",
+    "aliases": [
+      "scaffold-eth",
+      "اسکفولد-ایت"
+    ],
+    "episodes": [
+      "s07e03"
+    ]
+  },
+  {
+    "slug": "scalability",
+    "term": "Scalability",
+    "termFa": "مقیاس‌پذیری",
+    "definitionEn": "A blockchain's ability to handle a growing number of transactions per second without sacrificing decentralization or security.",
+    "definitionFa": "توانایی یک بلاکچین برای پردازش تعداد بیشتری تراکنش در ثانیه بدون از دست دادن عدم تمرکز یا امنیت.",
+    "aliases": [
+      "scalability",
+      "مقیاس پذیری"
+    ],
+    "episodes": [
+      "s06e01",
+      "s02e01"
+    ]
+  },
+  {
+    "slug": "scrypt",
+    "term": "Scrypt",
+    "termFa": "اسکریپت",
+    "definitionEn": "A memory-hard hash algorithm used by Litecoin and other coins as an alternative to SHA-256, originally designed to resist ASIC mining.",
+    "definitionFa": "الگوریتم هش حافظه‌بر استفاده‌شده در لایت‌کوین که برای مقاومت در برابر دستگاه‌های ASIC طراحی شد.",
+    "aliases": [
+      "scrypt",
+      "اسکریپت"
+    ],
+    "episodes": [
+      "s01e04"
+    ]
+  },
+  {
+    "slug": "sec",
+    "term": "SEC",
+    "termFa": "کمیسیون بورس و اوراق بهادار آمریکا",
+    "definitionEn": "The U.S. federal regulator that oversees securities markets and must approve any Bitcoin ETF before it can trade.",
+    "definitionFa": "نهاد نظارتی فدرال آمریکا که بازارهای اوراق بهادار را نظارت می‌کند و باید هر ETF بیت‌کوین را پیش از معامله تأیید کند.",
+    "aliases": [
+      "sec",
+      "securities and exchange commission",
+      "کمیسیون بورس و اوراق بهادار امریکا"
+    ],
+    "episodes": [
+      "s01e03"
+    ]
+  },
+  {
+    "slug": "security-consideration",
+    "term": "Security Consideration",
+    "termFa": "ملاحظات امنیتی",
+    "definitionEn": "A mandatory section in every Ethereum EIP requiring authors to analyze potential security risks introduced by the proposed change.",
+    "definitionFa": "بخش اجباری در هر EIP اتریوم که نویسندگان را ملزم می‌کند خطرات امنیتی احتمالی تغییر پیشنهادی را تحلیل کنند.",
+    "aliases": [
+      "security consideration",
+      "ملاحظات امنیتی"
+    ],
+    "episodes": [
+      "s05e01"
+    ]
+  },
+  {
+    "slug": "seed-phrase",
+    "term": "Seed Phrase",
+    "termFa": "عبارت بازیابی (سید)",
+    "definitionEn": "A human-readable backup of a wallet's private key, typically 12–24 words, used to restore access to funds.",
+    "definitionFa": "نسخۀ پشتیبان خوانا از کلید خصوصی کیف‌پول، معمولاً ۱۲ تا ۲۴ کلمه، که برای بازیابی دسترسی به دارایی استفاده می‌شود.",
+    "aliases": [
+      "seed phrase",
+      "عبارت بازیابی",
+      "سید"
+    ],
+    "episodes": [
+      "s02e03"
+    ]
+  },
+  {
+    "slug": "segwit",
+    "term": "SegWit",
+    "termFa": "سگ‌ویت (شاهد جداشده)",
+    "definitionEn": "A Bitcoin protocol upgrade that moves signature data into a separate Merkle tree, reducing transaction size and increasing effective block capacity.",
+    "definitionFa": "ارتقای پروتکل بیت‌کوین که داده‌های امضا را در یک درخت مرکل جداگانه ذخیره می‌کند و ظرفیت مؤثر بلاک را افزایش می‌دهد.",
+    "aliases": [
+      "segwit",
+      "segregated witness",
+      "سگ ویت",
+      "شاهد جداشده",
+      "سگویت",
+      "شاهد مجزا",
+      "شاهد جداگانه"
+    ],
+    "episodes": [
+      "s06e01",
+      "s03e04",
+      "s03e02",
+      "s02e03",
+      "s02e02",
+      "s01e10",
+      "s01e05"
+    ]
+  },
+  {
+    "slug": "segwit2x",
+    "term": "SegWit2x",
+    "termFa": "سگویت‌تو‌ایکس",
+    "definitionEn": "A canceled 2017 compromise proposal to activate SegWit and then double the block size to 2 MB two months later.",
+    "definitionFa": "یک پیشنهاد مصالحه‌ای در ۲۰۱۷ که قرار بود سگویت را فعال کند و دو ماه بعد حجم بلاک را به دو مگابایت برساند، اما کنسل شد.",
+    "aliases": [
+      "segwit2x",
+      "سگویت تو ایکس",
+      "سگ ویت2ایکس",
+      "سگ ویت 2ایکس"
+    ],
+    "episodes": [
+      "s03e02",
+      "s02e02",
+      "s01e10"
+    ]
+  },
+  {
+    "slug": "selfdestruct",
+    "term": "SELFDESTRUCT",
+    "termFa": "SELFDESTRUCT / EIP-6780",
+    "definitionEn": "An EVM opcode historically used to delete a contract; EIP-6780 restricts it to contracts created in the same transaction, closing proxy-upgrade security holes.",
+    "definitionFa": "آپ‌کدی در EVM که قراردادها را حذف می‌کرد؛ EIP-6780 آن را فقط به قراردادهای ساخته‌شده در همان تراکنش محدود کرد تا حفره‌های امنیتی پروکسی بسته شود.",
+    "aliases": [
+      "selfdestruct",
+      "eip-6780",
+      "selfdestruct / eip-6780"
+    ],
+    "episodes": [
+      "s07e01"
+    ]
+  },
+  {
+    "slug": "selfish-mining",
+    "term": "Selfish Mining",
+    "termFa": "استخراج خودخواهانه",
+    "definitionEn": "A mining strategy where a pool withholds discovered blocks to gain a disproportionate share of rewards.",
+    "definitionFa": "استراتژی استخراجی که در آن یک پول بلاک‌های کشف‌شده را مخفی نگه می‌دارد تا سهم نامتناسبی از جوایز ببرد.",
+    "aliases": [
+      "selfish mining",
+      "استخراج خودخواهانه",
+      "سلفیش ماینینگ"
+    ],
+    "episodes": [
+      "s03e03",
+      "s03e01"
+    ]
+  },
+  {
+    "slug": "sell-off",
+    "term": "Sell-Off",
+    "termFa": "سل‌آف (فروش گسترده)",
+    "definitionEn": "A rapid, large-scale selling of assets — stocks or crypto — that drives prices sharply lower in a short period.",
+    "definitionFa": "فروش سریع و گسترده دارایی‌ها که قیمت را در مدت کوتاهی به شدت پایین می‌آورد.",
+    "aliases": [
+      "sell-off",
+      "سل اف",
+      "فروش گسترده"
+    ],
+    "episodes": [
+      "s03e05"
+    ]
+  },
+  {
+    "slug": "sha-256",
+    "term": "SHA-256",
+    "termFa": "SHA-256",
+    "definitionEn": "The cryptographic hash function used in Bitcoin's proof-of-work and address generation.",
+    "definitionFa": "تابع درهم‌سازی رمزنگاری که در اثبات کار بیت‌کوین و تولید آدرس استفاده می‌شود.",
+    "aliases": [
+      "sha-256"
+    ],
+    "episodes": [
+      "s01e07",
+      "s01e04"
+    ]
+  },
+  {
+    "slug": "shapeshift",
+    "term": "ShapeShift",
+    "termFa": "شیپ‌شیفت",
+    "definitionEn": "A service that instantly converts one cryptocurrency into another without requiring an account.",
+    "definitionFa": "سرویسی که بدون نیاز به حساب کاربری، یک رمزارز را فوری به رمزارز دیگر تبدیل می‌کند.",
+    "aliases": [
+      "shapeshift",
+      "شیپ شیفت"
+    ],
+    "episodes": [
+      "s01e01"
+    ]
+  },
+  {
+    "slug": "sharding",
+    "term": "Sharding",
+    "termFa": "شاردینگ",
+    "definitionEn": "A scaling technique that splits a blockchain into multiple parallel chains (shards) that process transactions simultaneously.",
+    "definitionFa": "روشی برای مقیاس‌پذیری که بلاکچین را به چندین زنجیره‌ی موازی تقسیم می‌کند تا تراکنش‌ها به‌صورت همزمان پردازش شوند.",
+    "aliases": [
+      "sharding",
+      "شاردینگ"
+    ],
+    "episodes": [
+      "s06e01",
+      "s03e03"
+    ]
+  },
+  {
+    "slug": "side-event",
+    "term": "Side Event",
+    "termFa": "ساید ایونت",
+    "definitionEn": "Smaller, often free gatherings organized by projects or communities alongside a main conference.",
+    "definitionFa": "رویدادهای کوچک‌تری که پروژه‌ها یا کامیونیتی‌ها در حاشیه کنفرانس اصلی برگزار می‌کنند.",
+    "aliases": [
+      "side event",
+      "ساید ایونت"
+    ],
+    "episodes": [
+      "s07e04"
+    ]
+  },
+  {
+    "slug": "sidechain",
+    "term": "Sidechain",
+    "termFa": "زنجیره‌ی جانبی",
+    "definitionEn": "An independent blockchain linked to a main chain via a two-way bridge, operating under its own consensus rules.",
+    "definitionFa": "بلاکچین مستقلی که از طریق یک پل دوطرفه به زنجیره‌ی اصلی متصل است و قوانین اجماع خود را دارد.",
+    "aliases": [
+      "sidechain",
+      "زنجیره ی جانبی"
+    ],
+    "episodes": [
+      "s06e02"
+    ]
+  },
+  {
+    "slug": "slashing",
+    "term": "Slashing",
+    "termFa": "اسلشینگ",
+    "definitionEn": "The penalty mechanism in Proof of Stake that destroys part of a validator's staked ETH for malicious or faulty behavior.",
+    "definitionFa": "مکانیزم جریمه در اثبات سهام که بخشی از اتریوم استیک‌شده‌ی ولیدیتور خاطی را به‌عنوان مجازات نابود می‌کند.",
+    "aliases": [
+      "slashing",
+      "اسلشینگ"
+    ],
+    "episodes": [
+      "s07e02"
+    ]
+  },
+  {
+    "slug": "slippage",
+    "term": "Slippage",
+    "termFa": "لغزش قیمت",
+    "definitionEn": "The difference between the expected price of a trade and the price at which it actually executes, larger in shallow pools.",
+    "definitionFa": "تفاوت بین قیمت مورد انتظار یک معامله و قیمت واقعی اجرای آن، که در استخرهای کم‌عمق‌تر بیشتر است.",
+    "aliases": [
+      "slippage",
+      "لغزش قیمت",
+      "اسلیپیج"
+    ],
+    "episodes": [
+      "s04e04",
+      "s04e03"
+    ]
+  },
+  {
+    "slug": "slock-it",
+    "term": "Slock.it",
+    "termFa": "اسلاک‌ایت",
+    "definitionEn": "A company that developed smart locks controlled by blockchain transactions, enabling trustless access control for IoT devices.",
+    "definitionFa": "شرکتی که قفل‌های هوشمند کنترل‌شده با تراکنش‌های بلاک‌چین توسعه داد و کنترل دسترسی بدون نیاز به اعتماد را برای دستگاه‌های اینترنت اشیاء ممکن ساخت.",
+    "aliases": [
+      "slock.it",
+      "اسلاک ایت"
+    ],
+    "episodes": [
+      "s01e06"
+    ]
+  },
+  {
+    "slug": "smart-contract",
+    "term": "Smart Contract",
+    "termFa": "قرارداد هوشمند",
+    "definitionEn": "Self-executing code stored on a blockchain that automatically enforces agreement terms without a middleman.",
+    "definitionFa": "کدی خوداجرا روی بلاکچین که شرایط توافق را به‌طور خودکار و بدون واسطه اجرا می‌کند.",
+    "aliases": [
+      "smart contract",
+      "قرارداد هوشمند"
+    ],
+    "episodes": [
+      "s03e06",
+      "s01e08",
+      "s01e02",
+      "sp01"
+    ]
+  },
+  {
+    "slug": "smart-order-routing",
+    "term": "Smart Order Routing",
+    "termFa": "مسیریابی هوشمند سفارش",
+    "definitionEn": "A mechanism that automatically splits or routes a trade across multiple pools or exchanges to get the best price.",
+    "definitionFa": "مکانیزمی که معامله را به‌صورت خودکار بین چند استخر یا صرافی تقسیم یا هدایت می‌کند تا بهترین قیمت حاصل شود.",
+    "aliases": [
+      "smart order routing",
+      "sor",
+      "مسیریابی هوشمند سفارش"
+    ],
+    "episodes": [
+      "s04e04"
+    ]
+  },
+  {
+    "slug": "soft-fork",
+    "term": "Soft Fork",
+    "termFa": "سافت فورک",
+    "definitionEn": "A backward-compatible protocol upgrade where old nodes can still validate new blocks.",
+    "definitionFa": "به‌روزرسانی پروتکل که با نسخه‌های قدیمی سازگار است و نودهای قدیم همچنان می‌توانند بلوک‌های جدید را تأیید کنند.",
+    "aliases": [
+      "soft fork",
+      "سافت فورک"
+    ],
+    "episodes": [
+      "s02e02",
+      "s01e05"
+    ]
+  },
+  {
+    "slug": "solidity",
+    "term": "Solidity",
+    "termFa": "سالیدیتی",
+    "definitionEn": "A statically-typed, JavaScript-like programming language designed for writing smart contracts on the Ethereum blockchain.",
+    "definitionFa": "زبان برنامه‌نویسی strongly typed با سینتکس شبیه به جاوااسکریپت که برای نوشتن قراردادهای هوشمند روی اتریوم طراحی شده است.",
+    "aliases": [
+      "solidity",
+      "سالیدیتی"
+    ],
+    "episodes": [
+      "s01e02"
+    ]
+  },
+  {
+    "slug": "source-based-routing",
+    "term": "Source-Based Routing",
+    "termFa": "مسیریابی مبتنی بر منبع",
+    "definitionEn": "A routing method where the sender calculates and specifies the full path before transmitting, as used in Lightning and Tor.",
+    "definitionFa": "روشی در مسیریابی که فرستنده پیش از ارسال، کل مسیر را خودش محاسبه و مشخص می‌کند؛ مانند لایتنینگ و Tor.",
+    "aliases": [
+      "source-based routing",
+      "مسیریابی مبتنی بر منبع"
+    ],
+    "episodes": [
+      "s06e04"
+    ]
+  },
+  {
+    "slug": "specification-gaming-reward-hacking",
+    "term": "Specification Gaming / Reward Hacking",
+    "termFa": "بازی با مشخصات / هک پاداش",
+    "definitionEn": "When an AI fulfills the literal wording of a goal but violates its intent, finding unintended shortcuts to maximize its reward signal.",
+    "definitionFa": "زمانی که هوش مصنوعی دقیقاً کلمات هدف را برآورده می‌کند اما از منظور واقعی آن منحرف می‌شود و برای بیشینه کردن سیگنال پاداش میان‌برهای ناخواسته می‌یابد.",
+    "aliases": [
+      "specification gaming / reward hacking",
+      "بازی با مشخصات / هک پاداش"
+    ],
+    "episodes": [
+      "s07e06"
+    ]
+  },
+  {
+    "slug": "spv",
+    "term": "SPV",
+    "termFa": "تأیید پرداخت ساده‌شده",
+    "definitionEn": "A lightweight method for verifying Bitcoin transactions without downloading the full blockchain, used by mobile wallets.",
+    "definitionFa": "روشی سبک برای تأیید تراکنش‌های بیتکوین بدون دانلود کل بلاکچین، که کیف پول‌های موبایل از آن استفاده می‌کنند.",
+    "aliases": [
+      "spv",
+      "simplified payment verification",
+      "تایید پرداخت ساده شده"
+    ],
+    "episodes": [
+      "s01e10"
+    ]
+  },
+  {
+    "slug": "stablecoin",
+    "term": "Stablecoin",
+    "termFa": "کوین پایدار / استیبل‌کوین",
+    "definitionEn": "A cryptocurrency designed to maintain a fixed value, typically pegged to one US dollar.",
+    "definitionFa": "رمز ارزی که هدفش حفظ ارزش ثابت — معمولاً معادل یک دلار — در برابر نوسانات بازار است.",
+    "aliases": [
+      "stablecoin",
+      "کوین پایدار / استیبل کوین",
+      "استیبل کوین"
+    ],
+    "episodes": [
+      "s04e02",
+      "s04e01"
+    ]
+  },
+  {
+    "slug": "state-channel",
+    "term": "State Channel",
+    "termFa": "کانال حالت",
+    "definitionEn": "A generalized off-chain channel that supports arbitrary smart-contract state transitions, not just payments.",
+    "definitionFa": "کانال آف‌چین عمومی‌تری که از هر نوع تغییر حالت قرارداد هوشمند، نه فقط پرداخت، پشتیبانی می‌کند.",
+    "aliases": [
+      "state channel",
+      "کانال حالت"
+    ],
+    "episodes": [
+      "s06e02"
+    ]
+  },
+  {
+    "slug": "store-of-value",
+    "term": "Store of Value",
+    "termFa": "ذخیرۀ ارزش",
+    "definitionEn": "An asset held over time to preserve purchasing power, like gold, rather than used for everyday transactions.",
+    "definitionFa": "دارایی‌ای که برای حفظ قدرت خرید در طول زمان نگه‌داشته می‌شود، مشابه طلا، نه برای تراکنش‌های روزمره.",
+    "aliases": [
+      "store of value",
+      "sov",
+      "ذخیره ارزش"
+    ],
+    "episodes": [
+      "s02e03"
+    ]
+  },
+  {
+    "slug": "submarine-swap",
+    "term": "Submarine Swap",
+    "termFa": "سابمارین سواپ",
+    "definitionEn": "An atomic cross-layer exchange that converts on-chain Bitcoin to Lightning (or vice versa) without requiring mutual trust between parties.",
+    "definitionFa": "مبادله‌ای اتمیک بین لایه‌ی اصلی بیتکوین و شبکه‌ی لایتنینگ که بدون نیاز به اعتماد انجام می‌شود.",
+    "aliases": [
+      "submarine swap",
+      "سابمارین سواپ"
+    ],
+    "episodes": [
+      "s06e05"
+    ]
+  },
+  {
+    "slug": "surplus-value",
+    "term": "Surplus Value",
+    "termFa": "ارزش اضافی",
+    "definitionEn": "In Marxist theory, the value created by workers beyond their wages, appropriated by the employer.",
+    "definitionFa": "در نظریه مارکس، ارزشی که کارگر فراتر از دستمزد خود تولید می‌کند و کارفرما آن را تصاحب می‌کند.",
+    "aliases": [
+      "surplus value",
+      "ارزش اضافی"
+    ],
+    "episodes": [
+      "s03e07"
+    ]
+  },
+  {
+    "slug": "surveillance-capitalism",
+    "term": "Surveillance Capitalism",
+    "termFa": "سرمایه‌داری نظارتی",
+    "definitionEn": "A business model that monetizes personal data collected by platforms like Facebook and Google.",
+    "definitionFa": "مدل کسب‌وکاری که داده‌های شخصی جمع‌آوری‌شده توسط پلتفرم‌هایی مانند فیسبوک و گوگل را به درآمد تبدیل می‌کند.",
+    "aliases": [
+      "surveillance capitalism",
+      "سرمایه داری نظارتی"
+    ],
+    "episodes": [
+      "s03e07"
+    ]
+  },
+  {
+    "slug": "swag",
+    "term": "Swag",
+    "termFa": "سواگ",
+    "definitionEn": "Promotional merchandise—t-shirts, hardware, badges—distributed free by projects at conferences.",
+    "definitionFa": "هدایای تبلیغاتی مانند تی‌شرت، سخت‌افزار و بج که پروژه‌ها در کنفرانس‌ها رایگان توزیع می‌کنند.",
+    "aliases": [
+      "swag",
+      "سواگ"
+    ],
+    "episodes": [
+      "s07e04"
+    ]
+  },
+  {
+    "slug": "sybil-attack",
+    "term": "Sybil Attack",
+    "termFa": "حملهٔ سیبیل",
+    "definitionEn": "An attack where a single adversary runs many fake nodes to surround and mislead honest nodes with false information.",
+    "definitionFa": "حمله‌ای که در آن یک مهاجم نودهای جعلی زیادی اجرا می‌کند تا نودهای سالم را با اطلاعات نادرست فریب دهد.",
+    "aliases": [
+      "sybil attack",
+      "حمله سیبیل"
+    ],
+    "episodes": [
+      "s01e10"
+    ]
+  },
+  {
+    "slug": "systematic-risk",
+    "term": "Systematic Risk",
+    "termFa": "ریسک سیستماتیک",
+    "definitionEn": "Market-wide risk that cannot be eliminated through diversification, typically triggered by macroeconomic or geopolitical shocks.",
+    "definitionFa": "ریسکی که کل بازار را تحت تأثیر قرار می‌دهد و با تنوع‌بخشی قابل حذف نیست؛ معمولاً ناشی از شوک‌های کلان اقتصادی است.",
+    "aliases": [
+      "systematic risk",
+      "ریسک سیستماتیک"
+    ],
+    "episodes": [
+      "s03e05"
+    ]
+  },
+  {
+    "slug": "tainted-bitcoin",
+    "term": "Tainted Bitcoin",
+    "termFa": "بیت‌کوین کثیف",
+    "definitionEn": "Bitcoin traceable to theft, hacks, or illegal activity that exchanges may freeze upon detection.",
+    "definitionFa": "بیت‌کوینی که به سرقت، هک یا فعالیت غیرقانونی مرتبط است و صرافی‌ها ممکن است آن را مسدود کنند.",
+    "aliases": [
+      "tainted bitcoin",
+      "بیت کوین کثیف"
+    ],
+    "episodes": [
+      "s01e01"
+    ]
+  },
+  {
+    "slug": "taproot",
+    "term": "Taproot",
+    "termFa": "تپروت",
+    "definitionEn": "A Bitcoin soft-fork upgrade bundling Schnorr signatures and MAST, making complex scripts indistinguishable from simple transactions for privacy and efficiency.",
+    "definitionFa": "آپگرید نرم‌فورک بیتکوین که امضای شنور و MAST را یکجا اضافه کرد و اسکریپت‌های پیچیده را از تراکنش‌های معمولی غیرقابل‌تشخیص می‌کند.",
+    "aliases": [
+      "taproot",
+      "تپروت"
+    ],
+    "episodes": [
+      "s06e05"
+    ]
+  },
+  {
+    "slug": "technical-analysis",
+    "term": "Technical Analysis",
+    "termFa": "تحلیل تکنیکال",
+    "definitionEn": "Using historical price charts and patterns to estimate future market direction and entry or exit points.",
+    "definitionFa": "استفاده از نمودارها و الگوهای تاریخی قیمت برای تخمین جهت آینده بازار و نقاط ورود یا خروج.",
+    "aliases": [
+      "technical analysis",
+      "تحلیل تکنیکال"
+    ],
+    "episodes": [
+      "s01e01"
+    ]
+  },
+  {
+    "slug": "testnet",
+    "term": "Testnet",
+    "termFa": "تست‌نت",
+    "definitionEn": "A parallel blockchain network used to test protocol changes without risking real funds, with Litecoin often serving as Bitcoin's de facto testnet.",
+    "definitionFa": "شبکه بلاکچین موازی برای آزمایش تغییرات پروتکل بدون خطر از دست دادن دارایی واقعی؛ لایت‌کوین اغلب نقش تست‌نت غیررسمی بیتکوین را دارد.",
+    "aliases": [
+      "testnet",
+      "تست نت"
+    ],
+    "episodes": [
+      "s02e02"
+    ]
+  },
+  {
+    "slug": "tether",
+    "term": "Tether",
+    "termFa": "تتر",
+    "definitionEn": "The largest centralized stablecoin, originally issued on the Mastercoin/Omni Layer, pegged 1:1 to the US dollar.",
+    "definitionFa": "بزرگ‌ترین استیبل‌کوین متمرکز که ابتدا روی اومنی‌لایر صادر شد و ارزشش ۱ به ۱ به دلار آمریکا پیوند خورده است.",
+    "aliases": [
+      "tether",
+      "usdt",
+      "تتر"
+    ],
+    "episodes": [
+      "s04e01",
+      "s01e07"
+    ]
+  },
+  {
+    "slug": "the-dao",
+    "term": "The DAO",
+    "termFa": "داو",
+    "definitionEn": "A decentralized autonomous organization built on Ethereum in 2016 that was hacked, leading to a controversial hard fork.",
+    "definitionFa": "یک سازمان خودمختار غیرمتمرکز ساخته‌شده روی اتریوم در ۲۰۱۶ که هک شد و منجر به یک هارد فورک جنجالی گردید.",
+    "aliases": [
+      "the dao",
+      "داو"
+    ],
+    "episodes": [
+      "s01e02"
+    ]
+  },
+  {
+    "slug": "the-graph",
+    "term": "The Graph",
+    "termFa": "دگراف",
+    "definitionEn": "A decentralized indexing protocol that lets developers query blockchain data efficiently via GraphQL.",
+    "definitionFa": "پروتکل ایندکس‌گذاری غیرمتمرکزی که به توسعه‌دهندگان امکان می‌دهد داده‌های بلاکچین را با GraphQL به‌راحتی جستجو کنند.",
+    "aliases": [
+      "the graph",
+      "دگراف"
+    ],
+    "episodes": [
+      "s07e03"
+    ]
+  },
+  {
+    "slug": "timelock",
+    "term": "Timelock",
+    "termFa": "تایم‌لاک",
+    "definitionEn": "A script condition that prevents spending a transaction output until a certain number of blocks have passed.",
+    "definitionFa": "شرطی در اسکریپت که خرج کردن خروجی یک تراکنش را تا گذشتن تعداد مشخصی بلاک متوقف می‌کند.",
+    "aliases": [
+      "timelock",
+      "تایم لاک"
+    ],
+    "episodes": [
+      "s06e04"
+    ]
+  },
+  {
+    "slug": "token",
+    "term": "Token",
+    "termFa": "توکن",
+    "definitionEn": "A digital asset issued on an existing blockchain (commonly Ethereum) representing utility, equity, or access rights in a project.",
+    "definitionFa": "دارایی دیجیتالی که روی یک بلاکچین موجود (معمولاً اتریوم) صادر می‌شود و نمایانگر حق استفاده، سهام یا دسترسی در یک پروژه است.",
+    "aliases": [
+      "token",
+      "توکن"
+    ],
+    "episodes": [
+      "s01e08"
+    ]
+  },
+  {
+    "slug": "tornado-cash",
+    "term": "Tornado Cash",
+    "termFa": "تورنادو کش",
+    "definitionEn": "A decentralized Ethereum mixer using zkSNARKs that lets users deposit and withdraw funds without linking the two addresses.",
+    "definitionFa": "میکسر غیرمتمرکز اتریوم مبتنی بر zkSNARK که به کاربران امکان می‌دهد وجوه را بدون ارتباط آدرس واریز و برداشت کنند.",
+    "aliases": [
+      "tornado cash",
+      "تورنادو کش"
+    ],
+    "episodes": [
+      "s07e07"
+    ]
+  },
+  {
+    "slug": "transaction-malleability",
+    "term": "Transaction Malleability",
+    "termFa": "انعطاف‌پذیری تراکنش",
+    "definitionEn": "A Bitcoin vulnerability allowing a transaction's ID to be altered before confirmation, exploited in the Mt. Gox hack.",
+    "definitionFa": "آسیب‌پذیری بیت‌کوین که اجازه می‌دهد شناسه تراکنش قبل از تأیید تغییر کند؛ روشی که در هک Mt. Gox مورد سوءاستفاده قرار گرفت.",
+    "aliases": [
+      "transaction malleability",
+      "انعطاف پذیری تراکنش",
+      "تغییرپذیری تراکنش",
+      "مالیبیلیتی تراکنش"
+    ],
+    "episodes": [
+      "s03e04",
+      "s03e02",
+      "s01e10",
+      "s01e05"
+    ]
+  },
+  {
+    "slug": "transactions-per-second",
+    "term": "Transactions Per Second",
+    "termFa": "تراکنش در ثانیه",
+    "definitionEn": "The number of transactions a blockchain network can confirm every second, used as the primary measure of throughput.",
+    "definitionFa": "تعداد تراکنش‌هایی که یک شبکه‌ی بلاکچین می‌تواند در هر ثانیه تأیید کند و معیار اصلی سنجش ظرفیت است.",
+    "aliases": [
+      "transactions per second",
+      "tps",
+      "تراکنش در ثانیه"
+    ],
+    "episodes": [
+      "s06e01"
+    ]
+  },
+  {
+    "slug": "transient-storage",
+    "term": "Transient Storage",
+    "termFa": "ترنزینت استوریج / EIP-1153",
+    "definitionEn": "New TSTORE/TLOAD opcodes providing cheap, within-transaction-only storage that is automatically cleared when the transaction ends.",
+    "definitionFa": "آپ‌کدهای جدید TSTORE و TLOAD که فضای ذخیره‌سازی ارزان و فقط درون-تراکنشی فراهم می‌کنند و با پایان تراکنش به‌طور خودکار پاک می‌شوند.",
+    "aliases": [
+      "transient storage",
+      "eip-1153",
+      "ترنزینت استوریج / eip-1153"
+    ],
+    "episodes": [
+      "s07e01"
+    ]
+  },
+  {
+    "slug": "trusted-execution-environment",
+    "term": "Trusted Execution Environment",
+    "termFa": "محیط اجرای امن (TEE)",
+    "definitionEn": "A hardware-isolated CPU enclave (e.g., Intel SGX) that runs code and stores secrets in a tamper-proof region, with cryptographic attestation of what code ran.",
+    "definitionFa": "محفظه‌ای سخت‌افزاری در CPU (مانند Intel SGX) که کد را در ناحیه‌ای غیرقابل دستکاری اجرا می‌کند و با تأیید رمزنگاری اثبات می‌کند چه کدی اجرا شده است.",
+    "aliases": [
+      "trusted execution environment",
+      "tee",
+      "محیط اجرای امن"
+    ],
+    "episodes": [
+      "s07e06"
+    ]
+  },
+  {
+    "slug": "trusted-setup-ceremony",
+    "term": "Trusted Setup Ceremony",
+    "termFa": "مراسم راه‌اندازی اعتماد",
+    "definitionEn": "A multi-party computation ritual that generates zkSNARK parameters; secure if at least one participant deletes their secret.",
+    "definitionFa": "فرآیند چندطرفه‌ای برای تولید پارامترهای zkSNARK که اگر حداقل یک شرکت‌کننده داده‌اش را پاک کند، امن است.",
+    "aliases": [
+      "trusted setup ceremony",
+      "مراسم راه اندازی اعتماد",
+      "سرمونی تراستد ستاپ"
+    ],
+    "episodes": [
+      "s07e07",
+      "s07e01"
+    ]
+  },
+  {
+    "slug": "uasf",
+    "term": "UASF",
+    "termFa": "سافت‌فورک فعال‌شده توسط کاربر",
+    "definitionEn": "A mechanism letting economic nodes enforce protocol upgrades by rejecting non-compliant blocks, without waiting for miner majority.",
+    "definitionFa": "مکانیزمی که به نودهای اقتصادی اجازه می‌دهد با رد بلاک‌های مخالف، تغییرات پروتکل را بدون اکثریت ماینرها اعمال کنند.",
+    "aliases": [
+      "uasf",
+      "user activated soft fork",
+      "سافت فورک فعال شده توسط کاربر",
+      "یو ای اس اف",
+      "فورک نرم فعال شده توسط کاربران",
+      "سافت فورک فعال شده توسط کاربران"
+    ],
+    "episodes": [
+      "s03e02",
+      "s02e02",
+      "s01e10",
+      "s01e09",
+      "s01e05"
+    ]
+  },
+  {
+    "slug": "ultra-sound-money",
+    "term": "Ultra Sound Money",
+    "termFa": "اولتراساند مانی",
+    "definitionEn": "A community meme coined by Justin Drake arguing that deflationary ETH surpasses Bitcoin's \"Sound Money\" properties.",
+    "definitionFa": "میمی از کامیونیتی اتریوم که جاستین دریک مطرح کرد و مدعی است اتر دیفلیشنری از ویژگی‌های «پول سالم» بیتکوین فراتر می‌رود.",
+    "aliases": [
+      "ultra sound money",
+      "اولتراساند مانی"
+    ],
+    "episodes": [
+      "s05e02"
+    ]
+  },
+  {
+    "slug": "undervolting-downclocking",
+    "term": "Undervolting / Downclocking",
+    "termFa": "کاهش ولتاژ / کاهش فرکانس",
+    "definitionEn": "Reducing a GPU's voltage or clock speed to lower heat and power consumption while preserving hashrate.",
+    "definitionFa": "کاهش ولتاژ یا فرکانس کارت گرافیک برای کم کردن گرما و مصرف برق بدون از دست دادن هش‌ریت.",
+    "aliases": [
+      "undervolting / downclocking",
+      "کاهش ولتاژ / کاهش فرکانس"
+    ],
+    "episodes": [
+      "s01e09"
+    ]
+  },
+  {
+    "slug": "uniswap-v4-hooks",
+    "term": "Uniswap v4 Hooks",
+    "termFa": "هوک‌های یونی‌سواپ نسخه ۴",
+    "definitionEn": "Programmable callbacks (e.g., beforeSwap, afterSwap) in Uniswap v4 pools that enable custom logic, powered by transient storage for gas efficiency.",
+    "definitionFa": "کال‌بک‌های قابل برنامه‌ریزی در استخرهای یونی‌سواپ نسخه ۴ (مانند beforeSwap و afterSwap) که با کمک ترنزینت استوریج منطق سفارشی را با کارایی گاز فعال می‌کنند.",
+    "aliases": [
+      "uniswap v4 hooks",
+      "هوک های یونی سواپ نسخه 4"
+    ],
+    "episodes": [
+      "s07e01"
+    ]
+  },
+  {
+    "slug": "utilization-ratio",
+    "term": "Utilization Ratio",
+    "termFa": "نرخ مطلوبیت",
+    "definitionEn": "The ratio of borrowed assets to total supplied assets in a lending pool, used to set interest rates.",
+    "definitionFa": "نسبت دارایی وام‌گرفته‌شده به کل دارایی عرضه‌شده در استخر وام‌دهی که برای تعیین نرخ بهره به‌کار می‌رود.",
+    "aliases": [
+      "utilization ratio",
+      "نرخ مطلوبیت"
+    ],
+    "episodes": [
+      "s04e06"
+    ]
+  },
+  {
+    "slug": "utxo",
+    "term": "UTXO",
+    "termFa": "UTXO (خروجی تراکنش خرج‌نشده)",
+    "definitionEn": "An unspent transaction output locked by a script; spending it requires satisfying that script's conditions.",
+    "definitionFa": "خروجی تراکنشی که هنوز خرج نشده و با یک اسکریپت قفل شده؛ خرج کردنش مستلزم حل آن اسکریپت است.",
+    "aliases": [
+      "utxo",
+      "خروجی تراکنش خرج نشده",
+      "unspent transaction output",
+      "transaction-based model",
+      "مدل ترنزکشن بیس"
+    ],
+    "episodes": [
+      "s06e03",
+      "s06e01",
+      "s01e05",
+      "s01e02"
+    ]
+  },
+  {
+    "slug": "vampire-attack",
+    "term": "Vampire Attack",
+    "termFa": "حمله خون‌آشامی",
+    "definitionEn": "A strategy where a new protocol incentivizes users to migrate their liquidity away from a competitor.",
+    "definitionFa": "استراتژی‌ای که یک پروتکل جدید با آن کاربران را تشویق می‌کند نقدینگی‌شان را از رقیب به خود منتقل کنند.",
+    "aliases": [
+      "vampire attack",
+      "حمله خون اشامی"
+    ],
+    "episodes": [
+      "s04e06"
+    ]
+  },
+  {
+    "slug": "vector-database",
+    "term": "Vector Database",
+    "termFa": "وکتور دیتابیس",
+    "definitionEn": "A database that stores text as numerical embedding vectors so that semantically similar content can be found quickly by similarity search.",
+    "definitionFa": "پایگاه داده‌ای که متن را به‌صورت بردارهای عددی (embedding) ذخیره می‌کند تا محتوای مشابه از نظر معنایی با جستجوی شباهت سریعاً یافته شود.",
+    "aliases": [
+      "vector database",
+      "وکتور دیتابیس"
+    ],
+    "episodes": [
+      "s07e06"
+    ]
+  },
+  {
+    "slug": "version-bits-signaling",
+    "term": "Version Bits Signaling",
+    "termFa": "سیگنال‌دهی ورژن بیت",
+    "definitionEn": "A mechanism by which miners indicate support for a protocol upgrade by setting specific bits in mined block headers.",
+    "definitionFa": "مکانیزمی که ماینرها با تنظیم بیت‌های خاص در هدر بلوک، پشتیبانی خود از یک ارتقای پروتکل را اعلام می‌کنند.",
+    "aliases": [
+      "version bits signaling",
+      "سیگنال دهی ورژن بیت"
+    ],
+    "episodes": [
+      "s02e02"
+    ]
+  },
+  {
+    "slug": "vesting",
+    "term": "Vesting",
+    "termFa": "وستینگ",
+    "definitionEn": "A schedule that releases tokens or shares to team members gradually over time, keeping them incentivized to continue working.",
+    "definitionFa": "برنامه‌ای که توکن‌ها یا سهام را به‌تدریج و در طول زمان به اعضای تیم آزاد می‌کند تا انگیزه‌ی ادامه کار حفظ شود.",
+    "aliases": [
+      "vesting",
+      "وستینگ"
+    ],
+    "episodes": [
+      "s01e08"
+    ]
+  },
+  {
+    "slug": "vibe-coding",
+    "term": "Vibe Coding",
+    "termFa": "وایب‌کدینگ",
+    "definitionEn": "Building software by describing intent in natural language to an AI coding assistant instead of writing code manually.",
+    "definitionFa": "ساخت نرم‌افزار از طریق توصیف هدف به زبان طبیعی برای یک دستیار کدنویسی AI، به جای نوشتن کد به‌صورت دستی.",
+    "aliases": [
+      "vibe coding",
+      "وایب کدینگ"
+    ],
+    "episodes": [
+      "s07e06"
+    ]
+  },
+  {
+    "slug": "watchtower",
+    "term": "Watchtower",
+    "termFa": "واچ‌تاور (برج مراقبت)",
+    "definitionEn": "Software that monitors the blockchain for fraudulent stale-state broadcasts and automatically submits a penalty transaction on the victim's behalf.",
+    "definitionFa": "نرم‌افزاری که بلاک‌چین را برای انتشار استیت‌های قدیمی زیر نظر دارد و به‌طور خودکار تراکنش تنبیهی ارسال می‌کند.",
+    "aliases": [
+      "watchtower",
+      "واچ تاور",
+      "برج مراقبت"
+    ],
+    "episodes": [
+      "s06e04",
+      "s03e02"
+    ]
+  },
+  {
+    "slug": "wbtc",
+    "term": "WBTC",
+    "termFa": "بیت‌کوین رپ‌شده",
+    "definitionEn": "An ERC-20 token backed one-to-one by real Bitcoin held in multisig custody, bringing BTC into Ethereum DeFi.",
+    "definitionFa": "توکن ERC-20 که با بیت‌کوین واقعی نگهداری‌شده در کیف‌پول چندامضایی پشتیبانی می‌شود و بیت‌کوین را وارد دیفای اتریوم می‌کند.",
+    "aliases": [
+      "wbtc",
+      "wrapped bitcoin",
+      "بیت کوین رپ شده"
+    ],
+    "episodes": [
+      "s04e05"
+    ]
+  },
+  {
+    "slug": "weth",
+    "term": "WETH",
+    "termFa": "اتر رپ‌شده",
+    "definitionEn": "An ERC-20 version of Ether that lets smart contracts handle ETH and ERC-20 tokens through a single uniform interface.",
+    "definitionFa": "نسخه ERC-20 اتر که به قراردادهای هوشمند اجازه می‌دهد اتر و توکن‌های ERC-20 را از طریق یک رابط یکسان مدیریت کنند.",
+    "aliases": [
+      "weth",
+      "wrapped ether",
+      "اتر رپ شده"
+    ],
+    "episodes": [
+      "s04e05"
+    ]
+  },
+  {
+    "slug": "whale",
+    "term": "Whale",
+    "termFa": "نهنگ",
+    "definitionEn": "An individual or entity holding a very large amount of cryptocurrency, capable of significantly influencing market prices.",
+    "definitionFa": "فرد یا نهادی که مقدار بسیار زیادی ارز دیجیتال دارد و می‌تواند قیمت بازار را به‌طور قابل‌توجهی تحت تأثیر بگذارد.",
+    "aliases": [
+      "whale",
+      "نهنگ"
+    ],
+    "episodes": [
+      "s01e03",
+      "s01e01"
+    ]
+  },
+  {
+    "slug": "withdrawal-credential",
+    "term": "Withdrawal Credential",
+    "termFa": "ویدرال کردنشیال",
+    "definitionEn": "An address set at deposit time that determines where a validator's staked ETH and rewards are sent upon exit.",
+    "definitionFa": "آدرسی که هنگام دپازیت تعیین می‌شود و مشخص می‌کند اتریوم استیک‌شده و ریواردها پس از خروج به کجا ارسال شوند.",
+    "aliases": [
+      "withdrawal credential",
+      "ویدرال کردنشیال"
+    ],
+    "episodes": [
+      "s07e02"
+    ]
+  },
+  {
+    "slug": "wrapped-token",
+    "term": "Wrapped Token",
+    "termFa": "توکن رپ‌شده",
+    "definitionEn": "An ERC-20 token on Ethereum pegged one-to-one to an off-chain asset (e.g., Bitcoin), enabling that asset's use in DeFi.",
+    "definitionFa": "توکن ERC-20 روی اتریوم که به نسبت یک‌به‌یک با یک دارایی خارج از زنجیره (مثل بیت‌کوین) پشتیبانی می‌شود و استفاده از آن دارایی را در دیفای ممکن می‌سازد.",
+    "aliases": [
+      "wrapped token",
+      "توکن رپ شده"
+    ],
+    "episodes": [
+      "s04e05"
+    ]
+  },
+  {
+    "slug": "yearn-finance",
+    "term": "Yearn Finance",
+    "termFa": "یرن فایننس",
+    "definitionEn": "A DeFi yield aggregator that automatically moves user funds between lending protocols to maximize returns.",
+    "definitionFa": "تجمیع‌کننده بازده در دیفای که به‌صورت خودکار سرمایه کاربران را بین پروتکل‌های وام‌دهی جابه‌جا می‌کند تا بازده را بیشینه کند.",
+    "aliases": [
+      "yearn finance",
+      "یرن فایننس"
+    ],
+    "episodes": [
+      "s04e04"
+    ]
+  },
+  {
+    "slug": "yield-aggregator",
+    "term": "Yield Aggregator",
+    "termFa": "تجمیع‌کننده بازده",
+    "definitionEn": "A protocol that automatically moves funds between lending platforms to maximize yield.",
+    "definitionFa": "پروتکلی که به‌صورت خودکار سرمایه را بین پلتفرم‌های وام‌دهی جابه‌جا می‌کند تا بازده را بیشینه کند.",
+    "aliases": [
+      "yield aggregator",
+      "تجمیع کننده بازده"
+    ],
+    "episodes": [
+      "s04e06"
+    ]
+  },
+  {
+    "slug": "yield-farming",
+    "term": "Yield Farming",
+    "termFa": "ییلد فارمینگ / کشت بازده",
+    "definitionEn": "Earning extra token rewards on top of normal interest by supplying or borrowing in DeFi protocols.",
+    "definitionFa": "کسب پاداش توکن اضافه، علاوه بر بهره معمول، با سپرده‌گذاری یا وام‌گرفتن در پروتکل‌های دیفای.",
+    "aliases": [
+      "yield farming",
+      "ییلد فارمینگ / کشت بازده"
+    ],
+    "episodes": [
+      "s04e06"
+    ]
+  },
+  {
+    "slug": "zero-confirmation",
+    "term": "Zero-Confirmation",
+    "termFa": "زیرو-کانفرمیشن",
+    "definitionEn": "Accepting a Bitcoin transaction as valid the moment it appears in the mempool, before any miner includes it in a block.",
+    "definitionFa": "پذیرش یک تراکنش بیتکوین به محض ورود به ممپول، پیش از آنکه ماینری آن را در بلاک ثبت کند.",
+    "aliases": [
+      "zero-confirmation",
+      "0-conf",
+      "زیرو-کانفرمیشن"
+    ],
+    "episodes": [
+      "s03e01"
+    ]
+  },
+  {
+    "slug": "zero-knowledge-proof",
+    "term": "Zero-Knowledge Proof",
+    "termFa": "اثبات دانش صفر",
+    "definitionEn": "A cryptographic method that lets one party prove a statement is true without revealing any underlying data.",
+    "definitionFa": "روشی رمزنگارانه که به یک طرف اجازه می‌دهد صحت یک ادعا را بدون افشای اطلاعات پایه اثبات کند.",
+    "aliases": [
+      "zero-knowledge proof",
+      "اثبات دانش صفر"
+    ],
+    "episodes": [
+      "s06e01"
+    ]
+  },
+  {
+    "slug": "zk-rollup",
+    "term": "ZK-Rollup",
+    "termFa": "رول‌آپ دانش‌صفر",
+    "definitionEn": "A rollup that accompanies each state update with a cryptographic validity proof, enabling instant finality without a dispute period.",
+    "definitionFa": "رول‌آپی که هر به‌روزرسانی حالت را با یک اثبات اعتبارسنجی رمزنگاری همراه می‌کند و بدون نیاز به دوره‌ی اعتراض قطعیت فوری دارد.",
+    "aliases": [
+      "zk-rollup",
+      "رول اپ دانش صفر"
+    ],
+    "episodes": [
+      "s06e02"
+    ]
+  },
+  {
+    "slug": "zk-snark",
+    "term": "zk-SNARK",
+    "termFa": "زی‌کی اسنارک",
+    "definitionEn": "A cryptographic proof that lets one party prove knowledge of data to another without revealing the data itself.",
+    "definitionFa": "اثبات رمزنگاری‌ای که به یک طرف اجازه می‌دهد بدون فاش کردن داده، صحت آن را به طرف دیگر ثابت کند.",
+    "aliases": [
+      "zk-snark",
+      "زی کی اسنارک"
+    ],
+    "episodes": [
+      "s07e02",
+      "s06e02"
+    ]
+  },
+  {
+    "slug": "zk-snarks",
+    "term": "zk-SNARKs",
+    "termFa": "زی‌کی-اسنارکس",
+    "definitionEn": "Zero-knowledge cryptographic proofs that let one party prove knowledge of data without revealing the data itself.",
+    "definitionFa": "اثبات‌های رمزنگاری با دانش صفر که اثبات می‌کنند اطلاعاتی وجود دارد بدون اینکه محتوای آن فاش شود.",
+    "aliases": [
+      "zk-snarks",
+      "زی کی-اسنارکس"
+    ],
+    "episodes": [
+      "s03e03"
+    ]
+  },
+  {
+    "slug": "zksnark",
+    "term": "zkSNARK",
+    "termFa": "زی‌کی‌اسنارک",
+    "definitionEn": "Zero-Knowledge Succinct Non-Interactive Argument of Knowledge; a cryptographic proof that something is true without revealing why.",
+    "definitionFa": "نوعی اثبات رمزنگاری که صحت یک ادعا را بدون افشای اطلاعات پشتیبان آن ثابت می‌کند.",
+    "aliases": [
+      "zksnark",
+      "زی کی اسنارک"
+    ],
+    "episodes": [
+      "s07e07"
+    ]
+  },
+  {
+    "slug": "zuzalu",
+    "term": "Zuzalu",
+    "termFa": "زوزالو",
+    "definitionEn": "The first major pop-up city experiment, initiated by Vitalik Buterin in Montenegro in 2023.",
+    "definitionFa": "اولین تجربه بزرگ پاپ‌آپ سیتی که ویتالیک بوترین در سال ۲۰۲۳ در مونته‌نگرو راه‌اندازی کرد.",
+    "aliases": [
+      "zuzalu",
+      "زوزالو"
+    ],
+    "episodes": [
+      "s07e04"
+    ]
+  }
+]

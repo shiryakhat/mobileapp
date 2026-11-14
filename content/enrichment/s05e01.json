@@ -1,0 +1,250 @@
+{
+  "id": "s05e01",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:01:33.169Z",
+  "summaryFa": "این اپیزود فرایند پیشنهاد و تصویب تغییرات در پروتکل اتریوم را از ریشه‌های تاریخی‌اش در IETF و RFC، پایتون (PEP) و بیت‌کوین (BIP) تا EIPهای اتریوم دنبال می‌کند. مهمانان انواع EIPها (Core، Networking، Interface، ERC، Meta و Informational)، نقش EIP Championها، EIP Editorها، گروه Cat Herders، جلسات All Core Devs و فرایند هارد فورک‌های EIP-centric را با جزئیات بررسی می‌کنند. بحث درباره تمرکز و غیرتمرکز در تصمیم‌گیری، اهمیت کلاینت‌ها (به‌ویژه تسلط ۸۵ درصدی Geth)، difficulty bomb و زمینه فورک لندن و EIP-1559 از نکات برجسته این اپیزود است.",
+  "summaryEn": "This episode traces how changes to the Ethereum protocol are proposed, debated, and shipped—from the historical roots of the IETF RFC process and Python's PEP through Bitcoin's BIP to Ethereum's EIP-1. The hosts break down EIP taxonomy (Core, Networking, Interface, ERC, Meta, Informational), the roles of EIP Champions, EIP Editors, the Ethereum Cat Herders, and All Core Devs calls, then walk through the full hard-fork lifecycle including devnets, testnets (Ropsten, Rinkeby), and mainnet deployment. The episode contextualizes the upcoming London hard fork and EIP-1559, the difficulty bomb's role in forcing a Proof-of-Work to Proof-of-Stake transition, and the trade-offs of Ethereum's off-chain governance model versus Bitcoin-style on-chain signaling.",
+  "quotes": [
+    {
+      "startSec": 604,
+      "fa": "این BIP 1 را امیر تاکی نوشت.",
+      "en": "BIP 1 was written by Amir Taaki.",
+      "speaker": "Mahdi"
+    },
+    {
+      "startSec": 1503,
+      "fa": "هادسون جمله‌ای دارد که می‌گوید: اگر کسی بیاید یک EIP پیشنهاد کند که صرفاً روند پختن کلم را توضیح داده باشد، من آن را به عنوان درافت قبول می‌کنم و EIP می‌شود و شماره EIP دریافت می‌کند.",
+      "en": "Hudson has a saying: if someone comes and proposes an EIP that merely explains the process of cooking cabbage, I accept it as a draft—it becomes an EIP and receives its EIP number.",
+      "speaker": "Mahdi"
+    },
+    {
+      "startSec": 4856,
+      "fa": "غیرمتمرکزترین ارز دیجیتال، دوج‌کوین است؛ دقیقاً به این خاطر که هیچ‌کس روی آن کار نمی‌کند.",
+      "en": "The most decentralized cryptocurrency is Dogecoin—precisely because no one works on it.",
+      "speaker": "Shayan"
+    },
+    {
+      "startSec": 4708,
+      "fa": "هرچقدر سیستم در اوایلش غیرمتمرکز باشد، تغییر واقعاً سخت‌تر می‌شود و زمان خیلی طولانی‌تری می‌برد.",
+      "en": "The more decentralized a system is in its early days, the harder change really becomes and the much longer time it takes.",
+      "speaker": "Shayan"
+    },
+    {
+      "startSec": 942,
+      "fa": "تقریباً دو سال طول کشید—همین تغییر که آقا ما Security Consideration لازم داریم توی هر EIP جدیدی.",
+      "en": "It took roughly two years—just for this single change: that we need a Security Consideration section in every new EIP.",
+      "speaker": "Shayan"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "EIP (Ethereum Improvement Proposal)",
+      "termFa": "پیشنهاد بهبود اتریوم",
+      "definitionEn": "A formal document proposing a change, standard, or process for the Ethereum protocol, modeled on Python's PEP and Bitcoin's BIP.",
+      "definitionFa": "سندی رسمی برای پیشنهاد تغییر، استاندارد یا فرایند در پروتکل اتریوم که از PEP پایتون و BIP بیت‌کوین الهام گرفته است."
+    },
+    {
+      "term": "ERC (Ethereum Request for Comment)",
+      "termFa": "درخواست نظر اتریوم",
+      "definitionEn": "An application-layer EIP that defines standards for smart contracts, most famously the ERC-20 token interface.",
+      "definitionFa": "نوعی EIP در لایه اپلیکیشن که استانداردهایی برای قراردادهای هوشمند تعریف می‌کند؛ مشهورترین آن استاندارد توکن ERC-20 است."
+    },
+    {
+      "term": "ERC-20",
+      "termFa": "ERC-20",
+      "definitionEn": "The standard interface for fungible tokens on Ethereum, defining functions like transfer, balanceOf, approve, and allowance.",
+      "definitionFa": "استاندارد رابط توکن‌های مثلی در اتریوم که توابعی مانند transfer، balanceOf، approve و allowance را تعریف می‌کند."
+    },
+    {
+      "term": "Hard Fork",
+      "termFa": "هارد فورک",
+      "definitionEn": "A backward-incompatible upgrade to a blockchain protocol requiring all nodes to update to continue on the main chain.",
+      "definitionFa": "ارتقایی ناسازگار با نسخه‌های قبلی پروتکل بلاکچین که همه نودها باید آن را اعمال کنند تا در زنجیره اصلی بمانند."
+    },
+    {
+      "term": "All Core Devs (ACD)",
+      "termFa": "جلسه توسعه‌دهندگان هسته",
+      "definitionEn": "A biweekly open call where Ethereum client teams, researchers, and community members discuss and decide on protocol changes.",
+      "definitionFa": "جلسه دوهفته‌یک‌بار که تیم‌های کلاینت اتریوم، پژوهشگران و اعضای جامعه درباره تغییرات پروتکل بحث و تصمیم‌گیری می‌کنند."
+    },
+    {
+      "term": "Ethereum Cat Herders",
+      "termFa": "گربه‌چران‌های اتریوم",
+      "definitionEn": "A community group founded in 2019 by Hudson Jameson to coordinate EIP processes, ACD calls, and hard fork logistics.",
+      "definitionFa": "گروه جامعه‌محوری که هادسون جیمسون در ۲۰۱۹ تأسیس کرد تا فرایند EIPها، جلسات ACD و لجستیک هارد فورک‌ها را هماهنگ کند."
+    },
+    {
+      "term": "Difficulty Bomb",
+      "termFa": "بمب دشواری",
+      "definitionEn": "A mechanism built into Ethereum that gradually increases mining difficulty, forcing the network to transition from Proof of Work to Proof of Stake.",
+      "definitionFa": "مکانیزمی در اتریوم که به‌تدریج سختی استخراج را افزایش می‌دهد و شبکه را به سمت گذار از اثبات کار به اثبات سهام سوق می‌دهد."
+    },
+    {
+      "term": "Devnet",
+      "termFa": "شبکه توسعه",
+      "definitionEn": "A short-lived, private test network used by developers to run initial tests on a new EIP before it reaches public testnets.",
+      "definitionFa": "شبکه آزمایشی خصوصی و موقتی که توسعه‌دهندگان پیش از انتشار عمومی، تست‌های اولیه یک EIP را روی آن انجام می‌دهند."
+    },
+    {
+      "term": "EIP Champion",
+      "termFa": "قهرمان EIP",
+      "definitionEn": "The person who authors and drives an EIP through every stage of the proposal process until it is finalized or withdrawn.",
+      "definitionFa": "فردی که یک EIP را می‌نویسد و آن را در تمام مراحل فرایند پیشنهاد تا نهایی شدن یا پس‌گرفتن پیش می‌برد."
+    },
+    {
+      "term": "EIP-1559",
+      "termFa": "EIP-1559",
+      "definitionEn": "A Core EIP included in the London hard fork that reforms Ethereum's fee market by burning a base fee instead of paying it to miners.",
+      "definitionFa": "یک Core EIP در هارد فورک لندن که بازار کارمزد اتریوم را اصلاح می‌کند و کارمزد پایه را به‌جای پرداخت به ماینرها می‌سوزاند."
+    },
+    {
+      "term": "ProgPoW",
+      "termFa": "ProgPoW",
+      "definitionEn": "A proposed Proof-of-Work algorithm change for Ethereum intended to reduce ASIC mining advantage, ultimately rejected by miners.",
+      "definitionFa": "تغییر پیشنهادی الگوریتم اثبات کار اتریوم برای کاهش مزیت ماینرهای ASIC که در نهایت توسط ماینرها رد شد."
+    },
+    {
+      "term": "Security Consideration",
+      "termFa": "ملاحظات امنیتی",
+      "definitionEn": "A mandatory section in every Ethereum EIP requiring authors to analyze potential security risks introduced by the proposed change.",
+      "definitionFa": "بخش اجباری در هر EIP اتریوم که نویسندگان را ملزم می‌کند خطرات امنیتی احتمالی تغییر پیشنهادی را تحلیل کنند."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "en",
+      "wrong": "Shiakht",
+      "right": "Shir ya Khat"
+    },
+    {
+      "lang": "fa",
+      "wrong": "شریاخت",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتریوم",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتریام",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اتریام",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای آی پی",
+      "right": "EIP"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای آر سی",
+      "right": "ERC"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کت هردرز",
+      "right": "Cat Herders"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آلکوردفکال",
+      "right": "All Core Devs"
+    },
+    {
+      "lang": "fa",
+      "wrong": "الکوردفکال",
+      "right": "All Core Devs"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای سی دی کال",
+      "right": "ACD call"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دیفت نت",
+      "right": "devnet"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دیف نت",
+      "right": "devnet"
+    },
+    {
+      "lang": "en",
+      "wrong": "OpenEthereum/Parity",
+      "right": "OpenEthereum (formerly Parity)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اوپن اتریومی",
+      "right": "OpenEthereum"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ندرماینده",
+      "right": "Nethermind"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بسوه",
+      "right": "Besu"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایریگان",
+      "right": "Erigon"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مارتیز بیس",
+      "right": "مارتین بکزه (Martin Becze)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "هادسون جیمسون",
+      "right": "Hudson Jameson"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تیم بیکو",
+      "right": "Tim Beiko"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پروف آف استیکر",
+      "right": "Proof of Stake"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پروف آف ورک",
+      "right": "Proof of Work"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای وی ایم",
+      "right": "EVM"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پیک شیلد",
+      "right": "PeckShield"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پونزه پنجانو",
+      "right": "Pectra"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای آی پی سی هفتاد و چهار",
+      "right": "EIP-7074"
+    }
+  ]
+}

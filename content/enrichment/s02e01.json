@@ -1,0 +1,205 @@
+{
+  "id": "s02e01",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:08:23.390Z",
+  "summaryFa": "این اپیزود به آسیب‌شناسی بلاک‌چین در کشورهای در حال توسعه، به‌ویژه ایران، می‌پردازد و ضمن بررسی کاربردهای واقعی این فناوری—از ثبت احوال روی بلاک‌چین در آفریقا تا مدل پرداخت موبایلی بیت‌پسا در کنیا—خطرات اجتماعی آن را نیز واکاوی می‌کند. میزبانان درباره‌ی تمرکز استخراج در چین، ماهیت دموکراسی مطلق شبکه، هارد فورک‌های بیتکوین/بیتکوین کش و اتریوم/اتریوم کلاسیک، کریپتوجکینگ از طریق جاوااسکریپت، و کلاه‌برداری‌های ICO و طرح‌های پانزی مانند وان‌کوین و بیت‌کلاب صحبت می‌کنند. نتیجه‌گیری مشترک پانلیست‌ها این است که بهترین راه مقابله با آسیب‌ها، آگاهی‌رسانی رایگان و بی‌طرفانه است—نه محدودیت و دیکتاتوری—تا هم تازه‌واردان محافظت شوند و هم تولیدکنندگانی چون قالیباف روستایی بتوانند مستقیماً در اقتصاد جهانی مشارکت کنند.",
+  "summaryEn": "This season-two premiere examines the social pathology of blockchain technology in developing countries, with particular attention to Iran, covering real-world use cases such as BitPesa's mobile-airtime payment network in Kenya and civil registration on the blockchain in Africa. The panelists discuss mining centralization in China, ASIC and pool dominance versus Satoshi Nakamoto's one-node-per-person ideal, CPU-based coins like Monero and Zcash, JavaScript cryptojacking, browser and Android mining malware, and governance through hard forks—illustrated by Bitcoin/Bitcoin Cash and Ethereum/Ethereum Classic. A substantial portion addresses scams, Ponzi schemes (OneCoin, BitClub), fraudulent ICOs, and Telegram signal-selling groups, with the consensus conclusion that free, unbiased awareness and education—not government bans or paternalistic restriction—is the most effective protection for newcomers and the healthiest path to broad adoption.",
+  "quotes": [
+    {
+      "startSec": 1131,
+      "fa": "بلاک‌چین وقتی ایجاد بشه، تا وقتی که نودهایی در شبکه هستند که کپی از اون بلاک‌چین دارن، ادامه خواهد داشت و دیگه نمیشه جلوشو گرفت.",
+      "en": "Once a blockchain is created, as long as there are nodes in the network holding a copy of it, it will keep running—and it can no longer be stopped."
+    },
+    {
+      "startSec": 2631,
+      "fa": "دیدِ کلیِ ساتوشی ناکاموتو این نبوده که قدرت مرکزی داشته باشیم؛ هم ماینینگ پول‌ها و هم دستگاه‌های ASIC در اون دیدِ اصلی نبودن.",
+      "en": "Satoshi Nakamoto's original vision was never to have a central power—neither mining pools nor ASIC machines were part of that original design."
+    },
+    {
+      "startSec": 2402,
+      "fa": "بلاک‌چین دموکراسی مطلقه؛ اگر اکثریت شبکه یک حرف بزنند، اون شبکه ادامه داره، و اگر بخشی بخواد حرف دیگه‌ای بزنه، فورک می‌کنند و ادامه می‌دند.",
+      "en": "Blockchain is an absolute democracy—if the network majority speaks with one voice, the network continues; if a faction disagrees, they fork and carry on."
+    },
+    {
+      "startSec": 4366,
+      "fa": "اون پیرزنی که در گوشه‌ای از کشور داره قالی می‌بافه و امکان تبادل مالی با هیچ جا رو نداره، می‌تونه خیلی راحت محصولش رو در دنیا به فروش برسونه و پولش رو حساب خودش واریز کنه.",
+      "en": "The old woman weaving rugs in some corner of the country, with no way to transact financially with anyone, could very easily sell her product to the world and deposit the money straight into her own account."
+    },
+    {
+      "startSec": 3679,
+      "fa": "بهترین راهکار آگاهی دادن بدون هیچ قضاوتیه—بدون این‌که بگیم این پروژه‌ی خاص یا این آدم خاص خوبه یا بده.",
+      "en": "The best solution is giving awareness without any judgment—without declaring that this specific project or this specific person is good or bad."
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Blockchain",
+      "termFa": "بلاک‌چین",
+      "definitionEn": "A decentralized, append-only ledger shared across a network of nodes where data cannot be altered retroactively.",
+      "definitionFa": "دفتر کل توزیع‌شده‌ای که روی شبکه‌ای از نودها نگهداری می‌شود و تغییر داده‌های ثبت‌شده در آن عملاً غیرممکن است."
+    },
+    {
+      "term": "ASIC",
+      "termFa": "دستگاه ASIC",
+      "definitionEn": "Application-Specific Integrated Circuit; specialized hardware built solely to mine a particular cryptocurrency algorithm.",
+      "definitionFa": "تراشه‌ای که فقط برای استخراج یک الگوریتم رمزارز خاص طراحی شده و کارایی بسیار بالایی دارد."
+    },
+    {
+      "term": "Mining Pool",
+      "termFa": "ماینینگ پول",
+      "definitionEn": "A group of miners who combine their computing power and share block rewards proportionally.",
+      "definitionFa": "گروهی از استخراج‌کنندگان که قدرت پردازشی خود را ادغام می‌کنند و پاداش بلوک را بین خود تقسیم می‌کنند."
+    },
+    {
+      "term": "Hard Fork",
+      "termFa": "هارد فورک",
+      "definitionEn": "A backward-incompatible protocol change that splits a blockchain into two separate chains.",
+      "definitionFa": "تغییری ناسازگار در پروتکل بلاک‌چین که باعث جدا شدن زنجیره به دو شبکه‌ی مستقل می‌شود."
+    },
+    {
+      "term": "ICO",
+      "termFa": "عرضه اولیه سکه (ICO)",
+      "definitionEn": "Initial Coin Offering; a fundraising method where a project sells newly created tokens to the public.",
+      "definitionFa": "روشی برای جذب سرمایه که در آن یک پروژه توکن‌های جدید خود را به عموم می‌فروشد."
+    },
+    {
+      "term": "BitPesa",
+      "termFa": "بیت‌پسا",
+      "definitionEn": "An African fintech platform that connects local mobile-money networks to Bitcoin for cross-border payments.",
+      "definitionFa": "پلتفرم مالی آفریقایی که شبکه‌های پرداخت موبایلی بومی را از طریق بیتکوین به شبکه‌ی بین‌المللی وصل می‌کند."
+    },
+    {
+      "term": "Cryptojacking",
+      "termFa": "کریپتوجکینگ",
+      "definitionEn": "Covert use of a victim's device—via malicious JavaScript or malware—to mine cryptocurrency without consent.",
+      "definitionFa": "استفاده‌ی پنهانی از دستگاه قربانی—از طریق جاوااسکریپت یا بدافزار—برای استخراج رمزارز بدون اجازه."
+    },
+    {
+      "term": "Monero",
+      "termFa": "مونرو",
+      "definitionEn": "A privacy-focused cryptocurrency designed to be mined efficiently on ordinary CPUs.",
+      "definitionFa": "رمزارزی با تمرکز بر حریم خصوصی که برای استخراج کارآمد روی پردازنده‌های معمولی طراحی شده است."
+    },
+    {
+      "term": "Ponzi Scheme",
+      "termFa": "طرح پانزی",
+      "definitionEn": "A fraudulent investment structure that pays early participants using money from new investors, not genuine profit.",
+      "definitionFa": "ساختار سرمایه‌گذاری تقلبی که سود سرمایه‌گذاران اولیه را از پول سرمایه‌گذاران جدید می‌پردازد."
+    },
+    {
+      "term": "Scalability",
+      "termFa": "مقیاس‌پذیری",
+      "definitionEn": "A blockchain's ability to handle a growing number of transactions without degrading performance.",
+      "definitionFa": "توانایی یک بلاک‌چین برای پردازش حجم فزاینده‌ای از تراکنش‌ها بدون افت عملکرد."
+    },
+    {
+      "term": "Altcoin",
+      "termFa": "آلت‌کوین",
+      "definitionEn": "Any cryptocurrency other than Bitcoin, ranging from major protocols to experimental tokens.",
+      "definitionFa": "هر رمزارزی غیر از بیتکوین، از پروتکل‌های اصلی تا توکن‌های آزمایشی."
+    },
+    {
+      "term": "OneCoin",
+      "termFa": "وان‌کوین",
+      "definitionEn": "A notorious fraudulent cryptocurrency scheme that raised billions globally through a pyramid sales structure.",
+      "definitionFa": "طرح تقلبی مشهوری که از طریق ساختار فروش هرمی میلیاردها دلار از سرمایه‌گذاران در سراسر جهان جمع‌آوری کرد."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "شیریا خد",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "en",
+      "wrong": "Sher ya Khat",
+      "right": "Shir ya Khat"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیت پسا",
+      "right": "بیت‌پسا"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتریوم کلاسیک",
+      "right": "اتریوم کلاسیک"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتریوم",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکاین گولد",
+      "right": "بیتکوین گلد"
+    },
+    {
+      "lang": "fa",
+      "wrong": "وانکوین",
+      "right": "وان‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیت کلاب",
+      "right": "بیت‌کلاب"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زیکش",
+      "right": "زی‌کش"
+    },
+    {
+      "lang": "fa",
+      "wrong": "منرو",
+      "right": "مونرو"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای سیک",
+      "right": "ASIC"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آیسیو",
+      "right": "ICO"
+    },
+    {
+      "lang": "en",
+      "wrong": "crowdsell",
+      "right": "crowdsale"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دیژی ارز",
+      "right": "دیجی‌ارز"
+    },
+    {
+      "lang": "en",
+      "wrong": "Digiarz",
+      "right": "DigiArz"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کوین ایران",
+      "right": "کوین‌ایران"
+    },
+    {
+      "lang": "en",
+      "wrong": "Coin Iran",
+      "right": "CoinIran"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ساتی",
+      "right": "ساتوشی ناکاموتو"
+    },
+    {
+      "lang": "en",
+      "wrong": "hashing power",
+      "right": "hash power"
+    }
+  ]
+}

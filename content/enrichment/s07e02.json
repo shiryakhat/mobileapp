@@ -1,0 +1,265 @@
+{
+  "id": "s07e02",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T21:57:39.610Z",
+  "summaryFa": "این قسمت از «شیر یا خط» به بررسی جامع ری‌استیکینگ (Restaking) در اتریوم و معماری پروتکل آیگن‌لیر (EigenLayer) می‌پردازد؛ از تاریخچه ماینینگ، مرج ماینینگ و پروتکل‌های Stratum و Stratum V2 گرفته تا اثبات سهام، الگوریتم RANDAO، انواع ریوارد ولیدیتورها، لیکوید استیکینگ و ریسک ری‌هایپوتکیشن. سپس معماری آیگن‌لیر شامل دپازیت کانترکت، ویدرال کردنشیال، آیگن‌پاد، اوپریتورها، AVSها، قرارداد اسلشر و مدل پول سکیوریتی تشریح می‌شود. در پایان حمید دیسکلیمر موقعیت خود به‌عنوان Head of Security در پافر فایننس (Puffer Finance) را اعلام و معماری پروتکل پافر، تفاوت نیتیو ریستیکینگ با لیکوید ریستیکینگ و استراتژی «وامپایر اتک» آن علیه تسلط لیدو را توضیح می‌دهد.",
+  "summaryEn": "This episode of Shir ya Khat delivers a deep technical walkthrough of Ethereum restaking and EigenLayer, tracing the path from Proof of Work mining pools and the Stratum/Stratum V2 protocols through Ethereum's Proof of Stake—covering RANDAO validator selection, block proposals, attestations, sync committees, MEV, slashing, and whistleblower rewards. The hosts then unpack liquid staking derivatives, rehypothecation risk, and EigenLayer's core mechanics: the deposit contract, withdrawal credentials, EigenPods, the factory pattern, AVSs (decentralized sequencers, bridges, oracles, EigenDA), operators, delegation, and slasher smart contracts verified via zk-SNARKs through Telepathy. One host discloses his role as Head of Security at Puffer Finance and explains pufETH, its self-imposed 22% network cap, and its vampire-attack strategy targeting Lido's dominant stake.",
+  "quotes": [
+    {
+      "startSec": 35,
+      "fa": "این ری‌استیکینگ به نظرم مثل اینه که نفت پیدا کردین ولی نمیدونین باهاش چی‌کار کنید.",
+      "en": "Restaking is like you've found oil but don't know what to do with it.",
+      "speaker": "Shayan"
+    },
+    {
+      "startSec": 81,
+      "fa": "ری‌استیکینگ شاید انقلابی‌ترین ایده‌ای باشه که تو دو سه سال اخیر در اتریوم، بعد از مرج، مطرح شده.",
+      "en": "Restaking is arguably the most revolutionary idea raised in Ethereum in the last two or three years, after the Merge.",
+      "speaker": "Hamid"
+    },
+    {
+      "startSec": 1587,
+      "fa": "حدود بیست نفر از جمعیتی که توی سالن بودن با تی‌شرت‌های آیگن‌لیر پاشدن دنبالش رفتن بیرون؛ یه صحنه‌ای بود که توی کنفرانس‌های آکادمیک نمی‌بینیم.",
+      "en": "About twenty people in the audience stood up wearing EigenLayer t-shirts and followed him out — a scene you just don't see at an academic conference.",
+      "speaker": "Hamid"
+    },
+    {
+      "startSec": 3876,
+      "fa": "قراره یه تا یک سال اول اسلشینگ نداشته باشیم روی آیگن‌لیر؛ بیشتر به خاطر باگ‌های کانفیگوریشنیه که مثلاً روی اتریوم دیدیم.",
+      "en": "For the first year there won't be any slashing on EigenLayer — mostly because of the configuration bugs we saw on Ethereum early on.",
+      "speaker": "Hamid"
+    },
+    {
+      "startSec": 4823,
+      "fa": "کاری که پافر می‌خواد بکنه یه‌جورایی وامپایر اتک به لیدوئه، چون لیدو الان سی‌وچهار درصد شبکه رو داره و اگه مشکلی پیش بیاد کل شبکه رو زیر سؤال می‌بره.",
+      "en": "What Puffer wants to do is essentially a vampire attack on Lido, because Lido now holds thirty-four percent of the network and any problem there puts the whole network at risk.",
+      "speaker": "Hamid"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Restaking",
+      "termFa": "ری‌استیکینگ",
+      "definitionEn": "Reusing already-staked ETH to simultaneously secure additional networks or services beyond Ethereum itself.",
+      "definitionFa": "استفاده مجدد از اتریوم استیک‌شده برای تأمین امنیت شبکه‌ها یا سرویس‌های دیگر، علاوه بر خود اتریوم."
+    },
+    {
+      "term": "EigenLayer",
+      "termFa": "آیگن‌لیر",
+      "definitionEn": "A protocol that lets Ethereum validators opt into securing third-party services by extending their existing stake.",
+      "definitionFa": "پروتکلی که به ولیدیتورهای اتریوم اجازه می‌دهد با گسترش استیک موجود، امنیت سرویس‌های شخص ثالث را هم تأمین کنند."
+    },
+    {
+      "term": "Actively Validated Service (AVS)",
+      "termFa": "سرویس با اعتبارسنجی فعال",
+      "definitionEn": "Any decentralized service—such as a bridge, sequencer, or oracle—that uses EigenLayer's restaked security.",
+      "definitionFa": "هر سرویس غیرمتمرکز مانند بریج، سیکونسر یا اوراکل که از امنیت ری‌استیک‌شده‌ی آیگن‌لیر استفاده می‌کند."
+    },
+    {
+      "term": "EigenPod",
+      "termFa": "آیگن‌پاد",
+      "definitionEn": "A unique smart contract per validator in EigenLayer that manages withdrawal credentials and AVS registration.",
+      "definitionFa": "قرارداد هوشمند منحصربه‌فردِ هر ولیدیتور در آیگن‌لیر که ویدرال کردنشیال و ثبت‌نام در AVS را مدیریت می‌کند."
+    },
+    {
+      "term": "Liquid Staking Derivative (LSD)",
+      "termFa": "توکن لیکوید استیکینگ",
+      "definitionEn": "A transferable token representing staked ETH, allowing holders to earn staking rewards while using the token in DeFi.",
+      "definitionFa": "توکن قابل انتقالی که نماینده‌ی اتریوم استیک‌شده است و به دارنده امکان می‌دهد همزمان ریوارد استیکینگ بگیرد و در دیفای استفاده کند."
+    },
+    {
+      "term": "Rehypothecation",
+      "termFa": "ری‌هایپوتکیشن (عرضی‌سازی مجدد)",
+      "definitionEn": "Reusing pledged collateral as collateral again, multiplying leverage and systemic risk across the financial stack.",
+      "definitionFa": "استفاده مجدد از وثیقه‌ای که قبلاً گرو گذاشته شده، که اهرم و ریسک سیستمیک را در کل زنجیره‌ی مالی چند برابر می‌کند."
+    },
+    {
+      "term": "RANDAO",
+      "termFa": "RANDAO",
+      "definitionEn": "Ethereum's on-chain randomness protocol that combines validator-contributed values to unpredictably select block proposers.",
+      "definitionFa": "پروتکل تصادفی‌سازی درون‌زنجیره‌ای اتریوم که مقادیر ارائه‌شده توسط ولیدیتورها را ترکیب می‌کند تا پروپوزر بلاک بعدی را غیرقابل پیش‌بینی انتخاب کند."
+    },
+    {
+      "term": "Slashing",
+      "termFa": "اسلشینگ",
+      "definitionEn": "The penalty mechanism in Proof of Stake that destroys part of a validator's staked ETH for malicious or faulty behavior.",
+      "definitionFa": "مکانیزم جریمه در اثبات سهام که بخشی از اتریوم استیک‌شده‌ی ولیدیتور خاطی را به‌عنوان مجازات نابود می‌کند."
+    },
+    {
+      "term": "Withdrawal Credential",
+      "termFa": "ویدرال کردنشیال",
+      "definitionEn": "An address set at deposit time that determines where a validator's staked ETH and rewards are sent upon exit.",
+      "definitionFa": "آدرسی که هنگام دپازیت تعیین می‌شود و مشخص می‌کند اتریوم استیک‌شده و ریواردها پس از خروج به کجا ارسال شوند."
+    },
+    {
+      "term": "Pooled Security",
+      "termFa": "پول سکیوریتی",
+      "definitionEn": "EigenLayer's model where the same staked ETH simultaneously backs multiple AVSs, multiplying effective economic security.",
+      "definitionFa": "مدل آیگن‌لیر که در آن اتریوم استیک‌شده‌ی یکسان به‌طور همزمان چندین AVS را پشتیبانی می‌کند و امنیت اقتصادی مؤثر را چند برابر می‌سازد."
+    },
+    {
+      "term": "zk-SNARK",
+      "termFa": "زی‌کی اسنارک",
+      "definitionEn": "A cryptographic proof that lets one party prove knowledge of data to another without revealing the data itself.",
+      "definitionFa": "اثبات رمزنگاری‌ای که به یک طرف اجازه می‌دهد بدون فاش کردن داده، صحت آن را به طرف دیگر ثابت کند."
+    },
+    {
+      "term": "Merge Mining",
+      "termFa": "مرج ماینینگ",
+      "definitionEn": "A technique where miners simultaneously mine a parent chain and a child chain with the same computational work.",
+      "definitionFa": "تکنیکی که در آن ماینرها با همان کار محاسباتی، به‌طور همزمان یک چین والد و یک چین فرزند را ماین می‌کنند."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "en",
+      "wrong": "Ya Khat",
+      "right": "Shir ya Khat"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آیگن لیئر",
+      "right": "آیگن‌لیر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آگین لیئر",
+      "right": "آیگن‌لیر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آگین لیگر",
+      "right": "آیگن‌لیر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آیگل لیئر",
+      "right": "آیگن‌لیر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آیگل لیگر",
+      "right": "آیگن‌لیر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آگندگیر",
+      "right": "آیگن‌لیر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آگه لگر",
+      "right": "آیگن‌لیر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آگه لگه",
+      "right": "آیگن‌لیر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تلپسی",
+      "right": "تلپتی (Telepathy)"
+    },
+    {
+      "lang": "en",
+      "wrong": "Telepathy",
+      "right": "Telepathy (zk-consensus-layer oracle)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لای دو",
+      "right": "لیدو"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لایدو",
+      "right": "لیدو"
+    },
+    {
+      "lang": "fa",
+      "wrong": "راکت پول",
+      "right": "راکت‌پول"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پافر فایننس",
+      "right": "پافر فایننس (Puffer Finance)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پاف ایت",
+      "right": "پاف‌ایتی (pufETH)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای بی ایس",
+      "right": "AVS"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای وی اس",
+      "right": "AVS"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای وی ایس",
+      "right": "AVS"
+    },
+    {
+      "lang": "fa",
+      "wrong": "استراتوم وی تو",
+      "right": "Stratum V2"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیکن چین",
+      "right": "بیکن‌چین (Beacon Chain)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیکین چین",
+      "right": "بیکن‌چین (Beacon Chain)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "گوئرلی",
+      "right": "گورلی (Goerli)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "هولسکی",
+      "right": "هولسکی (Holesky)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سلسیا",
+      "right": "سلستیا (Celestia)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایگزیکیوشن لیگر",
+      "right": "اجرایی‌لیر (Execution Layer)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کانسنسز لیگر",
+      "right": "کانسنسوس‌لیر (Consensus Layer)"
+    },
+    {
+      "lang": "en",
+      "wrong": "AigenLayer",
+      "right": "EigenLayer"
+    },
+    {
+      "lang": "en",
+      "wrong": "AggLayer",
+      "right": "EigenLayer"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آیگین لایر",
+      "right": "آیگن‌لیر"
+    }
+  ]
+}

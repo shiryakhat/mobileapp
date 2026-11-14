@@ -1,0 +1,254 @@
+{
+  "id": "s04e01",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:04:11.114Z",
+  "summaryFa": "این اپیزود آغازگر سری پادکست‌های دیفای (DeFi) در فصل چهارم «شیر یا خط» است. میزبانان و مهمانان ابتدا مفهوم امور مالی غیرمتمرکز را با تمرکز بر مزایای کلیدی آن—از جمله حذف سانسور، شفافیت، کاهش هزینه تراکنش و دسترسی فراگیر—در مقابل سیستم مالی متمرکز بررسی می‌کنند. سپس تاریخچه استیبل‌کوین‌ها، به‌ویژه تتر (USDT)، به‌عنوان سنگ‌بنای دیفای مرور می‌شود: از ضرورت وجود ابزار تبادل پایدار و آربیتراژ بین صرافی‌ها گرفته تا بحران شکستن پگ در اکتبر ۲۰۱۸، نگرانی‌های مربوط به پشتوانه کسری، دست‌کاری قیمت بیت‌کوین و پرونده دادستان کل نیویورک. در پایان، جایگزین‌های غیرمتمرکزتر مانند میکردائو و دای معرفی می‌شوند و موضوعات اپیزودهای آینده—از جمله فلش‌لون، صرافی‌های غیرمتمرکز، مارژین تریدینگ، بازارهای مشتقه و مشکل اوراکل—پیش‌نمایی می‌شوند.",
+  "summaryEn": "This season-four opener of Shir ya Khat kicks off a multi-episode DeFi series by laying out why decentralized finance matters: censorship resistance, transparency, permissionless access, and cheaper transactions compared with traditional centralized finance. The panel traces DeFi's foundations through the history of stablecoins, centering on Tether (USDT)—its origins at Bitfinex as a tool for arbitrage and profit-locking, its explosive growth during the 2017 ICO boom, and its troubled 2018 de-peg crisis, fractional-reserve controversy, market-manipulation allegations, and the ongoing New York Attorney General case. Alternatives such as MakerDAO and DAI are introduced as more decentralized approaches, and upcoming episodes are previewed: flash loans, decentralized exchanges, margin trading, derivatives, prediction markets, decentralized identity, risk management, and the oracle problem.",
+  "quotes": [
+    {
+      "startSec": 326,
+      "fa": "مهم‌ترینش دقیقاً مثل کریپتوکارنسی‌ها اینه که سانسورشیپ رو حذف می‌کنه.",
+      "en": "The most important thing, just like with cryptocurrencies, is that it removes censorship.",
+      "speaker": "Mehdi"
+    },
+    {
+      "startSec": 1359,
+      "fa": "بدون استیبیلیتی اصلاً اقتصاد نمی‌کنیم — کل دنیای اقتصاد و فایننس دنبال به‌وجود آوردن استیبیلیتی‌ه.",
+      "en": "Without stability we can't have an economy at all — the entire world of economics and finance is after achieving stability.",
+      "speaker": "Mehdi"
+    },
+    {
+      "startSec": 3285,
+      "fa": "پول بد، پول خوب رو از بازار حذف می‌کنه، چون همه می‌خوان از شر پول بد خلاص بشن.",
+      "en": "Bad money drives good money out of the market, because everyone wants to get rid of the bad money."
+    },
+    {
+      "startSec": 3928,
+      "fa": "در یک لحظه یک میلیون دولار قرض کنیم، باهاش کاری انجام بدیم، و پولشو با سود در همون لحظه برگردونیم.",
+      "en": "In a single moment borrow a million dollars, do something with it, and return it with interest at that very same moment.",
+      "speaker": "Shayan"
+    },
+    {
+      "startSec": 3704,
+      "fa": "خودش یه انقلابی بود — هرچند توی پیاده‌سازی خیلی مشکل داشت، ولی خود این که اومد همچین کانسپتی رو روی بیت‌کوین ارائه داد، به نظرم یه چیز قابل‌ارزش بود.",
+      "en": "It was a revolution in itself — even if implementation had a lot of problems, the fact that it brought this concept onto Bitcoin was something worth acknowledging.",
+      "speaker": "Babak"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "DeFi (Decentralized Finance)",
+      "termFa": "دیفای (امور مالی غیرمتمرکز)",
+      "definitionEn": "Financial services—lending, trading, investing—built on smart-contract blockchains without traditional intermediaries.",
+      "definitionFa": "خدمات مالی مانند وام‌دهی، معامله و سرمایه‌گذاری که بدون واسطه‌های سنتی روی بلاکچین‌های دارای قرارداد هوشمند ارائه می‌شوند."
+    },
+    {
+      "term": "Stablecoin",
+      "termFa": "استیبل‌کوین",
+      "definitionEn": "A cryptocurrency designed to maintain a stable value, usually pegged to a fiat currency like the US dollar.",
+      "definitionFa": "رمزارزی که ارزشش ثابت نگه داشته می‌شود، معمولاً با پیوند به یک ارز فیات مانند دلار آمریکا."
+    },
+    {
+      "term": "Tether (USDT)",
+      "termFa": "تتر",
+      "definitionEn": "The largest centralized stablecoin, originally issued on the Mastercoin/Omni Layer, pegged 1:1 to the US dollar.",
+      "definitionFa": "بزرگ‌ترین استیبل‌کوین متمرکز که ابتدا روی اومنی‌لایر صادر شد و ارزشش ۱ به ۱ به دلار آمریکا پیوند خورده است."
+    },
+    {
+      "term": "MakerDAO / DAI",
+      "termFa": "میکردائو / دای",
+      "definitionEn": "A decentralized protocol on Ethereum that issues the DAI stablecoin backed by crypto collateral rather than bank dollars.",
+      "definitionFa": "پروتکل غیرمتمرکزی روی اتریوم که استیبل‌کوین دای را با پشتوانه رمزارز—نه دلار بانکی—صادر می‌کند."
+    },
+    {
+      "term": "Arbitrage",
+      "termFa": "آربیتراژ",
+      "definitionEn": "Profiting from price differences for the same asset across different markets, which also helps equalize prices.",
+      "definitionFa": "کسب سود از تفاوت قیمت یک دارایی در بازارهای مختلف، که همزمان به برابرسازی قیمت‌ها کمک می‌کند."
+    },
+    {
+      "term": "Flash Loan",
+      "termFa": "فلش‌لون (وام لحظه‌ای)",
+      "definitionEn": "An uncollateralized DeFi loan that must be borrowed and repaid within a single blockchain transaction.",
+      "definitionFa": "وامی در دیفای که بدون وثیقه در یک تراکنش بلاکچینی گرفته و بازپرداخت می‌شود."
+    },
+    {
+      "term": "AMM (Automated Market Maker)",
+      "termFa": "بازارساز خودکار",
+      "definitionEn": "A smart-contract protocol that sets asset prices algorithmically using liquidity pools instead of an order book.",
+      "definitionFa": "پروتکل قرارداد هوشمندی که با استفاده از استخرهای نقدینگی و بدون دفتر سفارش، قیمت دارایی‌ها را به‌صورت الگوریتمی تعیین می‌کند."
+    },
+    {
+      "term": "DEX (Decentralized Exchange)",
+      "termFa": "صرافی غیرمتمرکز",
+      "definitionEn": "A peer-to-peer exchange where trades happen on-chain via smart contracts, without a central custodian.",
+      "definitionFa": "صرافی همتا به همتا که معاملات از طریق قراردادهای هوشمند روی زنجیره انجام می‌شود و متولی مرکزی ندارد."
+    },
+    {
+      "term": "Oracle",
+      "termFa": "اوراکل",
+      "definitionEn": "A service that feeds real-world data—especially asset prices—into smart contracts on the blockchain.",
+      "definitionFa": "سرویسی که داده‌های دنیای واقعی—به‌ویژه قیمت دارایی‌ها—را به قراردادهای هوشمند روی بلاکچین می‌رساند."
+    },
+    {
+      "term": "Blacklisting",
+      "termFa": "بلک‌لیستینگ",
+      "definitionEn": "A centralized stablecoin issuer's ability to freeze or block specific wallet addresses from using its token.",
+      "definitionFa": "قابلیت صادرکننده متمرکز استیبل‌کوین برای مسدود کردن آدرس‌های خاص کیف‌پول از استفاده توکن."
+    },
+    {
+      "term": "Breaking the Buck",
+      "termFa": "شکستن پگ",
+      "definitionEn": "When a stablecoin or money-market fund falls below its $1 peg, signaling a loss of market confidence.",
+      "definitionFa": "زمانی که یک استیبل‌کوین یا صندوق بازار پول از پگ یک‌دلاری خود پایین‌تر می‌رود و نشان‌دهنده از دست رفتن اعتماد بازار است."
+    },
+    {
+      "term": "Gresham's Law",
+      "termFa": "قانون گرشام",
+      "definitionEn": "The economic principle that 'bad money drives out good money' when both circulate at the same face value.",
+      "definitionFa": "اصل اقتصادی که می‌گوید «پول بد، پول خوب را از بازار حذف می‌کند» وقتی هر دو با ارزش اسمی یکسان در گردش باشند."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "شیریا خد",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پلاکچین",
+      "right": "بلاکچین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتریوم",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تران",
+      "right": "ترون"
+    },
+    {
+      "lang": "fa",
+      "wrong": "رودستاک",
+      "right": "RSK"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سمارت پانچرکت",
+      "right": "اسمارت کانترکت"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیترین",
+      "right": "بیت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مسترکوینی",
+      "right": "مسترکوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اومنی لیر",
+      "right": "اومنی‌لایر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "میکرداؤ",
+      "right": "میکردائو"
+    },
+    {
+      "lang": "fa",
+      "wrong": "میکر داو",
+      "right": "میکردائو"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سینتیتیکس",
+      "right": "سینتتیکس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتفنکس",
+      "right": "بیتفینکس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پلونویکس",
+      "right": "پولونیکس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "USTC",
+      "right": "USDC"
+    },
+    {
+      "lang": "en",
+      "wrong": "USTC",
+      "right": "USDC"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تیتر",
+      "right": "تتر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ویدکون",
+      "right": "بیت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اسپیکیولیتور",
+      "right": "اسپکیولیتور"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بریکینگ دباتی",
+      "right": "برکینگ د باک"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بریکینگ دباک",
+      "right": "برکینگ د باک"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مانی فاندا",
+      "right": "مانی مارکت فاند"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لیبوی",
+      "right": "لیبرا"
+    },
+    {
+      "lang": "fa",
+      "wrong": "حایک",
+      "right": "هایک"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ملیت ردگی از پول",
+      "right": "ملی‌زدایی از پول"
+    },
+    {
+      "lang": "fa",
+      "wrong": "قانون گرهانلو",
+      "right": "قانون گرشام"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دریویتیف",
+      "right": "دریوتیو"
+    },
+    {
+      "lang": "en",
+      "wrong": "Vitcoin",
+      "right": "Bitcoin"
+    }
+  ]
+}

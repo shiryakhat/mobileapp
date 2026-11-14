@@ -1,0 +1,249 @@
+{
+  "id": "s02e03",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:07:03.116Z",
+  "summaryFa": "بیتکوین به‌عنوان «طلای دیجیتال» و ذخیرۀ ارزش بررسی می‌شود؛ نه ابزاری برای تراکنش‌های روزمره. پنل به سراغ راهنمای عملی فورک‌ها می‌رود: چطور با نگه‌داشتن کلید خصوصی و صبر پیش از استفاده از کیف‌پول‌های تأییدشده، دارایی را حفظ کنیم و از حملۀ ری‌پلی و سایت‌های کلاهبرداری در امان بمانیم. سپس ریشه‌های سیاسی و مالی پیدایش بیتکوین کش—از توافق نیویورک و نقش راجر ور تا رقابت Bitcoin Core و Bitcoin ABC—کالبدشکافی می‌شود و معیارهایی مانند اثر شبکه، قدرت ماینینگ و نقدینگی برای سنجش اعتبار هر فورک ارائه می‌گردد.",
+  "summaryEn": "Bitcoin is examined as digital gold and a store of value rather than a transactional currency, given its hardcoded 21-million supply cap. The panel offers a practical guide to surviving forks: hold your own private key, choose open-source wallets listed on bitcoin.org, wait for replay protection and reputable wallet support before moving funds, and avoid scam sites that harvest keys—lessons learned from the Ethereum/Ethereum Classic split. The episode also dissects the political economy behind Bitcoin Cash, tracing the New York Agreement, Roger Ver's early investments and ownership of Bitcoin.com, and the rivalry between Bitcoin Core and Bitcoin ABC, while stressing that network effect, mining power, and liquidity are the real tests of any fork's staying power.",
+  "quotes": [
+    {
+      "startSec": 668,
+      "fa": "یک: تمع نکن. دو: صبوری کن، بشین مطالعه کن.",
+      "en": "One: don't be greedy. Two: be patient — sit down and study.",
+      "speaker": "Babak"
+    },
+    {
+      "startSec": 978,
+      "fa": "تمام دارایی شما، کلید خصوصی شماست؛ سید شماست.",
+      "en": "All of your assets are your private key — they are your seed.",
+      "speaker": "Roozbeh"
+    },
+    {
+      "startSec": 819,
+      "fa": "این دارایی باارزشم رو به خطر نندازم برای چیزی که هیچ‌کس حاضر نیست طلا بده و جنسی بخره که توی پاکت بسته بهش تحویل میدن.",
+      "en": "I won't risk this valuable asset for something no one is willing to pay gold for — a good handed to you sealed in an envelope where you don't even know what's inside.",
+      "speaker": "Babak"
+    },
+    {
+      "startSec": 206,
+      "fa": "بیتکوین داره تبدیل میشه به یک پشتوانۀ مالی؛ دارندگانش مثل دارندگان طلا هستن.",
+      "en": "Bitcoin is turning into a financial reserve — its holders are like gold holders."
+    },
+    {
+      "startSec": 2500,
+      "fa": "خیلی سعی شده که بیتکوین کش رو بزرگ کنن و بگن بیتکوین بده؛ اینا همش حرفه تا این‌که ببینیم واقعاً در سطح بلاکچین اون ادعا چقدر به واقعیت نزدیکه.",
+      "en": "There's been a lot of effort to hype up Bitcoin Cash and say Bitcoin is bad — it's all just talk until we see at the blockchain level how close that claim is to reality.",
+      "speaker": "Shayan"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Hard Fork",
+      "termFa": "هارد فورک",
+      "definitionEn": "A permanent divergence in a blockchain's rules that creates two incompatible chains from one point onward.",
+      "definitionFa": "جدایی دائمی در قوانین یک بلاکچین که از یک نقطه به بعد دو زنجیرۀ ناسازگار ایجاد می‌کند."
+    },
+    {
+      "term": "Replay Attack",
+      "termFa": "حملۀ ری‌پلی",
+      "definitionEn": "After a fork, a transaction broadcast on one chain can be copied and replayed on the other chain, potentially draining funds.",
+      "definitionFa": "پس از فورک، یک تراکنش ارسال‌شده روی یک زنجیره می‌تواند روی زنجیرۀ دیگر تکرار شود و موجب از دست رفتن دارایی شود."
+    },
+    {
+      "term": "Replay Protection",
+      "termFa": "محافظت در برابر ری‌پلی",
+      "definitionEn": "A technical mechanism built into a forked chain to prevent transactions from being valid on both chains simultaneously.",
+      "definitionFa": "مکانیزمی فنی در زنجیرۀ فورک‌شده که از معتبر بودن تراکنش‌ها روی هر دو زنجیره به‌طور هم‌زمان جلوگیری می‌کند."
+    },
+    {
+      "term": "Store of Value (SoV)",
+      "termFa": "ذخیرۀ ارزش",
+      "definitionEn": "An asset held over time to preserve purchasing power, like gold, rather than used for everyday transactions.",
+      "definitionFa": "دارایی‌ای که برای حفظ قدرت خرید در طول زمان نگه‌داشته می‌شود، مشابه طلا، نه برای تراکنش‌های روزمره."
+    },
+    {
+      "term": "SegWit",
+      "termFa": "سگ‌ویت",
+      "definitionEn": "Segregated Witness — a Bitcoin/Litecoin upgrade that restructures transaction data to increase capacity and enable new features.",
+      "definitionFa": "ارتقایی در بیتکوین و لایت‌کوین که ساختار داده‌های تراکنش را بازآرایی می‌کند تا ظرفیت شبکه افزایش یابد و قابلیت‌های جدید فعال شوند."
+    },
+    {
+      "term": "Atomic Swap",
+      "termFa": "سواپ اتمی",
+      "definitionEn": "A smart-contract technique allowing two parties to exchange different cryptocurrencies directly without a centralized exchange.",
+      "definitionFa": "روشی مبتنی بر قرارداد هوشمند که به دو طرف اجازه می‌دهد بدون صرافی متمرکز، ارزهای دیجیتال مختلف را مستقیماً مبادله کنند."
+    },
+    {
+      "term": "Private Key",
+      "termFa": "کلید خصوصی",
+      "definitionEn": "A secret cryptographic code that proves ownership of a wallet and authorizes outgoing transactions.",
+      "definitionFa": "کدی رمزنگاری‌شده که مالکیت کیف‌پول را اثبات و تراکنش‌های خروجی را مجاز می‌کند."
+    },
+    {
+      "term": "Seed Phrase",
+      "termFa": "عبارت بازیابی (سید)",
+      "definitionEn": "A human-readable backup of a wallet's private key, typically 12–24 words, used to restore access to funds.",
+      "definitionFa": "نسخۀ پشتیبان خوانا از کلید خصوصی کیف‌پول، معمولاً ۱۲ تا ۲۴ کلمه، که برای بازیابی دسترسی به دارایی استفاده می‌شود."
+    },
+    {
+      "term": "Fee Market",
+      "termFa": "بازار کارمزد",
+      "definitionEn": "The competitive system where users bid transaction fees to have their transactions confirmed faster by miners.",
+      "definitionFa": "سیستم رقابتی که در آن کاربران برای تأیید سریع‌تر تراکنش‌هایشان توسط ماینرها، کارمزد پیشنهاد می‌دهند."
+    },
+    {
+      "term": "Bitcoin Cash",
+      "termFa": "بیتکوین کش",
+      "definitionEn": "A 2017 hard fork of Bitcoin that increased the block size limit to allow more transactions per block.",
+      "definitionFa": "هارد فورک بیتکوین در سال ۲۰۱۷ که محدودیت اندازۀ بلاک را افزایش داد تا تعداد تراکنش‌های بیشتری در هر بلاک جا بگیرد."
+    },
+    {
+      "term": "Network Effect",
+      "termFa": "اثر شبکه",
+      "definitionEn": "The phenomenon where a cryptocurrency becomes more valuable and secure as more users, nodes, and miners join it.",
+      "definitionFa": "پدیده‌ای که طی آن یک ارز دیجیتال با پیوستن کاربران، نودها و ماینرهای بیشتر، ارزشمندتر و امن‌تر می‌شود."
+    },
+    {
+      "term": "Hardware Wallet",
+      "termFa": "کیف‌پول سخت‌افزاری",
+      "definitionEn": "A physical device that stores private keys offline, protecting them from internet-based attacks.",
+      "definitionFa": "دستگاه فیزیکی که کلیدهای خصوصی را آفلاین نگه می‌دارد و آن‌ها را از حملات اینترنتی محافظت می‌کند."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "بیتکاین کشت",
+      "right": "بیتکوین کش"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکوین کرش",
+      "right": "بیتکوین کش"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکان آین لیمیتد",
+      "right": "بیتکوین آنلیمیتد"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکاین",
+      "right": "بیتکوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتریوم",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتریوم کلاسیک",
+      "right": "اتریوم کلاسیک"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لایتکاین",
+      "right": "لایت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ریلایتکوین",
+      "right": "لایت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ریتکوین",
+      "right": "لایت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بلاگین",
+      "right": "بلاکچین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بلاکشن",
+      "right": "بلاکچین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بلادچین",
+      "right": "بلاکچین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "راجعه ویر",
+      "right": "راجر ور"
+    },
+    {
+      "lang": "fa",
+      "wrong": "راجعه",
+      "right": "راجر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "راجل",
+      "right": "راجر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "راجل ویل",
+      "right": "راجر ور"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کوین دسک",
+      "right": "کوین‌دسک"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کوین بیس",
+      "right": "کوین‌بیس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تریزور",
+      "right": "ترزور"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکوین گولد",
+      "right": "بیتکوین گلد"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دیژیتال گولد",
+      "right": "طلای دیجیتال"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکوین کور",
+      "right": "Bitcoin Core"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پورتاکو",
+      "right": "پروتکل"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سگویت",
+      "right": "سگ‌ویت"
+    },
+    {
+      "lang": "en",
+      "wrong": "Shenakht",
+      "right": "Shir ya Khat"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تماع",
+      "right": "طمع"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سبوری",
+      "right": "صبوری"
+    }
+  ]
+}

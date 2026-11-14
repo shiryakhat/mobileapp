@@ -1,0 +1,254 @@
+{
+  "id": "s07e07",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T21:56:03.123Z",
+  "summaryFa": "این اپیزود به داستان حریم خصوصی در بلاکچین می‌پردازد و تورنادو کش را به‌عنوان محوری‌ترین مثال بررسی می‌کند؛ از هکاتون هاروارد که رومن استورم، رومن سمنوف و الکسی پرتسف پروژه را آغاز کردند، تا تحریم‌های OFAC، دستگیری توسعه‌دهندگان، دادگاه رومن استورم در نیویورک که با رأی آویزان هیئت منصفه پایان یافت، و محکومیت الکسی پرتسف در هلند. اپیزود همچنین زیرساخت‌های فنی میکسرها (zkSNARK، نالیفایر، CoinJoin)، تاریخچه جنگ رمزنگاری دهه ۹۰، هک اکسی اینفینیتی توسط گروه لازاروس کره شمالی، و پرونده سامورایی والت را پوشش می‌دهد و در نهایت استدلال می‌کند که بدون حریم خصوصی در لایه پایه اتریوم، مقاومت در برابر سانسور معنایی نخواهد داشت.",
+  "summaryEn": "The episode traces the full arc of the Tornado Cash story—from its origins at a Harvard hackathon by Roman Storm, Roman Semenov, and Alexey Pertsev, through OFAC sanctions on the smart contract, GitHub takedowns, Circle's USDC freeze, Alexey Pertsev's conviction in the Netherlands, and Roman Storm's New York trial that ended in a hung jury on two of three counts. Along the way it explains why blockchain addresses are only pseudo-anonymous, covers the technical evolution of on-chain privacy tools (CoinJoin, Monero ring signatures, Zcash shielded addresses, zkSNARK ceremonies, Miximus, Semaphore, Circom, and AZTEC), and details how the Lazarus Group's laundering of Axie Infinity/Ronin hack proceeds through Tornado Cash triggered the government response. The hosts argue that without privacy at Ethereum's base layer, censorship resistance is illusory—a debate as old as the 1990s crypto wars and PGP.",
+  "quotes": [
+    {
+      "startSec": 1550,
+      "fa": "خیلی وقت‌ها می‌شنوم که می‌گن «من چیزی برای پنهان کردن ندارم». این حرف مثل اینه که بگی اهمیتی به آزادی بیان نمی‌دم چون چیزی برای گفتن ندارم.",
+      "en": "I often hear people say 'I have nothing to hide.' That's like saying you don't care about free speech because you have nothing to say.",
+      "speaker": "Hamid"
+    },
+    {
+      "startSec": 1730,
+      "fa": "ادوارد اسنودن می‌گه: کسایی که می‌گن اهمیتی به حریم خصوصی نمی‌دم چون چیزی برای پنهان کردن ندارم، انگار که می‌گن اهمیتی به آزادی بیان نمی‌دم چون چیزی واسه گفتن ندارم.",
+      "en": "Snowden says: those who claim they don't care about privacy because they have nothing to hide are like saying they don't care about free speech because they have nothing to say."
+    },
+    {
+      "startSec": 5690,
+      "fa": "همه چیز درباره این دادگاه درباره این بودش که چی می‌دونستن و چی می‌خواستن؛ و به خاطر همین اون تی‌شرت خیلی اهمیت پیدا کرد.",
+      "en": "Everything about this trial was about what they knew and what they intended—and that's exactly why that T-shirt became so important.",
+      "speaker": "Fatemeh"
+    },
+    {
+      "startSec": 8003,
+      "fa": "بلاکچین بدون حریم خصوصی، مقاومت در برابر سانسورش رو از دست می‌ده. اگه نتونیم حریم خصوصی رو روی لایه پایه وارد کنیم، بلاکچین آینده‌ای نداره.",
+      "en": "A blockchain without privacy loses its censorship resistance. If we can't bring privacy to the base layer, blockchain has no future.",
+      "speaker": "Hamid"
+    },
+    {
+      "startSec": 3685,
+      "fa": "تی‌شرتی پوشیدن که روش نوشته بود: «می‌خوای بدونی چطور روی اتریوم ناشناس بمونی؟» و زیرش عکس یک ماشین لباس‌شویی با لوگوی تورنادو کش. دادستانی همین رو روز اول دادگاه نشون داد و گفت اینا از همون اول می‌دونستن.",
+      "en": "They wore a T-shirt that said 'Do you wanna know how to stay anonymous on Ethereum?' with a washing machine bearing the Tornado Cash logo. The prosecution showed this on day one of trial and said they knew from the very start.",
+      "speaker": "Fatemeh"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Tornado Cash",
+      "termFa": "تورنادو کش",
+      "definitionEn": "A decentralized Ethereum mixer using zkSNARKs that lets users deposit and withdraw funds without linking the two addresses.",
+      "definitionFa": "میکسر غیرمتمرکز اتریوم مبتنی بر zkSNARK که به کاربران امکان می‌دهد وجوه را بدون ارتباط آدرس واریز و برداشت کنند."
+    },
+    {
+      "term": "zkSNARK",
+      "termFa": "زی‌کی‌اسنارک",
+      "definitionEn": "Zero-Knowledge Succinct Non-Interactive Argument of Knowledge; a cryptographic proof that something is true without revealing why.",
+      "definitionFa": "نوعی اثبات رمزنگاری که صحت یک ادعا را بدون افشای اطلاعات پشتیبان آن ثابت می‌کند."
+    },
+    {
+      "term": "CoinJoin",
+      "termFa": "کوین‌جوین",
+      "definitionEn": "A Bitcoin privacy technique that merges multiple users' transactions into one, making it harder to trace individual coins.",
+      "definitionFa": "روشی در بیتکوین که چند تراکنش مختلف را با هم ترکیب می‌کند تا ردیابی سکه‌های منفرد دشوارتر شود."
+    },
+    {
+      "term": "Fungibility",
+      "termFa": "تعویض‌پذیری (فانجیبیلیتی)",
+      "definitionEn": "The property that every unit of a currency is interchangeable and equal in value regardless of its history.",
+      "definitionFa": "ویژگی‌ای که بر اساس آن هر واحد از یک ارز صرف‌نظر از تاریخچه‌اش با واحد دیگر برابر و قابل تعویض است."
+    },
+    {
+      "term": "OFAC",
+      "termFa": "اوفک",
+      "definitionEn": "The US Treasury's Office of Foreign Assets Control, which administers and enforces economic and trade sanctions.",
+      "definitionFa": "دفتر کنترل دارایی‌های خارجی وزارت خزانه‌داری آمریکا که مسئول اجرای تحریم‌های اقتصادی است."
+    },
+    {
+      "term": "Pseudonymity",
+      "termFa": "شبه‌ناشناسی",
+      "definitionEn": "Using an identifier (like a blockchain address) instead of a real name, while remaining traceable through transaction history.",
+      "definitionFa": "استفاده از یک شناسه مثل آدرس بلاکچین به‌جای نام واقعی، که ردیابی از طریق تاریخچه تراکنش‌ها همچنان امکان‌پذیر است."
+    },
+    {
+      "term": "Trusted Setup Ceremony",
+      "termFa": "مراسم راه‌اندازی اعتماد",
+      "definitionEn": "A multi-party computation ritual that generates zkSNARK parameters; secure if at least one participant deletes their secret.",
+      "definitionFa": "فرآیند چندطرفه‌ای برای تولید پارامترهای zkSNARK که اگر حداقل یک شرکت‌کننده داده‌اش را پاک کند، امن است."
+    },
+    {
+      "term": "Relayer",
+      "termFa": "ریلیر",
+      "definitionEn": "A third-party node in Tornado Cash that submits withdrawals on a user's behalf, so the withdrawal address is not linked to the deposit.",
+      "definitionFa": "گره شخص ثالثی در تورنادو کش که برداشت را به نمایندگی از کاربر ارسال می‌کند تا آدرس برداشت به واریز مرتبط نشود."
+    },
+    {
+      "term": "Money Service Business (MSB)",
+      "termFa": "کسب‌وکار خدمات پولی",
+      "definitionEn": "A US regulatory category for entities that transmit or exchange money, requiring registration and AML compliance.",
+      "definitionFa": "دسته‌بندی قانونی آمریکا برای کسب‌وکارهایی که پول منتقل یا مبادله می‌کنند و نیازمند ثبت و رعایت مقررات ضد پول‌شویی هستند."
+    },
+    {
+      "term": "Lazarus Group",
+      "termFa": "گروه لازاروس",
+      "definitionEn": "A North Korean state-sponsored hacking group linked to major cryptocurrency heists including the Axie Infinity/Ronin hack.",
+      "definitionFa": "گروه هکری تحت حمایت دولت کره شمالی که به سرقت‌های بزرگ رمزارزی از جمله هک اکسی اینفینیتی/رونین مرتبط است."
+    },
+    {
+      "term": "Chainalysis",
+      "termFa": "چین‌آنالیسیس",
+      "definitionEn": "A blockchain analytics firm that traces cryptocurrency transactions to identify wallet owners and detect illicit activity.",
+      "definitionFa": "شرکت تحلیل بلاکچین که با ردیابی تراکنش‌های رمزارزی هویت صاحبان کیف پول و فعالیت‌های غیرقانونی را شناسایی می‌کند."
+    },
+    {
+      "term": "Nullifier",
+      "termFa": "نالیفایر",
+      "definitionEn": "A unique value in zkSNARK-based mixers that prevents double-spending by marking a deposit note as already withdrawn.",
+      "definitionFa": "مقدار منحصربه‌فردی در میکسرهای مبتنی بر zkSNARK که از دوبار برداشت یک سپرده جلوگیری می‌کند."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "en",
+      "wrong": "Shenakht podcast",
+      "right": "Shir Ya Khat podcast"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تورنیدو کشت",
+      "right": "تورنادو کش"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تورنیدو کش",
+      "right": "تورنادو کش"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ترنیدو کشت",
+      "right": "تورنادو کش"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تورندوکشت",
+      "right": "تورنادو کش"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ترنادو کشت",
+      "right": "تورنادو کش"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ترنز و کش",
+      "right": "تورنادو کش"
+    },
+    {
+      "lang": "fa",
+      "wrong": "توندکش",
+      "right": "تورنادو کش"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ترنه دو کش",
+      "right": "تورنادو کش"
+    },
+    {
+      "lang": "fa",
+      "wrong": "رومان سترم",
+      "right": "رومن استورم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "رومن سترم",
+      "right": "رومن استورم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "رومانستورم",
+      "right": "رومن استورم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "رومانستان",
+      "right": "رومن استورم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "الکسای پرسف",
+      "right": "الکسی پرتسف"
+    },
+    {
+      "lang": "fa",
+      "wrong": "الکسی پرسف",
+      "right": "الکسی پرتسف"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آنژره کورنیه",
+      "right": "آندره کرونیه"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آندرکورنیه",
+      "right": "آندره کرونیه"
+    },
+    {
+      "lang": "fa",
+      "wrong": "یرن فاینس",
+      "right": "یرن فایننس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زیوکاین",
+      "right": "Zerocoin"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایت بستون",
+      "right": "EthBoston"
+    },
+    {
+      "lang": "fa",
+      "wrong": "چین آنالیسیس",
+      "right": "چین‌آنالیسیس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "چینرسیسیه",
+      "right": "چین‌آنالیسیس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زیکیمانی",
+      "right": "AZTEC"
+    },
+    {
+      "lang": "fa",
+      "wrong": "از تک",
+      "right": "AZTEC"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اسدک",
+      "right": "AZTEC"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زیوکاینه",
+      "right": "Zerocoin"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سیریکام",
+      "right": "سیرکام (Circom)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زوکریت",
+      "right": "زوکریتس (ZoKrates)"
+    }
+  ]
+}

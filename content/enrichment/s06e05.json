@@ -1,0 +1,260 @@
+{
+  "id": "s06e05",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T21:58:46.724Z",
+  "summaryFa": "این قسمت سومین اپیزود از مجموعه‌ی لایتنینگ در فصل ششم «شیر یا خط» است. ابتدا روش‌های بستن کانال لایتنینگ — بستن همکاری‌شده (Cooperative Close) و بستن یک‌طرفه (Force Close) — با جزئیات فنی تایم‌لاک‌های نسبی و مطلق، HTLC، انکر اوتپوت و CPFP بررسی می‌شود. سپس پیاده‌سازی‌های اصلی نود لایتنینگ (LND، Core Lightning، Eclair، LDK، Electrum) و کیف‌پول‌های حضانتی و غیرحضانتی (Phoenix، Breez، Muun، Eclair Mobile) معرفی و مقایسه می‌شوند. در پایان تأثیر آپگرید تپروت — امضای شنور و MAST — بر حریم خصوصی، کاهش کارمزد باز و بستن کانال، و قابلیت‌های آینده‌ای مانند PTLC و BOLT 12 شرح داده می‌شود.",
+  "summaryEn": "The third Lightning Network episode of Shir Ya Khat Season 6 opens with a detailed walkthrough of channel-closing mechanics: cooperative close versus force close, and the roles of relative and absolute time-locks, HTLCs, anchor outputs, and CPFP fee-bumping. The hosts then survey the main node implementations—LND (Lightning Labs, Go), Core Lightning (Blockstream, C), Eclair (ACINQ, Scala), LDK (Spiral, Rust), and Electrum's built-in node—and compare custodial wallets (Wallet of Satoshi, Blue Wallet, Strike, Chivo) against non-custodial ones (Phoenix, Breez, Muun, Eclair Mobile), explaining inbound liquidity constraints and each team's design philosophy. The episode closes by explaining how the Taproot upgrade (Schnorr signatures and MAST) makes Lightning funding and closing transactions indistinguishable from ordinary ones for privacy and lower fees, and previews future protocol improvements including PTLCs and BOLT 12 static invoices.",
+  "quotes": [
+    {
+      "startSec": 1403,
+      "fa": "من خودم شخصاً به هیچ وجه توصیه نمی‌کنم از این کیف‌پول‌های حضانتی استفاده بشه؛ یا اگه کسی نیاز داره، به مبلغ خیلی کمی ازشون استفاده کنه — مثلاً ده دلار، بیست دلار.",
+      "en": "Personally, I don't recommend using custodial wallets at all. If someone really has to, they should use them for a very small amount — ten or twenty dollars.",
+      "speaker": "Zia"
+    },
+    {
+      "startSec": 1888,
+      "fa": "سعی کرده یه جور اقتصادی بسازه؛ هم کانتنت کریتورها رو تارگت کنه، هم از یه سمت دیگه فروشگاه‌ها رو — این تیم واسه همینه که اینجوری داره توسعه‌اش می‌ده.",
+      "en": "They tried to build a whole economy — targeting content creators on one side and merchants on the other. That's why the team is developing it this way.",
+      "speaker": "Zia"
+    },
+    {
+      "startSec": 3587,
+      "fa": "دیگه اصلاً مشخص نیست اون تراکنش چندامضاییه — با اینکه چندامضایی هست. من خودم انجامش دادم و می‌دونم چندامضاییه.",
+      "en": "It's no longer detectable at all that the transaction is multisig — even though it is. I did it myself and I know it's multisig.",
+      "speaker": "Zia"
+    },
+    {
+      "startSec": 1591,
+      "fa": "LDK رو اگه اشتباه نکنم شرکت جک دورسی داره توسعه‌اش می‌ده — اسپایرال، اگه اشتباه نکنم.",
+      "en": "If I'm not mistaken, LDK is being developed by Jack Dorsey's company — Spiral, if I'm not mistaken.",
+      "speaker": "Zia"
+    },
+    {
+      "startSec": 3842,
+      "fa": "امکان اینه که ما یه آدرس استاتیک داشته باشیم، یه جور استاتیک اینویس — و قابلیت‌های خیلی زیادی داره که خیلی هیجان‌انگیزه برای آینده.",
+      "en": "The idea is that we can have a single static address, a kind of static invoice — with so many capabilities that it's very exciting for the future.",
+      "speaker": "Zia"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Cooperative Close",
+      "termFa": "بستن همکاری‌شده",
+      "definitionEn": "Both channel parties agree on a final balance, sign a closing transaction together, and broadcast it to the Bitcoin network.",
+      "definitionFa": "هر دو طرف کانال روی موجودی نهایی توافق می‌کنند و با همکاری هم تراکنش بستن را منتشر می‌کنند."
+    },
+    {
+      "term": "Force Close",
+      "termFa": "بستن یک‌طرفه",
+      "definitionEn": "One channel party unilaterally broadcasts the latest commitment transaction on-chain, triggering time-locks before funds can be spent.",
+      "definitionFa": "یکی از طرفین بدون رضایت دیگری آخرین تراکنش کامیتمنت را روی زنجیر منتشر می‌کند و تایم‌لاک فعال می‌شود."
+    },
+    {
+      "term": "HTLC",
+      "termFa": "قرارداد قفل زمانی-هشی",
+      "definitionEn": "Hash Time-Locked Contract: a conditional payment locked by both a secret hash and a time-limit, enabling trustless multi-hop Lightning routing.",
+      "definitionFa": "قراردادی که پرداخت را با یک هش مخفی و محدودیت زمانی قفل می‌کند و مسیریابی چندگامه‌ی لایتنینگ را ممکن می‌سازد."
+    },
+    {
+      "term": "CPFP",
+      "termFa": "فرزند برای پدر پرداخت می‌کند",
+      "definitionEn": "Child-Pays-For-Parent: a fee-bumping method where a new transaction spending an unconfirmed output pays a high fee to incentivize miners to confirm the parent.",
+      "definitionFa": "روشی برای افزایش کارمزد که در آن یک تراکنش جدید با کارمزد بالا ماینرها را تشویق می‌کند تا تراکنش والد تأییدنشده را ماین کنند."
+    },
+    {
+      "term": "Anchor Output",
+      "termFa": "انکر اوتپوت",
+      "definitionEn": "A small output added to Lightning commitment transactions that allows either party to fee-bump the transaction via CPFP after broadcast.",
+      "definitionFa": "یک خروجی کوچک در تراکنش‌های کامیتمنت که به هر طرف اجازه می‌دهد پس از انتشار، کارمزد را از طریق CPFP افزایش دهد."
+    },
+    {
+      "term": "Inbound Liquidity",
+      "termFa": "نقدینگی ورودی",
+      "definitionEn": "The capacity on the remote side of a Lightning channel that allows a node to receive payments from the network.",
+      "definitionFa": "ظرفیت موجود در سمت طرف مقابل کانال که به نود اجازه می‌دهد پرداخت دریافت کند."
+    },
+    {
+      "term": "Submarine Swap",
+      "termFa": "سابمارین سواپ",
+      "definitionEn": "An atomic cross-layer exchange that converts on-chain Bitcoin to Lightning (or vice versa) without requiring mutual trust between parties.",
+      "definitionFa": "مبادله‌ای اتمیک بین لایه‌ی اصلی بیتکوین و شبکه‌ی لایتنینگ که بدون نیاز به اعتماد انجام می‌شود."
+    },
+    {
+      "term": "PTLC",
+      "termFa": "پی‌تی‌ال‌سی",
+      "definitionEn": "Point Time-Locked Contract: an HTLC upgrade using Schnorr/adaptor signatures that improves privacy by removing the correlation of the same hash across hops.",
+      "definitionFa": "نسخه‌ی ارتقاءیافته‌ی HTLC با امضاهای شنور که با حذف هش مشترک بین گام‌ها، حریم خصوصی مسیریابی را بهبود می‌دهد."
+    },
+    {
+      "term": "BOLT 12",
+      "termFa": "بولت ۱۲",
+      "definitionEn": "A Lightning protocol proposal introducing static reusable offers and invoices, enabling recurring payments and enhanced metadata exchange.",
+      "definitionFa": "پیشنهادی برای پروتکل لایتنینگ که اینویس‌های استاتیک و قابل استفاده‌ی مجدد را معرفی می‌کند و پرداخت‌های دوره‌ای را ممکن می‌سازد."
+    },
+    {
+      "term": "Taproot",
+      "termFa": "تپروت",
+      "definitionEn": "A Bitcoin soft-fork upgrade bundling Schnorr signatures and MAST, making complex scripts indistinguishable from simple transactions for privacy and efficiency.",
+      "definitionFa": "آپگرید نرم‌فورک بیتکوین که امضای شنور و MAST را یکجا اضافه کرد و اسکریپت‌های پیچیده را از تراکنش‌های معمولی غیرقابل‌تشخیص می‌کند."
+    },
+    {
+      "term": "Gossip Protocol",
+      "termFa": "پروتکل گاسیپ",
+      "definitionEn": "The peer-to-peer messaging system Lightning nodes use to broadcast node announcements, channel announcements, and channel updates across the network.",
+      "definitionFa": "سیستم پیام‌رسانی همتا‌به‌همتا که نودهای لایتنینگ با آن اطلاعات نود، کانال و به‌روزرسانی‌ها را در شبکه پخش می‌کنند."
+    },
+    {
+      "term": "MAST",
+      "termFa": "مست",
+      "definitionEn": "Merklized Abstract Syntax Tree: a Taproot component that lets complex spending conditions be committed in a Merkle tree, revealing only the executed branch.",
+      "definitionFa": "ساختار درخت مرکل برای اسکریپت بیتکوین که امکان قراردادهای هوشمند پیچیده‌تر را با افشای حداقلی شرایط فراهم می‌کند."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "شیریا خط",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لایتنگ",
+      "right": "لایتنینگ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لایکنینگ",
+      "right": "لایتنینگ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لائتنینگ",
+      "right": "لایتنینگ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ویتکوین",
+      "right": "بیتکوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتخوین",
+      "right": "بیتکوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتوین",
+      "right": "بیتکوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تبروت",
+      "right": "تپروت"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تبروز",
+      "right": "تپروت"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ترپروت",
+      "right": "تپروت"
+    },
+    {
+      "lang": "fa",
+      "wrong": "نشنور",
+      "right": "شنور"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اشنار",
+      "right": "شنور"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایکلیر",
+      "right": "ایکلر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای کلیر",
+      "right": "ایکلر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اسینک",
+      "right": "اِی‌سی‌آی‌ان‌کیو (ACINQ)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "الندی",
+      "right": "ال‌ان‌دی (LND)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سی لایتنگ",
+      "right": "Core Lightning"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سی لائتنینگ",
+      "right": "Core Lightning"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سی لایکنینگ",
+      "right": "Core Lightning"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بریز والت",
+      "right": "Breez Wallet"
+    },
+    {
+      "lang": "fa",
+      "wrong": "فینیکس والت",
+      "right": "Phoenix Wallet"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مون والت",
+      "right": "Muun Wallet"
+    },
+    {
+      "lang": "fa",
+      "wrong": "والت توسطوشی",
+      "right": "Wallet of Satoshi"
+    },
+    {
+      "lang": "fa",
+      "wrong": "انکر آتفود",
+      "right": "انکر اوتپوت"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سی پی اف پی",
+      "right": "CPFP"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بولت دوازر",
+      "right": "BOLT 12"
+    },
+    {
+      "lang": "fa",
+      "wrong": "واشتاور",
+      "right": "واچ‌تاور"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سابمانی سواب",
+      "right": "سابمارین سواپ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ماست",
+      "right": "MAST"
+    }
+  ]
+}

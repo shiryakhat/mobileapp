@@ -1,0 +1,240 @@
+{
+  "id": "s03e02",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:07:05.571Z",
+  "summaryFa": "این اپیزود از پادکست «شیر یا خط» به بررسی تاریخچه و فناوری شبکه لایتنینگ می‌پردازد و نشان می‌دهد چرا سگویت (BIP 141) پیش‌شرط اجتناب‌ناپذیر آن بود: از جنگ بلاک‌سایز و بحث اسکیلیبیلیتی و مشکل transaction malleability گرفته تا UASF، فورک بیتکوین کش و کنسل‌شدن سگویت‌تو‌ایکس. سپس مکانیزم دقیق کانال‌های پرداخت آف‌چین با آدرس‌های چندامضایی، شماره‌های سکوئنس، تایم‌لاک‌ها (CheckSequenceVerify و CheckLockTimeVerify) و واچ‌تاورها تشریح می‌شود. در پایان به محدودیت‌های شبکه، نگرانی‌های بلندمدت درباره انگیزه ماینرها پس از هالوینگ، رگولاتوری FinCEN و BSA، کانوردن MSB در کانادا، و معرفی کیف‌پول‌ها و سرویس‌هایی چون Eclair، Blue Wallet، Zap، Casa Node، tippin.me، Bitrefill، CoinGate، OpenNode و ZigZag پرداخته می‌شود و اپیزود با معرفی کمپین iranrescuebit.com برای کمک رمزارزی به سیل‌زدگان ایران به پایان می‌رسد.",
+  "summaryEn": "This episode of Shir ya Khat traces the full arc from Bitcoin's block-size war to the Lightning Network: why SegWit (BIP 141) was a mandatory prerequisite—fixing transaction malleability (exploited in the Mt. Gox hack and fatal for Lightning's stable transaction IDs), the UASF pressure campaign, the cancellation of SegWit2x, and the resulting Bitcoin Cash fork. The hosts then walk through Lightning's mechanics in detail—multisig funding channels, sequence-numbered off-chain transactions illustrated with Alice and Bob, CheckSequenceVerify and CheckLockTimeVerify timelocks, and watchtowers that guard against fraudulent channel closes—alongside real network stats (≈17,000 nodes, ≈28,000 channels, ≈838 BTC capacity). The discussion tackles long-term concerns about miner incentives post-halving, FinCEN's money-transmitter definition, the Bank Secrecy Act's KYC/AML requirements, and Canada's MSB classification for Lightning node operators, then surveys Lightning wallets and services (Eclair, Blue Wallet, Zap, C-Lightning, Casa Node, tippin.me, Bitrefill, CoinGate, OpenNode, ZigZag) before closing with an appeal for iranrescuebit.com, a crypto-donation drive bypassing banking sanctions to aid Iranian flood victims.",
+  "quotes": [
+    {
+      "startSec": 925,
+      "fa": "ترنزکشن مالیبیلیتی باید حل می‌شد تا لایتنینگ پیاده‌سازی بشه، چون لایتنینگ وابسته هست به ترنزکشن آی‌دی — باید ثابت بمونه.",
+      "en": "Transaction malleability had to be solved so Lightning could be implemented, because Lightning depends on the transaction ID — it has to stay fixed."
+    },
+    {
+      "startSec": 499,
+      "fa": "منطقش هم بر اساس مبحثی بود که نسیم نیکلاس طالب توی کتاب «بازی با پوست» توضیح داده — «اقلیت نامتساهل».",
+      "en": "Its logic was based on a topic Nassim Nicholas Taleb explains in his book Skin in the Game — the intolerant minority."
+    },
+    {
+      "startSec": 2449,
+      "fa": "اگر نمی‌خوایی به کسی اعتماد کنی، آنچین بیتکوین بفرست و فی ماینر رو بده. روی لایتنینگ بالاخره یه مقدار اعتماد وجود داره.",
+      "en": "If you don't want to trust anyone, send an on-chain Bitcoin transaction and pay the miner fee. In Lightning there's ultimately some amount of trust."
+    },
+    {
+      "startSec": 3319,
+      "fa": "لایتنینگ با هر پیچیدگی دیگه‌ای که داشته باشه، Non-Custodial و Trustless هست — پولت رو پیشش نذاشتی مثل یه اکسچینج.",
+      "en": "Whatever other complexities Lightning may have, it is non-custodial and trustless — you haven't left your funds with it like an exchange."
+    },
+    {
+      "startSec": 4196,
+      "fa": "یه سایتی راه‌اندازی شد به اسم iranrescuebit.com که با استفاده از رمزارز از سراسر دنیا کمک جمع می‌کنیم برای مردم سیل‌زده.",
+      "en": "A site called iranrescuebit.com was set up to collect donations from all over the world using cryptocurrency for flood victims."
+    }
+  ],
+  "glossary": [
+    {
+      "term": "SegWit (Segregated Witness)",
+      "termFa": "سگویت (شاهد جداشده)",
+      "definitionEn": "A Bitcoin soft fork (BIP 141) that moves signature data outside the transaction, fixing malleability and reducing transaction size.",
+      "definitionFa": "یک سافت‌فورک بیتکوین (BIP 141) که داده امضا را از تراکنش جدا می‌کند و مشکل transaction malleability را برطرف می‌سازد."
+    },
+    {
+      "term": "Transaction Malleability",
+      "termFa": "تغییرپذیری تراکنش",
+      "definitionEn": "A flaw allowing anyone to alter a transaction's ID without invalidating its signature, enabling confusion about payment status.",
+      "definitionFa": "نقصی که به هر کسی اجازه می‌داد شناسه تراکنش را بدون باطل‌کردن امضا تغییر دهد و وضعیت پرداخت را مبهم کند."
+    },
+    {
+      "term": "Lightning Network",
+      "termFa": "شبکه لایتنینگ",
+      "definitionEn": "A Bitcoin Layer 2 protocol using off-chain payment channels for instant, cheap micropayments between parties.",
+      "definitionFa": "یک پروتکل لایه دوم بیتکوین که از کانال‌های پرداخت آف‌چین برای تراکنش‌های فوری و ارزان استفاده می‌کند."
+    },
+    {
+      "term": "UASF (User Activated Soft Fork)",
+      "termFa": "سافت‌فورک فعال‌شده توسط کاربر",
+      "definitionEn": "A mechanism letting economic nodes enforce protocol upgrades by rejecting non-compliant blocks, without waiting for miner majority.",
+      "definitionFa": "مکانیزمی که به نودهای اقتصادی اجازه می‌دهد با رد بلاک‌های مخالف، تغییرات پروتکل را بدون اکثریت ماینرها اعمال کنند."
+    },
+    {
+      "term": "CheckSequenceVerify (CSV)",
+      "termFa": "چک‌سکوئنس‌وریفای",
+      "definitionEn": "A Bitcoin script opcode that locks a transaction output until a relative number of blocks or time has passed.",
+      "definitionFa": "یک دستور اسکریپت بیتکوین که خروجی تراکنش را تا گذشت تعداد مشخصی بلاک یا زمان قفل نگه می‌دارد."
+    },
+    {
+      "term": "CheckLockTimeVerify (CLTV)",
+      "termFa": "چک‌لاک‌تایم‌وریفای",
+      "definitionEn": "A Bitcoin script opcode that prevents spending an output until an absolute block height or Unix timestamp is reached.",
+      "definitionFa": "یک دستور اسکریپت بیتکوین که هزینه‌کرد یک خروجی را تا رسیدن به ارتفاع بلاک یا زمان مشخص ممنوع می‌کند."
+    },
+    {
+      "term": "Watchtower",
+      "termFa": "واچ‌تاور",
+      "definitionEn": "A third-party service that monitors Lightning channels and broadcasts the latest transaction if a counterparty tries to cheat.",
+      "definitionFa": "یک سرویس شخص ثالث که کانال‌های لایتنینگ را رصد می‌کند و در صورت تقلب طرف مقابل، آخرین تراکنش را منتشر می‌سازد."
+    },
+    {
+      "term": "SegWit2x",
+      "termFa": "سگویت‌تو‌ایکس",
+      "definitionEn": "A canceled 2017 compromise proposal to activate SegWit and then double the block size to 2 MB two months later.",
+      "definitionFa": "یک پیشنهاد مصالحه‌ای در ۲۰۱۷ که قرار بود سگویت را فعال کند و دو ماه بعد حجم بلاک را به دو مگابایت برساند، اما کنسل شد."
+    },
+    {
+      "term": "ECDSA (Elliptic Curve Digital Signature Algorithm)",
+      "termFa": "الگوریتم امضای دیجیتال منحنی بیضوی",
+      "definitionEn": "The cryptographic algorithm Bitcoin uses to generate and verify transaction signatures, with Lower-S and Higher-S valid forms.",
+      "definitionFa": "الگوریتم رمزنگاری که بیتکوین برای تولید و تأیید امضای تراکنش‌ها استفاده می‌کند و دارای دو حالت امضای معتبر Lower-S و Higher-S است."
+    },
+    {
+      "term": "Payment Channel",
+      "termFa": "کانال پرداخت",
+      "definitionEn": "An off-chain construct where two parties lock funds in a multisig address and exchange signed transactions without broadcasting each one.",
+      "definitionFa": "یک ساختار آف‌چین که دو طرف وجوه را در آدرس چندامضایی قفل کرده و بدون انتشار هر تراکنش، تراکنش‌های امضاشده رد و بدل می‌کنند."
+    },
+    {
+      "term": "FinCEN",
+      "termFa": "فینسن",
+      "definitionEn": "The US Financial Crimes Enforcement Network, whose money-transmitter rules may apply to Lightning node operators.",
+      "definitionFa": "شبکه اجرای جرایم مالی آمریکا که قوانین انتقال پول آن ممکن است بر اپراتورهای نود لایتنینگ اعمال شود."
+    },
+    {
+      "term": "BSA (Bank Secrecy Act)",
+      "termFa": "قانون رازداری بانکی",
+      "definitionEn": "US law requiring financial intermediaries to assist government agencies in detecting money laundering via KYC/AML compliance.",
+      "definitionFa": "قانون آمریکایی که واسطه‌های مالی را ملزم به همکاری با نهادهای دولتی از طریق رعایت KYC/AML برای مقابله با پولشویی می‌کند."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "شیریخات",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سیگویت",
+      "right": "سگویت"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سیگوید",
+      "right": "سگویت"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لایتنگ",
+      "right": "لایتنینگ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لایتی نتوک",
+      "right": "لایتنینگ نتورک"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لایت این نتوک",
+      "right": "لایتنینگ نتورک"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لایتنگ نیتورک",
+      "right": "لایتنینگ نتورک"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مدگاکس",
+      "right": "مت‌گاکس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ملیبریتی",
+      "right": "مالیبیلیتی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ملیبلیتی",
+      "right": "مالیبیلیتی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ملیبیتی",
+      "right": "مالیبیلیتی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ترنزکشن ملیبریتی",
+      "right": "transaction malleability"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکوین کری",
+      "right": "بیتکوین کش"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بلاک ستریم",
+      "right": "بلاک‌استریم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "استلار نتورک",
+      "right": "استلار"
+    },
+    {
+      "lang": "fa",
+      "wrong": "جد مک کلب",
+      "right": "جد مک‌کالب"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تیپینگ دادمی",
+      "right": "tippin.me"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیترفیل",
+      "right": "بیت‌ریفیل"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زیگ زگ",
+      "right": "ZigZag"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اوپن نود",
+      "right": "OpenNode"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کوین گیت",
+      "right": "CoinGate"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کازا نود",
+      "right": "Casa Node"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بلو والد",
+      "right": "بلو والت"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اکلیر والد",
+      "right": "اکلیر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "فینسین",
+      "right": "FinCEN"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بی اس ای",
+      "right": "BSA"
+    }
+  ]
+}

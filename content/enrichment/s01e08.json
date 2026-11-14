@@ -1,0 +1,225 @@
+{
+  "id": "s01e08",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:09:37.783Z",
+  "summaryFa": "این اپیزود به بررسی ماهیت بلاکچین و معیارهای تشخیص غیرمتمرکز بودن یک کوین می‌پردازد؛ با مقایسه‌ی پروژه‌هایی مثل ریپل با بیتکوین نشان می‌دهد که توزیع‌شدگی (distributed) لزوماً به معنای غیرمتمرکزی (decentralized) نیست. بخش اصلی اپیزود به ICOها اختصاص دارد: از تعریف و تاریخچه‌ی آن‌ها گرفته تا مدل‌های انگیزشی معیوب، خطر کلاهبرداری، و فاکتورهای ارزیابی مثل وایت‌پیپر، گیت‌هاب، وستینگ تیم و کاربرد واقعی توکن. در پایان گزارش کوتاهی از رالی بی‌سابقه‌ی بیتکوین از حدود ۱۷۰۰ تا ۲۷۰۰ دلار و تأثیر آن بر بازار آلت‌کوین‌ها ارائه می‌شود.",
+  "summaryEn": "The episode opens by defining blockchain as a distributed, decentralized database whose state is determined by network-wide consensus—not merely by distributed servers—and uses Ripple as a case study of a centralized system masquerading as blockchain. The bulk of the discussion dissects ICOs: how they evolved from Bitcoin forks and Ethereum's own presale through today's explosion of token sales, why broken incentive models and anonymous teams make most ICOs resemble exit scams, and what due-diligence signals—whitepaper quality, GitHub activity, vesting schedules, and genuine token utility—separate legitimate projects from hype. The episode closes with a market update on Bitcoin's unprecedented rally from roughly $1,700 to $2,700 and explains why altcoin prices rise and fall in tandem with Bitcoin.",
+  "quotes": [
+    {
+      "startSec": 164,
+      "fa": "بلاکچین یک پایگاه داده است که به صورت توزیع‌شده وجود دارد و وضعیت آن توسط گره‌های شبکه به اجماع می‌رسد.",
+      "en": "Blockchain is a database that exists in a distributed form, and its state is agreed upon by consensus among the network's nodes."
+    },
+    {
+      "startSec": 440,
+      "fa": "ریپل الان هیچ چیز غیرمتمرکزی نیست.",
+      "en": "Ripple right now is nothing decentralized at all."
+    },
+    {
+      "startSec": 2748,
+      "fa": "اگر فقط به خاطر این است که می‌خواهیم پول بیشتری دربیاریم، به نظرم ۹۹ درصد این پروژه‌ها اسکم هستند.",
+      "en": "If it's just because we want to make more money, in my opinion 99 percent of these projects are scams."
+    },
+    {
+      "startSec": 3050,
+      "fa": "ساتوشی یک دلار هم خرج نکرد؛ آمد یک وایت‌پیپر ارائه داد و یواش‌یواش تبدیل به چیزی شد که دارد دنیا را متحول می‌کند.",
+      "en": "Satoshi didn't spend even a dollar—he came, presented a whitepaper, and little by little it became something that is transforming the world."
+    },
+    {
+      "startSec": 3126,
+      "fa": "مینبل‌ویمبل نه ICO شده، نه کاری شده؛ فقط یک وایت‌پیپر است که توسط خود تیم بیتکوین کور پیر-ریویو شده.",
+      "en": "Mimblewimble hasn't had an ICO, hasn't done anything—it's just a whitepaper that was peer-reviewed by the Bitcoin Core team itself."
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Blockchain",
+      "termFa": "بلاکچین",
+      "definitionEn": "A distributed database whose state is agreed upon by network nodes through consensus, with no single controlling authority.",
+      "definitionFa": "پایگاه داده‌ای توزیع‌شده که وضعیت آن از طریق اجماع گره‌های شبکه تعیین می‌شود و هیچ مرجع مرکزی ندارد."
+    },
+    {
+      "term": "Decentralization",
+      "termFa": "غیرمتمرکزی",
+      "definitionEn": "A system property where no single entity controls the network; contrasted with merely distributing data across servers.",
+      "definitionFa": "ویژگی‌ای در سیستم که هیچ نهاد واحدی کنترل شبکه را ندارد؛ در تضاد با صرفاً توزیع داده روی سرورهای مختلف."
+    },
+    {
+      "term": "ICO (Initial Coin Offering)",
+      "termFa": "عرضه اولیه کوین",
+      "definitionEn": "A fundraising method where a project sells newly created tokens to the public, often before any product exists.",
+      "definitionFa": "روشی برای جذب سرمایه که در آن یک پروژه توکن‌های تازه ساخته‌شده را پیش از وجود محصول به عموم می‌فروشد."
+    },
+    {
+      "term": "Token",
+      "termFa": "توکن",
+      "definitionEn": "A digital asset issued on an existing blockchain (commonly Ethereum) representing utility, equity, or access rights in a project.",
+      "definitionFa": "دارایی دیجیتالی که روی یک بلاکچین موجود (معمولاً اتریوم) صادر می‌شود و نمایانگر حق استفاده، سهام یا دسترسی در یک پروژه است."
+    },
+    {
+      "term": "Altcoin",
+      "termFa": "آلت‌کوین",
+      "definitionEn": "Any cryptocurrency other than Bitcoin, typically created by forking Bitcoin's code or building on a new protocol.",
+      "definitionFa": "هر ارز دیجیتالی غیر از بیتکوین که معمولاً با فورک کردن کد بیتکوین یا ساخت پروتکل جدید ایجاد می‌شود."
+    },
+    {
+      "term": "Smart Contract",
+      "termFa": "قرارداد هوشمند",
+      "definitionEn": "Self-executing code stored on a blockchain that automatically enforces agreement terms without a trusted intermediary.",
+      "definitionFa": "کدی خودکار روی بلاکچین که شرایط یک توافق را بدون نیاز به واسطه‌ی مورد اعتماد اجرا می‌کند."
+    },
+    {
+      "term": "Vesting",
+      "termFa": "وستینگ",
+      "definitionEn": "A schedule that releases tokens or shares to team members gradually over time, keeping them incentivized to continue working.",
+      "definitionFa": "برنامه‌ای که توکن‌ها یا سهام را به‌تدریج و در طول زمان به اعضای تیم آزاد می‌کند تا انگیزه‌ی ادامه کار حفظ شود."
+    },
+    {
+      "term": "Proof of Work",
+      "termFa": "اثبات کار",
+      "definitionEn": "A consensus mechanism requiring miners to expend computational effort to validate transactions and add blocks to the chain.",
+      "definitionFa": "مکانیزم اجماعی که ماینرها باید تلاش محاسباتی صرف کنند تا تراکنش‌ها را تأیید و بلوک جدید اضافه کنند."
+    },
+    {
+      "term": "IPFS (InterPlanetary File System)",
+      "termFa": "آی‌پی‌اف‌اس",
+      "definitionEn": "A decentralized peer-to-peer file storage protocol that lets users share and retrieve data without centralized servers.",
+      "definitionFa": "پروتکل ذخیره‌سازی فایل غیرمتمرکز و همتا‌به‌همتا که امکان اشتراک و بازیابی داده بدون سرور مرکزی را فراهم می‌کند."
+    },
+    {
+      "term": "DAO (Decentralized Autonomous Organization)",
+      "termFa": "سازمان خودگردان غیرمتمرکز",
+      "definitionEn": "An organization governed by smart contracts and token-holder votes, with no traditional management hierarchy.",
+      "definitionFa": "سازمانی که توسط قراردادهای هوشمند و رأی دارندگان توکن اداره می‌شود و سلسله‌مراتب مدیریتی سنتی ندارد."
+    },
+    {
+      "term": "Mimblewimble",
+      "termFa": "مینبل‌ویمبل",
+      "definitionEn": "A blockchain protocol proposal offering improved privacy and scalability, shared anonymously and peer-reviewed without an ICO.",
+      "definitionFa": "پیشنهاد پروتکل بلاکچینی با حریم خصوصی و مقیاس‌پذیری بهتر که به‌صورت ناشناس منتشر و بدون ICO توسط متخصصان بررسی شد."
+    },
+    {
+      "term": "Hard Cap",
+      "termFa": "سقف سخت",
+      "definitionEn": "The maximum amount of funds an ICO will accept; once reached, no further contributions are taken.",
+      "definitionFa": "حداکثر مبلغی که یک ICO می‌پذیرد؛ پس از رسیدن به آن، دیگر سرمایه‌ای دریافت نمی‌شود."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "شیریا خد",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "fa",
+      "wrong": "شیریاخت",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بلکچین",
+      "right": "بلاکچین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتیریم",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتریوم",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ریپلت",
+      "right": "ریپل"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اسمارت کانترکت",
+      "right": "قرارداد هوشمند"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اسمات کانچکت",
+      "right": "قرارداد هوشمند"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اسمار کانچکت",
+      "right": "قرارداد هوشمند"
+    },
+    {
+      "lang": "fa",
+      "wrong": "نیم کوین",
+      "right": "نیم‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لایت کوین",
+      "right": "لایت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آلت کوین",
+      "right": "آلت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آیسیو",
+      "right": "ICO"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آی سی او",
+      "right": "ICO"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آی سیو",
+      "right": "ICO"
+    },
+    {
+      "lang": "fa",
+      "wrong": "نوسیس",
+      "right": "گنوسیس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مینبل وینبل",
+      "right": "مینبل‌ویمبل"
+    },
+    {
+      "lang": "fa",
+      "wrong": "میمبل میمبل",
+      "right": "مینبل‌ویمبل"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پولانیه",
+      "right": "پولونیکس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "توکین",
+      "right": "توکن"
+    },
+    {
+      "lang": "fa",
+      "wrong": "واید پیپر",
+      "right": "وایت‌پیپر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "گیتابش",
+      "right": "گیت‌هاب"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سایفر پانک",
+      "right": "سایفرپانک"
+    }
+  ]
+}

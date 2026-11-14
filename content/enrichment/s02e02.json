@@ -1,0 +1,255 @@
+{
+  "id": "s02e02",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:08:24.116Z",
+  "summaryFa": "این اپیزود به تاریخچه و ماهیت فورک‌های بیتکوین می‌پردازد؛ از تعریف مفهوم فورک در دنیای اوپن‌سورس (گیت‌هاب، بیت‌باکت) و تمایز سافت‌فورک از هارد‌فورک، تا بررسی پیشنهادهای شکست‌خورده‌ای مانند بیتکوین XT، بیتکوین Unlimited و بیتکوین Classic. سپس پنل به SegWit (BIP 141)، پیدایش بیتکوین کش، بیتکوین گلد، شکست SegWit2x و کوین‌های تقلیدی مانند بیتکوین دایموند می‌پردازد. بحث اصلی بر سر این است که آیا این فورک‌ها فرصتی برای آزمون روش‌های مختلف مقیاس‌پذیری هستند یا تهدیدی برای ماهیت غیرمتمرکز بیتکوین، با تمرکز ویژه بر نگرانی‌های مرکزی‌سازی در بیتکوین کش و نقش بیت‌مین.",
+  "summaryEn": "This episode traces Bitcoin forks from first principles—defining soft fork and hard fork through open-source analogies (GitHub, Bitbucket, Linux/Unix)—then surveys the block-size war and failed proposals: Bitcoin XT (8 MB), Bitcoin Unlimited (miner-adjustable, up to 16 MB), Bitcoin Classic (2 MB), and UASF. The panel explains SegWit (BIP 141) and how its August 2017 activation triggered the Bitcoin Cash chain-split, distributing coins airdrop-style to all BTC holders, and reviews Bitcoin Gold (Equihash), the collapsed SegWit2x, and copycat coins like Bitcoin Diamond. A wide-ranging debate then weighs whether forks are an opportunity or threat, covering centralization risks in Bitcoin Cash, Bitmain's dominance, Jihan Wu and Roger Ver's motivations, Satoshi's \"electronic cash\" vision versus store-of-value arguments, the 21-million supply cap, satoshi divisibility, and why trust and network effects make Bitcoin dominant over any overnight clone.",
+  "quotes": [
+    {
+      "startSec": 308,
+      "fa": "یک آمل بزرگ به نظر من اینه که بیتکوین قابل‌اعتمادترینه؛ سال‌هاست نشون داده که یک منبع محکم و معتبریه که شما می‌تونید بهش اطمینان کنید.",
+      "en": "The big factor, in my opinion, is that Bitcoin is the most trustworthy — for years it has shown it's a solid, reliable source you can trust."
+    },
+    {
+      "startSec": 1065,
+      "fa": "الگوریتم ماینینگ رو از SHA-256 عوض کنه به Equihash — ایده‌شون این بود که قدرت ماینینگ رو به جای مزارع ماینینگ، به کاربرها برگردونن.",
+      "en": "The idea was to change the mining algorithm from SHA-256 to Equihash — to return mining power to users instead of mining farms."
+    },
+    {
+      "startSec": 1253,
+      "fa": "فقط از اسم بیتکوین داره استفاده می‌کنه؛ هیچ ربطی به بیتکوین نداره.",
+      "en": "It's just using the Bitcoin name — it has no real connection to Bitcoin whatsoever."
+    },
+    {
+      "startSec": 3508,
+      "fa": "موقع کوینی نیست که یک شبه بیاد و این ادعا رو داشته باشه؛ کاریه که زمان می‌بره، توجه نتورک رو باید جلب کنه، باید بتونه یک نتورک به بزرگی نتورک بیتکوین داشته باشه.",
+      "en": "It's not a coin that can appear overnight and make that claim — it takes time, it has to attract the network's attention, it has to build a network as large as Bitcoin's."
+    },
+    {
+      "startSec": 1019,
+      "fa": "ماینرها در آخر سوداوری ماینینگ هدفشونه، تا این‌که ایدئولوژی اصلی بیتکوین رو دنبال کنن.",
+      "en": "In the end, miners' goal is mining profitability, rather than following Bitcoin's core ideology."
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Hard Fork",
+      "termFa": "هارد فورک",
+      "definitionEn": "A backward-incompatible protocol change requiring all nodes to upgrade or be left on a separate chain.",
+      "definitionFa": "تغییری در پروتکل که با نسخه‌های قبلی سازگار نیست و همه نودها باید به‌روزرسانی کنند."
+    },
+    {
+      "term": "Soft Fork",
+      "termFa": "سافت فورک",
+      "definitionEn": "A backward-compatible protocol upgrade where old nodes can still validate new blocks.",
+      "definitionFa": "به‌روزرسانی پروتکل که با نسخه‌های قدیمی سازگار است و نودهای قدیم همچنان می‌توانند بلوک‌های جدید را تأیید کنند."
+    },
+    {
+      "term": "Segregated Witness (SegWit)",
+      "termFa": "سگ‌ویت (شاهد مجزا)",
+      "definitionEn": "BIP 141 upgrade that moves transaction signatures outside the main block data, roughly doubling effective capacity.",
+      "definitionFa": "ارتقای BIP 141 که امضای تراکنش‌ها را از داده اصلی بلوک جدا می‌کند و ظرفیت مؤثر را تقریباً دو برابر می‌کند."
+    },
+    {
+      "term": "Bitcoin Cash",
+      "termFa": "بیتکوین کش",
+      "definitionEn": "A hard fork of Bitcoin created in August 2017 that increased the block size to enable more transactions per second.",
+      "definitionFa": "هارد فورکی از بیتکوین که در اوت ۲۰۱۷ ایجاد شد و حجم بلوک را برای پردازش تراکنش‌های بیشتر افزایش داد."
+    },
+    {
+      "term": "BIP (Bitcoin Improvement Proposal)",
+      "termFa": "بیپ (پیشنهاد بهبود بیتکوین)",
+      "definitionEn": "A formal design document for proposing new features or changes to the Bitcoin protocol.",
+      "definitionFa": "سندی رسمی برای پیشنهاد ویژگی‌ها یا تغییرات جدید در پروتکل بیتکوین."
+    },
+    {
+      "term": "Airdrop",
+      "termFa": "ایردراپ",
+      "definitionEn": "Free distribution of a new cryptocurrency token to holders of an existing coin, used to bootstrap a market.",
+      "definitionFa": "توزیع رایگان توکن یک رمزارز جدید به دارندگان یک کوین موجود، برای راه‌اندازی بازار اولیه."
+    },
+    {
+      "term": "UASF (User Activated Soft Fork)",
+      "termFa": "یو‌ای‌اس‌اف (سافت فورک فعال‌شده توسط کاربر)",
+      "definitionEn": "A mechanism allowing node operators, rather than miners, to enforce a protocol change by rejecting non-compliant blocks.",
+      "definitionFa": "مکانیزمی که به اپراتورهای نود اجازه می‌دهد بدون وابستگی به ماینرها، تغییر پروتکل را از طریق رد بلوک‌های غیرمنطبق اعمال کنند."
+    },
+    {
+      "term": "Equihash",
+      "termFa": "اکوی‌هش",
+      "definitionEn": "A memory-hard proof-of-work algorithm used by Bitcoin Gold, designed to resist ASIC mining and favor GPU miners.",
+      "definitionFa": "الگوریتم اثبات کار حافظه‌محور که در بیتکوین گلد استفاده می‌شود و در برابر ماینرهای ASIC مقاوم‌تر است."
+    },
+    {
+      "term": "SegWit2x",
+      "termFa": "سگ‌ویت۲ایکس",
+      "definitionEn": "A failed 2017 proposal to activate SegWit and then double the base block size to 2 MB three months later.",
+      "definitionFa": "پیشنهاد شکست‌خورده ۲۰۱۷ برای فعال‌سازی SegWit و سپس دو برابر کردن حجم پایه بلوک به ۲ مگابایت."
+    },
+    {
+      "term": "Satoshi",
+      "termFa": "ساتوشی",
+      "definitionEn": "The smallest unit of Bitcoin, equal to one hundred-millionth of a BTC, enabling micropayments.",
+      "definitionFa": "کوچک‌ترین واحد بیتکوین، برابر با یک صدمیلیونم BTC، که امکان پرداخت‌های خرد را فراهم می‌کند."
+    },
+    {
+      "term": "Version Bits Signaling",
+      "termFa": "سیگنال‌دهی ورژن بیت",
+      "definitionEn": "A mechanism by which miners indicate support for a protocol upgrade by setting specific bits in mined block headers.",
+      "definitionFa": "مکانیزمی که ماینرها با تنظیم بیت‌های خاص در هدر بلوک، پشتیبانی خود از یک ارتقای پروتکل را اعلام می‌کنند."
+    },
+    {
+      "term": "Testnet",
+      "termFa": "تست‌نت",
+      "definitionEn": "A parallel blockchain network used to test protocol changes without risking real funds, with Litecoin often serving as Bitcoin's de facto testnet.",
+      "definitionFa": "شبکه بلاکچین موازی برای آزمایش تغییرات پروتکل بدون خطر از دست دادن دارایی واقعی؛ لایت‌کوین اغلب نقش تست‌نت غیررسمی بیتکوین را دارد."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "en",
+      "wrong": "Shirakherad",
+      "right": "Shir ya Khat"
+    },
+    {
+      "lang": "fa",
+      "wrong": "شیراخرد",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکاین اکستی",
+      "right": "بیتکوین XT"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکونی کلاسیک",
+      "right": "بیتکوین Classic"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکونی آن لیمیتر",
+      "right": "بیتکوین Unlimited"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سیگریگیتیت ویدنس",
+      "right": "Segregated Witness"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سگویت",
+      "right": "SegWit"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیپ 141",
+      "right": "BIP 141"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایکور هش",
+      "right": "Equihash"
+    },
+    {
+      "lang": "fa",
+      "wrong": "شادیویز پنجار شیش",
+      "right": "SHA-256"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتمین",
+      "right": "بیت‌مین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "راجرور",
+      "right": "راجر ور"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکوین کلاشیک",
+      "right": "بیتکوین Classic"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکوین گولد",
+      "right": "بیتکوین گلد"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکوین دایمند",
+      "right": "بیتکوین دایموند"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ستیگری 2 اکس",
+      "right": "SegWit2x"
+    },
+    {
+      "lang": "fa",
+      "wrong": "یو ای ای ایس اف",
+      "right": "UASF"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ورژن بیت",
+      "right": "version bits"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کوین مارکت کپ",
+      "right": "CoinMarketCap"
+    },
+    {
+      "lang": "fa",
+      "wrong": "امازون ای دبلیویس",
+      "right": "Amazon AWS"
+    },
+    {
+      "lang": "en",
+      "wrong": "Herinza",
+      "right": ""
+    },
+    {
+      "lang": "fa",
+      "wrong": "آقای جیهان",
+      "right": "جیهان وو"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکوین آن لیمیتد",
+      "right": "بیتکوین Unlimited"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکوین آنلیمیتد",
+      "right": "بیتکوین Unlimited"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکوین اکستید",
+      "right": "بیتکوین XT"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتریوم",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتریام",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ویتالیک",
+      "right": "ویتالیک بوترین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکان کش",
+      "right": "بیتکوین کش"
+    }
+  ]
+}

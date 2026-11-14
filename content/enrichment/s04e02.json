@@ -1,0 +1,258 @@
+{
+  "id": "s04e02",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:03:03.723Z",
+  "summaryFa": "این اپیزود دومین قسمت از سری دیفای پادکست «شیر یا خط» است که به طبقه‌بندی و تحلیل کوین‌های پایدار (استیبل‌کوین‌ها) می‌پردازد. مفهوم دیفای به‌عنوان لایهٔ خدمات مالی غیرمتمرکز بر بستر اقتصادهای بلاکچینی تعریف می‌شود و استیبل‌کوین‌ها به دو دستهٔ کلی با‌پشتوانه (فیات یا کریپتو) و بدون‌پشتوانه (مداخله‌ای) تقسیم می‌گردند. محور اصلی بحث، مکانیزم میکر‌دائو و دای است: وثیقه‌گذاری بیش از اندازه با اتر، موقعیت‌های بدهی وثیقه‌گذاری‌شده (CDP)، لیکوئیدیشن، کارمزد ثبات، و نقش توکن MKR در حاکمیت؛ همراه با نقد صادقانهٔ میزان تمرکززدایی واقعی پروژه‌های دیفای.",
+  "summaryEn": "The second episode in the DeFi series classifies stablecoins into backed (fiat-collateralized and crypto-collateralized) and unbacked (algorithmic) categories, tracing the evolution from Tether's centralized model through USDC's redeemability and auditing to MakerDAO's fully on-chain DAI. The hosts explain over-collateralization with ETH, CDPs as leveraged positions, liquidation mechanics analogous to margin trading, the stability fee, and MKR-based DAO governance, while also covering oracle price feeds via Chainlink's multi-node averaging. A recurring critical thread questions whether real users actually value decentralization, framing the entire DeFi landscape as a gradual, imperfect transition from centralized to trustless financial services.",
+  "quotes": [
+    {
+      "startSec": 468,
+      "fa": "اون بخش خدمات مالی که ما بر بستر اقتصاد بلاکچینی می‌آیند تعریف می‌کنیم، می‌شود دیفای.",
+      "en": "That part of financial services we define on top of the blockchain economy — that is DeFi.",
+      "speaker": "Mehdi"
+    },
+    {
+      "startSec": 1746,
+      "fa": "بیزانتین فالت تولرنت از دیدِ من یعنی این: تو به هیچ‌کس و هیچ‌چیزی اعتماد نداری.",
+      "en": "Byzantine Fault Tolerant, in my view, means this: you don't trust anyone or anything."
+    },
+    {
+      "startSec": 3774,
+      "fa": "باید بیایید یک کاری بکنید به نام اوور‌کولاترالیزیشن؛ یعنی وثیقه گذاشتن بیش از اندازه.",
+      "en": "You need to do something called over-collateralization — meaning putting up collateral in excess.",
+      "speaker": "Mehdi"
+    },
+    {
+      "startSec": 4650,
+      "fa": "ما از هیچی آمدیم روی USDT، بعد آمدیم روی DAI که یک‌دفعه خیلی غیرمتمرکزتر کرد قضیه را؛ ولی هنوز چند نقطهٔ مرکزی سنگین دارد.",
+      "en": "We went from nothing to USDT, then to DAI, which suddenly made everything far more decentralized — but it still has some heavy centralized points.",
+      "speaker": "Mehdi"
+    },
+    {
+      "startSec": 1119,
+      "fa": "به نظر من مهم‌ترین چیزی که دیفای آورده، شفافیت است: هر اتفاقی که بیفتد، همان لحظهٔ اول معلوم می‌شود.",
+      "en": "In my opinion the most important thing DeFi has brought is transparency: whatever happens, it becomes clear at the very first moment."
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Stablecoin",
+      "termFa": "کوین پایدار / استیبل‌کوین",
+      "definitionEn": "A cryptocurrency designed to maintain a fixed value, typically pegged to one US dollar.",
+      "definitionFa": "رمز ارزی که هدفش حفظ ارزش ثابت — معمولاً معادل یک دلار — در برابر نوسانات بازار است."
+    },
+    {
+      "term": "DeFi (Decentralized Finance)",
+      "termFa": "دیفای / اقتصاد غیرمتمرکز",
+      "definitionEn": "Financial services — lending, trading, stablecoins — built as smart contracts on blockchain networks without intermediaries.",
+      "definitionFa": "خدمات مالی مانند وام‌دهی، معامله و استیبل‌کوین که بدون واسطه روی قراردادهای هوشمند بلاکچین ساخته شده‌اند."
+    },
+    {
+      "term": "CDP (Collateralized Debt Position)",
+      "termFa": "موقعیت بدهی وثیقه‌گذاری‌شده",
+      "definitionEn": "A smart-contract position where a user locks crypto collateral to mint DAI, functioning like a leveraged trade.",
+      "definitionFa": "موقعیتی در قرارداد هوشمند که کاربر با قفل‌کردن وثیقهٔ کریپتو، دای چاپ می‌کند و مشابه معاملهٔ اهرم‌دار عمل می‌کند."
+    },
+    {
+      "term": "Over-collateralization",
+      "termFa": "وثیقه‌گذاری بیش از اندازه",
+      "definitionEn": "Locking more collateral than the value of the loan to absorb price volatility of the collateral asset.",
+      "definitionFa": "قرار دادن وثیقه‌ای بیشتر از مقدار وام برای جبران نوسانات قیمت دارایی وثیقه."
+    },
+    {
+      "term": "Liquidation",
+      "termFa": "لیکوئیدیشن / شناوری",
+      "definitionEn": "Automatic forced sale of a CDP's collateral when its collateralization ratio falls below the required minimum.",
+      "definitionFa": "فروش اجباری خودکار وثیقهٔ یک CDP هنگامی که نسبت وثیقه زیر حداقل مجاز بیفتد."
+    },
+    {
+      "term": "MakerDAO",
+      "termFa": "میکردائو",
+      "definitionEn": "A decentralized protocol on Ethereum that lets users mint the DAI stablecoin by locking ETH as collateral.",
+      "definitionFa": "پروتکل غیرمتمرکز روی اتریوم که به کاربران امکان می‌دهد با قفل‌کردن اتر، استیبل‌کوین دای چاپ کنند."
+    },
+    {
+      "term": "DAI",
+      "termFa": "دای",
+      "definitionEn": "A crypto-collateralized stablecoin issued by MakerDAO, pegged to one US dollar via over-collateralization.",
+      "definitionFa": "استیبل‌کوین با پشتوانهٔ کریپتو صادرشده توسط میکردائو که از طریق وثیقه‌گذاری بیش از حد روی یک دلار ثابت می‌ماند."
+    },
+    {
+      "term": "Governance Token",
+      "termFa": "توکن حاکمیتی",
+      "definitionEn": "A token (e.g. MKR) whose holders vote on parameter changes and upgrades to a DeFi protocol.",
+      "definitionFa": "توکنی مانند MKR که دارندگانش درباره تغییرات پارامترها و ارتقاهای پروتکل دیفای رأی می‌دهند."
+    },
+    {
+      "term": "Oracle",
+      "termFa": "اوراکل",
+      "definitionEn": "A system that feeds real-world data such as asset prices into smart contracts on a blockchain.",
+      "definitionFa": "سیستمی که داده‌های دنیای واقعی مانند قیمت دارایی‌ها را به قراردادهای هوشمند درون بلاکچین می‌رساند."
+    },
+    {
+      "term": "Flash Loan",
+      "termFa": "وام آنی / فلش‌لون",
+      "definitionEn": "An uncollateralized loan borrowed and repaid within a single blockchain transaction, unique to DeFi.",
+      "definitionFa": "وامی بدون وثیقه که در یک تراکنش واحد بلاکچین گرفته و بازپرداخت می‌شود؛ ابزاری منحصربه‌فرد در دیفای."
+    },
+    {
+      "term": "Composability",
+      "termFa": "ترکیب‌پذیری / کامپوزیبیلیتی",
+      "definitionEn": "The ability to combine multiple DeFi protocols in a single transaction, like building with interoperable Lego blocks.",
+      "definitionFa": "قابلیت ترکیب چند پروتکل دیفای در یک تراکنش واحد، شبیه به ساختن با قطعات لگوی سازگار با هم."
+    },
+    {
+      "term": "Liquidity Mining",
+      "termFa": "ماینینگ نقدینگی",
+      "definitionEn": "Earning additional tokens as a reward for providing liquidity to a DeFi protocol's pool.",
+      "definitionFa": "دریافت توکن اضافه به‌عنوان پاداش برای تأمین نقدینگی در استخر یک پروتکل دیفای."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "شیریا خد",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کوین های پایدان",
+      "right": "کوین‌های پایدار"
+    },
+    {
+      "lang": "fa",
+      "wrong": "میکر دا",
+      "right": "میکردائو"
+    },
+    {
+      "lang": "fa",
+      "wrong": "میکر داو",
+      "right": "میکردائو"
+    },
+    {
+      "lang": "fa",
+      "wrong": "میکر ده",
+      "right": "میکردائو"
+    },
+    {
+      "lang": "fa",
+      "wrong": "یو استی تی",
+      "right": "USDT"
+    },
+    {
+      "lang": "fa",
+      "wrong": "یو استی سی",
+      "right": "USDC"
+    },
+    {
+      "lang": "fa",
+      "wrong": "یوستیتی",
+      "right": "USDT"
+    },
+    {
+      "lang": "fa",
+      "wrong": "یوستی سی",
+      "right": "USDC"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مدگاکس",
+      "right": "ماونت‌گاکس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتفینکس حکم شدن",
+      "right": "بیت‌فینکس هک شدن"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتر دلتا",
+      "right": "اتردلتا"
+    },
+    {
+      "lang": "fa",
+      "wrong": "یونی سواپ",
+      "right": "یونی‌سواپ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "یونی سواب",
+      "right": "یونی‌سواپ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "چینگ بینک",
+      "right": "چین‌لینک"
+    },
+    {
+      "lang": "fa",
+      "wrong": "چین لینک",
+      "right": "چین‌لینک"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سینتیکس",
+      "right": "سینتتیکس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سیوستی",
+      "right": "sUSD"
+    },
+    {
+      "lang": "fa",
+      "wrong": "امپل فورس",
+      "right": "امپل‌فورث"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لین بود",
+      "right": "لیکوئیتی بود"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیسیس",
+      "right": "بیسیس (Basis)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مارژین تریدینگ",
+      "right": "معاملات مارجین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اسمال کانترکت",
+      "right": "قرارداد هوشمند"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اسمار کانچک",
+      "right": "قرارداد هوشمند"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اسمورد کانترکت",
+      "right": "قرارداد هوشمند"
+    },
+    {
+      "lang": "fa",
+      "wrong": "گابرنس",
+      "right": "گاورننس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کوین میکر",
+      "right": "توکن MKR"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دیسنشال اکشنج",
+      "right": "صرافی غیرمتمرکز"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لیکویدیتی ماینینگ",
+      "right": "ماینینگ نقدینگی"
+    }
+  ]
+}

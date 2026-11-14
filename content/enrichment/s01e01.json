@@ -1,0 +1,213 @@
+{
+  "id": "s01e01",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:12:18.068Z",
+  "summaryFa": "در اولین قسمت پادکست «شیر یا خط»، گروهی از علاقه‌مندان فارسی‌زبان حوزه بیت‌کوین درباره کلاه‌برداری‌های رایج در فضای کریپتو در ایران گفتگو می‌کنند؛ از کلاد ماینینگ‌های هرمی و پانزی گرفته تا بیت‌کوین «کثیف» زیر قیمت بازار و گروه‌های سیگنال‌دهی تلگرامی. کارشناسان تأکید می‌کنند که هرگز سرمایه را به دست دیگران نسپارید، بلکه با API بدون مجوز برداشت کار کنید؛ همچنین برای ورود سالم به بازار، پذیرش پرداخت بیت‌کوین برای خدمات دیجیتال، مطالعه وایت‌پیپرها، و نگه‌داری بلندمدت را پیشنهاد می‌دهند.",
+  "summaryEn": "In this inaugural episode of Shir ya Khat, a group of Persian-speaking Bitcoin enthusiasts dissect the most common crypto scams targeting Iranians: pyramid-style cloud mining operations, tainted Bitcoin sold below market price, and paid Telegram signal groups running pump-and-dump schemes. Guests Ehsan and others explain how whales manipulate low-volume altcoin markets, why technical analysis alone is unreliable in crypto, and how the Chinese central bank's AML enforcement caused a Bitcoin price drop. The episode closes with practical advice for newcomers—earn Bitcoin by accepting it for freelance or digital work via ShapeShift, study ICO whitepapers and CoinMarketCap data, never hand custody of funds to a third party, and treat Bitcoin as a limited long-term asset.",
+  "quotes": [
+    {
+      "startSec": 1479,
+      "fa": "به هیچ عنوان پول‌تون رو دست کسی ندید، به‌خصوص توی این حوزه، به‌خصوص در مورد ترید کردن؛ چون راه‌هایی وجود داره که سرمایه‌تون دست خودتون باشه.",
+      "en": "Under no circumstances give your money to anyone, especially in this space, especially when it comes to trading — because there are ways to keep your capital in your own hands.",
+      "speaker": "احسان"
+    },
+    {
+      "startSec": 133,
+      "fa": "بیت‌کوین یه فرم پوله؛ پس هر نوع کلاه‌برداری که تا حالا با پول عادی انجام شده، با بیت‌کوین هم انجام می‌شه.",
+      "en": "Bitcoin is a form of money, so any kind of fraud that has ever been done with regular money can be done with Bitcoin too."
+    },
+    {
+      "startSec": 749,
+      "fa": "اگه این دستگاه داره پول چاپ می‌کنه و به اندازه کافی سود بهتون می‌ده، خب چرا این رو با کسی شیر می‌کنین؟",
+      "en": "If this machine is printing money and giving you enough profit, why would you share it with anyone?"
+    },
+    {
+      "startSec": 1319,
+      "fa": "ماست‌فروش نمی‌گه ماستم ترشه. اگه می‌خوای راهنمایی بگیری، نباید بری پیش فروشنده اون کالا.",
+      "en": "No yogurt seller says his yogurt is sour. If you want advice, you shouldn't go to the seller of that product.",
+      "speaker": "احسان"
+    },
+    {
+      "startSec": 3156,
+      "fa": "بیت‌کوین در دراز مدت تا الان ثابت کرده که سودده‌ست، چون تعدادش محدوده و خیلی‌ها هنوز باهاش آشنا نشدن.",
+      "en": "Bitcoin has proven to be profitable in the long run so far, because its supply is limited and many people still haven't become familiar with it.",
+      "speaker": "احسان"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Cloud Mining",
+      "termFa": "کلاد ماینینگ",
+      "definitionEn": "Renting remote computing power to mine cryptocurrency instead of owning hardware yourself.",
+      "definitionFa": "اجاره دادن توان محاسباتی از راه دور برای استخراج رمزارز، به‌جای داشتن دستگاه فیزیکی."
+    },
+    {
+      "term": "Ponzi Scheme",
+      "termFa": "طرح پانزی",
+      "definitionEn": "A fraud where returns paid to early investors come from new investors' money, not real profit.",
+      "definitionFa": "کلاه‌برداری‌ای که در آن سود سرمایه‌گذاران اولیه از پول سرمایه‌گذاران جدید تأمین می‌شود، نه از سود واقعی."
+    },
+    {
+      "term": "Pump and Dump",
+      "termFa": "پامپ و دامپ",
+      "definitionEn": "Artificially inflating a coin's price through hype, then selling holdings at the peak to leave others with losses.",
+      "definitionFa": "بالا بردن مصنوعی قیمت یک کوین از طریق تبلیغات، سپس فروش در اوج قیمت و ضرر دادن به دیگران."
+    },
+    {
+      "term": "Whale",
+      "termFa": "نهنگ",
+      "definitionEn": "A trader or entity holding enough capital to significantly move the price of a cryptocurrency market.",
+      "definitionFa": "معامله‌گر یا نهادی که سرمایه کافی برای تأثیر چشمگیر بر قیمت بازار رمزارز را دارد."
+    },
+    {
+      "term": "Tainted Bitcoin",
+      "termFa": "بیت‌کوین کثیف",
+      "definitionEn": "Bitcoin traceable to theft, hacks, or illegal activity that exchanges may freeze upon detection.",
+      "definitionFa": "بیت‌کوینی که به سرقت، هک یا فعالیت غیرقانونی مرتبط است و صرافی‌ها ممکن است آن را مسدود کنند."
+    },
+    {
+      "term": "API Key",
+      "termFa": "کلید API",
+      "definitionEn": "A credential that lets a third party trade on your exchange account without being able to withdraw funds.",
+      "definitionFa": "اعتبارنامه‌ای که به شخص ثالث اجازه معامله در حساب صرافی شما را می‌دهد، بدون امکان برداشت وجه."
+    },
+    {
+      "term": "Technical Analysis",
+      "termFa": "تحلیل تکنیکال",
+      "definitionEn": "Using historical price charts and patterns to estimate future market direction and entry or exit points.",
+      "definitionFa": "استفاده از نمودارها و الگوهای تاریخی قیمت برای تخمین جهت آینده بازار و نقاط ورود یا خروج."
+    },
+    {
+      "term": "Fundamental Analysis",
+      "termFa": "تحلیل فاندامنتال",
+      "definitionEn": "Evaluating a cryptocurrency based on news, project updates, team, and real-world adoption rather than price charts.",
+      "definitionFa": "ارزیابی یک رمزارز بر اساس اخبار، به‌روزرسانی پروژه، تیم و کاربرد واقعی، نه نمودار قیمت."
+    },
+    {
+      "term": "ICO",
+      "termFa": "عرضه اولیه کوین",
+      "definitionEn": "Initial Coin Offering: a fundraising method where a project sells new tokens to early investors.",
+      "definitionFa": "روش جذب سرمایه که در آن یک پروژه توکن‌های جدید خود را به سرمایه‌گذاران اولیه می‌فروشد."
+    },
+    {
+      "term": "AML",
+      "termFa": "مبارزه با پول‌شویی",
+      "definitionEn": "Anti-Money Laundering: regulations requiring exchanges to monitor and report suspicious financial activity.",
+      "definitionFa": "مقرراتی که صرافی‌ها را ملزم می‌کند فعالیت‌های مالی مشکوک را رصد و گزارش کنند."
+    },
+    {
+      "term": "ShapeShift",
+      "termFa": "شیپ‌شیفت",
+      "definitionEn": "A service that instantly converts one cryptocurrency into another without requiring an account.",
+      "definitionFa": "سرویسی که بدون نیاز به حساب کاربری، یک رمزارز را فوری به رمزارز دیگر تبدیل می‌کند."
+    },
+    {
+      "term": "Altcoin",
+      "termFa": "آلت‌کوین",
+      "definitionEn": "Any cryptocurrency other than Bitcoin, ranging from major projects like Ethereum to obscure small-cap coins.",
+      "definitionFa": "هر رمزارزی غیر از بیت‌کوین، از پروژه‌های بزرگی مانند اتریوم تا کوین‌های کوچک و ناشناخته."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "شناخت",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "en",
+      "wrong": "Coinolix",
+      "right": "Poloniex"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کولونیکس",
+      "right": "پولونیکس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بادر فلای لبز",
+      "right": "Butterfly Labs"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیت فنیکس",
+      "right": "بیت‌فینکس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتفینکسی",
+      "right": "بیت‌فینکس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کواتلوه",
+      "right": "کواتلو"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کومادو",
+      "right": "کومودو"
+    },
+    {
+      "lang": "en",
+      "wrong": "Pascal",
+      "right": "Pascal Coin"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پاسکال",
+      "right": "پاسکال کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیترکس",
+      "right": "Bittrex"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتریوم",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "شیپشیفت",
+      "right": "ShapeShift"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کوین مارکت",
+      "right": "CoinMarketCap"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکوین تاک",
+      "right": "BitcoinTalk"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آیسیو",
+      "right": "ICO"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دبلافرش",
+      "right": "وایت‌پیپر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای امر",
+      "right": "AML"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آنتی مانی لانری",
+      "right": "ضد پول‌شویی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لایتکوین",
+      "right": "لایت‌کوین"
+    }
+  ]
+}

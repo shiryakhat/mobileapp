@@ -1,0 +1,220 @@
+{
+  "id": "s01e05",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:10:56.484Z",
+  "summaryFa": "این اپیزود به بحث بلاک‌سایز بیت‌کوین، تفاوت میان هارد فورک و سافت فورک، و رقابت Bitcoin Unlimited با Bitcoin Core می‌پردازد. مفاهیمی مانند SegWit، شبکه لایتنینگ، کانال‌های پرداخت و میکروپیمنت‌ها با جزئیات توضیح داده می‌شوند و دلایل مخالفت ماینرهای چینی با SegWit بررسی می‌گردد. در پایان توصیه‌های عملی برای نگهداری بیت‌کوین در زمان احتمال فورک ارائه می‌شود.",
+  "summaryEn": "The episode covers Bitcoin's block size debate from Satoshi's original 1 MB spam-prevention limit to the push by Bitcoin Unlimited and Roger Ver for larger blocks, explaining why hard forks threaten decentralization while soft forks like SegWit preserve it. The hosts give a detailed walkthrough of the Lightning Network—payment channels, multisig accounts, timelocks, and per-second micropayments—and explain why SegWit is a prerequisite and why Chinese mining pools resist it. Practical advice closes the episode: move Bitcoin off exchanges into self-custody wallets and avoid spending during a fork to prevent replay-style double-spending across chains.",
+  "quotes": [
+    {
+      "startSec": 1204,
+      "fa": "اگر ما می‌خواییم بیت‌کوین رو به صورت غیرمتمرکز جلو ببریم، بزرگ کردن سایز بلاک مشکل رو نمی‌تونه حل بکنه.",
+      "en": "If we want to advance Bitcoin in a decentralized way, increasing the block size can't solve the problem."
+    },
+    {
+      "startSec": 1472,
+      "fa": "لایتنینگ نتورک واقعاً بهترین راه‌حله.",
+      "en": "The Lightning Network is really the best solution."
+    },
+    {
+      "startSec": 2021,
+      "fa": "یه نفر می‌تونه آموزش ویدیوی بذاره، آموزش لایف بده، و به ازای هر ثانیه پول بگیره.",
+      "en": "Someone can post a live video tutorial and get paid for every single second."
+    },
+    {
+      "startSec": 2922,
+      "fa": "کشوری که یه دیکتاتور خوب داره بیشتر از همه پیش رفته؛ مشکل اینجاست که آیا اون دیکتاتور خوبه یا بده.",
+      "en": "A country with a good dictator advances more than anyone; the problem is whether that dictator is actually good or bad."
+    },
+    {
+      "startSec": 4366,
+      "fa": "حرفم اینه که طولانی‌مدت بهش فکر بکنین؛ فکر کنین که چه کاربردی می‌تونه براتون داشته باشه.",
+      "en": "My point is to think long term—think about what practical use it can actually have for you."
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Block Size",
+      "termFa": "بلاک‌سایز",
+      "definitionEn": "The maximum data limit per Bitcoin block, currently 1 MB, which caps how many transactions fit in each block.",
+      "definitionFa": "حداکثر حجم داده در هر بلاک بیت‌کوین که تعداد تراکنش‌های قابل پردازش را محدود می‌کند."
+    },
+    {
+      "term": "Hard Fork",
+      "termFa": "هارد فورک",
+      "definitionEn": "A backward-incompatible protocol change that splits the blockchain into two separate, mutually rejecting networks.",
+      "definitionFa": "تغییری در پروتکل که با نسخه‌های قدیمی ناسازگار است و زنجیره را به دو شبکه مجزا تقسیم می‌کند."
+    },
+    {
+      "term": "Soft Fork",
+      "termFa": "سافت فورک",
+      "definitionEn": "A backward-compatible protocol upgrade where old nodes can still participate in the network without upgrading.",
+      "definitionFa": "ارتقای پروتکل که با نسخه‌های قدیمی سازگار است و نودهای قدیمی می‌توانند همچنان در شبکه بمانند."
+    },
+    {
+      "term": "SegWit",
+      "termFa": "سگ‌ویت (Segregated Witness)",
+      "definitionEn": "A Bitcoin soft fork that separates signature data from transaction data, increasing block capacity and fixing transaction malleability.",
+      "definitionFa": "یک سافت فورک بیت‌کوین که داده امضا را از تراکنش جدا می‌کند و ظرفیت بلاک را افزایش می‌دهد."
+    },
+    {
+      "term": "Lightning Network",
+      "termFa": "شبکه لایتنینگ",
+      "definitionEn": "A second-layer payment protocol on Bitcoin enabling fast, cheap off-chain transactions settled periodically on the blockchain.",
+      "definitionFa": "یک لایه دوم روی بیت‌کوین که امکان تراکنش‌های سریع و ارزان خارج از زنجیره را فراهم می‌کند."
+    },
+    {
+      "term": "Payment Channel",
+      "termFa": "کانال پرداخت",
+      "definitionEn": "A multisig Bitcoin account where two parties exchange signed transactions off-chain and settle the final balance on-chain.",
+      "definitionFa": "یک حساب مالتی‌سیگ بیت‌کوین که دو طرف تراکنش‌ها را خارج از زنجیره رد و بدل کرده و در نهایت روی بلاکچین تسویه می‌کنند."
+    },
+    {
+      "term": "UTXO",
+      "termFa": "UTXO (خروجی تراکنش خرج‌نشده)",
+      "definitionEn": "Unspent Transaction Output; the unspent coins from previous transactions that nodes keep in RAM to verify new transactions.",
+      "definitionFa": "خروجی‌های تراکنش‌های قبلی که هنوز خرج نشده‌اند و نودها برای تأیید تراکنش‌های جدید در رم نگه می‌دارند."
+    },
+    {
+      "term": "UASF",
+      "termFa": "UASF (سافت فورک فعال‌شده توسط کاربر)",
+      "definitionEn": "User Activated Soft Fork; a mechanism allowing non-mining full nodes to signal support for a protocol change.",
+      "definitionFa": "روشی که به نودهای کامل غیرماینر اجازه می‌دهد تا حمایت خود از یک تغییر پروتکل را اعلام کنند."
+    },
+    {
+      "term": "Bitcoin Unlimited",
+      "termFa": "بیت‌کوین آنلیمیتد",
+      "definitionEn": "A Bitcoin client that removes the fixed 1 MB block size limit and lets miners and nodes signal their preferred maximum block size.",
+      "definitionFa": "یک کلاینت بیت‌کوین که محدودیت ثابت یک مگابایتی را حذف کرده و به ماینرها و نودها اجازه می‌دهد حداکثر سایز بلاک دلخواه را اعلام کنند."
+    },
+    {
+      "term": "Transaction Malleability",
+      "termFa": "مالیبیلیتی تراکنش",
+      "definitionEn": "A Bitcoin bug allowing the transaction ID to be altered before confirmation, which prevented safe implementation of payment channels.",
+      "definitionFa": "یک باگ در بیت‌کوین که اجازه می‌داد شناسه تراکنش قبل از تأیید تغییر کند و پیاده‌سازی کانال‌های پرداخت را ناممکن می‌ساخت."
+    },
+    {
+      "term": "Mining Pool",
+      "termFa": "استخر ماینینگ",
+      "definitionEn": "A group of miners who combine their hash power to find blocks more consistently and share the resulting rewards.",
+      "definitionFa": "گروهی از ماینرها که قدرت هش خود را ترکیب می‌کنند تا با احتمال بیشتری بلاک پیدا کنند و پاداش را تقسیم کنند."
+    },
+    {
+      "term": "Orphaned Block",
+      "termFa": "بلاک یتیم",
+      "definitionEn": "A valid block that loses the race to be added to the main chain because another block at the same height was accepted first.",
+      "definitionFa": "بلاک معتبری که در رقابت برای اضافه شدن به زنجیره اصلی بازنده می‌شود زیرا بلاک دیگری در همان ارتفاع زودتر پذیرفته شده است."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "شیریخت",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "en",
+      "wrong": "Shir-ya-Khat",
+      "right": "Shir ya Khat"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ساتا شیو",
+      "right": "ساتوشی"
+    },
+    {
+      "lang": "en",
+      "wrong": "Satoshi himself",
+      "right": "Satoshi Nakamoto"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکوین آن لیمیتر",
+      "right": "بیت‌کوین آنلیمیتد"
+    },
+    {
+      "lang": "en",
+      "wrong": "Bitcoin has no limit",
+      "right": "Bitcoin Unlimited"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکوین آنینته",
+      "right": "بیت‌کوین آنلیمیتد"
+    },
+    {
+      "lang": "fa",
+      "wrong": "گاوین اندریسون",
+      "right": "گاوین آندرسن"
+    },
+    {
+      "lang": "fa",
+      "wrong": "راجر ویر",
+      "right": "راجر ور"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سیگویت",
+      "right": "سگ‌ویت"
+    },
+    {
+      "lang": "en",
+      "wrong": "SegWit, or Segregated Witness",
+      "right": "SegWit (Segregated Witness)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لایترین نتورک",
+      "right": "لایتنینگ نتورک"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لایتنی نیتفورک",
+      "right": "لایتنینگ نتورک"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تورنیدو کشت",
+      "right": "تورنادو کش"
+    },
+    {
+      "lang": "fa",
+      "wrong": "یوتی اکسو",
+      "right": "UTXO"
+    },
+    {
+      "lang": "en",
+      "wrong": "unspent output transactions",
+      "right": "Unspent Transaction Outputs (UTXO)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مالتی سیک اکامت",
+      "right": "مالتی‌سیگ اکانت"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ترنزکشن میلیبلیتی",
+      "right": "تراکنش مالیبیلیتی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تارلی لی",
+      "right": "چارلی لی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مونه",
+      "right": "مونرو"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتفینکس",
+      "right": "بیت‌فینکس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتریوم کلاسیک",
+      "right": "اتریوم کلاسیک"
+    }
+  ]
+}

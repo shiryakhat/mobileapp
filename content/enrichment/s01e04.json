@@ -1,0 +1,261 @@
+{
+  "id": "s01e04",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:11:05.239Z",
+  "summaryFa": "این اپیزود به‌طور کامل به مفاهیم ماینینگ، اثبات کار (Proof of Work) و الگوریتم‌های اجماع می‌پردازد: از تابع هش و الگوریتم Hashcash آدام بک تا سیر تکامل سخت‌افزار از CPU و GPU تا دستگاه‌های ASIC (مانند Antminer S9 بیت‌مین)، اقتصاد ماینینگ، ماینینگ پول‌ها و روش‌های پرداخت PPS و PPLNS. در بخش پایانی، رد شدن پیشنهاد ETF بیت‌کوین توسط SEC و تأثیر آن بر نوسانات شدید قیمت بررسی می‌شود و تحلیل تکنیکالی از اتریوم، اتریوم کلاسیک، دش، مونرو و چند آلت‌کوین کوچک‌تر در صرافی بیتترکس ارائه می‌گردد.",
+  "summaryEn": "The episode provides a comprehensive primer on Bitcoin mining and Proof of Work, tracing the concept from Adam Back's 1997 Hashcash anti-spam algorithm through SHA-256 and Scrypt, hardware evolution from CPU and GPU to purpose-built ASICs (Bitmain Antminer S9, Bitfury, early Dragon rigs), and the economics of electricity, cooling, and location. Mining pools, solo mining, PPS and PPLNS reward schemes, decentralized P2Pool, multi-pool coin-switching, and a skeptical verdict on cloud mining are all covered by guest miners sharing firsthand experience. The episode closes with a market report centered on the SEC's rejection of a Bitcoin ETF, analyzing whale-driven price manipulation and long-term bullish fundamentals, followed by technical-analysis commentary on Ethereum, Ethereum Classic, Dash, Monero (XMR), and numerous smaller altcoins on Bittrex.",
+  "quotes": [
+    {
+      "startSec": 1520,
+      "fa": "قلب بیت‌کوین برای من ماینینگشه؛ Proof of Work از محکم‌ترین پشتوانه‌های بیت‌کوینه.",
+      "en": "The heart of Bitcoin for me is its mining; Proof of Work is one of the strongest pillars backing Bitcoin."
+    },
+    {
+      "startSec": 1668,
+      "fa": "کلاود ماینینگ دقیقاً معنیش اینه که شما به من پول بدید که من برای شما پول دربیارم — خب اگر قرار باشه پول دربیارم، برای خودم درمیارم.",
+      "en": "Cloud mining literally means you give me money so I make money for you — well, if I'm going to make money, I'd make it for myself."
+    },
+    {
+      "startSec": 1282,
+      "fa": "خیلی از این ماینینگ فارم‌ها در واقع برق مجانی دارن؛ خیلی از امکاناتی که دولت چین در اختیار این کارخانه‌ها گذاشته به نفع چینی‌ها بوده که این کار رو بکنن.",
+      "en": "Many of these mining farms actually have free electricity; a lot of the facilities the Chinese government gave these factories were ultimately to China's benefit."
+    },
+    {
+      "startSec": 1984,
+      "fa": "این پردازنده‌ها برای پردازش بلاک‌چین بیت‌کوین حدود صد برابر سریع‌تر از پردازنده‌های عادی هستن و ده‌ها برابر هم ارزون‌تر.",
+      "en": "These processors are about a hundred times faster than ordinary processors for Bitcoin blockchain processing, and tens of times cheaper too.",
+      "speaker": "Ehsan"
+    },
+    {
+      "startSec": 2512,
+      "fa": "خواهش می‌کنم دوستان با دانش خودشون ترید کنن؛ از گفته‌های ما سیگنال برای خرید و فروش نگیرید.",
+      "en": "Please, friends, trade with your own knowledge; don't take what we say as buy or sell signals."
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Proof of Work",
+      "termFa": "اثبات کار",
+      "definitionEn": "A consensus mechanism requiring miners to solve a computationally hard puzzle to add a new block to the blockchain.",
+      "definitionFa": "روشی برای اجماع شبکه که در آن ماینرها باید یک مسئله محاسباتی سخت را حل کنند تا بلاک جدیدی به زنجیره اضافه شود."
+    },
+    {
+      "term": "Hashcash",
+      "termFa": "هش‌کش",
+      "definitionEn": "An algorithm invented by Adam Back in 1997 to prove computational work, originally used to fight email spam and later adopted by Bitcoin.",
+      "definitionFa": "الگوریتمی که آدام بک در سال ۱۹۹۷ برای اثبات انجام کار محاسباتی اختراع کرد و بعداً پایه ماینینگ بیت‌کوین شد."
+    },
+    {
+      "term": "SHA-256",
+      "termFa": "SHA-256",
+      "definitionEn": "The cryptographic hash function used in Bitcoin's Proof of Work, producing a 256-bit output that is practically irreversible.",
+      "definitionFa": "تابع هش رمزنگاری استفاده‌شده در اثبات کار بیت‌کوین که خروجی ۲۵۶ بیتی غیرقابل معکوس تولید می‌کند."
+    },
+    {
+      "term": "Scrypt",
+      "termFa": "اسکریپت",
+      "definitionEn": "A memory-hard hash algorithm used by Litecoin and other coins as an alternative to SHA-256, originally designed to resist ASIC mining.",
+      "definitionFa": "الگوریتم هش حافظه‌بر استفاده‌شده در لایت‌کوین که برای مقاومت در برابر دستگاه‌های ASIC طراحی شد."
+    },
+    {
+      "term": "ASIC",
+      "termFa": "ایسیک",
+      "definitionEn": "Application-Specific Integrated Circuit — hardware built solely to compute one algorithm, making it far faster and more efficient than CPUs or GPUs for mining.",
+      "definitionFa": "مدار مجتمع اختصاصی؛ سخت‌افزاری که فقط برای اجرای یک الگوریتم خاص طراحی شده و بسیار سریع‌تر از CPU یا GPU برای ماینینگ است."
+    },
+    {
+      "term": "Mining Pool",
+      "termFa": "ماینینگ پول",
+      "definitionEn": "A collective of miners who combine their hash power to find blocks more regularly and share rewards proportionally.",
+      "definitionFa": "گروهی از ماینرها که قدرت هش خود را ترکیب می‌کنند تا با احتمال بیشتری بلاک پیدا کنند و پاداش را تقسیم کنند."
+    },
+    {
+      "term": "PPS (Pay Per Share)",
+      "termFa": "پرداخت به‌ازای هر شر",
+      "definitionEn": "A mining pool reward method that pays a fixed amount for every valid share submitted, regardless of whether the pool finds a block.",
+      "definitionFa": "روشی برای پرداخت پاداش در ماینینگ پول که به ازای هر شر معتبر، مبلغ ثابتی پرداخت می‌شود."
+    },
+    {
+      "term": "PPLNS (Pay Per Last N Shares)",
+      "termFa": "پرداخت به‌ازای آخرین N شر",
+      "definitionEn": "A mining pool reward scheme that pays based on the last N shares contributed before a block is found, rewarding loyal miners.",
+      "definitionFa": "روش پرداخت در ماینینگ پول که بر اساس آخرین N شر ارسال‌شده قبل از یافتن بلاک، پاداش می‌دهد."
+    },
+    {
+      "term": "Proof of Stake",
+      "termFa": "اثبات سهام",
+      "definitionEn": "A consensus mechanism where validators are chosen to create blocks based on the amount of cryptocurrency they hold and lock up.",
+      "definitionFa": "روش اجماعی که در آن کسی که تعداد بیشتری از کوین را نگه می‌دارد، شانس بیشتری برای ایجاد بلاک جدید دارد."
+    },
+    {
+      "term": "Proof of Burn",
+      "termFa": "اثبات سوختن",
+      "definitionEn": "A consensus method where coins are sent to an unspendable address to prove commitment, often used to bootstrap new cryptocurrencies.",
+      "definitionFa": "روش اجماعی که در آن کوین‌ها به آدرسی غیرقابل خرج ارسال می‌شوند تا ایجاد کوین جدید را اثبات کنند."
+    },
+    {
+      "term": "Difficulty",
+      "termFa": "سختی محاسباتی",
+      "definitionEn": "A network parameter adjusted every 2016 blocks in Bitcoin to keep average block time close to ten minutes.",
+      "definitionFa": "پارامتر شبکه که هر ۲۰۱۶ بلاک در بیت‌کوین تنظیم می‌شود تا میانگین زمان ایجاد هر بلاک نزدیک به ده دقیقه بماند."
+    },
+    {
+      "term": "ETF (Exchange-Traded Fund)",
+      "termFa": "صندوق قابل معامله در بورس",
+      "definitionEn": "A regulated financial product tradeable on stock exchanges; a Bitcoin ETF would let investors gain exposure without holding the coin directly.",
+      "definitionFa": "یک محصول مالی تحت نظارت که روی بورس معامله می‌شود؛ ETF بیت‌کوین سرمایه‌گذاران را بدون نگهداری مستقیم کوین در معرض قیمت آن قرار می‌دهد."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "en",
+      "wrong": "Heads or Tails (شیر یا خط)",
+      "right": "Heads or Tails"
+    },
+    {
+      "lang": "fa",
+      "wrong": "شیریا خط",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تایینینگ",
+      "right": "ماینینگ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کریتوکارینسی",
+      "right": "کریپتوکارنسی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکویند",
+      "right": "بیت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "هرشینگ",
+      "right": "هشینگ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تابعه هشت",
+      "right": "تابع هش"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کش کش",
+      "right": "هش‌کش"
+    },
+    {
+      "lang": "fa",
+      "wrong": "شا دیویست و پنجه و شست",
+      "right": "SHA-256"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اسکریپت",
+      "right": "Scrypt"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دراغون",
+      "right": "دراگون"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اصناین بیت مین",
+      "right": "Antminer S9 بیت‌مین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیت مین",
+      "right": "بیت‌مین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیت پیوری",
+      "right": "بیت‌فیوری"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زیرو کوین",
+      "right": "Zerocoin"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتریوم",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتخوین",
+      "right": "بیت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکان",
+      "right": "بیت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکاین",
+      "right": "بیت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکاون",
+      "right": "بیت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای پی اف",
+      "right": "ETF"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پی پی اس",
+      "right": "PPS"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پی پی ال نس",
+      "right": "PPLNS"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پی تو پول",
+      "right": "P2Pool"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای دبل یو اس",
+      "right": "AWS"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اپ انجین",
+      "right": "App Engine"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اکس ام آر",
+      "right": "XMR"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیترکس",
+      "right": "بیتترکس"
+    },
+    {
+      "lang": "en",
+      "wrong": "Shenakht",
+      "right": "Shir ya Khat"
+    },
+    {
+      "lang": "fa",
+      "wrong": "شناخت",
+      "right": "شیر یا خط"
+    }
+  ]
+}

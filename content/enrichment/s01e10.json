@@ -1,0 +1,258 @@
+{
+  "id": "s01e10",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:08:29.783Z",
+  "summaryFa": "در این اپیزود، میزبانان پادکست «شیر یا خط» به تفصیل سازوکار SegWit (Segregated Witness) را توضیح می‌دهند: چگونه جدا کردن امضای ECDSA از بدنهٔ تراکنش، مشکل transaction malleability را حل می‌کند، ظرفیت مؤثر بلاک را تقریباً دو برابر می‌سازد و زیرساخت لازم برای Lightning Network را فراهم می‌آورد. سپس خط زمانی حاکمیتی این بحث از BIP 9 و BIP 141 تا بن‌بست ماینرها (به دلیل ASICBoost بیت‌مین)، UASF (BIP 148) و در نهایت قفل‌شدن BIP 91 با آستانهٔ ۸۰٪ را مرور می‌کنند. اپیزود با گزارش بازار—نوسان قیمت بیتکوین از حدود ۳۰۰۰ دلار به ۱۸۰۰ دلار، پویایی آلت‌کوین‌ها، نصف‌شدن پاداش ماینینگ و هشدار دربارهٔ حباب ICO—به پایان می‌رسد و به شنوندگان توصیه می‌شود کلید خصوصی را خودشان نگه دارند و فول نود اجرا کنند.",
+  "summaryEn": "The hosts of Shir ya Khat dissect the mechanics of Segregated Witness (SegWit): how moving the ECDSA signature into a separate witness structure fixes transaction malleability (illustrated by the Mt. Gox hack), effectively doubles block capacity within the existing 1 MB limit, and enables the Lightning Network. They trace the governance timeline from BIP 9 version-bit signaling and BIP 141 through the miner deadlock driven by Bitmain's ASICBoost, the grassroots BIP 148 UASF set for August 1st, and the locking-in of BIP 91 at an 80% threshold, with SegWit2x promising a subsequent 2 MB hard fork. The episode closes with a market report covering Bitcoin's swing from nearly $3,000 back to $1,800, altcoin dynamics, mining halving game theory, and a warning that the ICO frenzy resembles the late-1990s dot-com bubble, advising listeners to self-custody their keys and run full nodes.",
+  "quotes": [
+    {
+      "startSec": 174,
+      "fa": "سگ‌ویت مخفف Segregated Witness است، یعنی «شاهد جداگانه».",
+      "en": "SegWit is short for Segregated Witness — meaning a separated witness.",
+      "speaker": "Shayan"
+    },
+    {
+      "startSec": 977,
+      "fa": "این به زبان خیلی ساده، یکی از هک‌های Mt. Gox بود — یعنی اینطوری می‌شد آن سرویس را گول زد و وانمود کرد تراکنش اجرا نشده.",
+      "en": "Put very simply, this is one of the Mt. Gox hacks — this is basically how you could trick that service into thinking the transaction was never executed."
+    },
+    {
+      "startSec": 1460,
+      "fa": "UASF یعنی User Activated Soft Fork؛ اگر ماینرها این کار را نمی‌کنند، کاری که ما به عنوان یوزر می‌توانیم بکنیم اینه که نود خودمان را تغییر دهیم.",
+      "en": "UASF means User Activated Soft Fork — if the miners won't do it, what we can do as users is change our own node."
+    },
+    {
+      "startSec": 3281,
+      "fa": "واقعیتش این است که این قضیهٔ دو مگابایت خیلی احمقانه است؛ بعد از چند ماه دوباره همین آش همین کاسه.",
+      "en": "Honestly, I feel this two-megabyte thing is very foolish — after a few months we'll be back to the same old story all over again.",
+      "speaker": "Shayan"
+    },
+    {
+      "startSec": 4907,
+      "fa": "یک فضایی شده مثل حبابِ دات‌کام که اواخر دههٔ نود بود — هر کسی یک دات‌کام می‌گذاشت روی شرکتش؛ الان هم همین‌طور است که یک اسم ICO می‌گذارند.",
+      "en": "It has become a space just like the dot-com bubble of the late nineties — everyone would slap a dot-com on their company; now they just put an ICO name on it.",
+      "speaker": "Shayan"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Segregated Witness (SegWit)",
+      "termFa": "سگ‌ویت (شاهد جداگانه)",
+      "definitionEn": "A Bitcoin protocol upgrade that moves transaction signatures into a separate witness structure, increasing capacity and fixing malleability.",
+      "definitionFa": "ارتقای پروتکل بیتکوین که امضای تراکنش را در ساختار جداگانه‌ای ذخیره می‌کند و ظرفیت شبکه را افزایش می‌دهد."
+    },
+    {
+      "term": "BIP (Bitcoin Improvement Proposal)",
+      "termFa": "بیپ (پیشنهاد بهبود بیتکوین)",
+      "definitionEn": "A formal document anyone can submit to propose changes or new features to the Bitcoin protocol, similar to Ethereum's ERC standards.",
+      "definitionFa": "سندی رسمی که هر کسی می‌تواند برای پیشنهاد تغییر در پروتکل بیتکوین ارائه دهد، مشابه استانداردهای ERC در اتریوم."
+    },
+    {
+      "term": "UASF (User Activated Soft Fork)",
+      "termFa": "فورک نرم فعال‌شده توسط کاربران",
+      "definitionEn": "A mechanism by which node operators, rather than miners, enforce a protocol change by rejecting non-compliant blocks starting from a set date.",
+      "definitionFa": "روشی که طی آن اپراتورهای نود، بدون نیاز به ماینرها، با رد بلاک‌های مخالف، تغییر پروتکل را اجبار می‌کنند."
+    },
+    {
+      "term": "Transaction Malleability",
+      "termFa": "تغییرپذیری تراکنش",
+      "definitionEn": "A Bitcoin bug where a transaction's ID can be altered before confirmation without changing its inputs or outputs, causing tracking issues.",
+      "definitionFa": "باگی در بیتکوین که اجازه می‌دهد شناسهٔ تراکنش قبل از تأیید تغییر کند، بدون آنکه فرستنده یا گیرنده عوض شود."
+    },
+    {
+      "term": "ECDSA (Elliptic Curve Digital Signature Algorithm)",
+      "termFa": "الگوریتم امضای دیجیتال منحنی بیضوی",
+      "definitionEn": "The cryptographic algorithm Bitcoin uses to generate and verify transaction signatures, ensuring only the private key holder can authorize spending.",
+      "definitionFa": "الگوریتم رمزنگاری که بیتکوین برای ایجاد و تأیید امضای تراکنش‌ها به کار می‌برد."
+    },
+    {
+      "term": "ASICBoost",
+      "termFa": "ASICBoost",
+      "definitionEn": "A patented optimization technique used in some Bitmain miners that exploits Bitcoin's hashing algorithm to mine more efficiently.",
+      "definitionFa": "روش بهینه‌سازی اختراع‌شده در برخی ماینرهای بیت‌مین که از الگوریتم هش بیتکوین برای کاهش مصرف انرژی سوءاستفاده می‌کند."
+    },
+    {
+      "term": "Lightning Network",
+      "termFa": "شبکهٔ لایتنینگ",
+      "definitionEn": "An off-chain payment protocol built on top of Bitcoin that enables fast, cheap transactions by settling only the final balance on-chain.",
+      "definitionFa": "پروتکل پرداخت خارج از زنجیره روی بیتکوین که تراکنش‌های سریع و ارزان را بدون ثبت هر پرداخت در بلاکچین ممکن می‌سازد."
+    },
+    {
+      "term": "SPV (Simplified Payment Verification)",
+      "termFa": "تأیید پرداخت ساده‌شده",
+      "definitionEn": "A lightweight method for verifying Bitcoin transactions without downloading the full blockchain, used by mobile wallets.",
+      "definitionFa": "روشی سبک برای تأیید تراکنش‌های بیتکوین بدون دانلود کل بلاکچین، که کیف پول‌های موبایل از آن استفاده می‌کنند."
+    },
+    {
+      "term": "Replay Attack",
+      "termFa": "حملهٔ بازپخش",
+      "definitionEn": "A risk during a fork where a valid transaction on one chain is rebroadcast and accepted on the other chain, potentially causing double-spending.",
+      "definitionFa": "خطری در زمان فورک که طی آن تراکنش معتبر در یک زنجیره روی زنجیرهٔ دیگر نیز پخش و پذیرفته می‌شود."
+    },
+    {
+      "term": "Sybil Attack",
+      "termFa": "حملهٔ سیبیل",
+      "definitionEn": "An attack where a single adversary runs many fake nodes to surround and mislead honest nodes with false information.",
+      "definitionFa": "حمله‌ای که در آن یک مهاجم نودهای جعلی زیادی اجرا می‌کند تا نودهای سالم را با اطلاعات نادرست فریب دهد."
+    },
+    {
+      "term": "SegWit2x",
+      "termFa": "سگ‌ویت ۲ایکس",
+      "definitionEn": "A compromise agreement reached in New York to first activate SegWit and then hard-fork Bitcoin to a 2 MB block size three months later.",
+      "definitionFa": "توافقی که در نیویورک حاصل شد: ابتدا فعال‌سازی SegWit و سپس هارد فورک به بلاک ۲ مگابایتی پس از سه ماه."
+    },
+    {
+      "term": "ICO (Initial Coin Offering)",
+      "termFa": "عرضهٔ اولیهٔ سکه",
+      "definitionEn": "A fundraising method where a project sells newly created tokens to the public, similar to an IPO but largely unregulated.",
+      "definitionFa": "روش تأمین مالی که طی آن یک پروژه توکن‌های جدید را به عموم می‌فروشد، مشابه IPO اما بدون نظارت قانونی."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "شیریا خد",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "en",
+      "wrong": "شیر یا خط podcast",
+      "right": "Shir ya Khat podcast"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سیگویت",
+      "right": "سگ‌ویت"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سیگریگیتیت ویدنس",
+      "right": "Segregated Witness"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سگریگیتیت",
+      "right": "Segregated Witness"
+    },
+    {
+      "lang": "fa",
+      "wrong": "میلیبلیتی",
+      "right": "malleability"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ملویلیتی",
+      "right": "malleability"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اسیک بوست",
+      "right": "ASICBoost"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اسیک بوست",
+      "right": "ASICBoost"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیت مین",
+      "right": "بیت‌مین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لایتنگ نتورک",
+      "right": "Lightning Network"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لایترین نتورک",
+      "right": "Lightning Network"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لایتینگ نتورک",
+      "right": "Lightning Network"
+    },
+    {
+      "lang": "fa",
+      "wrong": "متگاکس",
+      "right": "Mt. Gox"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مدگاکس",
+      "right": "Mt. Gox"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای آر سی توینی",
+      "right": "ERC-20"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیپ نه",
+      "right": "BIP 9"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پیتر ویر",
+      "right": "Pieter Wuille"
+    },
+    {
+      "lang": "fa",
+      "wrong": "گریگ مکسفل",
+      "right": "Greg Maxwell"
+    },
+    {
+      "lang": "fa",
+      "wrong": "گاوین اندرسون",
+      "right": "Gavin Andresen"
+    },
+    {
+      "lang": "en",
+      "wrong": "BIP 148 becomes active",
+      "right": "BIP 141 becomes active"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای سی دی ای سی",
+      "right": "ECDSA"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکور",
+      "right": "Bitcore"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیکوین",
+      "right": "Bitcoinj"
+    },
+    {
+      "lang": "fa",
+      "wrong": "هباب داتکام",
+      "right": "حباب دات‌کام"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تورنیدو کشت",
+      "right": "Tornado Cash"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتفینکس",
+      "right": "Bitfinex"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پولونیکس",
+      "right": "Poloniex"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سگویت 2 اکس",
+      "right": "SegWit2x"
+    }
+  ]
+}

@@ -1,0 +1,260 @@
+{
+  "id": "s07e05",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T21:55:59.994Z",
+  "summaryFa": "هاردفورک پکترا اتریوم — که از ترکیب نام‌های «پراگ» (لایه اجرایی) و «الکترا» (لایه اجماع) ساخته شده — با حدود ده تا یازده EIP مهم، مهم‌ترین آپگرید اتریوم پس از دنکون است. این اپیزود با حضور سینا و حمید، به بررسی فنی و مفصل EIP-7702 (اکانت ابسترکشن)، افزایش ظرفیت بلاب‌ها با EIP-7691 و EIP-7623، تغییرات استیکینگ با EIP-7251 و EIP-7002، پیش‌کامپایل BLS با EIP-2537، و بهینه‌سازی امضای جمعی با EIP-7549 می‌پردازد. همچنین ماجرای باگ کانفیگریشن در تست‌نت هولسکی، فرایند گاورننس اتریوم، نقش ویتالیک به‌عنوان هماهنگ‌کننده (نه دیکتاتور)، و چشم‌انداز هاردفورک بعدی (فوساکا) با PeerDAS و EOF نیز بررسی می‌شود.",
+  "summaryEn": "The Pectra hard fork — combining Prague (execution layer) and Electra (consensus layer) — is Ethereum's most significant upgrade since Dencun, containing roughly ten to eleven core EIPs. Hosts Sina and Hamid provide a detailed technical walkthrough of EIP-7702's account abstraction (enabling EOA-to-smart-wallet delegation without changing addresses), blob scaling via EIP-7691 and calldata repricing via EIP-7623, staking improvements through EIP-7251 (raising the validator cap to 2048 ETH) and EIP-7002 (execution-layer-triggered exits), the BLS precompile EIP-2537, and BLS signature aggregation via EIP-7549. The episode also covers the configuration bug that disrupted the Holesky testnet launch, Ethereum's governance model, and the roadmap toward Fusaka with PeerDAS and EOF.",
+  "quotes": [
+    {
+      "startSec": 958,
+      "fa": "ویتالیک پیامبر اتریوم نیست؛ صرفاً یک هماهنگ‌کننده‌ی باحال است — البته با دانش زیاد.",
+      "en": "Vitalik isn't Ethereum's prophet; he's simply a cool coordinator — with a lot of knowledge, of course.",
+      "speaker": "Sina"
+    },
+    {
+      "startSec": 1958,
+      "fa": "ویتالیک توی یکی از همین چت‌های تلگرامی ایده‌ی اولیه‌ی EIP-7702 رو مطرح کرد و بیست دقیقه بعد لینکش رو گذاشت تو چت که بیاین ببینید، نوشته شده.",
+      "en": "Vitalik proposed the initial idea for EIP-7702 in one of these Telegram chats, and twenty minutes later posted the link saying 'come look, it's written.'",
+      "speaker": "Hamid"
+    },
+    {
+      "startSec": 3427,
+      "fa": "ما یه چیزی رو الان می‌ذاریم که بتونیم چند سال بعد ازش استفاده کنیم — مثل دونه‌ای که کاشته میشه تا بعداً برداشت بشه.",
+      "en": "We plant something now so we can use it several years later — like a seed that's planted to be harvested later.",
+      "speaker": "Hamid"
+    },
+    {
+      "startSec": 1800,
+      "fa": "من به‌عنوان یه EOA هیچ‌وقت نمی‌تونم جلوی پولی که داره وارد اکانتم میشه رو بگیرم — اما با EIP-7702 می‌تونم این ترنسفرهای اضافه رو رد کنم.",
+      "en": "As an EOA, I can never stop money coming into my account — but with EIP-7702 I can reject these extra incoming transfers.",
+      "speaker": "Hamid"
+    },
+    {
+      "startSec": 5595,
+      "fa": "دلیل اینکه کلاینت دایورسیتی مهمه اینه که همه این مشکلات رو بشه پیدا کرد؛ اگه همه‌شون روی مین‌نت اتفاق می‌افتاد، خیلی مشکل حادی بود.",
+      "en": "The reason client diversity matters is so all these problems can be found — if all of it happened on mainnet, it would be a very serious issue.",
+      "speaker": "Sina"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Pectra",
+      "termFa": "پکترا",
+      "definitionEn": "Ethereum hard fork combining Prague (execution layer) and Electra (consensus layer) upgrades, expected mid-2025.",
+      "definitionFa": "هاردفورک اتریوم که از ادغام آپگریدهای «پراگ» (لایه اجرایی) و «الکترا» (لایه اجماع) تشکیل شده است."
+    },
+    {
+      "term": "Account Abstraction",
+      "termFa": "اکانت ابسترکشن",
+      "definitionEn": "Enabling standard wallets to behave like smart contracts, supporting features like batching, session keys, and gas sponsorship.",
+      "definitionFa": "قابلیتی که به کیف‌پول‌های معمولی اجازه می‌دهد مثل قراردادهای هوشمند رفتار کنند و امکاناتی مانند دسته‌بندی تراکنش و پرداخت گس توسط دیگران را فعال می‌کند."
+    },
+    {
+      "term": "EIP-7702",
+      "termFa": "ای‌آی‌پی-۷۷۰۲",
+      "definitionEn": "EIP allowing an EOA to temporarily delegate its behavior to a smart contract without changing its address.",
+      "definitionFa": "پیشنهادی که به یک EOA اجازه می‌دهد بدون تغییر آدرس، رفتار خود را به یک قرارداد هوشمند واگذار کند."
+    },
+    {
+      "term": "Blob",
+      "termFa": "بلاب",
+      "definitionEn": "A temporary, cheaper data attachment to Ethereum transactions used by Layer 2 rollups for data availability.",
+      "definitionFa": "نوعی داده‌ی موقت و ارزان‌قیمت که به تراکنش‌های اتریوم ضمیمه می‌شود و لایه‌های دو برای دسترس‌پذیری داده از آن استفاده می‌کنند."
+    },
+    {
+      "term": "KZG Commitment",
+      "termFa": "تعهد KZG",
+      "definitionEn": "A cryptographic commitment scheme used in Ethereum blobs enabling efficient proof of data availability without storing all data.",
+      "definitionFa": "روشی رمزنگاری برای تعهد به داده که در بلاب‌های اتریوم استفاده می‌شود و اثبات دسترس‌پذیری داده را بدون ذخیره‌سازی کامل آن ممکن می‌سازد."
+    },
+    {
+      "term": "EIP-4337",
+      "termFa": "ای‌آی‌پی-۴۳۳۷",
+      "definitionEn": "Application-layer account abstraction standard using bundlers, paymasters, and user operations without protocol changes.",
+      "definitionFa": "استاندارد اکانت ابسترکشن در لایه اپلیکیشن که بدون تغییر پروتکل، از باندلرها، پیمسترها و عملیات کاربر استفاده می‌کند."
+    },
+    {
+      "term": "PeerDAS",
+      "termFa": "پیرداس",
+      "definitionEn": "Data Availability Sampling protocol where each node only stores and verifies a portion of blob data, enabling greater scalability.",
+      "definitionFa": "پروتکل نمونه‌برداری از دسترس‌پذیری داده که هر نود تنها بخشی از داده‌های بلاب را نگه می‌دارد و مقیاس‌پذیری شبکه را افزایش می‌دهد."
+    },
+    {
+      "term": "EIP-7251",
+      "termFa": "ای‌آی‌پی-۷۲۵۱",
+      "definitionEn": "Raises the maximum effective balance per validator from 32 ETH to 2048 ETH, reducing total validator count and network load.",
+      "definitionFa": "حداکثر موجودی مؤثر هر ولیدیتور را از ۳۲ به ۲۰۴۸ اتر افزایش می‌دهد و بار شبکه را کاهش می‌دهد."
+    },
+    {
+      "term": "EIP-7002",
+      "termFa": "ای‌آی‌پی-۷۰۰۲",
+      "definitionEn": "Allows the withdrawal address of a validator to trigger an exit request from the execution layer, without needing validator key access.",
+      "definitionFa": "به آدرس برداشت یک ولیدیتور اجازه می‌دهد از طریق لایه اجرایی درخواست خروج بدهد، بدون نیاز به کلید ولیدیتور."
+    },
+    {
+      "term": "BLS Signature",
+      "termFa": "امضای BLS",
+      "definitionEn": "A cryptographic signature scheme allowing multiple signatures to be aggregated into one, reducing Ethereum network bandwidth.",
+      "definitionFa": "روشی رمزنگاری که اجازه می‌دهد چندین امضا در یک امضا ادغام شوند و پهنای باند شبکه اتریوم کاهش یابد."
+    },
+    {
+      "term": "Precompile",
+      "termFa": "پیش‌کامپایل",
+      "definitionEn": "A special contract built into Ethereum clients in native code for heavy cryptographic operations too expensive for the EVM.",
+      "definitionFa": "قراردادی که در کلاینت‌های اتریوم به زبان بومی پیاده‌سازی شده و عملیات رمزنگاری سنگین را با هزینه ثابت و کم انجام می‌دهد."
+    },
+    {
+      "term": "EIP-7549",
+      "termFa": "ای‌آی‌پی-۷۵۴۹",
+      "definitionEn": "Removes the committee index from attestations, enabling full BLS signature aggregation and reducing data stored per slot.",
+      "definitionFa": "ایندکس کمیته را از تأییدیه‌ها حذف می‌کند تا امضاهای BLS به‌طور کامل ادغام شوند و حجم داده‌ی ذخیره‌شده در هر اسلات کاهش یابد."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "شیریا خواهد",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "en",
+      "wrong": "Shenakht",
+      "right": "Shir ya Khat"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پکچا",
+      "right": "پکترا"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پکچرا",
+      "right": "پکترا"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتریوم",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کنکون",
+      "right": "دنکون"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دنکم",
+      "right": "دنکون"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کانسنسز لیئر",
+      "right": "Consensus Layer"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اگزیکیوشن کلاینت",
+      "right": "Execution Client"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای آی پی چلوسه سی آ هفت",
+      "right": "EIP-4337"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای آی پی چلا هشت هشت",
+      "right": "EIP-4844"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تورنیل و کشت",
+      "right": "تورنادو کش"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زی کی سینک",
+      "right": "zkSync"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پولی مایکر",
+      "right": "پولی‌مارکت"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لایدو",
+      "right": "لیدو"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیکینچین",
+      "right": "Beacon Chain"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای آی پی ۲۳۳۵",
+      "right": "EIP-2935"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیلس",
+      "right": "BLS"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کیزی جی",
+      "right": "KZG"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پیرداس",
+      "right": "PeerDAS"
+    },
+    {
+      "lang": "fa",
+      "wrong": "فوساکا",
+      "right": "فوساکا (Fusaka)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "هولسکی",
+      "right": "هولسکی (Holesky)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سپولیا",
+      "right": "سپولیا (Sepolia)"
+    },
+    {
+      "lang": "en",
+      "wrong": "Holešovský testnet",
+      "right": "Holesky testnet"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای آی پی ۷۷۷۲",
+      "right": "EIP-7702"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای آی پی ۷۲۷",
+      "right": "EIP-7702"
+    },
+    {
+      "lang": "fa",
+      "wrong": "گویتریم",
+      "right": "گو-اتریوم (Geth)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ندرمایند",
+      "right": "Nethermind"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اریگان",
+      "right": "Erigon"
+    }
+  ]
+}

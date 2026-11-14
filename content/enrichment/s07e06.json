@@ -1,0 +1,245 @@
+{
+  "id": "s07e06",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T21:56:12.996Z",
+  "summaryFa": "در این قسمت، هوش مصنوعی و بلاکچین از زوایای فنی و فلسفی بررسی می‌شوند؛ از تفاوت یادگیری ماشین و LLMها و ظهور وایب‌کدینگ با ابزارهایی مانند Claude، Cursor، n8n و ElizaOS، تا عامل‌های هوشمندی که کیف پول دارند، DeFi جیمناستیک انجام می‌دهند و مچ‌میکینگ می‌کنند. بحث‌های عمیقی درباره MCP به عنوان استاندارد اتصال LLM به ابزارها، TEE و رمزنگاری هومومورفیک برای تضمین استقلال واقعی عامل‌ها، نالج‌گراف و وکتور دیتابیس برای حافظه عامل‌ها، و کاربرد AI در حسابرسی امنیتی قراردادهای هوشمند مطرح می‌شود. در حاشیه، سایت شیر یا خط با وایب‌کدینگ زنده بازطراحی می‌شود و نتیجه به‌صورت مستقیم نمایش داده می‌شود.",
+  "summaryEn": "Hosts and guests from AI engineering, hardware design, and crypto backgrounds trace the evolution from task-specific machine learning and if-else logic to LLMs and agentic systems, explaining how vibe coding with tools like Claude Code, Cursor, n8n, LangChain, AutoGen, and ElizaOS lets non-engineers build working products by chatting with AI. The crypto-AI intersection is explored through autonomous \"player\" agents (Spartan trading agent, ai16z treasury, Virtuals on Base) versus delegated \"companion\" agents (conference matchmaking bots built on ElizaOS), with the Model Context Protocol (MCP) explained as an emerging standard for connecting LLMs to external tools, alongside Coinbase's wallet MCP. A substantial segment covers trust and verifiability: how Trusted Execution Environments (Intel SGX enclaves plus code attestation verified at the smart-contract level) can prove an on-chain agent is genuinely autonomous, and how fully homomorphic encryption from projects like Zama AI points toward privacy-preserving AI inference. The episode also covers RAG, vector databases, and knowledge graphs as agent memory layers, AI-assisted smart-contract auditing (catching an off-by-one bug in Balancer V2), EigenLayer AVS, ChaosChain, and the ETHGlobal AI Agent hackathon—while the Shir ya Khat website is rebuilt live through vibe coding.",
+  "quotes": [
+    {
+      "startSec": 397,
+      "fa": "الان تمام این واسطه‌ها لازم نیست. شما فقط می‌گویید به این AI: آقا این چیز را از توی این برایم در بیاور — راحت در می‌آورد. اصلاً غیرقابل باور است.",
+      "en": "Now none of this is needed. You just tell the AI: hey, extract this thing from this for me — and it extracts it easily. It's truly unbelievable.",
+      "speaker": "Amin"
+    },
+    {
+      "startSec": 757,
+      "fa": "یک لحظه‌ای بودم که انگار چراغ روشن شد — این‌که کل لاجیک تغییر کرده. دیگر ماشین برای یک تسک خاص نیست؛ یک سیستم هست که همه‌چیز را می‌فهمد.",
+      "en": "There was a moment where it was like a light turned on — the whole logic has changed. The machine is no longer for one specific task; there's one system that understands everything.",
+      "speaker": "Amin"
+    },
+    {
+      "startSec": 4364,
+      "fa": "در کریپتو ما چیزی داریم به نام «don't trust, verify». ما اینجا نیستیم که بگوییم اوکی، به این AI ایجنت اعتماد می‌کنیم. این یک مسئله بزرگ است که باید حلش کنیم — و خوشبختانه رمزنگاری دوباره اینجاست که کمک کند.",
+      "en": "In crypto we have 'don't trust, verify'. We're not here to say okay, we'll trust this AI agent. This is a big problem we have to solve — and thankfully cryptography is here again to help.",
+      "speaker": "Hamid"
+    },
+    {
+      "startSec": 1965,
+      "fa": "یک سری اصول مهندسی نرم‌افزار خیلی می‌آید وسط دوباره — مثلاً من هر ورژنی که کار می‌کند را در git کامیت می‌کنم که بعداً تغییرات را داشته باشم، چون همان‌طور که در ChatGPT دیده‌اید، بله، هالوسینیت می‌کند.",
+      "en": "Some software engineering fundamentals come back into play again — for example, every version that works I commit to git so I have the changes afterward, because just as you've seen in ChatGPT, yes, it hallucinates.",
+      "speaker": "Shayan"
+    },
+    {
+      "startSec": 5497,
+      "fa": "من prompt هم encrypted است و آن یک encrypted output به من می‌دهد — و وقتی که decryptش می‌کنم، همان چیزی است که واقعاً دنبالش بودم. این خیلی جادوی‌تر است.",
+      "en": "My prompt is also encrypted, and it gives me an encrypted output — and when I decrypt it, it's exactly what I really wanted. That's far more magical.",
+      "speaker": "Hamid"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Large Language Model (LLM)",
+      "termFa": "مدل زبانی بزرگ",
+      "definitionEn": "A neural network trained on vast text data that can generate, translate, and reason over language for a wide range of tasks.",
+      "definitionFa": "شبکه عصبی آموزش‌دیده بر داده‌های متنی گسترده که می‌تواند زبان را برای طیف وسیعی از وظایف تولید، ترجمه و تحلیل کند."
+    },
+    {
+      "term": "AI Agent",
+      "termFa": "عامل هوشمند (AI Agent)",
+      "definitionEn": "An LLM-powered system given a role, prompt, and tools (like API calls) so it can autonomously plan and execute multi-step tasks.",
+      "definitionFa": "سیستمی مبتنی بر LLM که با نقش، پرامپت و ابزارهایی مانند API کال مجهز می‌شود تا وظایف چندمرحله‌ای را خودکار برنامه‌ریزی و اجرا کند."
+    },
+    {
+      "term": "Vibe Coding",
+      "termFa": "وایب‌کدینگ",
+      "definitionEn": "Building software by describing intent in natural language to an AI coding assistant instead of writing code manually.",
+      "definitionFa": "ساخت نرم‌افزار از طریق توصیف هدف به زبان طبیعی برای یک دستیار کدنویسی AI، به جای نوشتن کد به‌صورت دستی."
+    },
+    {
+      "term": "Model Context Protocol (MCP)",
+      "termFa": "پروتکل زمینه مدل (MCP)",
+      "definitionEn": "An open standard introduced by Anthropic that defines how an LLM connects to and calls external tools and data sources.",
+      "definitionFa": "استانداردی باز که توسط Anthropic معرفی شده و نحوه اتصال و فراخوانی ابزارها و منابع داده خارجی توسط یک LLM را تعریف می‌کند."
+    },
+    {
+      "term": "Trusted Execution Environment (TEE)",
+      "termFa": "محیط اجرای امن (TEE)",
+      "definitionEn": "A hardware-isolated CPU enclave (e.g., Intel SGX) that runs code and stores secrets in a tamper-proof region, with cryptographic attestation of what code ran.",
+      "definitionFa": "محفظه‌ای سخت‌افزاری در CPU (مانند Intel SGX) که کد را در ناحیه‌ای غیرقابل دستکاری اجرا می‌کند و با تأیید رمزنگاری اثبات می‌کند چه کدی اجرا شده است."
+    },
+    {
+      "term": "Fully Homomorphic Encryption (FHE)",
+      "termFa": "رمزنگاری هومومورفیک کامل",
+      "definitionEn": "A cryptographic technique that allows computations to be performed directly on encrypted data, returning an encrypted result without exposing the plaintext.",
+      "definitionFa": "روشی رمزنگاری که اجازه می‌دهد محاسبات مستقیماً روی داده رمزشده انجام شود و نتیجه رمزشده بازگردد بدون آن‌که داده خام افشا شود."
+    },
+    {
+      "term": "ElizaOS",
+      "termFa": "الیزاOS",
+      "definitionEn": "An open-source AI agent framework popular in crypto that lets developers build agents with on-chain wallets and blockchain-specific plugins.",
+      "definitionFa": "فریم‌ورک متن‌باز عامل هوشمند که در حوزه کریپتو محبوب است و به توسعه‌دهندگان امکان ساخت عامل‌هایی با کیف پول آنچین و پلاگین‌های مختص بلاکچین را می‌دهد."
+    },
+    {
+      "term": "Retrieval-Augmented Generation (RAG)",
+      "termFa": "تولید با بازیابی تقویت‌شده (RAG)",
+      "definitionEn": "A technique where an LLM retrieves relevant text chunks from an external database before generating a response, reducing hallucination and extending its knowledge.",
+      "definitionFa": "روشی که در آن LLM پیش از تولید پاسخ، بخش‌های متنی مرتبط را از پایگاه داده خارجی بازیابی می‌کند تا هالوسیناسیون کاهش یابد و دانش گسترش پیدا کند."
+    },
+    {
+      "term": "Vector Database",
+      "termFa": "وکتور دیتابیس",
+      "definitionEn": "A database that stores text as numerical embedding vectors so that semantically similar content can be found quickly by similarity search.",
+      "definitionFa": "پایگاه داده‌ای که متن را به‌صورت بردارهای عددی (embedding) ذخیره می‌کند تا محتوای مشابه از نظر معنایی با جستجوی شباهت سریعاً یافته شود."
+    },
+    {
+      "term": "Knowledge Graph",
+      "termFa": "نالج‌گراف",
+      "definitionEn": "A structured network of entities and their relationships (subject–predicate–object triples) that gives AI agents richer, more logical memory than vector search alone.",
+      "definitionFa": "شبکه‌ای ساختاریافته از موجودیت‌ها و روابط آن‌ها (سه‌تایی‌های موضوع–محمول–مفعول) که حافظه‌ای غنی‌تر و منطقی‌تر از جستجوی برداری صرف به عامل‌های هوشمند می‌دهد."
+    },
+    {
+      "term": "EigenLayer AVS",
+      "termFa": "سرویس اعتبارسنج فعال EigenLayer",
+      "definitionEn": "An EigenLayer module where restaked ETH validators run specialized off-chain services (Active Validator Services) with slashing guarantees for misbehavior.",
+      "definitionFa": "ماژولی از EigenLayer که اعتبارسنج‌های دارای ETH ریستیک‌شده، سرویس‌های تخصصی آف‌چین را با ضمانت جریمه در صورت تخلف اجرا می‌کنند."
+    },
+    {
+      "term": "Specification Gaming / Reward Hacking",
+      "termFa": "بازی با مشخصات / هک پاداش",
+      "definitionEn": "When an AI fulfills the literal wording of a goal but violates its intent, finding unintended shortcuts to maximize its reward signal.",
+      "definitionFa": "زمانی که هوش مصنوعی دقیقاً کلمات هدف را برآورده می‌کند اما از منظور واقعی آن منحرف می‌شود و برای بیشینه کردن سیگنال پاداش میان‌برهای ناخواسته می‌یابد."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "en",
+      "wrong": "Sheer ya Khat",
+      "right": "Shir ya Khat"
+    },
+    {
+      "lang": "en",
+      "wrong": "Shenakht",
+      "right": "Shir ya Khat"
+    },
+    {
+      "lang": "fa",
+      "wrong": "الائزا",
+      "right": "الیزا"
+    },
+    {
+      "lang": "en",
+      "wrong": "Eliza",
+      "right": "ElizaOS"
+    },
+    {
+      "lang": "en",
+      "wrong": "Elizaه",
+      "right": "ElizaOS"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لنگ چیند",
+      "right": "LangChain"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لنگ فلو",
+      "right": "LangFlow"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایت گلوبال",
+      "right": "ETHGlobal"
+    },
+    {
+      "lang": "en",
+      "wrong": "ETH Global",
+      "right": "ETHGlobal"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آیگین لیئر",
+      "right": "EigenLayer"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای بی ایس",
+      "right": "AVS"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تورنیدو کشت",
+      "right": "Tornado Cash"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اینتل اس جی اکس",
+      "right": "Intel SGX"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اینکلیف",
+      "right": "enclave"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اینکلایو",
+      "right": "enclave"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اینکلریف",
+      "right": "enclave"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تی ای",
+      "right": "TEE"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تی اتستیشن",
+      "right": "attestation"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کیاس چین",
+      "right": "ChaosChain"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پاکت فلو",
+      "right": "PocketFlow"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اریجن تریل",
+      "right": "OriginTrail"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زامدات ای آی",
+      "right": "Zama AI"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای سیکستین زی",
+      "right": "ai16z"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تروس ترمینال",
+      "right": "Truth Terminal"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بالانسر وی توی",
+      "right": "Balancer V2"
+    },
+    {
+      "lang": "fa",
+      "wrong": "جی تی اکس",
+      "right": "GitCTX"
+    }
+  ]
+}

@@ -1,0 +1,253 @@
+{
+  "id": "s04e06",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:01:46.833Z",
+  "summaryFa": "قسمت پایانی سری دیفای پادکست شیر یا خط به بررسی مکانیزم‌های نقد شدن (لیکوییدیشن)، مدل‌های نرخ بهره بر پایه نرخ مطلوبیت (utilization ratio) در کامپاوند، نرخ بهره ثابت و متغیر در آوه، و وام‌های لحظه‌ای (فلش لون) می‌پردازد. سپس پلتفرم‌های تجمیع وام‌دهی مانند Yearn Finance (ساخته آندره کرونیه)، Harvest و Pickle و مفهوم «دیفای لگو» معرفی می‌شوند. اپیزود با توضیح توکن‌های حکمرانی (COMP، MKR، UNI)، ییلد فارمینگ، کمیابی توکن، خطرات رأی‌گیری با فلش لون، و حمله‌ی خون‌آشامی SushiSwap به استخرهای نقدینگی Uniswap به پایان می‌رسد.",
+  "summaryEn": "The final episode of the Shir Ya Khat DeFi series covers liquidation mechanics and anti-liquidation tools like DeFi Saver, then dives into Compound's utilization-ratio-based interest rate model and Aave's innovations: fixed versus variable rates and flash loans—uncollateralized single-block loans enabled by Ethereum's atomic revert property—used for arbitrage, collateral swaps, and oracle-manipulation attacks. The episode then explores yield aggregators (Yearn Finance, Harvest, Pickle Finance) as decentralized hedge funds built from DeFi Lego composability, and closes with a critical look at governance tokens (COMP, MKR, UNI), yield farming, token scarcity valuation, flash-loan governance attacks, and SushiSwap's vampire attack on Uniswap liquidity.",
+  "quotes": [
+    {
+      "startSec": 1765,
+      "fa": "فلش لون بدون وجود اتریوم اصلاً نمی‌توانست ایجاد بشه؛ همچین مفهومی قبلاً نداشتیم.",
+      "en": "Without Ethereum, flash loans simply couldn't have existed—we never had such a concept before.",
+      "speaker": "Shayan"
+    },
+    {
+      "startSec": 1973,
+      "fa": "شما هیچ پولی را به کسی نمی‌دید و اگر نتواند همان لحظه با سود برگرداند، اصلاً نمی‌تواند این پول را بگیرد.",
+      "en": "You give no money to anyone, and if it can't return everything with profit in that same moment, it simply can't take the money at all.",
+      "speaker": "Shayan"
+    },
+    {
+      "startSec": 3123,
+      "fa": "توکن حکمرانی به خودی خود هیچ ارزشی ندارد و الان مدل ارزش‌گذاری درستی برای این توکن‌ها نداریم.",
+      "en": "A governance token has no intrinsic value on its own, and right now we don't have a proper valuation model for these tokens."
+    },
+    {
+      "startSec": 3429,
+      "fa": "این فلسفه کمیابی است؛ می‌گویند از این توکن بیش از سی هزار تا نیست، پس قطعاً قیمتش بالا خواهد رفت.",
+      "en": "This is the philosophy of scarcity—they say there are no more than thirty thousand of this token, so its price will definitely rise."
+    },
+    {
+      "startSec": 3614,
+      "fa": "شاید یک گروه بتواند با یک فلش لون کنترل سیستم حکمرانی را برای یک لحظه به دست بگیرد.",
+      "en": "A group could potentially use a flash loan to seize control of a governance system for just a moment.",
+      "speaker": "Shayan"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Liquidation",
+      "termFa": "نقد شدن / لیکوییدیشن",
+      "definitionEn": "Forced sale of a borrower's collateral when its value falls below the required collateral ratio.",
+      "definitionFa": "فروش اجباری وثیقه وام‌گیرنده هنگامی که ارزش آن از نسبت وثیقه مورد نیاز پایین‌تر بیاید."
+    },
+    {
+      "term": "Over-collateralization",
+      "termFa": "وثیقه‌گذاری بیش از حد",
+      "definitionEn": "Depositing collateral worth more than the loan amount to protect the protocol against price drops.",
+      "definitionFa": "گذاشتن وثیقه‌ای با ارزش بیشتر از مبلغ وام برای محافظت از پروتکل در برابر کاهش قیمت."
+    },
+    {
+      "term": "Utilization Ratio",
+      "termFa": "نرخ مطلوبیت",
+      "definitionEn": "The ratio of borrowed assets to total supplied assets in a lending pool, used to set interest rates.",
+      "definitionFa": "نسبت دارایی وام‌گرفته‌شده به کل دارایی عرضه‌شده در استخر وام‌دهی که برای تعیین نرخ بهره به‌کار می‌رود."
+    },
+    {
+      "term": "Flash Loan",
+      "termFa": "وام لحظه‌ای / فلش لون",
+      "definitionEn": "An uncollateralized loan borrowed and repaid within a single Ethereum transaction block.",
+      "definitionFa": "وامی بدون وثیقه که در یک تراکنش اتریوم گرفته و بازپرداخت می‌شود."
+    },
+    {
+      "term": "APR / APY",
+      "termFa": "نرخ بهره سالانه",
+      "definitionEn": "Annual Percentage Rate or Yield—the annualized interest rate earned or paid on an asset.",
+      "definitionFa": "نرخ بهره یا بازده سالانه‌ای که روی یک دارایی دریافت یا پرداخت می‌شود."
+    },
+    {
+      "term": "Yield Farming",
+      "termFa": "ییلد فارمینگ / کشت بازده",
+      "definitionEn": "Earning extra token rewards on top of normal interest by supplying or borrowing in DeFi protocols.",
+      "definitionFa": "کسب پاداش توکن اضافه، علاوه بر بهره معمول، با سپرده‌گذاری یا وام‌گرفتن در پروتکل‌های دیفای."
+    },
+    {
+      "term": "Governance Token",
+      "termFa": "توکن حکمرانی",
+      "definitionEn": "A token that grants holders voting rights over protocol upgrades and parameter changes.",
+      "definitionFa": "توکنی که به دارندگانش حق رأی برای تغییر پارامترها و ارتقای پروتکل می‌دهد."
+    },
+    {
+      "term": "Yield Aggregator",
+      "termFa": "تجمیع‌کننده بازده",
+      "definitionEn": "A protocol that automatically moves funds between lending platforms to maximize yield.",
+      "definitionFa": "پروتکلی که به‌صورت خودکار سرمایه را بین پلتفرم‌های وام‌دهی جابه‌جا می‌کند تا بازده را بیشینه کند."
+    },
+    {
+      "term": "Vampire Attack",
+      "termFa": "حمله خون‌آشامی",
+      "definitionEn": "A strategy where a new protocol incentivizes users to migrate their liquidity away from a competitor.",
+      "definitionFa": "استراتژی‌ای که یک پروتکل جدید با آن کاربران را تشویق می‌کند نقدینگی‌شان را از رقیب به خود منتقل کنند."
+    },
+    {
+      "term": "DeFi Legos",
+      "termFa": "لگوهای دیفای",
+      "definitionEn": "The composability of DeFi protocols, allowing them to be stacked and combined like building blocks.",
+      "definitionFa": "قابلیت ترکیب پروتکل‌های دیفای با یکدیگر، مانند قطعات لگو، برای ساختن سیستم‌های پیچیده‌تر."
+    },
+    {
+      "term": "Oracle Manipulation",
+      "termFa": "دستکاری اوراکل",
+      "definitionEn": "Exploiting a protocol's reliance on a single on-chain price source to artificially move prices for profit.",
+      "definitionFa": "سوءاستفاده از وابستگی یک پروتکل به یک منبع قیمتی برای دستکاری قیمت و کسب سود."
+    },
+    {
+      "term": "Atomic Transaction",
+      "termFa": "تراکنش اتمیک",
+      "definitionEn": "An Ethereum transaction that either fully succeeds or completely reverts, with no partial state changes.",
+      "definitionFa": "تراکنشی در اتریوم که یا کاملاً موفق می‌شود یا بازگردانده می‌شود و هیچ تغییر جزئی در وضعیت باقی نمی‌گذارد."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "شیریا خط",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "en",
+      "wrong": "Shir ya Khat",
+      "right": "Shir Ya Khat"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کامپان",
+      "right": "کامپاوند"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کامپانی",
+      "right": "کامپاوند"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کامپاون",
+      "right": "کامپاوند"
+    },
+    {
+      "lang": "fa",
+      "wrong": "وایرن",
+      "right": "Yearn"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اندرکورانیه",
+      "right": "آندره کرونیه"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کرفایننس",
+      "right": "Curve Finance"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کرفتاد فایننس",
+      "right": "Curve Finance"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سوشی سواب",
+      "right": "SushiSwap"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سوشی سواپ",
+      "right": "SushiSwap"
+    },
+    {
+      "lang": "fa",
+      "wrong": "یونی سواب",
+      "right": "Uniswap"
+    },
+    {
+      "lang": "fa",
+      "wrong": "یونی سواپ",
+      "right": "Uniswap"
+    },
+    {
+      "lang": "fa",
+      "wrong": "فلشلون",
+      "right": "فلش لون"
+    },
+    {
+      "lang": "fa",
+      "wrong": "فلاش لون",
+      "right": "فلش لون"
+    },
+    {
+      "lang": "fa",
+      "wrong": "فلاشلون",
+      "right": "فلش لون"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دیفای سیور",
+      "right": "DeFi Saver"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دیوای دیویس",
+      "right": "dYdX"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دی وای دی ایس",
+      "right": "dYdX"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پیکلدار فایننس",
+      "right": "Pickle Finance"
+    },
+    {
+      "lang": "fa",
+      "wrong": "هاربست",
+      "right": "Harvest"
+    },
+    {
+      "lang": "fa",
+      "wrong": "گاورنست توکن",
+      "right": "توکن حکمرانی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "گابرنس توکن",
+      "right": "توکن حکمرانی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "گابرنستوکن",
+      "right": "توکن حکمرانی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "یلد فارمینگ",
+      "right": "ییلد فارمینگ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اسمال کانترکت",
+      "right": "قرارداد هوشمند"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اسمارت کانچک",
+      "right": "قرارداد هوشمند"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سمارت کانترکت",
+      "right": "قرارداد هوشمند"
+    }
+  ]
+}

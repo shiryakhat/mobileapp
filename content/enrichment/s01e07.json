@@ -1,0 +1,248 @@
+{
+  "id": "s01e07",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:09:48.496Z",
+  "summaryFa": "این قسمت به مدیریت کلیدهای بیت‌کوین می‌پردازد و توضیح می‌دهد که کلید خصوصی چگونه کار می‌کند، چه ارتباطی با رمزنگاری کلید عمومی (از جمله RSA و HTTPS) دارد، و چرا تراکنش بیت‌کوین در واقع انتقال مالکیت است نه جابه‌جایی فیزیکی. روش‌های مختلف نگهداری کلید خصوصی—از کیف‌پول کاغذی و brain wallet تا کیف‌پول‌های سخت‌افزاری مانند Ledger Nano و Trezor، کیف‌پول‌های وب مانند MyEtherWallet و Blockchain.info، آدرس‌های مالتی‌سیگ، و HD walletها با seed phrase بیست‌وچهارکلمه‌ای—با مزایا و معایب هر کدام بررسی می‌شوند. بخش پایانی شامل گزارش بازار (قیمت بیت‌کوین در کانال صعودی نزدیک به ۱۳۰۰–۱۵۰۰ دلار، تأثیر Tether بر اختلاف قیمت پولونیکس، دیلیست شدن آلت‌کوین‌ها، و تأثیر رشد بیت‌کوین بر قیمت آلت‌کوین‌ها) و فراخوان همکاری با کوین‌ایران و مسابقه طراحی لوگوی دیجی‌ارز است.",
+  "summaryEn": "The episode covers Bitcoin key management end-to-end: how public-key cryptography underpins both HTTPS/RSA and Bitcoin addresses, and why a Bitcoin transaction transfers ownership on the blockchain rather than moving coins. The hosts survey every major private-key storage method—paper wallets (bitaddress.org), brain wallets and their brute-force risks, software wallets on disk (Bitcoin Core, Armory), hardware wallets (Ledger Nano, Trezor), web wallets (Blockchain.info, MyEtherWallet, Mycelium, Copay), multisig addresses, and HD/BIP39 deterministic wallets—weighing security against usability throughout. The episode closes with a market report on Bitcoin's ascending price channel near $1,300–$1,500, the Poloniex–Tether price gap, the Poloniex altcoin delistings, Bitcoin's bearish pressure on altcoins, and a call for contributors to earn Bitcoin by working with Coin Iran and entering the DigiArz logo-design contest.",
+  "quotes": [
+    {
+      "startSec": 166,
+      "fa": "در واقع چیزی ارسال نمی‌شه؛ شما مالکیت اون مقدار کوین رو تأیید می‌کنین که به آدرس خروجی منتقل بشه.",
+      "en": "Nothing is actually sent — you confirm the ownership of that amount of coin so it transfers to the output address.",
+      "speaker": "Shayan"
+    },
+    {
+      "startSec": 1418,
+      "fa": "یکی از مقام‌های دولتی انگلیس داشت توی تلویزیون از بیتکوین صحبت می‌کرد و کیف‌پول هدیه‌اش رو جلوی دوربین نشون داد؛ کمتر از یک دقیقه طول کشید که بیتکوین‌هاش خالی شد.",
+      "en": "A British government official was talking about Bitcoin on TV and showed his gift wallet on camera — it took less than a minute for his Bitcoin to be emptied.",
+      "speaker": "Shayan"
+    },
+    {
+      "startSec": 2711,
+      "fa": "بیتکوین مثل یک کیف‌پول شیشه‌ایه: داخلش مشخصه چقدر ارزش داره و کجا می‌ره، اما صاحبش نامریئه — مگر این‌که خودش اعلام کنه.",
+      "en": "Bitcoin is like a glass wallet: you can see exactly how much is in it and where it goes, but the owner is invisible — unless they declare themselves."
+    },
+    {
+      "startSec": 1996,
+      "fa": "ایدئولوژی بیتکوین اینه که هر کسی مسئول پول خودشه؛ مثل ویزا کارت نیست که اگه دزدیده بشه برگردونن.",
+      "en": "The ideology of Bitcoin is that everyone is responsible for their own money — it's not like a Visa card where if it's stolen they refund you.",
+      "speaker": "Shayan"
+    },
+    {
+      "startSec": 3504,
+      "fa": "یک تریدر همیشه در جهت باد حرکت می‌کنه؛ اگه دو ساعت بعد بازار عوض شد و نظرم فرق کرد، معنیش اینه که بازار تغییر کرده، نه اینکه سر حرف خودم وایسادم.",
+      "en": "A trader always moves in the direction of the wind — if my view changes two hours later, it means the market changed, not that I went back on my word."
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Private Key",
+      "termFa": "کلید خصوصی",
+      "definitionEn": "A secret cryptographic number that proves ownership of a Bitcoin address and authorizes spending.",
+      "definitionFa": "عددی رمزنگاری‌شده و محرمانه که مالکیت یک آدرس بیت‌کوین را اثبات می‌کند و خرج کردن از آن را مجاز می‌سازد."
+    },
+    {
+      "term": "Public Key",
+      "termFa": "کلید عمومی",
+      "definitionEn": "The publicly shareable counterpart to the private key, used to verify signatures and derive a Bitcoin address.",
+      "definitionFa": "طرف قابل‌اشتراک‌گذاری کلید خصوصی که برای تأیید امضا و ساخت آدرس بیت‌کوین استفاده می‌شود."
+    },
+    {
+      "term": "Paper Wallet",
+      "termFa": "کیف‌پول کاغذی",
+      "definitionEn": "A printed document containing a Bitcoin private key and address, kept entirely offline for cold storage.",
+      "definitionFa": "سندی چاپ‌شده حاوی کلید خصوصی و آدرس بیت‌کوین که به‌صورت کاملاً آفلاین نگهداری می‌شود."
+    },
+    {
+      "term": "Hardware Wallet",
+      "termFa": "کیف‌پول سخت‌افزاری",
+      "definitionEn": "A dedicated physical device (e.g., Ledger Nano, Trezor) that stores private keys offline and signs transactions securely.",
+      "definitionFa": "دستگاه فیزیکی اختصاصی مانند Ledger Nano یا Trezor که کلید خصوصی را آفلاین نگه می‌دارد و تراکنش را امن امضا می‌کند."
+    },
+    {
+      "term": "Multisig (Multi-signature)",
+      "termFa": "مالتی‌سیگ / چندامضایی",
+      "definitionEn": "An address requiring signatures from multiple private keys before funds can be spent, similar to a joint bank account.",
+      "definitionFa": "آدرسی که برای خرج کردن به امضای چند کلید خصوصی نیاز دارد، شبیه به حساب مشترک بانکی."
+    },
+    {
+      "term": "HD Wallet (Hierarchical Deterministic Wallet)",
+      "termFa": "کیف‌پول سلسله‌مراتبی-قطعی",
+      "definitionEn": "A wallet that generates an unlimited tree of key pairs from a single master seed, simplifying backup.",
+      "definitionFa": "کیف‌پولی که از یک seed اصلی، درختی نامحدود از جفت‌کلید تولید می‌کند و پشتیبان‌گیری را ساده می‌سازد."
+    },
+    {
+      "term": "BIP39 Seed Phrase",
+      "termFa": "عبارت بازیابی BIP39",
+      "definitionEn": "A human-readable backup of 12 or 24 words that can regenerate an entire HD wallet's private keys.",
+      "definitionFa": "پشتیبانی خوانا از ۱۲ یا ۲۴ کلمه که می‌تواند تمام کلیدهای خصوصی یک HD wallet را بازسازی کند."
+    },
+    {
+      "term": "Brain Wallet",
+      "termFa": "کیف‌پول ذهنی",
+      "definitionEn": "A private key derived from a memorized passphrase, vulnerable to brute-force attacks if the phrase is guessable.",
+      "definitionFa": "کلید خصوصی‌ای که از یک عبارت حفظ‌شده مشتق می‌شود و در برابر حملات brute-force آسیب‌پذیر است."
+    },
+    {
+      "term": "SHA-256",
+      "termFa": "SHA-256",
+      "definitionEn": "The cryptographic hash function used in Bitcoin's proof-of-work and address generation.",
+      "definitionFa": "تابع درهم‌سازی رمزنگاری که در اثبات کار بیت‌کوین و تولید آدرس استفاده می‌شود."
+    },
+    {
+      "term": "Hash Collision",
+      "termFa": "تصادم هش",
+      "definitionEn": "When two different inputs produce the same hash output, undermining a hash function's security.",
+      "definitionFa": "زمانی که دو ورودی متفاوت یک خروجی هش یکسان تولید می‌کنند و امنیت تابع هش را زیر سؤال می‌برد."
+    },
+    {
+      "term": "Tether (USDT)",
+      "termFa": "تتر",
+      "definitionEn": "A fiat-pegged stablecoin used on Poloniex instead of real dollars, causing price discrepancies with other exchanges.",
+      "definitionFa": "استیبل‌کوینی که به دلار متصل است و در پولونیکس به‌جای دلار واقعی استفاده می‌شود و اختلاف قیمت ایجاد می‌کند."
+    },
+    {
+      "term": "MyEtherWallet",
+      "termFa": "مای‌اتر والت",
+      "definitionEn": "An open-source, client-side web wallet for Ethereum that never transmits your private key to any server.",
+      "definitionFa": "کیف‌پول وب اتریوم با کد باز که کاملاً سمت کلاینت اجرا می‌شود و کلید خصوصی را هرگز به سرور ارسال نمی‌کند."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "شیریاخت",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "en",
+      "wrong": "Shir-ya-Khat",
+      "right": "Shir Ya Khat"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکوین کیو تی",
+      "right": "Bitcoin Core (Bitcoin QT)"
+    },
+    {
+      "lang": "en",
+      "wrong": "Bitcoin QT",
+      "right": "Bitcoin Core"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکوین آرمری",
+      "right": "Bitcoin Armory"
+    },
+    {
+      "lang": "en",
+      "wrong": "Bitcoin Armory",
+      "right": "Armory"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لیجر ایس",
+      "right": "Ledger Nano"
+    },
+    {
+      "lang": "en",
+      "wrong": "Ledger Nano S",
+      "right": "Ledger Nano"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بلاکشن دات اینفو",
+      "right": "Blockchain.info"
+    },
+    {
+      "lang": "en",
+      "wrong": "blockchain.info",
+      "right": "Blockchain.info"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مای مونرو",
+      "right": "MyMonero"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مای ایتریون والت",
+      "right": "MyEtherWallet"
+    },
+    {
+      "lang": "en",
+      "wrong": "MyEther Wallet",
+      "right": "MyEtherWallet"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مایسیلیون",
+      "right": "Mycelium"
+    },
+    {
+      "lang": "en",
+      "wrong": "Mycelium wallet",
+      "right": "Mycelium"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کوپی",
+      "right": "Copay"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتگو",
+      "right": "BitGo"
+    },
+    {
+      "lang": "fa",
+      "wrong": "beataddress.org",
+      "right": "bitaddress.org"
+    },
+    {
+      "lang": "en",
+      "wrong": "beataddress.org",
+      "right": "bitaddress.org"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیب 39",
+      "right": "BIP39"
+    },
+    {
+      "lang": "en",
+      "wrong": "BIP 39",
+      "right": "BIP39"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اکس پی آر وی",
+      "right": "xprv"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زیکش",
+      "right": "Zcash"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پولونیکس",
+      "right": "Poloniex"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتفینیکس",
+      "right": "Bitfinex"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اوکیکوین",
+      "right": "OKCoin"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دی جی ارز",
+      "right": "دیجی‌ارز"
+    }
+  ]
+}

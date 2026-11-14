@@ -1,0 +1,248 @@
+{
+  "id": "s04e05",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:02:49.254Z",
+  "summaryFa": "در این قسمت از سری دیفای پادکست شیر یا خط، مفهوم وام‌دهی به‌عنوان یک بلاک ساختاری کلیدی در اقتصاد و دیفای بررسی می‌شود. مهمان‌ها ابتدا تاریخچه وام‌دهی در دنیای رمزارز را از پلتفرم‌های همتا‌به‌همتای اولیه مانند BTCJam و هودل‌هودل (با مکانیزم چندامضایی) مرور می‌کنند و ریسک‌های قانونی و طرف مقابل را برجسته می‌سازند. سپس با بررسی پروتکل کامپاوند، مفاهیم استخر نقدینگی، توکن‌های رپ‌شده (WBTC و renBTC) و بیش‌وثیقه‌گذاری با ضریب وثیقه (C Factor) توضیح داده می‌شود؛ بحث لیکویدیشن و نرخ بهره به قسمت بعد موکول می‌شود.",
+  "summaryEn": "This episode of the DeFi series covers lending as the final structural building block of a complete on-chain financial system, contrasting it with traditional fractional-reserve banking and money creation. The hosts trace crypto lending's history from reputation-based peer-to-peer platforms like BTCJam and multisig-based services like Hodl Hodl, highlighting their legal and counterparty risks and the distinction between distributed and truly decentralized. The core discussion centers on Compound Finance's pool-based model, wrapped tokens (WBTC, renBTC via MPC, and WETH), over-collateralization, and the collateral factor (C factor) that sets borrowing limits per asset's volatility, with liquidation and interest-rate mechanics deferred to the next episode.",
+  "quotes": [
+    {
+      "startSec": 427,
+      "fa": "وام‌دهی یک چیز ساختاری است، یک بیلدینگ بلاک است؛ بدون وام خیلی از این کارها را نمی‌توانیم انجام دهیم.",
+      "en": "Lending is a structural thing, a building block — without loans we can't do many of these things.",
+      "speaker": "مهدی"
+    },
+    {
+      "startSec": 2092,
+      "fa": "اینجا شما به یک قرارداد هوشمند پولتان را قرض می‌دهید؛ یک قرارداد هوشمند کاملاً بی‌طرف است و زبان کامپیوتر اصلاً احساسی توش وجود ندارد.",
+      "en": "Here you're lending your money to a smart contract — a smart contract that is completely neutral; there's no emotion in computer code that would take anyone's side."
+    },
+    {
+      "startSec": 1590,
+      "fa": "به وضوح هودل‌هودل دیسنترال نیست؛ یکم دیستریبیوتد است، شاید، ولی دیسنترال اصلاً نیست.",
+      "en": "Clearly Hodl Hodl is not decentralized — it's somewhat distributed, maybe, but decentralized it absolutely is not.",
+      "speaker": "مهدی"
+    },
+    {
+      "startSec": 2365,
+      "fa": "رپ توکن مفهومش این بود: یک قرارداد هوشمند تعریف می‌کرد که اگر یک بیت‌کوین انداختی توی آن، من یک WBTC بهت می‌دم که قیمتش دقیقاً با خود بیت‌کوین برابر است.",
+      "en": "The concept of a wrapped token was this: a smart contract would say, if you put one Bitcoin in, I give you one WBTC whose price equals Bitcoin itself.",
+      "speaker": "رزا"
+    },
+    {
+      "startSec": 3249,
+      "fa": "سی‌فکتور برای اتر هفتاد و پنج درصد است؛ یعنی به‌اندازه هفتاد و پنج درصد ارزش آن اتری که گذاشتی می‌توانی از طرف دیگر یک کوین دیگر وام بگیری.",
+      "en": "The C factor for ETH is seventy-five percent — meaning you can borrow another coin worth up to seventy-five percent of the ETH value you deposited."
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Lending Protocol",
+      "termFa": "پروتکل وام‌دهی",
+      "definitionEn": "A smart-contract system that lets users deposit crypto as collateral and borrow a different asset against it.",
+      "definitionFa": "سیستمی مبتنی بر قرارداد هوشمند که به کاربران امکان می‌دهد رمزارز را به‌عنوان وثیقه بگذارند و در ازا، رمزارز دیگری قرض بگیرند."
+    },
+    {
+      "term": "Compound Finance",
+      "termFa": "کامپاوند فایننس",
+      "definitionEn": "A pioneer DeFi lending protocol on Ethereum where pooled assets earn interest and can be borrowed against collateral.",
+      "definitionFa": "یکی از نخستین پروتکل‌های وام‌دهی دیفای روی اتریوم که دارایی‌های جمع‌شده در استخر سود تولید می‌کنند و می‌توان در ازای وثیقه از آن‌ها وام گرفت."
+    },
+    {
+      "term": "Over-Collateralization",
+      "termFa": "بیش‌وثیقه‌گذاری",
+      "definitionEn": "Requiring a borrower to deposit collateral worth more than the loan value to protect the protocol against price drops.",
+      "definitionFa": "الزام وام‌گیرنده به گذاشتن وثیقه‌ای با ارزش بیشتر از مقدار وام، برای محافظت پروتکل در برابر کاهش قیمت."
+    },
+    {
+      "term": "Collateral Factor (C Factor)",
+      "termFa": "ضریب وثیقه (سی‌فکتور)",
+      "definitionEn": "A per-asset ratio in Compound that sets the maximum borrowing power as a percentage of deposited collateral value.",
+      "definitionFa": "نسبتی که در کامپاوند برای هر دارایی تعریف می‌شود و حداکثر میزان وام‌گیری را به‌صورت درصدی از ارزش وثیقه مشخص می‌کند."
+    },
+    {
+      "term": "Wrapped Token",
+      "termFa": "توکن رپ‌شده",
+      "definitionEn": "An ERC-20 token on Ethereum pegged one-to-one to an off-chain asset (e.g., Bitcoin), enabling that asset's use in DeFi.",
+      "definitionFa": "توکن ERC-20 روی اتریوم که به نسبت یک‌به‌یک با یک دارایی خارج از زنجیره (مثل بیت‌کوین) پشتیبانی می‌شود و استفاده از آن دارایی را در دیفای ممکن می‌سازد."
+    },
+    {
+      "term": "WBTC (Wrapped Bitcoin)",
+      "termFa": "بیت‌کوین رپ‌شده",
+      "definitionEn": "An ERC-20 token backed one-to-one by real Bitcoin held in multisig custody, bringing BTC into Ethereum DeFi.",
+      "definitionFa": "توکن ERC-20 که با بیت‌کوین واقعی نگهداری‌شده در کیف‌پول چندامضایی پشتیبانی می‌شود و بیت‌کوین را وارد دیفای اتریوم می‌کند."
+    },
+    {
+      "term": "renBTC",
+      "termFa": "رن‌بیتی‌سی",
+      "definitionEn": "A decentralized wrapped Bitcoin using multi-party computation (MPC) rather than a central custodian like BitGo.",
+      "definitionFa": "نسخه‌ای غیرمتمرکز از بیت‌کوین رپ‌شده که به‌جای متولی مرکزی از محاسبات چندطرفه (MPC) استفاده می‌کند."
+    },
+    {
+      "term": "WETH (Wrapped Ether)",
+      "termFa": "اتر رپ‌شده",
+      "definitionEn": "An ERC-20 version of Ether that lets smart contracts handle ETH and ERC-20 tokens through a single uniform interface.",
+      "definitionFa": "نسخه ERC-20 اتر که به قراردادهای هوشمند اجازه می‌دهد اتر و توکن‌های ERC-20 را از طریق یک رابط یکسان مدیریت کنند."
+    },
+    {
+      "term": "Liquidity Pool",
+      "termFa": "استخر نقدینگی",
+      "definitionEn": "A smart contract holding reserves of one or more tokens that users can lend to or borrow from.",
+      "definitionFa": "قراردادی هوشمند که ذخایر یک یا چند توکن را نگه می‌دارد و کاربران می‌توانند به آن وام بدهند یا از آن وام بگیرند."
+    },
+    {
+      "term": "Counterparty Risk",
+      "termFa": "ریسک طرف مقابل",
+      "definitionEn": "The risk that a borrower defaults or disappears without repaying the loan, causing losses to lenders or the protocol.",
+      "definitionFa": "ریسکی که وام‌گیرنده بدون بازپرداخت وام ناپدید شود یا نکول کند و به وام‌دهندگان یا پروتکل زیان وارد کند."
+    },
+    {
+      "term": "Multisig (Multi-Signature)",
+      "termFa": "چندامضایی (مالتی‌سیگ)",
+      "definitionEn": "A wallet or account requiring approval from multiple private keys before funds can be moved.",
+      "definitionFa": "کیف‌پول یا حسابی که برای جابه‌جایی وجوه نیاز به تأیید چند کلید خصوصی مختلف دارد."
+    },
+    {
+      "term": "Money Multiplier",
+      "termFa": "ضریب فزاینده خلق پول",
+      "definitionEn": "The factor by which an initial bank deposit expands into a larger money supply through repeated lending cycles.",
+      "definitionFa": "ضریبی که نشان می‌دهد یک سپرده اولیه بانکی از طریق چرخه‌های متوالی وام‌دهی چند برابر می‌شود."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "en",
+      "wrong": "Shiakht podcast",
+      "right": "Shir ya Khat podcast"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتیسی جم",
+      "right": "BTCJam"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پیتیسی جمع",
+      "right": "BTCJam"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لنداب",
+      "right": "لنداپ"
+    },
+    {
+      "lang": "en",
+      "wrong": "Lendab",
+      "right": "LandUp"
+    },
+    {
+      "lang": "fa",
+      "wrong": "هودل هودل",
+      "right": "Hodl Hodl"
+    },
+    {
+      "lang": "fa",
+      "wrong": "رن بی تی سی",
+      "right": "renBTC"
+    },
+    {
+      "lang": "en",
+      "wrong": "RenBTC",
+      "right": "renBTC"
+    },
+    {
+      "lang": "fa",
+      "wrong": "رنبیتیسی",
+      "right": "renBTC"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کامپاوند",
+      "right": "Compound"
+    },
+    {
+      "lang": "en",
+      "wrong": "Compound",
+      "right": "Compound Finance"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ملتی سیک",
+      "right": "مالتی‌سیگ"
+    },
+    {
+      "lang": "en",
+      "wrong": "multisig",
+      "right": "multi-signature"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اوورکولاتریزیشن",
+      "right": "بیش‌وثیقه‌گذاری (over-collateralization)"
+    },
+    {
+      "lang": "en",
+      "wrong": "over-collateralized",
+      "right": "over-collateralization"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سی ریشیو",
+      "right": "C Factor (ضریب وثیقه)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سی فکتور",
+      "right": "C Factor"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایار سی توانی",
+      "right": "ERC-20"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتگو",
+      "right": "BitGo"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ملتی پارتی کامپیوتیشن",
+      "right": "محاسبات چندطرفه (MPC)"
+    },
+    {
+      "lang": "en",
+      "wrong": "multi-party computation",
+      "right": "multi-party computation (MPC)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "یو استی سی",
+      "right": "USDC"
+    },
+    {
+      "lang": "fa",
+      "wrong": "یو استی سین",
+      "right": "USDC"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تیتر",
+      "right": "تتر (Tether)"
+    },
+    {
+      "lang": "en",
+      "wrong": "Tether",
+      "right": "Tether (USDT)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کپان ویتکوین",
+      "right": "WBTC (رپت بیت‌کوین)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ربط ایتریوم",
+      "right": "WETH (رپت اتریوم)"
+    }
+  ]
+}
