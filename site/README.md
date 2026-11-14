@@ -3,8 +3,8 @@
 Static site for the Shir ya Khat app, published with GitHub Pages at
 **https://shiryakhat.app** (privacy policy at **https://shiryakhat.app/privacy**).
 
-Plain HTML/CSS and a few lines of vanilla JS. No build step, no dependencies,
-no third-party requests (the font is self-hosted).
+Plain HTML/CSS and vanilla JS. No build step and no third-party requests: the
+font and three.js are self-hosted.
 
 ```
 site/
@@ -12,12 +12,47 @@ site/
 ├── privacy/index.html    privacy policy (FA + EN)
 ├── assets/
 │   ├── site.css          styles; colours mirror the app's "ink and brass" tokens
-│   ├── site.js           language toggle + coin flip
+│   ├── site.js           language toggle + lazy loader for the coin
+│   ├── coin.js           the 3D coin (ES module, loaded after first paint)
+│   ├── logo.webp         Shir ya Khat logo, the source for both coin faces
+│   ├── coin-heads.webp   still renders of the coin: no-JS, reduced-motion
+│   ├── coin-tails.webp   and no-WebGL fallback
+│   ├── vendor/           three.js (MIT), tree-shaken to what coin.js imports
 │   ├── fonts/            Vazirmatn variable font (SIL OFL)
 │   └── badges/           official App Store / Google Play badges
 ├── CNAME                 shiryakhat.app
 └── .nojekyll
 ```
+
+## The coin
+
+`coin.js` builds everything from `logo.webp` at runtime: heads (شیر) is the
+logo inlaid in colour under a clear coat, tails (خط) is the same artwork struck
+in brass relief (height field → normal map), plus a beaded rim and reeded edge.
+Reflections come from a small generated studio environment, so there is no HDR
+file to ship.
+
+- It idles with a slow turn, flips once on load and again on every tap.
+- `site.js` imports it only after `load`, and not at all with
+  `prefers-reduced-motion`, Save-Data, or no WebGL. In those cases, and with
+  JavaScript off, the still images stand in (a tap cross-fades between them).
+- Rendering pauses when the coin is off screen or the tab is hidden.
+
+The logo comes from `img/favicon/` in
+[shiryakhat/website](https://github.com/shiryakhat/website) (its `favicon.svg`
+only wraps a 1000px PNG, so the raster is used directly).
+
+To rebuild `vendor/three.min.js` after changing which three.js classes
+`coin.js` uses, edit `vendor/three.entry.js` and run, in a scratch folder with
+`three` installed:
+
+```sh
+npx esbuild three.entry.js --bundle --minify --format=esm --target=es2020 \
+  --legal-comments=inline --outfile=three.min.js
+```
+
+If the coin's look changes, re-capture `coin-heads.webp` / `coin-tails.webp`
+(480×720, transparent) from `.coin-stage` with `mount(stage, { face, still: true })`.
 
 ## View locally
 
@@ -83,8 +118,8 @@ Check DNS with `dig shiryakhat.app +noall +answer`.
 ## TODOs before launch
 
 - `index.html`: replace the two store badge links (search for `TODO`) with the
-  live App Store / Google Play URLs, then remove `aria-disabled="true"` and the
-  "Coming soon" line.
+  live App Store / Google Play URLs (bundle id `net.shiryakhat.app`), then
+  remove `aria-disabled="true"` and the "Coming soon" line.
 - `privacy/index.html`: confirm the contact address (`info@shiryakhat.net` is
   a placeholder) and that the issues link points at a public repo.
 - Update the "last updated" date in both languages whenever the policy changes.
