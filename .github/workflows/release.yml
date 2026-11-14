@@ -1,0 +1,256 @@
+# Release pipeline: tag -> EAS Build -> TestFlight / Google Play internal track.
+# Full documentation, secrets and one-time setup: docs/release.md
+#
+# App-agnostic on purpose: nothing in this file names the app. Everything
+# app-specific comes from app config, eas.json and repository secrets/variables.
+name: Release
+
+on:
+  push:
+    tags: ['v*']
+  workflow_dispatch:
+    inputs:
+      platform:
+        description: Platform to build and submit
+        type: choice
+        options: [all, ios, android]
+        default: all
+      submit:
+        description: Submit the build to the store (TestFlight / Play internal)
+        type: boolean
+        default: true
+
+permissions:
+  contents: read
+
+# One release per ref at a time; never cancel a release half-way through.
+concurrency:
+  group: release-${{ github.ref }}
+  cancel-in-progress: false
+
+env:
+  NODE_VERSION: 24
+  EAS_BUILD_PROFILE: production
+  EAS_SUBMIT_PROFILE: production
+
+jobs:
+  verify:
+    name: Verify (lint, typecheck, test)
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Check that the tag matches the app version
+        if: github.event_name == 'push'
+        env:
+          TAG: ${{ github.ref_name }}
+        run: |
+          app_version="$(npx expo config --json | jq -r '.version')"
+          if [ "$TAG" != "v${app_version}" ]; then
+            echo "::error::Tag '${TAG}' does not match the app config version '${app_version}' (expected 'v${app_version}'). See docs/release.md."
+            exit 1
+          fi
+
+      - name: Lint
+        run: npm run lint
+
+      - name: Typecheck
+        run: npm run typecheck
+
+      - name: Test
+        run: npm test
+
+  release:
+    name: Build and submit (${{ matrix.platform }})
+    needs: verify
+    runs-on: ubuntu-latest
+    # Covers queueing + building on EAS. The runner only waits; raise this if
+    # builds sit in the EAS queue for long.
+    timeout-minutes: 120
+    strategy:
+      # iOS and Android succeed or fail independently.
+      fail-fast: false
+      matrix:
+        # Tag pushes have no inputs, so they fall through to both platforms.
+        platform: ${{ fromJSON(inputs.platform == 'ios' && '["ios"]' || inputs.platform == 'android' && '["android"]' || '["ios","android"]') }}
+    env:
+      PLATFORM: ${{ matrix.platform }}
+      EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v7
+        with:
+          node-version: ${{ env.NODE_VERSION }}
+          cache: npm
+
+      - name: Set up EAS CLI
+        uses: expo/expo-github-action@v9
+        with:
+          eas-version: latest
+          packager: npm
+          token: ${{ secrets.EXPO_TOKEN }}
+
+      - name: Install dependencies
+        run: npm ci
+
+      # --- Credentials -------------------------------------------------------
+      # Key files are written to RUNNER_TEMP: outside the checkout, so they are
+      # never part of the project archive uploaded to EAS Build.
+
+      - name: Write App Store Connect API key
+        if: matrix.platform == 'ios'
+        env:
+          ASC_API_KEY_P8: ${{ secrets.ASC_API_KEY_P8 }}
+          ASC_KEY_ID: ${{ secrets.ASC_KEY_ID }}
+          ASC_ISSUER_ID: ${{ secrets.ASC_ISSUER_ID }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+          APPLE_TEAM_TYPE: ${{ vars.APPLE_TEAM_TYPE || 'INDIVIDUAL' }}
+        run: |
+          set -euo pipefail
+          for name in ASC_API_KEY_P8 ASC_KEY_ID ASC_ISSUER_ID APPLE_TEAM_ID; do
+            if [ -z "${!name}" ]; then
+              echo "::error::Repository secret ${name} is not set. See docs/release.md."
+              exit 1
+            fi
+          done
+
+          key_path="${RUNNER_TEMP}/AuthKey.p8"
+          umask 077
+          # Accept the .p8 either as its raw PEM text or base64-encoded.
+          case "$ASC_API_KEY_P8" in
+            *"BEGIN PRIVATE KEY"*) printf '%s\n' "$ASC_API_KEY_P8" > "$key_path" ;;
+            *) printf '%s' "$ASC_API_KEY_P8" | base64 --decode > "$key_path" ;;
+          esac
+
+          {
+            # Read by `eas build` to validate / repair iOS credentials.
+            echo "EXPO_ASC_API_KEY_PATH=${key_path}"
+            echo "EXPO_ASC_KEY_ID=${ASC_KEY_ID}"
+            echo "EXPO_ASC_ISSUER_ID=${ASC_ISSUER_ID}"
+            echo "EXPO_APPLE_TEAM_ID=${APPLE_TEAM_ID}"
+            echo "EXPO_APPLE_TEAM_TYPE=${APPLE_TEAM_TYPE}"
+            # Interpolated into submit.production.ios in eas.json by `eas submit`.
+            echo "ASC_API_KEY_PATH=${key_path}"
+            echo "ASC_API_KEY_ID=${ASC_KEY_ID}"
+            echo "ASC_API_KEY_ISSUER_ID=${ASC_ISSUER_ID}"
+          } >> "$GITHUB_ENV"
+
+      - name: Write Google Play service account key
+        if: matrix.platform == 'android' && (github.event_name == 'push' || inputs.submit)
+        env:
+          GOOGLE_SERVICE_ACCOUNT_KEY_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY_JSON }}
+        run: |
+          set -euo pipefail
+          if [ -z "$GOOGLE_SERVICE_ACCOUNT_KEY_JSON" ]; then
+            echo "::error::Repository secret GOOGLE_SERVICE_ACCOUNT_KEY_JSON is not set. See docs/release.md."
+            exit 1
+          fi
+
+          key_path="${RUNNER_TEMP}/google-service-account.json"
+          umask 077
+          # Accept the key either as raw JSON or base64-encoded.
+          case "$GOOGLE_SERVICE_ACCOUNT_KEY_JSON" in
+            "{"*) printf '%s' "$GOOGLE_SERVICE_ACCOUNT_KEY_JSON" > "$key_path" ;;
+            *) printf '%s' "$GOOGLE_SERVICE_ACCOUNT_KEY_JSON" | base64 --decode > "$key_path" ;;
+          esac
+          jq -e '.type == "service_account"' "$key_path" > /dev/null \
+            || { echo "::error::GOOGLE_SERVICE_ACCOUNT_KEY_JSON is not a service account key."; exit 1; }
+
+          # Interpolated into submit.production.android in eas.json by `eas submit`.
+          echo "GOOGLE_SERVICE_ACCOUNT_KEY_PATH=${key_path}" >> "$GITHUB_ENV"
+
+      # --- Build -------------------------------------------------------------
+
+      - name: Build on EAS
+        id: build
+        run: |
+          set -euo pipefail
+          # --json prints the finished build(s) on stdout; logs go to stderr.
+          eas build \
+            --platform "$PLATFORM" \
+            --profile "$EAS_BUILD_PROFILE" \
+            --non-interactive \
+            --json > "${RUNNER_TEMP}/build.json"
+
+          build_id="$(jq -rs 'last | .[0].id // empty' "${RUNNER_TEMP}/build.json")"
+          if [ -z "$build_id" ]; then
+            echo "::error::Could not read the build id from the EAS CLI output."
+            exit 1
+          fi
+          echo "build-id=${build_id}" >> "$GITHUB_OUTPUT"
+
+          {
+            echo "### ${PLATFORM} build"
+            jq -rs 'last | .[0] | "- Build: `\(.id)`\n- Version: \(.appVersion // "?") (\(.appBuildVersion // "?"))\n- Status: \(.status // "?")"' "${RUNNER_TEMP}/build.json"
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      # --- Submit ------------------------------------------------------------
+      # ascAppId / appleTeamId / releaseStatus are not interpolated from the
+      # environment by EAS CLI, so they are merged into eas.json here (after
+      # the build, in the throwaway checkout) to keep identifiers out of git.
+
+      - name: Submit to TestFlight
+        if: matrix.platform == 'ios' && (github.event_name == 'push' || inputs.submit)
+        env:
+          BUILD_ID: ${{ steps.build.outputs.build-id }}
+          ASC_APP_ID: ${{ secrets.ASC_APP_ID }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+        run: |
+          set -euo pipefail
+          if [ -z "$ASC_APP_ID" ]; then
+            echo "::error::Repository secret ASC_APP_ID is not set. See docs/release.md."
+            exit 1
+          fi
+
+          jq --arg profile "$EAS_SUBMIT_PROFILE" --arg app "$ASC_APP_ID" --arg team "$APPLE_TEAM_ID" \
+            '.submit[$profile].ios += {ascAppId: $app, appleTeamId: $team}' \
+            eas.json > "${RUNNER_TEMP}/eas.json"
+          mv "${RUNNER_TEMP}/eas.json" eas.json
+
+          eas submit \
+            --platform ios \
+            --profile "$EAS_SUBMIT_PROFILE" \
+            --id "$BUILD_ID" \
+            --non-interactive \
+            --wait
+
+      - name: Submit to Google Play (internal track)
+        if: matrix.platform == 'android' && (github.event_name == 'push' || inputs.submit)
+        env:
+          BUILD_ID: ${{ steps.build.outputs.build-id }}
+          # Optional repository variable: set to `draft` while the Play app
+          # itself is still a draft (before its first review).
+          PLAY_RELEASE_STATUS: ${{ vars.PLAY_RELEASE_STATUS }}
+        run: |
+          set -euo pipefail
+          if [ -n "$PLAY_RELEASE_STATUS" ]; then
+            jq --arg profile "$EAS_SUBMIT_PROFILE" --arg status "$PLAY_RELEASE_STATUS" \
+              '.submit[$profile].android += {releaseStatus: $status}' \
+              eas.json > "${RUNNER_TEMP}/eas.json"
+            mv "${RUNNER_TEMP}/eas.json" eas.json
+          fi
+
+          eas submit \
+            --platform android \
+            --profile "$EAS_SUBMIT_PROFILE" \
+            --id "$BUILD_ID" \
+            --non-interactive \
+            --wait
+
+      - name: Remove key files
+        if: always()
+        run: rm -f "${RUNNER_TEMP}/AuthKey.p8" "${RUNNER_TEMP}/google-service-account.json"
