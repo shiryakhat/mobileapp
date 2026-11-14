@@ -85,6 +85,6 @@ Check DNS with `dig shiryakhat.app +noall +answer`.
 - `index.html`: replace the two store badge links (search for `TODO`) with the
   live App Store / Google Play URLs, then remove `aria-disabled="true"` and the
   "Coming soon" line.
-- `privacy/index.html`: confirm the contact address (`hello@shiryakhat.net` is
+- `privacy/index.html`: confirm the contact address (`info@shiryakhat.net` is
   a placeholder) and that the issues link points at a public repo.
 - Update the "last updated" date in both languages whenever the policy changes.
