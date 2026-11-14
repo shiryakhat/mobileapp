@@ -1,0 +1,240 @@
+{
+  "id": "s03e07",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:04:10.360Z",
+  "summaryFa": "پروفسور کرستون دیویس، فیلسوف و هم‌بنیان‌گذار مدرسه مطالعات عالی جهانی (GCAS) در دوبلین، در گفت‌وگو با سلمان —از مجریان پادکست شیر یا خط— بلاک‌چین را از دریچه‌ای فلسفی می‌کاود. بحث از آنارکو-کاپیتالیسم، حاکمیت فردی، نجات مالی بانک‌ها، استثمار دوگانه نیروی کار (مارکس) و بانکداری ذخیره کسری آغاز می‌شود و به اتوماسیون، هوش مصنوعی، اقتصاد نظارتی (فیسبوک، گوگل)، اخبار جعلی و پیامدهای پاندمی کووید-۱۹ می‌رسد. در پایان، GCAS به‌مثابه یک ساختار همتا‌به‌همتا (P2P) معرفی می‌شود که با تکیه بر اعتماد، فرهنگ و اجتماع، الگویی پایدار برای خودگردانی غیرمتمرکز ارائه می‌دهد.",
+  "summaryEn": "Philosopher and GCAS co-founder Creston Davis joins Salman, co-host of Shir ya Khat, for a wide-ranging English-language conversation that reads blockchain through political philosophy. Beginning with anarcho-capitalism, individual sovereignty, and the libertarian distrust of states and corporations, the discussion moves through Marxist double exploitation (labor then money via fractional-reserve banking), Wall Street bailouts, surveillance capitalism, automation, AI, fake news, and COVID-19 as a 'Petri dish' for dystopian scenarios. The episode closes by framing GCAS as a living proof-of-concept: a peer-to-peer academic collective that sustains autonomy across generations—the ethos Davis argues decentralized technology itself requires.",
+  "quotes": [
+    {
+      "startSec": 630,
+      "fa": "وقتی دستگاه دولتی قاطعانه در کنار ساختار شرکتی می‌ایستد —مثلاً بانک‌ها را نجات می‌دهد، شرکت‌ها را نجات می‌دهد— این کار بار بیشتری روی دوش تک‌تک افراد آن جامعه می‌گذارد.",
+      "en": "When the state apparatus decisively sides with the corporate structure—bailing banks out, bailing corporations out—what this does is put even more of a burden on the individual in that society.",
+      "speaker": "Creston"
+    },
+    {
+      "startSec": 1479,
+      "fa": "ارزش اضافی‌ات را در بانک‌ها و مؤسسات می‌گذاری و به لطف بانکداری ذخیره کسری دوباره استثمار می‌شوی —اول نیروی کارت، حالا پولت.",
+      "en": "You put this surplus value in banks and institutions, and thanks to fractional reserve banking you get exploited again—first it was your labor, and now it is your money.",
+      "speaker": "Salman"
+    },
+    {
+      "startSec": 1490,
+      "fa": "آیا واسطه‌های مالی استثمارگر دوم نیروی کار انسانی هستند؟",
+      "en": "Are financial intermediaries a second exploiter of human labor?",
+      "speaker": "Salman"
+    },
+    {
+      "startSec": 3128,
+      "fa": "وقتی داشتیم GCAS را به‌عنوان یک ایده می‌ساختیم، با آلن بدیو —فیلسوف مشهور فرانسوی— صحبت می‌کردم؛ سؤال این بود که چطور می‌توانی در طول یک یا دو نسل، توانایی بازتولید خودت را حفظ کنی.",
+      "en": "When we developed GCAS as an idea, I was speaking with Alain Badiou, the famous French philosopher—the question becomes how do you maintain the ability to reproduce yourself over a long period of time, over a generation or two.",
+      "speaker": "Creston"
+    },
+    {
+      "startSec": 3383,
+      "fa": "اگر P2P به‌طور کامل کار نکند، باز هم به اتوس نیاز داری، به فرهنگ نیاز داری، به زبان نیاز داری و به توانایی اعتماد کردن به یکدیگر.",
+      "en": "If P2P does not work perfectly, you still need an ethos, you still need a culture, you still need a language, and you still need the ability to trust one another.",
+      "speaker": "Creston"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Blockchain",
+      "termFa": "بلاک‌چین",
+      "definitionEn": "A distributed, immutable ledger that records transactions across a network without a central authority.",
+      "definitionFa": "دفتر کل توزیع‌شده و تغییرناپذیری که تراکنش‌ها را بدون نیاز به مرکز کنترل ثبت می‌کند."
+    },
+    {
+      "term": "Decentralized Finance (DeFi)",
+      "termFa": "امور مالی غیرمتمرکز (دیفای)",
+      "definitionEn": "Financial services built on public blockchains that operate without traditional banks or intermediaries.",
+      "definitionFa": "خدمات مالی ساخته‌شده روی بلاک‌چین‌های عمومی که بدون بانک یا واسطه سنتی کار می‌کنند."
+    },
+    {
+      "term": "Peer-to-Peer (P2P)",
+      "termFa": "همتا‌به‌همتا (P2P)",
+      "definitionEn": "A network model where participants interact directly with each other without a central server or intermediary.",
+      "definitionFa": "مدل شبکه‌ای که در آن کاربران مستقیماً با یکدیگر تعامل می‌کنند، بدون سرور یا واسطه مرکزی."
+    },
+    {
+      "term": "Fractional Reserve Banking",
+      "termFa": "بانکداری ذخیره کسری",
+      "definitionEn": "A banking system where banks hold only a fraction of deposits as reserves and lend out the rest.",
+      "definitionFa": "سیستمی که در آن بانک‌ها تنها بخشی از سپرده‌ها را نگه می‌دارند و مابقی را وام می‌دهند."
+    },
+    {
+      "term": "Anarcho-Capitalism",
+      "termFa": "آنارکو-کاپیتالیسم",
+      "definitionEn": "A political philosophy advocating the elimination of the state in favor of free markets and individual sovereignty.",
+      "definitionFa": "فلسفه سیاسی که خواهان حذف دولت به نفع بازار آزاد و حاکمیت فردی است."
+    },
+    {
+      "term": "Surplus Value",
+      "termFa": "ارزش اضافی",
+      "definitionEn": "In Marxist theory, the value created by workers beyond their wages, appropriated by the employer.",
+      "definitionFa": "در نظریه مارکس، ارزشی که کارگر فراتر از دستمزد خود تولید می‌کند و کارفرما آن را تصاحب می‌کند."
+    },
+    {
+      "term": "Surveillance Capitalism",
+      "termFa": "سرمایه‌داری نظارتی",
+      "definitionEn": "A business model that monetizes personal data collected by platforms like Facebook and Google.",
+      "definitionFa": "مدل کسب‌وکاری که داده‌های شخصی جمع‌آوری‌شده توسط پلتفرم‌هایی مانند فیسبوک و گوگل را به درآمد تبدیل می‌کند."
+    },
+    {
+      "term": "Automation",
+      "termFa": "اتوماسیون",
+      "definitionEn": "The use of AI and machines to perform tasks previously done by human workers, displacing labor.",
+      "definitionFa": "استفاده از هوش مصنوعی و ماشین‌ها برای انجام کارهایی که پیش‌تر توسط انسان انجام می‌شد."
+    },
+    {
+      "term": "GCAS (Global Center for Advanced Studies)",
+      "termFa": "مدرسه مطالعات عالی جهانی",
+      "definitionEn": "A Dublin-based peer-to-peer academic institution co-founded by Creston Davis, operating outside traditional university structures.",
+      "definitionFa": "نهاد آکادمیک همتا‌به‌همتا مستقر در دوبلین که کرستون دیویس از بنیان‌گذاران آن است و خارج از ساختار دانشگاه‌های سنتی فعالیت می‌کند."
+    },
+    {
+      "term": "Bitcoin",
+      "termFa": "بیت‌کوین",
+      "definitionEn": "The first decentralized cryptocurrency, created in 2009, designed to enable peer-to-peer payments without banks.",
+      "definitionFa": "اولین ارز دیجیتال غیرمتمرکز که در سال ۲۰۰۹ ایجاد شد تا پرداخت‌های همتا‌به‌همتا بدون بانک را ممکن سازد."
+    },
+    {
+      "term": "Post-Truth",
+      "termFa": "پسا-حقیقت",
+      "definitionEn": "A media environment where emotional appeals and misinformation shape public opinion more than objective facts.",
+      "definitionFa": "فضای رسانه‌ای که در آن احساسات و اطلاعات نادرست بیشتر از واقعیت عینی افکار عمومی را شکل می‌دهند."
+    },
+    {
+      "term": "IPO (Initial Public Offering)",
+      "termFa": "عرضه اولیه عمومی (IPO)",
+      "definitionEn": "The first sale of a company's shares to the public on a stock exchange.",
+      "definitionFa": "اولین فروش سهام یک شرکت به عموم مردم در بورس اوراق بهادار."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "شیریا خط",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "fa",
+      "wrong": "شیریخاد",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "fa",
+      "wrong": "شیریخاتی",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "en",
+      "wrong": "Sheer ya Khat",
+      "right": "Shir ya Khat"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مدرسه متعالیت عالی",
+      "right": "مدرسه مطالعات عالی جهانی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مدرسه متعالیت جهانی",
+      "right": "مدرسه مطالعات عالی جهانی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "محسسه متعالیت جهانی",
+      "right": "مدرسه مطالعات عالی جهانی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کریسون دیویز",
+      "right": "کرستون دیویس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "انارکوکپیتالیزی",
+      "right": "آنارکو-کاپیتالیسم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بلاکشین",
+      "right": "بلاک‌چین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بلاکچین",
+      "right": "بلاک‌چین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بلکچین",
+      "right": "بلاک‌چین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دی فای",
+      "right": "دیفای"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دی سینترال فایناس",
+      "right": "امور مالی غیرمتمرکز (دیفای)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "جی کاس",
+      "right": "GCAS"
+    },
+    {
+      "lang": "fa",
+      "wrong": "جی‌کاس",
+      "right": "GCAS"
+    },
+    {
+      "lang": "fa",
+      "wrong": "G-Cast",
+      "right": "GCAS"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لیوتاردی",
+      "right": "لیوتار"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دلوزیانی",
+      "right": "دلوزی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "برنی ساندرس",
+      "right": "برنی سندرز"
+    },
+    {
+      "lang": "fa",
+      "wrong": "جرامی ریفکن",
+      "right": "جرمی ریفکین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آدم گرینفیلد",
+      "right": "آدام گرین‌فیلد"
+    },
+    {
+      "lang": "fa",
+      "wrong": "والستریت",
+      "right": "وال استریت"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اوتومیشن",
+      "right": "اتوماسیون"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کریپتوکارنسی",
+      "right": "ارز دیجیتال"
+    }
+  ]
+}

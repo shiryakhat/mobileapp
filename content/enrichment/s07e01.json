@@ -1,0 +1,250 @@
+{
+  "id": "s07e01",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T21:58:52.252Z",
+  "summaryFa": "ارتقای هاردفورک دنکون اتریوم موضوع اصلی این اپیزود است که پس از دو سال وقفه، فصل هفتم پادکست شیر یا خط را آغاز می‌کند. شایان و حمید با تمرکز بر EIP-4844 (پروتو-دنک‌شاردینگ)، بلاب ترنزکشن‌ها، کامیتمنت‌های KZG، EIP-6780 (محدودسازی SELFDESTRUCT)، EIP-1153 (ترنزینت استوریج) و کاربرد آن در یونی‌سواپ نسخه ۴، معماری جدید اتریوم پس از مرج را با جزئیات فنی بررسی می‌کنند. این اپیزود همچنین به جدایی لایه اجرا از لایه اجماع، تنوع کلاینت‌ها، گاورننس EIP و وضعیت استیکینگ و ریستیکینگ در مسیر ارتقای پکترا می‌پردازد.",
+  "summaryEn": "Season 7 of Shir ya Khat opens with a thorough technical walkthrough of Ethereum's Dencun hard fork. Shayan and Hamid explain the post-Merge split between the execution layer and consensus layer, then dive into EIP-4844 proto-danksharding—covering blob transactions, KZG polynomial commitments, the 141,000-participant trusted-setup ceremony, and how rollups benefit from cheaper data availability. They also cover EIP-6780's neutering of SELFDESTRUCT, EIP-1153 transient storage and its role in enabling Uniswap v4 hooks, the MCOPY opcode, and consensus-layer EIPs around validator entry-rate capping, beacon block root exposure to the EVM, and pre-signed exit transactions—all set within Ethereum's Merge-to-Splurge roadmap.",
+  "quotes": [
+    {
+      "startSec": 1187,
+      "fa": "حتی خود ویتالیک بیاد بگه من این EIP رو می‌خوام، فردا باید تو شبکه باشه — این باید بتونه بره همه‌ی این تیم‌ها رو راضی کنه.",
+      "en": "Even if Vitalik himself comes and says 'I want this EIP on the network tomorrow' — it still has to go and convince all these different teams.",
+      "speaker": "Hamid"
+    },
+    {
+      "startSec": 2763,
+      "fa": "ما می‌خوایم یه کلید عمومی-خصوصی درست کنیم که کلید عمومیش رو همه بتونن وریفای کنن، ولی کلید خصوصیش رو هیچ یه نفری نداشته باشه.",
+      "en": "We want to create a public-private key pair where everyone can verify the public key, but no single person holds the private key.",
+      "speaker": "Shayan"
+    },
+    {
+      "startSec": 5619,
+      "fa": "این سایت‌های فیشینگ میان از پرمیت استفاده می‌کنن — یه پیامی رو از شما امضا می‌گیرن که عملاً پیام اپروف هست، و دارایی‌هاتون رو تخلیه می‌کنن.",
+      "en": "These phishing sites use permit — they get you to sign a message that is actually an approve, and drain your assets.",
+      "speaker": "Hamid"
+    },
+    {
+      "startSec": 3806,
+      "fa": "این خیلی به اصطلاح دراماتیک بود که خیلی راجبش حرف زدن — کدی که از روز اول گفتیم همیشه ثابته، با ترکیب SELFDESTRUCT و CREATE2 زیر سوال رفت.",
+      "en": "This was quite the dramatic topic that got a lot of discussion — the idea that smart contract code is always constant was called into question by the combination of SELFDESTRUCT and CREATE2.",
+      "speaker": "Shayan"
+    },
+    {
+      "startSec": 5890,
+      "fa": "وقتی TLOAD و TSTORE داشته باشیم، این اجازه رو به یونی‌سواپ میده که همه روتینگ‌هایی که قبلاً توی دو تا اکسترنال کال مختلف داشت رو بیاره توی یه قرارداد هوشمند انجام بده.",
+      "en": "When we have TLOAD and TSTORE, it allows Uniswap to bring all the routing it previously had across two separate external calls into one unified smart contract.",
+      "speaker": "Hamid"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "EIP-4844 / Proto-Danksharding",
+      "termFa": "پروتو-دنک‌شاردینگ / EIP-4844",
+      "definitionEn": "An Ethereum upgrade introducing blob transactions—temporary data chunks on the consensus layer that drastically cut Layer 2 data-availability costs.",
+      "definitionFa": "ارتقایی در اتریوم که بلاب ترنزکشن‌ها را معرفی می‌کند؛ داده‌های موقت روی لایه اجماع که هزینه دیتا اولیبیلیتی لایه دو را به‌شدت کاهش می‌دهد."
+    },
+    {
+      "term": "Blob Transaction",
+      "termFa": "بلاب ترنزکشن",
+      "definitionEn": "A new transaction type carrying a temporary data blob on the consensus layer, pruned after roughly two weeks, used by rollups for cheap data posting.",
+      "definitionFa": "نوع جدیدی از تراکنش که داده‌ای موقت روی لایه اجماع حمل می‌کند و پس از حدود دو هفته حذف می‌شود؛ رول‌آپ‌ها برای ارسال ارزان داده از آن استفاده می‌کنند."
+    },
+    {
+      "term": "KZG Commitment",
+      "termFa": "کامیتمنت KZG",
+      "definitionEn": "A cryptographic polynomial commitment scheme—named after Kate, Zaverucha, and Goldberg—used in blob transactions to let anyone verify data without storing it permanently.",
+      "definitionFa": "طرح کامیتمنت چندجمله‌ای رمزنگاری که در بلاب ترنزکشن‌ها استفاده می‌شود و به هر کسی اجازه می‌دهد داده را بدون نگهداری دائمی تأیید کند."
+    },
+    {
+      "term": "Trusted Setup Ceremony",
+      "termFa": "سرمونی تراستد ستاپ",
+      "definitionEn": "A one-time multi-party computation ritual—Ethereum's KZG ceremony had 141,000 participants—that generates public parameters whose secret cannot be reconstructed.",
+      "definitionFa": "مراسم محاسبه چندطرفه‌ای یک‌بار مصرف که در آن ۱۴۱٬۰۰۰ نفر شرکت کردند و پارامترهای عمومی تولید می‌شود که کلید خصوصی‌اش قابل بازسازی نیست."
+    },
+    {
+      "term": "Execution Layer (EL)",
+      "termFa": "لایه اجرا",
+      "definitionEn": "The part of an Ethereum full node (e.g., Geth, Nethermind) that runs the EVM, processes transactions, and maintains world state.",
+      "definitionFa": "بخشی از نود کامل اتریوم (مثل Geth یا Nethermind) که EVM را اجرا می‌کند، تراکنش‌ها را پردازش می‌کند و وضعیت شبکه را نگه می‌دارد."
+    },
+    {
+      "term": "Consensus Layer (CL)",
+      "termFa": "لایه اجماع",
+      "definitionEn": "The part of an Ethereum full node running Casper FFG Proof of Stake, managing validators, slots, epochs, and block finality.",
+      "definitionFa": "بخشی از نود کامل اتریوم که پروف‌آف‌استیک Casper FFG را اجرا می‌کند و ولیدیتورها، اسلات‌ها، اپوک‌ها و نهایی‌شدن بلاک‌ها را مدیریت می‌کند."
+    },
+    {
+      "term": "SELFDESTRUCT (EIP-6780)",
+      "termFa": "SELFDESTRUCT / EIP-6780",
+      "definitionEn": "An EVM opcode historically used to delete a contract; EIP-6780 restricts it to contracts created in the same transaction, closing proxy-upgrade security holes.",
+      "definitionFa": "آپ‌کدی در EVM که قراردادها را حذف می‌کرد؛ EIP-6780 آن را فقط به قراردادهای ساخته‌شده در همان تراکنش محدود کرد تا حفره‌های امنیتی پروکسی بسته شود."
+    },
+    {
+      "term": "Transient Storage (EIP-1153)",
+      "termFa": "ترنزینت استوریج / EIP-1153",
+      "definitionEn": "New TSTORE/TLOAD opcodes providing cheap, within-transaction-only storage that is automatically cleared when the transaction ends.",
+      "definitionFa": "آپ‌کدهای جدید TSTORE و TLOAD که فضای ذخیره‌سازی ارزان و فقط درون-تراکنشی فراهم می‌کنند و با پایان تراکنش به‌طور خودکار پاک می‌شوند."
+    },
+    {
+      "term": "Rollup",
+      "termFa": "رول‌آپ",
+      "definitionEn": "A Layer 2 scaling solution that batches transactions off-chain and posts compressed proofs or data to Ethereum Layer 1 for security.",
+      "definitionFa": "راهکار مقیاس‌پذیری لایه دو که تراکنش‌ها را خارج از زنجیر دسته‌بندی می‌کند و اثبات‌ها یا داده‌های فشرده را برای امنیت روی لایه یک اتریوم ثبت می‌کند."
+    },
+    {
+      "term": "Data Availability (DA)",
+      "termFa": "دیتا اولیبیلیتی",
+      "definitionEn": "The guarantee that transaction data needed to verify or challenge a rollup's state is publicly accessible for a sufficient period.",
+      "definitionFa": "تضمین اینکه داده‌های تراکنش مورد نیاز برای تأیید یا چالش وضعیت رول‌آپ برای مدت کافی به‌صورت عمومی در دسترس است."
+    },
+    {
+      "term": "ERC-20 Permit",
+      "termFa": "پرمیت ERC-20",
+      "definitionEn": "An ERC-20 extension allowing token approval via a signed off-chain message instead of an on-chain transaction, commonly exploited by phishing sites.",
+      "definitionFa": "افزونه‌ای برای ERC-20 که اجازه می‌دهد توکن از طریق امضای پیام آفچین تأیید شود؛ سایت‌های فیشینگ اغلب از این ویژگی سوءاستفاده می‌کنند."
+    },
+    {
+      "term": "Uniswap v4 Hooks",
+      "termFa": "هوک‌های یونی‌سواپ نسخه ۴",
+      "definitionEn": "Programmable callbacks (e.g., beforeSwap, afterSwap) in Uniswap v4 pools that enable custom logic, powered by transient storage for gas efficiency.",
+      "definitionFa": "کال‌بک‌های قابل برنامه‌ریزی در استخرهای یونی‌سواپ نسخه ۴ (مانند beforeSwap و afterSwap) که با کمک ترنزینت استوریج منطق سفارشی را با کارایی گاز فعال می‌کنند."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "شیریا خط",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "fa",
+      "wrong": "شیره خد",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "fa",
+      "wrong": "شیرخواهتم",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تورنیدو کشت",
+      "right": "Tornado Cash"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پرتو دنگ شاردین",
+      "right": "پروتو-دنک‌شاردینگ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پورتو دنگ شاردین",
+      "right": "پروتو-دنک‌شاردینگ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دنکراد",
+      "right": "Dankrad"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کیزی اجتماعی",
+      "right": "KZG سرمونی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سلمانی",
+      "right": "سرمونی"
+    },
+    {
+      "lang": "en",
+      "wrong": "Long Range Interpolation",
+      "right": "Lagrange Interpolation"
+    },
+    {
+      "lang": "fa",
+      "wrong": "Long Range Interpolation",
+      "right": "انترپولیشن لاگرانژ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زیکه اثنار",
+      "right": "zk-SNARK"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زیکه اسنارک",
+      "right": "zk-SNARK"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زیرونالج",
+      "right": "zero-knowledge"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زیرونالد",
+      "right": "zk-rollup"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ندرمائن",
+      "right": "Nethermind"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ندرمنگ",
+      "right": "Nethermind"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیکن اسکن",
+      "right": "Beaconscan"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیکین اسکن",
+      "right": "Beaconscan"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیکاین چین",
+      "right": "Beaconchain"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیک این چین",
+      "right": "بیکن‌چین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کسفر اف اف جی",
+      "right": "Casper FFG"
+    },
+    {
+      "lang": "fa",
+      "wrong": "راکت پول",
+      "right": "Rocket Pool"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لاید",
+      "right": "Lido"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آربیتروم",
+      "right": "Arbitrum"
+    },
+    {
+      "lang": "fa",
+      "wrong": "یونی سواب",
+      "right": "یونی‌سواپ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "یونیس آف",
+      "right": "یونی‌سواپ"
+    }
+  ]
+}

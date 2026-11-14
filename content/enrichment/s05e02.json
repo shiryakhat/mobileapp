@@ -1,0 +1,265 @@
+{
+  "id": "s05e02",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:01:30.025Z",
+  "summaryFa": "این قسمت از پادکست شیر یا خط به بررسی EIP-1559 و فورک لندن اتریوم می‌پردازد. ابتدا پایه‌های مفهومی کارمزد در بیتکوین و اتریوم توضیح داده می‌شود؛ از جمله گس، گس لیمیت، گس پرایس و مدل حراج قیمت اولی (First Price Auction) و معایب آن مانند اوورپی، نوسان شدید و تجربه‌ی کاربری ضعیف. سپس ساختار جدید EIP-1559 با بیس‌فی اجباری، مکس‌فی، ماینر تیپ، بلاک سایز الاستیک با هدف ۱۵ میلیون گس، و مهم‌تر از همه مکانیزم سوزاندن بیس‌فی تشریح می‌شود. در پایان پیامدهای اقتصادی این تغییر، از جمله کاهش درآمد ماینرها، فشار دیفلیشنری بر اتر، مفهوم Ultra Sound Money، و نقش EIP-1559 به‌عنوان پیش‌زمینه‌ای برای پروف‌اوف‌استیک و مرج بررسی می‌شود.",
+  "summaryEn": "This episode of Shir ya Khat dissects EIP-1559 and Ethereum's London hard fork, tracing the history of transaction fees from Bitcoin's anti-spam origins through Ethereum's gas model and the inefficiencies of the first-price auction. The hosts explain how EIP-1559 replaces the single gas price with a mandatory, algorithmically adjusted base fee and an optional miner tip, introduces an elastic block size with a 15-million-gas target and 30-million-gas cap, and crucially burns the base fee rather than paying it to miners. The episode closes with the economic implications: reduced miner revenue, the deflationary pressure on ETH supply, the \"Ultra Sound Money\" narrative introduced by Justin Drake, and how burning fees laid the groundwork for the Merge.",
+  "quotes": [
+    {
+      "startSec": 155,
+      "fa": "یکی از انقلابی‌ترین تغییرات توی یک سیستم بلاکچینی می‌دونم که تا الان شده و تغییر در مورد ساختار پرداخت فی توی شبکه‌ی اتریوم بود.",
+      "en": "I consider it one of the most revolutionary changes ever made in a blockchain system — and the change was about the fee payment structure on the Ethereum network.",
+      "speaker": "Mehdi"
+    },
+    {
+      "startSec": 800,
+      "fa": "بهترین چیزی که توی ذهن خودم می‌گیرم اینه که گس واحد تلاش ماینرهاست؛ یعنی هر یک گس یه میزان مشخص از تلاشیه که ماینرها باید انجام بدن.",
+      "en": "The best way I picture it in my own mind is that gas is a unit of the miners' effort — each unit of gas is a certain amount of effort the miners have to do.",
+      "speaker": "Mehdi"
+    },
+    {
+      "startSec": 3720,
+      "fa": "بیس‌فی سوزونده می‌شه؛ یعنی کلن از میزان عرضه‌ی اتریوم حذف می‌شه.",
+      "en": "The base fee gets burned — meaning it's entirely removed from Ethereum's supply.",
+      "speaker": "Mehdi"
+    },
+    {
+      "startSec": 4863,
+      "fa": "ببینید یه همچین تغییری در سطح بلاکچین، ماینرها چقدر باید جلوش می‌ایستادن — و ما کوچک‌ترین مشکلی نداشتیم بعد از اجراش.",
+      "en": "Look at a change of this magnitude at the blockchain level — the miners should have resisted with everything they had — and we didn't have the slightest problem after its execution.",
+      "speaker": "Mehdi"
+    },
+    {
+      "startSec": 5875,
+      "fa": "اگه بیتکوین با داشتن سقف ۲۱ میلیون یک Sound Money در نظر بگیریم، پس اتریومی که دیفلیشنری می‌شه یک Ultra Sound Money است؛ چیزی فراتر از یک پول کامل.",
+      "en": "If we consider Bitcoin, with its 21-million cap, to be Sound Money, then Ethereum becoming deflationary makes it Ultra Sound Money — something beyond perfect money.",
+      "speaker": "Hamid"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Gas",
+      "termFa": "گس",
+      "definitionEn": "A unit measuring the computational effort required to execute operations on the Ethereum network.",
+      "definitionFa": "واحدی برای سنجش میزان تلاش محاسباتی لازم برای اجرای عملیات در شبکه‌ی اتریوم."
+    },
+    {
+      "term": "Gas Price",
+      "termFa": "گس پرایس",
+      "definitionEn": "The amount of ether a user offers to pay per unit of gas, used in the legacy fee model.",
+      "definitionFa": "مقدار اتری که کاربر حاضر است به ازای هر واحد گس بپردازد؛ مفهومی مربوط به مدل کارمزد قدیمی."
+    },
+    {
+      "term": "Gas Limit",
+      "termFa": "گس لیمیت",
+      "definitionEn": "The maximum amount of gas a user is willing to consume for a single transaction.",
+      "definitionFa": "حداکثر مقدار گسی که کاربر حاضر است برای یک تراکنش مصرف کند."
+    },
+    {
+      "term": "Base Fee",
+      "termFa": "بیس‌فی",
+      "definitionEn": "The mandatory, algorithmically set minimum fee per gas that every transaction must pay; it is burned entirely.",
+      "definitionFa": "حداقل کارمزد اجباری به ازای هر واحد گس که هر تراکنش باید بپردازد و به‌طور کامل سوزانده می‌شود."
+    },
+    {
+      "term": "Miner Tip (Priority Fee)",
+      "termFa": "ماینر تیپ / فی اولویت",
+      "definitionEn": "An optional fee paid directly to the miner to incentivize faster transaction inclusion.",
+      "definitionFa": "کارمزد اختیاری که مستقیماً به ماینر پرداخت می‌شود تا تراکنش زودتر در بلاک قرار گیرد."
+    },
+    {
+      "term": "Max Fee",
+      "termFa": "مکس‌فی",
+      "definitionEn": "The maximum total amount per gas a user is willing to pay; unused portion is refunded.",
+      "definitionFa": "حداکثر مبلغی که کاربر به ازای هر گس حاضر به پرداخت است؛ مابقی آن به کاربر بازگردانده می‌شود."
+    },
+    {
+      "term": "First-Price Auction",
+      "termFa": "حراج قیمت اولی",
+      "definitionEn": "The legacy fee mechanism where the highest bidder wins block inclusion, often causing overpayment.",
+      "definitionFa": "مکانیزم کارمزد قدیمی که در آن هرکس بیشترین قیمت را پیشنهاد دهد تراکنشش پذیرفته می‌شود و معمولاً منجر به اوورپی می‌شود."
+    },
+    {
+      "term": "Block Gas Limit",
+      "termFa": "بلاک گس لیمیت",
+      "definitionEn": "The maximum total gas all transactions in a single block can consume.",
+      "definitionFa": "حداکثر مجموع گسی که تمام تراکنش‌های یک بلاک می‌توانند مصرف کنند."
+    },
+    {
+      "term": "EVM (Ethereum Virtual Machine)",
+      "termFa": "ای‌وی‌ام / ماشین مجازی اتریوم",
+      "definitionEn": "The stack-based virtual machine that executes smart contract opcodes on every Ethereum node.",
+      "definitionFa": "ماشین مجازی مبتنی بر پشته که کدهای قرارداد هوشمند را روی تمام نودهای اتریوم اجرا می‌کند."
+    },
+    {
+      "term": "MEV (Miner Extractable Value)",
+      "termFa": "ارزش قابل استخراج ماینر / مف",
+      "definitionEn": "Profit miners can extract by reordering, inserting, or censoring transactions within a block.",
+      "definitionFa": "سودی که ماینرها می‌توانند با تغییر ترتیب، اضافه‌کردن یا سانسور تراکنش‌ها در یک بلاک به دست آورند."
+    },
+    {
+      "term": "Deflationary Pressure",
+      "termFa": "فشار دیفلیشنری",
+      "definitionEn": "A force that reduces the circulating supply of ETH over time, caused by burning the base fee.",
+      "definitionFa": "نیرویی که با سوزاندن بیس‌فی، موجودی در گردش اتر را در طول زمان کاهش می‌دهد."
+    },
+    {
+      "term": "Ultra Sound Money",
+      "termFa": "اولتراساند مانی",
+      "definitionEn": "A community meme coined by Justin Drake arguing that deflationary ETH surpasses Bitcoin's \"Sound Money\" properties.",
+      "definitionFa": "میمی از کامیونیتی اتریوم که جاستین دریک مطرح کرد و مدعی است اتر دیفلیشنری از ویژگی‌های «پول سالم» بیتکوین فراتر می‌رود."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "شیریا خد",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "fa",
+      "wrong": "شیریاخت",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اتریان",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتریان",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتریوم",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای آی پی پونزه پنجه و نه",
+      "right": "EIP-1559"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای آی پی پونزه پنجه و نو",
+      "right": "EIP-1559"
+    },
+    {
+      "lang": "fa",
+      "wrong": "یایپی 1559",
+      "right": "EIP-1559"
+    },
+    {
+      "lang": "fa",
+      "wrong": "یایب 15-59",
+      "right": "EIP-1559"
+    },
+    {
+      "lang": "fa",
+      "wrong": "گیوه",
+      "right": "گس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "گیوهی",
+      "right": "گس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "گیو وی",
+      "right": "گوئی (gwei)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "گست پرایس",
+      "right": "گس پرایس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "گست لیمیت",
+      "right": "گس لیمیت"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیسفیر",
+      "right": "بیس‌فی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیسیه",
+      "right": "بیس‌فی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مائنر",
+      "right": "ماینر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مائنرها",
+      "right": "ماینرها"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تراکبانش",
+      "right": "تراکنش"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ترابانش",
+      "right": "تراکنش"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ترکونش",
+      "right": "تراکنش"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ترکانش",
+      "right": "تراکنش"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تیم رافتگارن",
+      "right": "تیم راف‌گاردن (Tim Roughgarden)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تیم رافت گاردن",
+      "right": "تیم راف‌گاردن (Tim Roughgarden)"
+    },
+    {
+      "lang": "en",
+      "wrong": "شیر یا خط",
+      "right": "Shir ya Khat"
+    },
+    {
+      "lang": "en",
+      "wrong": "Italik",
+      "right": "Vitalik"
+    },
+    {
+      "lang": "en",
+      "wrong": "Italik had written",
+      "right": "Vitalik Buterin had written"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آوالانچ",
+      "right": "اوالانچ (Avalanche)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اولنج",
+      "right": "اوالانچ (Avalanche)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تریبل هاوین",
+      "right": "Triple Halving"
+    }
+  ]
+}

@@ -1,0 +1,25 @@
+{
+  "name": "@shiryakhat/pipeline",
+  "private": true,
+  "type": "module",
+  "description": "Offline content pipeline: corpus + website -> static content bundle consumed by the app",
+  "scripts": {
+    "fetch-sources": "tsx src/fetch-sources.ts",
+    "episodes": "tsx src/build-episodes.ts",
+    "transcripts": "tsx src/build-transcripts.ts",
+    "enrich": "tsx src/enrich.ts",
+    "finalize": "tsx src/finalize.ts",
+    "build": "npm run episodes && npm run transcripts && npm run finalize",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.8.0",
+    "yaml": "^2.6.0",
+    "zod": "^4.0.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "^5.6.0"
+  }
+}

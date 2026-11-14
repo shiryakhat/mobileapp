@@ -1,0 +1,265 @@
+{
+  "id": "s06e04",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T21:59:11.101Z",
+  "summaryFa": "در این قسمت، پانل «شیر یا خط» به‌طور جامع سازوکار جلوگیری از تقلب در شبکه‌ی لایتنینگ را بررسی می‌کند: از سناریوی انتشار استیت قدیمی کانال و مکانیزم تنبیه (گرفتن کل موجودی متقلب) تا نقش واچ‌تاور در مانیتورینگ خودکار بلاک‌چین. در ادامه، مفاهیم شبکه‌ی پرداخت لایتنینگ تشریح می‌شود: مسیریابی مبتنی بر منبع (source-based routing) با الهام از شبکه‌ی Tor، آنیون پکتینگ برای حفظ حریم خصوصی، محدودیت‌های ظرفیت ارسال و دریافت کانال، و پرداخت چندمسیره‌ی اتمیک (AMP). اپیزود با معرفی مکانیزم اینویس و HTLC برای انجام پرداخت‌های هاپ‌به‌هاپ به پایان می‌رسد و موضوعات قسمت بعد—بستن کانال، کلاینت‌ها و تأثیر آپگرید تپروت—پیش‌نمایش داده می‌شوند.",
+  "summaryEn": "This panel episode of Shir ya Khat thoroughly examines Lightning Network fraud prevention: how broadcasting a stale channel state enables cheating, how revocation secrets and a configurable timelock (default ~5 days) allow the wronged party to seize the cheater's entire balance, and how watchtowers automate blockchain monitoring in self-hosted, free, subscription, and encrypted third-party models. The discussion then moves to the Lightning payment network, covering source-based routing analogous to Tor's onion-packet design, channel send/receive capacity constraints, gossip-based topology discovery, and DFS-style pathfinding. The episode closes by explaining invoices, payment hashes, HTLC-based hop-by-hop settlement, and Atomic Multi-Path Payments (AMP), with a preview of channel closing, wallet software, and Taproot's impact on Lightning.",
+  "quotes": [
+    {
+      "startSec": 586,
+      "fa": "ما در واقع انگیزه را از طرف مقابل می‌گیریم که تقلب نکند. بله، امکان تقلب را همیشه دارد، اما چون این انگیزه را ندارد، تقلب نمی‌کند.",
+      "en": "We actually remove the incentive from the counterparty to cheat. Yes, the ability to cheat always exists — but since they have no incentive, they don't cheat.",
+      "speaker": "Nima"
+    },
+    {
+      "startSec": 1227,
+      "fa": "واچ‌تاور من یک تراکنش منتشر می‌کند که نه‌فقط تقلب حمید را باطل می‌کند و من پول خودم را به دست می‌آورم، بلکه بقیه‌ی پولی که حمید توی کانالش داشت را هم برای خودم برمی‌دارم.",
+      "en": "My watchtower publishes a transaction that not only voids Hamid's fraud so I get my own money back, but I also take for myself the rest of the money Hamid had in his channel.",
+      "speaker": "Hamid"
+    },
+    {
+      "startSec": 2932,
+      "fa": "کانال‌ها مثل جیب‌های ما هستند. نفر اول پول را می‌دهد، بغلی‌اش پول را می‌گیرد، از جیب دیگرش پول برمی‌دارد و به نفر بعدی می‌دهد — جیب به جیب — تا به مقصد برسد.",
+      "en": "Channels are like our pockets. The first person hands over the money, the one next to them takes it, pulls from their other pocket and passes it to the next — pocket to pocket — until it reaches the destination.",
+      "speaker": "Zia"
+    },
+    {
+      "startSec": 1385,
+      "fa": "وقتی می‌خواهیم سیستمی بچینیم، باید فکرمان را همیشه بگذاریم روی این‌که همه بد هستند و همه می‌خواهند بد عمل کنند. سناریوی زدن انگیزه برای جلوگیری از تقلب خیلی جواب می‌دهد.",
+      "en": "When designing a system, we should always assume everyone is a bad actor and wants to act maliciously. The anti-incentive scenario — removing the motivation to cheat — works very well.",
+      "speaker": "Zia"
+    },
+    {
+      "startSec": 2418,
+      "fa": "یکی از راهکارها که خیلی معروف است AMP یا Atomic Multi-Path Payment است: تراکنش را می‌شکند — مثلاً نیم بیت‌کوین را به چهار یا پنج تکه تبدیل می‌کند — و از مسیرهای مختلفی که ظرفیت دارند می‌فرستد تا در مقصد دوباره جمع شوند.",
+      "en": "One well-known solution is AMP, Atomic Multi-Path Payment: it splits the transaction — say, breaking half a bitcoin into four or five pieces — and sends them through different routes that have capacity, recombining at the destination.",
+      "speaker": "Zia"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Channel State",
+      "termFa": "استیت کانال",
+      "definitionEn": "The current balance distribution between two parties in an open Lightning channel at any given moment.",
+      "definitionFa": "وضعیت لحظه‌ای توزیع موجودی بین دو طرف در یک کانال لایتنینگ باز."
+    },
+    {
+      "term": "Commitment Transaction",
+      "termFa": "تراکنش تعهد (کامیتمنت ترنزکشن)",
+      "definitionEn": "A pre-signed Bitcoin transaction representing one channel state, allowing either party to close the channel unilaterally.",
+      "definitionFa": "تراکنش بیت‌کوینی از پیش امضاشده که یک استیت کانال را نمایندگی می‌کند و به هر طرف اجازه می‌دهد کانال را یک‌طرفه ببندد."
+    },
+    {
+      "term": "Revocation Secret",
+      "termFa": "راز ابطال (ریووکیشن سکرت)",
+      "definitionEn": "A secret exchanged when a channel state is updated; possessing it lets the honest party penalize a cheater broadcasting an old state.",
+      "definitionFa": "رازی که هنگام به‌روزرسانی استیت کانال رد و بدل می‌شود و به طرف صادق امکان تنبیه متقلب را می‌دهد."
+    },
+    {
+      "term": "Watchtower",
+      "termFa": "واچ‌تاور (برج مراقبت)",
+      "definitionEn": "Software that monitors the blockchain for fraudulent stale-state broadcasts and automatically submits a penalty transaction on the victim's behalf.",
+      "definitionFa": "نرم‌افزاری که بلاک‌چین را برای انتشار استیت‌های قدیمی زیر نظر دارد و به‌طور خودکار تراکنش تنبیهی ارسال می‌کند."
+    },
+    {
+      "term": "Timelock",
+      "termFa": "تایم‌لاک",
+      "definitionEn": "A script condition that prevents spending a transaction output until a certain number of blocks have passed.",
+      "definitionFa": "شرطی در اسکریپت که خرج کردن خروجی یک تراکنش را تا گذشتن تعداد مشخصی بلاک متوقف می‌کند."
+    },
+    {
+      "term": "Source-Based Routing",
+      "termFa": "مسیریابی مبتنی بر منبع",
+      "definitionEn": "A routing method where the sender calculates and specifies the full path before transmitting, as used in Lightning and Tor.",
+      "definitionFa": "روشی در مسیریابی که فرستنده پیش از ارسال، کل مسیر را خودش محاسبه و مشخص می‌کند؛ مانند لایتنینگ و Tor."
+    },
+    {
+      "term": "Onion Routing / Onion Packet",
+      "termFa": "آنیون پکتینگ (مسیریابی پیازی)",
+      "definitionEn": "A privacy technique where each hop decrypts only its own layer of an encrypted packet, hiding the full route from intermediaries.",
+      "definitionFa": "تکنیک حریم‌خصوصی که هر گره فقط لایه‌ی رمزنگاری خود را باز می‌کند و مسیر کامل از واسطه‌ها پنهان می‌ماند."
+    },
+    {
+      "term": "HTLC (Hashed Timelock Contract)",
+      "termFa": "قرارداد هش‌تایم‌لاک",
+      "definitionEn": "A smart contract that releases payment only when the recipient reveals a secret pre-image, enabling trustless multi-hop payments.",
+      "definitionFa": "قراردادی که پرداخت را فقط در صورت افشای یک راز (پری‌ایمیج) آزاد می‌کند و پرداخت چندهاپی بدون نیاز به اعتماد را ممکن می‌سازد."
+    },
+    {
+      "term": "AMP (Atomic Multi-Path Payment)",
+      "termFa": "پرداخت چندمسیره‌ی اتمیک",
+      "definitionEn": "A Lightning feature that splits a single payment into multiple partial payments routed along different paths and recombined at the destination.",
+      "definitionFa": "قابلیتی در لایتنینگ که یک پرداخت را به چند بخش تقسیم می‌کند، از مسیرهای مختلف می‌فرستد و در مقصد دوباره جمع می‌شوند."
+    },
+    {
+      "term": "Invoice",
+      "termFa": "اینویس (صورت‌حساب)",
+      "definitionEn": "A payment request generated by the recipient containing a payment hash, amount, and expiry, typically encoded as a QR code.",
+      "definitionFa": "درخواست پرداختی که گیرنده تولید می‌کند و شامل هش پرداخت، مبلغ و زمان انقضاست؛ معمولاً به‌صورت QR کد نمایش داده می‌شود."
+    },
+    {
+      "term": "BGP (Border Gateway Protocol)",
+      "termFa": "پروتکل BGP",
+      "definitionEn": "The internet's main best-effort routing protocol where each router forwards packets based on local knowledge, not a pre-specified full path.",
+      "definitionFa": "پروتکل اصلی مسیریابی اینترنت که هر روتر بر اساس دانش محلی خود بسته‌ها را هدایت می‌کند، نه یک مسیر از پیش تعیین‌شده."
+    },
+    {
+      "term": "Receiving / Sending Capacity",
+      "termFa": "ظرفیت دریافت / ارسال",
+      "definitionEn": "The maximum amount a Lightning channel participant can receive or send at a given moment, determined by the balance on each side.",
+      "definitionFa": "حداکثر مقداری که یک طرف کانال لایتنینگ در لحظه‌ای مشخص می‌تواند دریافت یا ارسال کند؛ وابسته به موجودی هر طرف."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "لایتنگ",
+      "right": "لایتنینگ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ویتکوین",
+      "right": "بیت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "واشتاور",
+      "right": "واچ‌تاور"
+    },
+    {
+      "lang": "fa",
+      "wrong": "باشتاور",
+      "right": "واچ‌تاور"
+    },
+    {
+      "lang": "fa",
+      "wrong": "واشتاوری",
+      "right": "واچ‌تاور"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ترکونش",
+      "right": "تراکنش"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ترکنش",
+      "right": "تراکنش"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کامیتمنت ترنزکشن",
+      "right": "تراکنش تعهد (کامیتمنت ترنزکشن)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اشتیل سیاهی",
+      "right": "استیت موقت (HTLC)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "این وویس",
+      "right": "اینویس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بی جی پی",
+      "right": "BGP"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بورد گیت فی",
+      "right": "Border Gateway"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آنیون پکتینگ",
+      "right": "آنیون پکتینگ (Onion Packeting)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ریو و کبلکی",
+      "right": "ریووکیبل کی (Revocable Key)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اشتیل سی",
+      "right": "HTLC"
+    },
+    {
+      "lang": "fa",
+      "wrong": "هاشد تایملاک کانترکت",
+      "right": "HTLC (Hashed Timelock Contract)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سلف هاست",
+      "right": "سلف‌هاست (self-hosted)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "self-hausted",
+      "right": "self-hosted"
+    },
+    {
+      "lang": "en",
+      "wrong": "Shenakht",
+      "right": "Shir ya Khat"
+    },
+    {
+      "lang": "en",
+      "wrong": "شناخت",
+      "right": "Shir ya Khat"
+    },
+    {
+      "lang": "en",
+      "wrong": "best-effort routing",
+      "right": "best-effort routing (IP/BGP)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "گاسیپ نتورک",
+      "right": "شبکه‌ی گاسیپ (Gossip Network)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "راوتینگ",
+      "right": "مسیریابی (Routing)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تپروت",
+      "right": "تپ‌روت (Taproot)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "فاندینگ ترنزکشن",
+      "right": "تراکنش فاندینگ (Funding Transaction)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "یوتی اکس او",
+      "right": "UTXO"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سابسکریپشن",
+      "right": "اشتراک (Subscription)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "الکتران",
+      "right": "الکتروم (Electrum)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "فینیکس والت",
+      "right": "Phoenix Wallet"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مومالت",
+      "right": "Muun Wallet"
+    }
+  ]
+}

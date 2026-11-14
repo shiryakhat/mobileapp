@@ -1,0 +1,332 @@
+{
+  "episodes": {
+    "s04e04": {
+      "status": "done",
+      "at": "2026-11-14T21:54:30.900Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 38733,
+      "outputTokens": 3661
+    },
+    "s07e05": {
+      "status": "done",
+      "at": "2026-11-14T21:55:59.994Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 107231,
+      "outputTokens": 3703
+    },
+    "s07e07": {
+      "status": "done",
+      "at": "2026-11-14T21:56:03.123Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 124299,
+      "outputTokens": 3734
+    },
+    "s07e06": {
+      "status": "done",
+      "at": "2026-11-14T21:56:12.996Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 125172,
+      "outputTokens": 4067
+    },
+    "s07e04": {
+      "status": "done",
+      "at": "2026-11-14T21:57:20.849Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 130039,
+      "outputTokens": 3311
+    },
+    "s07e03": {
+      "status": "done",
+      "at": "2026-11-14T21:57:22.577Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 105962,
+      "outputTokens": 3322
+    },
+    "s07e02": {
+      "status": "done",
+      "at": "2026-11-14T21:57:39.610Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 68015,
+      "outputTokens": 3766
+    },
+    "s06e05": {
+      "status": "done",
+      "at": "2026-11-14T21:58:46.724Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 60113,
+      "outputTokens": 3683
+    },
+    "s07e01": {
+      "status": "done",
+      "at": "2026-11-14T21:58:52.252Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 97524,
+      "outputTokens": 4033
+    },
+    "s06e04": {
+      "status": "done",
+      "at": "2026-11-14T21:59:11.101Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 44582,
+      "outputTokens": 3993
+    },
+    "s06e03": {
+      "status": "done",
+      "at": "2026-11-14T22:00:12.430Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 64324,
+      "outputTokens": 3958
+    },
+    "s06e02": {
+      "status": "done",
+      "at": "2026-11-14T22:00:14.576Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 59457,
+      "outputTokens": 3780
+    },
+    "s06e01": {
+      "status": "done",
+      "at": "2026-11-14T22:00:34.706Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 49145,
+      "outputTokens": 3790
+    },
+    "s05e02": {
+      "status": "done",
+      "at": "2026-11-14T22:01:30.025Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 86128,
+      "outputTokens": 3385
+    },
+    "s05e01": {
+      "status": "done",
+      "at": "2026-11-14T22:01:33.169Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 75652,
+      "outputTokens": 3356
+    },
+    "s04e06": {
+      "status": "done",
+      "at": "2026-11-14T22:01:46.833Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 51741,
+      "outputTokens": 3208
+    },
+    "s04e05": {
+      "status": "done",
+      "at": "2026-11-14T22:02:49.254Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 54847,
+      "outputTokens": 3639
+    },
+    "s04e03": {
+      "status": "done",
+      "at": "2026-11-14T22:02:51.023Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 63267,
+      "outputTokens": 3563
+    },
+    "s04e02": {
+      "status": "done",
+      "at": "2026-11-14T22:03:03.723Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 83114,
+      "outputTokens": 3430
+    },
+    "s03e07": {
+      "status": "done",
+      "at": "2026-11-14T22:04:10.360Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 35505,
+      "outputTokens": 3557
+    },
+    "s04e01": {
+      "status": "done",
+      "at": "2026-11-14T22:04:11.114Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 60392,
+      "outputTokens": 3559
+    },
+    "s03e06": {
+      "status": "done",
+      "at": "2026-11-14T22:04:21.553Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 39755,
+      "outputTokens": 3439
+    },
+    "s03e04": {
+      "status": "done",
+      "at": "2026-11-14T22:05:38.570Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 66608,
+      "outputTokens": 3932
+    },
+    "s03e05": {
+      "status": "done",
+      "at": "2026-11-14T22:05:39.639Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 42515,
+      "outputTokens": 3742
+    },
+    "s03e03": {
+      "status": "done",
+      "at": "2026-11-14T22:05:48.666Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 67948,
+      "outputTokens": 3729
+    },
+    "s02e03": {
+      "status": "done",
+      "at": "2026-11-14T22:07:03.116Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 42221,
+      "outputTokens": 3286
+    },
+    "s03e01": {
+      "status": "done",
+      "at": "2026-11-14T22:07:03.998Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 59660,
+      "outputTokens": 3674
+    },
+    "s03e02": {
+      "status": "done",
+      "at": "2026-11-14T22:07:05.571Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 56783,
+      "outputTokens": 3846
+    },
+    "s02e01": {
+      "status": "done",
+      "at": "2026-11-14T22:08:23.390Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 55603,
+      "outputTokens": 3445
+    },
+    "s02e02": {
+      "status": "done",
+      "at": "2026-11-14T22:08:24.116Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 53413,
+      "outputTokens": 3587
+    },
+    "s01e10": {
+      "status": "done",
+      "at": "2026-11-14T22:08:29.783Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 76622,
+      "outputTokens": 3710
+    },
+    "s01e08": {
+      "status": "done",
+      "at": "2026-11-14T22:09:37.783Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 74822,
+      "outputTokens": 3328
+    },
+    "s01e09": {
+      "status": "done",
+      "at": "2026-11-14T22:09:46.175Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 75130,
+      "outputTokens": 3453
+    },
+    "s01e07": {
+      "status": "done",
+      "at": "2026-11-14T22:09:48.496Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 60962,
+      "outputTokens": 3618
+    },
+    "s01e05": {
+      "status": "done",
+      "at": "2026-11-14T22:10:56.484Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 67846,
+      "outputTokens": 3151
+    },
+    "s01e06": {
+      "status": "done",
+      "at": "2026-11-14T22:11:01.258Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 69922,
+      "outputTokens": 3687
+    },
+    "s01e04": {
+      "status": "done",
+      "at": "2026-11-14T22:11:05.239Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 36181,
+      "outputTokens": 3435
+    },
+    "s01e02": {
+      "status": "done",
+      "at": "2026-11-14T22:12:11.761Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 54895,
+      "outputTokens": 3283
+    },
+    "s01e01": {
+      "status": "done",
+      "at": "2026-11-14T22:12:18.068Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 55587,
+      "outputTokens": 3116
+    },
+    "s01e03": {
+      "status": "done",
+      "at": "2026-11-14T22:12:21.717Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 50498,
+      "outputTokens": 3764
+    },
+    "sp01": {
+      "status": "done",
+      "at": "2026-11-14T22:13:32.395Z",
+      "promptVersion": 1,
+      "model": "claude-sonnet-4-6",
+      "inputTokens": 59397,
+      "outputTokens": 3532
+    }
+  }
+}

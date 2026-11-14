@@ -1,0 +1,195 @@
+{
+  "id": "s03e05",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:05:39.639Z",
+  "summaryFa": "در این اپیزود از «شیر یا خط»، که در اوج موج اول کرونا و چهار روز مانده به نوروز ۱۳۹۹ به صورت آنلاین ضبط شده، میزبانان و مهمانان از ایران، هلند، کانادا و آمریکا تأثیر همزمان ویروس کووید-۱۹ و جنگ نفتی روسیه-عربستان بر بازارهای سهام و رمزارز را تحلیل می‌کنند؛ از سقوط ۱۲–۱۳ درصدی اس‌اندپی ۵۰۰ و داوجونز گرفته تا افت ۳۵ درصدی بیت‌کوین در یک هفته. بحث به مقایسه سازوکارهای بازار سنتی (سیرکت‌بریکر) با بازار آزاد ۲۴ ساعته رمزارز، نقش کلاهبرداری پلاس‌توکن و قطعی بیت‌مکس در تشدید ریزش، و سیاست چاپ پول و تزریق نقدینگی فدرال‌رزرو می‌پردازد. در بخش پایانی، با ارجاع به پیش‌بینی‌های نوریل روبینی و مقاله جورجو آگامبن، نگرانی‌های جدی درباره گسترش نظارت دولتی، تشخیص چهره، کی‌وای‌سی و از دست رفتن حریم خصوصی در دنیای پساکرونا مطرح می‌شود و بیت‌کوین به‌عنوان ابزاری برای مقاومت در برابر کنترل متمرکز معرفی می‌گردد.",
+  "summaryEn": "Recorded live on March 16, 2020 — four days before Nowruz — with participants joining from Iran, the Netherlands, Canada, and the United States, this episode dissects the simultaneous collapse of traditional and crypto markets triggered by COVID-19 and the Russia–Saudi oil price war: the S&P 500 and Dow Jones each fell roughly 12–13% (the second-worst day since Black Monday 1987 and the crash of 1929), while Bitcoin dropped 35% in a week to around $6,890. The hosts contrast the regulated stock market's circuit breakers with the unregulated 24-hour crypto market, examine how PlusToken's coin dumps and a BitMEX outage amplified the Bitcoin sell-off, and weigh the Fed's $700 billion QE injection and rate cuts against Bitcoin's hard 21-million cap as a long-term store of value. Closing segments raise pointed concerns — drawing on Giorgio Agamben and Nouriel Roubini — about how the pandemic is normalizing expanded state surveillance, facial recognition, and KYC controls, and position open blockchain systems as tools of resistance against that centralizing trend.",
+  "quotes": [
+    {
+      "startSec": 921,
+      "fa": "این شکل از تزریق و چاپ پول مثل چسب زخم روی قلب پاره است — جوابگو نیست.",
+      "en": "This kind of money-printing and liquidity injection is like a band-aid on a ruptured heart — it's no solution."
+    },
+    {
+      "startSec": 348,
+      "fa": "بیت‌کوین برای اولین بار در تاریخ موجودیت خودش با یک بحران جهانی مواجه شده.",
+      "en": "For the first time in its existence, Bitcoin is facing a global crisis."
+    },
+    {
+      "startSec": 964,
+      "fa": "ما داریم از کانسپتی صحبت می‌کنیم که خودش زاییده یک بحران بود — همان کرش ۲۰۰۸ باعث شد نیاز به یک سیستم پرداخت غیرمتمرکز جهانی احساس بشه.",
+      "en": "We're talking about a concept that was itself born out of a crisis — the 2008 crash created the need for a decentralized global payment system."
+    },
+    {
+      "startSec": 2659,
+      "fa": "این سیستم سرویلنس در دنیای پساکرونا خیلی بیشتر خواهد شد؛ ما برنمی‌گردیم به جایی که بودیم.",
+      "en": "This surveillance system will become far more pervasive in the post-COVID world; we won't return to where we were."
+    },
+    {
+      "startSec": 2882,
+      "fa": "این نگاهی بود که از روز اول نسبت به بیت‌کوین داشتم و هنوزم دارم: حداقل یک روزنه داشته باشم برای مبارزه، اگر قرار است همه چیز زیر کنترل یک سیستم مرکزی باشد.",
+      "en": "This is the view I've had of Bitcoin from day one and still hold: to have at least one escape route for resistance, if everything is going to fall under the control of a centralized system."
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Circuit Breaker",
+      "termFa": "سیرکت‌بریکر (قطع‌کننده مدار)",
+      "definitionEn": "A stock-market rule that halts trading for 15 minutes when an index falls more than 7% to prevent panic-driven flash crashes.",
+      "definitionFa": "مکانیزمی در بازار سهام که هنگام ریزش بیش از ۷ درصد، معاملات را ۱۵ دقیقه متوقف می‌کند تا از سقوط ناگهانی جلوگیری شود."
+    },
+    {
+      "term": "Sell-Off",
+      "termFa": "سل‌آف (فروش گسترده)",
+      "definitionEn": "A rapid, large-scale selling of assets — stocks or crypto — that drives prices sharply lower in a short period.",
+      "definitionFa": "فروش سریع و گسترده دارایی‌ها که قیمت را در مدت کوتاهی به شدت پایین می‌آورد."
+    },
+    {
+      "term": "Halving",
+      "termFa": "هاوینگ (نصف شدن پاداش)",
+      "definitionEn": "A pre-programmed Bitcoin event, occurring roughly every four years, that cuts the block reward miners receive in half.",
+      "definitionFa": "رویدادی از پیش برنامه‌ریزی‌شده در بیت‌کوین که هر چهار سال یک‌بار پاداش ماینرها را به نصف کاهش می‌دهد."
+    },
+    {
+      "term": "Hash Rate",
+      "termFa": "هش‌ریت",
+      "definitionEn": "The total computational power being used to mine and process Bitcoin transactions, reflecting network security and miner participation.",
+      "definitionFa": "مجموع توان محاسباتی که برای استخراج و پردازش تراکنش‌های بیت‌کوین استفاده می‌شود و نشان‌دهنده امنیت شبکه است."
+    },
+    {
+      "term": "PlusToken",
+      "termFa": "پلاس‌توکن",
+      "definitionEn": "A large Ponzi-scheme scam that accumulated over 70,000 BTC and whose operators' coin dumps contributed to Bitcoin price drops in 2019–2020.",
+      "definitionFa": "یک کلاهبرداری پانزی بزرگ که بیش از ۷۰٬۰۰۰ بیت‌کوین جمع‌آوری کرد و فروش آن‌ها در ۲۰۱۹–۲۰۲۰ به ریزش قیمت کمک کرد."
+    },
+    {
+      "term": "BitMEX",
+      "termFa": "بیت‌مکس",
+      "definitionEn": "A major cryptocurrency derivatives exchange known for high-leverage Bitcoin futures trading and short liquidations.",
+      "definitionFa": "یکی از صرافی‌های بزرگ مشتقات رمزارز که به معاملات آتی بیت‌کوین با اهرم بالا و تسویه پوزیشن‌های شورت مشهور است."
+    },
+    {
+      "term": "Quantitative Easing (QE)",
+      "termFa": "تسهیل کمّی (چاپ پول)",
+      "definitionEn": "A central bank policy of creating new money to purchase assets, expanding the money supply to stimulate the economy.",
+      "definitionFa": "سیاست بانک مرکزی برای خلق پول جدید و خرید دارایی‌ها به منظور افزایش عرضه پول و تحریک اقتصاد."
+    },
+    {
+      "term": "Fiat Money",
+      "termFa": "پول فیات",
+      "definitionEn": "Government-issued currency not backed by a physical commodity, whose supply central banks can expand without limit.",
+      "definitionFa": "ارز صادرشده توسط دولت که پشتوانه کالایی ندارد و بانک‌های مرکزی می‌توانند بدون محدودیت آن را چاپ کنند."
+    },
+    {
+      "term": "KYC (Know Your Customer)",
+      "termFa": "احراز هویت مشتری (کی‌وای‌سی)",
+      "definitionEn": "Regulatory requirements forcing financial and crypto platforms to verify users' identities before allowing transactions.",
+      "definitionFa": "الزامات نظارتی که پلتفرم‌های مالی و رمزارز را ملزم می‌کند پیش از انجام تراکنش، هویت کاربران را تأیید کنند."
+    },
+    {
+      "term": "Systematic Risk",
+      "termFa": "ریسک سیستماتیک",
+      "definitionEn": "Market-wide risk that cannot be eliminated through diversification, typically triggered by macroeconomic or geopolitical shocks.",
+      "definitionFa": "ریسکی که کل بازار را تحت تأثیر قرار می‌دهد و با تنوع‌بخشی قابل حذف نیست؛ معمولاً ناشی از شوک‌های کلان اقتصادی است."
+    },
+    {
+      "term": "Digital Gold",
+      "termFa": "طلای دیجیتال",
+      "definitionEn": "A popular metaphor for Bitcoin, highlighting its fixed supply and store-of-value properties as analogous to physical gold.",
+      "definitionFa": "استعاره‌ای رایج برای بیت‌کوین که عرضه محدود و ویژگی ذخیره ارزش آن را به طلای فیزیکی تشبیه می‌کند."
+    },
+    {
+      "term": "Facial Recognition",
+      "termFa": "تشخیص چهره",
+      "definitionEn": "AI-powered surveillance technology that identifies individuals from camera footage, raising significant privacy concerns.",
+      "definitionFa": "فناوری نظارتی مبتنی بر هوش مصنوعی که افراد را از تصاویر دوربین شناسایی می‌کند و نگرانی‌های جدی حریم خصوصی ایجاد می‌کند."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "شیریا خد",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پلاستوکن",
+      "right": "پلاس‌توکن"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیت مکس",
+      "right": "بیت‌مکس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "هلدینگ",
+      "right": "هاوینگ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سیکت بریکر",
+      "right": "سیرکت‌بریکر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سیرکت بریکر",
+      "right": "سیرکت‌بریکر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کرپتوکارنسی",
+      "right": "کریپتوکارنسی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کیروپتو",
+      "right": "کریپتو"
+    },
+    {
+      "lang": "fa",
+      "wrong": "جورجا گامبن",
+      "right": "جورجو آگامبن"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کوین بیس",
+      "right": "کوین‌بیس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "شاپفایی",
+      "right": "شاپیفای"
+    },
+    {
+      "lang": "fa",
+      "wrong": "فیشال ریکوگنیشن",
+      "right": "فیشیال ریکوگنیشن"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیریا",
+      "right": "بِی‌اریا"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سیدیکون ولی",
+      "right": "سیلیکون ولی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تورنادو کشت",
+      "right": "تورنادو کَش"
+    },
+    {
+      "lang": "fa",
+      "wrong": "هش ریت",
+      "right": "هش‌ریت"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کی وای سی",
+      "right": "کی‌وای‌سی"
+    }
+  ]
+}

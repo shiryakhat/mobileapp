@@ -1,0 +1,235 @@
+{
+  "id": "s06e02",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:00:14.576Z",
+  "summaryFa": "این قسمت دومِ فصل ششم پادکست «شیر یا خط» به بررسی راهکارهای مقیاس‌پذیری بلاکچین می‌پردازد. ابتدا مدل‌های اجماع جایگزین—از Proof of Authority و Delegated Proof of Stake گرفته تا اجماع آوالانچ—با تمرکز بر تبادل بین سرعت و تمرکزگرایی تحلیل می‌شوند. سپس راهکارهای لایه دوم به‌تفصیل بررسی می‌شوند: کانال‌های پرداخت و شبکه لایتنینگ با مشکلات نقدینگی و مسیریابی، سایدچین‌ها، کامیت‌چین‌هایی مانند Polygon، و در پایان رول‌آپ‌ها به‌عنوان هیبریدی که هم دسترس‌پذیری داده و هم انگیزه‌های سیستمی برای کشف تقلب را تأمین می‌کنند؛ با مقایسه دقیق Optimistic Rollup و ZK-Rollup.",
+  "summaryEn": "The second episode of season six of Shir Ya Khat surveys blockchain scalability solutions beyond Layer 1 logic changes. Consensus model alternatives—Proof of Authority, Delegated Proof of Stake, and Avalanche's random-sampling consensus—are weighed against each other on the centralization spectrum. The bulk of the episode covers Layer 2 approaches: one-way and bidirectional payment channels, the Lightning Network's routing, liquidity, and hub-centralization issues, sidechains, commit chains like Polygon, and finally rollups—explaining why data availability and universal fraud-detection incentives define a true Layer 2, and contrasting optimistic rollups (Arbitrum, Optimism) with their week-long finality windows against zk-rollups using zk-SNARKs for instant finality.",
+  "quotes": [
+    {
+      "startSec": 1325,
+      "fa": "باید در واقع از بلاکچین اصلی به عنوان لایه‌ی تسویه استفاده کنیم؛ یعنی ازش استفاده کنیم، یه سری اطلاعات مهم رو توش بذاریم، و بقیه چیزها رو خارج از بلاکچین انجام بدیم.",
+      "en": "We actually have to use the main blockchain as a settlement layer—put some important information in it, and handle everything else off-chain.",
+      "speaker": "مهدی"
+    },
+    {
+      "startSec": 3083,
+      "fa": "مهم‌ترین چیزی که برام مطرحه برای اینکه یک لایه‌ی دو واقعاً لایه‌ی دو باشه، به نظر من دسترس‌پذیری داده‌ست. تا وقتی که شما داده‌ای روی بلاکچین اصلی ندارید، نمی‌تونید ادعا کنید لایه‌ی دو دارید.",
+      "en": "The most important thing for me, for something to truly be a Layer 2, is data availability. As long as you don't have data on the main blockchain, you can't claim you have a Layer 2.",
+      "speaker": "مهدی"
+    },
+    {
+      "startSec": 3612,
+      "fa": "یه روش بزنیم که اگه کسی آف‌چین توی لایه‌ی دو خطایی انجام داد، همه بتونن اون خطا رو تشخیص بدن و تنبیه کنن. این دوتا مهم‌ترین چیزهاییه که باید داشته باشیم تا بگیم لایه‌ی دو داریم.",
+      "en": "We need a mechanism where if anyone commits a fault off-chain in Layer 2, everyone can detect and punish it. These two things are the most important requirements for us to say we actually have a Layer 2.",
+      "speaker": "مهدی"
+    },
+    {
+      "startSec": 4204,
+      "fa": "یعنی یک نفر تو این دنیا باشه که بخواد استیت درست رو پوش کنه، می‌تونه؛ چون داده روی بلاکچینه، می‌ره ور می‌داره، استیت‌ها رو از اول می‌سازه و اون استیت اشتباه رو تشخیص می‌ده.",
+      "en": "If there's even one person in this world who wants to push the correct state, they can—because the data is on the blockchain, they take it, rebuild the states from scratch, and detect the wrong state.",
+      "speaker": "مهدی"
+    },
+    {
+      "startSec": 4490,
+      "fa": "قطعاً تمام شبکه‌ها در نهایت به سمت ZK-Proof ها و ZK-Rollup ها کشیده خواهند شد؛ حتی بیتکوین هم به این سمت خواهد اومد، چون زیبایی کار اصلاً کریپتوگرافیه.",
+      "en": "All networks will eventually be drawn toward zk-proofs and zk-rollups—even Bitcoin will move in this direction, because the real beauty of it all is the cryptography.",
+      "speaker": "مهدی"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Proof of Authority",
+      "termFa": "اثبات اقتدار",
+      "definitionEn": "A consensus model where a fixed, pre-approved set of nodes validates transactions, trading decentralization for high throughput.",
+      "definitionFa": "مدل اجماعی که در آن تعداد محدودی گره‌ی از پیش تأیید‌شده تراکنش‌ها را تأیید می‌کنند؛ در ازای سرعت بالا، تمرکزگرایی زیادی دارد."
+    },
+    {
+      "term": "Delegated Proof of Stake",
+      "termFa": "اثبات سهام نمایندگی‌شده",
+      "definitionEn": "A consensus variant where token holders vote to elect a small set of validators who produce blocks on their behalf.",
+      "definitionFa": "نوعی اثبات سهام که در آن دارندگان توکن با رأی‌گیری تعداد کمی ولیدیتور انتخاب می‌کنند تا بلاک تولید کنند."
+    },
+    {
+      "term": "Avalanche Consensus",
+      "termFa": "اجماع آوالانچ",
+      "definitionEn": "A probabilistic consensus protocol using repeated random sampling of nodes to reach fast, high-confidence finality.",
+      "definitionFa": "پروتکل اجماعی که با نمونه‌برداری تصادفی تکرارشونده از گره‌ها به سرعت به قطعیت بالا می‌رسد."
+    },
+    {
+      "term": "Payment Channel",
+      "termFa": "کانال پرداخت",
+      "definitionEn": "An off-chain mechanism where two parties lock funds on-chain and exchange signed balance updates without broadcasting each transaction.",
+      "definitionFa": "مکانیزمی آف‌چین که دو طرف وجوه را روی زنجیره قفل می‌کنند و به‌روزرسانی‌های موجودی را بدون ارسال هر تراکنش به شبکه تبادل می‌کنند."
+    },
+    {
+      "term": "Lightning Network",
+      "termFa": "شبکه‌ی لایتنینگ",
+      "definitionEn": "A Bitcoin Layer 2 payment network using HTLC-routed channels so users can pay anyone without a direct channel.",
+      "definitionFa": "شبکه‌ی لایه‌ی دوم بیتکوین که با مسیریابی HTLC امکان پرداخت به هر کسی را بدون کانال مستقیم فراهم می‌کند."
+    },
+    {
+      "term": "State Channel",
+      "termFa": "کانال حالت",
+      "definitionEn": "A generalized off-chain channel that supports arbitrary smart-contract state transitions, not just payments.",
+      "definitionFa": "کانال آف‌چین عمومی‌تری که از هر نوع تغییر حالت قرارداد هوشمند، نه فقط پرداخت، پشتیبانی می‌کند."
+    },
+    {
+      "term": "Sidechain",
+      "termFa": "زنجیره‌ی جانبی",
+      "definitionEn": "An independent blockchain linked to a main chain via a two-way bridge, operating under its own consensus rules.",
+      "definitionFa": "بلاکچین مستقلی که از طریق یک پل دوطرفه به زنجیره‌ی اصلی متصل است و قوانین اجماع خود را دارد."
+    },
+    {
+      "term": "Commit Chain",
+      "termFa": "زنجیره‌ی تعهد",
+      "definitionEn": "A Layer 2 design that periodically commits its state root and validator registrations to the main blockchain for security.",
+      "definitionFa": "طرحی لایه‌ی دوم که به‌صورت دوره‌ای ریشه‌ی حالت و اطلاعات ولیدیتورها را برای امنیت بیشتر روی بلاکچین اصلی ثبت می‌کند."
+    },
+    {
+      "term": "Optimistic Rollup",
+      "termFa": "رول‌آپ خوش‌بینانه",
+      "definitionEn": "A rollup that assumes off-chain computations are valid by default and relies on fraud proofs and a dispute window to catch errors.",
+      "definitionFa": "رول‌آپی که به‌طور پیش‌فرض محاسبات آف‌چین را معتبر می‌داند و برای کشف خطا بر اثبات تقلب و بازه‌ی اعتراض تکیه می‌کند."
+    },
+    {
+      "term": "ZK-Rollup",
+      "termFa": "رول‌آپ دانش‌صفر",
+      "definitionEn": "A rollup that accompanies each state update with a cryptographic validity proof, enabling instant finality without a dispute period.",
+      "definitionFa": "رول‌آپی که هر به‌روزرسانی حالت را با یک اثبات اعتبارسنجی رمزنگاری همراه می‌کند و بدون نیاز به دوره‌ی اعتراض قطعیت فوری دارد."
+    },
+    {
+      "term": "zk-SNARK",
+      "termFa": "زی‌کی‌اسنارک",
+      "definitionEn": "A cryptographic proof system allowing one party to prove knowledge of information to another without revealing the information itself.",
+      "definitionFa": "سیستم اثبات رمزنگاری که به یک طرف اجازه می‌دهد صحت اطلاعاتی را بدون فاش کردن آن اثبات کند."
+    },
+    {
+      "term": "Data Availability",
+      "termFa": "دسترس‌پذیری داده",
+      "definitionEn": "The guarantee that all data needed to reconstruct and verify Layer 2 state is published on and accessible from the main chain.",
+      "definitionFa": "این تضمین که تمام داده‌های لازم برای بازسازی و تأیید حالت لایه‌ی دوم روی زنجیره‌ی اصلی منتشر و قابل دسترس است."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "en",
+      "wrong": "Sher ya Khat",
+      "right": "Shir Ya Khat"
+    },
+    {
+      "lang": "fa",
+      "wrong": "شیریا خط",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتریان",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتریوم",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتریام",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیت کوین",
+      "right": "بیتکوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لایتنینک",
+      "right": "لایتنینگ"
+    },
+    {
+      "lang": "en",
+      "wrong": "lightening",
+      "right": "Lightning"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آربیترو",
+      "right": "آربیتروم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اپتیمیزم",
+      "right": "اپتیمیسم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "متیک",
+      "right": "ماتیک"
+    },
+    {
+      "lang": "en",
+      "wrong": "Polygon/Matic",
+      "right": "Polygon (Matic)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زی که رولاپ",
+      "right": "ZK-Rollup"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اپتیمیستیک رول لاپ",
+      "right": "Optimistic Rollup"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زی که اصنار",
+      "right": "zk-SNARK"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زی که سنورک",
+      "right": "zk-SNARK"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زی که سینک",
+      "right": "zkSync"
+    },
+    {
+      "lang": "fa",
+      "wrong": "یونی سوپ",
+      "right": "یونی‌سواپ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "هایپرلژر بیزو",
+      "right": "Hyperledger Besu"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای او اس",
+      "right": "EOS"
+    },
+    {
+      "lang": "fa",
+      "wrong": "استیت چنل",
+      "right": "استیت‌چنل"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کامی چین",
+      "right": "کامیت‌چین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سای چین",
+      "right": "سایدچین"
+    },
+    {
+      "lang": "en",
+      "wrong": "estateful routing",
+      "right": "stateful routing"
+    }
+  ]
+}

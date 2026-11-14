@@ -1,0 +1,236 @@
+{
+  "id": "s03e06",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:04:21.553Z",
+  "summaryFa": "در این اپیزود، تیم شیر یا خط در روز ۲۶ اسفند ۱۳۹۸ ابزارهای دورکاری نظیر دیسکورد، تلگرام و ترلو را معرفی می‌کند و سپس به فریلنسینگ آنلاین با تمرکز بر پلتفرم‌های ایرانی مانند پونیشا، درگاه‌های پرداخت بیتکوین مثل Coinbase Commerce و Jibit، و پلتفرم غیرمتمرکز ETHLance می‌پردازد. بخش آموزشی اپیزود منابعی چون Mastering Bitcoin، Mastering Ethereum، Coursera و code.org را معرفی می‌کند. در پایان، کاربرد بلاکچین برای شفافیت خیریه‌ها در شرایط تحریم، نقش اوراکل‌ها در گزارش آمار کووید-۱۹، و بحران لیکوئید شدن وام‌های MakerDAO در پی سقوط شدید قیمت اتریوم در مارس ۲۰۲۰ تشریح می‌شود.",
+  "summaryEn": "Recorded on March 16, 2020, the CoinIran team discusses remote-work tools (Discord, Telegram, Trello, Monday), Iranian freelancing platforms like Ponisha, Bitcoin payment gateways (Coinbase Commerce, Jibit), and the decentralized freelancing dApp ETHLance. Educational resources including Mastering Bitcoin, Mastering Ethereum, Coursera, and code.org—co-founded by Iranian-American brothers Ali and Hadi Partovi—are highlighted. The episode closes with a detailed examination of how blockchain can enable transparent, sanction-resistant charity fundraising, how oracles could improve COVID-19 case reporting, and how the March 2020 ETH price crash triggered mass liquidations, network congestion, stale oracle prices, and zero-bid collateral auctions in MakerDAO, along with the MKR token buyback recovery plan.",
+  "quotes": [
+    {
+      "startSec": 267,
+      "fa": "به دلیل مشکلات تحریم خیلی از سایت‌ها رو نمیتونین در ایران استفاده کنین، ولی خیلی سایت‌ها هستن که میشه — یا بیسشون در ایرانه یا از کریپتوکارنسی استفاده می‌کنن.",
+      "en": "Because of sanctions, you can't use many sites from Iran — but there are plenty you can, either because they're based in Iran or because they use cryptocurrency.",
+      "speaker": "Pedram"
+    },
+    {
+      "startSec": 1157,
+      "fa": "می‌تونین ETHLance رو فورک کنین، روش کار کنین و مدل بهتریش بکنین.",
+      "en": "You can fork ETHLance, build on it, and make a better version of it."
+    },
+    {
+      "startSec": 1434,
+      "fa": "مردم در فیسبوک پول جمع کردن — در حد یک میلیون دولار — ولی فیسبوک در آخر این پول رو فریز کرد و بلاک کرد، چون ایران تحریم بود.",
+      "en": "People raised money on Facebook — around a million dollars — but in the end Facebook froze and blocked it because Iran was under sanctions."
+    },
+    {
+      "startSec": 1964,
+      "fa": "اگه بخواییم روی بلاکچین پیاده‌سازی کنیم، همین بحث اوراکل‌ها و سورس آف تروث مطرح میشه — که حقیقت از کجا میاد.",
+      "en": "If we want to implement this on a blockchain, the whole oracle debate comes up — the question of where the source of truth actually comes from."
+    },
+    {
+      "startSec": 2495,
+      "fa": "سیستم اوراکلی که قرار بود قیمت اتریوم رو داشته باشه نتونست آپدیت کنه، شبکه شلوغ شد، و خیلی‌ها تونستن اتریوم رو با قیمت صفر بخرن.",
+      "en": "The oracle system that was supposed to track the Ethereum price couldn't update because the network got congested, and many people ended up buying Ethereum for zero."
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Gitcoin",
+      "termFa": "گیت‌کوین",
+      "definitionEn": "An Ethereum-based platform connecting developers to open-source bounties, grants, and bug-bounty rewards tied to GitHub issues.",
+      "definitionFa": "پلتفرمی مبتنی بر اتریوم که توسعه‌دهندگان را با باگ‌بانتی‌ها، گرنت‌ها و پروژه‌های متن‌باز روی گیت‌هاب مرتبط می‌کند."
+    },
+    {
+      "term": "ETHLance",
+      "termFa": "ایت‌لنس",
+      "definitionEn": "A fully decentralized freelancing dApp on Ethereum where project data is stored in smart contracts and no platform fee is charged.",
+      "definitionFa": "یک پلتفرم فریلنسینگ کاملاً غیرمتمرکز روی اتریوم که داده‌های پروژه را در قرارداد هوشمند ذخیره می‌کند و کارمزد پلتفرم نمی‌گیرد."
+    },
+    {
+      "term": "MakerDAO",
+      "termFa": "میکردائو",
+      "definitionEn": "A decentralized protocol on Ethereum that lets users lock ETH as collateral to generate the DAI stablecoin.",
+      "definitionFa": "پروتکل غیرمتمرکزی روی اتریوم که به کاربران اجازه می‌دهد اتریوم را به‌عنوان وثیقه قفل کنند و استیبل‌کوین دای دریافت کنند."
+    },
+    {
+      "term": "DAI",
+      "termFa": "دای",
+      "definitionEn": "A decentralized, over-collateralized stablecoin issued by MakerDAO, pegged to one US dollar.",
+      "definitionFa": "یک استیبل‌کوین غیرمتمرکز و بیش‌وثیقه‌ای صادرشده توسط میکردائو که ارزش آن برابر یک دلار آمریکاست."
+    },
+    {
+      "term": "Collateralized Loan",
+      "termFa": "وام با وثیقه",
+      "definitionEn": "A loan where the borrower locks up assets worth more than the loan amount to guarantee repayment.",
+      "definitionFa": "وامی که وام‌گیرنده دارایی‌هایی بیش از مبلغ وام را به‌عنوان ضمانت قفل می‌کند."
+    },
+    {
+      "term": "Liquidation",
+      "termFa": "لیکوئید شدن",
+      "definitionEn": "The forced sale of a borrower's collateral when its value drops below the minimum required ratio.",
+      "definitionFa": "فروش اجباری وثیقه وام‌گیرنده زمانی که ارزش آن از حداقل نسبت مجاز پایین‌تر می‌رود."
+    },
+    {
+      "term": "Oracle",
+      "termFa": "اوراکل",
+      "definitionEn": "A service that feeds real-world data (such as asset prices) into a blockchain smart contract.",
+      "definitionFa": "سرویسی که داده‌های دنیای واقعی مانند قیمت دارایی‌ها را به قرارداد هوشمند روی بلاکچین منتقل می‌کند."
+    },
+    {
+      "term": "DeFi (Decentralized Finance)",
+      "termFa": "دیفای (مالیه غیرمتمرکز)",
+      "definitionEn": "Financial services built on public blockchains using smart contracts, with no central intermediary.",
+      "definitionFa": "خدمات مالی ساخته‌شده روی بلاکچین‌های عمومی با استفاده از قراردادهای هوشمند، بدون واسطه مرکزی."
+    },
+    {
+      "term": "Bug Bounty",
+      "termFa": "باگ‌بانتی",
+      "definitionEn": "A reward offered to anyone who discovers and reports a security vulnerability in software.",
+      "definitionFa": "جایزه‌ای که به کسی پرداخت می‌شود که آسیب‌پذیری امنیتی در نرم‌افزار پیدا و گزارش کند."
+    },
+    {
+      "term": "Smart Contract",
+      "termFa": "قرارداد هوشمند",
+      "definitionEn": "Self-executing code stored on a blockchain that automatically enforces agreement terms without a middleman.",
+      "definitionFa": "کدی خوداجرا روی بلاکچین که شرایط توافق را به‌طور خودکار و بدون واسطه اجرا می‌کند."
+    },
+    {
+      "term": "Mastering Ethereum",
+      "termFa": "مسترینگ اتریوم",
+      "definitionEn": "An open-source reference book by Andreas Antonopoulos covering Ethereum development in depth.",
+      "definitionFa": "کتاب مرجع متن‌باز نوشته آندریاس آنتونوپولوس که توسعه اتریوم را به‌صورت عمیق پوشش می‌دهد."
+    },
+    {
+      "term": "LocalBitcoins",
+      "termFa": "لوکال بیتکوین",
+      "definitionEn": "A peer-to-peer Bitcoin trading platform that connects buyers and sellers directly for cash or other payment methods.",
+      "definitionFa": "پلتفرم معاملات همتا‌به‌همتای بیتکوین که خریداران و فروشندگان را مستقیماً برای پرداخت نقدی یا روش‌های دیگر به هم متصل می‌کند."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "en",
+      "wrong": "Shenakht",
+      "right": "Shir ya Khat"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایت لانس",
+      "right": "ETHLance"
+    },
+    {
+      "lang": "en",
+      "wrong": "ETH Launch",
+      "right": "ETHLance"
+    },
+    {
+      "lang": "fa",
+      "wrong": "میکردال",
+      "right": "میکردائو"
+    },
+    {
+      "lang": "fa",
+      "wrong": "گیت هاپ",
+      "right": "گیت‌هاب"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پانیشا",
+      "right": "پونیشا"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پارسفادرز",
+      "right": "پارس‌فریلنسر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "جیب داتای او",
+      "right": "Jibit.io"
+    },
+    {
+      "lang": "fa",
+      "wrong": "وردپیل",
+      "right": "وردپیل (WordPill)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تورنیدو کشت",
+      "right": "Tornado Cash"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اوراکیلز",
+      "right": "اوراکل‌ها"
+    },
+    {
+      "lang": "fa",
+      "wrong": "استبل کوین",
+      "right": "استیبل‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لیکویید",
+      "right": "لیکوئید"
+    },
+    {
+      "lang": "fa",
+      "wrong": "برادران پرتوبی",
+      "right": "برادران پارتووی"
+    },
+    {
+      "lang": "en",
+      "wrong": "Partovi brothers",
+      "right": "Partovi brothers (Ali and Hadi Partovi)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کرپیوکارنسی",
+      "right": "کریپتوکارنسی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کرپتوکارنسی",
+      "right": "کریپتوکارنسی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایران رسکیو بیت",
+      "right": "Iran Rescue Bit"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سمارت کانترکت",
+      "right": "قرارداد هوشمند"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اسمار کانچکت",
+      "right": "قرارداد هوشمند"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اسپانیش فلو",
+      "right": "آنفولانزای اسپانیایی (Spanish Flu)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پندمیک",
+      "right": "پاندمی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "گوفاند می",
+      "right": "GoFundMe"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کورسرا",
+      "right": "Coursera"
+    },
+    {
+      "lang": "fa",
+      "wrong": "متامسکش",
+      "right": "متامسک"
+    }
+  ]
+}

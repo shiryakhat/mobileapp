@@ -1,0 +1,193 @@
+{
+  "id": "s01e02",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:12:11.761Z",
+  "summaryFa": "اتریوم به‌عنوان «کامپیوتر غیرمتمرکز» نسل دوم بلاکچین معرفی می‌شود و تفاوت بنیادی آن با بیتکوین در مدل حساب‌محور در برابر مدل UTXO، مفهوم قراردادهای هوشمند و زبان سالیدیتی، و ایتر به‌عنوان «کریپتو فیول» بررسی می‌شود. بخش مهمی از بحث به ماجرای هک داو، هارد فورک جنجالی اتریوم، پیدایش اتریوم کلاسیک، و پیامدهای آن برای اعتماد سرمایه‌گذاران اختصاص دارد. در پایان، گزارش هفتگی بازار (بیت‌کوین، ریپل، دش) و معرفی سرویس ایرانی دیجی‌ارز به‌عنوان ابزار تجمیع قیمت صرافی‌ها ارائه می‌شود.",
+  "summaryEn": "Ethereum is framed as a 'decentralized computer' contrasted with Bitcoin's 'decentralized database,' with detailed discussion of smart contracts, the account/balance model versus Bitcoin's UTXO system, Ether as 'crypto fuel' analogous to oil rather than gold, and the Solidity programming language. A major portion examines the DAO hack, the contentious hard fork that created Ethereum Classic, replay-attack risks, and how the rushed 24-hour voting window eroded community trust. The episode closes with a weekly market report on Bitcoin, Ripple, and Dash, plus an introduction to DigiArz, an Iranian service aggregating exchanger prices and launching a Telegram bot for price transparency.",
+  "quotes": [
+    {
+      "startSec": 47,
+      "fa": "اگر فرض کنیم بیت‌کوین یک دیتابیس غیرمتمرکز است، اتریوم در واقع یک کامپیوتر غیرمتمرکز است.",
+      "en": "If we think of Bitcoin as a decentralized database, Ethereum is essentially a decentralized computer.",
+      "speaker": "Shayan"
+    },
+    {
+      "startSec": 99,
+      "fa": "این کد می‌تواند با کود نوشته شود؛ از این کود می‌شود قانون.",
+      "en": "This agreement can be written in code — and this code becomes the law.",
+      "speaker": "Shayan"
+    },
+    {
+      "startSec": 613,
+      "fa": "ایتر مثل نفت می‌ماند؛ یک کامودیتی است که یوتیلیتی خاصی دارد — لایسنس استفاده از این سیستم — و کَپ هم ندارد.",
+      "en": "Ether is like oil — a commodity with a specific utility, the license to use this system — and it has no supply cap."
+    },
+    {
+      "startSec": 1760,
+      "fa": "نظر شخصی من این است که اگر فورک نمی‌کردند، شاید اعتماد بیشتری روی این بلاکچین می‌بود؛ ولی در همان حال ارزش اتریوم خیلی می‌رفت پایین.",
+      "en": "My personal opinion is that if they hadn't forked, there might have been more trust in this blockchain — but at the same time, the value of Ethereum would have dropped a lot.",
+      "speaker": "Shayan"
+    },
+    {
+      "startSec": 1726,
+      "fa": "این فورک یک جور سانسور بود؛ با اصل و اساس بلاکچین یک خورده همخوانی ندارد.",
+      "en": "This fork was a kind of censorship — it doesn't quite align with the fundamental principles of blockchain."
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Smart Contract",
+      "termFa": "قرارداد هوشمند",
+      "definitionEn": "Self-executing code stored on a blockchain that automatically enforces the terms of an agreement without intermediaries.",
+      "definitionFa": "کدی که روی بلاکچین ذخیره می‌شود و شرایط یک توافق را بدون نیاز به واسطه به‌طور خودکار اجرا می‌کند."
+    },
+    {
+      "term": "Proof of Work",
+      "termFa": "اثبات کار",
+      "definitionEn": "A consensus mechanism requiring miners to solve computationally hard puzzles to validate blocks and earn rewards.",
+      "definitionFa": "مکانیزمی که ماینرها باید معادلات محاسباتی سخت را حل کنند تا بلوک‌ها را تأیید کرده و پاداش دریافت کنند."
+    },
+    {
+      "term": "Proof of Stake",
+      "termFa": "اثبات سهام",
+      "definitionEn": "A consensus mechanism where validators are chosen based on the amount of cryptocurrency they lock up as collateral.",
+      "definitionFa": "مکانیزمی که در آن اعتبارسنج‌ها بر اساس مقدار ارز دیجیتالی که به‌عنوان وثیقه قفل می‌کنند انتخاب می‌شوند."
+    },
+    {
+      "term": "The DAO",
+      "termFa": "داو",
+      "definitionEn": "A decentralized autonomous organization built on Ethereum in 2016 that was hacked, leading to a controversial hard fork.",
+      "definitionFa": "یک سازمان خودمختار غیرمتمرکز ساخته‌شده روی اتریوم در ۲۰۱۶ که هک شد و منجر به یک هارد فورک جنجالی گردید."
+    },
+    {
+      "term": "Hard Fork",
+      "termFa": "هارد فورک",
+      "definitionEn": "A backward-incompatible upgrade to a blockchain protocol that permanently splits the chain into two separate networks.",
+      "definitionFa": "ارتقایی در پروتکل بلاکچین که با نسخه‌های قبلی سازگار نیست و زنجیره را به دو شبکه‌ی مجزا تقسیم می‌کند."
+    },
+    {
+      "term": "Ethereum Classic",
+      "termFa": "اتریوم کلاسیک",
+      "definitionEn": "The original Ethereum chain that continued without the 2016 hard fork, maintained by miners who opposed the rollback.",
+      "definitionFa": "زنجیره‌ی اصلی اتریوم که بدون هارد فورک ۲۰۱۶ ادامه یافت و توسط ماینرهایی که مخالف برگشت بودند حفظ شد."
+    },
+    {
+      "term": "Gas",
+      "termFa": "گس",
+      "definitionEn": "A unit measuring the computational work required to execute operations on the Ethereum network, paid in Ether.",
+      "definitionFa": "واحدی که میزان کار محاسباتی لازم برای اجرای عملیات در شبکه اتریوم را اندازه می‌گیرد و با ایتر پرداخت می‌شود."
+    },
+    {
+      "term": "ICO",
+      "termFa": "آی‌سی‌او (عرضه اولیه کوین)",
+      "definitionEn": "A fundraising method where a project sells newly created tokens to the public in exchange for established cryptocurrencies.",
+      "definitionFa": "روشی برای جذب سرمایه که در آن یک پروژه توکن‌های تازه‌ایجادشده را در ازای ارزهای دیجیتال معروف به عموم می‌فروشد."
+    },
+    {
+      "term": "Solidity",
+      "termFa": "سالیدیتی",
+      "definitionEn": "A statically-typed, JavaScript-like programming language designed for writing smart contracts on the Ethereum blockchain.",
+      "definitionFa": "زبان برنامه‌نویسی strongly typed با سینتکس شبیه به جاوااسکریپت که برای نوشتن قراردادهای هوشمند روی اتریوم طراحی شده است."
+    },
+    {
+      "term": "UTXO (transaction-based model)",
+      "termFa": "مدل ترنزکشن‌بیس (UTXO)",
+      "definitionEn": "Bitcoin's ledger model where each coin is tracked as an unspent output from a prior transaction, unlike Ethereum's account balances.",
+      "definitionFa": "مدل دفتر کل بیت‌کوین که هر سکه به‌عنوان خروجی خرج‌نشده از تراکنش قبلی ردیابی می‌شود، برخلاف مدل موجودی حساب اتریوم."
+    },
+    {
+      "term": "Replay Attack",
+      "termFa": "حمله ریپلی",
+      "definitionEn": "A security vulnerability after a chain split where a transaction valid on one chain can be maliciously rebroadcast on the other.",
+      "definitionFa": "آسیب‌پذیری امنیتی پس از انشعاب زنجیره که تراکنش معتبر در یک زنجیره می‌تواند به‌صورت مخرب در زنجیره دیگر نیز ارسال شود."
+    },
+    {
+      "term": "RootStock",
+      "termFa": "روت‌استاک",
+      "definitionEn": "A smart-contract platform that runs as a Bitcoin sidechain, aiming to bring Ethereum-like functionality to Bitcoin.",
+      "definitionFa": "پلتفرم قرارداد هوشمندی که به‌عنوان یک سایدچین بیت‌کوین اجرا می‌شود و هدف آن آوردن قابلیت‌های مشابه اتریوم به بیت‌کوین است."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "en",
+      "wrong": "Shenakht",
+      "right": "Shir ya Khat"
+    },
+    {
+      "lang": "fa",
+      "wrong": "شناخت",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتیریوم",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتریون",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتریوم",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "en",
+      "wrong": "Dashcoin",
+      "right": "Dash"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دشکوین",
+      "right": "دش"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ویتالیک واید پیپر",
+      "right": "وایت‌پیپر ویتالیک"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ویتالیک بود ترین",
+      "right": "ویتالیک بوترین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "روتستاک",
+      "right": "روت‌استاک"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کراد سیل",
+      "right": "کراودسیل"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اسمارت کانترکت",
+      "right": "قرارداد هوشمند"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دی جی عرض",
+      "right": "دیجی‌ارز"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دی جی اردن",
+      "right": "دیجی‌ارز"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیترکس",
+      "right": "بیتrekس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مارویل",
+      "right": "مرکل"
+    }
+  ]
+}

@@ -1,0 +1,250 @@
+{
+  "id": "s04e04",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T21:54:30.900Z",
+  "summaryFa": "این قسمت به بازارسازهای خودکار (AMM) و صرافی‌های غیرمتمرکز می‌پردازد و منطق فرمول x·y=k در یونی‌سواپ، نقش فراهم‌آورندگان نقدینگی، و Smart Order Routing نسخه دوم را توضیح می‌دهد. سپس بالانسر با پرتفوی چندتوکنی وزن‌دار، Curve.fi با فرمول بهینه برای استیبل‌کوین‌ها و دارایی‌های وابسته مانند WBTC و renBTC، و دکس اگریگیتور 1inch بررسی می‌شوند. در پایان مفاهیم ضرر ناپایدار، اسلیپیج، و پیوند استخرهای نقدینگی با پروتکل‌های وام‌دهی مثل Compound و Yearn Finance معرفی می‌شوند.",
+  "summaryEn": "This episode examines automated market makers (AMMs) and decentralized exchanges, explaining Uniswap's x·y=k constant-function formula, the 50/50 liquidity provider model, arbitrage-driven price discovery, and the Smart Order Routing introduced in Uniswap V2. Balancer's generalization to weighted multi-token pools, Curve.fi's near-linear formula optimized for stablecoin and pegged-asset swaps (WBTC, renBTC), and the DEX aggregator 1inch are then analyzed. The episode closes by introducing impermanent loss, slippage relative to pool depth, and the connection between idle pooled capital and lending protocols like Compound and Yearn Finance.",
+  "quotes": [
+    {
+      "startSec": 557,
+      "fa": "تمام اینا تحت یه ترنزکشن میشه — شما میری انگار یه تابع صدا می‌کنی، اون فرمول حساب میشه، تعداد در میاد، از تو اتر می‌گیره، می‌ذاره توی استخر، از اون ور تعداد دایی که مشخص شده رو بهت میده.",
+      "en": "All of this happens in one transaction — you call a single function, the formula is calculated, the amount comes out, it takes your ETH, puts it in the pool, and gives you the determined amount of DAI from the other side."
+    },
+    {
+      "startSec": 853,
+      "fa": "بالانسر کاری که کرده اینه که شما پورتفولیوتون رو روی یک قرارداد هوشمند می‌زنید، و به جای اینکه یه فاند منیجر بیاد این درصد رو نگه داره، مردمی که دارن ترید می‌کنن پورتفولیو شما رو ثابت نگه می‌دارن.",
+      "en": "What Balancer has done is you put your portfolio onto a smart contract, and instead of a fund manager coming to maintain those percentages, the people who are trading keep your portfolio balanced."
+    },
+    {
+      "startSec": 1417,
+      "fa": "یه ایده اومد تو ذهن بعضی‌ها که خب چه کاریه که ما این فرمول رو همه‌جا داشته باشیم — خیلی جاها نباید این رو داشته باشیم. مثلا کجا؟ مثلا Curve.fi.",
+      "en": "An idea came to some people's minds: why should we use this formula everywhere? In many places we shouldn't have to. For example? Curve.fi."
+    },
+    {
+      "startSec": 1947,
+      "fa": "یه اصطلاحی هست که بهش می‌گن «ضرر ناپایدار» — ناپایداری‌اش اینه که وقتی قیمت برگرده به قیمت موقعی که شما نقدینگی گذاشتین، همون پول اولیتون رو می‌تونین بردارین دوباره.",
+      "en": "There's a term called impermanent loss — the impermanence means that when the price returns to where it was when you provided liquidity, you can take out that same initial capital again."
+    },
+    {
+      "startSec": 2186,
+      "fa": "ما همه اشتباه‌هایی که در اقتصاد عادی انجام دادن رو داریم انجام می‌دیم، ولی هزار بار سریع‌تر — به جایی که یک دهه طول بکشه، خیلی سریع‌تر داریم می‌ریم.",
+      "en": "We're making all the same mistakes that were made in the traditional economy, but a thousand times faster — instead of taking a decade, we're moving much quicker."
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Automated Market Maker (AMM)",
+      "termFa": "بازارساز خودکار",
+      "definitionEn": "A smart contract that sets token prices algorithmically using a formula, replacing traditional order books with liquidity pools.",
+      "definitionFa": "قراردادی هوشمند که با استفاده از یک فرمول ریاضی قیمت توکن‌ها را تعیین می‌کند و جایگزین دفتر سفارش‌های سنتی می‌شود."
+    },
+    {
+      "term": "Constant Function Market Maker (CFMM)",
+      "termFa": "بازارساز با تابع ثابت",
+      "definitionEn": "An AMM type where a mathematical function of pool token quantities must remain constant before and after each trade.",
+      "definitionFa": "نوعی AMM که حاصل یک تابع ریاضی از مقادیر توکن‌های استخر باید قبل و بعد از هر معامله ثابت بماند."
+    },
+    {
+      "term": "Liquidity Provider (LP)",
+      "termFa": "فراهم‌آورنده نقدینگی",
+      "definitionEn": "A user who deposits tokens into an AMM pool, earning trading fees in return for enabling others to swap.",
+      "definitionFa": "کاربری که توکن‌هایش را در استخر AMM واریز می‌کند و در ازای امکان معامله برای دیگران، کارمزد دریافت می‌کند."
+    },
+    {
+      "term": "Impermanent Loss",
+      "termFa": "ضرر ناپایدار",
+      "definitionEn": "The temporary loss an LP experiences when the price ratio of pooled tokens diverges from their ratio at deposit time.",
+      "definitionFa": "زیانی موقت که فراهم‌آورنده نقدینگی هنگام تغییر نسبت قیمت توکن‌های استخر نسبت به زمان واریز تجربه می‌کند."
+    },
+    {
+      "term": "Smart Order Routing (SOR)",
+      "termFa": "مسیریابی هوشمند سفارش",
+      "definitionEn": "A mechanism that automatically splits or routes a trade across multiple pools or exchanges to get the best price.",
+      "definitionFa": "مکانیزمی که معامله را به‌صورت خودکار بین چند استخر یا صرافی تقسیم یا هدایت می‌کند تا بهترین قیمت حاصل شود."
+    },
+    {
+      "term": "Slippage",
+      "termFa": "لغزش قیمت",
+      "definitionEn": "The difference between the expected price of a trade and the price at which it actually executes, larger in shallow pools.",
+      "definitionFa": "تفاوت بین قیمت مورد انتظار یک معامله و قیمت واقعی اجرای آن، که در استخرهای کم‌عمق‌تر بیشتر است."
+    },
+    {
+      "term": "DEX Aggregator",
+      "termFa": "تجمیع‌کننده صرافی غیرمتمرکز",
+      "definitionEn": "A platform that queries multiple DEXs simultaneously and routes a trade to whichever offers the best rate.",
+      "definitionFa": "پلتفرمی که چندین صرافی غیرمتمرکز را همزمان بررسی می‌کند و معامله را به آنکه بهترین نرخ را دارد هدایت می‌کند."
+    },
+    {
+      "term": "Balancer",
+      "termFa": "بالانسر",
+      "definitionEn": "An AMM protocol allowing weighted pools of up to eight tokens, functioning like an automated, manager-free index fund.",
+      "definitionFa": "پروتکل AMM که استخرهای وزن‌دار تا هشت توکن را پشتیبانی می‌کند و مانند یک صندوق سرمایه‌گذاری شاخص خودکار بدون مدیر عمل می‌کند."
+    },
+    {
+      "term": "Curve Finance",
+      "termFa": "کرو فایننس",
+      "definitionEn": "An AMM optimized for swapping stablecoins and pegged assets with minimal slippage using a specialized bonding curve.",
+      "definitionFa": "پروتکل AMM که با استفاده از منحنی پیوند ویژه، مبادله استیبل‌کوین‌ها و دارایی‌های وابسته را با کمترین لغزش قیمت انجام می‌دهد."
+    },
+    {
+      "term": "renBTC",
+      "termFa": "رن‌بیتکوین",
+      "definitionEn": "An ERC-20 token on Ethereum backed 1:1 by real Bitcoin, issued by the Ren Protocol to bring BTC liquidity to DeFi.",
+      "definitionFa": "توکن ERC-20 روی اتریوم که به نسبت یک به یک توسط بیتکوین واقعی پشتیبانی می‌شود و توسط پروتکل Ren برای آوردن نقدینگی BTC به دیفای صادر می‌شود."
+    },
+    {
+      "term": "Factory Contract",
+      "termFa": "قرارداد کارخانه",
+      "definitionEn": "A master smart contract that deploys a new, independent pool contract for each token pair registered on a DEX.",
+      "definitionFa": "قرارداد هوشمند اصلی که برای هر جفت توکن ثبت‌شده روی یک صرافی غیرمتمرکز، یک قرارداد استخر مستقل جدید ایجاد می‌کند."
+    },
+    {
+      "term": "Yearn Finance",
+      "termFa": "یرن فایننس",
+      "definitionEn": "A DeFi yield aggregator that automatically moves user funds between lending protocols to maximize returns.",
+      "definitionFa": "تجمیع‌کننده بازده در دیفای که به‌صورت خودکار سرمایه کاربران را بین پروتکل‌های وام‌دهی جابه‌جا می‌کند تا بازده را بیشینه کند."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "en",
+      "wrong": "Shirokhat",
+      "right": "Shir Ya Khat"
+    },
+    {
+      "lang": "fa",
+      "wrong": "یونیس ها",
+      "right": "یونی‌سواپ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "یونیسواب",
+      "right": "یونی‌سواپ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "یونیسوهب",
+      "right": "یونی‌سواپ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "یونیس واب",
+      "right": "یونی‌سواپ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بلنسر",
+      "right": "بالانسر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بلانسر",
+      "right": "بالانسر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کیرف",
+      "right": "کرو"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کرب داد فایی",
+      "right": "Curve.fi"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ویرن دات فایننس",
+      "right": "Yearn Finance"
+    },
+    {
+      "lang": "fa",
+      "wrong": "وای ارن فایننس",
+      "right": "Yearn Finance"
+    },
+    {
+      "lang": "fa",
+      "wrong": "وای ارن",
+      "right": "Yearn Finance"
+    },
+    {
+      "lang": "fa",
+      "wrong": "وان اینچ دات اکشنج",
+      "right": "1inch.exchange"
+    },
+    {
+      "lang": "fa",
+      "wrong": "وان اکشنج",
+      "right": "1inch"
+    },
+    {
+      "lang": "fa",
+      "wrong": "رن بی تی سی",
+      "right": "renBTC"
+    },
+    {
+      "lang": "fa",
+      "wrong": "رب بی تی سی",
+      "right": "WBTC"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتر دلتا",
+      "right": "EtherDelta"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زیرو اکس",
+      "right": "0x"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کامپاوند",
+      "right": "Compound"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کایبر نتفورک",
+      "right": "Kyber Network"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای ام ام",
+      "right": "AMM"
+    },
+    {
+      "lang": "en",
+      "wrong": "Automated Market Made King",
+      "right": "Automated Market Maker"
+    },
+    {
+      "lang": "fa",
+      "wrong": "استیپج",
+      "right": "اسلیپیج"
+    },
+    {
+      "lang": "fa",
+      "wrong": "استیپچ",
+      "right": "اسلیپیج"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لیکوید تی پروبایدر",
+      "right": "لیکویدیتی پروایدر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دیسنشال اکسچنج",
+      "right": "صرافی غیرمتمرکز"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سمارت کانترکت",
+      "right": "قرارداد هوشمند"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایت سب داره",
+      "right": "x ضربدر y"
+    }
+  ]
+}

@@ -1,0 +1,264 @@
+{
+  "id": "s01e06",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:11:01.258Z",
+  "summaryFa": "این اپیزود یک جلسهٔ پرسش‌وپاسخ آزاد است که به بنیادی‌ترین پرسش‌های تازه‌واردان دربارهٔ بیت‌کوین و بلاک‌چین پاسخ می‌دهد. میزبانان ارزش بیت‌کوین را از منظر توافق اجتماعی و نسبت عرضه‌وتقاضا تبیین می‌کنند، تفاوت آن را با سرویس‌های متمرکزی چون WebMoney و Liberty Reserve توضیح می‌دهند، و درباره‌ی ماهیت شبه‌ناشناس (pseudonymous) بیت‌کوین، ابزارهای تحلیل زنجیره مانند walletexplorer.com و Chainalysis، و حریم خصوصی از طریق CoinJoin بحث می‌کنند. بخش پایانی به کاربردهای بلاک‌چین فراتر از پول—از جمله میکروپرداخت‌ها، شبکهٔ لایتنینگ، قراردادهای هوشمند، قفل‌های اینترنت اشیاء (Slock.it)، و آزادی اقتصادی برای ایرانیان تحت تحریم از طریق فریلنسینگ و صادرات صنایع دستی—اختصاص دارد.",
+  "summaryEn": "This open-mic Q&A episode answers foundational questions from newcomers about Bitcoin and blockchain. The hosts explain Bitcoin's value through the lens of social agreement and supply-and-demand dynamics, contrast it with centralised services like WebMoney and Liberty Reserve, and discuss Bitcoin's pseudonymous (not anonymous) nature alongside chain-analysis tools such as walletexplorer.com and Chainalysis and privacy techniques like CoinJoin. The episode closes on blockchain's broader promise: micropayments and the Lightning Network, smart contracts, IoT security via Slock.it smart locks, and—especially relevant for Iranian listeners under sanctions—economic freedom through freelancing, handicraft exports, and a Swiss company enabling foreigners to trade Iranian stocks via Bitcoin.",
+  "quotes": [
+    {
+      "startSec": 198,
+      "fa": "یک توافق جمعی روی این موضوع صورت گرفته—همان‌طور که در طول هزاران سال پول به این شکل مورد پذیرش عمومی قرار گرفته، بیت‌کوین هم بر همین اساس ارزش دارد.",
+      "en": "A collective agreement has been reached on this matter—just as money has been publicly accepted in this form over thousands of years, Bitcoin has value on the same basis.",
+      "speaker": "Babak"
+    },
+    {
+      "startSec": 477,
+      "fa": "هیچ سروری نیست، هیچ سایتی نیست، هیچ شخصی نیست که اگر دستگیر شد بیت‌کوین زیر سؤال برود.",
+      "en": "There is no server, no website, no person such that if they get arrested, Bitcoin is called into question.",
+      "speaker": "Shayan"
+    },
+    {
+      "startSec": 1822,
+      "fa": "بیت‌کوین را «سودانیموس» می‌گویند—یعنی آدرس بیت‌کوین هویت شما را مخفی می‌کند، اما هر تراکنش روی زنجیره کاملاً قابل مشاهده است.",
+      "en": "Bitcoin is called pseudonymous—meaning a Bitcoin address hides your identity, but every transaction on the chain is fully visible.",
+      "speaker": "Shayan"
+    },
+    {
+      "startSec": 4478,
+      "fa": "این ماجرا در نهایت درباره‌ی آزادی اقتصادی است؛ بلاک‌چین همان کاری را با مرزهای مالی می‌کند که اینترنت با مرزهای اطلاعاتی کرد.",
+      "en": "This is ultimately about economic freedom; blockchain does to financial borders what the internet did to information borders."
+    },
+    {
+      "startSec": 4082,
+      "fa": "شبکهٔ لایتنینگ کاری می‌کند که پرداخت‌های ریز خارج از بلاک‌چین انجام شوند و فقط تراکنش نهایی روی زنجیره ثبت شود—پتانسیل بالایی دارد و من مشتاقانه منتظرم آن روز برسد.",
+      "en": "The Lightning Network makes small payments happen off-chain, with only the final transaction recorded on the blockchain—it has enormous potential and I'm eagerly waiting for that day to come.",
+      "speaker": "Shayan"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Pseudonymous",
+      "termFa": "شبه‌ناشناس",
+      "definitionEn": "Transactions are publicly visible on the blockchain, but addresses are not automatically tied to real-world identities.",
+      "definitionFa": "تراکنش‌ها روی بلاک‌چین عمومی هستند، اما آدرس‌ها به‌طور خودکار به هویت واقعی افراد متصل نیستند."
+    },
+    {
+      "term": "Block Reward",
+      "termFa": "پاداش بلاک",
+      "definitionEn": "The amount of newly created Bitcoin awarded to the miner who successfully adds a block to the blockchain.",
+      "definitionFa": "مقدار بیت‌کوین تازه‌ضرب‌شده‌ای که به ماینری تعلق می‌گیرد که بلاک جدیدی را به زنجیره اضافه می‌کند."
+    },
+    {
+      "term": "Halving",
+      "termFa": "هاوینگ (نصف شدن پاداش)",
+      "definitionEn": "A scheduled event roughly every four years that cuts the Bitcoin block reward in half, reducing the rate of new supply.",
+      "definitionFa": "رویدادی برنامه‌ریزی‌شده که تقریباً هر چهار سال پاداش بلاک بیت‌کوین را نصف می‌کند و نرخ عرضهٔ جدید را کاهش می‌دهد."
+    },
+    {
+      "term": "Hashrate",
+      "termFa": "هش‌ریت",
+      "definitionEn": "The total computational power being used by all miners on the network to find valid block hashes.",
+      "definitionFa": "مجموع قدرت محاسباتی که همهٔ ماینرهای شبکه برای یافتن هش‌های معتبر به کار می‌برند."
+    },
+    {
+      "term": "Difficulty Adjustment",
+      "termFa": "تنظیم سختی",
+      "definitionEn": "An automatic protocol rule that recalibrates mining difficulty every 2,016 blocks to keep average block time near ten minutes.",
+      "definitionFa": "قانون خودکار پروتکل که هر ۲۰۱۶ بلاک سختی ماینینگ را تنظیم می‌کند تا زمان میانگین بلاک نزدیک به ده دقیقه بماند."
+    },
+    {
+      "term": "Proof of Work",
+      "termFa": "اثبات کار",
+      "definitionEn": "A consensus mechanism requiring miners to expend computational energy to find a hash below a target value.",
+      "definitionFa": "مکانیزم اجماعی که ماینرها را ملزم می‌کند انرژی محاسباتی صرف کنند تا هشی کمتر از مقدار هدف بیابند."
+    },
+    {
+      "term": "CoinJoin",
+      "termFa": "کوین‌جوین",
+      "definitionEn": "A privacy technique that combines multiple Bitcoin transactions into one, making it harder to trace individual senders.",
+      "definitionFa": "تکنیک حریم خصوصی که چندین تراکنش بیت‌کوین را در یکی ادغام می‌کند تا ردیابی فرستندگان سخت‌تر شود."
+    },
+    {
+      "term": "Fungibility",
+      "termFa": "تعویض‌پذیری",
+      "definitionEn": "The property of a currency where each unit is interchangeable with any other unit of the same value.",
+      "definitionFa": "ویژگی یک ارز که در آن هر واحد با هر واحد دیگری از همان ارزش قابل جابه‌جایی است."
+    },
+    {
+      "term": "Lightning Network",
+      "termFa": "شبکهٔ لایتنینگ",
+      "definitionEn": "An off-chain payment channel protocol built on Bitcoin that enables fast, cheap micropayments without on-chain confirmation for every transaction.",
+      "definitionFa": "پروتکل کانال پرداخت خارج از زنجیره روی بیت‌کوین که میکروپرداخت‌های سریع و ارزان را بدون تأیید زنجیره‌ای هر تراکنش ممکن می‌سازد."
+    },
+    {
+      "term": "ASICBoost",
+      "termFa": "ای‌سیک‌بوست",
+      "definitionEn": "A patented optimisation technique used in Bitcoin mining ASICs that can improve hashing efficiency by roughly 20%.",
+      "definitionFa": "تکنیک بهینه‌سازی اختراع‌ثبت‌شده‌ای در ای‌سیک‌های ماینینگ بیت‌کوین که می‌تواند کارایی هشینگ را حدود ۲۰٪ بهبود بخشد."
+    },
+    {
+      "term": "Rainbow Table",
+      "termFa": "جدول رنگین‌کمان",
+      "definitionEn": "A precomputed lookup table mapping hash outputs back to their inputs, used to reverse hash functions like password hashes.",
+      "definitionFa": "جدول از پیش محاسبه‌شده‌ای که خروجی‌های هش را به ورودی‌هایشان نگاشت می‌کند و برای معکوس کردن توابع هش مانند هش رمز عبور استفاده می‌شود."
+    },
+    {
+      "term": "Slock.it",
+      "termFa": "اسلاک‌ایت",
+      "definitionEn": "A company that developed smart locks controlled by blockchain transactions, enabling trustless access control for IoT devices.",
+      "definitionFa": "شرکتی که قفل‌های هوشمند کنترل‌شده با تراکنش‌های بلاک‌چین توسعه داد و کنترل دسترسی بدون نیاز به اعتماد را برای دستگاه‌های اینترنت اشیاء ممکن ساخت."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "شیریا خط",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "en",
+      "wrong": "Heads or Tails podcast",
+      "right": "Shir Ya Khat (Heads or Tails) podcast"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ویتکاین",
+      "right": "بیت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکاین",
+      "right": "بیت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ویتکوین",
+      "right": "بیت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکون",
+      "right": "بیت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتریوم",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لایتنینگ نتورک",
+      "right": "شبکهٔ لایتنینگ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لایتین نتفاک",
+      "right": "شبکهٔ لایتنینگ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کوینالیتیکس",
+      "right": "Chainalysis"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سکورچین",
+      "right": "Scorechain"
+    },
+    {
+      "lang": "fa",
+      "wrong": "والت اکسپلورر دات کام",
+      "right": "walletexplorer.com"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اسیک بوست",
+      "right": "ASICBoost"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتمین",
+      "right": "Bitmain"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سلاکیت",
+      "right": "Slock.it"
+    },
+    {
+      "lang": "en",
+      "wrong": "George Maxwell",
+      "right": "Gregory Maxwell"
+    },
+    {
+      "lang": "fa",
+      "wrong": "جورج مکسفیل",
+      "right": "گرگوری مکسول"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سچه دیویس پنج روشیش",
+      "right": "SHA-256"
+    },
+    {
+      "lang": "fa",
+      "wrong": "انجام میشه با سچه دیویس پنج روشیش",
+      "right": "انجام می‌شود با SHA-256"
+    },
+    {
+      "lang": "fa",
+      "wrong": "رینبو تیبلز",
+      "right": "جدول‌های رنگین‌کمان (rainbow tables)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ساتش نکاماتون",
+      "right": "ساتوشی ناکاموتو"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آرورا کوین",
+      "right": "Auroracoin"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دوچ کوین",
+      "right": "Dogecoin"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کوین مارکت کپ",
+      "right": "CoinMarketCap"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لیبرتی ریزیف",
+      "right": "Liberty Reserve"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ویب مانی",
+      "right": "WebMoney"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پرفیکت مانی",
+      "right": "Perfect Money"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سیلک رود",
+      "right": "Silk Road"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کوین جاین",
+      "right": "CoinJoin"
+    },
+    {
+      "lang": "en",
+      "wrong": "pseudonymous",
+      "right": "pseudonymous (شبه‌ناشناس)"
+    }
+  ]
+}

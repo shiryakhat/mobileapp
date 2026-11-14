@@ -1,0 +1,265 @@
+{
+  "id": "s06e03",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:00:12.430Z",
+  "summaryFa": "این اپیزود به بررسی فنی شبکه‌ی لایتنینگ به عنوان نخستین راهکار لایه‌ی دوم روی بیتکوین می‌پردازد. با حضور زیا صدر، نیما و امیرحسین، پیش‌زمینه‌های ضروری لایتنینگ از جمله حساب‌های چند امضایی دو از دو، زبان اسکریپت بیتکوین، UTXO، و عملگرهای کلیدی CheckLockTimeVerify و CheckSequenceVerify توضیح داده می‌شوند. سپس ساختار کانال لایتنینگ گام‌به‌گام شرح داده می‌شود: تراکنش فاندینگ، تراکنش تعهد (Commitment)، قرارداد HTLC، و مکانیزم تنبیه از طریق کلید ریووکیشن در صورت تقلب.",
+  "summaryEn": "This episode provides a technical foundation for the Lightning Network, Bitcoin's first deployed Layer 2 solution. Guests Zia Sadr, Nima, and Amir Hossein walk through the on-chain prerequisites: 2-of-2 multisig accounts, Bitcoin Script, UTXOs and chainstate, and the opcodes OP_CHECKLOCKTIMEVERIFY (CLTV) and OP_CHECKSEQUENCEVERIFY (CSV), tracing their introduction via BIP 65 and SegWit. The hosts then explain step-by-step how a Lightning channel is opened with a funding transaction and an off-chain commitment transaction, how successive commitments update the channel balance, and how revocation keys and penalty transactions deter fraud—leaving routing, watchtowers, and Taproot/PTLC upgrades for future episodes.",
+  "quotes": [
+    {
+      "startSec": 514,
+      "fa": "لایتنینگ به این شکل کار می‌کند که ما روی شبکه‌ی بیتکوین نیاز به دو عدد تراکنش بیشتر نداریم: یک تراکنش فاندینگ اولیه و بعد یک تراکنش بستن کانال — و به ازای این دو، می‌توانیم تعداد نامحدودی تراکنش خارج از شبکه انجام دهیم.",
+      "en": "Lightning works such that on the Bitcoin network we need no more than two transactions — an initial funding transaction and a channel-closing transaction — and in exchange for those two, we can do an unlimited number of transactions off-chain.",
+      "speaker": "زیا"
+    },
+    {
+      "startSec": 758,
+      "fa": "ما باور داریم که تراکنشی که روی لجر اصلی بیتکوین ثبت می‌شود چیز گران‌بهایی است و اصولاً باید گران باشد؛ به همین خاطر برای میکروتراکنش‌ها راهکار لایه‌ی دوم ارائه دادیم.",
+      "en": "We believe that a transaction recorded on Bitcoin's main ledger is something precious and should fundamentally be expensive; that's why we came and offered this Layer 2 solution for microtransactions.",
+      "speaker": "نیما"
+    },
+    {
+      "startSec": 3851,
+      "fa": "اگر طرف مقابل کلید ریووکیشن را بداند، می‌تواند کل مبلغ موجود در کانال را به حساب خودش برگرداند و این‌گونه طرف خاطی را جریمه کند — همین باعث می‌شود اصلاً انگیزه‌ای برای انتشار آن تراکنش وجود نداشته باشد.",
+      "en": "If the other party knows the revocation key, they can return the entire amount in the channel to their own account, penalizing the cheater — and this is what removes any incentive to broadcast that old transaction in the first place.",
+      "speaker": "امیرحسین"
+    },
+    {
+      "startSec": 3435,
+      "fa": "لایتنینگ یک شبکه‌ی کاملاً تعاملی است؛ به ازای هر گامی که می‌خواهیم برداریم باید با طرف مقابل تعامل داشته باشیم. این همان trade-off ای است که برای به دست آوردن مقیاس‌پذیری پذیرفتیم.",
+      "en": "Lightning is a fully interactive network — for every step we want to take we have to interact with the counterparty. That is the trade-off we accepted in order to gain scalability.",
+      "speaker": "امیرحسین"
+    },
+    {
+      "startSec": 1067,
+      "fa": "ساتوشی یک زبان برنامه‌نویسی خیلی ساده به نام Script در بیتکوین قرار داده که با آن می‌توانیم شرایط مختلف را تعریف کنیم؛ از جمله اینکه دو نفر باید همزمان امضایشان را ارائه دهند تا بتوانند از آن صندوق خرج کنند.",
+      "en": "Satoshi placed a very simple programming language called Script inside Bitcoin with which we can define various conditions — including that two people must simultaneously provide their signatures to spend from that vault.",
+      "speaker": "امیرحسین"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Lightning Network",
+      "termFa": "شبکه‌ی لایتنینگ",
+      "definitionEn": "A Layer 2 payment network on Bitcoin enabling fast, cheap off-chain transactions between channel partners.",
+      "definitionFa": "شبکه‌ای روی لایه‌ی دوم بیتکوین که تراکنش‌های سریع و ارزان خارج از زنجیره را بین طرفین کانال ممکن می‌کند."
+    },
+    {
+      "term": "UTXO",
+      "termFa": "UTXO (خروجی تراکنش خرج‌نشده)",
+      "definitionEn": "An unspent transaction output locked by a script; spending it requires satisfying that script's conditions.",
+      "definitionFa": "خروجی تراکنشی که هنوز خرج نشده و با یک اسکریپت قفل شده؛ خرج کردنش مستلزم حل آن اسکریپت است."
+    },
+    {
+      "term": "Multisig (2-of-2)",
+      "termFa": "چند امضایی دو از دو",
+      "definitionEn": "A locking script requiring signatures from both of two specified keys before funds can be spent.",
+      "definitionFa": "اسکریپتی که برای خرج کردن وجوه، امضای هر دو کلید از دو کلید تعیین‌شده را الزامی می‌کند."
+    },
+    {
+      "term": "Locking Script (scriptPubKey)",
+      "termFa": "اسکریپت قفل (لاکینگ اسکریپت)",
+      "definitionEn": "A puzzle embedded in a UTXO that defines the conditions a spender must satisfy to claim the funds.",
+      "definitionFa": "معمایی که درون UTXO قرار می‌گیرد و شرایطی را تعریف می‌کند که خرج‌کننده باید برای دریافت وجوه برآورده کند."
+    },
+    {
+      "term": "OP_CHECKLOCKTIMEVERIFY (CLTV)",
+      "termFa": "چک‌لاک‌تایم‌وریفای",
+      "definitionEn": "An opcode introduced by BIP 65 that prevents a UTXO from being spent until a specified absolute block height or timestamp.",
+      "definitionFa": "عملگری که در BIP 65 معرفی شد و خرج کردن یک UTXO را تا رسیدن به ارتفاع بلاک یا زمان مطلق مشخص‌شده ممنوع می‌کند."
+    },
+    {
+      "term": "OP_CHECKSEQUENCEVERIFY (CSV)",
+      "termFa": "چک‌سیکوینس‌وریفای",
+      "definitionEn": "An opcode enabling relative timelocks, preventing a UTXO from being spent until a set number of blocks after it was mined.",
+      "definitionFa": "عملگری که قفل زمانی نسبی ایجاد می‌کند و خرج کردن UTXO را تا گذشت تعداد مشخصی بلاک پس از استخراجش ممنوع می‌کند."
+    },
+    {
+      "term": "Funding Transaction",
+      "termFa": "تراکنش فاندینگ",
+      "definitionEn": "The on-chain transaction that locks funds into a 2-of-2 multisig address to open a Lightning channel.",
+      "definitionFa": "تراکنشی روی زنجیره که وجوه را در یک آدرس چند امضایی دو از دو قفل می‌کند تا کانال لایتنینگ باز شود."
+    },
+    {
+      "term": "Commitment Transaction",
+      "termFa": "تراکنش تعهد (کامیتمنت)",
+      "definitionEn": "An off-chain Bitcoin transaction encoding the current channel balance, exchanged between peers but not broadcast unless the channel closes.",
+      "definitionFa": "تراکنش بیتکوینی خارج از زنجیره که موجودی فعلی کانال را نشان می‌دهد و بین طرفین رد و بدل می‌شود اما تا بستن کانال منتشر نمی‌شود."
+    },
+    {
+      "term": "HTLC (Hash Time Locked Contract)",
+      "termFa": "قرارداد قفل‌شده با هش و زمان",
+      "definitionEn": "A script with two spend paths: reveal a hash preimage to claim funds immediately, or wait for a timelock to expire and reclaim them.",
+      "definitionFa": "اسکریپتی با دو مسیر خرج کردن: افشای پیش‌تصویر یک هش برای دریافت فوری وجوه، یا انتظار برای انقضای قفل زمانی و بازپس‌گیری آنها."
+    },
+    {
+      "term": "Revocation Key",
+      "termFa": "کلید ریووکیشن (ابطال)",
+      "definitionEn": "A secret shared after each new commitment that allows the other party to claim all channel funds if an old commitment is fraudulently broadcast.",
+      "definitionFa": "رازی که پس از هر تعهد جدید رد و بدل می‌شود و به طرف مقابل اجازه می‌دهد در صورت انتشار متقلبانه‌ی تعهد قدیمی، کل وجوه کانال را دریافت کند."
+    },
+    {
+      "term": "Overlay Network",
+      "termFa": "شبکه‌ی انتزاعی (اورلی نتورک)",
+      "definitionEn": "A network built on top of an existing one, using its security while operating independently — here, Lightning on top of Bitcoin.",
+      "definitionFa": "شبکه‌ای که روی یک شبکه‌ی موجود ساخته می‌شود، از امنیت آن بهره می‌برد اما مستقل عمل می‌کند — در اینجا لایتنینگ روی بیتکوین."
+    },
+    {
+      "term": "PTLC (Point Time Locked Contract)",
+      "termFa": "PTLC (قرارداد قفل‌شده با نقطه و زمان)",
+      "definitionEn": "An upgrade to HTLC using Schnorr/Taproot cryptography that improves Lightning privacy and efficiency.",
+      "definitionFa": "ارتقایی بر HTLC که با استفاده از رمزنگاری شنور/تپروت، حریم خصوصی و کارایی لایتنینگ را بهبود می‌بخشد."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "en",
+      "wrong": "Sher ya Khat",
+      "right": "Shir ya Khat"
+    },
+    {
+      "lang": "fa",
+      "wrong": "شیریا خط",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لائتنینگ",
+      "right": "لایتنینگ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لایتنگ",
+      "right": "لایتنینگ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لایترین",
+      "right": "لایتنینگ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکاین",
+      "right": "بیتکوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتگون",
+      "right": "بیتکوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتوین",
+      "right": "بیتکوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتوینگ",
+      "right": "بیتکوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زیار",
+      "right": "زیا"
+    },
+    {
+      "lang": "fa",
+      "wrong": "امیروسان",
+      "right": "امیرحسین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "امیراسین",
+      "right": "امیرحسین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "امیراسی",
+      "right": "امیرحسین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "عمیر حسین",
+      "right": "امیرحسین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اجتیل سی",
+      "right": "HTLC"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اجتیل مرا",
+      "right": "HTLC"
+    },
+    {
+      "lang": "fa",
+      "wrong": "هشتایم لاک کانترکت",
+      "right": "هش‌تایم‌لاک کانترکت"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سیل تی وی",
+      "right": "CLTV"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سیکونس وریفای",
+      "right": "CheckSequenceVerify"
+    },
+    {
+      "lang": "fa",
+      "wrong": "چک سیکمنس ویریفای",
+      "right": "CheckSequenceVerify"
+    },
+    {
+      "lang": "fa",
+      "wrong": "چک لاک تایم وریفا",
+      "right": "CheckLockTimeVerify"
+    },
+    {
+      "lang": "fa",
+      "wrong": "چک مورتیسیک ویریفایه",
+      "right": "CheckMultiSigVerify"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ملتی سیگنیچر",
+      "right": "مالتی‌سیگنیچر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ملتی سیگ",
+      "right": "مالتی‌سیگ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تپروت",
+      "right": "تپروت (Taproot)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سگویت",
+      "right": "SegWit"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سگوید",
+      "right": "SegWit"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ریوکیشن کی",
+      "right": "کلید ریووکیشن"
+    },
+    {
+      "lang": "fa",
+      "wrong": "واشتاور",
+      "right": "واچ‌تاور"
+    },
+    {
+      "lang": "en",
+      "wrong": "Shenakht",
+      "right": "Shir ya Khat"
+    }
+  ]
+}

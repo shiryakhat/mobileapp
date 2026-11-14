@@ -1,0 +1,258 @@
+{
+  "id": "s03e01",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:07:03.998Z",
+  "summaryFa": "این اپیزود آغازگر فصل سوم پادکست شیر یا خط است و به بررسی فنی و ایدئولوژیک تراکنش‌های زیرو-کانفرمیشن (0-conf) در شبکه بیتکوین می‌پردازد؛ از چرخه حیات تراکنش و نقش ممپول گرفته تا ریسک حمله دابل‌اسپند و روش‌های مدیریت آن. پنلیست‌ها سازوکارهای متفاوت BTC و BSV را مقایسه می‌کنند، ابزارهایی مانند RBF، تمپلیت پرداخت مرچند (BIP 70/Request For Payment)، سرویس BitGo Instant و CTOR را می‌کاوند، و در نهایت زیرو-کانف را با لایتنینگ نتورک به عنوان راهکار لایه دوم مقایسه می‌کنند.",
+  "summaryEn": "The Season 3 opener of Shir Ya Khat stages a technical and ideological roundtable on Bitcoin zero-confirmation (0-conf) transactions—payments accepted by a merchant the moment they appear in the mempool, before any block confirmation. The panel walks through the transaction lifecycle, double-spend attack vectors (including Replace-By-Fee, selfish mining, 51% attacks, and chain reorgs as seen on Verge and Ethereum Classic), and practical hardening tools such as merchant-built transaction templates (BIP 70 / Request For Payment, SIGHASH_ALL), BitGo Instant's 2-of-2 multisig trust model, and Bitcoin Cash ABC's CTOR ordering. The debate frames the core tension as ideological: whether to solve double-spend risk at the protocol layer (BSV's approach) or through off-chain measures like cameras and reputation, with Lightning Network flagged as a superior Layer-2 alternative to be covered in a dedicated future episode.",
+  "quotes": [
+    {
+      "startSec": 179,
+      "fa": "من یکی از افرادی هستم که به نوعی طرفدار زیرو-کانفرمیشن هستم؛ تصوری که هر تراکنش حتماً باید در بلاک قرار بگیرد، از دید من غلط است.",
+      "en": "I'm someone who is in favor of zero-confirmation; the assumption that every transaction must be placed in a block is, in my view, wrong.",
+      "speaker": "محسن"
+    },
+    {
+      "startSec": 1233,
+      "fa": "بعد از دو ثانیه می‌تونی خیالت راحت باشی که ۹۹.۹۹ درصد هش‌ریت شبکه این تراکنش رو دیدن و ماینرها انگیزه‌ای برای دابل‌اسپند ندارن.",
+      "en": "After two seconds you can rest assured that 99.99% of the network's hash rate has seen this transaction and miners have no incentive to double-spend.",
+      "speaker": "میسم"
+    },
+    {
+      "startSec": 1806,
+      "fa": "ریسکم رو بیارم پایین، خودم فی رو می‌دم؛ مرچند می‌تونه تمپلیت تراکنش رو بسازه و فی رو از جیب خودش پرداخت کنه.",
+      "en": "To lower my risk, I'll pay the fee myself; the merchant can build the transaction template and pay the fee out of its own pocket.",
+      "speaker": "میسم"
+    },
+    {
+      "startSec": 2813,
+      "fa": "زیرو-کانف هم همینه؛ من یک بیزینس دارم، به ده‌هزار یوزر سرویس می‌دم، یه نفر فراد انجام می‌ده و پنجاه دلار دابل‌اسپند می‌کنه—آورده‌ام برای بیزینسم خیلی بیشتره از اون ریسک جزئی.",
+      "en": "Zero-conf is exactly like this: I have a business, I serve ten thousand users, one person commits fraud and double-spends fifty dollars—the benefit to my business far outweighs that minor risk."
+    },
+    {
+      "startSec": 3451,
+      "fa": "بحث اصلی اینه که ریسک رو می‌خواید در سطح پروتکل حل کنید یا در سطح لایه‌های دیگه؟ همین دوربین و بیزینس و مشتری راه ندادن، اینا راهکارهای خارج از پروتکل هستن.",
+      "en": "The core debate is whether you want to solve the risk at the protocol level or at other layers. Cameras, business policies, and barring customers—these are all off-protocol solutions."
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Zero-Confirmation (0-conf)",
+      "termFa": "زیرو-کانفرمیشن",
+      "definitionEn": "Accepting a Bitcoin transaction as valid the moment it appears in the mempool, before any miner includes it in a block.",
+      "definitionFa": "پذیرش یک تراکنش بیتکوین به محض ورود به ممپول، پیش از آنکه ماینری آن را در بلاک ثبت کند."
+    },
+    {
+      "term": "Mempool",
+      "termFa": "ممپول",
+      "definitionEn": "The waiting area in each node where unconfirmed transactions sit until a miner selects them for inclusion in a block.",
+      "definitionFa": "صف انتظار در هر نود که تراکنش‌های تأیید نشده در آن می‌مانند تا ماینری آن‌ها را در بلاک قرار دهد."
+    },
+    {
+      "term": "Double-Spend Attack",
+      "termFa": "حمله دابل‌اسپند",
+      "definitionEn": "An attempt to spend the same Bitcoin input twice by broadcasting a second conflicting transaction before the first is confirmed.",
+      "definitionFa": "تلاش برای خرج کردن یک ورودی بیتکوین دو بار، با ارسال تراکنش دوم متناقض پیش از تأیید تراکنش اول."
+    },
+    {
+      "term": "Replace-By-Fee (RBF)",
+      "termFa": "ریپلیس-بای-فی",
+      "definitionEn": "An opt-in Bitcoin feature allowing a sender to replace an unconfirmed transaction with a new one carrying a higher fee.",
+      "definitionFa": "قابلیتی اختیاری در بیتکوین که به فرستنده اجازه می‌دهد تراکنش تأیید نشده را با نسخه‌ای با کارمزد بالاتر جایگزین کند."
+    },
+    {
+      "term": "Chain Reorganization (Reorg)",
+      "termFa": "ری‌ارگ (بازسازماندهی زنجیره)",
+      "definitionEn": "When a miner with sufficient hash power mines a longer alternative chain, causing the network to abandon previously confirmed blocks.",
+      "definitionFa": "زمانی که ماینری با قدرت محاسباتی کافی زنجیره‌ای بلندتر می‌سازد و شبکه بلاک‌های قبلاً تأیید شده را رها می‌کند."
+    },
+    {
+      "term": "Selfish Mining",
+      "termFa": "سلفیش ماینینگ",
+      "definitionEn": "A strategy where a miner secretly mines blocks without broadcasting them to gain an unfair advantage over honest miners.",
+      "definitionFa": "استراتژی‌ای که در آن ماینر بلاک‌ها را بدون انتشار به شبکه ماین می‌کند تا نسبت به ماینرهای صادق برتری ناعادلانه کسب کند."
+    },
+    {
+      "term": "51% Attack",
+      "termFa": "حمله ۵۱ درصدی",
+      "definitionEn": "An attack where a single entity controls more than half the network's hash rate, enabling it to rewrite recent transaction history.",
+      "definitionFa": "حمله‌ای که در آن یک موجودیت بیش از نیمی از هش‌ریت شبکه را کنترل می‌کند و می‌تواند تاریخچه تراکنش‌های اخیر را بازنویسی کند."
+    },
+    {
+      "term": "BIP 70 / Request For Payment",
+      "termFa": "بیپ ۷۰ / درخواست پرداخت",
+      "definitionEn": "A Bitcoin payment protocol where the merchant creates a signed transaction template specifying exact outputs, reducing double-spend risk.",
+      "definitionFa": "پروتکل پرداخت بیتکوین که در آن مرچند یک تمپلیت تراکنش امضاشده با خروجی‌های دقیق می‌سازد تا ریسک دابل‌اسپند کاهش یابد."
+    },
+    {
+      "term": "BitGo Instant",
+      "termFa": "بیت‌گو اینستنت",
+      "definitionEn": "A BitGo service using 2-of-2 multisig wallets where BitGo co-signs and guarantees a transaction won't be double-spent, enabling safe 0-conf.",
+      "definitionFa": "سرویس BitGo با کیف‌پول‌های ۲-از-۲ مالتی‌سیگ که در آن BitGo تراکنش را امضا می‌کند و تضمین می‌دهد دابل‌اسپند نخواهد شد."
+    },
+    {
+      "term": "CTOR (Canonical Transaction Ordering Rule)",
+      "termFa": "سی‌تی‌اور",
+      "definitionEn": "A Bitcoin Cash ABC rule that orders transactions within a block by their hash, making the next block's transaction set predictable.",
+      "definitionFa": "قانونی در Bitcoin Cash ABC که تراکنش‌های داخل بلاک را بر اساس هششان مرتب می‌کند و مجموعه تراکنش‌های بلاک بعدی را قابل پیش‌بینی می‌سازد."
+    },
+    {
+      "term": "NiceHash",
+      "termFa": "نایس‌هش",
+      "definitionEn": "A hash-power marketplace where anyone can rent mining capacity, making it easier to temporarily amass hash rate for a 51% attack.",
+      "definitionFa": "بازاری برای اجاره قدرت ماینینگ که به هر کسی اجازه می‌دهد هش‌ریت موقت اجاره کند و حمله ۵۱ درصدی را آسان‌تر می‌کند."
+    },
+    {
+      "term": "Pre-consensus",
+      "termFa": "پری‌کانسنسوس",
+      "definitionEn": "A mechanism where miners reach informal agreement on which transactions to include in the next block before mining begins.",
+      "definitionFa": "مکانیزمی که در آن ماینرها پیش از شروع ماینینگ توافق غیررسمی روی تراکنش‌های بلاک بعدی دارند."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "en",
+      "wrong": "Shenakht",
+      "right": "Shir Ya Khat"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بی اس فی",
+      "right": "BSV"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بی اس وی",
+      "right": "BSV"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بی تی سی",
+      "right": "BTC"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ربیف",
+      "right": "RBF"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ریفلیس بای فی",
+      "right": "ریپلیس-بای-فی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ریفلیس با فی",
+      "right": "ریپلیس-بای-فی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتگو اینستند",
+      "right": "BitGo Instant"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتگو",
+      "right": "BitGo"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیت پی",
+      "right": "BitPay"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بلاکچین دات کام",
+      "right": "Blockchain.com"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بلاک سایفر",
+      "right": "BlockCypher"
+    },
+    {
+      "lang": "fa",
+      "wrong": "نایس هشبل",
+      "right": "NiceHash"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ری ارگ",
+      "right": "ری‌ارگ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ریارک",
+      "right": "ری‌ارگ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ریورک",
+      "right": "ری‌ارگ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سیلفیش ماینینگ",
+      "right": "سلفیش ماینینگ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیپ سوینی سوین",
+      "right": "BIP 70"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیپ سیوری سیورن",
+      "right": "BIP 77"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیپ هفت و ده هفت",
+      "right": "BIP 77"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیپ هفتاده هفت",
+      "right": "BIP 77"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کام سی اچ او آر",
+      "right": "CTOR"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکاین کشت",
+      "right": "Bitcoin Cash"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تورنیدو کشت",
+      "right": "Tornado Cash"
+    },
+    {
+      "lang": "en",
+      "wrong": "zero-knowledge",
+      "right": "zero-confirmation"
+    },
+    {
+      "lang": "en",
+      "wrong": "Bitcoin Clan",
+      "right": "Bitcoin"
+    },
+    {
+      "lang": "en",
+      "wrong": "BSB network",
+      "right": "BSV network"
+    },
+    {
+      "lang": "en",
+      "wrong": "BraveKoin",
+      "right": "BTC.com pool"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ویرژی",
+      "right": "Verge"
+    }
+  ]
+}

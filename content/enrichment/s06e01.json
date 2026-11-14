@@ -1,0 +1,230 @@
+{
+  "id": "s06e01",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:00:34.706Z",
+  "summaryFa": "مقیاس‌پذیری گلوگاه اصلی شبکه‌هایی مانند بیت‌کوین و اتریوم است و این اپیزود آغازین فصل ششم «شیر یا خط» با مهدی و حمید به کالبدشکافی ریشه‌های این مشکل می‌پردازد. سه محدودیت بنیادی نودها یعنی محاسبات، ذخیره‌سازی و پهنای باند بررسی می‌شوند و مثلث سه‌گانه‌ی بلاکچین (Blockchain Trilemma) که ویتالیک بوترین مطرح کرده، با مثال‌هایی از BNB Smart Chain، سولانا و شبکه لایتنینگ توضیح داده می‌شود. در ادامه سه دسته‌بندی راه‌حل‌های مقیاس‌پذیری معرفی می‌شود: تغییر منطق لایه اول (افزایش سایز بلاک و بهینه‌سازی از طریق SegWit)، تغییر لایه اجماع، و راه‌حل‌های لایه دوم؛ همچنین شاردینگ اتریوم ۲ و مفاهیم مرتبط با کاردانو و پولکادات مرور می‌شوند.",
+  "summaryEn": "Scalability is the fundamental bottleneck of networks like Bitcoin and Ethereum, and this season-six opener of Shir ya Khat dissects where that bottleneck comes from. Hosts Mehdi and Hamid walk through the three node constraints—computation, storage, and bandwidth—and explain Vitalik Buterin's Blockchain Trilemma (decentralization, security, scalability) using real examples such as BNB Smart Chain and Solana sacrificing decentralization for throughput, and Lightning Network sacrificing data availability. The episode then surveys Layer 1 scaling approaches: why simply increasing the block size is flawed, how SegWit optimizes within existing limits, and how sharding (Ethereum 2's 64 shards plus beacon chain, Cardano's CCL, Polkadot's parachains with XCMP) attempts to partition the problem—while noting that zero-knowledge proofs, exemplified by Mina Protocol, may be the only cryptographic path past the trilemma.",
+  "quotes": [
+    {
+      "startSec": 364,
+      "fa": "ما مجبوریم بلاکچین‌مون رو محدود بکنیم، و این محدودیت در واقع سه تا دلیل اصلی داره: محاسبات، ذخیره‌سازی و پهنای باند.",
+      "en": "We're forced to limit our blockchain, and this limitation has three main reasons: computation, storage, and bandwidth.",
+      "speaker": "مهدی"
+    },
+    {
+      "startSec": 1431,
+      "fa": "ویتالیک چیزی رو مطرح کرد که واقعاً می‌شه خیلی راحت به عنوان یک الگوی فکری بهش نگاه کرد، و اون مثلث سه‌گانه‌ی بلاکچین یا Blockchain Trilemma هست.",
+      "en": "Vitalik raised something you can really use as a mental framework: the blockchain trilemma.",
+      "speaker": "مهدی"
+    },
+    {
+      "startSec": 1687,
+      "fa": "تنها چیزی که باعث می‌شه این مثلث عوض بشه، راه‌حل‌های رمزنگاری هست؛ خارج از اتفاقات جدید علم ریاضی، به هیچ وجه نمی‌تونیم به یه سطح بالاتری از این مثلث دست پیدا کنیم.",
+      "en": "The only thing that can change this trilemma is cryptographic solutions; outside of new mathematical breakthroughs, there's no way to reach a higher level.",
+      "speaker": "مهدی"
+    },
+    {
+      "startSec": 1286,
+      "fa": "اینجاست که می‌فهمیم دیسنترالیزیشن رو سکریفایس کردن. یه بار اتفاق افتادنش می‌شه گفت مشکل بوده، ولی وقتی نگاه می‌کنیم این مشکل، مشکل ساختاریه.",
+      "en": "This is where we understand they sacrificed decentralization. It happening once you could call a problem, but when you look closely, this is a structural problem.",
+      "speaker": "مهدی"
+    },
+    {
+      "startSec": 2691,
+      "fa": "این اتفاقیه که SegWit در واقع انجام داد: سیگنچر رو حذف کردیم از بدنه تراکنش، این باعث شد که بهتر بتونیم از محدودیت‌ها استفاده کنیم.",
+      "en": "This is what SegWit actually did: we removed the signature from the transaction body, which let us make better use of the existing constraints.",
+      "speaker": "مهدی"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Blockchain Trilemma",
+      "termFa": "مثلث سه‌گانه‌ی بلاکچین",
+      "definitionEn": "The trade-off, described by Vitalik Buterin, where a blockchain can optimize at most two of three properties: decentralization, security, and scalability.",
+      "definitionFa": "مفهومی که ویتالیک بوترین مطرح کرده و می‌گوید هر بلاکچین می‌تواند حداکثر دو ویژگی از سه‌گانه‌ی عدم تمرکز، امنیت و مقیاس‌پذیری را به‌طور همزمان داشته باشد."
+    },
+    {
+      "term": "Scalability",
+      "termFa": "مقیاس‌پذیری",
+      "definitionEn": "A blockchain's ability to handle a growing number of transactions per second without sacrificing decentralization or security.",
+      "definitionFa": "توانایی یک بلاکچین برای پردازش تعداد بیشتری تراکنش در ثانیه بدون از دست دادن عدم تمرکز یا امنیت."
+    },
+    {
+      "term": "Transactions Per Second (TPS)",
+      "termFa": "تراکنش در ثانیه",
+      "definitionEn": "The number of transactions a blockchain network can confirm every second, used as the primary measure of throughput.",
+      "definitionFa": "تعداد تراکنش‌هایی که یک شبکه‌ی بلاکچین می‌تواند در هر ثانیه تأیید کند و معیار اصلی سنجش ظرفیت است."
+    },
+    {
+      "term": "SegWit (Segregated Witness)",
+      "termFa": "سگ‌ویت (شاهد جداشده)",
+      "definitionEn": "A Bitcoin protocol upgrade that moves signature data into a separate Merkle tree, reducing transaction size and increasing effective block capacity.",
+      "definitionFa": "ارتقای پروتکل بیت‌کوین که داده‌های امضا را در یک درخت مرکل جداگانه ذخیره می‌کند و ظرفیت مؤثر بلاک را افزایش می‌دهد."
+    },
+    {
+      "term": "Sharding",
+      "termFa": "شاردینگ",
+      "definitionEn": "A scaling technique that splits a blockchain into multiple parallel chains (shards) that process transactions simultaneously.",
+      "definitionFa": "روشی برای مقیاس‌پذیری که بلاکچین را به چندین زنجیره‌ی موازی تقسیم می‌کند تا تراکنش‌ها به‌صورت همزمان پردازش شوند."
+    },
+    {
+      "term": "Data Availability",
+      "termFa": "دسترس‌پذیری داده",
+      "definitionEn": "The guarantee that all transaction data is published and accessible on-chain so any participant can independently verify the state.",
+      "definitionFa": "تضمین اینکه تمام داده‌های تراکنش روی زنجیره منتشر و در دسترس هستند تا هر کاربری بتواند وضعیت را مستقلاً تأیید کند."
+    },
+    {
+      "term": "Fast Sync",
+      "termFa": "فست‌سینک (همگام‌سازی سریع)",
+      "definitionEn": "An Ethereum node sync method that downloads the current state directly from peers instead of replaying every historical transaction.",
+      "definitionFa": "روش همگام‌سازی نود اتریوم که وضعیت جاری را مستقیماً از نودهای دیگر دریافت می‌کند بدون اینکه تمام تراکنش‌های تاریخی را مجدداً اجرا کند."
+    },
+    {
+      "term": "Zero-Knowledge Proof",
+      "termFa": "اثبات دانش صفر",
+      "definitionEn": "A cryptographic method that lets one party prove a statement is true without revealing any underlying data.",
+      "definitionFa": "روشی رمزنگارانه که به یک طرف اجازه می‌دهد صحت یک ادعا را بدون افشای اطلاعات پایه اثبات کند."
+    },
+    {
+      "term": "Mina Protocol",
+      "termFa": "پروتکل مینا",
+      "definitionEn": "A blockchain that uses recursive zero-knowledge proofs to keep its entire chain state compressed to a constant small size.",
+      "definitionFa": "بلاکچینی که از اثبات‌های دانش صفر بازگشتی استفاده می‌کند تا حجم کل وضعیت زنجیره را ثابت و بسیار کوچک نگه دارد."
+    },
+    {
+      "term": "UTXO (Unspent Transaction Output)",
+      "termFa": "خروجی تراکنش خرج‌نشده",
+      "definitionEn": "The Bitcoin accounting model where each coin is represented as the unspent output of a previous transaction.",
+      "definitionFa": "مدل حسابداری بیت‌کوین که در آن هر سکه به‌صورت خروجی خرج‌نشده‌ی یک تراکنش قبلی نمایش داده می‌شود."
+    },
+    {
+      "term": "Beacon Chain",
+      "termFa": "زنجیره‌ی بیکن",
+      "definitionEn": "The coordinator chain in Ethereum 2.0 that manages validators and synchronizes all shard chains.",
+      "definitionFa": "زنجیره‌ی هماهنگ‌کننده در اتریوم ۲ که اعتبارسنج‌ها را مدیریت و تمام شاردها را همگام می‌کند."
+    },
+    {
+      "term": "EIP-1559",
+      "termFa": "EIP-1559",
+      "definitionEn": "An Ethereum protocol change introducing a base fee burn and elastic block size, replacing the simple first-price auction for gas.",
+      "definitionFa": "تغییری در پروتکل اتریوم که کارمزد پایه را می‌سوزاند و سایز بلاک الاستیک را معرفی کرد و حراج ساده‌ی گس را جایگزین کرد."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "شیعه خط",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "fa",
+      "wrong": "EIP 374",
+      "right": "EIP-3074"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای آی پی ۱۵۵۹",
+      "right": "EIP-1559"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سیگریت",
+      "right": "SegWit"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سیگویل",
+      "right": "SegWit"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سیگویت",
+      "right": "SegWit"
+    },
+    {
+      "lang": "en",
+      "wrong": "SegWit RSA",
+      "right": "SegWit"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیکنچین",
+      "right": "بیکن‌چین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مسلس سگانه",
+      "right": "مثلث سه‌گانه"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مسلس",
+      "right": "مثلث"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لائتنینگ",
+      "right": "لایتنینگ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مینه پروتوکل",
+      "right": "مینا پروتوکل"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زیرو نالج پروف",
+      "right": "اثبات دانش صفر (Zero-Knowledge Proof)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پلکادات",
+      "right": "پولکادات"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پاراچین",
+      "right": "پاراچین (Parachain)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اکسچنج و استفاده",
+      "right": "XCMP استفاده"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کاردانه کامپیتیشن لیر",
+      "right": "Cardano Computation Layer"
+    },
+    {
+      "lang": "fa",
+      "wrong": "نهازار",
+      "right": "رندر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "نمانک فریز",
+      "right": "عبارت بازیابی (mnemonic phrase)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتریوم",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکومین",
+      "right": "بیت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ترقونش",
+      "right": "تراکنش"
+    },
+    {
+      "lang": "fa",
+      "wrong": "داس اتک",
+      "right": "حمله‌ی DoS"
+    }
+  ]
+}

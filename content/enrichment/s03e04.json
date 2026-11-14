@@ -1,0 +1,255 @@
+{
+  "id": "s03e04",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:05:38.570Z",
+  "summaryFa": "در چهارمین قسمت از فصل سوم پادکست «شیر یا خط»، به مناسبت سالگرد استخراج بلاک جنسیس (۳ ژانویه ۲۰۰۹)، تاریخ بیش از یک دهه بیت‌کوین از ریشه‌های آکادمیک آن—شامل رمزنگاری دیفی-هلمن، امضای کور دیوید چاوم، هش‌کش آدام بک، قراردادهای هوشمند نیک زابو، و بی‌مانی وی‌دای—تا انتشار وایت‌پیپر ساتوشی ناکاموتو و راه‌اندازی شبکه بررسی می‌شود. سپس تکامل ماینینگ از CPU تا GPU و ASIC، شکل‌گیری استخرهایی چون Slush Pool، صرافی‌های Mt. Gox و Bitfinex، بازار Silk Road، هاردفورک‌های Bitcoin Cash و Bitcoin SV، و در پایان اقتصاد هاوینگ و لایتنینگ نتورک به‌عنوان راه‌حل مقیاس‌پذیری لایه دوم تشریح می‌شوند. این اپیزود نشان می‌دهد بیت‌کوین نه یک اختراع واحد، بلکه ترکیبی از بیش از چهل سال تحقیقات شبکه‌ای و رمزنگاری است.",
+  "summaryEn": "Recorded to coincide with Bitcoin's Genesis Block anniversary on January 3, 2009, this episode argues that Bitcoin was a synthesis of over forty years of academic and networking research, tracing the lineage from TCP/IP and Diffie-Hellman asymmetric cryptography through David Chaum's blind signatures, Adam Back's Hashcash proof-of-work, Nick Szabo's smart contracts, and Wei Dai's b-money to Satoshi Nakamoto's 2008 whitepaper. The hosts then survey the full arc of Bitcoin history: the evolution of mining from CPUs to GPUs to ASICs, the rise of Slush Pool and Bitmain, landmark events like Bitcoin Pizza Day and WikiLeaks adoption, the Mt. Gox hack and Silk Road, the block-size wars and SegWit soft fork, the Bitcoin Cash and Bitcoin SV hard forks, and finally the halving schedule and Lightning Network as a Layer 2 scaling solution.",
+  "quotes": [
+    {
+      "startSec": 59,
+      "fa": "بیت‌کوین به خودی خود شاید یک اختراع جدیدی نبود؛ محصول بیش از چهل سال تحقیقات آکادمیک بود، هم در حوزه شبکه، هم در حوزه رمزنگاری.",
+      "en": "Bitcoin itself perhaps wasn't entirely new — it was the product of more than forty years of academic research, both in networking and cryptography."
+    },
+    {
+      "startSec": 1427,
+      "fa": "ویکی‌لیکس بیت‌کوین قبول کرد و این قدرت بیت‌کوین را نشان داد؛ ایدئولوژی سایفرپانک که دولت نمی‌تواند به ما بگوید چه کاری می‌توانیم بکنیم و چه کاری نمی‌توانیم.",
+      "en": "WikiLeaks accepted Bitcoin and that showed Bitcoin's power — the cypherpunk ideology that the government can't tell us what we can and can't do."
+    },
+    {
+      "startSec": 1573,
+      "fa": "ماینینگ در ابتدا با یک CPU انجام می‌شد؛ رفته‌رفته با بیشتر شدن ماینرها در شبکه، سختی بالاتر رفت تا جایی که امروز با همان CPU حدود ۴۲۵ سال طول می‌کشد تا یک بلاک ماین شود.",
+      "en": "Mining at first was done with a single CPU; gradually, as more miners joined the network, the difficulty rose to the point where today it would take roughly 425 years to mine a single block on that same CPU."
+    },
+    {
+      "startSec": 4504,
+      "fa": "وقتی بلاک ساب‌سیدی پنجاه است، پنجاه درصد از کل بیت‌کوین‌ها در آن چهار سال ماین می‌شود؛ این یک بازی ریاضی زیباست که اگر همیشه نصف مسیر را بروید، هیچ‌وقت به انتها نمی‌رسید.",
+      "en": "When the block subsidy is fifty, fifty percent of all Bitcoin gets mined in those four years — it's a beautiful mathematical game: if you always cut the remaining path in half, you never reach the end."
+    },
+    {
+      "startSec": 1651,
+      "fa": "فاندر Slush Pool یک روز پیامی می‌زند که چندین روز است حتی با CPU نتوانستم یک بلاک باز کنم؛ از همان‌جا ایده ماینینگ پول شکل گرفت.",
+      "en": "The founder of Slush Pool one day posted that for several days he hadn't been able to open a single block even with his CPU — and from there the idea of a mining pool took shape."
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Proof of Work",
+      "termFa": "اثبات کار",
+      "definitionEn": "A consensus mechanism requiring miners to perform computationally expensive calculations to add new blocks to the blockchain.",
+      "definitionFa": "مکانیزمی اجماعی که در آن ماینرها باید محاسبات سنگین رایانه‌ای انجام دهند تا بلاک جدیدی به بلاکچین اضافه کنند."
+    },
+    {
+      "term": "Hashcash",
+      "termFa": "هش‌کش",
+      "definitionEn": "A proof-of-work algorithm invented by Adam Back in 1997 to limit email spam, later adapted as the foundation of Bitcoin mining.",
+      "definitionFa": "الگوریتم اثبات کاری که آدام بک در ۱۹۹۷ برای مقابله با اسپم ایمیل اختراع کرد و بعداً پایه ماینینگ بیت‌کوین شد."
+    },
+    {
+      "term": "Halving",
+      "termFa": "هاوینگ",
+      "definitionEn": "A scheduled event every 210,000 blocks (~4 years) that cuts the Bitcoin block reward in half, reducing the rate of new supply.",
+      "definitionFa": "رویدادی برنامه‌ریزی‌شده که هر ۲۱۰٬۰۰۰ بلاک (تقریباً هر چهار سال) پاداش هر بلاک بیت‌کوین را نصف می‌کند."
+    },
+    {
+      "term": "SegWit",
+      "termFa": "سگ‌ویت (Segregated Witness)",
+      "definitionEn": "A Bitcoin soft fork activated in 2017 that separates signature data from transaction data to increase effective block capacity.",
+      "definitionFa": "یک سافت‌فورک بیت‌کوین که در ۲۰۱۷ فعال شد و با جداسازی داده امضا از تراکنش، ظرفیت مؤثر بلاک را افزایش می‌دهد."
+    },
+    {
+      "term": "Lightning Network",
+      "termFa": "لایتنینگ نتورک",
+      "definitionEn": "A Layer 2 payment protocol built on top of Bitcoin enabling fast, low-fee transactions off the main blockchain.",
+      "definitionFa": "پروتکل پرداخت لایه دوم روی بیت‌کوین که امکان تراکنش‌های سریع و کم‌هزینه خارج از بلاکچین اصلی را فراهم می‌کند."
+    },
+    {
+      "term": "ASIC",
+      "termFa": "آسیک",
+      "definitionEn": "Application-Specific Integrated Circuit — hardware designed solely to mine a specific cryptocurrency algorithm at maximum efficiency.",
+      "definitionFa": "مدار مجتمع اختصاصی که فقط برای استخراج الگوریتم یک رمزارز خاص طراحی شده و بیشترین بازدهی را دارد."
+    },
+    {
+      "term": "Transaction Malleability",
+      "termFa": "انعطاف‌پذیری تراکنش",
+      "definitionEn": "A Bitcoin vulnerability allowing a transaction's ID to be altered before confirmation, exploited in the Mt. Gox hack.",
+      "definitionFa": "آسیب‌پذیری بیت‌کوین که اجازه می‌دهد شناسه تراکنش قبل از تأیید تغییر کند؛ روشی که در هک Mt. Gox مورد سوءاستفاده قرار گرفت."
+    },
+    {
+      "term": "Blind Signature",
+      "termFa": "امضای کور",
+      "definitionEn": "A cryptographic scheme invented by David Chaum allowing a message to be signed without the signer seeing its content, enabling untraceable digital payments.",
+      "definitionFa": "طرح رمزنگاری اختراع دیوید چاوم که امکان امضای پیام بدون دیدن محتوا را می‌دهد و پرداخت‌های دیجیتال ردیابی‌ناپذیر را ممکن می‌سازد."
+    },
+    {
+      "term": "Mining Pool",
+      "termFa": "استخر ماینینگ",
+      "definitionEn": "A collective of miners who combine their hash power and share block rewards proportionally, reducing income variance.",
+      "definitionFa": "گروهی از ماینرها که توان هش خود را با هم ترکیب می‌کنند و پاداش بلاک را به‌نسبت بین خود تقسیم می‌کنند."
+    },
+    {
+      "term": "Hard Fork",
+      "termFa": "هارد فورک",
+      "definitionEn": "A permanent divergence in a blockchain protocol creating two incompatible chains, as occurred when Bitcoin Cash split from Bitcoin in 2017.",
+      "definitionFa": "جدایی دائمی در پروتکل بلاکچین که دو زنجیره ناسازگار ایجاد می‌کند؛ مانند جدا شدن Bitcoin Cash از بیت‌کوین در ۲۰۱۷."
+    },
+    {
+      "term": "Ransomware",
+      "termFa": "باج‌افزار",
+      "definitionEn": "Malware that encrypts a victim's files and demands cryptocurrency payment for the decryption key.",
+      "definitionFa": "بدافزاری که فایل‌های قربانی را رمزنگاری می‌کند و برای ارائه کلید رمزگشایی، پرداخت رمزارز طلب می‌کند."
+    },
+    {
+      "term": "Elliptic Curve Cryptography (ECDSA)",
+      "termFa": "رمزنگاری منحنی بیضوی (ECDSA)",
+      "definitionEn": "A public-key cryptography algorithm based on elliptic curves, used by Bitcoin to generate key pairs and verify transaction signatures.",
+      "definitionFa": "الگوریتم رمزنگاری کلید عمومی مبتنی بر منحنی‌های بیضوی که بیت‌کوین برای تولید جفت‌کلید و تأیید امضای تراکنش از آن استفاده می‌کند."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "شیویاخت",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "en",
+      "wrong": "Shir-ya-Khat",
+      "right": "Shir ya Khat"
+    },
+    {
+      "lang": "fa",
+      "wrong": "جنسیس بلاگ",
+      "right": "جنسیس بلاک"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ساتاشین اکاماتو",
+      "right": "ساتوشی ناکاموتو"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ساتا شیناکوماتو",
+      "right": "ساتوشی ناکاموتو"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دیفی هلمن",
+      "right": "دیفی-هلمن"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دیوید شام",
+      "right": "دیوید چاوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دی جی کش",
+      "right": "دیجی‌کش"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ادم بک",
+      "right": "آدام بک"
+    },
+    {
+      "lang": "fa",
+      "wrong": "نیک زبو",
+      "right": "نیک زابو"
+    },
+    {
+      "lang": "fa",
+      "wrong": "وی دایه",
+      "right": "وی‌دای"
+    },
+    {
+      "lang": "fa",
+      "wrong": "حلفینی",
+      "right": "هال فینی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مانتکاکس",
+      "right": "مانت‌گاکس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مدکاکس",
+      "right": "مانت‌گاکس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سیرکورد",
+      "right": "سیلک‌رود"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سیکروی",
+      "right": "سیلک‌رود"
+    },
+    {
+      "lang": "fa",
+      "wrong": "راسول ریک",
+      "right": "راس اولبریخت"
+    },
+    {
+      "lang": "fa",
+      "wrong": "راست",
+      "right": "راس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیت فاینکس",
+      "right": "بیت‌فینکس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اسلش پول",
+      "right": "اسلاش پول"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سلاش پول",
+      "right": "اسلاش پول"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بادرفلای لبس",
+      "right": "باترفلای لبز"
+    },
+    {
+      "lang": "fa",
+      "wrong": "باترفلای لبس",
+      "right": "باترفلای لبز"
+    },
+    {
+      "lang": "fa",
+      "wrong": "جیان هو",
+      "right": "جیهان وو"
+    },
+    {
+      "lang": "fa",
+      "wrong": "راجر ویر",
+      "right": "راجر ور"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کرگ رایت",
+      "right": "کریگ رایت"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کرگ رایگ",
+      "right": "کریگ رایت"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لایکین نتورک",
+      "right": "لایتنینگ نتورک"
+    },
+    {
+      "lang": "fa",
+      "wrong": "چارلی شرم",
+      "right": "چارلی شرم (Charlie Shrem)"
+    }
+  ]
+}

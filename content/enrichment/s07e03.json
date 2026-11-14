@@ -1,0 +1,256 @@
+{
+  "id": "s07e03",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T21:57:22.577Z",
+  "summaryFa": "گروهی از توسعه‌دهندگان ایرانی حاضر در دف‌کان بانکوک تجربیات خود از هکتان‌های ETHGlobal، ICP و دانشگاه آکسفورد را با جزئیات عملی مرور می‌کنند: از نحوه ثبت‌نام و استیک اتر گرفته تا ایده‌پردازی با استفاده از ویشلیست اسپانسرها، ساختار مونو-ریپو، نوشتن تست، پلن پشتیبان برای API‌های ناپایدار، و هنر ارائه پروژه. نکته محوری اینجاست که در هکتان‌های حضوری، کیفیت پرزنتیشن و داستان‌سرایی اغلب از کامل بودن کد مهم‌تر است، و پروژه‌هایی مثل CryptoKitties و ابزار ایردراپ بانکلس نشان می‌دهند که یک ایده هکتانی می‌تواند به استارتاپی میلیون‌دلاری تبدیل شود. مهمان‌ها همچنین بر جنبه‌های سلامتی، مدیریت زمان، شبکه‌سازی، و فلسفه غیررقابتی فضای کریپتو تأکید می‌کنند.",
+  "summaryEn": "A group of Iranian developers who attended Devcon Bangkok share firsthand, tactical accounts of competing in ETHGlobal, ICP, and Oxford hackathons: how to register and stake ETH, source ideas from sponsor wishlists and the ETHGlobal Showcase, structure a mono-repo, write tests, and prepare backup plans for flaky APIs. A central theme is that presentation and storytelling routinely outweigh code completeness in judging, illustrated by hackathon-born projects like CryptoKitties and the Bankless-acquired airdrop tool. Guests also cover health management during sleepless sprints, the non-competitive hacker mindset, and the lasting value of GitHub portfolios and network connections built at these events.",
+  "quotes": [
+    {
+      "startSec": 1411,
+      "fa": "یه حالت اینوستیگیشن هم میشه که بری ببینی کدشون واقعاً از شروع هکتان شروع شده یا از قبل بوده.",
+      "en": "It becomes an investigation where you check whether their code actually started at the hackathon or existed before."
+    },
+    {
+      "startSec": 3416,
+      "fa": "واقعاً از اون دو هزار نفر، هزار و نهصد و نود نفر نمی‌دونن چی کار می‌کنن. فقط دارن سعی می‌کنن با هم‌دیگه کاری دربیارن.",
+      "en": "Really, out of those two thousand people, 1,990 don't know what they're doing. They're just trying to make something together."
+    },
+    {
+      "startSec": 2285,
+      "fa": "خود همین ارائه و داستان‌سرایی خیلی مهمه.",
+      "en": "The presentation and storytelling itself is very important."
+    },
+    {
+      "startSec": 4566,
+      "fa": "یه پروژه‌ای که چهار ساعت زده بودیم تونست همچین کانکشن قوی‌ای همچین آدم‌هایی رو به سمتمون بیداره. این برای من خیلی بیشتر از جایزه ارزش داشت.",
+      "en": "A project we built in four hours managed to draw such strong connections and such people toward us. For me that was worth far more than any prize."
+    },
+    {
+      "startSec": 3611,
+      "fa": "این دیدی که تو هکتان بقیه رقیب ما نیستند. بقیه هم دوستای ما هستند — دورانی که جمع شدیم یه چیزی بسازیم.",
+      "en": "Have the mindset that at a hackathon the others aren't our rivals. The others are our friends too — an era when we gathered to build something.",
+      "speaker": "Shayan"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "ETHGlobal",
+      "termFa": "ایت‌گلوبال",
+      "definitionEn": "A organization that runs in-person and online Ethereum hackathons worldwide, handling sponsor prizes directly.",
+      "definitionFa": "سازمانی که هکتان‌های اتریوم را به‌صورت حضوری و آنلاین برگزار می‌کند و جوایز اسپانسرها را مستقیم مدیریت می‌کند."
+    },
+    {
+      "term": "DoraHacks",
+      "termFa": "دوراهکس",
+      "definitionEn": "A platform that lists hackathons from various organizers; hackers must follow up with sponsors themselves for prizes.",
+      "definitionFa": "پلتفرمی که هکتان‌های سازمان‌دهندگان مختلف را فهرست می‌کند؛ هکرها باید خودشان برای دریافت جایزه با اسپانسرها پیگیری کنند."
+    },
+    {
+      "term": "Chainlink VRF",
+      "termFa": "چین‌لینک VRF",
+      "definitionEn": "A Chainlink service that provides verifiable, tamper-proof random numbers for smart contracts.",
+      "definitionFa": "سرویسی از چین‌لینک که اعداد تصادفی قابل‌اثبات و ضدتقلب را برای قراردادهای هوشمند فراهم می‌کند."
+    },
+    {
+      "term": "The Graph",
+      "termFa": "دگراف",
+      "definitionEn": "A decentralized indexing protocol that lets developers query blockchain data efficiently via GraphQL.",
+      "definitionFa": "پروتکل ایندکس‌گذاری غیرمتمرکزی که به توسعه‌دهندگان امکان می‌دهد داده‌های بلاکچین را با GraphQL به‌راحتی جستجو کنند."
+    },
+    {
+      "term": "Mono-repo",
+      "termFa": "مونو‌ریپو",
+      "definitionEn": "A single code repository containing all parts of a project (frontend, backend, contracts) to simplify integration.",
+      "definitionFa": "یک مخزن کد واحد که تمام بخش‌های پروژه را در خود دارد تا یکپارچه‌سازی ساده‌تر شود."
+    },
+    {
+      "term": "MVP (Minimum Viable Product)",
+      "termFa": "MVP / حداقل محصول قابل‌ارائه",
+      "definitionEn": "The simplest working version of a product that demonstrates its core idea to users or judges.",
+      "definitionFa": "ساده‌ترین نسخه کارآمد یک محصول که ایده اصلی آن را به کاربران یا داوران نشان می‌دهد."
+    },
+    {
+      "term": "Account Abstraction",
+      "termFa": "اکانت ابستراکشن",
+      "definitionEn": "An Ethereum upgrade that lets smart contracts act as user accounts, enabling flexible transaction logic.",
+      "definitionFa": "ارتقایی در اتریوم که به قراردادهای هوشمند اجازه می‌دهد مانند حساب کاربری عمل کنند و منطق تراکنش را انعطاف‌پذیر می‌کند."
+    },
+    {
+      "term": "Scaffold-ETH",
+      "termFa": "اسکفولد-ایت",
+      "definitionEn": "An open-source toolkit for rapidly prototyping Ethereum dApps with a pre-configured frontend and contracts.",
+      "definitionFa": "جعبه‌ابزار متن‌بازی برای نمونه‌سازی سریع dAppهای اتریوم با فرانت‌اند و قراردادهای از پیش‌تنظیم‌شده."
+    },
+    {
+      "term": "CryptoKitties",
+      "termFa": "کریپتوکیتیز",
+      "definitionEn": "One of Ethereum's first NFT games, born at a hackathon, which famously congested the network in 2017.",
+      "definitionFa": "یکی از اولین بازی‌های NFT اتریوم که در یک هکتان متولد شد و در ۲۰۱۷ شبکه را مشهورانه مسدود کرد."
+    },
+    {
+      "term": "Prize Pool / Bounty",
+      "termFa": "پرایز پول / باونتی",
+      "definitionEn": "Funds set aside by hackathon sponsors to reward teams that build using their protocol or tools.",
+      "definitionFa": "مبالغی که اسپانسرهای هکتان کنار می‌گذارند تا تیم‌هایی را که با پروتکل یا ابزارشان کار کرده‌اند پاداش دهند."
+    },
+    {
+      "term": "Open Source Observer",
+      "termFa": "اوپن‌سورس آبزرور",
+      "definitionEn": "A project that scores open-source repositories by activity metrics to help funders allocate grants fairly.",
+      "definitionFa": "پروژه‌ای که مخازن متن‌باز را بر اساس معیارهای فعالیت امتیازدهی می‌کند تا تخصیص منصفانه کمک‌مالی را آسان کند."
+    },
+    {
+      "term": "iExec",
+      "termFa": "آی‌اکزک",
+      "definitionEn": "A decentralized cloud computing platform with a data-protection layer for confidential computing on-chain.",
+      "definitionFa": "پلتفرم محاسبات ابری غیرمتمرکز با لایه حفاظت از داده برای محاسبات محرمانه روی زنجیره."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "شیریاخت",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "en",
+      "wrong": "Shiyakht",
+      "right": "Shir Ya Khat"
+    },
+    {
+      "lang": "fa",
+      "wrong": "حکاتان",
+      "right": "هکتان"
+    },
+    {
+      "lang": "fa",
+      "wrong": "حکاتون",
+      "right": "هکتان"
+    },
+    {
+      "lang": "fa",
+      "wrong": "حقیقتان",
+      "right": "هکتان"
+    },
+    {
+      "lang": "fa",
+      "wrong": "حکمتان",
+      "right": "هکتان"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایت گلوبال",
+      "right": "ETHGlobal"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایف گلوبال",
+      "right": "ETHGlobal"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایت کلوبال",
+      "right": "ETHGlobal"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایت گوبال",
+      "right": "ETHGlobal"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دراحک",
+      "right": "DoraHacks"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دو را حک",
+      "right": "DoraHacks"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کیپتو نومدز",
+      "right": "CryptoNomads"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دف بوست",
+      "right": "DevBoost"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دگراف",
+      "right": "The Graph"
+    },
+    {
+      "lang": "fa",
+      "wrong": "چینلیگی",
+      "right": "چین‌لینک"
+    },
+    {
+      "lang": "fa",
+      "wrong": "چین لیک",
+      "right": "چین‌لینک"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مای کرپتوکیلیس",
+      "right": "CryptoKitties"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کریپتوکیلیس",
+      "right": "CryptoKitties"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اسکفولد ایت",
+      "right": "Scaffold-ETH"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آی اکزک",
+      "right": "iExec"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آی سی پی",
+      "right": "ICP"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ویارف",
+      "right": "VRF"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیارف",
+      "right": "VRF"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دف کانک",
+      "right": "Devconnect"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دف کان سیوند",
+      "right": "Devcon SEA"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دف کانکت",
+      "right": "Devconnect"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کلیمبل",
+      "right": "Claimable"
+    },
+    {
+      "lang": "en",
+      "wrong": "Magi Love",
+      "right": "Maggie Love"
+    }
+  ]
+}

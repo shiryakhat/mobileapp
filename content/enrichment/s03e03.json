@@ -1,0 +1,251 @@
+{
+  "id": "s03e03",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:05:48.666Z",
+  "summaryFa": "در این اپیزود از پادکست «شیر یا خط»، میزبانان ابتدا از کمپین فارسی‌سازی منابع اتریوم (از جمله ethereum.org و MyEtherWallet) و پروژه گیت‌کوین با مکانیزم رأی‌گیری درجه دو (Quadratic Voting) برای جذب حمایت جامعه فارسی‌زبان صحبت می‌کنند. سپس گزارش مفصلی از کنفرانس دِوکان ۵ در اوساکا ارائه می‌دهند و به موضوعاتی چون اتریوم ۲.۰، شاردینگ، گذار از اثبات کار به اثبات سهام، مشکل «هیچ چیز در خطر نیست» (Nothing at Stake)، راه‌حل‌های لایه دوم (پلاسما و شبکه لایتنینگ)، پروژه AZTEC برای تراکنش‌های خصوصی، سرویس نام اتریوم (ENS) و ارتباط بین‌زنجیره‌ای می‌پردازند. بخش پایانی یک بحث داغ و چالشی درباره سانسورپذیری بیتکوین است؛ اینکه آیا تمرکز هش‌ریت در چین، روسیه و آمریکا می‌تواند به دولت‌ها اجازه دهد تراکنش‌های خاص را مسدود کنند یا بیتکوین ذاتاً یک «ماشین حقیقت» غیرقابل سانسور است.",
+  "summaryEn": "The hosts open with their Persian-language localization campaign for Ethereum resources (ethereum.org, MyEtherWallet) and a Gitcoin quadratic-voting grant to demonstrate the scale of the Persian-speaking blockchain community. A detailed DevCon 5 recap covers Ethereum 2.0 sharding, the Proof-of-Work-to-Proof-of-Stake transition (32 ETH staking, slashing, the difficulty bomb's recurring six-month delays), the unresolved Nothing-at-Stake problem, Layer 2 scalability via Plasma and Lightning Network analogues, AZTEC's zk-SNARK-based private ERC-20 tokens, ENS for human-readable addresses and universal login, and Ethereum–Zcash interoperability via oracles. The episode closes with a heated debate on Bitcoin censorship resistance: whether the concentration of hash rate in China, Russia, and the US could enable governments to compel mining pools to block flagged addresses—invoking 51% attacks, selfish mining, P2Pool decentralization, the Liberty Reserve takedown, and Ross Ulbricht as evidence on both sides.",
+  "quotes": [
+    {
+      "startSec": 485,
+      "fa": "آزادی بدون هزینه به دست نمیاد. هر چقدر که میخوای آزادتر باشی، باید هزینه بیشتری براش پرداخت کنی.",
+      "en": "Freedom doesn't come without a cost. The more freedom you want, the more you have to pay for it."
+    },
+    {
+      "startSec": 2358,
+      "fa": "بیتکوین یه ماشین حقیقته؛ ماشینی که حقیقت رو ثبت می‌کنه. هدف اساسیش حفاظت از داده‌هایی‌ه که داخل بلاک‌ها قرار می‌گیره.",
+      "en": "Bitcoin is basically a truth machine — a machine that records truth. Its fundamental purpose is to protect the data placed inside the blocks."
+    },
+    {
+      "startSec": 1191,
+      "fa": "توی Proof of Stake یه مشکلی داریم به اسم Nothing at Stake؛ اگه فورکی اتفاق بیفته، من توی هر دو شبکه اون سی تا کوینم رو دارم و می‌تونم از هر دوتاش منتفع بشم.",
+      "en": "In Proof of Stake we have a problem called Nothing at Stake — if a fork happens, I have my thirty coins on both networks and can profit from both of them."
+    },
+    {
+      "startSec": 2246,
+      "fa": "حدود ۶۵ درصد هش‌ریت شبکه بیتکوین توی چینه، و بالای ۹۰ درصد هش‌ریت شبکه توی آمریکا، روسیه و چین هست.",
+      "en": "About 65 percent of the Bitcoin network's hash rate is in China, and over 90 percent of the network's hash rate is in the US, Russia, and China.",
+      "speaker": "Meysam"
+    },
+    {
+      "startSec": 3650,
+      "fa": "مکانیزم این سیستم کاملاً ایزوله‌شده از هر ایدئولوژی و تفکریه؛ تراکنش باید آزادانه انجام بشه و هر مشکلی پیش اومد، کار دادگاهه.",
+      "en": "The mechanism of this system is completely isolated from any ideology or way of thinking; transactions must be done freely, and whatever problem arises is the court's job."
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Sharding",
+      "termFa": "شاردینگ",
+      "definitionEn": "Splitting a blockchain into smaller partitions (shards) so each node only stores part of the data, improving scalability.",
+      "definitionFa": "تقسیم بلاک‌چین به بخش‌های کوچک‌تر (شارد) تا هر نود فقط بخشی از داده را نگه دارد و مقیاس‌پذیری بهتر شود."
+    },
+    {
+      "term": "Proof of Stake",
+      "termFa": "اثبات سهام",
+      "definitionEn": "A consensus mechanism where validators lock up cryptocurrency as collateral instead of expending computational energy.",
+      "definitionFa": "مکانیزمی که در آن اعتبارسنج‌ها به جای مصرف انرژی، مقداری ارز دیجیتال را به عنوان وثیقه قفل می‌کنند."
+    },
+    {
+      "term": "Nothing at Stake",
+      "termFa": "هیچ چیز در خطر نیست",
+      "definitionEn": "A Proof-of-Stake vulnerability where validators can costlessly support multiple chain forks simultaneously, undermining consensus.",
+      "definitionFa": "آسیب‌پذیری اثبات سهام که در آن اعتبارسنج می‌تواند بدون هزینه روی چند شاخه همزمان رأی دهد و اجماع را تضعیف کند."
+    },
+    {
+      "term": "Difficulty Bomb",
+      "termFa": "بمب سختی",
+      "definitionEn": "A mechanism in Ethereum that exponentially increases mining difficulty to eventually make Proof of Work impractical.",
+      "definitionFa": "مکانیزمی در اتریوم که به تدریج سختی استخراج را آنقدر زیاد می‌کند که اثبات کار عملاً غیرممکن شود."
+    },
+    {
+      "term": "Ethereum Name Service (ENS)",
+      "termFa": "سرویس نام اتریوم",
+      "definitionEn": "A decentralized naming system that maps human-readable names like 'name.eth' to Ethereum addresses and other resources.",
+      "definitionFa": "سیستم نام‌گذاری غیرمتمرکزی که نام‌های خوانا مثل «name.eth» را به آدرس‌های اتریوم و منابع دیگر نگاشت می‌کند."
+    },
+    {
+      "term": "Layer 2",
+      "termFa": "لایه دوم",
+      "definitionEn": "Off-chain protocols built on top of a base blockchain to increase transaction throughput and reduce fees.",
+      "definitionFa": "پروتکل‌هایی که روی بلاک‌چین اصلی ساخته می‌شوند تا سرعت تراکنش‌ها را بالا ببرند و کارمزد را کاهش دهند."
+    },
+    {
+      "term": "zk-SNARKs",
+      "termFa": "زی‌کی-اسنارکس",
+      "definitionEn": "Zero-knowledge cryptographic proofs that let one party prove knowledge of data without revealing the data itself.",
+      "definitionFa": "اثبات‌های رمزنگاری با دانش صفر که اثبات می‌کنند اطلاعاتی وجود دارد بدون اینکه محتوای آن فاش شود."
+    },
+    {
+      "term": "AZTEC",
+      "termFa": "اَزتِک",
+      "definitionEn": "An Ethereum protocol using zk-SNARKs to enable confidential ERC-20 token transactions similar to Zcash's privacy model.",
+      "definitionFa": "پروتکلی روی اتریوم که با استفاده از zk-SNARKs تراکنش‌های محرمانه توکن‌های ERC-20 را مانند زی‌کش ممکن می‌سازد."
+    },
+    {
+      "term": "Quadratic Voting",
+      "termFa": "رأی‌گیری درجه دو",
+      "definitionEn": "A voting mechanism where the cost of additional votes grows quadratically, balancing influence between small and large contributors.",
+      "definitionFa": "مکانیزم رأی‌گیری که هزینه هر رأی اضافی به صورت توانی افزایش می‌یابد تا تأثیر مشارکت‌کنندگان کوچک و بزرگ متعادل شود."
+    },
+    {
+      "term": "Gitcoin",
+      "termFa": "گیت‌کوین",
+      "definitionEn": "An open-source platform using cryptocurrency grants and quadratic funding to support public-goods software projects.",
+      "definitionFa": "پلتفرم متن‌بازی که با کمک‌هزینه‌های رمزارزی و تأمین مالی درجه دو از پروژه‌های نرم‌افزاری عمومی حمایت می‌کند."
+    },
+    {
+      "term": "Selfish Mining",
+      "termFa": "استخراج خودخواهانه",
+      "definitionEn": "A mining strategy where a pool withholds discovered blocks to gain a disproportionate share of rewards.",
+      "definitionFa": "استراتژی استخراجی که در آن یک پول بلاک‌های کشف‌شده را مخفی نگه می‌دارد تا سهم نامتناسبی از جوایز ببرد."
+    },
+    {
+      "term": "P2Pool",
+      "termFa": "پی‌تو‌پول",
+      "definitionEn": "A decentralized Bitcoin mining pool where participants share work peer-to-peer without a central server controlling payouts.",
+      "definitionFa": "استخر استخراج غیرمتمرکز بیتکوین که شرکت‌کنندگان به صورت همتا‌به‌همتا کار را تقسیم می‌کنند بدون سرور مرکزی."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "دپکان",
+      "right": "دِوکان"
+    },
+    {
+      "lang": "en",
+      "wrong": "Devcon",
+      "right": "DevCon"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتریوم",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پروف آف ستیک",
+      "right": "اثبات سهام"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پروف آف ورک",
+      "right": "اثبات کار"
+    },
+    {
+      "lang": "fa",
+      "wrong": "گیت کوین",
+      "right": "گیت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کیتکوین",
+      "right": "گیت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ماییتر والد",
+      "right": "مای‌اتر‌والت"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زیرونالیج",
+      "right": "دانش صفر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "از تک",
+      "right": "AZTEC"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اسناکس",
+      "right": "زی‌کی-اسناکس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زی کشت",
+      "right": "زی‌کش"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لایترین نتورک",
+      "right": "شبکه لایتنینگ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پازما",
+      "right": "پلاسما"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اوراکیلز",
+      "right": "اوراکل‌ها"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لیبرتی ویزرب",
+      "right": "Liberty Reserve"
+    },
+    {
+      "lang": "fa",
+      "wrong": "راس اولبری",
+      "right": "راس اولبریکت"
+    },
+    {
+      "lang": "fa",
+      "wrong": "راسول بریکو",
+      "right": "راس اولبریکت"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتمین",
+      "right": "بیت‌مین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "هشریت",
+      "right": "هش‌ریت"
+    },
+    {
+      "lang": "fa",
+      "wrong": "هشت ریت",
+      "right": "هش‌ریت"
+    },
+    {
+      "lang": "fa",
+      "wrong": "شاردی",
+      "right": "شاردینگ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دیفیکالتی بام",
+      "right": "بمب سختی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ولیدیتور",
+      "right": "اعتبارسنج"
+    },
+    {
+      "lang": "fa",
+      "wrong": "جولوبین",
+      "right": "ویتالیک"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ویتالیک",
+      "right": "ویتالیک بوترین"
+    },
+    {
+      "lang": "en",
+      "wrong": "Kitcoin",
+      "right": "Gitcoin"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اتریوم مجیشن",
+      "right": "Ethereum Magicians"
+    }
+  ]
+}

@@ -1,0 +1,235 @@
+{
+  "id": "s04e03",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:02:51.023Z",
+  "summaryFa": "این اپیزود تاریخچه‌ی تکامل صرافی‌های غیرمتمرکز (DEX) را از ابتدا تا نسل جدید بررسی می‌کند؛ از دلایل پیدایش آن‌ها پس از هک‌هایی مانند Mt. Gox و مشکل دستکاری قیمت در صرافی‌های متمرکز، تا پروژه‌های نسل اول مثل EtherDelta و ForkDelta، پروتکل پیام‌رسان ۰x با مفهوم ریلیرها و ZRX، و صرافی‌های نیمه‌غیرمتمرکز مثل IDEX و DDEX. سپس با جزئیات به نسل جدید مبتنی بر استخر نقدینگی و بازارساز خودکار (AMM) می‌پردازد و بانکور، کایبر نتورک و یونی‌سواپ را با فرمول x·y=k، مفهوم آربیتراژ، اسلیپیج و درآمدزایی از طریق تأمین نقدینگی توضیح می‌دهد.",
+  "summaryEn": "This episode traces the history of decentralized exchanges (DEXs) from their origins to the latest generation, explaining why non-custodial exchanges emerged in response to hacks like Mt. Gox and price manipulation on centralized platforms. It covers first-generation on-chain/off-chain order-book DEXs such as EtherDelta, ForkDelta, and the 0x messaging protocol with its relayer network and ZRX fee token, alongside semi-decentralized exchanges like IDEX and DDEX. The discussion then moves to liquidity-pool-based automated market makers—Bancor's BNT pools, Kyber Network's liquidity-aggregation protocol and composability features, and Uniswap's constant-product formula—explaining how arbitrageurs balance prices, how slippage works, and how liquidity providers earn fees, with a preview of Balancer, Curve, and the future of liquidity mining.",
+  "quotes": [
+    {
+      "startSec": 380,
+      "fa": "میخواستن یک پلتفورمی باشه، صرافی‌هایی که غیرحضانتی (non-custodial) باشن — یعنی شما حضانت کریپتوی خودتون رو ندید به یه صرافی متمرکز.",
+      "en": "They wanted a platform, exchanges that would be non-custodial — meaning you don't hand over custody of your crypto to a centralized exchange.",
+      "speaker": "Mehdi"
+    },
+    {
+      "startSec": 1055,
+      "fa": "زیرو ایکس کلیتش یه پروتکله، پروتکل پیام‌رسانه؛ ولی برای این‌که بشه این پیام‌ها رو جابه‌جا کرد، یه شبکه‌ی آف‌چین نیاز داریم.",
+      "en": "0x overall is a protocol — a messaging protocol. But to move these messages around, we need an off-chain network.",
+      "speaker": "Mehdi"
+    },
+    {
+      "startSec": 2748,
+      "fa": "یونی‌سواپ و همه فورک‌های دیگه‌اش در آخر یه کانسپت ساده‌ست: یه جفت توکن می‌ذاری، اون نسبت اولیه قیمت کل مارکته، و بسته به یه فرمول ریاضی بالا پایین می‌شه.",
+      "en": "Uniswap and all its forks are, in the end, a simple concept: you put in a token pair, that initial ratio is the whole market price, and it goes up and down according to a math formula.",
+      "speaker": "Shayan"
+    },
+    {
+      "startSec": 3421,
+      "fa": "اون فی که قبلاً مستقیم می‌رفت تو جیب بایننس، الان می‌ره تو جیب کسایی که لیکوییدیتی گذاشتن — یعنی دارن از لیکوییدیتی‌ای که گذاشتن سود کسب می‌کنن، که یه جورایی لیکوییدیتی ماینینگ می‌شه.",
+      "en": "The fee that used to go straight into Binance's pocket now goes to those who provided liquidity — they're earning a profit from the liquidity they put in, which is sort of liquidity mining.",
+      "speaker": "Mehdi"
+    },
+    {
+      "startSec": 2559,
+      "fa": "یه بلاگ‌پست هست به اسم «Bancor is Flawed» — توش آنالیزی انجام داده که می‌گه هر خط کد بانکور ۳.۵ میلیون دلار ارزش داشته.",
+      "en": "There's a blog post called 'Bancor is Flawed' — in it an analysis shows that each line of Bancor's code cost 3.5 million dollars.",
+      "speaker": "Shayan"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "DEX (Decentralized Exchange)",
+      "termFa": "صرافی غیرمتمرکز (دکس)",
+      "definitionEn": "A cryptocurrency exchange that operates via smart contracts without a central authority holding user funds.",
+      "definitionFa": "صرافی‌ای که بدون نگه‌داشتن دارایی کاربران، از طریق قراردادهای هوشمند معاملات را انجام می‌دهد."
+    },
+    {
+      "term": "Non-Custodial",
+      "termFa": "غیرحضانتی",
+      "definitionEn": "A system where users retain full control of their private keys and funds, never handing them to a third party.",
+      "definitionFa": "سیستمی که در آن کاربر کنترل کلیدهای خصوصی و دارایی‌های خود را همیشه حفظ می‌کند."
+    },
+    {
+      "term": "Order Book",
+      "termFa": "دفتر سفارشات (اردربوک)",
+      "definitionEn": "A list of buy and sell orders in a market, matched by an exchange engine to execute trades.",
+      "definitionFa": "فهرستی از سفارش‌های خرید و فروش که موتور صرافی آن‌ها را با هم تطبیق داده و معامله انجام می‌دهد."
+    },
+    {
+      "term": "0x Protocol",
+      "termFa": "پروتکل زیرو ایکس",
+      "definitionEn": "An open messaging protocol on Ethereum enabling off-chain order relay and on-chain settlement for token trades.",
+      "definitionFa": "پروتکل پیام‌رسان متن‌باز روی اتریوم که سفارش‌ها را آف‌چین منتقل و تسویه را آن‌چین انجام می‌دهد."
+    },
+    {
+      "term": "Relayer",
+      "termFa": "ریلیر",
+      "definitionEn": "A node in the 0x network that broadcasts signed orders off-chain and earns ZRX fees for facilitating matches.",
+      "definitionFa": "گره‌ای در شبکه‌ی ۰x که سفارش‌های امضاشده را آف‌چین پخش می‌کند و در ازای تسهیل معاملات کارمزد ZRX دریافت می‌نماید."
+    },
+    {
+      "term": "Liquidity Pool",
+      "termFa": "استخر نقدینگی",
+      "definitionEn": "A smart contract holding reserves of two or more tokens that users trade against directly, without a counterparty.",
+      "definitionFa": "قراردادی هوشمند که ذخایر چند توکن را نگه می‌دارد و کاربران مستقیماً با آن معامله می‌کنند."
+    },
+    {
+      "term": "AMM / CFMM",
+      "termFa": "بازارساز خودکار / بازارساز با تابع ثابت",
+      "definitionEn": "A protocol using a mathematical formula (e.g., x·y=k) to price assets automatically without an order book.",
+      "definitionFa": "پروتکلی که با فرمول ریاضی (مثلاً x·y=k) قیمت دارایی‌ها را بدون نیاز به دفتر سفارشات به‌صورت خودکار تعیین می‌کند."
+    },
+    {
+      "term": "Liquidity Provider",
+      "termFa": "تأمین‌کننده‌ی نقدینگی",
+      "definitionEn": "A user who deposits token pairs into a liquidity pool and earns a share of trading fees in return.",
+      "definitionFa": "کاربری که جفت توکن‌ها را در استخر نقدینگی سپرده‌گذاری می‌کند و در ازا سهمی از کارمزدها دریافت می‌نماید."
+    },
+    {
+      "term": "Arbitrageur",
+      "termFa": "آربیتراژور",
+      "definitionEn": "A trader who profits from price differences across markets, simultaneously restoring price balance in DEX pools.",
+      "definitionFa": "معامله‌گری که از اختلاف قیمت بین بازارها سود می‌برد و در عین حال تعادل قیمت را در استخرهای DEX بازمی‌گرداند."
+    },
+    {
+      "term": "Slippage",
+      "termFa": "اسلیپیج (لغزش قیمت)",
+      "definitionEn": "The difference between the expected price of a trade and the actual executed price due to low liquidity or large order size.",
+      "definitionFa": "تفاوت بین قیمت مورد انتظار معامله و قیمت اجراشده‌ی واقعی، ناشی از نقدینگی کم یا حجم سفارش بالا."
+    },
+    {
+      "term": "Front-Running",
+      "termFa": "جلو زدن (فرانت‌رانینگ)",
+      "definitionEn": "Exploiting advance knowledge of a pending transaction to place a competing order first and capture its profit.",
+      "definitionFa": "سوءاستفاده از اطلاع قبلی از یک تراکنش در انتظار، برای ثبت سفارش رقیب و کسب سود آن."
+    },
+    {
+      "term": "Liquidity Mining",
+      "termFa": "استخراج نقدینگی (لیکوییدیتی ماینینگ)",
+      "definitionEn": "Earning rewards by supplying tokens to a DeFi protocol's liquidity pool, analogous to mining block rewards.",
+      "definitionFa": "کسب پاداش از طریق تأمین توکن برای استخر نقدینگی یک پروتکل DeFi، مشابه دریافت پاداش استخراج بلاک."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "en",
+      "wrong": "Shyakht podcast",
+      "right": "Shir Ya Khat podcast"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مدگاکس",
+      "right": "Mt. Gox"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتردلتا",
+      "right": "EtherDelta"
+    },
+    {
+      "lang": "en",
+      "wrong": "ether-delta",
+      "right": "EtherDelta"
+    },
+    {
+      "lang": "fa",
+      "wrong": "فورک دلتا",
+      "right": "ForkDelta"
+    },
+    {
+      "lang": "en",
+      "wrong": "fork-delta",
+      "right": "ForkDelta"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زیرو اکس",
+      "right": "۰x"
+    },
+    {
+      "lang": "en",
+      "wrong": "zero x",
+      "right": "0x"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زیرو ایکس",
+      "right": "۰x"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زد آر ایکس",
+      "right": "ZRX"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بانکور",
+      "right": "Bancor"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بین تی",
+      "right": "BNT"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بی انتی",
+      "right": "BNT"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کایبر نتفرک",
+      "right": "Kyber Network"
+    },
+    {
+      "lang": "fa",
+      "wrong": "یونی سواب",
+      "right": "یونی‌سواپ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آیدکس",
+      "right": "IDEX"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دیدکس",
+      "right": "DDEX"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اواسیستکس",
+      "right": "Oasis DEX"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سوشی سواپ",
+      "right": "SushiSwap"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زیرو اکس مش",
+      "right": "۰x Mesh"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایم ام",
+      "right": "AMM"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سی اف ایم ام",
+      "right": "CFMM"
+    },
+    {
+      "lang": "en",
+      "wrong": "gossipsub",
+      "right": "GossipSub"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لیکوییدیتی پرووایدر",
+      "right": "تأمین‌کننده‌ی نقدینگی"
+    }
+  ]
+}

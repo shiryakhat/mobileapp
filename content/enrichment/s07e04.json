@@ -1,0 +1,260 @@
+{
+  "id": "s07e04",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T21:57:20.849Z",
+  "summaryFa": "این قسمت از پادکست شیر یا خط راهنمایی جامع برای شرکت در کنفرانس‌های اتریوم و وب۳ است، با تأکید بر تجربه‌های مستقیم حضور در Devcon 7 بانکوک و Devconnect استانبول. مهمانان درباره روش‌های دریافت بلیط—از موج‌های فروش عمومی تا تخفیف دانشجویی، بیلدر، اسکالرشیپ ایتریوم فاندیشن و والنتیر شدن—صحبت می‌کنند و تجربه‌های واقعی خود را از ساید ایونت‌ها، فرهنگ سواگ، نتورکینگ، و دورهمی‌های کوین‌ایران در میان می‌گذارند. این اپیزود نشان می‌دهد که حضور در این رویدادها می‌تواند نقطه‌ی عطفی در مسیر شغلی و دیدگاه زندگی باشد و کامیونیتی ایرانی بلاکچین چه نقش پررنگی در اکوسیستم جهانی دارد.",
+  "summaryEn": "A practical guide to Ethereum and Web3 conferences built entirely from first-hand accounts of Devcon 7 Bangkok and Devconnect Istanbul. Guests cover every ticketing route—general sale waves, student and builder discounts, social-impact grants, Ethereum Foundation scholarships, and the free volunteer path—then walk through conference planning, side-event discovery on Luma, swag culture, networking etiquette, hotel logistics, and the IRL Coin Iran meetup. The episode argues that attending even once can reshape a person's career trajectory and mental model, and documents the growing, globally distributed Iranian on-chain developer community these gatherings have helped forge.",
+  "quotes": [
+    {
+      "startSec": 1355,
+      "fa": "همون دیدن آدم‌ها و صحبت کردن باهاشون، اینکه شما از یک شخصیت آنلاین می‌شین شخصیت واقعی فیزیکال جلوی آدم‌ها—این خیلی تاثیر داره.",
+      "en": "Just seeing people and talking to them—going from an online persona to a real, physical person in front of others—has a huge impact.",
+      "speaker": "Shayan"
+    },
+    {
+      "startSec": 1480,
+      "fa": "ممکنه اینه که من مثلاً با ویتالیک بریم تو آسانسور و سرتو بیاری بالا؛ یعنی این ویتالیکه، تو آسانسور، دو قدمی‌ات—خب یه چیزی بگو!",
+      "en": "It's possible you end up in an elevator with Vitalik, you look up and there he is two feet away—well, say something!",
+      "speaker": "Shayan"
+    },
+    {
+      "startSec": 1894,
+      "fa": "چیزی که توی این فضا خیلی دوست دارم اینه که کنجکاوی و سوال پرسیدن ارزش داره؛ یعنی رفتن و پرسیدن یه سوال خیلی بیشتر ارزش داره تا دادن یه نظر غلط.",
+      "en": "What I really love about this space is that curiosity and asking questions are valued—asking a question is worth far more than giving a wrong opinion.",
+      "speaker": "Shayan"
+    },
+    {
+      "startSec": 1172,
+      "fa": "انقدر ایونت و ساید ایونت هست که این برنامه‌ریزی خیلی شاید مهم‌تر از چیزی باشه که فکرش رو بکنی.",
+      "en": "There are so many events and side events that planning really matters—maybe more than you'd expect.",
+      "speaker": "Hossein K."
+    },
+    {
+      "startSec": 4992,
+      "fa": "مدیر مارکتینگ سوارم داشت بهم می‌گفت: تو فقط باید ایمجینیشنت به اون نقطه برسه—برای هر چیزی. اقدام کردنه که اون اتفاق رو می‌سازه.",
+      "en": "The Swarm marketing manager told me: your imagination just has to reach that point—for anything. It's taking action that makes it happen.",
+      "speaker": "Hossein K."
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Devcon",
+      "termFa": "دِوکان",
+      "definitionEn": "Ethereum Foundation's flagship developer conference, held every two years in a different global city.",
+      "definitionFa": "کنفرانس اصلی توسعه‌دهندگان اتریوم که هر دو سال یک‌بار در شهری متفاوت برگزار می‌شود."
+    },
+    {
+      "term": "Devconnect",
+      "termFa": "دِوکانکت",
+      "definitionEn": "A decentralized week-long gathering in off-years where many teams run their own co-located events.",
+      "definitionFa": "رویداد غیرمتمرکزِ هفتگی در سال‌های میانی که تیم‌های مختلف ایونت‌های موازی برگزار می‌کنند."
+    },
+    {
+      "term": "EthCC",
+      "termFa": "ایت‌سی‌سی",
+      "definitionEn": "Ethereum Community Conference, an annual European gathering focused on Ethereum research and development.",
+      "definitionFa": "کنفرانس سالانه اروپایی اتریوم با تمرکز بر تحقیق و توسعه، معمولاً در فرانسه یا بلژیک."
+    },
+    {
+      "term": "ETHGlobal",
+      "termFa": "ایت‌گلوبال",
+      "definitionEn": "Organization that runs Ethereum hackathons and 'ETH + city' events worldwide.",
+      "definitionFa": "سازمانی که هکاتون‌های اتریوم و رویدادهای «ETH + شهر» را در سراسر جهان برگزار می‌کند."
+    },
+    {
+      "term": "Side Event",
+      "termFa": "ساید ایونت",
+      "definitionEn": "Smaller, often free gatherings organized by projects or communities alongside a main conference.",
+      "definitionFa": "رویدادهای کوچک‌تری که پروژه‌ها یا کامیونیتی‌ها در حاشیه کنفرانس اصلی برگزار می‌کنند."
+    },
+    {
+      "term": "Swag",
+      "termFa": "سواگ",
+      "definitionEn": "Promotional merchandise—t-shirts, hardware, badges—distributed free by projects at conferences.",
+      "definitionFa": "هدایای تبلیغاتی مانند تی‌شرت، سخت‌افزار و بج که پروژه‌ها در کنفرانس‌ها رایگان توزیع می‌کنند."
+    },
+    {
+      "term": "POAP",
+      "termFa": "پواپ",
+      "definitionEn": "Proof of Attendance Protocol—an NFT badge issued to verify someone participated in an event.",
+      "definitionFa": "پروتکل اثبات حضور: یک NFT که نشان می‌دهد فرد در رویدادی شرکت کرده است."
+    },
+    {
+      "term": "Pop-up City",
+      "termFa": "پاپ‌آپ سیتی",
+      "definitionEn": "A temporary intentional community where participants live and work together to experiment with new governance and social models.",
+      "definitionFa": "جامعه موقتی و آزمایشی که شرکت‌کنندگان برای بررسی مدل‌های حاکمیتی و اجتماعی جدید در آن زندگی می‌کنند."
+    },
+    {
+      "term": "Zuzalu",
+      "termFa": "زوزالو",
+      "definitionEn": "The first major pop-up city experiment, initiated by Vitalik Buterin in Montenegro in 2023.",
+      "definitionFa": "اولین تجربه بزرگ پاپ‌آپ سیتی که ویتالیک بوترین در سال ۲۰۲۳ در مونته‌نگرو راه‌اندازی کرد."
+    },
+    {
+      "term": "Ethereum Foundation Scholarship",
+      "termFa": "اسکالرشیپ ایتریوم فاندیشن",
+      "definitionEn": "Grants from the Ethereum Foundation covering travel, hotel, and ticket costs for underrepresented Devcon attendees.",
+      "definitionFa": "کمک‌هزینه‌ای از ایتریوم فاندیشن که هزینه سفر، هتل و بلیط Devcon را برای گروه‌های کمتر نمایان پوشش می‌دهد."
+    },
+    {
+      "term": "Luma",
+      "termFa": "لوما",
+      "definitionEn": "An event-registration platform widely used to list and discover Web3 side events around conferences.",
+      "definitionFa": "پلتفرم ثبت‌نام رویداد که برای یافتن و ثبت ساید ایونت‌های وب۳ در اطراف کنفرانس‌ها به‌کار می‌رود."
+    },
+    {
+      "term": "Dunning-Kruger Effect",
+      "termFa": "افکت دانینگ-کروگر",
+      "definitionEn": "A cognitive bias where people with limited knowledge overestimate their competence in a domain.",
+      "definitionFa": "سوگیری شناختی که طی آن افراد با دانش محدود، شایستگی خود را بیش از حد تخمین می‌زنند."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "شیخت",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "en",
+      "wrong": "Shenakht podcast",
+      "right": "Shir Ya Khat podcast"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دفت کن",
+      "right": "دفکان"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دفکانکت",
+      "right": "دِوکانکت"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دف کانکت",
+      "right": "دِوکانکت"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ویبتو",
+      "right": "وب۳"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ویب تیو",
+      "right": "وب۳"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایت سی سی",
+      "right": "ایت‌سی‌سی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایت گلوبال",
+      "right": "ایت‌گلوبال"
+    },
+    {
+      "lang": "fa",
+      "wrong": "توکن بیس ۲۴۹",
+      "right": "توکن۲۰۴۹"
+    },
+    {
+      "lang": "en",
+      "wrong": "Token2049e",
+      "right": "Token2049"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کانسنسس",
+      "right": "Consensus"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پرمیشن لیس",
+      "right": "Permissionless"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زوزالو",
+      "right": "Zuzalu"
+    },
+    {
+      "lang": "fa",
+      "wrong": "چرنگ ما",
+      "right": "چیانگ مای"
+    },
+    {
+      "lang": "fa",
+      "wrong": "چیانگ ماهی",
+      "right": "چیانگ مای"
+    },
+    {
+      "lang": "fa",
+      "wrong": "لیئر زیرو",
+      "right": "لِیرزیرو"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سوارم",
+      "right": "Swarm"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ندر میند",
+      "right": "Nethermind"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آئی سی پی",
+      "right": "ICP"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایران آنچیند",
+      "right": "ایران آنچین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ورمین بلافچین ایران",
+      "right": "Women in Blockchain Iran"
+    },
+    {
+      "lang": "fa",
+      "wrong": "شیفای",
+      "right": "SheFi"
+    },
+    {
+      "lang": "fa",
+      "wrong": "انکوده",
+      "right": "Encode"
+    },
+    {
+      "lang": "fa",
+      "wrong": "جرمی کلارک",
+      "right": "Jeremy Clark"
+    },
+    {
+      "lang": "en",
+      "wrong": "DEFCON",
+      "right": "Devcon"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پاپاپ سیتی",
+      "right": "پاپ‌آپ سیتی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کوین ایران",
+      "right": "کوین‌ایران"
+    },
+    {
+      "lang": "fa",
+      "wrong": "راجعه",
+      "right": "راجع به"
+    }
+  ]
+}

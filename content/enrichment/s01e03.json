@@ -1,0 +1,220 @@
+{
+  "id": "s01e03",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:12:21.717Z",
+  "summaryFa": "در این قسمت، کاربردهای بلاکچین فراتر از ارز دیجیتال بررسی می‌شود: از DNS غیرمتمرکز (نیم‌کوین، بلاک‌استک، DNSChain) و حذف واسطه در صنعت موسیقی (میوزیک‌کوین، Decent) گرفته تا بلاکچین خصوصی برای بانک‌ها و هشدار درباره کلاهبرداری وان‌کوین. بخش مهمی از قسمت به تصمیم قریب‌الوقوع SEC درباره ETF بیت‌کوین پیشنهادی برادران وینکلواس (نماد COIN) اختصاص دارد و تأثیر آن بر قیمت بیت‌کوین—که برای اولین بار از یک اونس طلا گران‌تر شد—تحلیل می‌شود. در پایان، تحلیل تکنیکال اتریوم، مونرو و دَش، معرفی امکانات جدید سایت دیجی‌ارز (نمودار تومانی و سیستم کامنت صرافی‌ها)، کاربرد بلاکچین برای اقتصاد ایران با مثال بیت‌پسا، و توضیح پایه‌ای مفهوم بلاکچین و پروف‌اوف‌ورک ارائه می‌شود.",
+  "summaryEn": "This episode looks beyond Bitcoin to explore blockchain use cases: decentralized DNS systems (Namecoin, Blockstack, DNSChain), disintermediation in the music industry (MusicCoin, Decent, BitShares Music), private blockchains for enterprise database sync (Chain.com), and a sharp warning against the OneCoin pyramid scam. A central segment analyzes the upcoming SEC ruling on the Winklevoss brothers' Bitcoin ETF proposal (ticker: COIN), set against Bitcoin surpassing the price of an ounce of gold for the first time. The episode closes with technical analysis of Ethereum, Monero, and Dash triangle patterns, an introduction to DigiArz's new Toman price charts and exchange comment system, the BitPesa mobile-airtime-to-Bitcoin model as a template for Iran's closed banking system, and a beginner-friendly explanation of blocks, hashes, and Proof of Work.",
+  "quotes": [
+    {
+      "startSec": 668,
+      "fa": "تنها چیزی که برای من جالب بود نسبت به پروژه‌های دیگه این بود که آی‌سی‌اُ برگزار نکرده بودن—در واقع پری‌ماین نداشتن، از صفر شروع کردن.",
+      "en": "The only thing that stood out to me compared to other projects was that they hadn't held an ICO—they had no pre-mine and started from scratch."
+    },
+    {
+      "startSec": 1432,
+      "fa": "به نظر من وان‌کوین یک اسکم هوشمندانه‌ست؛ هیچ‌کدام از فاکتورهای لازمه یک کریپتوکارنسی واقعی رو نداره—نه ماینینگ، نه رمزنگاری، نه غیرمتمرکز بودن.",
+      "en": "In my opinion OneCoin is a clever scam; it has none of the necessary factors of a real cryptocurrency—no mining, no encryption, no decentralization."
+    },
+    {
+      "startSec": 1970,
+      "fa": "اعلام کردن یک درصد همه بیت‌کوین‌ها رو خریدن—که می‌شه ۲۱۰ هزار بیت‌کوین.",
+      "en": "They announced they had bought one percent of all Bitcoin—which comes to 210,000 Bitcoin."
+    },
+    {
+      "startSec": 2709,
+      "fa": "اگر من یک درصد بیت‌کوین‌ها رو داشته باشم و پروپوزالی ارائه کنم که می‌تونه ارزش افزوده برای بیت‌کوین‌های خودم ایجاد کنه، حرکتی که قبولی اون پروپوزال رو به خطر بندازه با منطق تضاد داره.",
+      "en": "If I hold one percent of all Bitcoin and submit a proposal that could add value to my own holdings, making a move that jeopardizes that proposal's approval simply contradicts logic."
+    },
+    {
+      "startSec": 3176,
+      "fa": "درست مثل اینکه ما شارج ایرانسل می‌تونیم به هم بفرستیم، اونا از بیت‌کوین استفاده کردن که این سیستم داخلی رو به سیستم اقتصادی بین‌المللی وصل کنن.",
+      "en": "Just like we can send each other Irancell phone credit, they used Bitcoin to connect their local system to the international economic system."
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Decentralized DNS",
+      "termFa": "DNS غیرمتمرکز",
+      "definitionEn": "A blockchain-based alternative to the traditional Domain Name System that removes central servers and censorship points.",
+      "definitionFa": "جایگزینی برای سیستم نام دامنه سنتی که با بلاکچین، سرورهای مرکزی و امکان فیلترینگ را حذف می‌کند."
+    },
+    {
+      "term": "Namecoin",
+      "termFa": "نیم‌کوین",
+      "definitionEn": "The first Bitcoin fork, launched October 2011, designed to provide a decentralized DNS with .bit domains.",
+      "definitionFa": "اولین فورک بیت‌کوین که در اکتبر ۲۰۱۱ راه‌اندازی شد و دامنه‌های غیرمتمرکز با پسوند .bit ارائه می‌دهد."
+    },
+    {
+      "term": "Certificate Authority (CA)",
+      "termFa": "مرجع صدور گواهی",
+      "definitionEn": "A trusted company that issues SSL/HTTPS certificates; roughly 1,400 exist globally, each a potential security weak point.",
+      "definitionFa": "شرکتی که گواهی‌های SSL/HTTPS صادر می‌کند؛ حدود ۱۴۰۰ مرجع در جهان وجود دارد و هر کدام نقطه ضعف امنیتی بالقوه‌ای هستند."
+    },
+    {
+      "term": "MusicCoin",
+      "termFa": "میوزیک‌کوین",
+      "definitionEn": "A blockchain music platform with no ICO or pre-mine that pays composers, singers, and musicians directly per stream.",
+      "definitionFa": "پلتفرم موسیقی مبتنی بر بلاکچین که بدون ICO یا پری‌ماین راه‌اندازی شد و درآمد را مستقیماً به هنرمندان پرداخت می‌کند."
+    },
+    {
+      "term": "Private Blockchain",
+      "termFa": "بلاکچین خصوصی",
+      "definitionEn": "A blockchain where only authorized participants run nodes, used by enterprises for internal database synchronization.",
+      "definitionFa": "بلاکچینی که فقط شرکت‌کنندگان مجاز می‌توانند نود اجرا کنند و معمولاً برای همگام‌سازی پایگاه‌داده‌های داخلی سازمانی استفاده می‌شود."
+    },
+    {
+      "term": "ETF (Exchange-Traded Fund)",
+      "termFa": "صندوق قابل معامله در بورس",
+      "definitionEn": "A regulated investment fund traded on a stock exchange, allowing broad investor access to an asset like Bitcoin.",
+      "definitionFa": "صندوق سرمایه‌گذاری تنظیم‌شده‌ای که در بورس معامله می‌شود و دسترسی گسترده سرمایه‌گذاران به دارایی‌هایی مثل بیت‌کوین را ممکن می‌سازد."
+    },
+    {
+      "term": "SEC (Securities and Exchange Commission)",
+      "termFa": "کمیسیون بورس و اوراق بهادار آمریکا",
+      "definitionEn": "The U.S. federal regulator that oversees securities markets and must approve any Bitcoin ETF before it can trade.",
+      "definitionFa": "نهاد نظارتی فدرال آمریکا که بازارهای اوراق بهادار را نظارت می‌کند و باید هر ETF بیت‌کوین را پیش از معامله تأیید کند."
+    },
+    {
+      "term": "OneCoin",
+      "termFa": "وان‌کوین",
+      "definitionEn": "A centralized network-marketing scheme falsely claiming to be a cryptocurrency; it has no mining, encryption, or blockchain.",
+      "definitionFa": "طرح بازاریابی شبکه‌ای متمرکزی که ادعای کریپتوکارنسی بودن دارد اما فاقد ماینینگ، رمزنگاری و بلاکچین واقعی است."
+    },
+    {
+      "term": "Proof of Work",
+      "termFa": "اثبات کار",
+      "definitionEn": "The consensus mechanism where miners solve computationally hard puzzles to add a new block and earn a Bitcoin reward.",
+      "definitionFa": "مکانیزم اجماعی که در آن ماینرها معماهای محاسباتی سخت را حل می‌کنند تا بلاک جدید اضافه کرده و پاداش بیت‌کوین دریافت کنند."
+    },
+    {
+      "term": "Whale",
+      "termFa": "نهنگ",
+      "definitionEn": "An individual or entity holding a very large amount of cryptocurrency, capable of significantly influencing market prices.",
+      "definitionFa": "فرد یا نهادی که مقدار بسیار زیادی ارز دیجیتال دارد و می‌تواند قیمت بازار را به‌طور قابل‌توجهی تحت تأثیر بگذارد."
+    },
+    {
+      "term": "ICO (Initial Coin Offering)",
+      "termFa": "عرضه اولیه کوین",
+      "definitionEn": "A fundraising method where a project sells its tokens to early investors before the network launches.",
+      "definitionFa": "روشی برای جذب سرمایه که در آن یک پروژه توکن‌هایش را پیش از راه‌اندازی شبکه به سرمایه‌گذاران اولیه می‌فروشد."
+    },
+    {
+      "term": "BitPesa",
+      "termFa": "بیت‌پسا",
+      "definitionEn": "An African fintech service that used Bitcoin to bridge local mobile-airtime payment systems with international transfers.",
+      "definitionFa": "سرویس فین‌تک آفریقایی که از بیت‌کوین برای اتصال سیستم پرداخت شارج موبایل داخلی به انتقالات بین‌المللی استفاده کرد."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "شیریا خط",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "en",
+      "wrong": "Heads or Tails podcast",
+      "right": "Shir Ya Khat (Heads or Tails) podcast"
+    },
+    {
+      "lang": "fa",
+      "wrong": "نیمکوین",
+      "right": "نیم‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بلاکستک",
+      "right": "بلاک‌استک"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اوکرترتلز",
+      "right": "اوک‌تورتلز"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دینس چین",
+      "right": "DNSChain"
+    },
+    {
+      "lang": "fa",
+      "wrong": "میوزیک کوین",
+      "right": "میوزیک‌کوین"
+    },
+    {
+      "lang": "en",
+      "wrong": "Music Coin",
+      "right": "MusicCoin"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیت شیر میوزیک",
+      "right": "بیت‌شیرز میوزیک"
+    },
+    {
+      "lang": "en",
+      "wrong": "BitShare Music",
+      "right": "BitShares Music"
+    },
+    {
+      "lang": "fa",
+      "wrong": "وان کوین",
+      "right": "وان‌کوین"
+    },
+    {
+      "lang": "en",
+      "wrong": "Onecoin",
+      "right": "OneCoin"
+    },
+    {
+      "lang": "fa",
+      "wrong": "چین دات کام",
+      "right": "Chain.com"
+    },
+    {
+      "lang": "fa",
+      "wrong": "وینکل ووس",
+      "right": "وینکلواس"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ای تی اف",
+      "right": "ETF"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اس ای سی",
+      "right": "SEC"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیت پیزوست",
+      "right": "بیت‌پسا"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دی جی ارس",
+      "right": "دیجی‌ارز"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دی جی عرض",
+      "right": "دیجی‌ارز"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ساتوشین آکاماتو",
+      "right": "ساتوشی ناکاموتو"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مارک زاکر بیاد",
+      "right": "مارک زاکربرگ"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پروف آف ورک",
+      "right": "پروف‌اوف‌ورک"
+    }
+  ]
+}

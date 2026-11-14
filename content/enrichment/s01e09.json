@@ -1,0 +1,252 @@
+{
+  "id": "s01e09",
+  "model": "claude-sonnet-4-6",
+  "generatedAt": "2026-11-14T22:09:46.175Z",
+  "summaryFa": "این اپیزود به‌طور تخصصی به ماینینگ کریپتو در ایران می‌پردازد و گروهی از ماینرهای حرفه‌ای ایرانی تجربیات، چالش‌ها و راهکارهای خود را به اشتراک می‌گذارند. موضوعاتی چون مقایسه سخت‌افزار (ASIC در برابر GPU، کارت‌های AMD در برابر Nvidia)، مدیریت گرما و جریان هوا، محاسبه ROI با دیدگاه بلندمدت، پول‌های ماینینگ و حمله ۵۱٪، و چالش کمبود کارت گرافیک در بازار ایران و جهان بررسی می‌شوند. در پایان، دو سرویس جدید ایرانی معرفی می‌شوند: یک فروم سوال‌وجواب به سبک Stack Overflow و یک ماشین‌حساب سودآوری بومی‌سازی‌شده در سایت miningbox.com.",
+  "summaryEn": "A panel of professional Iranian miners discusses the full landscape of crypto mining in Iran, comparing ASIC machines (Bitmain Antminer for Bitcoin's SHA-256) against GPU rigs (AMD RX 470/480/580 versus Nvidia GTX 1070/1080) and covering ASIC-resistant algorithms such as Ethereum's Dagger-Hashimoto, Monero, Equihash, and Zcash. Practical topics include heat dissipation, airflow design, undervolting, BIOS/RAM-timing overclocking, the growing DAG epoch size, power cabling and amperage, and long-term ROI thinking that accounts for difficulty bombs and price volatility. The episode also explains mining pools, the 51% attack, orphan/uncle rates, the case for an Iran-based P2Pool node, China's mining centralization risk, the upcoming August 1 UASF/SegWit event, and soft fork versus hard fork mechanics, then introduces miningbox.com—a Stack Overflow-style Q&A forum and a localized profitability calculator for Iranian miners.",
+  "quotes": [
+    {
+      "startSec": 1367,
+      "fa": "در کوتاه‌مدت شاید ریوارد کمتری ماینرها بگیرن تا اون‌که اون پول به قدرت محاسباتی مناسبی برسه، ولی خیلی بهتر خواهد بود.",
+      "en": "In the short term miners might get a smaller reward until that pool reaches adequate hashpower, but it will be much better overall."
+    },
+    {
+      "startSec": 3435,
+      "fa": "ریسک کنید؛ بگید پولی که دارم می‌ذارم رفت. تا یه سال نمی‌بینمش. چشم‌تونو ببندید روش.",
+      "en": "Take the risk and say: the money I'm putting in is gone. I won't see it for a year. Just close your eyes to it."
+    },
+    {
+      "startSec": 2854,
+      "fa": "گرما قاتل کارته — نه فقط به این معنا که کارت رو می‌سوزونه، بلکه عمر دستگاه رو به مرور پایین می‌آره.",
+      "en": "Heat is the killer of the card — not just in the sense that it burns it out, but it gradually shortens the device's lifespan.",
+      "speaker": "Arash"
+    },
+    {
+      "startSec": 3289,
+      "fa": "به اصطلاح می‌گن Difficulty Bomb — یعنی انفجاری توی دیفیکالتی رخ می‌ده و سود بالای پنجاه درصد افت می‌کنه.",
+      "en": "They call it a Difficulty Bomb — an explosion happens in the difficulty and profit drops by over fifty percent."
+    },
+    {
+      "startSec": 2201,
+      "fa": "توی الکترونیک بهش می‌گیم بیماری پیرداغی — قطعه پیر می‌شه و HFE قطعه به شدت پایین می‌افته.",
+      "en": "In electronics we call it aging-from-heat disease — the component ages and its HFE drops sharply.",
+      "speaker": "Arash"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "ASIC (Application-Specific Integrated Circuit)",
+      "termFa": "مدار مجتمع با کاربرد خاص (اسیک)",
+      "definitionEn": "Hardware designed to perform only one specific algorithm, offering high efficiency but no flexibility.",
+      "definitionFa": "سخت‌افزاری که فقط برای اجرای یک الگوریتم خاص طراحی شده و قابل استفاده برای کار دیگری نیست."
+    },
+    {
+      "term": "GPU Mining",
+      "termFa": "ماینینگ با کارت گرافیک",
+      "definitionEn": "Using graphics cards to mine cryptocurrencies, offering flexibility across multiple algorithms and resale value.",
+      "definitionFa": "استفاده از کارت‌های گرافیک برای استخراج رمزارز، با قابلیت تعویض الگوریتم و فروش دست‌دوم."
+    },
+    {
+      "term": "Mining Pool",
+      "termFa": "استخر ماینینگ",
+      "definitionEn": "A group of miners who combine hashpower to find blocks faster and share rewards proportionally.",
+      "definitionFa": "گروهی از ماینرها که قدرت محاسباتی خود را جمع می‌کنند تا سریع‌تر بلاک پیدا کنند و پاداش را تقسیم نمایند."
+    },
+    {
+      "term": "DAG (Dagger-Hashimoto)",
+      "termFa": "دگ (فایل DAG)",
+      "definitionEn": "A large dataset loaded into GPU memory required to mine Ethereum; it grows with each epoch making old low-RAM cards obsolete.",
+      "definitionFa": "فایل بزرگی که باید روی حافظه کارت گرافیک بارگذاری شود تا بتوان اتریوم را ماین کرد و با هر epoch بزرگ‌تر می‌شود."
+    },
+    {
+      "term": "51% Attack",
+      "termFa": "حمله ۵۱ درصد",
+      "definitionEn": "When a single entity controls over half the network hashpower, allowing them to censor transactions or reorganize blocks.",
+      "definitionFa": "زمانی که یک نهاد بیش از نیمی از قدرت محاسباتی شبکه را کنترل کند و بتواند تراکنش‌ها را سانسور کند."
+    },
+    {
+      "term": "P2Pool",
+      "termFa": "پی‌تو‌پول",
+      "definitionEn": "A decentralized mining pool system where each participant runs their own node under a larger pool umbrella.",
+      "definitionFa": "سیستم استخر ماینینگ غیرمتمرکز که هر شرکت‌کننده زیر چتر یک استخر بزرگ‌تر نود مستقل خود را اجرا می‌کند."
+    },
+    {
+      "term": "Orphan/Uncle Rate",
+      "termFa": "نرخ بلاک‌های یتیم/عمو",
+      "definitionEn": "The proportion of valid blocks found too slowly to be accepted by the main chain, wasting miner effort.",
+      "definitionFa": "نسبت بلاک‌های معتبری که به خاطر تأخیر شبکه به زنجیره اصلی نرسیده و تلاش ماینر را هدر می‌دهند."
+    },
+    {
+      "term": "UASF (User Activated Soft Fork)",
+      "termFa": "سافت‌فورک فعال‌شده توسط کاربران",
+      "definitionEn": "A network rule change enforced by nodes and users rather than miners, scheduled for August 1, 2017.",
+      "definitionFa": "تغییر قوانین شبکه که توسط نودها و کاربران (نه ماینرها) اعمال می‌شود و برای اول اوت ۲۰۱۷ برنامه‌ریزی شده بود."
+    },
+    {
+      "term": "Proof of Stake",
+      "termFa": "اثبات سهام",
+      "definitionEn": "A consensus mechanism where validators stake coins instead of spending energy on mining to secure the network.",
+      "definitionFa": "مکانیسم اجماعی که در آن اعتبارسنج‌ها به جای مصرف انرژی برای ماینینگ، کوین سپرده‌گذاری می‌کنند."
+    },
+    {
+      "term": "ROI (Return on Investment)",
+      "termFa": "بازگشت سرمایه",
+      "definitionEn": "The time or ratio at which mining revenue recoups the initial hardware and operating costs.",
+      "definitionFa": "مدت زمان یا نسبتی که درآمد ماینینگ هزینه اولیه سخت‌افزار و برق را جبران می‌کند."
+    },
+    {
+      "term": "Undervolting / Downclocking",
+      "termFa": "کاهش ولتاژ / کاهش فرکانس",
+      "definitionEn": "Reducing a GPU's voltage or clock speed to lower heat and power consumption while preserving hashrate.",
+      "definitionFa": "کاهش ولتاژ یا فرکانس کارت گرافیک برای کم کردن گرما و مصرف برق بدون از دست دادن هش‌ریت."
+    },
+    {
+      "term": "Difficulty Bomb",
+      "termFa": "بمب دیفیکالتی",
+      "definitionEn": "A sudden sharp rise in mining difficulty that makes block rewards unprofitable, used in Ethereum to push toward Proof of Stake.",
+      "definitionFa": "افزایش ناگهانی و شدید دیفیکالتی ماینینگ که سودآوری را از بین می‌برد و در اتریوم برای تشویق به اثبات سهام طراحی شده."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "شناخت",
+      "right": "شیر یا خط"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اکسیفرن",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتریوم",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "انتپاینر",
+      "right": "آنت‌ماینر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "انتماینر",
+      "right": "آنت‌ماینر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "آنت ماینر",
+      "right": "آنت‌ماینر"
+    },
+    {
+      "lang": "en",
+      "wrong": "Antminer",
+      "right": "Antminer (Bitmain)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تورنیدو کشت",
+      "right": "Tornado Cash"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زیکش",
+      "right": "زی‌کش (Zcash)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مونرور",
+      "right": "مونرو (Monero)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایکوی هشت زیکش",
+      "right": "الگوریتم Equihash (زی‌کش)"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دگر هاشیموتو",
+      "right": "Dagger-Hashimoto"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایپاچ",
+      "right": "epoch"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایپاچو",
+      "right": "epoch را"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پروف آف ستیک",
+      "right": "Proof of Stake"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پروف آف استیک",
+      "right": "Proof of Stake"
+    },
+    {
+      "lang": "fa",
+      "wrong": "نانو پول",
+      "right": "Nanopool"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ماینر گیت",
+      "right": "MinerGate"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کلیمور",
+      "right": "Claymore"
+    },
+    {
+      "lang": "fa",
+      "wrong": "جی دی دی آر فای و ایکس",
+      "right": "GDDR5X"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زیکش کلاسیک",
+      "right": "Zclassic"
+    },
+    {
+      "lang": "fa",
+      "wrong": "میوزیک کوین",
+      "right": "MusicCoin"
+    },
+    {
+      "lang": "fa",
+      "wrong": "سفایر نترو پلاس",
+      "right": "Sapphire Nitro+"
+    },
+    {
+      "lang": "fa",
+      "wrong": "نترو پلاس سفایر",
+      "right": "Sapphire Nitro+"
+    },
+    {
+      "lang": "fa",
+      "wrong": "امیسای آرمور",
+      "right": "MSI Armor"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ماینینگ باکس دات کام",
+      "right": "miningbox.com"
+    },
+    {
+      "lang": "en",
+      "wrong": "miningbox",
+      "right": "miningbox.com"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پیتو پول",
+      "right": "P2Pool"
+    }
+  ]
+}
