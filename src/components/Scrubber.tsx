@@ -11,6 +11,9 @@ interface Props {
   durationSec: number;
   chapters?: Chapter[];
   onSeek: (sec: number) => void;
+  /** Fires true while the timeline is being touched/dragged, false on release.
+   *  The player screen uses this to suspend swipe-back during a scrub. */
+  onScrub?: (active: boolean) => void;
 }
 
 const TRACK = 4;
@@ -20,7 +23,7 @@ const THUMB = 14;
  * Playback timeline. Deliberately NOT mirrored in RTL: media timelines run
  * left-to-right in every locale (as on iOS/Android system players).
  */
-export function Scrubber({ positionSec, durationSec, chapters = [], onSeek }: Props) {
+export function Scrubber({ positionSec, durationSec, chapters = [], onSeek, onScrub }: Props) {
   const theme = useTheme();
   const { locale, t } = useI18n();
   const trackRef = useRef<ComponentRef<typeof View>>(null);
@@ -51,6 +54,7 @@ export function Scrubber({ positionSec, durationSec, chapters = [], onSeek }: Pr
         onMoveShouldSetResponder={() => durationSec > 0}
         onResponderTerminationRequest={() => false}
         onResponderGrant={(e) => {
+          onScrub?.(true);
           const pageX = e.nativeEvent.pageX;
           trackRef.current?.measureInWindow((x, _y, width) => {
             geometry.current = { x, width: Math.max(1, width) };
@@ -62,8 +66,12 @@ export function Scrubber({ positionSec, durationSec, chapters = [], onSeek }: Pr
         onResponderRelease={(e) => {
           onSeek(secAt(e));
           setDragSec(null);
+          onScrub?.(false);
         }}
-        onResponderTerminate={() => setDragSec(null)}
+        onResponderTerminate={() => {
+          setDragSec(null);
+          onScrub?.(false);
+        }}
         style={{ height: 28, justifyContent: 'center' }}
       >
         <View style={{ height: TRACK, borderRadius: TRACK, backgroundColor: theme.line }}>

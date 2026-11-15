@@ -151,7 +151,7 @@ export function GlossaryTab() {
       100,
     );
     return () => clearTimeout(timer);
-  }, [requested, data, listReady]);
+  }, [requested, requestedIndex, listReady]);
 
   const setQuery = (text: string) => {
     useNav.getState().clearGlossarySlug();
