@@ -39,7 +39,7 @@
     var stage = coin.querySelector('.coin-stage');
     var note = document.querySelector('.coin-note');
     var calm = window.matchMedia('(prefers-reduced-motion: reduce)');
-    var face = 'heads';     // heads = شیر (the logo in colour), tails = خط (struck in brass)
+    var face = 'heads';     // heads = شیر (the engraved hero, or the logo in enamel), tails = خط (the logo struck in bronze)
     var live = null;        // the 3D coin, once mounted
     var results = {
       heads: { fa: 'شیر آمد.', en: 'Shir. That’s heads.' },
@@ -48,8 +48,30 @@
 
     var hint = note && { fa: note.querySelector('.fa').textContent, en: note.querySelector('.en').textContent };
 
+    // The rare toss that lands on its rim: a small caption in both languages
+    // while the coin can't make up its mind.
+    var undecided = null;
+    function decide() {
+      if (!undecided) return;
+      undecided.remove();
+      undecided = null;
+      note.classList.remove('is-undecided');
+    }
+    function teeter() {
+      if (!note || undecided) return;
+      undecided = document.createElement('span');
+      undecided.className = 'coin-undecided';
+      undecided.innerHTML =
+        '<span lang="fa" dir="rtl">شیر یا خط؟</span>' +
+        '<span lang="en" dir="ltr">heads or tails?</span>' +
+        '<span class="fa">…خودتان بگویید</span><span class="en" lang="en">…you decide</span>';
+      note.classList.add('is-undecided');
+      note.appendChild(undecided);
+    }
+
     function say(text) {
       if (!note) return;
+      decide();
       note.querySelector('.fa').textContent = text.fa;
       note.querySelector('.en').textContent = text.en;
     }
@@ -71,7 +93,8 @@
     }
 
     coin.addEventListener('click', function () {
-      if (live) live.flip(); else stillFlip();
+      if (!live) stillFlip();
+      else if (live.flip() && undecided) rest();   // tossed again off its rim
     });
 
     function load3d() {
@@ -79,7 +102,7 @@
       var conn = navigator.connection;
       if (conn && conn.saveData) return;
       import(new URL('coin.js', here).href).then(function (mod) {
-        return mod.mount(stage, { face: face, intro: true, onLand: announce, onIdle: rest });
+        return mod.mount(stage, { face: face, intro: true, onLand: announce, onEdge: teeter, onIdle: rest });
       }).then(function (api) {
         live = api;
         coin.classList.add('is-live');

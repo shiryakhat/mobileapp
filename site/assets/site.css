@@ -253,6 +253,24 @@ html[lang="en"] .tagline { line-height: 1.45; }
 
 .coin-note { color: var(--muted); font-size: 0.9rem; min-block-size: 1.9em; }
 
+/* The coin landed on its rim: «شیر یا خط؟» · heads or tails? · …you decide */
+.coin-note.is-undecided > .fa,
+.coin-note.is-undecided > .en { display: none; }
+.coin-undecided {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0 0.7em;
+}
+.coin-undecided > span { animation: coin-murmur 0.9s ease-out both; }
+.coin-undecided > span:nth-child(2) { animation-delay: 0.7s; }
+.coin-undecided > span:nth-child(n+3) { animation-delay: 1.6s; color: var(--accent); }
+@keyframes coin-murmur {
+  from { opacity: 0; transform: translateY(0.35em); }
+  to { opacity: 1; transform: none; }
+}
+
 /* ---------- footer ---------- */
 
 .foot { border-block-start: 1px solid var(--line); padding-block: 2.5rem 2.25rem; font-size: 0.95rem; }
@@ -299,4 +317,5 @@ html[lang="en"] .policy h1, .policy[lang="en"] h1 { line-height: 1.15; letter-sp
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
+  .coin-undecided > span { animation: none; }
 }
