@@ -44,6 +44,12 @@ tinted from the art's own metal.
 - It idles with a slow turn, flips once on load and again on every tap. A toss
   takes about four seconds: wind-up, arc with a precessing spin that bleeds
   speed, then a damped rock to rest.
+- It never locks: a tap while the coin is in the air bats it again. Each one
+  adds spin (`SPIN_KICK`, up to `SPIN_MAX`), a bump of height (capped at
+  `APEX_MAX`, the stage's headroom), a pop of scale and a tip away from where
+  it was hit, and re-rolls the outcome, rim included. Keep a rhythm and it
+  stays up, tumbling faster; stop and it comes down like any other toss, only
+  harder. The pose a tap interrupts is carried over and faded out, never snapped.
 - About one toss in ten (`EDGE_CHANCE`) lands on its rim and teeters. `site.js`
   shows «شیر یا خط؟ · heads or tails? · …you decide» in the note; the coin then
   either tips onto a face by itself or keeps teetering until the next tap.
