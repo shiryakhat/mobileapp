@@ -50,8 +50,8 @@
 
     var hint = note && { fa: note.querySelector('.fa').textContent, en: note.querySelector('.en').textContent };
 
-    // The rare toss that lands on its rim: a small caption in both languages
-    // while the coin can't make up its mind.
+    // The rare toss that lands on its rim: a small caption in the active language
+    // (the page's .fa/.en rules hide the other one) while the coin can't make up its mind.
     var undecided = null;
     function decide() {
       if (!undecided) return;
@@ -64,8 +64,7 @@
       undecided = document.createElement('span');
       undecided.className = 'coin-undecided';
       undecided.innerHTML =
-        '<span lang="fa" dir="rtl">شیر یا خط؟</span>' +
-        '<span lang="en" dir="ltr">heads or tails?</span>' +
+        '<span class="fa">شیر یا خط؟</span><span class="en" lang="en">heads or tails?</span>' +
         '<span class="fa">تصمیم با شماست</span><span class="en" lang="en">…you decide</span>';
       note.classList.add('is-undecided');
       note.appendChild(undecided);
