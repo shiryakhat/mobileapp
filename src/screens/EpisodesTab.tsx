@@ -1,5 +1,5 @@
 import { router } from 'expo-router';
-import { useCallback, useMemo, useRef } from 'react';
+import { useCallback, useMemo, useState } from 'react';
 import { Pressable, ScrollView, SectionList, View } from 'react-native';
 import { EpisodeCard } from '@/components/EpisodeCard';
 import { Chip, Icon, ProgressBar, Text } from '@/components/ui';
@@ -67,12 +67,22 @@ function ContinueCard() {
   );
 }
 
-/** Episodes grouped by season; the newest episode leads as a hero card. */
+/** Every season, or the one picked in the top bar (0 = specials). */
+type SeasonFilter = 'all' | number;
+
+/**
+ * Episodes grouped by season; the newest episode leads as a hero card. The
+ * season chips in the top bar filter the list to one season.
+ */
 export function EpisodesTab() {
   const theme = useTheme();
   const { t, locale } = useI18n();
   const setLocale = useSettings((s) => s.setLocale);
-  const listRef = useRef<SectionList<Episode, SeasonSection>>(null);
+  const [filter, setFilter] = useState<SeasonFilter>('all');
+  const sections = useMemo(
+    () => (filter === 'all' ? seasons : seasons.filter((s) => s.season === filter)),
+    [filter],
+  );
   const latestId = seasons[0]?.data[0]?.id;
 
   const seasonLabel = useCallback(
@@ -113,32 +123,36 @@ export function EpisodesTab() {
           showsHorizontalScrollIndicator={false}
           contentContainerStyle={{ gap: space.sm, padding: space.lg }}
         >
-          {seasons.map((s, i) => (
+          <Chip
+            testID="season-chip-all"
+            label={t('allSeasons')}
+            active={filter === 'all'}
+            onPress={() => setFilter('all')}
+          />
+          {seasons.map((s) => (
             <Chip
               key={s.season}
+              testID={`season-chip-${s.season}`}
               label={seasonLabel(s.season)}
-              onPress={() =>
-                listRef.current?.scrollToLocation({ sectionIndex: i, itemIndex: 0, viewOffset: 8 })
-              }
+              active={filter === s.season}
+              onPress={() => setFilter(s.season)}
             />
           ))}
         </ScrollView>
         <ContinueCard />
       </View>
     ),
-    [locale, seasonLabel, setLocale, t],
+    [filter, locale, seasonLabel, setLocale, t],
   );
 
   return (
-    <SectionList
-      ref={listRef}
+    <SectionList<Episode, SeasonSection>
       testID="episodes-list"
-      sections={seasons}
+      sections={sections}
       keyExtractor={(e) => e.id}
       ListHeaderComponent={header}
       stickySectionHeadersEnabled
       initialNumToRender={8}
-      onScrollToIndexFailed={() => undefined}
       contentContainerStyle={{ paddingBottom: space.xl }}
       renderSectionHeader={({ section }) => (
         <View

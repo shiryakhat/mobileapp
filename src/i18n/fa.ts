@@ -10,6 +10,7 @@ export const fa: Dict = {
   tabSettings: 'تنظیمات',
   season: 'فصل {n}',
   specials: 'ویژه‌ها',
+  allSeasons: 'همه',
   episodesCount: '{n} قسمت',
   continueListening: 'ادامه',
   resumeFrom: 'ادامه از {t}',
