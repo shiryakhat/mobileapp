@@ -124,4 +124,8 @@ export const fa: Dict = {
   cancel: 'انصراف',
   minutes: '{n} دقیقه',
   version: 'نسخهٔ {v}',
+  coinHint: 'روی سکه بزنید: شیر یا خط؟',
+  coinHeads: 'خط',
+  coinTails: 'شیر',
+  coinEdge: 'روی لبه ایستاد… نه شیر، نه خط!',
 };

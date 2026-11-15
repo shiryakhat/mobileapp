@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "net.shiryakhat.app",
+      "sha256_cert_fingerprints": [
+        "41:31:12:59:DC:C7:2D:80:5E:30:2C:AD:B6:91:74:7E:A5:98:03:42:C5:DC:A6:00:9D:CC:E2:FB:0C:88:81:FF"
+      ]
+    }
+  }
+]

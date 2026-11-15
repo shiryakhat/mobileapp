@@ -123,6 +123,10 @@ export const en = {
   cancel: 'Cancel',
   minutes: '{n} min',
   version: 'Version {v}',
+  coinHint: 'Tap the coin. Heads or tails?',
+  coinHeads: 'Khat',
+  coinTails: 'Shir',
+  coinEdge: 'On its rim… undecided!',
 } as const;
 
 export type Dict = Record<keyof typeof en, string>;

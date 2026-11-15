@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<!-- Episode link landing + not-found page.
+     https://shiryakhat.app/episode/<id>?t=<sec> (short form: /e/<id>) is a Universal Link /
+     App Link: with the app installed the OS opens the app and this page is never seen.
+     Without the app (or on desktop) GitHub Pages serves this file for any unknown path, and
+     assets/episode-link.js turns it into an "open in the app / get the app" page.
+     site/episode/index.html is a copy of this file: keep the two in sync. -->
+<html lang="fa" dir="rtl" data-lang="fa"
+      data-title-fa="شیر یا خط"
+      data-title-en="Shir ya Khat">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>شیر یا خط</title>
+  <meta name="robots" content="noindex">
+  <meta name="theme-color" content="#0B0B0D" media="(prefers-color-scheme: dark)">
+  <meta name="theme-color" content="#F7F4EE" media="(prefers-color-scheme: light)">
+  <link rel="icon" href="/assets/favicon.ico" sizes="any">
+  <link rel="icon" href="/assets/favicon-32.png" type="image/png" sizes="32x32">
+  <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png">
+  <link rel="stylesheet" href="/assets/site.css">
+  <style>
+    .link-page { text-align: center; padding-block: 3rem 4rem; }
+    .link-page h1 { font-size: clamp(1.6rem, 6vw, 2.2rem); margin-block: 1rem 0.5rem; }
+    .link-page .tagline { margin-inline: auto; }
+    .open-app {
+      display: inline-block; margin-block-start: 1.6rem; padding: 0.8rem 1.6rem;
+      border-radius: 999px; background: var(--accent); color: var(--bg);
+      font-weight: 700; text-decoration: none;
+    }
+    .link-page [hidden] { display: none; }
+  </style>
+  <script src="/assets/site.js"></script>
+  <script src="/assets/episode-link.js" defer></script>
+</head>
+<body>
+  <header class="top wrap">
+    <a class="brand" href="/">
+      <img src="/assets/icon-96.png" alt="" width="24" height="24">
+      <span class="fa">شیر یا خط</span><span class="en" lang="en">Shir ya Khat</span>
+    </a>
+    <nav aria-label="Site">
+      <a href="/"><span class="fa">خانه</span><span class="en" lang="en">Home</span></a>
+      <button class="lang-toggle" type="button">
+        <span class="fa" lang="en" dir="ltr">English</span><span class="en" lang="fa" dir="rtl">فارسی</span>
+      </button>
+    </nav>
+  </header>
+
+  <main id="main" class="link-page wrap">
+    <img src="/assets/icon-192.png" alt="" width="96" height="96">
+
+    <!-- Shown for /episode/<id> and /e/<id> (filled in by episode-link.js). -->
+    <section id="episode-link" hidden>
+      <h1>
+        <span class="fa">این قسمت را در اپ شیر یا خط باز کنید</span>
+        <span class="en" lang="en">Open this episode in the Shir ya Khat app</span>
+      </h1>
+      <p class="tagline">
+        <span class="fa">قسمت <bdi dir="ltr" class="ep-code"></bdi><span class="ep-time" hidden> از دقیقهٔ <bdi dir="ltr" class="ep-time-label"></bdi></span></span>
+        <span class="en" lang="en">Episode <bdi class="ep-code"></bdi><span class="ep-time" hidden> at <bdi class="ep-time-label"></bdi></span></span>
+      </p>
+      <a class="open-app" id="open-app" href="/">
+        <span class="fa">باز کردن در اپ</span><span class="en" lang="en">Open in the app</span>
+      </a>
+      <div class="stores">
+        <p class="tagline">
+          <span class="fa">اپ را ندارید؟ رایگان نصبش کنید:</span>
+          <span class="en" lang="en">Don't have the app? Get it for free:</span>
+        </p>
+        <div class="stores-row" style="margin-block-start: 0.9rem">
+          <a class="badge badge-testflight" href="https://testflight.apple.com/join/VtyyXkUt" target="_blank" rel="noopener">
+            <img src="/assets/badges/testflight.png" width="160" height="48" alt="Available on TestFlight (iOS beta)">
+          </a>
+          <a class="badge badge-play" href="https://play.google.com/store/apps/details?id=net.shiryakhat.app" target="_blank" rel="noopener">
+            <img src="/assets/badges/google-play.svg" width="162" height="48" alt="Get it on Google Play">
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Shown for every other unknown path (and without JavaScript). -->
+    <section id="not-found">
+      <h1><span class="fa">این صفحه پیدا نشد</span><span class="en" lang="en">Page not found</span></h1>
+      <p class="tagline">
+        <a href="/"><span class="fa">بازگشت به صفحهٔ اصلی</span><span class="en" lang="en">Back to the home page</span></a>
+      </p>
+    </section>
+  </main>
+</body>
+</html>
