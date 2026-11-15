@@ -41,6 +41,10 @@ let lastSavedAt = -1;
 const state = () => usePlayback.getState();
 const set = usePlayback.setState;
 
+// TODO: archive.org as a fallback source. Most episodes are also on archive.org
+// (creator "Shir Ya Khat": https://archive.org/search?query=creator%3A%22Shir+Ya+Khat%22),
+// which could back up the audio (and video) when the RSS enclosure is unavailable.
+// Not wired up yet; downloads (src/state/downloads.ts) would need the same fallback.
 function audioSourceFor(ep: Episode): string | undefined {
   return localAudioUri(ep.id) ?? ep.audioUrl;
 }
