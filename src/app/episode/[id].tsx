@@ -2,9 +2,9 @@ import { router, useLocalSearchParams } from 'expo-router';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Linking, ScrollView, useWindowDimensions, View } from 'react-native';
 import { CommentsPane } from '@/community/CommentsPane';
-import { CachedImage } from '@/components/CachedImage';
 import { ChapterList } from '@/components/ChapterList';
 import { DownloadButton } from '@/components/DownloadButton';
+import { EpisodeArtwork } from '@/components/EpisodeArtwork';
 import { PlayerControls } from '@/components/PlayerControls';
 import { TranscriptView } from '@/components/TranscriptView';
 import { YoutubeSurface } from '@/components/YoutubeSurface';
@@ -136,7 +136,6 @@ interface EpisodeScreenProps {
 }
 
 function EpisodeScreen({ episode, startAt, cue, initialPane }: EpisodeScreenProps) {
-  const theme = useTheme();
   const { t, pick, other, isRTL, locale } = useI18n();
   const { width } = useWindowDimensions();
   const [pane, setPane] = useState<Pane>(
@@ -214,16 +213,7 @@ function EpisodeScreen({ episode, startAt, cue, initialPane }: EpisodeScreenProp
         <View
           style={{ flexDirection: 'row', gap: space.md, padding: space.lg, paddingTop: space.sm }}
         >
-          <CachedImage
-            uri={episode.youtubeThumb}
-            style={{
-              width: 128,
-              aspectRatio: 16 / 9,
-              borderRadius: radius.md,
-              backgroundColor: theme.raised,
-            }}
-            contentFit="cover"
-          />
+          <EpisodeArtwork episode={episode} size={96} />
           <View style={{ flex: 1, gap: 2 }}>
             <Text weight="bold" numberOfLines={2} testID="episode-title">
               {primary}

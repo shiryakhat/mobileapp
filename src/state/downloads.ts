@@ -2,6 +2,10 @@
  * Offline audio downloads: state (persisted) + manager (in-memory tasks).
  * Audio only — video stays streamed in v1. Downloads are resumable: pausing
  * stores the platform resume data, so a paused download survives an app restart.
+ *
+ * TODO: video downloads, together with the archive.org fallback (and possibly
+ * Cloudflare R2 / Stream hosting) — see the note at `audioSourceFor` in
+ * src/player/controller.ts.
  */
 import { Directory, DownloadTask, File, Paths, type DownloadPauseState } from 'expo-file-system';
 import { create } from 'zustand';
