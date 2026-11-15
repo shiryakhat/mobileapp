@@ -104,8 +104,26 @@
       coin.setAttribute('data-face', 'tails');
     }
 
+    // A subtle coin-toss sound on every tap. Preloaded once; each tap plays its
+    // own clone so rapid taps overlap/restart instead of cutting each other off.
+    var flipSfx = null;
+    try {
+      flipSfx = new Audio(new URL('coin-flip.mp3', here).href);
+      flipSfx.preload = 'auto';
+    } catch (e) { /* no audio support — stay silent */ }
+    function playFlip() {
+      if (!flipSfx) return;
+      try {
+        var s = flipSfx.cloneNode();
+        s.volume = 0.45;
+        var p = s.play();
+        if (p && p.catch) p.catch(function () {}); // ignore autoplay/gesture rejections
+      } catch (e) { /* ignore */ }
+    }
+
     // Every tap counts: one tosses the coin, more while it is in the air keep it up.
     coin.addEventListener('click', function (e) {
+      playFlip();
       if (!live) stillFlip();
       else if (live.flip(undefined, e) && undecided) rest();   // tossed again off its rim
     });
