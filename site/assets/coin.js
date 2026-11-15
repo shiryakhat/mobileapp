@@ -1,7 +1,7 @@
 /* Shir ya Khat — the 3D coin.
    Lazy-loaded by site.js after first paint. A worn silver piece whose two
-   faces are pre-rendered artwork: heads (شیر) is coin-face-heads.png, the
-   microphone with the calligraphy escaping it; tails (خط) is
+   faces are pre-rendered artwork: heads (خط) is coin-face-heads.png, the
+   microphone with the calligraphy escaping it; tails (شیر) is
    coin-face-tails.png, the astronaut. The art already carries its relief,
    patina and border, so each face is simply that picture on lightly metallic
    stock; the reeded edge, the lighting and the reflections are generated here.
