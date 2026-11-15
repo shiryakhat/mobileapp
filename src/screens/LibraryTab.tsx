@@ -1,7 +1,8 @@
 import { router } from 'expo-router';
 import { useMemo, useState } from 'react';
 import { Alert, FlatList, Pressable, View } from 'react-native';
-import { Button, EmptyState, IconButton, ProgressBar, Segmented, Text } from '@/components/ui';
+import { DownloadButton } from '@/components/DownloadButton';
+import { Button, EmptyState, IconButton, Segmented, Text } from '@/components/ui';
 import { getEpisode } from '@/content';
 import { useI18n } from '@/i18n';
 import { formatBytes, formatTime, joinMeta } from '@/lib/format';
@@ -9,8 +10,6 @@ import { liveBookmarks, useBookmarks, type Bookmark } from '@/state/bookmarks';
 import {
   deleteAllDownloads,
   deleteDownload,
-  pauseDownload,
-  resumeDownload,
   startDownload,
   storageStats,
   useDownloads,
@@ -81,7 +80,6 @@ function DownloadRow({ item }: { item: DownloadItem }) {
   const { t, pick, locale } = useI18n();
   const episode = getEpisode(item.episodeId);
   if (!episode) return null;
-  const fraction = item.totalBytes > 0 ? item.bytesWritten / item.totalBytes : 0;
   const status =
     item.status === 'done'
       ? formatBytes(item.totalBytes, locale)
@@ -97,7 +95,6 @@ function DownloadRow({ item }: { item: DownloadItem }) {
         marginHorizontal: space.lg,
         marginBottom: space.sm,
         padding: space.md,
-        gap: space.sm,
         borderRadius: radius.md,
         backgroundColor: theme.surface,
         borderWidth: 1,
@@ -120,16 +117,11 @@ function DownloadRow({ item }: { item: DownloadItem }) {
             {pick(episode.titleFa, episode.titleEn)}
           </Text>
         </Pressable>
-        {item.status === 'downloading' ? (
-          <IconButton
-            icon="pause"
-            label={t('paused')}
-            onPress={() => void pauseDownload(episode.id)}
-          />
-        ) : item.status === 'paused' ? (
-          <IconButton icon="play" label={t('resume')} onPress={() => resumeDownload(episode)} />
-        ) : item.status === 'error' ? (
+        {item.status === 'error' ? (
           <IconButton icon="refresh-cw" label={t('retry')} onPress={() => startDownload(episode)} />
+        ) : item.status !== 'done' ? (
+          // In flight or paused: the round control with its progress ring.
+          <DownloadButton episode={episode} />
         ) : null}
         <IconButton
           icon="trash-2"
@@ -139,11 +131,6 @@ function DownloadRow({ item }: { item: DownloadItem }) {
           onPress={() => deleteDownload(episode.id)}
         />
       </View>
-      {item.status !== 'done' ? (
-        <View style={{ direction: 'ltr' }}>
-          <ProgressBar value={fraction} />
-        </View>
-      ) : null}
     </View>
   );
 }
