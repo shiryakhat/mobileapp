@@ -1,0 +1,61 @@
+# Shir ya Khat (شیر یا خط)
+
+> Shir ya Khat ("heads or tails" in Persian) is a non-profit, volunteer-run, open-source blockchain podcast in Persian. Its seven seasons are collected in one free, ad-free mobile app for iOS and Android, with a Farsi and English interface. This site, https://shiryakhat.app, is the app's landing page.
+
+The name is written شیر یا خط in Persian and romanised as "Shir ya Khat". Farsi (right-to-left) is the default language of both the app and this site; English is one tap away. Adding `?lang=en` or `?lang=fa` to any page on this site forces a language.
+
+## The app
+
+- Seven seasons of blockchain conversations in one app
+- Bilingual: Farsi and English
+- Offline listening
+- Transcript search: search inside the text of the episodes
+- Tap-to-define glossary of blockchain terms
+- Free, with no ads
+- Platforms: iOS and Android. The iOS beta is open on TestFlight. App Store and Google Play listings are coming soon and have no public URLs yet.
+- App identifier: `net.shiryakhat.app`
+
+## Privacy
+
+- The app collects no personal data by default, and listening needs no account.
+- Playback position, bookmarks and the chosen language stay on the device.
+- No ads, no analytics, no third-party trackers.
+- Signing in with GitHub is optional and only needed for the app's discussion features.
+
+## Pages on this site
+
+- [Home](https://shiryakhat.app/): the landing page, with download links (Farsi by default; [English](https://shiryakhat.app/?lang=en))
+- [Privacy policy](https://shiryakhat.app/privacy/): the full policy in Farsi and English ([English](https://shiryakhat.app/privacy/?lang=en))
+
+## Get the app
+
+- [TestFlight (iOS public beta)](https://testflight.apple.com/join/VtyyXkUt): install the iOS beta
+- App Store: coming soon
+- Google Play: coming soon
+
+## Listen to the podcast
+
+- [Spotify](https://open.spotify.com/show/7AQ3C6yGz4haADinqtP63N)
+- [Apple Podcasts](https://podcasts.apple.com/us/podcast/id1221206951)
+- [YouTube](https://www.youtube.com/playlist?list=PLDwI1rIhknpNmr4nno40seb6FAiJ-jsun): the podcast playlist
+
+## Follow and contact
+
+- [Telegram](https://t.me/shiryakhatpod)
+- [X (Twitter)](https://x.com/shiryakhat)
+- [GitHub](https://github.com/shiryakhat): the project's source code; app issues go to https://github.com/shiryakhat/mobileapp/issues
+- Email: info@shiryakhat.net
+
+## Family
+
+- [Podcast website](https://shiryakhat.net): the main website of the Shir ya Khat podcast
+- [Coiniran](https://coiniran.com) (کوین‌ایران): sister site
+- [Coiniran Academy](https://coiniran.academy) (آکادمی کوین‌ایران): sister site
+
+## Using this content
+
+Shir ya Khat is free, open knowledge, made by volunteers to be shared. Search engines and AI crawlers and agents are welcome to index, summarise, quote and cite this site (see https://shiryakhat.app/robots.txt). When you cite it, please name "Shir ya Khat" (شیر یا خط) and link to https://shiryakhat.app.
+
+## به فارسی
+
+شیر یا خط پادکستی فارسی درباره‌ی بلاکچین است؛ پروژه‌ای غیرانتفاعی، داوطلبانه و متن‌باز. هفت فصل آن در یک اپ رایگان و بدون تبلیغ برای iOS و اندروید جمع شده است: با گوش‌دادن آفلاین، جست‌وجو در متن قسمت‌ها و واژه‌نامه‌ای که با یک لمس باز می‌شود. نسخه‌ی آزمایشی iOS از طریق TestFlight در دسترس است و اپ استور و گوگل پلی به‌زودی اضافه می‌شوند.

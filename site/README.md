@@ -10,10 +10,17 @@ font and three.js are self-hosted.
 site/
 ├── index.html            landing page (FA default, EN toggle)
 ├── privacy/index.html    privacy policy (FA + EN)
+├── robots.txt            allows every crawler, AI crawlers included; links the sitemap
+├── sitemap.xml           the two pages above
+├── llms.txt              Markdown overview of the project for AI agents
+├── manifest.webmanifest  web app manifest (name, icons, colours)
 ├── assets/
 │   ├── site.css          styles; colours mirror the app's "ink and brass" tokens
 │   ├── site.js           language toggle + lazy loader for the coin
 │   ├── coin.js           the 3D coin (ES module, loaded after first paint)
+│   ├── og-image.jpg      1200×630 social card (og:image / twitter:image)
+│   ├── icon-192.png      manifest icons, resized from the app's assets/icon.png
+│   ├── icon-512.png
 │   ├── logo.webp         Shir ya Khat logo (no longer used by the coin)
 │   ├── coin-face-heads.png   artwork for the two faces of the coin
 │   ├── coin-face-tails.png
@@ -51,7 +58,8 @@ tinted from the art's own metal.
   stays up, tumbling faster; stop and it comes down like any other toss, only
   harder. The pose a tap interrupts is carried over and faded out, never snapped.
 - About one toss in ten (`EDGE_CHANCE`) lands on its rim and teeters. `site.js`
-  shows «شیر یا خط؟ · heads or tails? · …you decide» in the note; the coin then
+  shows «شیر یا خط؟ · heads or tails?» and then «تصمیم با شماست» (Farsi) or
+  «…you decide» (English) in the note; the coin then
   either tips onto a face by itself or keeps teetering until the next tap.
   `flip('edge')` forces it when testing.
 - Small "quirks" fire every several seconds at rest: a shimmer over the metal,
@@ -80,6 +88,31 @@ npx esbuild three.entry.js --bundle --minify --format=esm --target=es2020 \
 If the coin's look changes, re-capture `coin-heads.webp` / `coin-tails.webp`
 (480×720, transparent) from `.coin-stage` with `mount(stage, { face, still: true })`,
 so the fallback shows the same faces.
+
+## SEO, social previews and AI agents
+
+- **`<head>` of both pages**: title, description, canonical, `hreflang`, Open
+  Graph and Twitter card tags. Both languages live at one URL, so every
+  `hreflang` (fa, en, x-default) points at the canonical URL. The title and
+  description are Farsi first with the English after; the landing page's
+  `<title>` must match `data-title-fa` on `<html>` (`site.js` swaps in
+  `data-title-en` when the language changes).
+- **Social card**: `assets/og-image.jpg`, 1200×630. To replace it, export a
+  JPEG of the same size (quality around 82) under the same name. Social
+  networks cache previews, so re-scrape after a change (for example with the
+  Facebook Sharing Debugger or by posting the link in a Telegram chat with
+  `@WebpageBot`).
+- **Structured data**: one JSON-LD `@graph` in `index.html` with
+  `Organization`, `WebSite`, `WebPage`, `MobileApplication` and
+  `PodcastSeries`; `privacy/index.html` has a small `WebPage` + breadcrumb.
+  The copy in it repeats the page's own text, so update both together.
+- **`robots.txt`** allows everything and names the big search and AI crawlers
+  on purpose: the content is free knowledge and should be indexed.
+- **`sitemap.xml`**: add a `<url>` for every new page and bump `<lastmod>`
+  when a page's content changes.
+- **`llms.txt`** ([llmstxt.org](https://llmstxt.org)): keep it in step with the
+  landing page (features, links, store availability).
+- **`manifest.webmanifest`**: name, colours and icons for "Add to Home Screen".
 
 ## View locally
 
@@ -147,6 +180,11 @@ Check DNS with `dig shiryakhat.app +noall +answer`.
 - `index.html`: replace the two store badge links (search for `TODO`) with the
   live App Store / Google Play URLs (bundle id `net.shiryakhat.app`), then
   remove `aria-disabled="true"` and the "Coming soon" line.
+- Store URLs for search engines and agents, at the same time as the badges
+  (search for `TODO(store launch)` in `index.html`): add `downloadUrl` and the
+  store links to the `MobileApplication` JSON-LD, add the
+  `apple-itunes-app` Smart App Banner meta tag, and replace the two "coming
+  soon" lines in `llms.txt`.
 - `privacy/index.html`: confirm the contact address (`info@shiryakhat.net` is
   a placeholder) and that the issues link points at a public repo.
 - Update the "last updated" date in both languages whenever the policy changes.
