@@ -1,0 +1,34 @@
+# robots.txt for https://shiryakhat.app
+#
+# Shir ya Khat (شیر یا خط) is free, public knowledge. Everything on this site is
+# open to search engines and to AI crawlers and agents: index it, summarise it,
+# cite it, answer questions with it.
+#
+# A plain-Markdown overview for AI agents lives at https://shiryakhat.app/llms.txt
+
+# Everyone
+User-agent: *
+Allow: /
+
+# Search engines
+User-agent: Googlebot
+User-agent: Bingbot
+User-agent: Applebot
+Allow: /
+
+# AI search, assistants and training crawlers: explicitly welcome
+User-agent: GPTBot
+User-agent: OAI-SearchBot
+User-agent: ChatGPT-User
+User-agent: ClaudeBot
+User-agent: Claude-SearchBot
+User-agent: Claude-User
+User-agent: anthropic-ai
+User-agent: PerplexityBot
+User-agent: Perplexity-User
+User-agent: Google-Extended
+User-agent: Applebot-Extended
+User-agent: CCBot
+Allow: /
+
+Sitemap: https://shiryakhat.app/sitemap.xml

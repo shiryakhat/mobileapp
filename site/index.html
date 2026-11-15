@@ -1,25 +1,173 @@
 <!DOCTYPE html>
 <html lang="fa" dir="rtl" data-lang="fa"
-      data-title-fa="شیر یا خط | اپ پادکست بلاکچین"
-      data-title-en="Shir ya Khat | The blockchain podcast app">
+      data-title-fa="شیر یا خط | اپ پادکست فارسی بلاکچین و کریپتو | Shir ya Khat"
+      data-title-en="Shir ya Khat | The Persian blockchain and crypto podcast app">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>شیر یا خط | اپ پادکست بلاکچین</title>
-  <meta name="description" content="اپ شیر یا خط: هفت فصل پادکست بلاکچین، فارسی و انگلیسی، در یک اپ. Shir ya Khat: seven seasons of the blockchain podcast in one app.">
+  <title>شیر یا خط | اپ پادکست فارسی بلاکچین و کریپتو | Shir ya Khat</title>
+  <meta name="description" content="اپ رایگان و بدون تبلیغ پادکست شیر یا خط: هفت فصل گفت‌وگوی فارسی درباره‌ی بلاکچین، کریپتو و وب۳، با گوش‌دادن آفلاین، جست‌وجو در متن قسمت‌ها و واژه‌نامه. Shir ya Khat: the Persian blockchain podcast app for iOS and Android. Seven seasons, Farsi and English, free, no ads.">
+  <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1">
+  <meta name="application-name" content="شیر یا خط">
+  <meta name="apple-mobile-web-app-title" content="شیر یا خط">
   <meta name="theme-color" content="#0B0B0D" media="(prefers-color-scheme: dark)">
   <meta name="theme-color" content="#F7F4EE" media="(prefers-color-scheme: light)">
   <link rel="canonical" href="https://shiryakhat.app/">
+  <!-- One URL serves both languages (Farsi by default, English via the toggle
+       or ?lang=en), so every hreflang points at the canonical URL. -->
+  <link rel="alternate" hreflang="fa" href="https://shiryakhat.app/">
+  <link rel="alternate" hreflang="en" href="https://shiryakhat.app/">
+  <link rel="alternate" hreflang="x-default" href="https://shiryakhat.app/">
+
+  <!-- Open Graph -->
   <meta property="og:type" content="website">
+  <meta property="og:site_name" content="شیر یا خط | Shir ya Khat">
+  <meta property="og:locale" content="fa_IR">
+  <meta property="og:locale:alternate" content="en_US">
   <meta property="og:url" content="https://shiryakhat.app/">
-  <meta property="og:title" content="شیر یا خط | Shir ya Khat">
-  <meta property="og:description" content="Seven seasons of blockchain conversations in Farsi and English, in one app.">
-  <meta property="og:image" content="https://shiryakhat.app/assets/apple-touch-icon.png">
+  <meta property="og:title" content="شیر یا خط | اپ پادکست فارسی بلاکچین و کریپتو | Shir ya Khat">
+  <meta property="og:description" content="اپ رایگان و بدون تبلیغ پادکست شیر یا خط: هفت فصل گفت‌وگوی فارسی درباره‌ی بلاکچین، کریپتو و وب۳، با گوش‌دادن آفلاین، جست‌وجو در متن قسمت‌ها و واژه‌نامه. Shir ya Khat: the Persian blockchain podcast app for iOS and Android. Seven seasons, Farsi and English, free, no ads.">
+  <meta property="og:image" content="https://shiryakhat.app/assets/og-image.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="نشان شیر یا خط: فضانوردی نئونی با میکروفون در میان نماد رمزارزها. Shir ya Khat logo: a neon astronaut holding a microphone among crypto symbols.">
+
+  <!-- Twitter / X -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@shiryakhat">
+  <meta name="twitter:title" content="شیر یا خط | اپ پادکست فارسی بلاکچین و کریپتو | Shir ya Khat">
+  <meta name="twitter:description" content="اپ رایگان و بدون تبلیغ پادکست شیر یا خط: هفت فصل گفت‌وگوی فارسی درباره‌ی بلاکچین، کریپتو و وب۳، با گوش‌دادن آفلاین، جست‌وجو در متن قسمت‌ها و واژه‌نامه. Shir ya Khat: the Persian blockchain podcast app for iOS and Android. Seven seasons, Farsi and English, free, no ads.">
+  <meta name="twitter:image" content="https://shiryakhat.app/assets/og-image.jpg">
+  <meta name="twitter:image:alt" content="نشان شیر یا خط: فضانوردی نئونی با میکروفون در میان نماد رمزارزها. Shir ya Khat logo: a neon astronaut holding a microphone among crypto symbols.">
+
+  <!-- TODO(store launch): once the App Store listing is live, add the Smart App
+       Banner with the real numeric id:
+       <meta name="apple-itunes-app" content="app-id=APP_STORE_NUMERIC_ID"> -->
+
+  <link rel="manifest" href="manifest.webmanifest">
   <link rel="icon" href="assets/icon-96.png" type="image/png" sizes="96x96">
   <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
   <link rel="preload" href="assets/fonts/Vazirmatn-Variable.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="assets/site.css">
   <script src="assets/site.js"></script>
+
+  <!-- Structured data (schema.org).
+       TODO(store launch): the app is not on the App Store or Google Play yet, so
+       no store URL is listed. When the listings are live, add to the
+       MobileApplication node below (and drop the TestFlight "installUrl" if the
+       beta closes):
+         "downloadUrl": ["APP_STORE_URL", "GOOGLE_PLAY_URL"],
+       and append the same two URLs to its "sameAs" array. Do not guess them. -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://shiryakhat.app/#organization",
+        "name": "شیر یا خط",
+        "alternateName": "Shir ya Khat",
+        "description": "شیر یا خط پروژه‌ای غیرانتفاعی، داوطلبانه و متن‌باز است. Shir ya Khat is a non-profit, volunteer-run, open-source project.",
+        "url": "https://shiryakhat.net",
+        "email": "info@shiryakhat.net",
+        "logo": {
+          "@type": "ImageObject",
+          "url": "https://shiryakhat.app/assets/icon-512.png",
+          "width": 512,
+          "height": 512
+        },
+        "sameAs": [
+          "https://t.me/shiryakhatpod",
+          "https://x.com/shiryakhat",
+          "https://github.com/shiryakhat"
+        ]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://shiryakhat.app/#website",
+        "url": "https://shiryakhat.app/",
+        "name": "شیر یا خط",
+        "alternateName": "Shir ya Khat",
+        "inLanguage": ["fa", "en"],
+        "publisher": { "@id": "https://shiryakhat.app/#organization" }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://shiryakhat.app/#webpage",
+        "url": "https://shiryakhat.app/",
+        "name": "شیر یا خط | اپ پادکست فارسی بلاکچین و کریپتو | Shir ya Khat",
+        "description": "اپ رایگان و بدون تبلیغ پادکست شیر یا خط: هفت فصل گفت‌وگوی فارسی درباره‌ی بلاکچین، کریپتو و وب۳، با گوش‌دادن آفلاین، جست‌وجو در متن قسمت‌ها و واژه‌نامه. Shir ya Khat: the Persian blockchain podcast app for iOS and Android. Seven seasons, Farsi and English, free, no ads.",
+        "inLanguage": ["fa", "en"],
+        "isPartOf": { "@id": "https://shiryakhat.app/#website" },
+        "about": { "@id": "https://shiryakhat.app/#podcast" },
+        "mainEntity": { "@id": "https://shiryakhat.app/#app" },
+        "primaryImageOfPage": {
+          "@type": "ImageObject",
+          "url": "https://shiryakhat.app/assets/og-image.jpg",
+          "width": 1200,
+          "height": 630
+        },
+        "relatedLink": [
+          "https://shiryakhat.net",
+          "https://coiniran.com",
+          "https://coiniran.academy"
+        ]
+      },
+      {
+        "@type": "MobileApplication",
+        "@id": "https://shiryakhat.app/#app",
+        "name": "Shir ya Khat",
+        "alternateName": "شیر یا خط",
+        "description": "اپ رایگان و بدون تبلیغ پادکست شیر یا خط: هفت فصل گفت‌وگوی فارسی درباره‌ی بلاکچین، کریپتو و وب۳، با گوش‌دادن آفلاین، جست‌وجو در متن قسمت‌ها و واژه‌نامه. Shir ya Khat: the Persian blockchain podcast app for iOS and Android. Seven seasons, Farsi and English, free, no ads.",
+        "url": "https://shiryakhat.app/",
+        "image": "https://shiryakhat.app/assets/og-image.jpg",
+        "operatingSystem": "iOS, Android",
+        "applicationCategory": "EducationalApplication",
+        "applicationSubCategory": "Podcast",
+        "inLanguage": ["fa", "en"],
+        "isAccessibleForFree": true,
+        "offers": { "@type": "Offer", "price": "0", "priceCurrency": "USD" },
+        "featureList": [
+          "گوش‌دادن آفلاین (Offline listening)",
+          "جست‌وجو در متن قسمت‌ها (Transcript search)",
+          "واژه‌نامه با یک لمس (Tap-to-define glossary)",
+          "رایگان و بدون تبلیغ (Free, no ads)"
+        ],
+        "installUrl": "https://testflight.apple.com/join/VtyyXkUt",
+        "author": { "@id": "https://shiryakhat.app/#organization" },
+        "publisher": { "@id": "https://shiryakhat.app/#organization" },
+        "about": { "@id": "https://shiryakhat.app/#podcast" },
+        "sameAs": [
+          "https://t.me/shiryakhatpod",
+          "https://x.com/shiryakhat",
+          "https://github.com/shiryakhat"
+        ]
+      },
+      {
+        "@type": "PodcastSeries",
+        "@id": "https://shiryakhat.app/#podcast",
+        "name": "شیر یا خط",
+        "alternateName": "Shir ya Khat",
+        "description": "هفت فصل گفت‌وگوی فارسی درباره‌ی بلاکچین. Seven seasons of Persian-language conversations about blockchain.",
+        "url": "https://shiryakhat.net",
+        "inLanguage": "fa",
+        "image": "https://shiryakhat.app/assets/og-image.jpg",
+        "webFeed": "https://anchor.fm/s/11aa853c/podcast/rss",
+        "publisher": { "@id": "https://shiryakhat.app/#organization" },
+        "about": [
+          { "@type": "Thing", "name": "Blockchain", "sameAs": "https://en.wikipedia.org/wiki/Blockchain" },
+          { "@type": "Thing", "name": "Cryptocurrency", "sameAs": "https://en.wikipedia.org/wiki/Cryptocurrency" }
+        ],
+        "sameAs": [
+          "https://open.spotify.com/show/7AQ3C6yGz4haADinqtP63N",
+          "https://podcasts.apple.com/us/podcast/id1221206951",
+          "https://www.youtube.com/playlist?list=PLDwI1rIhknpNmr4nno40seb6FAiJ-jsun"
+        ]
+      }
+    ]
+  }
+  </script>
 </head>
 <body class="landing">
   <a class="skip" href="#main"><span class="fa">رفتن به محتوا</span><span class="en" lang="en">Skip to content</span></a>

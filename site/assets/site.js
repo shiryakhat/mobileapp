@@ -66,7 +66,7 @@
       undecided.innerHTML =
         '<span lang="fa" dir="rtl">شیر یا خط؟</span>' +
         '<span lang="en" dir="ltr">heads or tails?</span>' +
-        '<span class="fa">…خودتان بگویید</span><span class="en" lang="en">…you decide</span>';
+        '<span class="fa">تصمیم با شماست</span><span class="en" lang="en">…you decide</span>';
       note.classList.add('is-undecided');
       note.appendChild(undecided);
     }
