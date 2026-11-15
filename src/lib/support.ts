@@ -1,6 +1,6 @@
 /**
  * Supporting the podcast: a Stripe payment link for donations and the
- * website for everything else.
+ * website's "Support us" section for everything else.
  */
 import * as WebBrowser from 'expo-web-browser';
 import { Linking, Platform } from 'react-native';
@@ -9,10 +9,12 @@ import { brand, dark } from '@/theme';
 /** Stripe payment link of the "Shir ya Khat donation" product; the donor chooses the amount. */
 export const DONATE_URL = 'https://buy.stripe.com/4gM00j82t10A2C1csI5c402';
 /**
- * Other ways to support. The website has no dedicated "Support us" section
- * yet; point this at its anchor once it does.
+ * Other ways to support: the "SUPPORT US | حمایت از ما" section of the podcast's
+ * website. The text fragment scrolls to (and highlights) that heading in
+ * browsers that support it; the others simply land on `#support`.
  */
-export const SUPPORT_URL = 'https://shiryakhat.app';
+export const SUPPORT_URL =
+  'https://shiryakhat.net/#support:~:text=SUPPORT%20US%20%7C%20%D8%AD%D9%85%D8%A7%DB%8C%D8%AA%20%D8%A7%D8%B2%20%D9%85%D8%A7';
 
 async function openExternal(url: string): Promise<void> {
   try {

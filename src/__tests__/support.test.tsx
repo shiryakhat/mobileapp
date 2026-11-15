@@ -33,7 +33,13 @@ afterEach(() => {
 describe('links', () => {
   it('donates through the Shir ya Khat Stripe payment link', () => {
     expect(DONATE_URL).toBe('https://buy.stripe.com/4gM00j82t10A2C1csI5c402');
-    expect(SUPPORT_URL).toBe('https://shiryakhat.app');
+  });
+
+  it('points "other ways to support" at the Support us section of shiryakhat.net', () => {
+    expect(SUPPORT_URL).toBe(
+      'https://shiryakhat.net/#support:~:text=SUPPORT%20US%20%7C%20%D8%AD%D9%85%D8%A7%DB%8C%D8%AA%20%D8%A7%D8%B2%20%D9%85%D8%A7',
+    );
+    expect(decodeURIComponent(SUPPORT_URL)).toContain('SUPPORT US | حمایت از ما');
   });
 
   it('opens the donation in an in-app browser on Android', async () => {

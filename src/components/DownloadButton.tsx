@@ -1,4 +1,5 @@
-import { Alert } from 'react-native';
+import Feather from '@expo/vector-icons/Feather';
+import { Alert, Pressable } from 'react-native';
 import type { Episode } from '@/content';
 import { useI18n } from '@/i18n';
 import {
@@ -7,8 +8,62 @@ import {
   resumeDownload,
   startDownload,
   useDownloads,
+  type DownloadItem,
 } from '@/state/downloads';
-import { IconButton } from './ui';
+import { brand, dark, HIT_SLOP } from '@/theme';
+import { IconButton, ProgressRing } from './ui';
+
+/** Same footprint as an <IconButton/>, so the control does not jump between states. */
+const BOX = 40;
+
+/** Share of the file on disk, 0–1 (0 until the server has announced the size). */
+export const downloadFraction = (item: Pick<DownloadItem, 'bytesWritten' | 'totalBytes'>) =>
+  item.totalBytes > 0 ? Math.min(1, Math.max(0, item.bytesWritten / item.totalBytes)) : 0;
+
+/**
+ * A download in flight: the round icon with its live progress as a ring around
+ * it. Brand colours in both themes (gold arc on a navy disc, like the logo),
+ * so they come from the dark palette directly. Paused keeps the arc where it
+ * stopped, dimmed.
+ */
+function DownloadRing({
+  item,
+  label,
+  onPress,
+}: {
+  item: DownloadItem;
+  label: string;
+  onPress: () => void;
+}) {
+  const paused = item.status === 'paused';
+  const fraction = downloadFraction(item);
+  return (
+    <Pressable
+      testID="download-progress"
+      accessibilityRole="button"
+      accessibilityLabel={label}
+      accessibilityValue={{ min: 0, max: 100, now: Math.round(fraction * 100) }}
+      hitSlop={HIT_SLOP}
+      onPress={onPress}
+      style={({ pressed }) => ({
+        width: BOX,
+        height: BOX,
+        alignItems: 'center',
+        justifyContent: 'center',
+        opacity: pressed ? 0.6 : 1,
+      })}
+    >
+      <ProgressRing
+        value={fraction}
+        color={paused ? dark.muted : dark.accent}
+        trackColor={dark.accentSoft}
+        fill={brand.navy}
+      >
+        <Feather name={paused ? 'play' : 'pause'} size={13} color={dark.accent} />
+      </ProgressRing>
+    </Pressable>
+  );
+}
 
 /** One button, four states: download → pause → resume → downloaded (tap to delete). */
 export function DownloadButton({ episode }: { episode: Episode }) {
@@ -19,21 +74,15 @@ export function DownloadButton({ episode }: { episode: Episode }) {
   switch (item?.status) {
     case 'downloading':
       return (
-        <IconButton
-          icon="pause-circle"
-          color="accent"
+        <DownloadRing
+          item={item}
           label={t('downloading')}
           onPress={() => void pauseDownload(episode.id)}
         />
       );
     case 'paused':
       return (
-        <IconButton
-          icon="play-circle"
-          color="accent"
-          label={t('resume')}
-          onPress={() => resumeDownload(episode)}
-        />
+        <DownloadRing item={item} label={t('resume')} onPress={() => resumeDownload(episode)} />
       );
     case 'error':
       return (

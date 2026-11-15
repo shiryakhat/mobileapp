@@ -8,6 +8,7 @@ export const en = {
   tabSettings: 'Settings',
   season: 'Season {n}',
   specials: 'Specials',
+  allSeasons: 'All',
   episodesCount: '{n} episodes',
   continueListening: 'Continue',
   resumeFrom: 'Resume from {t}',
