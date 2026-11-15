@@ -251,7 +251,7 @@ html[lang="en"] .tagline { line-height: 1.45; }
 .coin[data-face="tails"] .coin-poster[data-face="heads"] { opacity: 0; }
 .coin[data-face="tails"] .coin-poster[data-face="tails"] { opacity: 1; }
 .coin.is-live .coin-canvas { opacity: 1; }
-.coin.is-live .coin-poster { opacity: 0; transition-delay: 0.1s; }
+.coin.is-live .coin-poster[data-face] { opacity: 0; transition-delay: 0.1s; }
 
 .coin-note { color: var(--muted); font-size: 0.9rem; min-block-size: 1.9em; }
 
