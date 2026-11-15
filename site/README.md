@@ -14,8 +14,9 @@ site/
 │   ├── site.css          styles; colours mirror the app's "ink and brass" tokens
 │   ├── site.js           language toggle + lazy loader for the coin
 │   ├── coin.js           the 3D coin (ES module, loaded after first paint)
-│   ├── logo.webp         Shir ya Khat logo: tails, and heads until the hero exists
-│   ├── coin-hero.png     (optional) engraved hero for the heads face
+│   ├── logo.webp         Shir ya Khat logo (no longer used by the coin)
+│   ├── coin-face-heads.png   artwork for the two faces of the coin
+│   ├── coin-face-tails.png
 │   ├── coin-heads.webp   still renders of the coin: no-JS, reduced-motion
 │   ├── coin-tails.webp   and no-WebGL fallback
 │   ├── vendor/           three.js (MIT), tree-shaken to what coin.js imports
@@ -27,16 +28,19 @@ site/
 
 ## The coin
 
-`coin.js` builds an aged gold-bronze coin at runtime: relief (height field →
-normal map), patina in the recesses, worn-bright high points, hairline
-scratches, a beaded rim and a reeded edge. Reflections come from a small
-generated lamp-lit environment, so there is no HDR file to ship.
+`coin.js` draws a worn silver coin whose two faces are pre-rendered artwork.
+Each PNG is a whole coin on a transparent background; `coin.js` finds the
+opaque disc, crops to it and uses it as the face's colour map. The relief,
+patina and border are in the art, so the material on top is deliberately light:
+mostly the picture itself, plus a soft metallic response to a small generated
+lamp-lit environment (no HDR file to ship). The reeded edge is generated and
+tinted from the art's own metal.
 
-- **Heads (شیر)** is the engraved hero from `assets/coin-hero.png` when that
-  file exists: any square-ish picture works, light areas become raised metal
-  and dark areas recesses (transparent pixels stay flat field). Until the file
-  is added the request 404s and heads falls back to the logo inlaid in enamel.
-  **Tails (خط)** is always `logo.webp` struck in relief.
+- **Heads (شیر)** is `assets/coin-face-heads.png` (the microphone with the
+  calligraphy escaping it); **tails (خط)** is `assets/coin-face-tails.png`
+  (the astronaut). To change a face, replace its PNG: any roughly centred,
+  round coin on transparency works. The look is tuned by the `FACE_*`, `EDGE_ENV`,
+  `KEY` and `LAMP` constants at the top of `coin.js`.
 - It idles with a slow turn, flips once on load and again on every tap. A toss
   takes about four seconds: wind-up, arc with a precessing spin that bleeds
   speed, then a damped rock to rest.
@@ -54,9 +58,9 @@ generated lamp-lit environment, so there is no HDR file to ship.
   and a tap just shows the result.
 - Rendering pauses when the coin is off screen or the tab is hidden.
 
-The logo comes from `img/favicon/` in
-[shiryakhat/website](https://github.com/shiryakhat/website) (its `favicon.svg`
-only wraps a 1000px PNG, so the raster is used directly).
+`logo.webp` (from `img/favicon/` in
+[shiryakhat/website](https://github.com/shiryakhat/website)) is no longer used
+by the coin.
 
 To rebuild `vendor/three.min.js` after changing which three.js classes
 `coin.js` uses, edit `vendor/three.entry.js` and run, in a scratch folder with
@@ -68,8 +72,8 @@ npx esbuild three.entry.js --bundle --minify --format=esm --target=es2020 \
 ```
 
 If the coin's look changes, re-capture `coin-heads.webp` / `coin-tails.webp`
-(480×720, transparent) from `.coin-stage` with `mount(stage, { face, still: true })`.
-Do this when `coin-hero.png` is added, so the fallback shows the same heads.
+(480×720, transparent) from `.coin-stage` with `mount(stage, { face, still: true })`,
+so the fallback shows the same faces.
 
 ## View locally
 
