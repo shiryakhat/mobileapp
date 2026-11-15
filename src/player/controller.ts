@@ -82,6 +82,9 @@ function ensureAudio(): AudioPlayer {
   return player;
 }
 
+/** True once the episode player exists — from then on it owns the audio session mode. */
+export const hasEpisodePlayer = (): boolean => audio !== undefined;
+
 function activateLockScreen(ep: Episode): void {
   const locale = useSettings.getState().locale;
   try {
