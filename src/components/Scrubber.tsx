@@ -40,7 +40,9 @@ export function Scrubber({ positionSec, durationSec, chapters = [], onSeek, onSc
   const fraction = durationSec > 0 ? Math.min(1, shown / durationSec) : 0;
 
   return (
-    <View style={{ direction: 'ltr' }}>
+    // Inset the touch area past the screen's 20pt back-swipe edge zone so dragging
+    // the timeline (especially the thumb near the start) never triggers swipe-back.
+    <View style={{ direction: 'ltr', paddingHorizontal: 8 }}>
       <View
         ref={trackRef}
         accessibilityRole="adjustable"
