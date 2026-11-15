@@ -8,6 +8,25 @@ import { normalize } from '@/lib/text';
 import { useNav } from '@/state/nav';
 import { radius, space, useTheme } from '@/theme';
 
+// The full glossary (358 terms) is static, so sort it once per locale for the whole
+// app lifetime and cache it. localeCompare('fa') is slow on Android/Hermes, and
+// re-running it on every tab open was the real cause of the glossary load delay.
+const sortedCache = new Map<'fa' | 'en', GlossaryEntry[]>();
+function sortedGlossary(isRTL: boolean): GlossaryEntry[] {
+  const key = isRTL ? 'fa' : 'en';
+  let cached = sortedCache.get(key);
+  if (!cached) {
+    cached = [...glossary].sort((a, b) =>
+      isRTL ? a.termFa.localeCompare(b.termFa, 'fa') : a.term.localeCompare(b.term, 'en'),
+    );
+    sortedCache.set(key, cached);
+  }
+  return cached;
+}
+
+/** How many rows to render on first paint; grows as the user scrolls. */
+const PAGE = 60;
+
 function TermRow({
   entry,
   open,
@@ -97,19 +116,35 @@ export function GlossaryTab() {
 
   const data = useMemo(() => {
     const q = normalize(query).trim();
-    const list = q
-      ? glossary.filter(
-          (g) => g.aliases.some((a) => a.includes(q)) || normalize(g.term).includes(q),
-        )
-      : glossary;
-    return [...list].sort((a, b) =>
-      isRTL ? a.termFa.localeCompare(b.termFa, 'fa') : a.term.localeCompare(b.term, 'en'),
-    );
+    if (!q) return sortedGlossary(isRTL); // cached full list, no per-open re-sort
+    // Filtered subsets are small, so sorting them inline is cheap.
+    return glossary
+      .filter((g) => g.aliases.some((a) => a.includes(q)) || normalize(g.term).includes(q))
+      .sort((a, b) =>
+        isRTL ? a.termFa.localeCompare(b.termFa, 'fa') : a.term.localeCompare(b.term, 'en'),
+      );
   }, [query, isRTL]);
+
+  // Incremental rendering: only the first PAGE rows mount up front (keeps the first
+  // paint cheap on older phones); more load as the user scrolls.
+  const [limit, setLimit] = useState(PAGE);
+  // Reset the window to the first page when the result set changes (query/locale),
+  // using React's "adjust state during render" pattern instead of an effect.
+  const dataKey = `${query}|${isRTL}`;
+  const [lastKey, setLastKey] = useState(dataKey);
+  if (dataKey !== lastKey) {
+    setLastKey(dataKey);
+    setLimit(PAGE);
+  }
+  // Make sure a requested term (tapped from a transcript) is within the rendered
+  // window — derived at render time, no extra state.
+  const requestedIndex = requested ? data.findIndex((g) => g.slug === requested) : -1;
+  const effLimit = requestedIndex >= limit ? requestedIndex + PAGE : limit;
+  const paged = useMemo(() => data.slice(0, effLimit), [data, effLimit]);
 
   useEffect(() => {
     if (!requested || !listReady) return undefined;
-    const index = data.findIndex((g) => g.slug === requested);
+    const index = requestedIndex;
     if (index < 5) return undefined;
     const timer = setTimeout(
       () => listRef.current?.scrollToIndex({ index, viewPosition: 0.2, animated: true }),
@@ -143,7 +178,7 @@ export function GlossaryTab() {
       {listReady ? (
         <FlatList
           ref={listRef}
-          data={data}
+          data={paged}
           extraData={openSlug}
           keyExtractor={(g) => g.slug}
           keyboardShouldPersistTaps="handled"
@@ -151,6 +186,8 @@ export function GlossaryTab() {
           maxToRenderPerBatch={12}
           windowSize={9}
           removeClippedSubviews={Platform.OS === 'android'}
+          onEndReachedThreshold={0.6}
+          onEndReached={() => setLimit((l) => (l < data.length ? l + PAGE : l))}
           onScrollToIndexFailed={({ index, averageItemLength }) =>
             listRef.current?.scrollToOffset({ offset: index * averageItemLength, animated: true })
           }
