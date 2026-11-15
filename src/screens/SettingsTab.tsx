@@ -7,6 +7,7 @@ import { displayName, signInWithGitHub, signOut, useSession } from '@/community/
 import { Button, SectionTitle, Segmented, Text } from '@/components/ui';
 import { useI18n } from '@/i18n';
 import { communityEnabled } from '@/lib/flags';
+import { SupportSection } from '@/screens/SupportSection';
 import { useSettings } from '@/state/settings';
 import { radius, space, useTheme } from '@/theme';
 
@@ -122,6 +123,8 @@ export function SettingsTab() {
           </Text>
         </Group>
       )}
+
+      <SupportSection />
 
       <Group title={t('aboutApp')}>
         <Text variant="small" color="muted">
