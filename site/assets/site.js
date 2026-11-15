@@ -42,8 +42,8 @@
     var face = 'heads';     // heads = شیر (the microphone), tails = خط (the astronaut)
     var live = null;        // the 3D coin, once mounted
     var results = {
-      heads: { fa: 'شیر آمد.', en: 'Shir. That’s heads.' },
-      tails: { fa: 'خط آمد.', en: 'Khat. That’s tails.' }
+      heads: { fa: 'شیر', en: 'Shir' },
+      tails: { fa: 'خط', en: 'Khat' }
     };
 
     var hint = note && { fa: note.querySelector('.fa').textContent, en: note.querySelector('.en').textContent };
