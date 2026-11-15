@@ -39,7 +39,9 @@
     var stage = coin.querySelector('.coin-stage');
     var note = document.querySelector('.coin-note');
     var calm = window.matchMedia('(prefers-reduced-motion: reduce)');
-    var face = 'heads';     // heads = خط (the microphone), tails = شیر (the astronaut)
+    // heads = خط (the microphone), tails = شیر (the astronaut). Start on a random
+    // side so the intro toss doesn't land the same way on every page load.
+    var face = Math.random() < 0.5 ? 'heads' : 'tails';
     var live = null;        // the 3D coin, once mounted
     var results = {
       heads: { fa: 'خط', en: 'Khat' },
@@ -90,6 +92,17 @@
       var next = Math.random() < 0.5 ? 'heads' : 'tails';
       coin.setAttribute('data-face', next);
       announce(next);
+    }
+
+    // Reflect the random starting side onto the still poster before the 3D coin mounts.
+    if (face === 'tails') {
+      var t0 = coin.querySelector('.coin-poster[data-face="tails"]');
+      if (t0 && t0.hasAttribute('data-src')) {
+        t0.src = t0.getAttribute('data-src');
+        t0.removeAttribute('data-src');
+        t0.hidden = false;
+      }
+      coin.setAttribute('data-face', 'tails');
     }
 
     // Every tap counts: one tosses the coin, more while it is in the air keep it up.

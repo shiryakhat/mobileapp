@@ -26,7 +26,7 @@ const EDGE_ENV = 0.3;      // ...and on the edge, so it stays the faces' silver
 const IRIDESCENCE = 0.12;  // a thin toning film; swells during a shimmer
 const KEY = 1.2;           // key light intensity
 const LAMP = 0.6;          // the low warm lamp
-const EDGE_CHANCE = 0.1;
+const EDGE_CHANCE = 1 / 6;
 const ADDITIVE = 2;     // THREE.AdditiveBlending (the constant is not in the trimmed bundle)
 
 const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
