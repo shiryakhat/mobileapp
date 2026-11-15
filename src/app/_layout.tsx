@@ -42,12 +42,9 @@ export default function RootLayout() {
           }}
         >
           <Stack.Screen name="index" />
-          {/* Keep swipe-to-go-back, but narrow its trigger to a 20pt left-edge strip
-              so dragging the audio timeline (inset 24pt) never pops the screen. */}
-          <Stack.Screen
-            name="episode/[id]"
-            options={{ gestureEnabled: true, gestureResponseDistance: { start: 20 } }}
-          />
+          {/* Swipe-to-go-back is disabled on the player screen: dragging the audio
+              timeline must never pop/drag it. Navigate back with the header chevron. */}
+          <Stack.Screen name="episode/[id]" options={{ gestureEnabled: false }} />
           <Stack.Screen name="share" options={{ presentation: 'modal' }} />
           <Stack.Screen name="questions" />
         </Stack>
