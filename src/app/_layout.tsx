@@ -47,6 +47,11 @@ export default function RootLayout() {
           <Stack.Screen name="episode/[id]" options={{ gestureEnabled: false }} />
           <Stack.Screen name="share" options={{ presentation: 'modal' }} />
           <Stack.Screen name="questions" />
+          {/* Easter egg: four quick taps on the version number in Settings. */}
+          <Stack.Screen
+            name="coinflip"
+            options={{ presentation: 'fullScreenModal', animation: 'fade' }}
+          />
         </Stack>
       ) : null}
       {splashing ? <CoinSplash ready={ready} onDone={() => setSplashing(false)} /> : null}

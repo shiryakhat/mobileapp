@@ -1,13 +1,14 @@
 import Constants from 'expo-constants';
 import { router } from 'expo-router';
 import { useState, type ReactNode } from 'react';
-import { Linking, ScrollView, View } from 'react-native';
+import { Linking, Pressable, ScrollView, View } from 'react-native';
 import { syncBookmarks } from '@/community/api';
 import { displayName, signInWithGitHub, signOut, useSession } from '@/community/auth';
 import { StorageSettings } from '@/components/StorageSettings';
 import { Button, SectionTitle, Segmented, Text } from '@/components/ui';
 import { useI18n } from '@/i18n';
 import { communityEnabled } from '@/lib/flags';
+import { createMultiTap } from '@/lib/multiTap';
 import { SupportSection } from '@/screens/SupportSection';
 import { useSettings } from '@/state/settings';
 import { radius, space, useTheme } from '@/theme';
@@ -84,6 +85,7 @@ function Community() {
 
 export function SettingsTab() {
   const { t } = useI18n();
+  const [versionTap] = useState(() => createMultiTap());
   const locale = useSettings((s) => s.locale);
   const setLocale = useSettings((s) => s.setLocale);
   const theme = useSettings((s) => s.theme);
@@ -154,9 +156,19 @@ export function SettingsTab() {
           label={t('website')}
           onPress={() => void Linking.openURL('https://shiryakhat.net')}
         />
-        <Text variant="micro" color="faint" align="center">
-          {t('version', { v: Constants.expoConfig?.version ?? '1.0.0' })}
-        </Text>
+        {/* Easter egg: four quick taps on the version open the coin flip. No
+            visual feedback and no button role: it looks and reads as plain text. */}
+        <Pressable
+          testID="version-tap"
+          accessible={false}
+          onPress={() => {
+            if (versionTap()) router.push('/coinflip');
+          }}
+        >
+          <Text variant="micro" color="faint" align="center">
+            {t('version', { v: Constants.expoConfig?.version ?? '1.0.0' })}
+          </Text>
+        </Pressable>
       </Group>
     </ScrollView>
   );

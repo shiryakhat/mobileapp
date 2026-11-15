@@ -1,0 +1,13 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["2F556JZ8H9.net.shiryakhat.app"],
+        "components": [
+          { "/": "/episode/*", "comment": "Episode deep link: /episode/<id>?t=<sec>" },
+          { "/": "/e/*", "comment": "Short form of the episode deep link" }
+        ]
+      }
+    ]
+  }
+}
