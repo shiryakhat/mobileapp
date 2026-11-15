@@ -94,6 +94,12 @@ export const en = {
   aboutBody:
     'Shir ya Khat (“Heads or Tails”) is a non-profit Persian podcast about blockchain, recorded as live panels since 2017. This app is its bilingual archive.',
   website: 'Website',
+  support: 'Support us',
+  supportBody:
+    'Shir ya Khat is a non-profit podcast. If it has been useful to you, you can help keep it going.',
+  donate: 'Donate',
+  donateHint: 'You choose the amount. Secure payment with Stripe, opened in your browser.',
+  otherWaysToSupport: 'Other ways to support',
   community: 'Community',
   communityOff:
     'Community features (comments, questions, cloud sync) are not enabled in this build.',
