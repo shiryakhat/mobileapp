@@ -16,6 +16,7 @@ import { cachedImageUri } from '@/lib/cache';
 import { localAudioUri } from '@/state/downloads';
 import { resumePosition, useProgress } from '@/state/progress';
 import { useSettings } from '@/state/settings';
+import { localArtworkUri, resolveLocalArtwork } from './artwork';
 import { usePlayback, type PlayerEngine, type PlayerMode } from './store';
 
 export const RATES = [0.75, 1, 1.25, 1.5, 1.75, 2] as const;
@@ -45,6 +46,10 @@ const set = usePlayback.setState;
 // (creator "Shir Ya Khat": https://archive.org/search?query=creator%3A%22Shir+Ya+Khat%22),
 // which could back up the audio (and video) when the RSS enclosure is unavailable.
 // Not wired up yet; downloads (src/state/downloads.ts) would need the same fallback.
+// Do VIDEO downloads in the same piece of work: downloads are audio-only today and
+// video only streams from YouTube, which may be filtered or geo-blocked for part of
+// the audience. The video files could come from archive.org too, or be hosted on
+// Cloudflare (R2 / Stream) for easier access.
 function audioSourceFor(ep: Episode): string | undefined {
   return localAudioUri(ep.id) ?? ep.audioUrl;
 }
@@ -102,21 +107,34 @@ export const hasEpisodePlayer = (): boolean => audio !== undefined;
 
 function activateLockScreen(ep: Episode): void {
   const locale = useSettings.getState().locale;
+  const metadata = (artworkUrl: string) => ({
+    title: locale === 'fa' ? ep.titleFa : ep.titleEn,
+    artist: translate(locale, 'appName'),
+    albumTitle: ep.code,
+    artworkUrl,
+  });
+  const player = ensureAudio();
+  const local = localArtworkUri(ep);
   try {
-    ensureAudio().setActiveForLockScreen(
+    player.setActiveForLockScreen(
       true,
-      {
-        title: locale === 'fa' ? ep.titleFa : ep.titleEn,
-        artist: translate(locale, 'appName'),
-        albumTitle: ep.code,
-        // The cached thumbnail, so the lock screen has artwork offline too.
-        artworkUrl: cachedImageUri(ep.youtubeThumb) ?? ep.youtubeThumb,
-      },
+      // The bundled episode artwork; until it is resolved (or when the episode
+      // has none) the cached YouTube thumbnail, so there is artwork offline too.
+      metadata(local ?? cachedImageUri(ep.youtubeThumb) ?? ep.youtubeThumb),
       { showSeekForward: true, showSeekBackward: true },
     );
   } catch {
     // Lock-screen controls are best-effort (unsupported on web).
   }
+  if (local) return;
+  void resolveLocalArtwork(ep).then((uri) => {
+    if (!uri || state().episodeId !== ep.id || state().engine !== 'native') return;
+    try {
+      player.updateLockScreenMetadata(metadata(uri));
+    } catch {
+      // best-effort
+    }
+  });
 }
 
 export interface LoadOptions {

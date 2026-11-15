@@ -129,6 +129,13 @@ This merges per-episode glossaries into `content/glossary.json` (with tap-to-def
 (idempotent; `UNSAFE_WRONG` words like خط/شیر are never blanket-replaced), rebuilds
 `search-index.json`, and regenerates `index.generated.ts`.
 
+### Episode artwork (optional)
+
+The episode screen and the lock screen show a bundled square thumbnail when there is
+one. Save it as `assets/episode-thumbs/<CODE>.jpg` (JPEG, at most 640 px on the long
+edge) and add the matching line to the map in `src/content/thumbs.ts`. Without it the
+episode simply falls back to its YouTube thumbnail.
+
 ## 6. Validate
 
 ```bash
@@ -162,5 +169,6 @@ changes; see `docs/release.md`).
 - [ ] `pipeline:build` → episode in `episodes.json`, transcript written, no "no subtitles" warning
 - [ ] `pipeline:enrich --only <id>` → `enrichment/<id>.json` exists
 - [ ] `pipeline:finalize` → glossary/search-index/index.generated refreshed
+- [ ] Optional: `assets/episode-thumbs/<CODE>.jpg` + its line in `src/content/thumbs.ts`
 - [ ] `npm run check` green
 - [ ] PR opened against `shiryakhat/mobileapp`

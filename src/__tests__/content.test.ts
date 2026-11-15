@@ -1,6 +1,7 @@
 import { cueIndexAt, episodes, getEnrichment, getTranscript, glossary, seasons } from '@/content';
 import { segmentWithGlossary } from '@/content/glossaryMatch';
 import { searchArchive } from '@/content/search';
+import { episodeThumb, episodeThumbCodes } from '@/content/thumbs';
 import { normalize, tokenize } from '@/lib/text';
 
 describe('content bundle', () => {
@@ -87,6 +88,19 @@ describe('text normalisation', () => {
   it('unifies Arabic/Persian letter variants, digits and ZWNJ', () => {
     expect(normalize('كيف‌پول ۱۲۳')).toBe('کیف پول 123');
     expect(tokenize('Tornado-Cash، تورنادو کش!')).toEqual(['tornado', 'cash', 'تورنادو', 'کش']);
+  });
+});
+
+describe('episode thumbnails', () => {
+  it('bundles artwork only for real episodes, keyed by code', () => {
+    const codes = new Set(episodes.map((e) => e.code));
+    expect(episodeThumbCodes().length).toBeGreaterThanOrEqual(40);
+    for (const code of episodeThumbCodes()) expect(codes.has(code)).toBe(true);
+    expect(episodeThumb({ code: 'S01E01' })).toBeDefined();
+  });
+
+  it('leaves episodes without bundled artwork to their YouTube thumbnail', () => {
+    expect(episodeThumb({ code: 'SP01' })).toBeUndefined();
   });
 });
 

@@ -172,6 +172,8 @@ html[lang="en"] .tagline { line-height: 1.45; }
 .stores-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.75rem; }
 .badge { display: block; border-radius: 9px; }
 .badge img { block-size: clamp(2.9rem, 13vw, 3.4rem); inline-size: auto; }
+/* A soft shadow under the TestFlight badge, following its rounded outline. */
+.badge-testflight img { filter: drop-shadow(0 0.35rem 0.6rem rgb(0 0 0 / 0.35)); }
 .badge[aria-disabled="true"] { opacity: 0.72; cursor: default; }
 .soon {
   display: inline-flex;
