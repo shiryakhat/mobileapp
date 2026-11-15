@@ -39,11 +39,11 @@
     var stage = coin.querySelector('.coin-stage');
     var note = document.querySelector('.coin-note');
     var calm = window.matchMedia('(prefers-reduced-motion: reduce)');
-    var face = 'heads';     // heads = شیر (the microphone), tails = خط (the astronaut)
+    var face = 'heads';     // heads = خط (the microphone), tails = شیر (the astronaut)
     var live = null;        // the 3D coin, once mounted
     var results = {
-      heads: { fa: 'شیر', en: 'Shir' },
-      tails: { fa: 'خط', en: 'Khat' }
+      heads: { fa: 'خط', en: 'Khat' },
+      tails: { fa: 'شیر', en: 'Shir' }
     };
 
     var hint = note && { fa: note.querySelector('.fa').textContent, en: note.querySelector('.en').textContent };
