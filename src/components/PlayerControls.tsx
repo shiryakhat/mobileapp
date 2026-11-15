@@ -1,4 +1,3 @@
-import { useNavigation } from 'expo-router';
 import { ActivityIndicator, Pressable, View } from 'react-native';
 import type { Episode } from '@/content';
 import { useI18n } from '@/i18n';
@@ -18,16 +17,6 @@ export function PlayerControls({ episode }: { episode: Episode }) {
   const buffering = usePlayback((s) => s.buffering);
   const rate = usePlayback((s) => s.rate);
   const mode = usePlayback((s) => s.mode);
-  const navigation = useNavigation();
-  // Suspend the screen's swipe-back while the timeline is being dragged so a
-  // horizontal scrub (especially near the left edge) doesn't pop the screen.
-  const onScrub = (active: boolean) => {
-    try {
-      navigation.setOptions({ gestureEnabled: !active });
-    } catch {
-      /* not inside a stack screen */
-    }
-  };
 
   return (
     <View style={{ gap: space.sm, paddingHorizontal: space.lg, paddingTop: space.sm }}>
@@ -36,7 +25,6 @@ export function PlayerControls({ episode }: { episode: Episode }) {
         durationSec={durationSec}
         chapters={episode.chapters}
         onSeek={seekTo}
-        onScrub={onScrub}
       />
       {/* Transport order is fixed LTR, like the timeline above it. */}
       <View

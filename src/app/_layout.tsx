@@ -42,7 +42,9 @@ export default function RootLayout() {
           }}
         >
           <Stack.Screen name="index" />
-          <Stack.Screen name="episode/[id]" />
+          {/* Swipe-to-go-back is disabled on the player screen so dragging the audio
+              timeline never pops/drags the screen; the header back button navigates. */}
+          <Stack.Screen name="episode/[id]" options={{ gestureEnabled: false }} />
           <Stack.Screen name="share" options={{ presentation: 'modal' }} />
           <Stack.Screen name="questions" />
         </Stack>
