@@ -1,4 +1,3 @@
-import { Image } from 'expo-image';
 import { memo } from 'react';
 import { Pressable, View } from 'react-native';
 import type { Episode } from '@/content';
@@ -6,6 +5,7 @@ import { useI18n } from '@/i18n';
 import { formatDate, formatTime, joinMeta } from '@/lib/format';
 import { progressFraction, useProgress } from '@/state/progress';
 import { radius, space, useTheme } from '@/theme';
+import { CachedImage } from './CachedImage';
 import { ProgressBar, Text } from './ui';
 
 interface Props {
@@ -28,8 +28,8 @@ function Thumb({ episode, width }: { episode: Episode; width: number | '100%' })
         backgroundColor: theme.raised,
       }}
     >
-      <Image
-        source={{ uri: episode.youtubeThumb }}
+      <CachedImage
+        uri={episode.youtubeThumb}
         style={{ flex: 1 }}
         contentFit="cover"
         transition={200}

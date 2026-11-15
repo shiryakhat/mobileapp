@@ -3,6 +3,7 @@
  * Column-level grants apply server-side: inserts send only the allowed columns
  * and never use upsert on community tables (see supabase/README.md).
  */
+import { readCachedJson, withCachedFallback } from '@/lib/cache';
 import { useBookmarks, type Bookmark } from '@/state/bookmarks';
 import { requireSupabase } from './supabase';
 
@@ -41,15 +42,27 @@ interface BookmarkRow {
 const COMMENT_COLUMNS =
   'id, user_id, episode_id, time_sec, body, created_at, profiles(username, avatar_url)';
 
-export async function listComments(episodeId: string): Promise<MinuteComment[]> {
-  const { data, error } = await requireSupabase()
-    .from('minute_comments')
-    .select(COMMENT_COLUMNS)
-    .eq('episode_id', episodeId)
-    .order('time_sec', { ascending: true })
-    .limit(500);
-  if (error) throw error;
-  return (data ?? []) as unknown as MinuteComment[];
+const commentsKey = (episodeId: string) => `comments-${episodeId}`;
+const QUESTIONS_KEY = 'questions';
+
+/** The comments as last seen, straight from disk: instant first paint, and all there is offline. */
+export const cachedComments = (episodeId: string): MinuteComment[] =>
+  readCachedJson<MinuteComment[]>(commentsKey(episodeId)) ?? [];
+
+export const cachedQuestions = (): Question[] => readCachedJson<Question[]>(QUESTIONS_KEY) ?? [];
+
+/** Fresh from the network when possible, otherwise the last-seen copy. */
+export function listComments(episodeId: string): Promise<MinuteComment[]> {
+  return withCachedFallback(commentsKey(episodeId), async () => {
+    const { data, error } = await requireSupabase()
+      .from('minute_comments')
+      .select(COMMENT_COLUMNS)
+      .eq('episode_id', episodeId)
+      .order('time_sec', { ascending: true })
+      .limit(500);
+    if (error) throw error;
+    return (data ?? []) as unknown as MinuteComment[];
+  });
 }
 
 export async function addComment(episodeId: string, timeSec: number, body: string): Promise<void> {
@@ -84,18 +97,21 @@ export function subscribeComments(episodeId: string, onChange: () => void): () =
   };
 }
 
-export async function listQuestions(): Promise<Question[]> {
-  const { data, error } = await requireSupabase()
-    .from('questions')
-    .select(
-      'id, user_id, kind, body, episode_id, status, upvote_count, created_at, profiles(username)',
-    )
-    .in('status', ['open', 'planned'])
-    .order('upvote_count', { ascending: false })
-    .order('created_at', { ascending: false })
-    .limit(200);
-  if (error) throw error;
-  return (data ?? []) as unknown as Question[];
+/** Fresh from the network when possible, otherwise the last-seen copy. */
+export function listQuestions(): Promise<Question[]> {
+  return withCachedFallback(QUESTIONS_KEY, async () => {
+    const { data, error } = await requireSupabase()
+      .from('questions')
+      .select(
+        'id, user_id, kind, body, episode_id, status, upvote_count, created_at, profiles(username)',
+      )
+      .in('status', ['open', 'planned'])
+      .order('upvote_count', { ascending: false })
+      .order('created_at', { ascending: false })
+      .limit(200);
+    if (error) throw error;
+    return (data ?? []) as unknown as Question[];
+  });
 }
 
 export async function askQuestion(kind: Question['kind'], body: string): Promise<void> {

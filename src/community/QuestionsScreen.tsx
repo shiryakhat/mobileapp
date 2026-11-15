@@ -14,7 +14,14 @@ import {
 import { useI18n } from '@/i18n';
 import { joinMeta } from '@/lib/format';
 import { radius, space, useTheme } from '@/theme';
-import { askQuestion, listQuestions, myVotes, setVote, type Question } from './api';
+import {
+  askQuestion,
+  cachedQuestions,
+  listQuestions,
+  myVotes,
+  setVote,
+  type Question,
+} from './api';
 import { signInWithGitHub, useSession } from './auth';
 
 /** "Ask for the next episode" + topic suggestions, with upvotes. */
@@ -23,7 +30,7 @@ export function QuestionsScreen() {
   const { t, n } = useI18n();
   const session = useSession();
   const userId = session?.user.id;
-  const [questions, setQuestions] = useState<Question[]>([]);
+  const [questions, setQuestions] = useState<Question[]>(cachedQuestions);
   const [votes, setVotes] = useState<Set<string>>(new Set());
   const [kind, setKind] = useState<Question['kind']>('question');
   const [body, setBody] = useState('');

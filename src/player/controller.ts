@@ -12,6 +12,7 @@
 import { createAudioPlayer, setAudioModeAsync, type AudioPlayer } from 'expo-audio';
 import { getEpisode, type Episode } from '@/content';
 import { translate } from '@/i18n';
+import { cachedImageUri } from '@/lib/cache';
 import { localAudioUri } from '@/state/downloads';
 import { resumePosition, useProgress } from '@/state/progress';
 import { useSettings } from '@/state/settings';
@@ -19,6 +20,13 @@ import { usePlayback, type PlayerEngine, type PlayerMode } from './store';
 
 export const RATES = [0.75, 1, 1.25, 1.5, 1.75, 2] as const;
 const SAVE_EVERY_SEC = 5;
+/**
+ * How far ahead of the playhead a stream is buffered. The platform defaults
+ * (~50 s on Android, "system decides" on iOS) stall on short skips and on a
+ * flaky connection; two minutes of podcast audio is only 1-2 MB of memory.
+ * Downloaded episodes play from disk and do not buffer at all.
+ */
+const BUFFER_AHEAD_SEC = 120;
 
 interface YoutubeHandle {
   seekTo: (sec: number) => void;
@@ -56,7 +64,10 @@ function ensureAudio(): AudioPlayer {
     shouldPlayInBackground: true,
     interruptionMode: 'doNotMix',
   }).catch(() => undefined);
-  const player = createAudioPlayer(null, { updateInterval: 500 });
+  const player = createAudioPlayer(null, {
+    updateInterval: 500,
+    preferredForwardBufferDuration: BUFFER_AHEAD_SEC,
+  });
   player.addListener('playbackStatusUpdate', (status) => {
     if (state().engine !== 'native') return;
     if (status.isLoaded && pendingSeek !== undefined) {
@@ -94,7 +105,8 @@ function activateLockScreen(ep: Episode): void {
         title: locale === 'fa' ? ep.titleFa : ep.titleEn,
         artist: translate(locale, 'appName'),
         albumTitle: ep.code,
-        artworkUrl: ep.youtubeThumb,
+        // The cached thumbnail, so the lock screen has artwork offline too.
+        artworkUrl: cachedImageUri(ep.youtubeThumb) ?? ep.youtubeThumb,
       },
       { showSeekForward: true, showSeekBackward: true },
     );

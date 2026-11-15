@@ -19,6 +19,7 @@ Bilingual (Farsi / English), RTL-first archive and community app for **Shir ya K
 | Glossary   | 358 crypto terms with FA + EN definitions; tap-to-define inline in transcripts                                                               |
 | Bookmarks  | Per episode and per timestamp, local-first                                                                                                   |
 | Downloads  | Resumable offline audio downloads with storage management                                                                                    |
+| Offline    | Thumbnails, artwork and community lists are cached on disk; Settings → Storage shows usage and clears the cache (never downloads)            |
 | Share      | On-device image card (art + quote + QR) and plain quote + link sharing                                                                       |
 | Community  | Supabase schema, GitHub sign-in, minute comments, questions, bookmark sync — **flagged off**                                                 |
 

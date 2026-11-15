@@ -1,8 +1,8 @@
-import { Image } from 'expo-image';
 import { router, useLocalSearchParams } from 'expo-router';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Linking, ScrollView, useWindowDimensions, View } from 'react-native';
 import { CommentsPane } from '@/community/CommentsPane';
+import { CachedImage } from '@/components/CachedImage';
 import { ChapterList } from '@/components/ChapterList';
 import { DownloadButton } from '@/components/DownloadButton';
 import { PlayerControls } from '@/components/PlayerControls';
@@ -214,8 +214,8 @@ function EpisodeScreen({ episode, startAt, cue, initialPane }: EpisodeScreenProp
         <View
           style={{ flexDirection: 'row', gap: space.md, padding: space.lg, paddingTop: space.sm }}
         >
-          <Image
-            source={{ uri: episode.youtubeThumb }}
+          <CachedImage
+            uri={episode.youtubeThumb}
             style={{
               width: 128,
               aspectRatio: 16 / 9,
