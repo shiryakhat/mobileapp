@@ -39,7 +39,7 @@
     var stage = coin.querySelector('.coin-stage');
     var note = document.querySelector('.coin-note');
     var calm = window.matchMedia('(prefers-reduced-motion: reduce)');
-    var face = 'heads';     // heads = شیر (the engraved hero, or the logo in enamel), tails = خط (the logo struck in bronze)
+    var face = 'heads';     // heads = شیر (the microphone), tails = خط (the astronaut)
     var live = null;        // the 3D coin, once mounted
     var results = {
       heads: { fa: 'شیر آمد.', en: 'Shir. That’s heads.' },

@@ -1,9 +1,10 @@
 /* Shir ya Khat — the 3D coin.
-   Lazy-loaded by site.js after first paint. An aged gold-bronze piece:
-   heads (شیر) is the engraved hero from coin-hero.png when that file exists
-   (otherwise the logo inlaid in enamel), tails (خط) is the logo struck in
-   relief. Relief normals, patina, wear and the reeded edge are all generated
-   at runtime, so the only assets are the artwork and the three.js bundle.
+   Lazy-loaded by site.js after first paint. A worn silver piece whose two
+   faces are pre-rendered artwork: heads (شیر) is coin-face-heads.png, the
+   microphone with the calligraphy escaping it; tails (خط) is
+   coin-face-tails.png, the astronaut. The art already carries its relief,
+   patina and border, so each face is simply that picture on lightly metallic
+   stock; the reeded edge, the lighting and the reflections are generated here.
 
    About one toss in ten lands on its rim and teeters, undecided. */
 
@@ -13,30 +14,22 @@ const TAU = Math.PI * 2;
 const R = 1;            // coin radius (world units)
 const T = 0.15;         // thickness
 const BEVEL = 0.028;    // chamfer between face and edge
-const ART = 0.80;       // artwork radius, as a fraction of the face
+const FACE_INSET = 0.985;  // use this much of the art's disc, to stay clear of its cut-out fringe
+const FACE_GLOW = 0.7;     // how much of the art shows regardless of the light
+const FACE_METAL = 0.9;    // ...and how metallic the rest of its response is
+const FACE_ROUGH = 0.58;
+const FACE_ENV = 0.18;     // reflections on the faces, kept under the art
+const EDGE_ENV = 0.3;      // ...and on the edge, so it stays the faces' silver
+const IRIDESCENCE = 0.12;  // a thin toning film; swells during a shimmer
+const KEY = 1.2;           // key light intensity
+const LAMP = 0.6;          // the low warm lamp
 const EDGE_CHANCE = 0.1;
 const ADDITIVE = 2;     // THREE.AdditiveBlending (the constant is not in the trimmed bundle)
-
-// Aged gold-bronze, sRGB.
-const GOLD = [204, 156, 74];
-const GOLD_HI = [246, 214, 136];   // high points, polished by handling
-const UMBER = [52, 36, 20];        // dirt and oxide in the recesses
-const VERDIGRIS = [64, 112, 94];   // a breath of green where the patina pools
 
 const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
 const smooth = (a, b, x) => { const t = clamp01((x - a) / (b - a)); return t * t * (3 - 2 * t); };
 const easeInOut = (p) => (p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2);
 const bell = (u) => Math.exp(-u * u);
-
-/* Seeded, so the coin's wear is the same coin on every visit. */
-function seeded(a) {
-  return () => {
-    a = (a + 0x6D2B79F5) | 0;
-    let t = Math.imul(a ^ (a >>> 15), 1 | a);
-    t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t;
-    return ((t ^ (t >>> 14)) >>> 0) / 4294967296;
-  };
-}
 
 function loadImage(src) {
   return new Promise((resolve, reject) => {
@@ -54,267 +47,50 @@ function canvasOf(size) {
   return c;
 }
 
-/* Separable box blur with clamped edges, in place. */
-function blur(src, size, radius, passes) {
-  const r = Math.max(1, Math.round(radius)), w = 2 * r + 1, last = size - 1;
-  const a = src, b = new Float32Array(src.length);
-  for (let p = 0; p < (passes || 1); p++) {
-    for (let y = 0; y < size; y++) {
-      const row = y * size;
-      let sum = 0;
-      for (let k = -r; k <= r; k++) sum += a[row + (k < 0 ? 0 : k > last ? last : k)];
-      for (let x = 0; x < size; x++) {
-        b[row + x] = sum / w;
-        const add = x + r + 1, sub = x - r;
-        sum += a[row + (add > last ? last : add)] - a[row + (sub < 0 ? 0 : sub)];
-      }
-    }
-    for (let x = 0; x < size; x++) {
-      let sum = 0;
-      for (let k = -r; k <= r; k++) sum += b[(k < 0 ? 0 : k > last ? last : k) * size + x];
-      for (let y = 0; y < size; y++) {
-        a[y * size + x] = sum / w;
-        const add = y + r + 1, sub = y - r;
-        sum += b[(add > last ? last : add) * size + x] - b[(sub < 0 ? 0 : sub) * size + x];
-      }
-    }
-  }
-  return a;
-}
-
-/* Height field -> tangent-space normal map (OpenGL convention, canvas y is down). */
-function normalsFrom(height, size, strength) {
-  const out = new ImageData(size, size);
-  const d = out.data;
-  const k = strength * (size / 1024);
-  for (let y = 0; y < size; y++) {
-    const yu = (y > 0 ? y - 1 : y) * size, yd = (y < size - 1 ? y + 1 : y) * size, row = y * size;
-    for (let x = 0; x < size; x++) {
-      const xl = x > 0 ? x - 1 : x, xr = x < size - 1 ? x + 1 : x;
-      const nx = (height[row + xl] - height[row + xr]) * k;
-      const ny = (height[yd + x] - height[yu + x]) * k;
-      const inv = 1 / Math.sqrt(nx * nx + ny * ny + 1);
-      const i = (row + x) * 4;
-      d[i] = (nx * inv * 0.5 + 0.5) * 255;
-      d[i + 1] = (ny * inv * 0.5 + 0.5) * 255;
-      d[i + 2] = (inv * 0.5 + 0.5) * 255;
-      d[i + 3] = 255;
-    }
-  }
-  return out;
-}
-
-function texture(imageData, size, srgb, anisotropy) {
-  const c = canvasOf(size);
-  c.getContext('2d').putImageData(imageData, 0, 0);
-  const t = new THREE.CanvasTexture(c);
-  if (srgb) t.colorSpace = THREE.SRGBColorSpace;
-  t.anisotropy = anisotropy;
-  return t;
-}
-
-/* Centuries in a pocket: soft blotches where patina gathers, and hairline scratches. */
-function wearMaps(size, rand) {
-  const n = size * size;
-  const c = canvasOf(size);
-  const ctx = c.getContext('2d', { willReadFrequently: true });
-  const noise = (cells, alpha) => {
-    const s = canvasOf(cells), sctx = s.getContext('2d');
-    const img = sctx.createImageData(cells, cells);
-    for (let i = 0; i < cells * cells; i++) {
-      const v = rand() * 255;
-      img.data[i * 4] = img.data[i * 4 + 1] = img.data[i * 4 + 2] = v; img.data[i * 4 + 3] = 255;
-    }
-    sctx.putImageData(img, 0, 0);
-    ctx.globalAlpha = alpha;
-    ctx.imageSmoothingEnabled = true;
-    ctx.imageSmoothingQuality = 'high';
-    ctx.drawImage(s, 0, 0, size, size);
-  };
-  noise(7, 1); noise(19, 0.5); noise(53, 0.3);
-  let d = ctx.getImageData(0, 0, size, size).data;
-  const blotch = new Float32Array(n);
-  for (let i = 0; i < n; i++) blotch[i] = d[i * 4] / 255;
-
-  ctx.globalAlpha = 1;
-  ctx.fillStyle = '#000';
-  ctx.fillRect(0, 0, size, size);
-  ctx.lineCap = 'round';
-  for (let i = 0; i < 46; i++) {
-    const x = rand() * size, y = rand() * size, a = rand() * TAU, len = (0.03 + rand() * rand() * 0.3) * size;
-    const bend = (rand() - 0.5) * 0.25 * len;
-    ctx.strokeStyle = 'rgba(255,255,255,' + (0.18 + rand() * 0.5).toFixed(2) + ')';
-    ctx.lineWidth = (0.5 + rand() * 0.9) * (size / 1024);
-    ctx.beginPath();
-    ctx.moveTo(x, y);
-    ctx.quadraticCurveTo(
-      x + Math.cos(a) * len / 2 - Math.sin(a) * bend, y + Math.sin(a) * len / 2 + Math.cos(a) * bend,
-      x + Math.cos(a) * len, y + Math.sin(a) * len
-    );
-    ctx.stroke();
-  }
-  d = ctx.getImageData(0, 0, size, size).data;
-  const scratch = new Float32Array(n);
-  for (let i = 0; i < n; i++) scratch[i] = d[i * 4] / 255;
-  return { blotch, scratch };
-}
-
-/* One coin face, from `img`.
-   style 'hero'   — a picture read as an engraving: its tones become relief and patina;
-         'struck' — the logo's line art thickened and struck in relief;
-         'enamel' — the logo inlaid in colour under a clear coat. */
-function buildFace(img, size, style, wear, mirror, anisotropy, rand) {
-  const half = size / 2, n = size * size;
-  const art = canvasOf(size);
-  const actx = art.getContext('2d', { willReadFrequently: true });
-  const artPx = ART * size;
+/* One coin face from a pre-rendered coin on a transparent background.
+   Finds the opaque disc, and crops the picture so that disc exactly fills the
+   texture (and so the round face geometry). Returns the colour map and the
+   average colour of the metal, which tints the edge to match. */
+function faceTexture(img, size, anisotropy) {
   const iw = img.naturalWidth || img.width, ih = img.naturalHeight || img.height;
-  const fit = artPx / Math.min(iw, ih);                    // cover the art circle
-  actx.drawImage(img, half - iw * fit / 2, half - ih * fit / 2, iw * fit, ih * fit);
-  const src = actx.getImageData(0, 0, size, size).data;
 
-  const enamel = style === 'enamel';
-  const height = new Float32Array(n);
-  const color = new ImageData(size, size);
-  const orm = new ImageData(size, size);        // G = roughness, B = metalness
-  const glow = enamel ? new ImageData(size, size) : null;
-  const BEADS = 64, beadR = 0.856, beadSize = 0.017;
-
-  const lumAt = (i) => (0.2126 * src[i * 4] + 0.7152 * src[i * 4 + 1] + 0.0722 * src[i * 4 + 2]) / 255;
-  let mask = new Float32Array(n);     // how far the die raised the metal, 0..1
-  let tone = null;                    // hero only: the picture's own light and dark
-
-  if (style === 'hero') {
-    // Stretch the picture's tonal range (inside the art circle) to the full relief.
-    const hist = new Uint32Array(256);
-    let count = 0;
-    const artR2 = (ART * half) * (ART * half);
-    for (let y = 0; y < size; y += 2) for (let x = 0; x < size; x += 2) {
-      const i = y * size + x, dx = x - half, dy = y - half;
-      if (dx * dx + dy * dy > artR2 || src[i * 4 + 3] < 128) continue;
-      hist[Math.round(lumAt(i) * 255)]++; count++;
-    }
-    let lo = 0, hi = 255, acc = 0;
-    for (let v = 0; v < 256; v++) { acc += hist[v]; if (acc >= count * 0.02) { lo = v; break; } }
-    acc = 0;
-    for (let v = 255; v >= 0; v--) { acc += hist[v]; if (acc >= count * 0.02) { hi = v; break; } }
-    const span = Math.max(24, hi - lo) / 255;
-    tone = new Float32Array(n);
-    for (let i = 0; i < n; i++) {
-      tone[i] = clamp01((lumAt(i) - lo / 255) / span);
-      mask[i] = tone[i];
-    }
-    // Relief follows the broad forms; the fine lines ride on top of them.
-    const broad = blur(Float32Array.from(tone), size, size / 90, 2);
-    mask = blur(mask, size, size / 512, 2);
-    for (let i = 0; i < n; i++) mask[i] = clamp01(0.55 * broad[i] + 0.45 * mask[i] + 0.35 * (mask[i] - broad[i]));
-  } else {
-    // Luminance mask of the neon line art.
-    for (let i = 0; i < n; i++) mask[i] = smooth(0.2, 0.62, lumAt(i)) * (src[i * 4 + 3] / 255);
-    if (style === 'struck') {
-      // Thicken the hairline strokes into something a die could strike.
-      mask = blur(mask, size, 1, size >= 1024 ? 2 : 1);
-      for (let i = 0; i < n; i++) mask[i] = smooth(0.05, 0.38, mask[i]);
-      mask = blur(mask, size, 1, 1);
-    }
+  // Where is the disc? Bounding box of the opaque pixels, measured on a small copy.
+  const P = 128;
+  const probe = canvasOf(P);
+  const pctx = probe.getContext('2d', { willReadFrequently: true });
+  pctx.drawImage(img, 0, 0, P, P);
+  const d = pctx.getImageData(0, 0, P, P).data;
+  let x0 = P, y0 = P, x1 = -1, y1 = -1, sr = 0, sg = 0, sb = 0, count = 0;
+  for (let y = 0; y < P; y++) for (let x = 0; x < P; x++) {
+    const i = (y * P + x) * 4;
+    if (d[i + 3] < 200) continue;
+    if (x < x0) x0 = x; if (x > x1) x1 = x;
+    if (y < y0) y0 = y; if (y > y1) y1 = y;
+    sr += d[i]; sg += d[i + 1]; sb += d[i + 2]; count++;
   }
+  if (!count) { x0 = y0 = 0; x1 = y1 = P - 1; sr = sg = sb = 128; count = 1; }   // no alpha to go by: use it all
+  const tint = [sr / count, sg / count, sb / count];
+  const cx = (x0 + x1 + 1) / 2 * (iw / P), cy = (y0 + y1 + 1) / 2 * (ih / P);
+  const r = Math.min((x1 - x0 + 1) * (iw / P), (y1 - y0 + 1) * (ih / P)) / 2 * FACE_INSET;
 
-  // Pass 1: the height field. Sunken field, raised artwork, beaded ring, raised rim.
-  const inside = new Float32Array(n);   // 1 inside the art circle
-  for (let y = 0; y < size; y++) {
-    for (let x = 0; x < size; x++) {
-      const i = y * size + x;
-      const dx = (x + 0.5 - half) / half, dy = (y + 0.5 - half) / half;
-      const r = Math.sqrt(dx * dx + dy * dy);
-      let inArt = 1 - smooth(ART - 0.012, ART - 0.002, r);
-      if (style === 'hero') inArt *= src[i * 4 + 3] / 255;
-      inside[i] = inArt;
-      const m = mask[i] * inArt;
-      let h = 0.42;
-      if (style === 'hero') h += (0.2 + 0.62 * m - 0.42) * inArt;
-      else if (style === 'struck') h += (0.30 + 0.55 * m - 0.42) * inArt;
-      else h += (0.26 + 0.16 * m - 0.42) * inArt;
-      if (r > 0.82 && r < 0.89) {
-        const a = Math.atan2(dy, dx);
-        const cell = (a / TAU) * BEADS;
-        const da = (cell - Math.round(cell)) / BEADS * TAU * beadR;
-        const bd = Math.sqrt(da * da + (r - beadR) * (r - beadR)) / beadSize;
-        if (bd < 1) h += 0.3 * Math.sqrt(1 - bd * bd);
-      }
-      h += 0.58 * smooth(0.9, 0.925, r) - 0.3 * smooth(0.975, 1.0, r);
-      height[i] = h;
-    }
-  }
+  const c = canvasOf(size);
+  const ctx = c.getContext('2d');
+  ctx.imageSmoothingQuality = 'high';
+  ctx.drawImage(img, cx - r, cy - r, 2 * r, 2 * r, 0, 0, size, size);
+  // Bare metal behind any nick in the cut-out, so the rim never shows a hole.
+  ctx.globalCompositeOperation = 'destination-over';
+  ctx.fillStyle = 'rgb(' + tint.map(Math.round).join(',') + ')';
+  ctx.fillRect(0, 0, size, size);
 
-  // Where the metal sits below its surroundings, dirt collects; where it stands
-  // proud, a thousand thumbs have polished it.
-  const around = blur(Float32Array.from(height), size, size / 85, 2);
-
-  // Pass 2: colour, roughness, metalness.
-  const mix = (a, b, t) => a + (b - a) * t;
-  for (let y = 0; y < size; y++) {
-    for (let x = 0; x < size; x++) {
-      const i = y * size + x, j = i * 4;
-      const wi = y * size + (mirror ? size - 1 - x : x);
-      const blotch = wear.blotch[wi], scratch = wear.scratch[wi];
-      const inArt = inside[i], m = mask[i] * inArt;
-      const rel = height[i] - around[i];
-      const pit = clamp01(-rel * 3.4), proud = clamp01(rel * 2.6);
-      const pool = smooth(0.5, 0.82, blotch);            // patina gathers in patches
-
-      let cr = GOLD[0], cg = GOLD[1], cb = GOLD[2], rough = 0.34, metal = 1, inlay = 0;
-      if (style === 'hero') {
-        const t = tone[i], dark = inArt * (1 - smooth(0.0, 0.6, t)), light = inArt * smooth(0.5, 1, t);
-        cr = mix(mix(cr, UMBER[0], dark * 0.86), GOLD_HI[0], light * 0.55);
-        cg = mix(mix(cg, UMBER[1], dark * 0.88), GOLD_HI[1], light * 0.55);
-        cb = mix(mix(cb, UMBER[2], dark * 0.9), GOLD_HI[2], light * 0.55);
-        rough = 0.36 + 0.26 * dark - 0.12 * light;
-      } else if (style === 'struck') {
-        const f = inArt * (1 - m), hi = inArt * m * 0.4;
-        cr = mix(cr, GOLD_HI[0], hi) * (1 - 0.58 * f);
-        cg = mix(cg, GOLD_HI[1], hi) * (1 - 0.63 * f);
-        cb = mix(cb, GOLD_HI[2], hi) * (1 - 0.7 * f);
-        rough = 0.28 + f * 0.3;
-      } else if (inArt > 0) {
-        inlay = inArt * (src[j + 3] / 255);
-        cr = mix(cr, src[j], inlay); cg = mix(cg, src[j + 1], inlay); cb = mix(cb, src[j + 2], inlay);
-        rough = mix(0.34, 0.18, inlay);
-        metal = 1 - 0.85 * inlay;
-        glow.data[j] = src[j] * inlay; glow.data[j + 1] = src[j + 1] * inlay; glow.data[j + 2] = src[j + 2] * inlay;
-      }
-
-      // Ageing — on the bare metal only; enamel keeps its colour.
-      const bare = 1 - inlay;
-      const grime = bare * clamp01(pit * (0.55 + 0.6 * blotch));
-      const green = bare * pool * clamp01(0.1 + pit * 1.6) * 0.34;
-      const shine = bare * proud * 0.34;
-      const dull = 1 - bare * 0.2 * (1 - blotch);        // uneven toning across the face
-      cr = mix(mix(mix(cr, UMBER[0], grime), VERDIGRIS[0], green), GOLD_HI[0], shine) * dull;
-      cg = mix(mix(mix(cg, UMBER[1], grime), VERDIGRIS[1], green), GOLD_HI[1], shine) * dull;
-      cb = mix(mix(mix(cb, UMBER[2], grime), VERDIGRIS[2], green), GOLD_HI[2], shine) * dull;
-      rough += bare * (0.26 * grime + 0.2 * green - 0.1 * shine + 0.14 * (blotch - 0.5) + 0.2 * scratch + (rand() - 0.5) * 0.05);
-      height[i] += bare * ((rand() - 0.5) * 0.012 - 0.03 * scratch);
-
-      if (glow) glow.data[j + 3] = 255;
-      color.data[j] = cr; color.data[j + 1] = cg; color.data[j + 2] = cb; color.data[j + 3] = 255;
-      orm.data[j] = 255; orm.data[j + 1] = clamp01(rough) * 255; orm.data[j + 2] = metal * 255; orm.data[j + 3] = 255;
-    }
-  }
-
-  const normal = normalsFrom(blur(height, size, 1, 1), size, style === 'enamel' ? 7 : style === 'hero' ? 11 : 9.5);
-  const maps = {
-    map: texture(color, size, true, anisotropy),
-    normalMap: texture(normal, size, false, anisotropy),
-    roughnessMap: texture(orm, size, false, anisotropy),
-  };
-  maps.metalnessMap = maps.roughnessMap;
-  if (glow) maps.emissiveMap = texture(glow, size, true, anisotropy);
-  return maps;
+  const map = new THREE.CanvasTexture(c);
+  map.colorSpace = THREE.SRGBColorSpace;
+  map.anisotropy = anisotropy;
+  return { map, tint };
 }
 
 /* Reeded edge: one groove, repeated around the circumference. Dirt sits in the
-   grooves, the ridges are worn bright. */
-function reeding() {
+   grooves, the ridges are worn bright. `tint` is the faces' metal, sRGB 0..255. */
+function reeding(tint) {
   const w = 32, h = 4;
   const nc = document.createElement('canvas'), cc = document.createElement('canvas');
   nc.width = cc.width = w; nc.height = cc.height = h;
@@ -327,7 +103,7 @@ function reeding() {
     const inv = 1 / Math.sqrt(nx * nx + 1);
     nimg.data[i] = (nx * inv * 0.5 + 0.5) * 255; nimg.data[i + 1] = 128; nimg.data[i + 2] = (inv * 0.5 + 0.5) * 255; nimg.data[i + 3] = 255;
     const t = smooth(0.05, 0.75, v);
-    for (let c = 0; c < 3; c++) cimg.data[i + c] = UMBER[c] + (GOLD[c] + (GOLD_HI[c] - GOLD[c]) * 0.3 * t - UMBER[c]) * (0.25 + 0.75 * t);
+    for (let c = 0; c < 3; c++) cimg.data[i + c] = Math.min(255, tint[c] * (0.38 + 0.92 * t));
     cimg.data[i + 3] = 255;
   }
   nctx.putImageData(nimg, 0, 0);
@@ -342,10 +118,9 @@ function reeding() {
   return { normalMap: make(nc, false), map: make(cc, true) };
 }
 
-/* Reflections: a lamp-lit room rather than a photo studio. A big warm key so
-   the relief reads, amber from a low flame, a cool sliver of window, and the
-   logo's cyan and magenta kept as thin strips that only show up as fringes on
-   the rim. Prefiltered once into the scene environment. */
+/* Reflections: a lamp-lit room rather than a photo studio. A big warm key,
+   amber from a low flame, a cool sliver of window, and the logo's cyan and
+   magenta kept as thin strips that only show up as fringes on the rim. Prefiltered once into the scene environment. */
 function studio(renderer) {
   const scene = new THREE.Scene();
   const panel = (color, intensity, w, h, x, y, z) => {
@@ -429,13 +204,13 @@ function glintTexture() {
  * Returns { flip(to?), face, state, destroy() }. `to` may be 'heads', 'tails' or
  * 'edge'; left out, it is a fair toss with a small chance of the rim.
  * With `still`, or under prefers-reduced-motion, nothing animates: flip() just
- * shows the result. Rejects if WebGL or the logo is unavailable.
+ * shows the result. Rejects if WebGL or the face artwork is unavailable.
  */
 export async function mount(host, opts = {}) {
   const base = opts.assets || new URL('.', import.meta.url).href;
-  const [logo, hero] = await Promise.all([
-    loadImage(base + 'logo.webp'),
-    loadImage(base + 'coin-hero.png').catch(() => null),   // optional: the engraved hero for heads
+  const [headsArt, tailsArt] = await Promise.all([
+    loadImage(base + 'coin-face-heads.png'),
+    loadImage(base + 'coin-face-tails.png'),
   ]);
 
   const canvas = document.createElement('canvas');
@@ -452,44 +227,43 @@ export async function mount(host, opts = {}) {
   const aniso = Math.min(8, renderer.capabilities.getMaxAnisotropy());
 
   const scene = new THREE.Scene();
-  scene.environment = studio(renderer);
+  const env = studio(renderer);   // set per material, so each can weigh its reflections
   const camera = new THREE.PerspectiveCamera(26, 1, 0.1, 50);
   camera.position.set(0, 0, 9.06);
 
-  // Raking key from the upper left so the relief throws shade; a low warm
-  // lamp that flickers a little; a cool kiss on the far rim.
-  const key = new THREE.DirectionalLight(0xffecd0, 2.5);
+  // Key from the upper left; a low warm lamp that flickers a little; a cool
+  // kiss on the far rim.
+  const key = new THREE.DirectionalLight(0xfff2e0, KEY);
   key.position.set(-3.4, 4.2, 3.6);
-  const lamp = new THREE.DirectionalLight(0xffa24a, 0.85);
+  const lamp = new THREE.DirectionalLight(0xffa24a, LAMP);
   lamp.position.set(3, -3.5, 3);
   const rim = new THREE.DirectionalLight(0x8fdfe6, 0.55);
   rim.position.set(5, 1, 1.5);
   scene.add(key, lamp, rim);
 
   // --- the coin ---
-  const rand = seeded(1403);
-  const wear = wearMaps(size, rand);
-  const patina = { iridescence: 0.22, iridescenceIOR: 1.7, iridescenceThicknessRange: [180, 420] };
-  const heads = hero
-    ? new THREE.MeshPhysicalMaterial({
-      ...buildFace(hero, size, 'hero', wear, false, aniso, rand),
-      metalness: 1, roughness: 1, ...patina,
-      normalScale: new THREE.Vector2(1.15, 1.15),
-    })
-    : new THREE.MeshPhysicalMaterial({
-      ...buildFace(logo, size, 'enamel', wear, false, aniso, rand),
-      metalness: 1, roughness: 1, ...patina,
-      emissive: 0xffffff, emissiveIntensity: 0.5,
-      clearcoat: 0.6, clearcoatRoughness: 0.16,
-    });
-  const tails = new THREE.MeshPhysicalMaterial({
-    ...buildFace(logo, size, 'struck', wear, true, aniso, rand),
-    metalness: 1, roughness: 1, ...patina,
+  // The faces are the artwork itself. Its light and shade are already painted
+  // in, so the material only has to add a little life on top: mostly the
+  // picture (partly self-lit, so it never goes dark mid-turn), with a soft
+  // metallic response to the room as the coin moves.
+  const headsFace = faceTexture(headsArt, size, aniso);
+  const tailsFace = faceTexture(tailsArt, size, aniso);
+  const faceMaterial = (f) => new THREE.MeshPhysicalMaterial({
+    map: f.map, emissiveMap: f.map, emissive: 0xffffff, emissiveIntensity: FACE_GLOW,
+    envMap: env, envMapIntensity: FACE_ENV,
+    metalness: FACE_METAL, roughness: FACE_ROUGH,
+    iridescence: IRIDESCENCE, iridescenceIOR: 1.7, iridescenceThicknessMinimum: 180, iridescenceThicknessMaximum: 420,
   });
+  const heads = faceMaterial(headsFace);
+  const tails = faceMaterial(tailsFace);
+  const edgeTex = reeding(headsFace.tint.map((v, i) => (v + tailsFace.tint[i]) / 2));
   const edgeMat = new THREE.MeshPhysicalMaterial({
-    ...reeding(), metalness: 1, roughness: 0.36, ...patina,
+    ...edgeTex, emissiveMap: edgeTex.map, emissive: 0xffffff, emissiveIntensity: 0.45,
+    envMap: env, envMapIntensity: EDGE_ENV, metalness: 1, roughness: 0.45,
+    iridescence: IRIDESCENCE, iridescenceIOR: 1.7, iridescenceThicknessMinimum: 180, iridescenceThicknessMaximum: 420,
   });
   const metals = [heads, tails, edgeMat];
+  const textures = [headsFace.map, tailsFace.map, edgeTex.map, edgeTex.normalMap];
 
   const faceGeo = new THREE.CircleGeometry(R - BEVEL, 128);
   const front = new THREE.Mesh(faceGeo, heads);
@@ -702,13 +476,16 @@ export async function mount(host, opts = {}) {
       } else if (quirk.kind === 'glint') glintU = u;
       else if (quirk.kind === 'hiccup') rz += 0.035 * Math.exp(-6 * quirk.t) * Math.sin(quirk.t * 24);
     }
-    for (const m of metals) { m.envMapIntensity = 1 + 0.5 * shimmer; m.iridescence = 0.22 + 0.6 * shimmer; }
+    for (const m of metals) {
+      m.envMapIntensity = (m === edgeMat ? EDGE_ENV : FACE_ENV) * (1 + 0.5 * shimmer);
+      m.iridescence = IRIDESCENCE + 0.5 * shimmer;
+    }
     renderer.toneMappingExposure = EXPOSURE * (1 + 0.05 * shimmer);
 
     // Lamplight is never perfectly steady.
     const flame = 1 + 0.07 * Math.sin(clock * 2.3) * Math.sin(clock * 5.1 + 1) + 0.035 * Math.sin(clock * 11.7);
-    lamp.intensity = 0.85 * flame;
-    key.intensity = 2.5 * (1 + 0.02 * Math.sin(clock * 0.7));
+    lamp.intensity = LAMP * flame;
+    key.intensity = KEY * (1 + 0.02 * Math.sin(clock * 0.7));
 
     pointer.sx += (pointer.x - pointer.sx) * Math.min(1, dt * 4);
     pointer.sy += (pointer.y - pointer.sy) * Math.min(1, dt * 4);
@@ -800,6 +577,14 @@ export async function mount(host, opts = {}) {
       document.removeEventListener('visibilitychange', onVisibility);
       if (calm.removeEventListener) calm.removeEventListener('change', onCalm);
       window.removeEventListener('pointermove', onMove);
+      scene.traverse((o) => {
+        if (!o.isMesh) return;
+        o.geometry.dispose();
+        if (o.material.map) o.material.map.dispose();
+        o.material.dispose();
+      });
+      for (const t of textures) t.dispose();           // incl. the edge's normal map
+      env.dispose();
       renderer.dispose();
       canvas.remove();
     },
