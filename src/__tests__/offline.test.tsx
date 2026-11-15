@@ -300,6 +300,10 @@ describe('<StorageSettings/>', () => {
     expect(useDownloads.getState().items).toEqual({});
   });
 
+  it('uses the agreed Farsi wording for "Clear cache"', () => {
+    expect(translate('fa', 'clearCache')).toBe('پاک کردن حافظه موقت');
+  });
+
   it('offers no "delete downloads" when there are none', async () => {
     await render(<StorageSettings />);
     expect(screen.queryByTestId('delete-downloads')).toBeNull();
