@@ -78,6 +78,9 @@ export const en = {
   themeDark: 'Dark',
   themeLight: 'Light',
   themeSystem: 'System',
+  splashSound: 'Coin sound at launch',
+  soundOn: 'On',
+  soundOff: 'Off',
   aboutApp: 'About',
   aboutBody:
     'Shir ya Khat (“Heads or Tails”) is a non-profit Persian podcast about blockchain, recorded as live panels since 2017. This app is its bilingual archive.',

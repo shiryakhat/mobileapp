@@ -86,6 +86,8 @@ export function SettingsTab() {
   const setLocale = useSettings((s) => s.setLocale);
   const theme = useSettings((s) => s.theme);
   const setTheme = useSettings((s) => s.setTheme);
+  const splashSound = useSettings((s) => s.splashSound);
+  const setSplashSound = useSettings((s) => s.setSplashSound);
   return (
     <ScrollView contentContainerStyle={{ padding: space.lg, gap: space.xl }}>
       <Text variant="title">{t('settings')}</Text>
@@ -109,6 +111,17 @@ export function SettingsTab() {
             { value: 'dark', label: t('themeDark') },
             { value: 'light', label: t('themeLight') },
             { value: 'system', label: t('themeSystem') },
+          ]}
+        />
+        <Text variant="small" color="muted">
+          {t('splashSound')}
+        </Text>
+        <Segmented
+          value={splashSound ? 'on' : 'off'}
+          onChange={(v) => setSplashSound(v === 'on')}
+          options={[
+            { value: 'on', label: t('soundOn') },
+            { value: 'off', label: t('soundOff') },
           ]}
         />
       </Group>

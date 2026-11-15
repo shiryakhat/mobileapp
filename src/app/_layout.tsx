@@ -7,10 +7,13 @@ import {
 import * as SplashScreen from 'expo-splash-screen';
 import { Stack } from 'expo-router/stack';
 import { StatusBar } from 'expo-status-bar';
-import { useEffect } from 'react';
+import { useState } from 'react';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { CoinSplash } from '@/components/CoinSplash';
+import { useSettingsHydrated } from '@/state/settings';
 import { useTheme } from '@/theme';
 
+// The native splash stays up until the coin screen has drawn (see <CoinSplash/>).
 void SplashScreen.preventAutoHideAsync().catch(() => undefined);
 
 export default function RootLayout() {
@@ -20,28 +23,31 @@ export default function RootLayout() {
     Vazirmatn_500Medium,
     Vazirmatn_700Bold,
   });
+  const hydrated = useSettingsHydrated();
+  const [splashing, setSplashing] = useState(true);
 
-  useEffect(() => {
-    // Never block launch on fonts: fall back to the system face if they fail.
-    if (loaded || error) void SplashScreen.hideAsync().catch(() => undefined);
-  }, [loaded, error]);
-
-  if (!loaded && !error) return null;
+  // Never block launch on fonts: fall back to the system face if they fail.
+  // Waiting for the saved settings avoids a flash of the default language/theme.
+  const ready = (loaded || error != null) && hydrated;
 
   return (
     <SafeAreaProvider>
-      <StatusBar style={theme.isDark ? 'light' : 'dark'} />
-      <Stack
-        screenOptions={{
-          headerShown: false,
-          contentStyle: { backgroundColor: theme.bg },
-        }}
-      >
-        <Stack.Screen name="index" />
-        <Stack.Screen name="episode/[id]" />
-        <Stack.Screen name="share" options={{ presentation: 'modal' }} />
-        <Stack.Screen name="questions" />
-      </Stack>
+      <StatusBar style={splashing || theme.isDark ? 'light' : 'dark'} />
+      {/* The coin gives up waiting after ~2 s; from then on the app shows regardless. */}
+      {ready || !splashing ? (
+        <Stack
+          screenOptions={{
+            headerShown: false,
+            contentStyle: { backgroundColor: theme.bg },
+          }}
+        >
+          <Stack.Screen name="index" />
+          <Stack.Screen name="episode/[id]" />
+          <Stack.Screen name="share" options={{ presentation: 'modal' }} />
+          <Stack.Screen name="questions" />
+        </Stack>
+      ) : null}
+      {splashing ? <CoinSplash ready={ready} onDone={() => setSplashing(false)} /> : null}
     </SafeAreaProvider>
   );
 }
