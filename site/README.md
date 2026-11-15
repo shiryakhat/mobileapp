@@ -14,7 +14,8 @@ site/
 │   ├── site.css          styles; colours mirror the app's "ink and brass" tokens
 │   ├── site.js           language toggle + lazy loader for the coin
 │   ├── coin.js           the 3D coin (ES module, loaded after first paint)
-│   ├── logo.webp         Shir ya Khat logo, the source for both coin faces
+│   ├── logo.webp         Shir ya Khat logo: tails, and heads until the hero exists
+│   ├── coin-hero.png     (optional) engraved hero for the heads face
 │   ├── coin-heads.webp   still renders of the coin: no-JS, reduced-motion
 │   ├── coin-tails.webp   and no-WebGL fallback
 │   ├── vendor/           three.js (MIT), tree-shaken to what coin.js imports
@@ -26,16 +27,31 @@ site/
 
 ## The coin
 
-`coin.js` builds everything from `logo.webp` at runtime: heads (شیر) is the
-logo inlaid in colour under a clear coat, tails (خط) is the same artwork struck
-in brass relief (height field → normal map), plus a beaded rim and reeded edge.
-Reflections come from a small generated studio environment, so there is no HDR
-file to ship.
+`coin.js` builds an aged gold-bronze coin at runtime: relief (height field →
+normal map), patina in the recesses, worn-bright high points, hairline
+scratches, a beaded rim and a reeded edge. Reflections come from a small
+generated lamp-lit environment, so there is no HDR file to ship.
 
-- It idles with a slow turn, flips once on load and again on every tap.
+- **Heads (شیر)** is the engraved hero from `assets/coin-hero.png` when that
+  file exists: any square-ish picture works, light areas become raised metal
+  and dark areas recesses (transparent pixels stay flat field). Until the file
+  is added the request 404s and heads falls back to the logo inlaid in enamel.
+  **Tails (خط)** is always `logo.webp` struck in relief.
+- It idles with a slow turn, flips once on load and again on every tap. A toss
+  takes about four seconds: wind-up, arc with a precessing spin that bleeds
+  speed, then a damped rock to rest.
+- About one toss in ten (`EDGE_CHANCE`) lands on its rim and teeters. `site.js`
+  shows «شیر یا خط؟ · heads or tails? · …you decide» in the note; the coin then
+  either tips onto a face by itself or keeps teetering until the next tap.
+  `flip('edge')` forces it when testing.
+- Small "quirks" fire every several seconds at rest: a shimmer over the metal,
+  a colour-fringed glint on the rim, a hiccup in the turn; some tosses catch
+  for a moment at the top of the arc.
 - `site.js` imports it only after `load`, and not at all with
   `prefers-reduced-motion`, Save-Data, or no WebGL. In those cases, and with
   JavaScript off, the still images stand in (a tap cross-fades between them).
+  If reduced motion is switched on while the coin is live, it stops animating
+  and a tap just shows the result.
 - Rendering pauses when the coin is off screen or the tab is hidden.
 
 The logo comes from `img/favicon/` in
@@ -53,6 +69,7 @@ npx esbuild three.entry.js --bundle --minify --format=esm --target=es2020 \
 
 If the coin's look changes, re-capture `coin-heads.webp` / `coin-tails.webp`
 (480×720, transparent) from `.coin-stage` with `mount(stage, { face, still: true })`.
+Do this when `coin-hero.png` is added, so the fallback shows the same heads.
 
 ## View locally
 
