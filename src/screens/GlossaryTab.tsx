@@ -1,6 +1,6 @@
 import { router } from 'expo-router';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { FlatList, Pressable, View } from 'react-native';
+import { ActivityIndicator, FlatList, Platform, Pressable, View } from 'react-native';
 import { Chip, EmptyState, Input, Text } from '@/components/ui';
 import { getEpisode, glossary, type GlossaryEntry } from '@/content';
 import { useI18n } from '@/i18n';
@@ -79,6 +79,21 @@ export function GlossaryTab() {
   const requested = useNav((s) => s.glossarySlug);
   const query = requested ? '' : typed;
   const openSlug = requested ?? toggled;
+  // Render the (358-entry) list only after the tab-switch animation settles, so the
+  // transition stays smooth on slower Android devices. The header shows instantly.
+  const [listReady, setListReady] = useState(false);
+  useEffect(() => {
+    // Defer the heavy list mount past the tab-switch animation frames so the
+    // transition stays smooth on slower Android devices (the header shows instantly).
+    let raf2 = 0;
+    const raf1 = requestAnimationFrame(() => {
+      raf2 = requestAnimationFrame(() => setListReady(true));
+    });
+    return () => {
+      cancelAnimationFrame(raf1);
+      if (raf2) cancelAnimationFrame(raf2);
+    };
+  }, []);
 
   const data = useMemo(() => {
     const q = normalize(query).trim();
@@ -93,7 +108,7 @@ export function GlossaryTab() {
   }, [query, isRTL]);
 
   useEffect(() => {
-    if (!requested) return undefined;
+    if (!requested || !listReady) return undefined;
     const index = data.findIndex((g) => g.slug === requested);
     if (index < 5) return undefined;
     const timer = setTimeout(
@@ -101,7 +116,7 @@ export function GlossaryTab() {
       100,
     );
     return () => clearTimeout(timer);
-  }, [requested, data]);
+  }, [requested, data, listReady]);
 
   const setQuery = (text: string) => {
     useNav.getState().clearGlossarySlug();
@@ -125,21 +140,31 @@ export function GlossaryTab() {
           placeholder={t('glossaryPlaceholder')}
         />
       </View>
-      <FlatList
-        ref={listRef}
-        data={data}
-        extraData={openSlug}
-        keyExtractor={(g) => g.slug}
-        keyboardShouldPersistTaps="handled"
-        onScrollToIndexFailed={({ index, averageItemLength }) =>
-          listRef.current?.scrollToOffset({ offset: index * averageItemLength, animated: true })
-        }
-        renderItem={({ item }) => (
-          <TermRow entry={item} open={item.slug === openSlug} onToggle={toggle} />
-        )}
-        ListEmptyComponent={<EmptyState icon="book-open" text={t('glossaryEmpty')} />}
-        contentContainerStyle={{ paddingBottom: space.xl }}
-      />
+      {listReady ? (
+        <FlatList
+          ref={listRef}
+          data={data}
+          extraData={openSlug}
+          keyExtractor={(g) => g.slug}
+          keyboardShouldPersistTaps="handled"
+          initialNumToRender={12}
+          maxToRenderPerBatch={12}
+          windowSize={9}
+          removeClippedSubviews={Platform.OS === 'android'}
+          onScrollToIndexFailed={({ index, averageItemLength }) =>
+            listRef.current?.scrollToOffset({ offset: index * averageItemLength, animated: true })
+          }
+          renderItem={({ item }) => (
+            <TermRow entry={item} open={item.slug === openSlug} onToggle={toggle} />
+          )}
+          ListEmptyComponent={<EmptyState icon="book-open" text={t('glossaryEmpty')} />}
+          contentContainerStyle={{ paddingBottom: space.xl }}
+        />
+      ) : (
+        <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
+          <ActivityIndicator />
+        </View>
+      )}
     </View>
   );
 }
