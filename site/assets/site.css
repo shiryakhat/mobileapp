@@ -1,5 +1,6 @@
 /* Shir ya Khat — shiryakhat.app
-   "Ink and brass": the two faces of a coin. Tokens mirror the app's theme. */
+   "Ink and brass": the two faces of a coin. Tokens mirror the app's theme.
+   The landing is one centred column: coin, name, store badges, and little else. */
 
 @font-face {
   font-family: "Vazirmatn";
@@ -137,68 +138,77 @@ a:hover { text-decoration-thickness: 2px; }
 .js .lang-toggle { display: inline-block; }
 .lang-toggle:hover { border-color: var(--accent); }
 
-/* ---------- hero ---------- */
+/* ---------- landing: one centred column, the coin on top ---------- */
+
+.landing .top { padding-block: 1.1rem; }
+.landing main { overflow-x: clip; }
 
 .hero {
   display: grid;
-  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
-  align-items: center;
-  gap: 3rem;
-  padding-block: clamp(2.5rem, 8vw, 6.5rem) clamp(3.5rem, 9vw, 7rem);
+  justify-items: center;
+  text-align: center;
+  padding-block: clamp(0.5rem, 3svh, 2.5rem) clamp(3rem, 8vw, 5rem);
 }
 
 .hero h1 {
-  font-size: clamp(3.4rem, 10vw, 7rem);
+  margin-block-start: 0.4rem;
+  font-size: clamp(2.75rem, 11vw, 4.5rem);
   font-weight: 900;
-  line-height: 1.35;
+  line-height: 1.4;
 }
-html[lang="en"] .hero h1 { font-size: clamp(2.9rem, 7.6vw, 6.25rem); line-height: 1.05; letter-spacing: -0.03em; margin-block-end: 0.25em; }
+html[lang="en"] .hero h1 { line-height: 1.1; letter-spacing: -0.03em; margin-block-end: 0.2em; }
 
 .tagline {
-  font-size: clamp(1.25rem, 2.4vw, 1.6rem);
-  font-weight: 500;
-  line-height: 1.7;
-  color: var(--accent);
-  max-inline-size: 26em;
-}
-html[lang="en"] .tagline { line-height: 1.4; }
-
-.lede {
-  margin-block-start: 1.25rem;
+  font-size: clamp(1.05rem, 3.6vw, 1.3rem);
+  line-height: 1.8;
   color: var(--muted);
-  max-inline-size: 34em;
+  max-inline-size: 24em;
+  text-wrap: balance;
 }
+html[lang="en"] .tagline { line-height: 1.45; }
 
-/* store badges */
-.stores { margin-block-start: 2.25rem; }
-.stores-row { display: flex; flex-wrap: wrap; align-items: center; gap: 0.9rem; }
+/* store badges: the primary action */
+.stores { margin-block-start: 1.6rem; }
+.stores-row { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 0.75rem; }
 .badge { display: block; border-radius: 9px; }
-.badge img { block-size: 3rem; inline-size: auto; }
-.badge[aria-disabled="true"] { opacity: 0.45; filter: grayscale(1); cursor: default; }
+.badge img { block-size: clamp(2.9rem, 13vw, 3.4rem); inline-size: auto; }
+.badge[aria-disabled="true"] { opacity: 0.72; cursor: default; }
 .soon {
   display: inline-flex;
   align-items: center;
   gap: 0.55rem;
-  margin-block-end: 0.9rem;
-  font-size: 0.95rem;
-  font-weight: 500;
+  margin-block-start: 0.8rem;
+  font-size: 0.9rem;
+  color: var(--muted);
 }
 .soon::before {
   content: "";
-  inline-size: 0.5rem;
-  block-size: 0.5rem;
+  inline-size: 0.45rem;
+  block-size: 0.45rem;
   border-radius: 50%;
   background: var(--accent);
 }
 
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-block-start: clamp(2rem, 6vw, 3rem);
+  max-inline-size: 46rem;
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+.chips li { padding: 0.1rem 0.95rem; border: 1px solid var(--line); border-radius: 999px; }
+
 /* ---------- the coin ---------- */
 
-.toss { display: grid; justify-items: center; gap: 1.5rem; }
-
 .coin {
-  --size: clamp(11rem, 30vw, 19rem);
+  --size: min(72vw, 22rem, 42svh);
+  position: relative;
   inline-size: var(--size);
   block-size: var(--size);
+  margin-block: calc(var(--size) * 0.06) calc(var(--size) * 0.1);
   padding: 0;
   border: 0;
   border-radius: 50%;
@@ -206,95 +216,64 @@ html[lang="en"] .tagline { line-height: 1.4; }
   color: inherit;
   font: inherit;
   cursor: pointer;
-  perspective: 60rem;
+  touch-action: manipulation;
   -webkit-tap-highlight-color: transparent;
 }
-.coin:focus-visible { outline-offset: 10px; border-radius: 50%; }
+.coin:focus-visible { outline-offset: 6px; border-radius: 50%; }
 
-.coin-body {
-  position: relative;
-  display: block;
-  inline-size: 100%;
-  block-size: 100%;
-  transform-style: preserve-3d;
-  transform: rotateY(var(--turn, 0deg));
-  transition: transform 1.5s cubic-bezier(0.25, 0.7, 0.25, 1);
-  animation: coin-in 1.6s cubic-bezier(0.25, 0.7, 0.25, 1) backwards;  /* not forwards: it would pin the transform and block later flips */
-}
-@keyframes coin-in {
-  from { transform: rotateY(-540deg) translateY(-12%); }
-  to { transform: rotateY(0deg); }
-}
-
-.coin-face {
-  position: absolute;
-  inset: 0;
-  display: grid;
-  place-items: center;
-  border-radius: 50%;
-  -webkit-backface-visibility: hidden;
-  backface-visibility: hidden;
-  font-size: calc(var(--size) * 0.3);
-  font-weight: 900;
-  line-height: 1;
-  padding-block-end: 0.12em;   /* optical centring for Persian descenders */
-}
-.coin-face::after {            /* beaded inner ring */
+/* The logo's own neon, as a faint spill of light behind the coin. */
+.coin::before {
   content: "";
   position: absolute;
-  inset: 7%;
-  border: 2px dotted currentColor;
+  inset: -22%;
   border-radius: 50%;
-  opacity: 0.4;
+  background:
+    radial-gradient(closest-side at 38% 42%, rgba(53, 232, 220, 0.13), transparent 72%),
+    radial-gradient(closest-side at 64% 60%, rgba(255, 72, 196, 0.11), transparent 72%);
+  pointer-events: none;
 }
-.coin-heads {
-  color: var(--on-brass);
-  background: radial-gradient(circle at 32% 26%, var(--brass-hi), var(--brass) 48%, var(--brass-lo));
-  box-shadow: inset 0 0 0 2px var(--brass-lo);
+@media (prefers-color-scheme: light) { .coin::before { opacity: 0.6; } }
+
+/* The stage is taller than the button so the toss has headroom; it never takes clicks. */
+.coin-stage { position: absolute; inset: -40% -10%; pointer-events: none; }
+.coin-poster, .coin-canvas {
+  position: absolute;
+  inset: 0;
+  inline-size: 100%;
+  block-size: 100%;
+  max-inline-size: none;
+  transition: opacity 0.45s ease;
 }
-.coin-tails {
-  color: var(--brass);
-  background: radial-gradient(circle at 32% 26%, #2A2A31, #131316 55%, var(--ink));
-  box-shadow: inset 0 0 0 3px var(--brass);
-  transform: rotateY(180deg);
+.coin-poster { object-fit: contain; }
+.coin-poster[data-face="tails"], .coin-canvas { opacity: 0; }
+.coin[data-face="tails"] .coin-poster[data-face="heads"] { opacity: 0; }
+.coin[data-face="tails"] .coin-poster[data-face="tails"] { opacity: 1; }
+.coin.is-live .coin-canvas { opacity: 1; }
+.coin.is-live .coin-poster { opacity: 0; transition-delay: 0.1s; }
+
+.coin-note { color: var(--muted); font-size: 0.9rem; min-block-size: 1.9em; }
+
+/* The coin landed on its rim: «شیر یا خط؟» · heads or tails? · …you decide */
+.coin-note.is-undecided > .fa,
+.coin-note.is-undecided > .en { display: none; }
+.coin-undecided {
+  display: inline-flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: baseline;
+  gap: 0 0.7em;
 }
-
-.coin-note { color: var(--muted); font-size: 0.95rem; min-block-size: 1.9em; text-align: center; }
-
-/* ---------- features ---------- */
-
-.section { padding-block: clamp(3rem, 7vw, 5.5rem); border-block-start: 1px solid var(--line); }
-.section h2 { font-size: clamp(1.6rem, 3.4vw, 2.25rem); font-weight: 800; line-height: 1.5; }
-html[lang="en"] .section h2 { line-height: 1.2; letter-spacing: -0.015em; }
-
-.features {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 2.5rem 4rem;
-  margin-block-start: 2.5rem;
+.coin-undecided > span { animation: coin-murmur 0.9s ease-out both; }
+.coin-undecided > span:nth-child(2) { animation-delay: 0.7s; }
+.coin-undecided > span:nth-child(n+3) { animation-delay: 1.6s; color: var(--accent); }
+@keyframes coin-murmur {
+  from { opacity: 0; transform: translateY(0.35em); }
+  to { opacity: 1; transform: none; }
 }
-.features li { display: grid; grid-template-columns: auto 1fr; align-content: start; gap: 0.25rem 1.1rem; }
-.features svg {
-  grid-row: span 2;
-  inline-size: 1.75rem;
-  block-size: 1.75rem;
-  margin-block-start: 0.3rem;
-  color: var(--accent);
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 1.5;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-.features h3 { font-size: 1.15rem; font-weight: 700; }
-.features p { color: var(--muted); max-inline-size: 30em; }
-
-.about p { margin-block-start: 1.25rem; max-inline-size: 38em; font-size: 1.15rem; }
-.about p + p { color: var(--muted); font-size: 1rem; }
 
 /* ---------- footer ---------- */
 
-.foot { border-block-start: 1px solid var(--line); padding-block: 3rem 2.5rem; font-size: 0.95rem; }
+.foot { border-block-start: 1px solid var(--line); padding-block: 2.5rem 2.25rem; font-size: 0.95rem; }
 .foot-links { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 2rem; }
 .foot h2 { font-size: 0.95rem; font-weight: 500; color: var(--muted); margin-block-end: 0.5rem; }
 .foot li + li { margin-block-start: 0.2rem; }
@@ -302,6 +281,11 @@ html[lang="en"] .section h2 { line-height: 1.2; letter-spacing: -0.015em; }
 .foot a:hover { text-decoration: underline; text-decoration-color: var(--accent); }
 .foot-links + .fine { margin-block-start: 2.5rem; }
 .fine { color: var(--muted); max-inline-size: 44em; }
+
+.landing .foot-links { max-inline-size: 40rem; margin-inline: auto; gap: 1.5rem 1rem; }
+.landing .fine { margin-inline: auto; text-align: center; font-size: 0.875rem; }
+.fine-links { display: flex; flex-wrap: wrap; justify-content: center; gap: 0.25rem 1.5rem; margin-block-start: 0.5rem; }
+.fine-links a { color: var(--text); }
 
 /* ---------- privacy policy ---------- */
 
@@ -327,13 +311,11 @@ html[lang="en"] .policy h1, .policy[lang="en"] h1 { line-height: 1.15; letter-sp
 /* ---------- small screens ---------- */
 
 @media (max-width: 46rem) {
-  .hero { grid-template-columns: 1fr; gap: 2.5rem; }
-  .toss { order: -1; }
-  .features { grid-template-columns: 1fr; }
   .foot-links { grid-template-columns: 1fr 1fr; }
+  .landing .foot-links { grid-template-columns: repeat(3, minmax(0, 1fr)); font-size: 0.9rem; }
 }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .coin-body { animation: none; transition: none; }
+  .coin-undecided > span { animation: none; }
 }
