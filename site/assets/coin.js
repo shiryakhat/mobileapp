@@ -6,7 +6,10 @@
    patina and border, so each face is simply that picture on lightly metallic
    stock; the reeded edge, the lighting and the reflections are generated here.
 
-   About one toss in ten lands on its rim and teeters, undecided. */
+   About one toss in ten lands on its rim and teeters, undecided.
+
+   A tap tosses it; a tap while it is in the air bats it again — more spin, a
+   little more height, a fresh outcome — so a rhythm of taps keeps it tumbling. */
 
 import * as THREE from './vendor/three.min.js';
 
@@ -27,6 +30,7 @@ const EDGE_CHANCE = 0.1;
 const ADDITIVE = 2;     // THREE.AdditiveBlending (the constant is not in the trimmed bundle)
 
 const clamp01 = (x) => (x < 0 ? 0 : x > 1 ? 1 : x);
+const wrapPi = (a) => a - TAU * Math.round(a / TAU);
 const smooth = (a, b, x) => { const t = clamp01((x - a) / (b - a)); return t * t * (3 - 2 * t); };
 const easeInOut = (p) => (p < 0.5 ? 4 * p * p * p : 1 - Math.pow(-2 * p + 2, 3) / 2);
 const bell = (u) => Math.exp(-u * u);
@@ -201,8 +205,11 @@ function glintTexture() {
  *   onEdge()      — the coin came down on its rim and is teetering,
  *   onIdle()      — the result is stale; the coin has gone back to turning.
  * }
- * Returns { flip(to?), face, state, destroy() }. `to` may be 'heads', 'tails' or
- * 'edge'; left out, it is a fair toss with a small chance of the rim.
+ * Returns { flip(to?, tap?), face, state, destroy() }. `to` may be 'heads',
+ * 'tails' or 'edge'; left out, it is a fair toss with a small chance of the rim.
+ * `tap` is the pointer event behind it, if any: the coin tips away from where it
+ * was hit. flip() never refuses: called while the coin is in the air it kicks it
+ * again (more spin, more airtime) and re-rolls how it will come down.
  * With `still`, or under prefers-reduced-motion, nothing animates: flip() just
  * shows the result. Rejects if WebGL or the face artwork is unavailable.
  */
@@ -317,13 +324,33 @@ export async function mount(host, opts = {}) {
   const EDGE_WAIT = 3.4;                 // teetering before it may make up its mind
   const TIP = 1.25;                      // falling off the rim
   const IDLE_SPEED = 0.3;                // rad/s
+  const APEX = 0.78;                     // height of a plain toss
+  const APEX_MAX = 0.86;                 // ...and the most a volley of taps can keep it at (the stage's headroom)
+  const GRAVITY = 8 * APEX / (FLIGHT * FLIGHT);
+  const LAUNCH = 4 * APEX / FLIGHT;      // upward speed off the thumb
+  const SPIN_LEAD = 0.86 * 2.5 + 0.14;   // how much faster than its average the tumble starts (see `spin` below)
+  const SPIN_FLOOR = 9;                  // rad/s: a tap in the air counts the tumble as at least this fast,
+  const SPIN_KICK = 14;                  // ...adds this much,
+  const SPIN_MAX = 42;                   // ...and stops here, short of strobing
+  const SPRING_K = 320, SPRING_C = 14;   // the pop and tilt of a tap: quick, a little underdamped
 
   let face = opts.face === 'tails' ? 'tails' : 'heads';
   let yaw = yawOf(face);
   let mode = 'hold';                     // 'idle' | 'flip' | 'settle' | 'edge' | 'tip' | 'hold'
   let modeT = 0;                         // seconds in current mode
   let idleRamp = 0;
-  let flipFrom = 0, flipTo = 0, flipTurns = 3, flipNext = face, flipEdge = false;
+  let flipFrom = 0, flipTo = 0, flipNext = face, flipEdge = false;
+  // The current flight: anticipation, then a ballistic arc from height h0 at
+  // speed v0 lasting flightD, tumbling from angle a0 through spinA more.
+  let antic = ANTIC, lean = 1, flightD = FLIGHT, h0 = 0, v0 = LAUNCH, a0 = 0, spinA = 3 * TAU, yawV = 0;
+  let spinRate = 0, yawRate = 0, spinAngle = 0, volley = 0;
+  // What a tap adds on top: a scale pop and a tilt, on springs, and the
+  // leftover of the pose it interrupted, which fades instead of snapping.
+  const pop = { x: 0, v: 0 }, tiltY = { x: 0, v: 0 }, tiltZ = { x: 0, v: 0 };
+  const prev = { x: 0, y: 0, z: 0, rx: REST_TILT, ry: 0, rz: 0 };
+  const res = { x: 0, y: 0, z: 0, rx: 0, ry: 0, rz: 0 };
+  let carry = false;
+  function spring(s, dt) { s.v += (-SPRING_K * s.x - SPRING_C * s.v) * dt; s.x += s.v * dt; }
   let wobAmp = 0.2, wobPhase = 0, stutter = 0;
   let settleAmp = 1, yawKick = 0;
   let edgeYaw = 0, edgeTips = false, tipFrom = 0, tipTo = 0, tipRoll = 0;
@@ -342,13 +369,13 @@ export async function mount(host, opts = {}) {
   function land(result, amp, kick) {
     face = result; yaw = yawOf(face);
     settleAmp = amp; yawKick = kick;
+    spinRate = yawRate = 0; volley = 0;
     enter('settle');
     if (Math.random() < 0.45) startQuirk('glint');
     if (opts.onLand) opts.onLand(face);
   }
 
-  function flip(to) {
-    if (mode === 'flip' || mode === 'tip') return false;
+  function flip(to, tap) {
     flipEdge = to === 'edge' || (to !== 'heads' && to !== 'tails' && Math.random() < EDGE_CHANCE);
     flipNext = to === 'heads' || to === 'tails' ? to : (Math.random() < 0.5 ? 'heads' : 'tails');
 
@@ -359,17 +386,57 @@ export async function mount(host, opts = {}) {
       return true;
     }
 
+    const flying = mode === 'flip' && modeT >= antic;     // already in the air: bat it again
+    const loading = mode === 'flip' && !flying;           // still in the anticipation: let go now
+    let turns = 3 + (Math.random() < 0.4 ? 1 : 0);
+    if (flying) {
+      volley++;
+      h0 = Math.max(0, Math.min(APEX_MAX, prev.y));
+      // A bump upward, less of one the higher it already is, so a volley hovers instead of leaving the stage.
+      v0 = Math.min(LAUNCH, Math.sqrt(2 * GRAVITY * (APEX_MAX - h0)));
+      a0 = ((spinAngle % TAU) + TAU) % TAU;
+      antic = 0; lean = 0; stutter = 0;
+    } else {
+      volley = 0; h0 = 0; v0 = LAUNCH; a0 = 0;
+      if (loading) { lean = smooth(0, 1, modeT / antic); antic = 0; }
+      else { lean = 1; antic = mode === 'settle' ? 0.2 : ANTIC; }   // barely down and off again: a quicker thumb
+      stutter = Math.random() < 0.3 ? 0.7 + Math.random() * 0.3 : 0;   // now and then it catches at the top
+    }
+    flightD = (v0 + Math.sqrt(v0 * v0 + 2 * GRAVITY * h0)) / GRAVITY;
+    if (flying) {
+      // Faster than it was turning, and still due to come down flat: a whole number of turns from here.
+      const rate = Math.min(SPIN_MAX, Math.max(spinRate, SPIN_FLOOR) + SPIN_KICK);
+      turns = Math.round((a0 + rate * flightD / SPIN_LEAD) / TAU);
+      while (turns * TAU - a0 < 0.75 * TAU) turns++;
+    }
+    spinA = turns * TAU - a0;
+
     yaw = ((yaw % TAU) + TAU) % TAU;
     flipFrom = yaw;
-    // Come down on the chosen face — or side-on — at the nearest matching yaw ahead of where we are.
+    yawV = flying ? Math.max(0, Math.min(8, yawRate)) : 0;
+    // Come down on the chosen face — or side-on — at the nearest matching yaw ahead of where we are
+    // (and far enough ahead that the turn it already has never needs to reverse).
     const target = flipEdge ? Math.PI / 2 + (Math.random() < 0.5 ? Math.PI : 0) : yawOf(flipNext);
-    flipTo = target + Math.ceil((yaw - target) / TAU - 1e-6) * TAU;
+    flipTo = target + Math.ceil((yaw + 0.4 * yawV * flightD - target) / TAU - 1e-6) * TAU;
     if (!flipEdge && flipTo - flipFrom < 0.01 && Math.random() < 0.5) flipTo += TAU;
-    flipTurns = 3 + (Math.random() < 0.4 ? 1 : 0);
-    wobAmp = 0.14 + Math.random() * 0.12;
+    if (flying && volley > 1 && Math.random() < 0.5) flipTo += TAU;   // a volley sets it spinning as well as tumbling
+    wobAmp = 0.14 + Math.random() * 0.12 + Math.min(0.1, 0.025 * volley);
     wobPhase = Math.random() * TAU;
-    stutter = Math.random() < 0.3 ? 0.7 + Math.random() * 0.3 : 0;   // now and then it catches at the top
     quirk.kind = '';
+    if (flying && volley % 3 === 0) startQuirk('shimmer');
+
+    // The kick itself: a pop of scale, and a tip away from where it was hit.
+    let side = Math.random() < 0.5 ? -0.6 : 0.6;
+    if (tap && tap.detail !== 0 && typeof tap.clientX === 'number') {
+      const b = host.getBoundingClientRect();
+      if (b.width) side = Math.max(-1, Math.min(1, (tap.clientX - (b.left + b.width / 2)) / (b.width * 0.4)));
+    }
+    const hard = flying ? 1 : 0.6;
+    pop.v = Math.min(3.2, pop.v + 1.8 * hard);
+    tiltY.v = Math.max(-4, Math.min(4, tiltY.v + 2.2 * hard * side));
+    tiltZ.v = Math.max(-4, Math.min(4, tiltZ.v - 2.4 * hard * side));
+
+    carry = true;
     enter('flip');
     wake();
     return true;
@@ -380,27 +447,32 @@ export async function mount(host, opts = {}) {
     let x = 0, y = 0, z = 0, rx = REST_TILT, ry = 0, rz = 0;
 
     if (mode === 'flip') {
-      const t = modeT - ANTIC;
+      const t = modeT - antic;
       if (t < 0) {
         // Anticipation: a slow dip and lean before the thumb flicks.
-        const a = smooth(0, 1, modeT / ANTIC);
+        const a = smooth(0, 1, modeT / antic);
         y = -0.1 * a; rx = REST_TILT + 0.18 * a;
-      } else if (t < FLIGHT) {
-        const p = t / FLIGHT;
-        const arc = 4 * p * (1 - p);                       // ballistic height
-        const off = 1 - smooth(0, 0.14, p);                // letting go of the anticipation pose
-        y = -0.1 * off + 0.78 * arc;
-        z = 0.6 * arc;                                     // rises toward the viewer
-        // Fast off the thumb, bleeding speed all the way down; a little is left for the landing to absorb.
+      } else if (t < flightD) {
+        const p = t / flightD;
+        const alt = Math.max(0, h0 + v0 * t - 0.5 * GRAVITY * t * t);   // ballistic height
+        const off = lean * (1 - smooth(0, 0.14, p));       // letting go of the anticipation pose
+        y = -0.1 * off + alt;
+        z = (0.6 / APEX) * alt;                            // rises toward the viewer
+        // Fast off the thumb (or the tap), bleeding speed all the way down; a little is left for the landing to absorb.
         const spin = 0.86 * (1 - Math.pow(1 - p, 2.5)) + 0.14 * p;
         const apex = bell((p - 0.5) / 0.07);
-        const angle = flipTurns * TAU * spin - stutter * apex;   // the catch: lags, then makes it up
+        const angle = a0 + spinA * spin - stutter * apex;  // the catch: lags, then makes it up
+        spinAngle = angle;
+        spinRate = spinA * (0.86 * 2.5 * Math.pow(1 - p, 1.5) + 0.14) / flightD;
         rx = REST_TILT + 0.18 * off - angle;
         // The spin axis is never quite true: it precesses, most at the top of the arc.
         const loose = Math.sin(p * Math.PI);
         rz = loose * wobAmp * Math.sin(angle * 0.31 + wobPhase) + stutter * apex * 0.07 * Math.sin((p - 0.5) * 90);
         ry = loose * wobAmp * 0.6 * Math.cos(angle * 0.31 + wobPhase);
-        yaw = flipFrom + (flipTo - flipFrom) * easeInOut(p);
+        // Yaw eases to the face it will land on, starting from whatever turn it already had.
+        const span = flipTo - flipFrom, lead = yawV * flightD;
+        yaw = flipFrom + lead * p * (1 - p) * (1 - p) + span * p * p * (3 - 2 * p);
+        yawRate = (lead * (1 - 4 * p + 3 * p * p) + span * 6 * p * (1 - p)) / flightD;
         if (stutter && quirk.kind !== 'shimmer' && p > 0.44 && p < 0.5) startQuirk('shimmer');
       } else if (flipEdge) {
         edgeYaw = ((flipTo % TAU) + TAU) % TAU; yaw = edgeYaw;
@@ -408,7 +480,8 @@ export async function mount(host, opts = {}) {
         enter('edge');
         if (opts.onEdge) opts.onEdge();
       } else {
-        land(flipNext, 1, 0);
+        // A coin that was batted about comes down harder.
+        land(flipNext, 1 + 0.5 * clamp01((0.14 * spinA / flightD - 1.6) / 2), 0);
       }
     } else if (mode === 'settle') {
       // Landing: a damped bounce and rock that dies away.
@@ -490,9 +563,22 @@ export async function mount(host, opts = {}) {
     pointer.sx += (pointer.x - pointer.sx) * Math.min(1, dt * 4);
     pointer.sy += (pointer.y - pointer.sy) * Math.min(1, dt * 4);
 
+    // A tap never snaps the coin: whatever pose it interrupted is carried over and fades out.
+    if (carry) {
+      carry = false;
+      res.x = prev.x - x; res.y = prev.y - y; res.z = prev.z - z;
+      res.rx = wrapPi(prev.rx - rx); res.ry = prev.ry - ry; res.rz = prev.rz - rz;
+    }
+    x += res.x; y += res.y; z += res.z; rx += res.rx; ry += res.ry; rz += res.rz;
+    prev.x = x; prev.y = y; prev.z = z; prev.rx = rx; prev.ry = ry; prev.rz = rz;
+    const fade = Math.exp(-9 * dt);
+    res.x *= fade; res.y *= fade; res.z *= fade; res.rx *= fade; res.ry *= fade; res.rz *= fade;
+    spring(pop, dt); spring(tiltY, dt); spring(tiltZ, dt);
+
     coin.rotation.y = yaw;
-    tumble.rotation.set(rx + pointer.sy * 0.14, ry + pointer.sx * 0.2, rz);
+    tumble.rotation.set(rx + pointer.sy * 0.14, ry + tiltY.x + pointer.sx * 0.2, rz + tiltZ.x);
     tumble.position.set(x, y, z);
+    tumble.scale.setScalar(1 + pop.x);
 
     if (glintU >= 0) {
       const g = Math.pow(Math.sin(glintU * Math.PI), 1.5);

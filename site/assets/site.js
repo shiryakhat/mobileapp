@@ -92,9 +92,10 @@
       announce(next);
     }
 
-    coin.addEventListener('click', function () {
+    // Every tap counts: one tosses the coin, more while it is in the air keep it up.
+    coin.addEventListener('click', function (e) {
       if (!live) stillFlip();
-      else if (live.flip() && undecided) rest();   // tossed again off its rim
+      else if (live.flip(undefined, e) && undecided) rest();   // tossed again off its rim
     });
 
     function load3d() {
