@@ -127,6 +127,11 @@ const Row = memo(function Row({
   );
 });
 
+/** Follow-mode hops up to this many rows animate; anything farther jumps. */
+const MAX_ANIMATED_HOP = 12;
+const SETTLE_MS = 80;
+const MAX_SETTLE_TRIES = 10;
+
 /** Bilingual transcript synced to playback: tap a line to seek, long-press for actions. */
 export function TranscriptView({ episode, transcript, onSeek, initialCueIndex }: Props) {
   const { t, isRTL, locale } = useI18n();
@@ -142,13 +147,64 @@ export function TranscriptView({ episode, transcript, onSeek, initialCueIndex }:
     transcript && s.episodeId === episode.id ? cueIndexAt(transcript, s.positionSec * 1000) : -1,
   );
 
-  const reveal = useCallback((index: number, animated: boolean) => {
-    if (index < 0) return;
-    listRef.current?.scrollToIndex({ index, viewPosition: 0.25, animated });
+  // Rows have variable height, so a far target can't be animated to without a long
+  // visible roll. Far reveals land directly (non-animated, with bounded retries until
+  // the target row is measured); only short follow-mode hops animate.
+  const settle = useRef<{ timer?: ReturnType<typeof setTimeout>; tries: number }>({ tries: 0 });
+  const lastRevealed = useRef(-1);
+
+  const cancelSettle = useCallback(() => {
+    clearTimeout(settle.current.timer);
+    settle.current.timer = undefined;
   }, []);
 
+  /** Jump straight to a cue, then once more to correct drift after nearby rows measure. */
+  const land = useCallback((index: number) => {
+    const jump = () =>
+      listRef.current?.scrollToIndex({ index, viewPosition: 0.25, animated: false });
+    clearTimeout(settle.current.timer);
+    // Scheduled before scrolling: onScrollToIndexFailed fires synchronously and replaces it.
+    settle.current.timer = setTimeout(jump, SETTLE_MS);
+    jump();
+  }, []);
+
+  const reveal = useCallback(
+    (index: number, animated: boolean) => {
+      if (index < 0) return;
+      settle.current.tries = 0;
+      if (animated) {
+        cancelSettle();
+        listRef.current?.scrollToIndex({ index, viewPosition: 0.25, animated: true });
+      } else {
+        land(index);
+      }
+    },
+    [cancelSettle, land],
+  );
+
+  const onScrollToIndexFailed = useCallback(
+    ({ index, averageItemLength }: { index: number; averageItemLength: number }) => {
+      cancelSettle();
+      if (settle.current.tries >= MAX_SETTLE_TRIES) return;
+      settle.current.tries += 1;
+      // Target isn't measured yet: jump near it, then land on it once it has rendered.
+      listRef.current?.scrollToOffset({ offset: index * averageItemLength, animated: false });
+      settle.current.timer = setTimeout(() => land(index), SETTLE_MS);
+    },
+    [cancelSettle, land],
+  );
+
+  useEffect(() => cancelSettle, [cancelSettle]);
+
   useEffect(() => {
-    if (follow) reveal(active, true);
+    if (!follow) {
+      // The user may have scrolled anywhere; the next sync must jump, not travel.
+      lastRevealed.current = -1;
+      return;
+    }
+    const prev = lastRevealed.current;
+    lastRevealed.current = active;
+    reveal(active, prev >= 0 && Math.abs(active - prev) <= MAX_ANIMATED_HOP);
   }, [active, follow, reveal]);
 
   useEffect(() => {
@@ -218,12 +274,11 @@ export function TranscriptView({ episode, transcript, onSeek, initialCueIndex }:
         keyExtractor={(_, i) => String(i)}
         initialNumToRender={24}
         windowSize={9}
-        onScrollBeginDrag={() => setFollow(false)}
-        onScrollToIndexFailed={({ index, averageItemLength }) => {
-          // Rows have variable height: jump near the target, then settle on it.
-          listRef.current?.scrollToOffset({ offset: index * averageItemLength, animated: false });
-          setTimeout(() => reveal(index, false), 80);
+        onScrollBeginDrag={() => {
+          cancelSettle();
+          setFollow(false);
         }}
+        onScrollToIndexFailed={onScrollToIndexFailed}
         ListFooterComponent={
           <Text variant="micro" color="faint" align="center" style={{ padding: space.xl }}>
             {t('transcriptNote')}
