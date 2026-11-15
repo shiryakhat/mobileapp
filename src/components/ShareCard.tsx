@@ -1,4 +1,3 @@
-import { Image } from 'expo-image';
 import type { ComponentRef, Ref } from 'react';
 import { View } from 'react-native';
 import QRCode from 'react-native-qrcode-svg';
@@ -7,6 +6,7 @@ import { translate } from '@/i18n';
 import { joinMeta } from '@/lib/format';
 import { hasPersian } from '@/lib/text';
 import { dark, font, radius, space } from '@/theme';
+import { CachedImage } from './CachedImage';
 import { Text } from './ui';
 
 interface Props {
@@ -43,8 +43,8 @@ export function ShareCard({ episode, quote, timeLabel, link, locale, ref }: Prop
         borderColor: c.line,
       }}
     >
-      <Image
-        source={{ uri: episode.youtubeThumb }}
+      <CachedImage
+        uri={episode.youtubeThumb}
         style={{ width: '100%', aspectRatio: 16 / 9, backgroundColor: c.raised }}
         contentFit="cover"
       />

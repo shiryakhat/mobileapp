@@ -32,7 +32,12 @@ export function formatDate(iso: string, locale: Locale): string {
 export function formatBytes(bytes: number, locale: Locale): string {
   if (!Number.isFinite(bytes) || bytes <= 0) return digits('0 MB', locale);
   const mb = bytes / (1024 * 1024);
-  const text = mb >= 1024 ? `${(mb / 1024).toFixed(1)} GB` : `${mb.toFixed(mb < 10 ? 1 : 0)} MB`;
+  const text =
+    mb >= 1024
+      ? `${(mb / 1024).toFixed(1)} GB`
+      : mb >= 1
+        ? `${mb.toFixed(mb < 10 ? 1 : 0)} MB`
+        : `${Math.max(1, Math.round(bytes / 1024))} KB`;
   return digits(text, locale);
 }
 

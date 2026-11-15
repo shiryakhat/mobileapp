@@ -1,4 +1,3 @@
-import { Image } from 'expo-image';
 import { router } from 'expo-router';
 import { Pressable, View } from 'react-native';
 import { getEpisode } from '@/content';
@@ -6,6 +5,7 @@ import { useI18n } from '@/i18n';
 import { stop, toggle } from '@/player/controller';
 import { usePlayback } from '@/player/store';
 import { radius, space, useTheme } from '@/theme';
+import { CachedImage } from './CachedImage';
 import { IconButton, ProgressBar, Text } from './ui';
 
 /** Persistent now-playing bar above the tab bar (native audio engine only). */
@@ -36,8 +36,8 @@ export function MiniPlayer() {
       <View
         style={{ flexDirection: 'row', alignItems: 'center', gap: space.md, padding: space.sm }}
       >
-        <Image
-          source={{ uri: episode.youtubeThumb }}
+        <CachedImage
+          uri={episode.youtubeThumb}
           style={{ width: 64, height: 36, borderRadius: 6, backgroundColor: theme.line }}
           contentFit="cover"
         />

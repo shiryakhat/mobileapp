@@ -6,7 +6,13 @@ import { useI18n } from '@/i18n';
 import { formatTime, joinMeta } from '@/lib/format';
 import { usePlayback } from '@/player/store';
 import { radius, space, useTheme } from '@/theme';
-import { addComment, listComments, subscribeComments, type MinuteComment } from './api';
+import {
+  addComment,
+  cachedComments,
+  listComments,
+  subscribeComments,
+  type MinuteComment,
+} from './api';
 import { signInWithGitHub, useSession } from './auth';
 
 interface Props {
@@ -19,7 +25,7 @@ export function CommentsPane({ episode, onSeek }: Props) {
   const theme = useTheme();
   const { t, locale } = useI18n();
   const session = useSession();
-  const [comments, setComments] = useState<MinuteComment[]>([]);
+  const [comments, setComments] = useState<MinuteComment[]>(() => cachedComments(episode.id));
   const [body, setBody] = useState('');
   const [error, setError] = useState<string>();
   const positionSec = usePlayback((s) =>

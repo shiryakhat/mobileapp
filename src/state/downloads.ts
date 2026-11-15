@@ -81,10 +81,22 @@ function audioDir(): Directory {
 
 const fileFor = (episodeId: string) => new File(audioDir(), `${episodeId}.mp3`);
 
-/** file:// URI of the downloaded audio, if the episode is fully downloaded. */
+/**
+ * file:// URI of the downloaded audio, if the episode is fully downloaded.
+ * The path is rebuilt on every call rather than read back from the persisted
+ * `fileUri`: iOS moves the app's container (and with it every absolute path)
+ * on app updates, which would silently break offline playback. If the file is
+ * gone the caller falls back to streaming.
+ */
 export function localAudioUri(episodeId: string): string | undefined {
   const item = store().items[episodeId];
-  return item?.status === 'done' ? item.fileUri : undefined;
+  if (item?.status !== 'done') return undefined;
+  try {
+    const file = fileFor(episodeId);
+    return file.exists ? file.uri : undefined;
+  } catch {
+    return item.fileUri;
+  }
 }
 
 function track(episodeId: string, task: DownloadTask, run: Promise<File | null>): void {
@@ -124,7 +136,8 @@ const onProgress = (episodeId: string) => {
 };
 
 export function startDownload(ep: Episode): void {
-  if (!ep.audioUrl || tasks.has(ep.id) || store().items[ep.id]?.status === 'done') return;
+  // "Done" only counts while the file is really there; otherwise fetch it again.
+  if (!ep.audioUrl || tasks.has(ep.id) || localAudioUri(ep.id)) return;
   const destination = fileFor(ep.id);
   if (destination.exists) destination.delete();
   store().patch(ep.id, {
@@ -180,6 +193,17 @@ export function deleteDownload(episodeId: string): void {
 
 export function deleteAllDownloads(): void {
   for (const id of Object.keys(store().items)) deleteDownload(id);
+}
+
+/** Bytes the downloads folder really occupies, unfinished downloads included. */
+export function downloadsBytes(): number {
+  try {
+    const size = audioDir().size;
+    if (typeof size === 'number') return size;
+  } catch {
+    // Fall through to the bookkeeping figure (web, or an unreadable folder).
+  }
+  return Object.values(store().items).reduce((n, i) => n + i.bytesWritten, 0);
 }
 
 export function storageStats(): { usedBytes: number; freeBytes: number } {

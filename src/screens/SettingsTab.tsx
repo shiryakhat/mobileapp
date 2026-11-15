@@ -4,6 +4,7 @@ import { useState, type ReactNode } from 'react';
 import { Linking, ScrollView, View } from 'react-native';
 import { syncBookmarks } from '@/community/api';
 import { displayName, signInWithGitHub, signOut, useSession } from '@/community/auth';
+import { StorageSettings } from '@/components/StorageSettings';
 import { Button, SectionTitle, Segmented, Text } from '@/components/ui';
 import { useI18n } from '@/i18n';
 import { communityEnabled } from '@/lib/flags';
@@ -111,6 +112,10 @@ export function SettingsTab() {
             { value: 'system', label: t('themeSystem') },
           ]}
         />
+      </Group>
+
+      <Group title={t('storage')}>
+        <StorageSettings />
       </Group>
 
       {communityEnabled ? (
