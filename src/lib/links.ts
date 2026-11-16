@@ -1,7 +1,5 @@
 import type { Episode } from '@/content';
 
-const WEB_BASE = (process.env.EXPO_PUBLIC_WEB_LINK_BASE ?? '').replace(/\/+$/, '');
-
 /** Domain of the iOS Universal Links / Android App Links (see app.json and site/.well-known/). */
 export const UNIVERSAL_LINK_ORIGIN = 'https://shiryakhat.app';
 
@@ -38,31 +36,49 @@ export function resolveIncomingPath(path: string): string {
   return path;
 }
 
-/**
- * A link that works for people without the app: the YouTube timestamp URL,
- * unless EXPO_PUBLIC_WEB_LINK_BASE is set (e.g. to https://shiryakhat.app, to
- * share the universal link of `episodeWebLink` instead).
- */
-export function webLink(ep: Episode, timeSec?: number | null): string {
+/** `url` with `?t=<whole seconds>` added (or replaced); unchanged without a position. */
+export function withTime(url: string, timeSec?: number | null): string {
   const t = timeSec ? Math.floor(timeSec) : 0;
-  if (WEB_BASE) return `${WEB_BASE}/episode/${ep.id}${t ? `?t=${t}` : ''}`;
-  return `https://youtu.be/${ep.youtubeId}${t ? `?t=${t}` : ''}`;
+  if (!(t > 0)) return url;
+  const [, base, search = '', hash = ''] = url.match(/^([^?#]*)(\?[^#]*)?(#.*)?$/) ?? [, url];
+  const kept = search
+    .slice(1)
+    .split('&')
+    .filter((pair) => pair && !/^t=/.test(pair));
+  return `${base}?${[...kept, `t=${t}`].join('&')}${hash}`;
 }
 
+/**
+ * A link that works for people without the app: the episode's article on
+ * shiryakhat.net, or its YouTube video when it has none. Carries the position
+ * as `?t=` like the universal link does.
+ */
+export function webLink(ep: Episode, timeSec?: number | null): string {
+  return withTime(ep.webUrl ?? `https://youtu.be/${ep.youtubeId}`, timeSec);
+}
+
+/**
+ * The text that is shared or copied: the quote, the episode, then both links,
+ * each under its label: the universal link (opens the app) and the web page.
+ */
 export function shareMessage(opts: {
   ep: Episode;
   title: string;
   quote?: string;
   timeSec?: number | null;
   timeLabel?: string;
+  labels: { app: string; web: string };
 }): string {
-  const { ep, title, quote, timeSec, timeLabel } = opts;
+  const { ep, title, quote, timeSec, timeLabel, labels } = opts;
   return [
     quote ? `«${quote}»` : undefined,
     `${title} — ${ep.code}${timeLabel ? ` · ${timeLabel}` : ''}`,
+    '',
+    `${labels.app}:`,
+    episodeWebLink(ep.id, timeSec),
+    `${labels.web}:`,
     webLink(ep, timeSec),
-    deepLink(ep.id, timeSec),
   ]
-    .filter(Boolean)
+    .filter((line) => line !== undefined)
     .join('\n');
 }

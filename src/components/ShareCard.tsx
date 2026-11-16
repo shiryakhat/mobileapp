@@ -13,6 +13,7 @@ interface Props {
   episode: Episode;
   quote?: string;
   timeLabel?: string;
+  /** What the QR code opens: the universal link (the app, at `timeLabel`'s moment). */
   link: string;
   locale: 'fa' | 'en';
   ref?: Ref<ComponentRef<typeof View>>;
@@ -71,7 +72,7 @@ export function ShareCard({ episode, quote, timeLabel, link, locale, ref }: Prop
               {joinMeta(episode.code, timeLabel)}
             </Text>
             <Text variant="micro" style={{ color: c.muted, marginTop: space.sm }}>
-              {translate(locale, 'appName')} · shiryakhat.net
+              {translate(locale, 'appName')} · shiryakhat.app
             </Text>
           </View>
           <View

@@ -82,6 +82,8 @@ export const fa: Dict = {
   shareText: 'ارسال متن',
   copyText: 'کپی متن',
   copied: 'کپی شد',
+  shareOpenInApp: 'باز کردن در اپلیکیشن',
+  shareListenOnWeb: 'شنیدن در وب',
   scanToListen: 'برای شنیدن اسکن کنید',
   seekHere: 'پخش از اینجا',
   settings: 'تنظیمات',
@@ -127,5 +129,6 @@ export const fa: Dict = {
   coinHint: 'روی سکه بزنید: شیر یا خط؟',
   coinHeads: 'خط',
   coinTails: 'شیر',
-  coinEdge: 'روی لبه ایستاد… نه شیر، نه خط!',
+  coinEdgeAsk: 'شیر یا خط؟',
+  coinEdgeDecide: 'تصمیم با شماست',
 };

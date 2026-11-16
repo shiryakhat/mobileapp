@@ -203,7 +203,16 @@ function EpisodeScreen({ episode, startAt, cue, initialPane }: EpisodeScreenProp
           testID="share-button"
           icon="share"
           label={t('share')}
-          onPress={() => router.push({ pathname: '/share', params: { id: episode.id } })}
+          onPress={() => {
+            // "Share at this minute": while this episode is the one in the player,
+            // the share carries where it is.
+            const { episodeId, positionSec } = usePlayback.getState();
+            const at = episodeId === episode.id ? Math.floor(positionSec) : 0;
+            router.push({
+              pathname: '/share',
+              params: at > 0 ? { id: episode.id, t: String(at) } : { id: episode.id },
+            });
+          }}
         />
       </View>
 

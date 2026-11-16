@@ -7,3 +7,5 @@ content/enrichment
 content/index.generated.ts
 pipeline/.cache
 package-lock.json
+src/coinflip/coinPage.generated.ts
+assets/coinflip/page.template.html
