@@ -214,7 +214,9 @@ function main(): void {
         titleEn: special.titleEn,
         publishedAt: isoDate(v.info.upload_date),
         durationSec: Math.round(v.info.duration),
-        chapters: chaptersOf(v.info),
+        chapters: chaptersOf(v.info).length
+          ? chaptersOf(v.info)
+          : (previous.get(special.id)?.chapters ?? []),
         youtubeThumb: thumbOf(v.info),
         descriptionFa: (v.info.description ?? '').trim(),
         descriptionEn: '',
@@ -247,6 +249,10 @@ function main(): void {
       );
       if (donor) chapters = chaptersOf(donor.info);
     }
+    // Preserve hand-authored chapters: when neither YouTube nor a donor upload
+    // supplies any, keep whatever the previous build wrote. A rebuild must never
+    // wipe locally curated chapters just because the upstream description lacks them.
+    if (chapters.length === 0) chapters = previous.get(id)?.chapters ?? [];
     const audioUrl = rss.get(code) ?? previous.get(id)?.audioUrl;
     if (!audioUrl) console.warn(`! no RSS audio for ${code}; app will fall back to YouTube`);
     episodes.push({
