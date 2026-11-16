@@ -66,7 +66,7 @@ src/
   community/          Supabase client, auth and API (only used when the flag is on)
   theme/, i18n/       design tokens, FA/EN dictionaries
 supabase/           SQL migrations, RLS policies, local config
-docs/release.md     tag -> TestFlight / Play internal flow
+docs/               add-episode.md, updating-content.md (content runbooks), release.md
 ```
 
 ## Media strategy
@@ -108,6 +108,10 @@ cd pipeline && npm install
 | Transcripts   | `npm run transcripts`   | corpus              | `content/transcripts/*.json`                                        |
 | Enrichment    | `npm run enrich`        | `ANTHROPIC_API_KEY` | `content/enrichment/*.json`                                         |
 | Finalize      | `npm run finalize`      | nothing             | glossary, corrected transcripts, search index, `index.generated.ts` |
+
+`npm run check:content` re-runs finalize and fails if any committed derived file changes; CI runs
+it on every PR. Adding an episode: [docs/add-episode.md](docs/add-episode.md). Fixing or updating
+existing content: [docs/updating-content.md](docs/updating-content.md).
 
 `npm run build` runs episodes, transcripts and finalize. The raw corpus
 (`/Volumes/Beezhan/data/podcasts`, override with `SYK_CORPUS_DIR`) is read-only and never copied.
