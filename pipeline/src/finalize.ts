@@ -30,6 +30,15 @@ import type {
 const BASELINE: Correction[] = [
   { lang: 'en', wrong: 'Shenakht', right: 'Shir ya Khat' },
   { lang: 'en', wrong: 'Shir Ya Khat', right: 'Shir ya Khat' },
+  // S03E07 (English interview) whisper mis-hearings of the show and names.
+  { lang: 'en', wrong: 'Shiria Khat', right: 'Shir ya Khat' },
+  { lang: 'en', wrong: 'Shiriakhat', right: 'Shir ya Khat' },
+  { lang: 'en', wrong: 'Shri Akhat', right: 'Shir ya Khat' },
+  { lang: 'en', wrong: 'Sheer ya Khat', right: 'Shir ya Khat' },
+  { lang: 'en', wrong: 'Kirsten Davis', right: 'Creston Davis' },
+  { lang: 'en', wrong: 'Kirsten', right: 'Creston' },
+  { lang: 'en', wrong: 'Shayane', right: 'Shayan' },
+  { lang: 'en', wrong: 'Thank you Shahin', right: 'Thank you Shayan' },
   { lang: 'fa', wrong: 'پادکست شناخت', right: 'پادکست شیر یا خط' },
 ];
 const SHOW_NAME = /Shir[ -]?ya[ -]?Khat/gi;
