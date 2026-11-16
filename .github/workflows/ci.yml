@@ -40,7 +40,7 @@ jobs:
         run: npm test
 
   pipeline:
-    name: Content pipeline (typecheck)
+    name: Content pipeline (typecheck, derived content in sync)
     runs-on: ubuntu-latest
     timeout-minutes: 10
     defaults:
@@ -62,3 +62,8 @@ jobs:
 
       - name: Typecheck
         run: npm run typecheck
+
+      # finalize is pure/offline (no corpus, no network): re-run it and fail if any
+      # committed derived artifact changes. See docs/updating-content.md.
+      - name: Verify derived content is in sync
+        run: npm run check:content

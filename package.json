@@ -63,7 +63,8 @@
     "coinflip:build": "node scripts/build-coinflip.js",
     "pipeline:build": "npm --prefix pipeline run build",
     "pipeline:enrich": "npm --prefix pipeline run enrich",
-    "pipeline:finalize": "npm --prefix pipeline run finalize"
+    "pipeline:finalize": "npm --prefix pipeline run finalize",
+    "pipeline:check": "npm --prefix pipeline run check:content"
   },
   "private": true,
   "jest": {
