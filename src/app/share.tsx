@@ -10,13 +10,14 @@ import { getEpisode } from '@/content';
 import { useI18n } from '@/i18n';
 import { formatTime } from '@/lib/format';
 import { episodeWebLink, shareMessage } from '@/lib/links';
-import { space } from '@/theme';
+import { space, useResponsive } from '@/theme';
 import NotFound from './+not-found';
 
 /** Share an episode or a quote: as a rendered image card, or as text + links. */
 export default function ShareScreen() {
   const params = useLocalSearchParams<{ id: string; t?: string; quote?: string }>();
   const { t, pick, locale } = useI18n();
+  const { isTablet } = useResponsive();
   const cardRef = useRef<ComponentRef<typeof View>>(null);
   const [status, setStatus] = useState<string>();
   const episode = getEpisode(params.id);
@@ -61,7 +62,15 @@ export default function ShareScreen() {
         <IconButton icon="x" label={t('close')} onPress={() => router.back()} />
       </View>
       <ScrollView
-        contentContainerStyle={{ alignItems: 'center', padding: space.lg, gap: space.xl }}
+        contentContainerStyle={{
+          alignItems: 'center',
+          alignSelf: 'center',
+          width: '100%',
+          // The card is a fixed 320 wide; on tablets the buttons under it stay near that.
+          maxWidth: isTablet ? 480 : undefined,
+          padding: space.lg,
+          gap: space.xl,
+        }}
       >
         <ShareCard
           ref={cardRef}

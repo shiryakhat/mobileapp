@@ -2,6 +2,7 @@ import { useColorScheme } from 'react-native';
 import { useSettings } from '@/state/settings';
 import { dark, light, type Palette } from './tokens';
 
+export * from './responsive';
 export * from './tokens';
 
 export function useTheme(): Palette & { isDark: boolean } {

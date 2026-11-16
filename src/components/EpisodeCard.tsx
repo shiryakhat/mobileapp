@@ -4,7 +4,7 @@ import type { Episode } from '@/content';
 import { useI18n } from '@/i18n';
 import { formatDate, formatTime, joinMeta } from '@/lib/format';
 import { progressFraction, useProgress } from '@/state/progress';
-import { radius, space, useTheme } from '@/theme';
+import { radius, space, useResponsive, useTheme } from '@/theme';
 import { CachedImage } from './CachedImage';
 import { ProgressBar, Text } from './ui';
 
@@ -55,6 +55,7 @@ function Thumb({ episode, width }: { episode: Episode; width: number | '100%' })
 
 export const EpisodeCard = memo(function EpisodeCard({ episode, onPress, hero }: Props) {
   const { pick, other, locale, isRTL } = useI18n();
+  const { sizeScale } = useResponsive();
   const progress = useProgress((s) => s.byEpisode[episode.id]);
   const fraction = progressFraction(progress);
   const primary = pick(episode.titleFa, episode.titleEn);
@@ -107,7 +108,7 @@ export const EpisodeCard = memo(function EpisodeCard({ episode, onPress, hero }:
         opacity: pressed ? 0.7 : 1,
       })}
     >
-      <Thumb episode={episode} width={hero ? '100%' : 132} />
+      <Thumb episode={episode} width={hero ? '100%' : Math.round(132 * sizeScale)} />
       {titles}
     </Pressable>
   );
