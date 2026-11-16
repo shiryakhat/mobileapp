@@ -80,6 +80,8 @@ export const en = {
   shareText: 'Share as text',
   copyText: 'Copy text',
   copied: 'Copied',
+  shareOpenInApp: 'Open in the app',
+  shareListenOnWeb: 'Listen on the web',
   scanToListen: 'Scan to listen',
   seekHere: 'Play from here',
   settings: 'Settings',
@@ -126,7 +128,8 @@ export const en = {
   coinHint: 'Tap the coin. Heads or tails?',
   coinHeads: 'Khat',
   coinTails: 'Shir',
-  coinEdge: 'On its rim… undecided!',
+  coinEdgeAsk: 'heads or tails?',
+  coinEdgeDecide: '…you decide',
 } as const;
 
 export type Dict = Record<keyof typeof en, string>;

@@ -7,6 +7,14 @@ module.exports = defineConfig([
   expoConfig,
   prettier,
   {
-    ignores: ['dist/*', '.expo/*', 'pipeline/*', 'content/*', 'supabase/*', 'node_modules/*'],
+    ignores: [
+      'dist/*',
+      '.expo/*',
+      'pipeline/*',
+      'content/*',
+      'supabase/*',
+      'node_modules/*',
+      'src/coinflip/coinPage.generated.ts',
+    ],
   },
 ]);

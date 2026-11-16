@@ -9,7 +9,7 @@ import { Button, IconButton, Screen, Text } from '@/components/ui';
 import { getEpisode } from '@/content';
 import { useI18n } from '@/i18n';
 import { formatTime } from '@/lib/format';
-import { shareMessage, webLink } from '@/lib/links';
+import { episodeWebLink, shareMessage } from '@/lib/links';
 import { space } from '@/theme';
 import NotFound from './+not-found';
 
@@ -22,16 +22,20 @@ export default function ShareScreen() {
   const episode = getEpisode(params.id);
   if (!episode) return <NotFound />;
 
-  const timeSec = params.t ? Number(params.t) : null;
+  // The moment being shared (a quote's cue, or where the player was): every link carries it as ?t=.
+  const seconds = Math.floor(Number(params.t));
+  const timeSec = Number.isFinite(seconds) && seconds > 0 ? seconds : null;
   const timeLabel = timeSec ? formatTime(timeSec, locale) : undefined;
   const quote = params.quote?.trim() || undefined;
-  const link = webLink(episode, timeSec);
+  // The QR code and the main link: the universal link, which opens the app at that moment.
+  const link = episodeWebLink(episode.id, timeSec);
   const message = shareMessage({
     ep: episode,
     title: pick(episode.titleFa, episode.titleEn),
     quote,
     timeSec,
     timeLabel,
+    labels: { app: t('shareOpenInApp'), web: t('shareListenOnWeb') },
   });
 
   const shareImage = async () => {

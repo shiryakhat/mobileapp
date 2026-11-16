@@ -1,6 +1,6 @@
 {
   "name": "shiryakhat",
-  "version": "1.0.8",
+  "version": "1.0.9",
   "main": "expo-router/entry",
   "dependencies": {
     "@expo-google-fonts/vazirmatn": "^0.4.1",
@@ -60,6 +60,7 @@
     "format": "prettier --write .",
     "format:check": "prettier --check .",
     "check": "npm run lint && npm run typecheck && npm test",
+    "coinflip:build": "node scripts/build-coinflip.js",
     "pipeline:build": "npm --prefix pipeline run build",
     "pipeline:enrich": "npm --prefix pipeline run enrich",
     "pipeline:finalize": "npm --prefix pipeline run finalize"

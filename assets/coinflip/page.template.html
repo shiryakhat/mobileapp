@@ -1,0 +1,134 @@
+<!doctype html>
+<!-- The coin-flip easter egg's page (src/app/coinflip.tsx), shown in a WebView.
+     This is a template: scripts/build-coinflip.js inlines three.js, the website's
+     coin (site/assets/coin.js) and the artwork into it, and writes the result to
+     src/coinflip/coinPage.generated.ts, so the page needs no network at all.
+     The styles are the website's (.coin… in site/assets/site.css). The caption
+     under the coin is drawn by the app, which is told what happens through
+     postMessage. -->
+<html lang="fa">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<style>
+  html, body { block-size: 100%; margin: 0; overflow: hidden; background: #070C3B; }
+  body {
+    display: grid;
+    place-items: center;
+    -webkit-user-select: none;
+    user-select: none;
+    -webkit-touch-callout: none;
+    -webkit-tap-highlight-color: transparent;
+  }
+  .coin {
+    --size: min(72vw, 22rem, 42vh);
+    position: relative;
+    inline-size: var(--size);
+    block-size: var(--size);
+    border-radius: 50%;
+  }
+  /* The logo's own neon, as a faint spill of light behind the coin. */
+  .coin::before {
+    content: "";
+    position: absolute;
+    inset: -22%;
+    border-radius: 50%;
+    background:
+      radial-gradient(closest-side at 38% 42%, rgba(53, 232, 220, 0.13), transparent 72%),
+      radial-gradient(closest-side at 64% 60%, rgba(255, 72, 196, 0.11), transparent 72%);
+    pointer-events: none;
+  }
+  /* The stage is taller than the coin so the toss has headroom. */
+  .coin-stage { position: absolute; inset: -40% -10%; pointer-events: none; }
+  .coin-poster, .coin-canvas {
+    position: absolute;
+    inset: 0;
+    inline-size: 100%;
+    block-size: 100%;
+    max-inline-size: none;
+    transition: opacity 0.45s ease;
+  }
+  .coin-poster { object-fit: contain; }
+  .coin-poster[data-face="tails"], .coin-canvas { opacity: 0; }
+  .coin[data-face="tails"] .coin-poster[data-face="heads"] { opacity: 0; }
+  .coin[data-face="tails"] .coin-poster[data-face="tails"] { opacity: 1; }
+  .coin.is-live .coin-canvas { opacity: 1; }
+  .coin.is-live .coin-poster[data-face] { opacity: 0; transition-delay: 0.1s; }
+  @media (prefers-reduced-motion: reduce) {
+    .coin-poster, .coin-canvas { transition: none; }
+  }
+</style>
+</head>
+<body>
+<div class="coin">
+  <span class="coin-stage" aria-hidden="true">
+    <img class="coin-poster" data-face="heads" src="__POSTER_HEADS__" width="480" height="720" alt="">
+    <img class="coin-poster" data-face="tails" src="__POSTER_TAILS__" width="480" height="720" alt="">
+  </span>
+</div>
+<script>
+(function () {
+  'use strict';
+  /* Set by the app (src/coinflip/page.ts): { still } — no animation at all. */
+  var OPTS = "__COIN_OPTS__";
+  if (typeof OPTS !== 'object' || !OPTS) OPTS = {};
+
+  /* To the app: a React Native WebView, or the frame's parent on the web. */
+  function tell(message) {
+    var text = JSON.stringify(message);
+    try {
+      if (window.ReactNativeWebView) window.ReactNativeWebView.postMessage(text);
+      else if (window.parent !== window) window.parent.postMessage(text, '*');
+    } catch (e) { /* nobody is listening */ }
+  }
+
+  var coin = document.querySelector('.coin');
+  var stage = coin.querySelector('.coin-stage');
+  var calm = window.matchMedia('(prefers-reduced-motion: reduce)');
+  // heads = خط (the microphone), tails = شیر (the astronaut). Start on a random
+  // side so the intro toss doesn't land the same way every time.
+  var face = Math.random() < 0.5 ? 'heads' : 'tails';
+  var live = null;        // the 3D coin, once mounted
+  coin.setAttribute('data-face', face);
+
+  function announce(result) { face = result; tell({ type: 'land', face: result }); }
+
+  // Still-image flip: cross-fade between two renders of the coin.
+  function stillFlip() {
+    var next = Math.random() < 0.5 ? 'heads' : 'tails';
+    coin.setAttribute('data-face', next);
+    announce(next);
+  }
+
+  /* Every tap counts: one tosses the coin, more while it is in the air keep it
+     up. `x` is where the tap fell, in CSS pixels from the left of the page: the
+     coin tips away from it. */
+  window.__coin = {
+    toss: function (x) {
+      if (!live) return stillFlip();
+      live.flip(undefined, typeof x === 'number' ? { detail: 1, clientX: x } : undefined);
+    }
+  };
+
+  function ready() { tell({ type: 'ready', live: !!live }); }
+
+  if (OPTS.still || calm.matches || !window.WebGLRenderingContext) return ready();
+
+  /*__THREE__*/
+
+  /*__COIN__*/
+
+  mount(stage, {
+    face: face,
+    intro: true,
+    onLand: announce,
+    onEdge: function () { tell({ type: 'edge' }); },
+    onIdle: function () { tell({ type: 'idle' }); }
+  }).then(function (api) {
+    live = api;
+    coin.classList.add('is-live');
+  }).catch(function () { /* keep the still coin */ }).then(ready);
+})();
+</script>
+</body>
+</html>

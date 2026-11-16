@@ -4,7 +4,14 @@
  * route, and the website's well-known files match the app's identifiers.
  */
 import type { Episode } from '@/content';
-import { deepLink, episodeWebLink, resolveIncomingPath, shareMessage, webLink } from '@/lib/links';
+import {
+  deepLink,
+  episodeWebLink,
+  resolveIncomingPath,
+  shareMessage,
+  webLink,
+  withTime,
+} from '@/lib/links';
 import { redirectSystemPath } from '../app/+native-intent';
 
 // The project has no Node typings (it is an app), so the two built-ins used to
@@ -13,7 +20,12 @@ declare const __dirname: string;
 const fs = jest.requireActual<{ readFileSync(file: string, encoding: 'utf8'): string }>('fs');
 const read = (file: string) => fs.readFileSync(`${__dirname}/../../${file}`, 'utf8');
 const readJson = (file: string) => JSON.parse(read(file));
-const ep = { id: 's07e07', code: 'S07E07', youtubeId: 'abc123' } as Episode;
+const ep = {
+  id: 's07e07',
+  code: 'S07E07',
+  youtubeId: 'abc123',
+  webUrl: 'https://shiryakhat.net/2025/08/some-episode.html',
+} as Episode;
 
 describe('link builders', () => {
   it('builds the custom-scheme link, with whole seconds', () => {
@@ -28,12 +40,44 @@ describe('link builders', () => {
     expect(episodeWebLink('s07e07', 95.8)).toBe('https://shiryakhat.app/episode/s07e07?t=95');
   });
 
-  it('keeps sharing the YouTube timestamp and the in-app link', () => {
-    expect(webLink(ep, 95.8)).toBe('https://youtu.be/abc123?t=95');
-    expect(shareMessage({ ep, title: 'Title', timeSec: 95.8 }).split('\n')).toEqual([
+  it('adds the position to any link, replacing one that is already there', () => {
+    expect(withTime('https://a.example/x.html')).toBe('https://a.example/x.html');
+    expect(withTime('https://a.example/x.html', 0)).toBe('https://a.example/x.html');
+    expect(withTime('https://a.example/x.html', 95.8)).toBe('https://a.example/x.html?t=95');
+    expect(withTime('https://a.example/x?m=1&t=3#top', 95)).toBe(
+      'https://a.example/x?m=1&t=95#top',
+    );
+  });
+
+  it('links to the article on the web, or to YouTube without one', () => {
+    expect(webLink(ep)).toBe('https://shiryakhat.net/2025/08/some-episode.html');
+    expect(webLink(ep, 95.8)).toBe('https://shiryakhat.net/2025/08/some-episode.html?t=95');
+    expect(webLink({ ...ep, webUrl: undefined }, 95.8)).toBe('https://youtu.be/abc123?t=95');
+  });
+
+  it('shares both links under their labels, each at the same moment', () => {
+    const labels = { app: 'Open in the app', web: 'Listen on the web' };
+    expect(
+      shareMessage({ ep, title: 'Title', quote: 'Q', timeSec: 95.8, timeLabel: '1:35', labels }),
+    ).toBe(
+      [
+        '«Q»',
+        'Title — S07E07 · 1:35',
+        '',
+        'Open in the app:',
+        'https://shiryakhat.app/episode/s07e07?t=95',
+        'Listen on the web:',
+        'https://shiryakhat.net/2025/08/some-episode.html?t=95',
+      ].join('\n'),
+    );
+    // No position: no ?t= anywhere.
+    expect(shareMessage({ ep, title: 'Title', labels }).split('\n')).toEqual([
       'Title — S07E07',
-      'https://youtu.be/abc123?t=95',
-      'shiryakhat://episode/s07e07?t=95',
+      '',
+      'Open in the app:',
+      'https://shiryakhat.app/episode/s07e07',
+      'Listen on the web:',
+      'https://shiryakhat.net/2025/08/some-episode.html',
     ]);
   });
 });
