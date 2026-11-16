@@ -1,6 +1,16 @@
+import { useContext } from 'react';
 import { Text as RNText, type TextProps as RNTextProps, type TextStyle } from 'react-native';
 import { useI18n } from '@/i18n';
-import { font, type as typeScale, useTheme, type Palette, type TypeVariant } from '@/theme';
+import {
+  font,
+  scaleType,
+  type as typeScale,
+  useResponsive,
+  useTheme,
+  type Palette,
+  type TypeVariant,
+} from '@/theme';
+import { TypeScaleOverride } from './Content';
 
 type ColorKey = keyof Pick<
   Palette,
@@ -28,6 +38,10 @@ export function Text({
 }: TextProps) {
   const theme = useTheme();
   const { isRTL } = useI18n();
+  // Type grows modestly on tablets; a subtree can pin it (the share card does).
+  const pinned = useContext(TypeScaleOverride);
+  const responsive = useResponsive();
+  const scale = pinned ?? responsive.typeScale;
   const rtl = dir ? dir === 'rtl' : isRTL;
   // React Native resolves `left`/`right` against the inherited layout direction
   // (so `left` is the start edge in RTL, verified on iOS) — map logical to that.
@@ -43,7 +57,7 @@ export function Text({
     <RNText
       {...rest}
       style={[
-        typeScale[variant],
+        scaleType(typeScale[variant], scale),
         {
           color: theme[color],
           fontFamily: font[weight ?? defaultWeight],

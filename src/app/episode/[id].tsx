@@ -1,6 +1,6 @@
 import { router, useLocalSearchParams } from 'expo-router';
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { Linking, ScrollView, useWindowDimensions, View } from 'react-native';
+import { Linking, ScrollView, View } from 'react-native';
 import { CommentsPane } from '@/community/CommentsPane';
 import { ChapterList } from '@/components/ChapterList';
 import { DownloadButton } from '@/components/DownloadButton';
@@ -8,7 +8,16 @@ import { EpisodeArtwork } from '@/components/EpisodeArtwork';
 import { PlayerControls } from '@/components/PlayerControls';
 import { TranscriptView } from '@/components/TranscriptView';
 import { YoutubeSurface } from '@/components/YoutubeSurface';
-import { Button, Chip, IconButton, Screen, SectionTitle, Segmented, Text } from '@/components/ui';
+import {
+  Button,
+  Chip,
+  Content,
+  IconButton,
+  Screen,
+  SectionTitle,
+  Segmented,
+  Text,
+} from '@/components/ui';
 import { getEnrichment, getEpisode, getTranscript, type Episode } from '@/content';
 import { useI18n } from '@/i18n';
 import { communityEnabled } from '@/lib/flags';
@@ -17,7 +26,7 @@ import { loadEpisode } from '@/player/controller';
 import { usePlayback } from '@/player/store';
 import { useBookmarks, useIsEpisodeBookmarked } from '@/state/bookmarks';
 import { resumePosition, useProgress } from '@/state/progress';
-import { radius, space, useTheme } from '@/theme';
+import { radius, space, useResponsive, useTheme } from '@/theme';
 import NotFound from '../+not-found';
 
 type Pane = 'about' | 'chapters' | 'transcript' | 'discussion';
@@ -137,7 +146,8 @@ interface EpisodeScreenProps {
 
 function EpisodeScreen({ episode, startAt, cue, initialPane }: EpisodeScreenProps) {
   const { t, pick, other, isRTL, locale } = useI18n();
-  const { width } = useWindowDimensions();
+  // Player, panes and video share one centred column; it is the full width on phones.
+  const { contentWidth: width, sizeScale } = useResponsive();
   const [pane, setPane] = useState<Pane>(
     initialPane ?? (cue !== undefined ? 'transcript' : 'about'),
   );
@@ -181,115 +191,119 @@ function EpisodeScreen({ episode, startAt, cue, initialPane }: EpisodeScreenProp
 
   return (
     <Screen testID="episode-screen">
-      <View style={{ flexDirection: 'row', alignItems: 'center', paddingHorizontal: space.xs }}>
-        <IconButton
-          testID="back-button"
-          icon="chevron-left"
-          label={t('close')}
-          onPress={() => router.back()}
-        />
-        <Text variant="small" weight="medium" color="accent" style={{ flex: 1 }}>
-          {episode.code}
-        </Text>
-        <DownloadButton episode={episode} />
-        <IconButton
-          testID="bookmark-button"
-          icon="bookmark"
-          color={bookmarked ? 'accent' : 'text'}
-          label={bookmarked ? t('removeBookmark') : t('bookmarkEpisode')}
-          onPress={() => useBookmarks.getState().toggleEpisode(episode.id)}
-        />
-        <IconButton
-          testID="share-button"
-          icon="share"
-          label={t('share')}
-          onPress={() => {
-            // "Share at this minute": while this episode is the one in the player,
-            // the share carries where it is.
-            const { episodeId, positionSec } = usePlayback.getState();
-            const at = episodeId === episode.id ? Math.floor(positionSec) : 0;
-            router.push({
-              pathname: '/share',
-              params: at > 0 ? { id: episode.id, t: String(at) } : { id: episode.id },
-            });
-          }}
-        />
-      </View>
+      <Content>
+        <View style={{ flexDirection: 'row', alignItems: 'center', paddingHorizontal: space.xs }}>
+          <IconButton
+            testID="back-button"
+            icon="chevron-left"
+            label={t('close')}
+            onPress={() => router.back()}
+          />
+          <Text variant="small" weight="medium" color="accent" style={{ flex: 1 }}>
+            {episode.code}
+          </Text>
+          <DownloadButton episode={episode} />
+          <IconButton
+            testID="bookmark-button"
+            icon="bookmark"
+            color={bookmarked ? 'accent' : 'text'}
+            label={bookmarked ? t('removeBookmark') : t('bookmarkEpisode')}
+            onPress={() => useBookmarks.getState().toggleEpisode(episode.id)}
+          />
+          <IconButton
+            testID="share-button"
+            icon="share"
+            label={t('share')}
+            onPress={() => {
+              // "Share at this minute": while this episode is the one in the player,
+              // the share carries where it is.
+              const { episodeId, positionSec } = usePlayback.getState();
+              const at = episodeId === episode.id ? Math.floor(positionSec) : 0;
+              router.push({
+                pathname: '/share',
+                params: at > 0 ? { id: episode.id, t: String(at) } : { id: episode.id },
+              });
+            }}
+          />
+        </View>
 
-      {showVideo ? (
-        <YoutubeSurface videoId={episode.youtubeId} width={width} />
-      ) : (
-        <View
-          style={{ flexDirection: 'row', gap: space.md, padding: space.lg, paddingTop: space.sm }}
-        >
-          <EpisodeArtwork episode={episode} size={96} />
-          <View style={{ flex: 1, gap: 2 }}>
-            <Text weight="bold" numberOfLines={2} testID="episode-title">
-              {primary}
-            </Text>
-            {secondary && secondary !== primary ? (
-              <Text
-                variant="small"
-                color="muted"
-                numberOfLines={1}
-                dir={isRTL ? 'ltr' : 'rtl'}
-                align="end"
-              >
-                {secondary}
+        {showVideo ? (
+          <YoutubeSurface videoId={episode.youtubeId} width={width} />
+        ) : (
+          <View
+            style={{ flexDirection: 'row', gap: space.md, padding: space.lg, paddingTop: space.sm }}
+          >
+            <EpisodeArtwork episode={episode} size={Math.round(96 * sizeScale)} />
+            <View style={{ flex: 1, gap: 2 }}>
+              <Text weight="bold" numberOfLines={2} testID="episode-title">
+                {primary}
               </Text>
+              {secondary && secondary !== primary ? (
+                <Text
+                  variant="small"
+                  color="muted"
+                  numberOfLines={1}
+                  dir={isRTL ? 'ltr' : 'rtl'}
+                  align="end"
+                >
+                  {secondary}
+                </Text>
+              ) : null}
+              <Text variant="micro" color="faint">
+                {joinMeta(
+                  formatDate(episode.publishedAt, locale),
+                  t('minutes', { n: formatMinutes(episode.durationSec) }),
+                )}
+              </Text>
+            </View>
+            {youtubeAudio ? (
+              <YoutubeSurface videoId={episode.youtubeId} width={width} hidden />
             ) : null}
-            <Text variant="micro" color="faint">
-              {joinMeta(
-                formatDate(episode.publishedAt, locale),
-                t('minutes', { n: formatMinutes(episode.durationSec) }),
-              )}
-            </Text>
           </View>
-          {youtubeAudio ? (
-            <YoutubeSurface videoId={episode.youtubeId} width={width} hidden />
+        )}
+
+        {isCurrent ? (
+          <PlayerControls episode={episode} />
+        ) : (
+          <View style={{ paddingHorizontal: space.lg }}>
+            <Button
+              testID="play-episode"
+              icon="play"
+              label={
+                resumeAt > 0 ? t('resumeFrom', { t: formatTime(resumeAt, locale) }) : t('play')
+              }
+              onPress={() => loadEpisode(episode, { autoplay: true })}
+            />
+          </View>
+        )}
+
+        <Segmented
+          style={{ marginHorizontal: space.lg, marginTop: space.md }}
+          value={pane}
+          onChange={setPane}
+          options={panes}
+        />
+
+        <View style={{ flex: 1 }}>
+          {pane === 'about' ? <AboutPane episode={episode} onSeek={seekHere} /> : null}
+          {pane === 'chapters' ? (
+            <ScrollView>
+              <ChapterList episode={episode} onSeek={seekHere} />
+            </ScrollView>
+          ) : null}
+          {pane === 'transcript' ? (
+            <TranscriptView
+              episode={episode}
+              transcript={transcript}
+              onSeek={seekHere}
+              initialCueIndex={cue}
+            />
+          ) : null}
+          {pane === 'discussion' && communityEnabled ? (
+            <CommentsPane episode={episode} onSeek={seekHere} />
           ) : null}
         </View>
-      )}
-
-      {isCurrent ? (
-        <PlayerControls episode={episode} />
-      ) : (
-        <View style={{ paddingHorizontal: space.lg }}>
-          <Button
-            testID="play-episode"
-            icon="play"
-            label={resumeAt > 0 ? t('resumeFrom', { t: formatTime(resumeAt, locale) }) : t('play')}
-            onPress={() => loadEpisode(episode, { autoplay: true })}
-          />
-        </View>
-      )}
-
-      <Segmented
-        style={{ marginHorizontal: space.lg, marginTop: space.md }}
-        value={pane}
-        onChange={setPane}
-        options={panes}
-      />
-
-      <View style={{ flex: 1 }}>
-        {pane === 'about' ? <AboutPane episode={episode} onSeek={seekHere} /> : null}
-        {pane === 'chapters' ? (
-          <ScrollView>
-            <ChapterList episode={episode} onSeek={seekHere} />
-          </ScrollView>
-        ) : null}
-        {pane === 'transcript' ? (
-          <TranscriptView
-            episode={episode}
-            transcript={transcript}
-            onSeek={seekHere}
-            initialCueIndex={cue}
-          />
-        ) : null}
-        {pane === 'discussion' && communityEnabled ? (
-          <CommentsPane episode={episode} onSeek={seekHere} />
-        ) : null}
-      </View>
+      </Content>
     </Screen>
   );
 }

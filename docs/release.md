@@ -21,6 +21,10 @@ npm version patch ──► git push --follow-tags ──► .github/workflows/r
 | `.github/workflows/release.yml` | Tag / manual release                                                                                              |
 | `.github/workflows/ci.yml`      | Lint, typecheck, test on PRs and `main`                                                                           |
 
+What the store build contains (and what is flag-gated off) is tracked in
+[STATUS.md](STATUS.md); the listing copy for App Store Connect and Play is in
+[store-listing.md](store-listing.md).
+
 App identifiers: iOS bundle identifier `net.shiryakhat.app`, Android package
 `net.shiryakhat.app`, scheme `shiryakhat`, slug `shiryakhat`.
 
@@ -49,7 +53,10 @@ Run EAS CLI as `npx eas-cli@latest <command>` (written as `eas` below).
    eas env:create --environment production --name EXPO_PUBLIC_COMMUNITY_ENABLED --value "true" --visibility plaintext
    ```
 
-   Skip this while community features are off.
+   Skip this while community features are off. Before turning them on, work
+   through the checklist in [STATUS.md](STATUS.md) (account deletion, Sign in
+   with Apple, privacy labels, age rating): a build with the flag on is not
+   store-compliant until it is done.
 
 ### 1.2 Apple (iOS)
 

@@ -1,6 +1,6 @@
 {
   "name": "shiryakhat",
-  "version": "1.0.9",
+  "version": "1.1.0",
   "main": "expo-router/entry",
   "dependencies": {
     "@expo-google-fonts/vazirmatn": "^0.4.1",

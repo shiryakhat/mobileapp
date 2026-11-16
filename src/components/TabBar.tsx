@@ -3,7 +3,7 @@ import { useSafeAreaInsets } from 'react-native-safe-area-context';
 import { useI18n } from '@/i18n';
 import type { Dict } from '@/i18n/en';
 import { useNav, type TabKey } from '@/state/nav';
-import { space, useTheme } from '@/theme';
+import { space, useResponsive, useTheme } from '@/theme';
 import { Icon, Text, type IconName } from './ui';
 
 const TABS: { key: TabKey; icon: IconName; label: keyof Dict }[] = [
@@ -19,6 +19,7 @@ export function TabBar() {
   const theme = useTheme();
   const { t } = useI18n();
   const insets = useSafeAreaInsets();
+  const { isTablet, contentWidth, sizeScale } = useResponsive();
   const tab = useNav((s) => s.tab);
   const setTab = useNav((s) => s.setTab);
   return (
@@ -26,6 +27,8 @@ export function TabBar() {
       accessibilityRole="tablist"
       style={{
         flexDirection: 'row',
+        // The bar spans the screen; on tablets its tabs gather in the content column.
+        justifyContent: 'center',
         paddingBottom: Math.max(insets.bottom, space.sm),
         paddingTop: space.sm,
         backgroundColor: theme.surface,
@@ -43,9 +46,19 @@ export function TabBar() {
             accessibilityState={{ selected }}
             accessibilityLabel={t(label)}
             onPress={() => setTab(key)}
-            style={{ flex: 1, alignItems: 'center', gap: 2, paddingVertical: 4 }}
+            style={{
+              flex: 1,
+              maxWidth: isTablet ? contentWidth / TABS.length : undefined,
+              alignItems: 'center',
+              gap: 2,
+              paddingVertical: 4,
+            }}
           >
-            <Icon name={icon} size={21} color={selected ? 'accent' : 'faint'} />
+            <Icon
+              name={icon}
+              size={Math.round(21 * sizeScale)}
+              color={selected ? 'accent' : 'faint'}
+            />
             <Text
               variant="micro"
               weight="medium"

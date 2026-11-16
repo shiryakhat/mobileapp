@@ -23,6 +23,10 @@ Bilingual (Farsi / English), RTL-first archive and community app for **Shir ya K
 | Share      | On-device image card (art + quote + QR) and plain quote + link sharing                                                                       |
 | Community  | Supabase schema, GitHub sign-in, minute comments, questions, bookmark sync — **flagged off**                                                 |
 
+Project status — what is shipped, what is flag-gated off, and what must change before community
+features are enabled — is tracked in [docs/STATUS.md](docs/STATUS.md). The store listing copy is in
+[docs/store-listing.md](docs/store-listing.md).
+
 ## Quick start
 
 ```bash
@@ -64,9 +68,10 @@ src/
   content/            typed access to the bundle, search, glossary matching
   state/              local-first stores (settings, progress, bookmarks, downloads)
   community/          Supabase client, auth and API (only used when the flag is on)
-  theme/, i18n/       design tokens, FA/EN dictionaries
+  theme/, i18n/       design tokens + responsive layout, FA/EN dictionaries
 supabase/           SQL migrations, RLS policies, local config
-docs/               add-episode.md, updating-content.md (content runbooks), release.md
+docs/               add-episode.md, updating-content.md (content runbooks), release.md,
+                    STATUS.md (shipped vs flag-gated), store-listing.md (ASC + Play copy)
 ```
 
 ## Media strategy

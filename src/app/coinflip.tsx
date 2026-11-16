@@ -26,7 +26,7 @@ import type { CoinEvent, CoinFace, CoinStageHandle } from '@/coinflip/page';
 import { Text } from '@/components/ui';
 import { useI18n } from '@/i18n';
 import { playCoinTing, releaseCoinTing } from '@/player/coinTing';
-import { space } from '@/theme';
+import { breakpoints, space, useResponsive } from '@/theme';
 
 // The coin keeps its own colours in both themes, like the website's.
 const NAVY = '#070C3B';
@@ -42,14 +42,21 @@ const MURMUR_RISE = 5;
 /** What the caption under the coin says: the hint, the face it landed on, or the rim. */
 type Caption = 'hint' | CoinFace | 'edge';
 
-/** Side of the coin's box on the page: `min(72vw, 22rem, 42vh)` in the template. */
+/**
+ * Side of the coin's box on the page: `min(72vw, 22rem, 42vh)` in the template,
+ * and `min(56vw, 30rem, 42vh)` from the tablet breakpoint up, so the coin keeps
+ * its presence on an iPad instead of sitting phone-sized in a large screen.
+ */
 export function coinSize(width: number, height: number): number {
-  return Math.min(0.72 * width, 352, 0.42 * height);
+  return width >= breakpoints.tablet
+    ? Math.min(0.56 * width, 480, 0.42 * height)
+    : Math.min(0.72 * width, 352, 0.42 * height);
 }
 
 export default function CoinFlip() {
   const { t, isRTL } = useI18n();
   const insets = useSafeAreaInsets();
+  const { typeScale } = useResponsive();
   const stage = useRef<CoinStageHandle>(null);
   const [caption, setCaption] = useState<Caption>('hint');
   /** Reduce motion: unknown until the system has answered, then the page is built for it. */
@@ -108,6 +115,16 @@ export default function CoinFlip() {
   // Just under the coin, as on the website: the page centres the coin in the screen.
   const size = coinSize(box.width, box.height);
   const captionTop = box.height / 2 + size * 0.6;
+  // The caption grows with the coin on tablets.
+  const noteStyle = [
+    styles.note,
+    typeScale === 1
+      ? null
+      : {
+          fontSize: styles.note.fontSize * typeScale,
+          lineHeight: styles.note.lineHeight * typeScale,
+        },
+  ];
   const murmur = (value: Animated.Value) => ({
     opacity: value,
     transform: [
@@ -141,18 +158,18 @@ export default function CoinFlip() {
               style={[styles.undecided, { direction: isRTL ? 'rtl' : 'ltr' }]}
             >
               <Animated.View style={murmur(ask)}>
-                <Text align="center" style={styles.note}>
+                <Text align="center" style={noteStyle}>
                   {t('coinEdgeAsk')}
                 </Text>
               </Animated.View>
               <Animated.View style={murmur(decide)}>
-                <Text align="center" style={[styles.note, styles.decide]}>
+                <Text align="center" style={[noteStyle, styles.decide]}>
                   {t('coinEdgeDecide')}
                 </Text>
               </Animated.View>
             </View>
           ) : (
-            <Text testID="coinflip-caption" align="center" style={styles.note}>
+            <Text testID="coinflip-caption" align="center" style={noteStyle}>
               {caption === 'heads'
                 ? t('coinHeads')
                 : caption === 'tails'

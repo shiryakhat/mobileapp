@@ -1,3 +1,4 @@
+export * from './Content';
 export * from './Icon';
 export * from './Pressables';
 export * from './Screen';

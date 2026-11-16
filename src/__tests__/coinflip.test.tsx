@@ -164,7 +164,9 @@ describe('the coin page', () => {
 
   it('sizes the coin like the page does, to put the caption under it', () => {
     expect(coinSize(390, 844)).toBeCloseTo(280.8);
-    expect(coinSize(1024, 1366)).toBe(352);
+    // Tablets: a larger coin, still in proportion.
+    expect(coinSize(744, 1133)).toBeCloseTo(416.64);
+    expect(coinSize(1024, 1366)).toBe(480);
     expect(coinSize(844, 390)).toBeCloseTo(163.8);
   });
 });

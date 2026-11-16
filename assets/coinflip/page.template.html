@@ -27,6 +27,10 @@
     block-size: var(--size);
     border-radius: 50%;
   }
+  /* Tablets: a larger coin, in proportion to the screen (see coinSize in src/app/coinflip.tsx). */
+  @media (min-width: 600px) {
+    .coin { --size: min(56vw, 30rem, 42vh); }
+  }
   /* The logo's own neon, as a faint spill of light behind the coin. */
   .coin::before {
     content: "";

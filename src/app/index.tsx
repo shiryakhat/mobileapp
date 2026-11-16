@@ -1,9 +1,8 @@
 import { useLocalSearchParams } from 'expo-router';
 import { useEffect } from 'react';
-import { View } from 'react-native';
 import { MiniPlayer } from '@/components/MiniPlayer';
 import { TabBar } from '@/components/TabBar';
-import { Screen } from '@/components/ui';
+import { Content, Screen } from '@/components/ui';
 import { episodes } from '@/content';
 import { warmImageCache } from '@/lib/cache';
 import { EpisodesTab } from '@/screens/EpisodesTab';
@@ -47,10 +46,13 @@ export default function Home() {
   const Pane = PANES[tab];
   return (
     <Screen testID="home">
-      <View style={{ flex: 1 }}>
+      {/* On tablets the panes and the mini player sit in a centred column. */}
+      <Content>
         <Pane />
-      </View>
-      <MiniPlayer />
+      </Content>
+      <Content fill={false}>
+        <MiniPlayer />
+      </Content>
       <TabBar />
     </Screen>
   );
