@@ -1564,7 +1564,68 @@
     "titleEn": "EIP-1559 Let it Burn",
     "publishedAt": "2021-08-11",
     "durationSec": 6181,
-    "chapters": [],
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 147,
+        "title": "مقدمه و معرفی موضوع"
+      },
+      {
+        "startSec": 147,
+        "endSec": 406,
+        "title": "کارمزد چیست و چرا لازم است؟"
+      },
+      {
+        "startSec": 406,
+        "endSec": 771,
+        "title": "محدودیت منابع و اندازه‌ی بلاک در بیت‌کوین و اتریوم"
+      },
+      {
+        "startSec": 771,
+        "endSec": 1200,
+        "title": "مفهوم gas، gas price و gas limit"
+      },
+      {
+        "startSec": 1200,
+        "endSec": 1654,
+        "title": "Block gas limit، انتخاب تراکنش‌ها توسط ماینر و opcodeها"
+      },
+      {
+        "startSec": 1654,
+        "endSec": 2328,
+        "title": "حراج قیمت اول (first-price auction) و مشکلات آن"
+      },
+      {
+        "startSec": 2328,
+        "endSec": 2787,
+        "title": "EIP-1559: base fee و نحوه‌ی تغییر آن"
+      },
+      {
+        "startSec": 2787,
+        "endSec": 3521,
+        "title": "اندازه‌ی متغیر بلاک و gas target"
+      },
+      {
+        "startSec": 3521,
+        "endSec": 4228,
+        "title": "Max fee و سوزاندن base fee"
+      },
+      {
+        "startSec": 4228,
+        "endSec": 4782,
+        "title": "انعام ماینر (priority fee) و مرور کلی سازوکار"
+      },
+      {
+        "startSec": 4782,
+        "endSec": 5671,
+        "title": "پیامدها: درآمد ماینرها، الزام پرداخت با اتر و MEV"
+      },
+      {
+        "startSec": 5671,
+        "endSec": 6181,
+        "title": "فشار ضدتورمی، Ultra Sound Money و جمع‌بندی"
+      }
+    ],
     "youtubeThumb": "https://i.ytimg.com/vi/J703IfDo-9Y/maxresdefault.jpg",
     "descriptionFa": "در این قسمت از پادکست شیر یا خط به بررسی EIP-1559 و فورک لندن در بلاکچین اتریوم می‌پردازیم و توضیح می‌دهیم که چرا اصلاً کارمزد (فی) در شبکه‌های بلاکچینی لازم است و چگونه به‌عنوان ابزاری برای جلوگیری از اسپم شبکه و پاداش ماینرها عمل می‌کند. مفاهیم گس (Gas)، گس لیمیت، گس پرایس و بلاک گست لیمیت را شرح می‌دهیم و مدل قدیمی حراج قیمت اولی (First Price Auction) و معایب آن مانند اوورپی، نوسان کارمزد و نبود قابلیت پیش‌بینی را بررسی می‌کنیم. سپس ساختار جدید فی پس از فورک لندن شامل بیس فی (Base Fee)، مکس فی، ماینر تیپ و مکانیزم سوزاندن کارمزد (Burn) و بلاک سایز الاستیک با تارگت ۱۵ میلیون گس را توضیح می‌دهیم. در پایان درباره تأثیرات اقتصادی EIP-1559، کاهش درآمد ماینرها، خاصیت ضدتورمی و دیفلیشنری اتر و نقش آن به‌عنوان پیش‌زمینه‌ای برای پروف او استیک و مرج صحبت می‌کنیم.",
     "descriptionEn": "EIP-1559 and the London hard fork are the focus of this season 5, episode 2 of the Shir Ya Khat podcast, which explains how Ethereum's transaction fee structure works and why it was overhauled. The hosts first ground the discussion in fundamentals—how fees originated in Bitcoin as an anti-spam and denial-of-service defense and a miner reward, how blocks must be resource-limited in permissionless decentralized networks, and how Ethereum introduced gas as a unit of miner \"effort\" measured across EVM opcodes (e.g., 21,000 gas for an ether transfer), with the legacy model built on gas price, gas limit, and a first-price auction that caused overpaying, fee volatility, poor UX, and unpredictable confirmation times. They then unpack EIP-1559's split of fees into a mandatory base fee and an optional miner tip (priority fee), the max fee parameter and refund of unused base fee, and the algorithmically adjusted base fee that rises or falls up to 12.5% per block against a variable, elastic block size with a 15-million-gas target and a 30-million-gas cap to gauge network congestion. A central theme is that the base fee is burned rather than paid to miners—both to prevent miners from gaming and spamming the network to inflate fees and as a monetary-policy change that removes ETH from supply, drawing comparisons to Avalanche, Polkadot, Vitalik Buterin's 2018 block-space-market/elastic-block-size proposal, and Tim Roughgarden's research. Finally, the episode weighs the implications: reduced miner revenue, greater fairness shifting value toward ETH holders, the smooth Layer 1 upgrade despite miner opposition (supporteip1559.org vs. stopeip1559.org), the deflationary narrative, and how burning fees laid groundwork for Ethereum's move to Proof of Stake and the Merge, with a forthcoming discussion of MEV and miner tips teased for the next episode.",
@@ -1605,7 +1666,68 @@
     "titleEn": "EIP (Ethereum Improvement Proposals) & Updating the Chain",
     "publishedAt": "2021-07-17",
     "durationSec": 5197,
-    "chapters": [],
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 120,
+        "title": "مقدمه‌ی فصل پنجم و معرفی موضوع"
+      },
+      {
+        "startSec": 120,
+        "endSec": 680,
+        "title": "پیشینه‌ی مدیریت تغییر: از شرکت‌ها تا IETF، PEP و BIP"
+      },
+      {
+        "startSec": 680,
+        "endSec": 1099,
+        "title": "EIP-1 و بخش Security Considerations"
+      },
+      {
+        "startSec": 1099,
+        "endSec": 1819,
+        "title": "انواع EIP و دسته‌های Standards Track"
+      },
+      {
+        "startSec": 1819,
+        "endSec": 2322,
+        "title": "روند کاری EIP: از ایده تا پیش‌نویس و نقش EIP Editorها"
+      },
+      {
+        "startSec": 2322,
+        "endSec": 2582,
+        "title": "وضعیت‌های EIP: Draft، Last Call، Final، Stagnant و Living"
+      },
+      {
+        "startSec": 2582,
+        "endSec": 3035,
+        "title": "جلسات EIPIP و All Core Devs و کلاینت‌های اتریوم"
+      },
+      {
+        "startSec": 3035,
+        "endSec": 3650,
+        "title": "Core EIPها، تاریخچه‌ی هاردفورک‌ها و نقش Ethereum Cat Herders"
+      },
+      {
+        "startSec": 3650,
+        "endSec": 4392,
+        "title": "مسیر یک Core EIP: پیاده‌سازی، تست، بررسی امنیتی، devnet و testnet"
+      },
+      {
+        "startSec": 4392,
+        "endSec": 4546,
+        "title": "پیگیری فورک لندن و بمب سختی (difficulty bomb)"
+      },
+      {
+        "startSec": 4546,
+        "endSec": 5039,
+        "title": "حاکمیت آف‌چین، تمرکززدایی و نقش ماینرها در فورک"
+      },
+      {
+        "startSec": 5039,
+        "endSec": 5197,
+        "title": "جمع‌بندی و برنامه‌ی قسمت‌های بعد"
+      }
+    ],
     "youtubeThumb": "https://i.ytimg.com/vi/FooJ87bP1y8/maxresdefault.jpg",
     "descriptionFa": "در قسمت اول فصل پنجم پادکست «شیر یا خط» به سراغ فرایند به‌روزرسانی پروتکل اتریوم می‌رویم و بررسی می‌کنیم که چگونه تغییرات در یک نرم‌افزار غیرمتمرکز و متن‌باز مانند بلاکچین اتریوم شکل می‌گیرد؛ از تاریخچه‌ی استانداردسازی در IETF و RFC گرفته تا PEP پایتون و BIP بیت‌کوین که به پیدایش EIP (Ethereum Improvement Proposal) و EIP-1 انجامید. در این اپیزود انواع EIP (Standard Track شامل Core و Networking و Interface و ERC، Meta و Informational)، استاندارد توکن ERC20، نقش EIP Champion و ویرایشگران و توسعه‌دهندگان هسته، ملاحظات امنیتی یا Security Consideration، جلسات All Core Devs، گروه Cat Herders، کلاینت‌های اتریوم مانند Geth و Nethermind، محیط تست Dev Net و پروسه‌ی هاردفورک‌های اتریوم را توضیح می‌دهیم و درباره‌ی تمرکز و اجماع در تصمیم‌گیری قرارداد هوشمند و شبکه‌ی اتریوم بحث می‌کنیم.",
     "descriptionEn": "The «شیر یا خط» (Shir Ya Khat) podcast opens its fifth season (July 2021) with a deep dive into how protocol changes are proposed, debated, and shipped on Ethereum through EIPs (Ethereum Improvement Proposals), tracing the lineage of open-source governance from the IETF's RFC process and Python's PEP to Bitcoin's BIP before landing on Ethereum's EIP-1 (originated by Amir Taaki and adapted by Martin Becze and Hudson Jameson). The hosts break down the EIP taxonomy—Meta EIPs (like EIP-1 itself), Informational EIPs (e.g., the Smart Contract Weakness Classification), and Standards Track EIPs, which split into Core (EVM logic changes requiring consensus), Networking (peer/mining layers, Swarm, Whisper), Interface (client RPC/APIs), and ERCs (application-layer standards such as the token standard ERC-20 with name, symbol, decimals, balanceOf, transfer, and allowance)—and stress the addition of mandatory security considerations, illustrated by battles to amend the process and by outsourced security audits (e.g., for EIP-7074 and EIP-1559, reviewed by firms like PeckShield). It walks the full workflow—champion, EIP editors (and the Ethereum Cat Herders), draft, last call, final, plus states like stagnant, withdrawn, and living—through the All Core Devs (ACD) calls, Ethereum Magicians, EthResearch, and the ethereum/pm GitHub repo, up to EIP-centric hard forks tested on devnets, testnets (Ropsten, Rinkeby), and mainnet, with the client implementations (Geth's ~85% dominance, OpenEthereum/Parity, Nethermind, Besu, Erigon) effectively casting the votes. The episode contextualizes the upcoming London fork and EIP-1559 fee-burn changes, the difficulty bomb that pressures nodes toward the Proof-of-Work to Proof-of-Stake transition, and Ethereum's reliance on off-chain governance rather than on-chain voting or Bitcoin-style user-activated soft forks. Throughout, the hosts weigh the trade-offs of decentralized decision-making—slower, harder change versus the early-days speed once wielded by Vitalik Buterin and Gavin Wood—and touch on developer culture terms like \"YOLO\" testnets and \"test in production.\"",
@@ -1832,7 +1954,53 @@
     "titleEn": "DeFi - Automated Market Makers",
     "publishedAt": "2020-10-07",
     "durationSec": 2522,
-    "chapters": [],
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 205,
+        "title": "مقدمه و خلاصه‌ی قسمت قبل"
+      },
+      {
+        "startSec": 205,
+        "endSec": 574,
+        "title": "مرور سازوکار Uniswap و فرمول حاصل‌ضرب ثابت"
+      },
+      {
+        "startSec": 574,
+        "endSec": 756,
+        "title": "پوشش ریسک در استخرها و Smart Order Routing در Uniswap V2"
+      },
+      {
+        "startSec": 756,
+        "endSec": 1189,
+        "title": "Balancer و استخرهای چندتوکنی وزن‌دار"
+      },
+      {
+        "startSec": 1189,
+        "endSec": 1281,
+        "title": "تجمیع‌کننده‌های DEX مثل 1inch"
+      },
+      {
+        "startSec": 1281,
+        "endSec": 1926,
+        "title": "Curve و مبادله‌ی کم‌اسلیپیج استیبل‌کوین‌ها"
+      },
+      {
+        "startSec": 1926,
+        "endSec": 2050,
+        "title": "ضرر ناپایدار (impermanent loss) و استفاده از نقدینگی در وام‌دهی"
+      },
+      {
+        "startSec": 2050,
+        "endSec": 2270,
+        "title": "مشکلات DEXها و ظرفیت‌های دیفای"
+      },
+      {
+        "startSec": 2270,
+        "endSec": 2522,
+        "title": "پیوند استخرهای نقدینگی با وام‌دهی و جمع‌بندی"
+      }
+    ],
     "youtubeThumb": "https://i.ytimg.com/vi/sApDqbBQVvY/hqdefault.jpg",
     "descriptionFa": "در قسمت چهارم مجموعه اقتصاد غیرمتمرکز (DeFi) پادکست شیر یا خط، به‌طور عمیق سراغ بازارسازهای خودکار (AMM) و صرافی‌های غیرمتمرکز روی بلاکچین اتریوم می‌رویم؛ از منطق بازارساز تابع ثابت (Constant Function Market Making) در یونی‌سواپ و نقش فراهم‌آورندگان نقدینگی (Liquidity Provider) گرفته تا فرمول x*y=k، آربیتراژ، و تفاوت یونی‌سواپ نسخه ۱ و ۲ به همراه Smart Order Routing. همچنین پروژه بالانسر با قابلیت پرتفوی چندتوکنی و شباهتش به صندوق‌های ETF، دکس اگریگیتور 1inch.exchange، و پلتفرم Curve.fi برای مبادله بهینه استیبل‌کوین‌ها و توکن‌های وابسته مثل rBTC و renBTC بررسی می‌شود. در پایان مفهوم ضرر ناپایدار (Impermanent Loss)، اتصال نقدینگی به پروتکل‌های وام‌دهی مثل کامپاوند و yEarn، و چشم‌انداز قراردادهای هوشمند در دیفای را توضیح می‌دهیم.",
     "descriptionEn": "DeFi decentralized exchanges (DEXs) and automated market makers (AMMs) are the focus of this fourth episode in the Shir Ya Khat podcast's DeFi series, continuing from a prior discussion of DEX history and order-book models like EtherDelta, 0x, and Kyber Network with their relayers. The hosts explain how AMMs replaced two-sided order books with single-sided liquidity pools held in smart contracts, centering on Uniswap and its constant-function market maker (CFMM) formula x·y=k, including the factory contract that spins up a new pool per token pair, the 50/50 dollar-value liquidity provider model, price ratios maintained by arbitrageurs, trading fees earned by LPs, and Uniswap V2's Smart Order Routing (SOR) that swaps token A to token B in one transaction. They then explore Balancer, which generalizes the constant-function formula to weighted portfolios of up to eight tokens (acting like an automated, manager-less hedge fund whose tradable pool tokens hedge risk), Curve (curve.fi), which flattens the hyperbola into a near one-to-one curve optimized for low-slippage stablecoin swaps and pegged assets like WBTC and renBTC, and DEX aggregators such as 1inch that route trades across exchanges for the best rate. The discussion also covers impermanent loss for correlated pairs like ETH and LINK, slippage relative to pool depth, wrapped/tokenized Bitcoin, and MetaMask-based usability. Finally, they preview how idle pooled capital connects AMMs to lending protocols like Compound, Aave, and Yearn Finance—tying in collateral, oracles, and stablecoins—to set up the next episode on DeFi lending systems and yield.",
@@ -1867,7 +2035,68 @@
     "titleEn": "DeFi - Evolution of Decentralized exchanges",
     "publishedAt": "2020-09-15",
     "durationSec": 4106,
-    "chapters": [],
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 154,
+        "title": "مقدمه و چرایی پیدایش صرافی‌های غیرمتمرکز"
+      },
+      {
+        "startSec": 154,
+        "endSec": 523,
+        "title": "اجزای یک صرافی و مفهوم غیرحضانتی (non-custodial)"
+      },
+      {
+        "startSec": 523,
+        "endSec": 705,
+        "title": "نسل اول DEXها: EtherDelta و order book آف‌چین"
+      },
+      {
+        "startSec": 705,
+        "endSec": 1105,
+        "title": "پروتکل 0x و شبکه‌ی Relayerها"
+      },
+      {
+        "startSec": 1105,
+        "endSec": 1257,
+        "title": "چرا همه‌چیز on-chain انجام نمی‌شود؟"
+      },
+      {
+        "startSec": 1257,
+        "endSec": 1440,
+        "title": "صرافی‌های تمام on-chain و نیمه‌متمرکز (هیبرید)"
+      },
+      {
+        "startSec": 1440,
+        "endSec": 1590,
+        "title": "استخرهای نقدینگی و Bancor"
+      },
+      {
+        "startSec": 1590,
+        "endSec": 2022,
+        "title": "Kyber Network و اتصال استخرهای نقدینگی"
+      },
+      {
+        "startSec": 2022,
+        "endSec": 2671,
+        "title": "مزیت DEX برای کاربر و بحث توکن بومی پروژه‌ها"
+      },
+      {
+        "startSec": 2671,
+        "endSec": 3224,
+        "title": "بازارساز خودکار (AMM)، Uniswap و فرمول x×y=k"
+      },
+      {
+        "startSec": 3224,
+        "endSec": 3533,
+        "title": "آربیتراژ، اسلیپیج و درآمد تأمین‌کنندگان نقدینگی"
+      },
+      {
+        "startSec": 3533,
+        "endSec": 4106,
+        "title": "ریسک‌های تأمین نقدینگی و جمع‌بندی"
+      }
+    ],
     "youtubeThumb": "https://i.ytimg.com/vi/Hgjv_CjvTtw/hqdefault.jpg",
     "descriptionFa": "در قسمت سوم مجموعه اقتصاد غیرمتمرکز (DeFi) پادکست شیر یا خط، به سراغ صرافی‌های غیرمتمرکز یا دکس (DEX) می‌رویم و تاریخچه‌ی تکامل آن‌ها را از روزهای نخست تا امروز بررسی می‌کنیم؛ از دلایل پیدایش صرافی‌های غیرحضانتی (Non-Custodial) پس از هک‌هایی مانند مانت‌گاکس، تا پروژه‌های نسل اول مثل EtherDelta و ForkDelta، پروتکل پیام‌رسان ۰x و ریلیرها، صرافی‌های نیمه‌غیرمتمرکز مانند IDEX، و نسل جدید مبتنی بر استخر نقدینگی و بازارساز خودکار (AMM) شامل بانکور، کایبر و یونی‌سواپ. در این اپیزود درباره‌ی قراردادهای هوشمند روی اتریوم، اردربوک آن‌چین و آف‌چین، تأمین‌کنندگان نقدینگی، آربیتراژ، اسلیپیج، لیکوییدیتی ماینینگ و فرمول بازارسازی تابع ثابت (Constant Function Market Making) در یونی‌سواپ صحبت می‌کنیم و به مزایای دکس‌ها مانند مقاومت در برابر سانسور و بی‌نیازی به احراز هویت (KYC) می‌پردازیم.",
     "descriptionEn": "This episode of the Shir Ya Khat podcast continues its DeFi (decentralized finance) series by tracing the evolution of decentralized exchanges (DEXs), building on the prior episode's discussion of stablecoins. The hosts explain why DEXs emerged as non-custodial alternatives to centralized exchanges—driven by hacks like Mt. Gox, price manipulation, and KYC/censorship concerns—and walk through the anatomy of an exchange, including order books, custodians, deposits, order matching, atomic swaps, and the roles of market makers and market takers. They chart the first generation of on-chain/off-chain order-book DEXs such as EtherDelta (and its ForkDelta), covering front-running, DDoS via order cancellation, and gossip-based relayers, then detail the 0x messaging protocol with its relayers, ZRX token fees, and 0x Mesh, alongside hybrid/semi-decentralized exchanges like dYdX, IDEX, DDEX, and Oasis DEX that kept settlement on-chain while addressing ghost orders and gas costs. The core of the discussion moves to liquidity pools and automated market makers (AMM/CFMM), explaining Bancor's BNT-based pools and its flaws (sandwiching, front-running), Kyber Network's liquidity-aggregation and composability protocol, and Uniswap's constant-product formula (x·y=k) where users trade against pools rather than counterparties, with arbitrageurs balancing prices. Finally, the hosts unpack liquidity providing and liquidity mining—50/50 pair deposits, LP fee earnings, slippage, price impact, and impermanent-loss-style risks (illustrated with an ETH/LINK example)—critique ICO-era token justifications, and preview upcoming coverage of Balancer, Curve, and the future of DeFi liquidity mining.",
@@ -1908,7 +2137,68 @@
     "titleEn": "DeFi - The Finance in StableCoins",
     "publishedAt": "2020-07-30",
     "durationSec": 5620,
-    "chapters": [],
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 149,
+        "title": "مقدمه و خلاصه‌ی قسمت قبل"
+      },
+      {
+        "startSec": 149,
+        "endSec": 707,
+        "title": "DeFi چیست؟ خدمات مالی روی اقتصاد بلاکچین"
+      },
+      {
+        "startSec": 707,
+        "endSec": 1326,
+        "title": "چرا تمرکززدایی؟ شفافیت، Flash Loan و Composability"
+      },
+      {
+        "startSec": 1326,
+        "endSec": 1787,
+        "title": "بحث: تتر و فلسفه تمرکززدایی و شفافیت"
+      },
+      {
+        "startSec": 1787,
+        "endSec": 2187,
+        "title": "اوراکل‌ها، Uniswap و دوره گذار"
+      },
+      {
+        "startSec": 2187,
+        "endSec": 2496,
+        "title": "راه‌های کسب سود از DeFi و دسته‌بندی استیبل‌کوین‌ها"
+      },
+      {
+        "startSec": 2496,
+        "endSec": 2893,
+        "title": "استیبل‌کوین‌های با پشتوانه فیات و قابلیت بازخرید: USDT و USDC"
+      },
+      {
+        "startSec": 2893,
+        "endSec": 3597,
+        "title": "بحث: بانک‌ها، حسابرسی و خواست کاربران"
+      },
+      {
+        "startSec": 3597,
+        "endSec": 4275,
+        "title": "MakerDAO و DAI: وثیقه‌گذاری مازاد، CDP و لیکوئید شدن"
+      },
+      {
+        "startSec": 4275,
+        "endSec": 4710,
+        "title": "حاکمیت MakerDAO، توکن MKR و اوراکل‌ها"
+      },
+      {
+        "startSec": 4710,
+        "endSec": 5200,
+        "title": "بازار CDP، سیستم اعتبار و راهکارهای دیگر پروژه‌ها"
+      },
+      {
+        "startSec": 5200,
+        "endSec": 5620,
+        "title": "استیبل‌کوین‌های بدون پشتوانه و جمع‌بندی"
+      }
+    ],
     "youtubeThumb": "https://i.ytimg.com/vi/vanzyI3rbF8/hqdefault.jpg",
     "descriptionFa": "در قسمت دوم از سری دیفای (اقتصاد غیرمتمرکز) پادکست شیر یا خط، مفهوم DeFi به‌عنوان لایه خدمات مالی روی بستر بلاکچین و اتریوم بررسی می‌شود و تفاوت آن با فایننس متمرکز (CeFi) و کریپتو اکونومی توضیح داده می‌شود. این اپیزود به‌طور ویژه روی کوین‌های پایدار (StableCoin) و طبقه‌بندی آن‌ها با پشتوانه و بدون پشتوانه، از تتر (USDT) و USDC تا مِیکر دائو (Maker DAO) و دای (DAI)، تمرکز دارد و مفاهیمی مانند تمرکززدایی، شفافیت (Transparency)، عدم سنسورشیپ، وثیقه‌گذاری بیش از اندازه، CDP، لیکوئیدیشن، اوراکل و گاورننس توکن را با محوریت قرارداد هوشمند اتریوم بازمی‌کند. گفتگویی نقادانه درباره اینکه چرا پروژه‌های دیفای هنوز به تمرکززدایی کامل نرسیده‌اند و نقش نیاز کاربران و فرهنگ بانکی در این مسیر گذار.",
     "descriptionEn": "This episode of the شیر یا خط (Shir Ya Khat) podcast is the second installment in a multi-part series on DeFi (decentralized finance), framing it as a set of financial services—stablecoins, lending and borrowing, derivatives, and advanced instruments like going long or short, leverage, and insuring positions—built as a decentralized layer atop blockchain economies such as Bitcoin, Ethereum, and Algorand, with the hosts stressing that DeFi has no single \"DeFi coin\" but is instead a composable collection of projects like Aave, Compound, Uniswap, Synthetix, and Ampleforth. The bulk of the discussion classifies stablecoins into backed versus unbacked and, within backed, fiat-collateralized (non-redeemable like Tether/USDT versus redeemable and audited like USDC and Paxos) versus crypto-collateralized, weighing the trade-offs of centralization, censorship resistance, transparency, bank-run risk, and the need for banking audits. A central case study is MakerDAO and its DAI stablecoin, explained through over-collateralization with ETH, the collateralization ratio (150%), CDPs (collateralized debt positions) that function like leveraged trades, liquidation mechanics analogous to margin trading, stability fees, and governance via the MKR token and DAO voting, alongside reputation-based governance and oracle price feeds (referencing Chainlink's multi-node averaging). The hosts debate whether real users actually value decentralization or merely adopt tools like Tether for arbitrage and convenience, invoking the blockchain scalability trilemma, Byzantine Fault Tolerance, and historical incidents (Mt. Gox, Bitfinex, FTX, early Bitcoin inflation bugs) to argue that DeFi is a gradual transition from centralized to trustless systems. They also highlight two genuinely novel DeFi primitives—flash loans and composability—plus yield opportunities such as lending interest rates on DAI and liquidity mining, previewing deeper coverage of oracles, lending/borrowing, and governance tokens in upcoming episodes.",
@@ -1947,7 +2237,63 @@
     "titleEn": "DeFi - Decentralized Finance is Here to Stay",
     "publishedAt": "2020-07-11",
     "durationSec": 4102,
-    "chapters": [],
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 213,
+        "title": "مقدمه: شروع سری قسمت‌های DeFi"
+      },
+      {
+        "startSec": 213,
+        "endSec": 554,
+        "title": "چرا DeFi؟ دسترسی آزاد، شفافیت و حذف سانسور"
+      },
+      {
+        "startSec": 554,
+        "endSec": 772,
+        "title": "نقش ابزارها و بازارهای مالی در رشد اکوسیستم"
+      },
+      {
+        "startSec": 772,
+        "endSec": 1666,
+        "title": "بحث درباره فلسفه وجودی DeFi و پایداری قیمت"
+      },
+      {
+        "startSec": 1666,
+        "endSec": 2036,
+        "title": "تاریخچه پیدایش تتر"
+      },
+      {
+        "startSec": 2036,
+        "endSec": 2278,
+        "title": "کارکردهای پول و نیاز به استیبل‌کوین"
+      },
+      {
+        "startSec": 2278,
+        "endSec": 2645,
+        "title": "آربیتراژ و انگیزه‌های سازندگان تتر"
+      },
+      {
+        "startSec": 2645,
+        "endSec": 3169,
+        "title": "مشکلات تتر: پشتوانه، حسابرسی و دست‌کاری بازار"
+      },
+      {
+        "startSec": 3169,
+        "endSec": 3603,
+        "title": "نقد استیبل‌کوین‌ها: آیا دلار پایدار است؟"
+      },
+      {
+        "startSec": 3603,
+        "endSec": 3817,
+        "title": "دوره گذار و مسدودسازی حساب‌ها در استیبل‌کوین‌های متمرکز"
+      },
+      {
+        "startSec": 3817,
+        "endSec": 4102,
+        "title": "جمع‌بندی و دسته‌بندی حوزه‌های DeFi"
+      }
+    ],
     "youtubeThumb": "https://i.ytimg.com/vi/EcbIbiS3q_U/hqdefault.jpg",
     "descriptionFa": "در این اپیزود از پادکست «شیر یا خط»، به معرفی و بررسی مفهوم اقتصاد غیرمتمرکز یا همان DeFi (دیفای) می‌پردازیم و توضیح می‌دهیم چرا امور مالی غیرمتمرکز، به‌رغم عقب‌ماندگی جامعه فارسی‌زبان از این حوزه، ماندگار است و چه تفاوت‌هایی با سیستم مالی متمرکز (سِنترالایز فایننس) دارد؛ از حذف واسطه‌ها و سانسورشیپ گرفته تا شفافیت (ترنسپرنسی)، کاهش هزینه تراکنش، افزایش دسترسی و نقدینگی روی بستر بلاکچین‌هایی مانند اتریوم و قابلیت اسمارت کانترکت. سپس تاریخچه دیفای را از دل استیبل کوین‌ها و به‌ویژه تتر (USDT) دنبال می‌کنیم و درباره دلیل پیدایش آن (نیاز به ابزار تبادل پایدار، آربیتراژ میان اکسچنج‌ها و رشد سایز مارکت)، ماجرای شکستن پگ دلار، مشکلات پشتوانه و پرونده قضایی تتر، و همچنین جایگزین‌های غیرمتمرکزتری مانند میکردائو و دای (DAI) گفت‌وگو می‌کنیم. این قسمت مقدمه‌ای است بر سری اپیزودهای دیفای که در ادامه به وام‌دهی غیرمتمرکز (لندینگ)، فلش لون، مارژین تریدینگ، بازارهای مشتقه، اوراکل و کشف قیمت خواهد پرداخت.",
     "descriptionEn": "This Season 4 opener of the Shir Ya Khat podcast launches a multi-episode series on DeFi (Decentralized Finance), framing decentralized economy as a way to remove financial intermediaries and rebuild banking, lending, and investing on smart-contract blockchains like Ethereum, Tron, and RSK rather than the more limited Bitcoin. The hosts argue DeFi's core value over traditional (CeFi) and centralized banking lies in censorship resistance, transparency, permissionless access, faster and cheaper transactions, and open markets that enable price discovery, deeper liquidity, and arbitrage—letting users in restricted regions like Iran or the Philippines access instruments (e.g., credit default swaps via ISDA gating, or US stocks through Synthetix) otherwise closed to them. Much of the episode traces the history and role of stablecoins as DeFi's foundational building block, centering on Tether (USDT)—its origins with Bitfinex/Mastercoin to solve exchange price gaps, cash-out delays, and volatility, its explosive growth through the 2017 ICO boom, and its 2018 \"breaking the buck\" de-peg crisis, questionable audits, fractional dollar backing, market-manipulation accusations, and the New York Attorney General case. The panel debates whether stability, peg maintenance, and medium-of-exchange utility are DeFi's only real use cases, invoking Hayek's denationalization of money, Gresham's law, and concerns that dollar-pegged, centralized stablecoins (including USDC) that perform blacklisting and account freezing contradict decentralization and may pose a systemic threat since ~80% of Bitcoin traded against Tether. It contrasts Tether with algorithmic and crypto-collateralized alternatives like MakerDAO and DAI, and previews upcoming episodes covering flash loans, decentralized exchanges (DEXs) and order books moving on-chain, margin trading, derivatives, prediction/betting markets, decentralized identity, risk management, non-custodial protocols, the mempool, smart-contract blocklists and ownership, and the oracle problem of feeding manipulation-resistant prices to smart contracts.",
@@ -1980,7 +2326,68 @@
     "titleEn": "Blockchain Through Philosophy - Interview with Creston Davis [English]",
     "publishedAt": "2020-04-24",
     "durationSec": 3515,
-    "chapters": [],
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 303,
+        "title": "مقدمه و معرفی مهمان: کرستون دیویس"
+      },
+      {
+        "startSec": 303,
+        "endSec": 683,
+        "title": "آنارکو-کاپیتالیسم، دولت و شرکت‌های بزرگ"
+      },
+      {
+        "startSec": 683,
+        "endSec": 1415,
+        "title": "پاندمی کرونا، پساحقیقت و اخبار جعلی"
+      },
+      {
+        "startSec": 1415,
+        "endSec": 1703,
+        "title": "مارکس، استثمار نیروی کار و واسطه‌های مالی"
+      },
+      {
+        "startSec": 1703,
+        "endSec": 1908,
+        "title": "آنارکو-کاپیتالیست‌ها و مسئله تمرکز"
+      },
+      {
+        "startSec": 1908,
+        "endSec": 2124,
+        "title": "سفته‌بازی، دست‌کاری بازار و رگولاسیون"
+      },
+      {
+        "startSec": 2124,
+        "endSec": 2383,
+        "title": "لیوتار، روان‌کاوی و وعده قدرت‌بخشی بلاکچین"
+      },
+      {
+        "startSec": 2383,
+        "endSec": 2778,
+        "title": "اتوماسیون، هوش مصنوعی و آینده کار"
+      },
+      {
+        "startSec": 2778,
+        "endSec": 2942,
+        "title": "بیت‌کوین و DeFi"
+      },
+      {
+        "startSec": 2942,
+        "endSec": 3344,
+        "title": "بحران بدهی، جنبش‌های اعتراضی و ایده GCAS"
+      },
+      {
+        "startSec": 3344,
+        "endSec": 3455,
+        "title": "ساختارهای P2P و ضرورت اعتماد و فرهنگ"
+      },
+      {
+        "startSec": 3455,
+        "endSec": 3515,
+        "title": "جمع‌بندی و خداحافظی"
+      }
+    ],
     "youtubeThumb": "https://i.ytimg.com/vi/_OyN3hwI-Rw/maxresdefault.jpg",
     "descriptionFa": "در این قسمت از پادکست شیر یا خط با پروفسور کرستون دیویس، استاد فلسفه و از بنیان‌گذاران مدرسه مطالعات عالی جهانی (GCAS)، به بلاک‌چین به‌عنوان یک فناوری رادیکال نگاه می‌کنیم و از دریچه فلسفه به تمرکززدایی، آنارکو-کاپیتالیسم، بحران سرمایه‌داری، اتوماسیون و هوش مصنوعی می‌پردازیم. گفت‌وگو از حاکمیت فرد در بازار آزاد و بی‌اعتمادی به دولت تا نقش شرکت‌های بزرگ فناوری، نجات مالی بانک‌ها، استثمار نیروی کار و واسطه‌های مالی، و پیامدهای پاندمی کرونا و اخبار جعلی را در بر می‌گیرد. همچنین درباره ساختارهای همتا‌به‌همتا (P2P)، بیت‌کوین و امور مالی غیرمتمرکز (DeFi)، و ضرورت ساختن اعتماد، فرهنگ و اجتماع پایدار پیرامون بلاک‌چین صحبت می‌شود.",
     "descriptionEn": "This episode of the Shir Ya Khat (Sheer ya Khat) podcast breaks format as an English-language video interview—later to be released in Persian translation—featuring co-host Salman's former professor Creston Davis, a philosopher and co-founder of the Global Center for Advanced Studies (GCAS) in Dublin, in a wide-ranging philosophical conversation about blockchain, decentralization, and the political economy of technology. Grounding the talk in libertarian and anarcho-capitalist thought, individual sovereignty in free markets, and the distrust of states and corporations, the hosts and guest examine how Bitcoin and decentralized systems were meant to empower people yet often backfired—citing Wall Street bank bailouts, corporate rescues, and the deepening burden placed on individuals. Drawing on thinkers like Marx, Deleuze, Lyotard, Adam Greenfield, Jeremy Rifkin, and Bertrand Russell, the discussion connects fractional-reserve banking and financial intermediaries to a \"second exploitation\" of labor and money, while touching on DeFi (decentralized finance), speculative crypto markets, IPOs, market manipulation, and regulation. Much of the conversation reflects on the COVID-19 pandemic as a \"Petri dish\" for dystopian scenarios, exploring fake news, post-truth media, conspiracy theories, nationalism, xenophobia, surveillance capitalism (Facebook, Twitter, Google), automation, AI algorithms, and offshored labor. The dialogue also weighs the sustainability of protest movements—referencing Occupy Wall Street, Bernie Sanders, and Alain Badiou—and how GCAS was built as a P2P (peer-to-peer) collective to sustain autonomy over generations, closing on themes of trust, culture, and community as the necessary ethos underpinning decentralized technology, with notes on GCAS's open-source work via Slack and GitHub and its outreach to Iran.",
@@ -2009,7 +2416,63 @@
     "titleEn": "Coronatimes - Spring is inside our homes",
     "publishedAt": "2020-03-17",
     "durationSec": 2734,
-    "chapters": [],
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 115,
+        "title": "مقدمه و مرور موضوعات قسمت"
+      },
+      {
+        "startSec": 115,
+        "endSec": 246,
+        "title": "ابزارهای دورکاری در کوین‌ایران"
+      },
+      {
+        "startSec": 246,
+        "endSec": 459,
+        "title": "فریلنسینگ و کسب درآمد آنلاین در ایران"
+      },
+      {
+        "startSec": 459,
+        "endSec": 720,
+        "title": "دریافت درآمد با رمزارز و درگاه‌های پرداخت بیت‌کوین"
+      },
+      {
+        "startSec": 720,
+        "endSec": 1150,
+        "title": "فریلنسینگ غیرمتمرکز: ETHLance و Gitcoin"
+      },
+      {
+        "startSec": 1150,
+        "endSec": 1394,
+        "title": "منابع آموزشی بلاکچین و برنامه‌نویسی"
+      },
+      {
+        "startSec": 1394,
+        "endSec": 1734,
+        "title": "کمک بلاکچین به خیریه‌ها در شرایط تحریم"
+      },
+      {
+        "startSec": 1734,
+        "endSec": 2011,
+        "title": "شفافیت آمار کرونا با بلاکچین و مسئله اوراکل"
+      },
+      {
+        "startSec": 2011,
+        "endSec": 2265,
+        "title": "کرونا کوین، صندوق سازمان جهانی بهداشت و کمپین Iran Rescue Bit"
+      },
+      {
+        "startSec": 2265,
+        "endSec": 2667,
+        "title": "آزمون سخت DeFi و MakerDAO در سقوط بازار"
+      },
+      {
+        "startSec": 2667,
+        "endSec": 2734,
+        "title": "جمع‌بندی و خداحافظی"
+      }
+    ],
     "youtubeThumb": "https://i.ytimg.com/vi/goaCasycWac/maxresdefault.jpg",
     "descriptionFa": "این اپیزود از پادکست «شیر یا خط» به تأثیرات ویروس کرونا (کووید-۱۹) بر بازارهای رمزارز و بازارهای اقتصادی جهانی می‌پردازد و راهکارهای دورکاری، فریلنسینگ و درآمدزایی آنلاین با ابزارهایی مانند دیسکورد، ترلو، گیت‌کوین و پلتفرم‌های ایرانی مثل پونیشا و پارس‌فریلنسر را بررسی می‌کند. در ادامه، کاربردهای بلاکچین و کریپتوکارنسی برای دریافت دستمزد فریلنسرها، درگاه‌های پرداخت بیتکوین، فریلنسینگ غیرمتمرکز و اسمارت کانترکت‌ها روی اتریوم و همچنین منابع آموزشی بلاکچین مانند مسترینگ بیتکوین و مسترینگ اتریوم معرفی می‌شود. بخش پایانی به نقش بلاکچین در شفافیت خیریه‌ها و کمک‌های مردمی در شرایط تحریم، اهمیت اوراکل‌ها و بررسی سیستم‌های دیفای (دیسنترالایزد فایننس) مانند میکردائو و استیبل کوین دای و چالش لیکویید شدن وام‌های وثیقه‌ای در پی سقوط قیمت اتریوم اختصاص دارد.",
     "descriptionEn": "Iran's cryptocurrency podcast «شیر یا خط» (Shir Ya Khat) Season 3 Episode 6, recorded March 16, 2020, continues the CoinIran team's discussion of the COVID-19 pandemic by exploring how blockchain and remote work can help Iranians under sanctions, covering collaboration tools like Telegram, Discord, Monday, and Trello for distributed startup teams. The hosts examine freelancing and online income through platforms such as Gitcoin (Ethereum-based bounties, grants, and bug bounties tied to GitHub issues), domestic sites like Ponisha, and crypto payment gateways including Coinbase Commerce, WordPill for WordPress, and Jibit, alongside Bitcoin-based donations for live streamers as an alternative to Twitch. They discuss decentralized freelancing dApps (ETHLance) and the trade-offs between centralized platforms and decentralized systems with escrow, dispute resolution, ratings, and peer-to-peer exchanges like LocalBitcoins, plus educational resources such as Mastering Bitcoin, Mastering Ethereum (a planned Persian translation), Coursera, and code.org founded by the Iranian Partovi brothers. A major segment addresses how blockchain enables transparent, sanction-resistant charity fundraising—contrasting frozen Facebook/GoFundMe donations with campaigns like Iran Rescue Bit—and the use of oracles for trustworthy pandemic case-count reporting, referencing the 1918 Spanish flu, a rumored \"Corona Coin,\" and the WHO pandemic fund. The episode closes with a deep dive into DeFi under the March 2020 market crash, explaining how MakerDAO's DAI/SAI stablecoin, over-collateralized Ethereum loans, liquidations, network congestion, and a stale oracle price led to zero-bid collateral auctions and the MKR-token buyback recovery plan.",
@@ -2038,7 +2501,58 @@
     "titleEn": "Coronalysis - Capitalism is Critically Sick",
     "publishedAt": "2020-03-16",
     "durationSec": 3009,
-    "chapters": [],
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 148,
+        "title": "مقدمه و معرفی موضوعات"
+      },
+      {
+        "startSec": 148,
+        "endSec": 285,
+        "title": "سقوط بازارهای بورس و Circuit Breaker"
+      },
+      {
+        "startSec": 285,
+        "endSec": 672,
+        "title": "چرا بیت‌کوین هم سقوط کرد؟"
+      },
+      {
+        "startSec": 672,
+        "endSec": 917,
+        "title": "مقایسه ریزش‌های بیت‌کوین و بورس و چاپ پول"
+      },
+      {
+        "startSec": 917,
+        "endSec": 1286,
+        "title": "انتظار جدایی بیت‌کوین از بازارهای مالی"
+      },
+      {
+        "startSec": 1286,
+        "endSec": 1604,
+        "title": "طلا، ریسک سیستماتیک و نقش PlusToken و BitMEX"
+      },
+      {
+        "startSec": 1604,
+        "endSec": 1786,
+        "title": "آینده بازار: از نگاه سرمایه‌گذاری به کاربرد واقعی"
+      },
+      {
+        "startSec": 1786,
+        "endSec": 2273,
+        "title": "دورکاری در سیلیکون‌ولی و شرکت‌های فناوری"
+      },
+      {
+        "startSec": 2273,
+        "endSec": 2734,
+        "title": "کرونا، قدرت دولت‌ها و نظارت"
+      },
+      {
+        "startSec": 2734,
+        "endSec": 3009,
+        "title": "فرصت خرید در ریزش بازار و جمع‌بندی"
+      }
+    ],
     "youtubeThumb": "https://i.ytimg.com/vi/r7h8Jr2dV5U/maxresdefault.jpg",
     "descriptionFa": "در این اپیزود از پادکست «شیر یا خط»، به بررسی تأثیرات ویروس کرونا (کووید-۱۹) بر بازارهای مالی جهانی، بازار سهام و بازار رمزارزها می‌پردازیم و دلایل ریزش شدید و همزمان بیت‌کوین، اتریوم، شاخص‌های داو جونز و اس‌اند‌پی ۵۰۰ را همراه با مفاهیمی مانند سیرکت‌بریکر، سل‌آف، فروش دارایی‌های پرریسک برای تأمین نقدینگی و نقش هاوینگ، ماینرها و هش‌ریت تحلیل می‌کنیم. با نگاهی تاریخی به کرش‌های پیشین بیت‌کوین و بحران مالی ۲۰۰۸، آینده کریپتوکارنسی به‌عنوان دارایی غیرمتمرکز و آلترناتیو پول فیات، اثر چاپ پول بانک مرکزی و سیاست‌های تزریق نقدینگی، و همچنین ماجرای پلاس‌توکن و شورت‌ها در صرافی‌هایی مانند بیت‌مکس و کوین‌بیس بررسی می‌شود. در ادامه به فرصت‌های دورکاری، درآمدزایی آنلاین، منابع رایگان یادگیری بلاکچین، کاربرد کریپتو در امور خیریه و مسائل حریم خصوصی و سیستم‌های نظارتی در دنیای پساکرونا نیز پرداخته می‌شود.",
     "descriptionEn": "Capitalism is Critically Sick is a March 2020 episode of the Shir ya Khat (Coin Iran) podcast recorded live online amid the early COVID-19 pandemic, examining how the coronavirus and the Russia–Saudi oil price war triggered simultaneous crashes across traditional and crypto markets — the S&P 500 and Dow Jones each falling roughly 12–13% in a day (echoing Black Monday and 1929), and Bitcoin plunging around 35% in a week to about $6,890. The hosts contrast the regulated stock market's circuit breakers and trading halts (designed to prevent flash crashes) with the unregulated, 24-hour cryptocurrency markets, debating which is truly a \"free market\" and arguing that Bitcoin sold off because leveraged holders and financial-market investors dumped risk assets for liquidity, worsened by the PlusToken scam's coin dumping and a BitMEX outage that disrupted short liquidations. They discuss Bitcoin's history of 70–87% drawdowns, the upcoming halving and miner break-even price levels, hash rate resilience, the 21-million supply cap versus central banks' unlimited fiat money-printing and quantitative easing (the Fed's $700 billion injection and rate cuts likened to a \"band-aid on a hemorrhage\"), and whether Bitcoin can decouple from capitalist markets as digital gold or shift from a speculative investment lens toward real-world use cases. The conversation extends to blockchain's revolutionary, decentralized origins in the 2008 crisis, comparisons to gold and silver during systemic risk, and remote-work culture at crypto and tech firms (Coinbase, Shopify's $1,000 home-office stipend, Zoom's rise, VPN limitations). Finally, referencing economist Nouriel Roubini's 2020 recession prediction and philosopher Giorgio Agamben, the hosts raise concerns about privacy, KYC, government surveillance, facial recognition, and expanded state control in a post-corona world, positioning Bitcoin and open blockchain systems as tools to resist centralized authority.",
@@ -2067,7 +2581,68 @@
     "titleEn": "Genesisary - Bitcoin goes up to eleven",
     "publishedAt": "2020-01-03",
     "durationSec": 4854,
-    "chapters": [],
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 75,
+        "title": "مقدمه: سالگرد بلاک جنسیس"
+      },
+      {
+        "startSec": 75,
+        "endSec": 432,
+        "title": "ریشه‌های بیت‌کوین: از رمزنگاری تا سایفرپانک‌ها"
+      },
+      {
+        "startSec": 432,
+        "endSec": 856,
+        "title": "از Hashcash و b-money تا وایت‌پیپر بیت‌کوین"
+      },
+      {
+        "startSec": 856,
+        "endSec": 1311,
+        "title": "شبکه‌های همتابه‌همتا و نسخه اول نرم‌افزار بیت‌کوین"
+      },
+      {
+        "startSec": 1311,
+        "endSec": 1521,
+        "title": "PayPal، ویکی‌لیکس و روز پیتزای بیت‌کوین"
+      },
+      {
+        "startSec": 1521,
+        "endSec": 2095,
+        "title": "تاریخچه ماینینگ: از CPU تا ASIC و استخرها"
+      },
+      {
+        "startSec": 2095,
+        "endSec": 2461,
+        "title": "کیف‌پول سخت‌افزاری، بحران قبرس و سکه‌های فیزیکی"
+      },
+      {
+        "startSec": 2461,
+        "endSec": 3011,
+        "title": "هک Mt. Gox و ماجرای Silk Road"
+      },
+      {
+        "startSec": 3011,
+        "endSec": 3502,
+        "title": "۲۰۱۴ تا ۲۰۱۶: پذیرش بیت‌کوین، صرافی‌ها و باج‌افزار"
+      },
+      {
+        "startSec": 3502,
+        "endSec": 4149,
+        "title": "بحث مقیاس‌پذیری، سگویت و فورک‌های BCH و BSV"
+      },
+      {
+        "startSec": 4149,
+        "endSec": 4585,
+        "title": "هاوینگ و اقتصاد بیت‌کوین"
+      },
+      {
+        "startSec": 4585,
+        "endSec": 4854,
+        "title": "نکته‌های جالب تاریخ بیت‌کوین و خداحافظی"
+      }
+    ],
     "youtubeThumb": "https://i.ytimg.com/vi/vNpNBbfhRvo/maxresdefault.jpg",
     "descriptionFa": "در قسمت چهارم از فصل سوم پادکست «شیر یا خط»، به مناسبت سالگرد استخراج بلاک جنسیس (۳ ژانویه ۲۰۰۹) بیش از یک دهه تاریخ بیتکوین را مرور می‌کنیم؛ از ریشه‌های آکادمیک آن مانند رمزنگاری کلید عمومی دیفی-هلمن، امضای کور دیوید چاوم، هش‌کش آدام بک، قراردادهای هوشمند نیک زابو و بی‌مانی وی دای گرفته تا انتشار وایت‌پیپر ساتوشی ناکاموتو و راه‌اندازی شبکه بیتکوین. سپس تاریخچه ماینینگ و پروف‌آف‌ورک، شکل‌گیری استخرها و دستگاه‌های ASIC، صرافی‌هایی مانند مانت‌گاکس و بیت‌فینکس، بازار سیلک‌رود، هارد فورک‌ها و سگویت، بلاک‌سایز دیبیت، لایتنینگ نتورک و هاوینگ بیتکوین را بررسی می‌کنیم. اپیزودی جامع درباره بلاکچین، رمزنگاری، کیف‌پول سخت‌افزاری و اکوسیستم کریپتوکارنسی.",
     "descriptionEn": "Bitcoin's Genesis block was mined on January 3, 2009, and this episode traces the full lineage of that moment—arguing Bitcoin was a synthesis of over forty years of networking and cryptographic research rather than a single invention—walking through TCP/IP, Diffie-Hellman asymmetric (public/private key) cryptography, RSA, David Chaum's blind signatures and DigiCash, elliptic curve cryptography (ECDSA), the Crypto Anarchist Manifesto and Cypherpunks, Adam Back's Hashcash proof-of-work, Nick Szabo's smart contracts, Wei Dai's b-money, Hal Finney's Reusable Proof of Work, and the 2008 financial crisis that preceded Satoshi Nakamoto's Bitcoin whitepaper and the \"Chancellor on brink of second bailout\" Genesis message. It then covers the evolution of mining from CPUs to GPUs to ASICs (Butterfly Labs, Bitmain's S1, SHA-256) and the rise of mining pools like Slush Pool, alongside P2P file-sharing precursors (Napster, BitTorrent, eDonkey2000's Jed McCaleb of Ripple/Stellar), the Bitcoin Pizza Day valuation, WikiLeaks adoption, hardware wallets (Trezor) and Casascius physical coins. The hosts recount major exchange and crime episodes—the Mt. Gox transaction-malleability hack, Silk Road and Ross Ulbricht, Bitfinex and CryptoWall/ransomware, Charlie Shrem and BitInstant—plus growing merchant and regulatory acceptance (Microsoft, Japan, ETF/CFTC debates, exahash milestones). A large segment dissects the scalability and block-size wars, Gavin Andresen, Bitcoin XT/Classic, SegWit as a soft fork, and the 2017 hard forks creating Bitcoin Cash (BCH) and later Bitcoin SV (BSV) amid Craig Wright, Roger Ver, and Jihan Wu's hash war. It closes on Bitcoin economics—the halving schedule (50→25→12.5→6.25 BTC), reduced inflation and fixed 21-million supply—and Layer 2 scaling via the Lightning Network, framed as a celebration of Bitcoin's birthday.",
@@ -2108,7 +2683,68 @@
     "titleEn": "DevCon V, Eth 2.0, Bitcoin Censorship, and Open mic",
     "publishedAt": "2019-12-08",
     "durationSec": 4526,
-    "chapters": [],
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 109,
+        "title": "مقدمه و معرفی موضوعات"
+      },
+      {
+        "startSec": 109,
+        "endSec": 454,
+        "title": "ترجمه منابع بلاکچین به فارسی و حمایت در Gitcoin"
+      },
+      {
+        "startSec": 454,
+        "endSec": 587,
+        "title": "DevCon و اتریوم ۲: شاردینگ"
+      },
+      {
+        "startSec": 587,
+        "endSec": 1158,
+        "title": "اثبات سهام (PoS) و تصمیم‌گیری در اتریوم"
+      },
+      {
+        "startSec": 1158,
+        "endSec": 1482,
+        "title": "مشکل Nothing at Stake و بمب سختی"
+      },
+      {
+        "startSec": 1482,
+        "endSec": 1873,
+        "title": "هزینه تراکنش در اثبات سهام"
+      },
+      {
+        "startSec": 1873,
+        "endSec": 2098,
+        "title": "دیگر موضوعات DevCon: Zero-Knowledge، ENS و ارتباط بین بلاکچین‌ها"
+      },
+      {
+        "startSec": 2098,
+        "endSec": 2318,
+        "title": "سانسور در بیت‌کوین و نقش هش‌ریت"
+      },
+      {
+        "startSec": 2318,
+        "endSec": 2564,
+        "title": "آیا سانسور تراکنش حمله ۵۱ درصد است؟"
+      },
+      {
+        "startSec": 2564,
+        "endSec": 3458,
+        "title": "فشار قانونی بر ماینرها و نمونه Liberty Reserve"
+      },
+      {
+        "startSec": 3458,
+        "endSec": 4328,
+        "title": "بی‌طرفی پروتکل یا تبعیت از قانون؟"
+      },
+      {
+        "startSec": 4328,
+        "endSec": 4526,
+        "title": "آینده پادکست و جمع‌بندی"
+      }
+    ],
     "youtubeThumb": "https://i.ytimg.com/vi/rlnlyU6YH94/maxresdefault.jpg",
     "descriptionFa": "در قسمت سوم از فصل سوم پادکست «شیر یا خط» به سراغ داغ‌ترین بحث‌های اکوسیستم بلاک‌چین می‌رویم؛ از گزارش کنفرانس دِوکان ۵ اتریوم در اوساکای ژاپن و آینده اتریوم ۲.۰ گرفته تا شاردینگ، پروف‌آف‌استیک (Proof of Stake)، مشکل Nothing at Stake، سرویس نام اتریوم (ENS) و کاهش هزینه تراکنش با راه‌حل‌های لایه دوم. سپس بحثی جدی و چالشی درباره سانسورشیپ در شبکه بیت‌کوین، نقش هش‌ریت، حمله ۵۱ درصدی و امکان یا عدم امکان توقف تراکنش‌ها از سوی دولت‌ها مطرح می‌شود. همچنین از پروژه گیت‌کوین و کمپین فارسی‌سازی منابع بلاک‌چین و اتریوم و آینده پادکست شیر یا خط می‌گوییم؛ کلیدواژه‌ها: اتریوم، بیت‌کوین، بلاک‌چین، قرارداد هوشمند، پروف‌آف‌استیک، شاردینگ، ENS، گیت‌کوین.",
     "descriptionEn": "This episode of the Shir Ya Khat (Heads or Tails) podcast, recorded December 8, 2019, opens with community initiatives around Persian-language localization of blockchain resources—including MyEtherWallet and ethereum.org—and a Gitcoin grant proposal leveraging quadratic voting and matched crowdfunding to support the Persian-speaking crypto ecosystem and Vitalik Buterin's \"one million Ethereum developers\" goal. The hosts recap the DevCon V conference in Osaka, diving deep into Ethereum 2.0's roadmap: sharding to reduce full archival node storage burdens, the transition from Proof of Work to Proof of Stake (with 32 ETH validator staking, slashing, the difficulty bomb, and the recurring six-month delays), and the unresolved \"nothing at stake\" problem, alongside Layer 2 scalability solutions like the Lightning Network and Plasma for lowering transaction fees. They also cover Ethereum's decentralized governance (EIPs, BIPs, Ethereum Magicians, hard forks, gas price and chain ID changes, and nodes falling behind after updates), zero-knowledge cryptography projects such as Aztec and zk-SNARKs for private ERC-20 tokens à la Zcash and Monero, the Ethereum Name Service (ENS) for human-readable addresses and universal login, and inter-blockchain communication via oracles enabling Ethereum–Zcash interoperability. A lengthy debate follows on Bitcoin censorship resistance, examining whether concentrated hash rate in China, Russia, and the US could let governments compel mining pools to block transactions tied to money laundering, terrorism, or illicit trade—invoking 51% attacks, selfish/shadow mining, P2Pool decentralization, the Liberty Reserve takedown, and Ross Ulbricht as reference points. The participants ultimately disagree on whether such censorship is technically and legally feasible versus a fundamental violation of Bitcoin's protocol as an immutable \"truth machine,\" closing with plans to decentralize and rotate the podcast's own production using Gitcoin-funded bounties.",
@@ -2143,7 +2779,68 @@
     "titleEn": "Segwit and lightning, very very... exciting!",
     "publishedAt": "2019-08-18",
     "durationSec": 4387,
-    "chapters": [],
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 37,
+        "title": "مقدمه و معرفی موضوع"
+      },
+      {
+        "startSec": 37,
+        "endSec": 322,
+        "title": "بحث اندازه بلاک و معرفی سگویت (SegWit)"
+      },
+      {
+        "startSec": 322,
+        "endSec": 604,
+        "title": "SegWit2x و سافت‌فورک کاربران (UASF)"
+      },
+      {
+        "startSec": 604,
+        "endSec": 1231,
+        "title": "Transaction Malleability؛ مشکل یا ویژگی؟"
+      },
+      {
+        "startSec": 1231,
+        "endSec": 1667,
+        "title": "تاریخچه و نحوه کار شبکه لایتنینگ"
+      },
+      {
+        "startSec": 1667,
+        "endSec": 1951,
+        "title": "مزایای شبکه‌های جانبی و لایه دوم"
+      },
+      {
+        "startSec": 1951,
+        "endSec": 2209,
+        "title": "آمار شبکه و محدودیت ظرفیت کانال‌ها"
+      },
+      {
+        "startSec": 2209,
+        "endSec": 2540,
+        "title": "Watchtower و مسئله اعتماد"
+      },
+      {
+        "startSec": 2540,
+        "endSec": 3015,
+        "title": "آینده کارمزدها و انگیزه ماینرها"
+      },
+      {
+        "startSec": 3015,
+        "endSec": 3820,
+        "title": "سهولت استفاده، هاب‌ها و رگولاتوری نودهای لایتنینگ"
+      },
+      {
+        "startSec": 3820,
+        "endSec": 4095,
+        "title": "کیف‌پول‌ها و سرویس‌های لایتنینگ"
+      },
+      {
+        "startSec": 4095,
+        "endSec": 4387,
+        "title": "کمپین کمک به سیل‌زدگان با رمزارز و جمع‌بندی"
+      }
+    ],
     "youtubeThumb": "https://i.ytimg.com/vi/eJcW2X4eD_I/maxresdefault.jpg",
     "descriptionFa": "در این اپیزود از پادکست «شیر یا خط» به سراغ شبکه لایتنینگ (Lightning Network)، سگویت (SegWit / Segregated Witness) و پشت‌پرده فورک بیتکوین کش می‌رویم؛ از بحث بلاک‌سایز و اسکیلیبیلیتی بیتکوین و مشکل transaction malleability گرفته تا سافت‌فورک BIP141، یو‌ای‌اس‌اف (UASF)، سگویت‌تو‌ایکس و نحوه کار کانال‌های پرداخت آف‌چین با آدرس‌های چنداِمضایی و تایم‌لاک اسکریپت‌ها. همچنین درباره محدودیت‌های شبکه لایتنینگ، واچ‌تاورها، بحث فی تراکنش‌ها و ماینرها پس از هالوینگ، رگولیشن و لایسنس نودها، و والت‌ها و سرویس‌های لایتنینگ مانند اکلیر، بلو والت، زپ، کازا نود و تیپینگ صحبت می‌کنیم و در پایان گپی با دوستان ایران رسکیو بیت می‌زنیم.",
     "descriptionEn": "This episode of the Shir ya Khat podcast traces the history of Bitcoin's Lightning Network and the scaling debates that made it possible, beginning with the pre-2017 block size war between big-block advocates (Bitcoin Unlimited) and those favoring smaller transactions. The hosts explain SegWit (Segregated Witness, BIP 141), the June 2016 soft fork that separated signature/witness data from transactions to fix transaction malleability—a flaw exploited in incidents like the Mt. Gox collapse and, critically, a prerequisite for Lightning since payment channels depend on stable transaction IDs—along with weight units, the four-million-weight-unit block limit, the ECDSA Lower-S/Higher-S signature issue, and the UASF (User Activated Soft Fork, BIP 148) that let economic nodes pressure miners, killing the SegWit2x compromise and spawning the Bitcoin Cash fork in August 2017. It then details how the Lightning Network works as a Bitcoin Layer 2 for cheap, instant micropayments: opening multisig channels with locked funds, exchanging sequence-numbered off-chain transactions between parties (illustrated with Alice and Bob), timelock scripts like CheckSequenceVerify and CheckLockTimeVerify, watchtowers that guard against fraudulent channel closes, and routing/hops across a network of roughly 17,000 nodes and 28,000 channels with about 838 BTC capacity. The discussion covers Lightning's history—Joseph Poon's proposal, Blockstream's 2018 mainnet launch, testing on Litecoin, a March 2018 DDoS attack—plus sidechains, Stellar (Jed McCaleb's Ripple fork), and trade-offs around decentralization, scalability, channel-capacity limits, hot-wallet risk, and hub centralization. The hosts also raise long-term concerns about miner incentives as block rewards halve and on-chain fees rise, and the regulatory question of whether running a Lightning node makes one a money transmitter under FinCEN, the Bank Secrecy Act, KYC/AML rules, or a Canadian MSB. Finally, they survey real-world Lightning wallets and services—Eclair, Blue Wallet, Zap, C-Lightning, Casa Node, tippin.me, Bitrefill, CoinGate, OpenNode, and ZigZag—and close by promoting iranrescuebit.com, a crypto-donation campaign channeling international aid to Iranian flood victims despite banking sanctions.",
@@ -2184,7 +2881,63 @@
     "titleEn": "Confirm me if you can - 0-conf",
     "publishedAt": "2019-06-28",
     "durationSec": 3885,
-    "chapters": [],
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 57,
+        "title": "مقدمه و معرفی موضوع"
+      },
+      {
+        "startSec": 57,
+        "endSec": 559,
+        "title": "تراکنش Zero-Confirmation چیست؟"
+      },
+      {
+        "startSec": 559,
+        "endSec": 681,
+        "title": "قابلیت RBF یا Replace-By-Fee"
+      },
+      {
+        "startSec": 681,
+        "endSec": 984,
+        "title": "تجربه‌ی پرداخت با BitPay و دسترسی به ممپول"
+      },
+      {
+        "startSec": 984,
+        "endSec": 1750,
+        "title": "دابل اسپند با کارمزد بالاتر و انگیزه‌ی ماینرها"
+      },
+      {
+        "startSec": 1750,
+        "endSec": 2238,
+        "title": "قالب تراکنش فروشنده، اعتبار ماینرها و پیگیری حقوقی"
+      },
+      {
+        "startSec": 2238,
+        "endSec": 2512,
+        "title": "BIP 70 و سرویس BitGo Instant"
+      },
+      {
+        "startSec": 2512,
+        "endSec": 2984,
+        "title": "انواع حمله‌ها و مدیریت ریسک در کسب‌وکار"
+      },
+      {
+        "startSec": 2984,
+        "endSec": 3469,
+        "title": "رویکرد Bitcoin SV به تراکنش‌های بدون تأیید"
+      },
+      {
+        "startSec": 3469,
+        "endSec": 3774,
+        "title": "Pre-consensus، CTOR و مقایسه با لایتنینگ"
+      },
+      {
+        "startSec": 3774,
+        "endSec": 3885,
+        "title": "جمع‌بندی"
+      }
+    ],
     "youtubeThumb": "https://i.ytimg.com/vi/_RpJp7Ou7h8/maxresdefault.jpg",
     "descriptionFa": "در نخستین قسمت فصل سوم پادکست شیر یا خط به سراغ مفهوم تراکنش در لحظه (Zero-Confirmation) در شبکه بیتکوین می‌رویم؛ اینکه تراکنش بدون تایید چیست، تفاوت پذیرش آن روی BTC و BSV چگونه است و چطور می‌توان با ریسک‌منیجمنت، حمله دابل اسپند را مدیریت کرد. در این اپیزود درباره ممپول، ریپلیس بای فی (RBF)، مدل انگیزشی و اقتصادی ماینرها، حمله‌های ری‌ارگ (Reorg)، سلفیش ماینینگ و حمله ۵۱ درصدی، تمپلیت پرداخت مرچند بر پایه BIP70، سرویس BitGo Instant و کاربرد قرارداد و پیمنت‌های خرد کریپتوکارنسی برای بیزینس‌ها صحبت می‌کنیم. بحثی فنی و ایدئولوژیک درباره اینکه تراکنش در لحظه برای چه کسب‌وکارهایی و تا چه مبلغی قابل قبول است و بلاکچین چگونه در برابر خرج مضاعف مقاومت می‌کند.",
     "descriptionEn": "This «شیر یا خط» (Shir Ya Khat) episode opens Season 3 with a technical roundtable on Bitcoin zero-confirmation (0-conf) transactions—payments a merchant accepts the moment they hit the mempool, before any block confirmation or the customary six confirmations. The hosts walk through the transaction lifecycle (wallet broadcast, mempool propagation, mining, and confirmation depth) and debate whether 0-conf is safe enough for real businesses like coffee shops, vending machines, metro tap-and-go cards, and Bitcoin ATMs, versus high-value purchases where double-spend risk is unacceptable. Central to the discussion is the double-spend attack surface, the controversial Replace-By-Fee (RBF) opt-in flag, the Satoshi/whitepaper \"first-seen\" rule (unwritten and unenforceable on most networks but hard-coded on Bitcoin SV), and the divergent ideologies of Bitcoin (BTC) versus BSV over whether to mitigate risk at the protocol layer or through off-chain measures like cameras and reputation. They examine miner incentives and hash-rate economics (e.g., a 20% miner's probability of pulling off a double-spend), plus real attacks including the Verge and Ethereum Classic chain reorganizations (reorgs), 51% attacks, NiceHash-rented hash power, and selfish mining. Practical 0-conf hardening approaches are covered—merchant-built transaction templates (BIP 70/BIP 274 / \"Request For Payment,\" SIGHASH_ALL vs SIGHASH_NONE, merchant-paid fees), BitGo Instant's 2-of-2 multi-signature trust model, BIP 77/79, pre-consensus, and Bitcoin Cash ABC's CTOR transaction ordering—while noting the trade-off that trusted third parties undermine Bitcoin's peer-to-peer nature. The episode closes by contrasting 0-conf with the Lightning Network as a Layer-2 alternative (deferred to a future dedicated episode) and framing the whole debate around fraud risk relative to legacy Visa/credit-card payment systems.",
@@ -2219,7 +2972,63 @@
     "titleEn": "What The Fork, Bitcoin Forks - Part 2/2",
     "publishedAt": "2017-11-27",
     "durationSec": 3028,
-    "chapters": [],
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 205,
+        "title": "مقدمه؛ اگر کوینی جایگزین بیت‌کوین شود"
+      },
+      {
+        "startSec": 205,
+        "endSec": 546,
+        "title": "بیت‌کوین به‌عنوان طلای دیجیتال و عرضه‌ی محدود"
+      },
+      {
+        "startSec": 546,
+        "endSec": 907,
+        "title": "حفظ دارایی هنگام فورک: طمع نکنید و صبور باشید"
+      },
+      {
+        "startSec": 907,
+        "endSec": 1562,
+        "title": "کلید خصوصی، انتخاب کیف‌پول و Replay Attack"
+      },
+      {
+        "startSec": 1562,
+        "endSec": 1750,
+        "title": "آیا می‌توان به فورک‌ها اعتماد کرد؟ بحث نقدشوندگی"
+      },
+      {
+        "startSec": 1750,
+        "endSec": 1934,
+        "title": "بیت‌کوین پول است یا ذخیره‌ی ارزش؟ دلیل کارمزد بالا"
+      },
+      {
+        "startSec": 1934,
+        "endSec": 2150,
+        "title": "لایت‌کوین، نمونه‌ی موفق فعال‌سازی SegWit"
+      },
+      {
+        "startSec": 2150,
+        "endSec": 2383,
+        "title": "کیف‌پول‌های سخت‌افزاری"
+      },
+      {
+        "startSec": 2383,
+        "endSec": 2691,
+        "title": "سیاست و جنگ قدرت پشت فورک‌ها"
+      },
+      {
+        "startSec": 2691,
+        "endSec": 2965,
+        "title": "راجر ور و نقش او در بیت‌کوین کش"
+      },
+      {
+        "startSec": 2965,
+        "endSec": 3028,
+        "title": "جمع‌بندی"
+      }
+    ],
     "youtubeThumb": "https://i.ytimg.com/vi/W0yfpmu-yk8/maxresdefault.jpg",
     "descriptionFa": "در این اپیزود به ادامه بحث در مورد شاخه (فورک) های بیتکوین٫ تاریخچه فورک ها٫ تحلیل پیدایش و تاثیر ایجاد یک کوین(رمزارز٫ دیجی ارز) جدید از این شاخه های نرم افزاری می پردازیم.",
     "descriptionEn": "This second and final part of Shir Ya Khat's episode on Bitcoin forks continues a panel discussion about whether hard forks and alternative coins can dethrone Bitcoin, framing Bitcoin increasingly as digital gold and a store of value (SoV) rather than transactional currency, prized for its hardcoded 21-million supply cap versus uncapped coins like Ethereum. The hosts debate decentralization versus centralization—stressing that open-source code, node distribution, network effect, mining power, and liquidity determine whether a coin like Bitcoin Cash, Bitcoin Gold, Bitcoin Unlimited, Litecoin, or Ethereum Classic is trustworthy, and warning that new forks are unproven until time passes (citing Bitcoin Unlimited's node collapse within 48 hours). A major practical segment covers how to safely preserve assets during a fork: control your own private key and seed phrase using open-source wallets from bitcoin.org, avoid scam sites and fake wallets that harvest keys, be patient and wait for reputable wallets (Ledger, Trezor, Coinbase) and replay protection before moving funds, and understand replay attacks learned from the Ethereum/Ethereum Classic split. The episode also digs into fee markets and block-size politics, explaining that Bitcoin's high fees stem from heavy transaction volume, why SegWit adoption and atomic swaps boosted Litecoin, and the New York Agreement power struggle behind Bitcoin Cash. It profiles Roger Ver (\"Bitcoin Jesus\"), his early Bitcoin investments, ownership of Bitcoin.com, and his marketing-driven push for Bitcoin Cash, questioning whether forks are technical improvements or political and financial maneuvers by players like Bitcoin Core, Bitcoin ABC, and media outlets such as CoinDesk. Throughout, the panel emphasizes risk management, capital management, avoiding greed, self-custody, and researching each coin's team and whitepaper before trusting any fork.",
@@ -2247,7 +3056,58 @@
     "titleEn": "What The Fork, Bitcoin Forks - Part 1/2",
     "publishedAt": "2017-11-26",
     "durationSec": 3731,
-    "chapters": [],
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 34,
+        "title": "مقدمه و معرفی موضوع"
+      },
+      {
+        "startSec": 34,
+        "endSec": 347,
+        "title": "مفهوم فورک؛ سافت فورک و هارد فورک"
+      },
+      {
+        "startSec": 347,
+        "endSec": 653,
+        "title": "دعوای اندازه‌ی بلاک: Bitcoin XT، Classic و Unlimited"
+      },
+      {
+        "startSec": 653,
+        "endSec": 805,
+        "title": "SegWit و نحوه‌ی فعال‌سازی آن"
+      },
+      {
+        "startSec": 805,
+        "endSec": 1020,
+        "title": "تولد بیت‌کوین کش و ماجرای ایردراپ"
+      },
+      {
+        "startSec": 1020,
+        "endSec": 1263,
+        "title": "بیت‌کوین گلد، SegWit2x و بیت‌کوین دایموند"
+      },
+      {
+        "startSec": 1263,
+        "endSec": 2135,
+        "title": "فورک‌ها تهدیدند یا فرصت؟ بحث تمرکز در بیت‌کوین کش"
+      },
+      {
+        "startSec": 2135,
+        "endSec": 2778,
+        "title": "تأثیر فورک‌ها بر نقدینگی و قیمت بیت‌کوین"
+      },
+      {
+        "startSec": 2778,
+        "endSec": 3268,
+        "title": "دلایل رشد قیمت بیت‌کوین و عرضه‌ی محدود آن"
+      },
+      {
+        "startSec": 3268,
+        "endSec": 3731,
+        "title": "اعتماد به بیت‌کوین و احتمال ظهور جایگزین"
+      }
+    ],
     "youtubeThumb": "https://i.ytimg.com/vi/sjUzD4JjdEk/maxresdefault.jpg",
     "descriptionFa": "در این اپیزود به ادامه بحث در مورد شاخه (فورک) های بیتکوین٫ تاریخچه فورک ها٫ تحلیل پیدایش و تاثیر ایجاد یک کوین(رمزارز٫ دیجی ارز) جدید از این شاخه های نرم افزاری می پردازیم.",
     "descriptionEn": "Bitcoin forks are the focus of this Part 1 episode of the Shir Ya Khat (Shirakherad) podcast, which begins by defining a \"fork\" from its open-source software roots—source control on GitHub and Bitbucket, forking a codebase, and the distinction between a soft fork (backward-compatible update) and a hard fork (incompatible update requiring all nodes to upgrade, akin to Ethereum's Vitalik-led network updates)—drawing analogies to Linux and Unix. The hosts trace Bitcoin's block-size debate and scaling war, covering early hard-fork proposals like Bitcoin XT (8MB blocks), Bitcoin Unlimited (miner-adjustable/16MB blocks), Bitcoin Classic (2MB), and the UASF (User Activated Soft Fork), most of which failed as node counts collapsed. They explain Segregated Witness (SegWit / BIP 141), which moves transaction signatures out of the block to roughly double capacity, and how its August 2017 activation via miner version-bits signaling triggered the chain-split creation of Bitcoin Cash, distributed to existing BTC holders in an airdrop-style manner (compared to Clam in 2013 and Ethereum token airdrops), alongside discussion of Bitcoin Gold (Equihash proof-of-work), the failed SegWit2x, and copycat coins like Bitcoin Diamond and Bitcoin Dark that merely borrow the Bitcoin name. A lengthy debate follows on whether forks are an opportunity or threat, touching on centralization concerns around Bitcoin Cash, Bitmain, Jihan Wu and Roger Ver, mining profitability versus ideology, propagation delays favoring China-based miners, and Satoshi's \"electronic cash\" versus \"store of value\" visions. The panel also weighs Bitcoin's price (around $9,280 at recording), the 21-million supply cap, satoshi divisibility and micropayments, transaction fees, decentralization, testnets (with Litecoin noted as a de facto testbed), and how free forked coins draw liquidity yet paradoxically pushed BTC's price up. They conclude that trust, network effects, node count, security, and Bitcoin's multi-year track record make it dominant, arguing most forks are short-lived speculation and that only a genuinely superior coin—not an overnight clone—could ever displace it.",
@@ -2279,7 +3139,68 @@
     "titleEn": "Blockchain Use cases and Social Pathology in Developing Countries",
     "publishedAt": "2017-10-11",
     "durationSec": 4789,
-    "chapters": [],
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 62,
+        "title": "مقدمه و معرفی موضوع"
+      },
+      {
+        "startSec": 62,
+        "endSec": 487,
+        "title": "قابلیت‌ها و محدودیت‌های بلاکچین و تجربه‌ی Auroracoin"
+      },
+      {
+        "startSec": 487,
+        "endSec": 1019,
+        "title": "بلاکچین، اتوماسیون و نگرانی از بیکاری"
+      },
+      {
+        "startSec": 1019,
+        "endSec": 1276,
+        "title": "کاربردهای مخرب، توقف‌ناپذیری و مشکل مقیاس‌پذیری"
+      },
+      {
+        "startSec": 1276,
+        "endSec": 1770,
+        "title": "نقش انسان و آگاهی در استفاده از تکنولوژی"
+      },
+      {
+        "startSec": 1770,
+        "endSec": 2027,
+        "title": "کلاه‌برداری و سوءاستفاده در بازار ارزهای دیجیتال ایران"
+      },
+      {
+        "startSec": 2027,
+        "endSec": 2231,
+        "title": "نمونه‌ی BitPesa در آفریقا و ماجرای Silk Road"
+      },
+      {
+        "startSec": 2231,
+        "endSec": 2836,
+        "title": "اجماع اکثریت، فورک و تمرکز قدرت ماینینگ"
+      },
+      {
+        "startSec": 2836,
+        "endSec": 3400,
+        "title": "آگاهی‌رسانی و آموزش رایگان به‌عنوان راهکار"
+      },
+      {
+        "startSec": 3400,
+        "endSec": 4285,
+        "title": "تشخیص پروژه‌های کلاه‌برداری و نگاه سودجویانه به بازار"
+      },
+      {
+        "startSec": 4285,
+        "endSec": 4666,
+        "title": "حذف واسطه‌ها و احتمال غیرقانونی شدن بیت‌کوین"
+      },
+      {
+        "startSec": 4666,
+        "endSec": 4789,
+        "title": "جمع‌بندی"
+      }
+    ],
     "youtubeThumb": "https://i.ytimg.com/vi/S03GlnswOLg/maxresdefault.jpg",
     "descriptionFa": "در این اپیزود به موضوع کاربردهای بلاکچین و آسیب شناسی این کاربردها در جامعه و به خصوص کشور های در حال توسعه می پردازیم.",
     "descriptionEn": "This season 2 premiere of the Shir Ya Khat (شیر یا خط) podcast examines blockchain adoption in Iran and other developing countries alongside a broader \"pathology\" of the technology, weighing its social benefits and harms much like the internet or mobile phones before it. The hosts discuss how blockchain's decentralization strips power from centralized institutions, governments, and intermediaries while raising unresolved technical hurdles like scalability, and they explain why a blockchain—unlike its exchange gateways—cannot truly be shut down, citing crackdowns on Bitcoin and Ethereum exchanges in China and Russia. They frame network governance as a form of \"absolute democracy\" built on consensus and mining hash power, illustrated by hard forks such as Bitcoin/Bitcoin Cash and Ethereum/Ethereum Classic (the latter stemming from the reverted DAO-style hack), while flagging mining centralization in China, ASIC and mining-pool dominance versus Satoshi Nakamoto's one-node-per-person vision, and CPU-based alternatives like Zcash, Monero, and Bitcoin Gold—including browser-based JavaScript cryptojacking and Android mining malware. Real-world use cases are highlighted, notably Kenya's mobile-airtime money system BitPesa bridging local finance to Bitcoin, blockchain-based civil registration in Africa, and Silk Road as an early experiment in individual freedom. A large portion addresses scams, Ponzi schemes (OneCoin, BitClub), fraudulent ICOs, Telegram signal-selling groups, and how Iranian platforms like Coiniran and DigiArz build trust and vet projects, distinguishing altcoins, tokens, market cap, and legitimate ventures. The panelists conclude that raising free, unbiased awareness and education—rather than restriction, dictatorship, or government bans—is the best path to protect newcomers, empower producers like a rural rug-weaver to transact globally, and foster healthy, culturally grounded adoption of the technology.",
@@ -2312,7 +3233,68 @@
     "titleEn": "Witnessing August 1st - Segwit, BIP148 and beyond",
     "publishedAt": "2017-07-22",
     "durationSec": 5210,
-    "chapters": [],
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 169,
+        "title": "مقدمه؛ BIP چیست؟"
+      },
+      {
+        "startSec": 169,
+        "endSec": 393,
+        "title": "SegWit چیست؟"
+      },
+      {
+        "startSec": 393,
+        "endSec": 1032,
+        "title": "مشکل transaction malleability و هک Mt. Gox"
+      },
+      {
+        "startSec": 1032,
+        "endSec": 1311,
+        "title": "مدل تصمیم‌گیری در بیت‌کوین: BIP 9 و BIP 141"
+      },
+      {
+        "startSec": 1311,
+        "endSec": 1677,
+        "title": "BIP 148 یا UASF و ماجرای ASICBoost"
+      },
+      {
+        "startSec": 1677,
+        "endSec": 2320,
+        "title": "BIP 91، SegWit2x و سناریوهای اول آگوست"
+      },
+      {
+        "startSec": 2320,
+        "endSec": 2749,
+        "title": "اگر فورک شود: صرافی‌ها، replay attack و تجربه‌ی اتریوم کلاسیک"
+      },
+      {
+        "startSec": 2749,
+        "endSec": 3118,
+        "title": "چرا ماینرها مخالف‌اند؟ مثال مترو"
+      },
+      {
+        "startSec": 3118,
+        "endSec": 3694,
+        "title": "بلاک دو مگابایتی و آینده‌ی مقیاس‌پذیری"
+      },
+      {
+        "startSec": 3694,
+        "endSec": 4184,
+        "title": "جمع‌بندی، نقش کاربران و اجرای فول نود"
+      },
+      {
+        "startSec": 4184,
+        "endSec": 4794,
+        "title": "گزارش بازار"
+      },
+      {
+        "startSec": 4794,
+        "endSec": 5210,
+        "title": "هشدار درباره‌ی ICOها و صحبت‌های پایانی"
+      }
+    ],
     "youtubeThumb": "https://i.ytimg.com/vi/oLyGcV3jPg4/maxresdefault.jpg",
     "descriptionFa": "در این اپیزود به ادامه بحث در مورد فورک بیتکوین، سگویت و محدودیت حجم بلاک بیت کوین می‌نشینیم که قبلا در اپیزود ۵ به تفصیل به آن پرداخته شده و سپس مروری خواهیم داشت بر اتفاقاتی که این روز ها برای بیتکوین می افتد.",
     "descriptionEn": "The episode covers Bitcoin's scaling debate and the SegWit activation drama of mid-2017. Here's the summary: Episode ten of the شیر یا خط (Shir Ya Khat) podcast, recorded July 22, 2017, continues the Bitcoin block-size and scaling debate from episode five, explaining the mechanics behind SegWit (Segregated Witness) and the contentious activation process unfolding that week. The hosts define what a BIP (Bitcoin Improvement Proposal) is—comparing it to Ethereum's ERC standards like ERC-20—and walk through how Segregated Witness separates a transaction's ECDSA signature into a distinct witness structure with its own Merkle tree, roughly doubling effective block capacity beyond the 1 MB limit while shrinking the data a full node must store and fixing the long-standing transaction malleability bug (illustrated via the Mt. Gox hack). They trace the governance timeline through BIP 9 version-bits signaling, BIP 141 (SegWit), the miner stalemate driven by Bitmain's ASICBoost, and the grassroots BIP 148 UASF (User Activated Soft Fork) set for August 1st, culminating in BIP 91 locking in at an 80% threshold, plus the looming SegWit2x compromise to raise blocks to 2 MB. The discussion also weighs fork risks—replay attacks, soft-fork wipeout, and the Ethereum/Ethereum Classic DAO hard-fork precedent—advising listeners to hold their own private keys off exchanges and to run full nodes (Bitcoin Core/bitcoind, Bitcore, bitcoinj) to strengthen the network against Sybil and 51% attacks and to enable off-chain scaling via the Lightning Network. The episode closes with a market report covering Bitcoin's swing to nearly $3,000 and back to $1,800, altcoin dynamics (Ethereum, Litecoin, Ripple, Cardano), mining reward halvings and game theory, and a cautionary note comparing the ICO frenzy to the late-1990s dot-com bubble.",
@@ -2349,7 +3331,68 @@
     "titleEn": "Art of Mining - Advanced Mining in Iran",
     "publishedAt": "2017-07-04",
     "durationSec": 5162,
-    "chapters": [],
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 69,
+        "title": "مقدمه و معرفی موضوع"
+      },
+      {
+        "startSec": 69,
+        "endSec": 327,
+        "title": "شروع ماینینگ در ایران و چالش‌های آن"
+      },
+      {
+        "startSec": 327,
+        "endSec": 663,
+        "title": "سخت‌افزار ماینینگ: ASIC یا کارت گرافیک؟"
+      },
+      {
+        "startSec": 663,
+        "endSec": 1397,
+        "title": "انتخاب استخر ماینینگ و ایده‌ی استخر ایرانی"
+      },
+      {
+        "startSec": 1397,
+        "endSec": 1699,
+        "title": "تمرکز ماینینگ در چین، حمله‌ی ۵۱ درصد و فورک"
+      },
+      {
+        "startSec": 1699,
+        "endSec": 2251,
+        "title": "برق و تهویه‌ی فارم ماینینگ"
+      },
+      {
+        "startSec": 2251,
+        "endSec": 3042,
+        "title": "خنک‌سازی کارت‌ها: جریان هوا، کولر و undervolt"
+      },
+      {
+        "startSec": 3042,
+        "endSec": 3533,
+        "title": "کمبود کارت گرافیک و محاسبه‌ی بازگشت سرمایه"
+      },
+      {
+        "startSec": 3533,
+        "endSec": 3872,
+        "title": "مقایسه‌ی کارت‌های AMD و Nvidia"
+      },
+      {
+        "startSec": 3872,
+        "endSec": 4359,
+        "title": "معرفی پرسش‌وپاسخ و ماشین‌حساب miningbox"
+      },
+      {
+        "startSec": 4359,
+        "endSec": 4815,
+        "title": "تهیه‌ی قطعات ریگ: کارت، پاور، رایزر و مادربرد"
+      },
+      {
+        "startSec": 4815,
+        "endSec": 5162,
+        "title": "پرسش‌های پایانی و جمع‌بندی"
+      }
+    ],
     "youtubeThumb": "https://i.ytimg.com/vi/foX-_c7rYSI/maxresdefault.jpg",
     "descriptionFa": "با یک سری از دوستان ماینر در ایران گفتگویی داشتیم و به موضوع بهینه سازی و بومی سازی صنعت استخراج دیجی ارز ها (کریپتوکارنسی) در ایران و چالشهایی که در این راه است پرداختیم.",
     "descriptionEn": "Iran's mining scene at a professional level is the focus of this ninth episode of the Shir ya Khat podcast, which builds on the earlier basics episode to dig into the hardware, economics, and challenges of running crypto mining rigs and farms inside Iran. The hosts and guest miners compare mining hardware options—ASICs (Application Specific Integrated Circuits) like Bitmain's Antminer for Bitcoin's SHA-256 versus GPU rigs (AMD's RX 470/480/580 and Nvidia's GTX 1070/1080) for ASIC-resistant algorithms such as Ethereum's Dagger-Hashimoto, Monero (CPU-friendly), Equihash coins, Zcash, and Ethereum Classic—while stressing the difficulty of importing scarce, warranty-less, non-resalable gear amid a global GPU, power-supply, and riser shortage. They explain mining pools versus solo mining, block rewards and the Bitcoin halving, pool payout methods, P2Pool, server ping and orphan/uncle rates, the case for an Iran-based pool, mining-pool centralization, the 51% attack, mempool transaction censorship, and how China's cheap electricity, mining farms, and firewall pose network fork risks. Practical rig-building advice covers electrical amperage and cabling, heat dissipation and airflow, undervolting/downclocking, BIOS/RAM-timing overclocking, swamp coolers, dust management, virtual memory for growing DAG epoch sizes, and detailed ROI calculations warning against short-term payback expectations given volatile prices and the difficulty bomb. The episode also previews the upcoming August 1st UASF (User Activated Soft Fork) and SegWit debate, explains soft forks versus hard forks and Ethereum's planned move to Proof of Stake, and promotes new Iranian tools at miningbox.com—a Stack Overflow-style mining Q&A forum and a localized profitability calculator factoring hardware, electricity tiers, difficulty, and coin selection.",
@@ -2389,7 +3432,68 @@
     "titleEn": "Is it a Blockchain? Altcoins, Tokens and ICO",
     "publishedAt": "2017-05-28",
     "durationSec": 4975,
-    "chapters": [],
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 100,
+        "title": "مقدمه؛ از آلت‌کوین تا توکن"
+      },
+      {
+        "startSec": 100,
+        "endSec": 384,
+        "title": "تعریف بلاکچین؛ توزیع‌شده یا غیرمتمرکز؟"
+      },
+      {
+        "startSec": 384,
+        "endSec": 783,
+        "title": "آیا ریپل بلاکچین است؟"
+      },
+      {
+        "startSec": 783,
+        "endSec": 1239,
+        "title": "هزینه‌ی غیرمتمرکز بودن و کاربردهای غیرمالی بلاکچین"
+      },
+      {
+        "startSec": 1239,
+        "endSec": 1607,
+        "title": "از VC و IPO تا ICO"
+      },
+      {
+        "startSec": 1607,
+        "endSec": 1918,
+        "title": "مشکل مدل انگیزشی در ICOها"
+      },
+      {
+        "startSec": 1918,
+        "endSec": 2512,
+        "title": "Vesting و معیارهای ارزیابی یک ICO"
+      },
+      {
+        "startSec": 2512,
+        "endSec": 3036,
+        "title": "سرمایه‌گذاری روی ایده‌ی ساخته‌نشده و خطر کلاهبرداری"
+      },
+      {
+        "startSec": 3036,
+        "endSec": 3291,
+        "title": "پروژه‌های بدون ICO: بیت‌کوین و Mimblewimble"
+      },
+      {
+        "startSec": 3291,
+        "endSec": 3689,
+        "title": "جنبه‌ی اجتماعی ICO و مشارکت عمومی"
+      },
+      {
+        "startSec": 3689,
+        "endSec": 4483,
+        "title": "برگشت‌ناپذیری، نیاز به قانون و مشکلات پیش‌بینی‌نشده"
+      },
+      {
+        "startSec": 4483,
+        "endSec": 4975,
+        "title": "نتیجه‌ی مسابقه‌ی لوگو و گزارش بازار"
+      }
+    ],
     "youtubeThumb": "https://i.ytimg.com/vi/4UUTBGEYcMI/maxresdefault.jpg",
     "descriptionFa": "مروری بر ماهیت و چیستی بلاکچین و بیتکوین داریم. چه چیزی باعث می شود تا به کوینی 'غیرمتمرک' گفته شود و کوینی از زیر سایه بلاکچین خارج شده باشد و به آن 'متمرکز' بگویند.",
     "descriptionEn": "Iran's blockchain podcast Shir ya Khat, episode eight, explores what technically qualifies as a blockchain and unpacks altcoins, tokens, and the emerging ICO frenzy. The hosts trace the lineage from Bitcoin forks like Litecoin and Namecoin (a DNS system) through the explosion of altcoins to Ethereum's smart contracts and the rise of tokens, defining blockchain as a distributed, decentralized database whose state is agreed upon by network nodes through consensus—contrasting genuine decentralization with merely distributed systems like Facebook's load-balanced data centers, and calling out Ripple as centralized (company-backed, sueable for money laundering, no downloadable full-node wallet, no Proof of Work algorithm in its whitepaper). They discuss blockchain's core innovation of trustless, transparent, censorship-resistant financial consensus, its scalability and storage costs (every node holding the full chain), alternatives like IPFS for decentralized storage, and broader use cases such as land/ownership registries and DAOs (referencing The DAO hack). The bulk of the episode critiques ICOs as an alternative to VC funding, IPOs, and Kickstarter-style crowdfunding, noting hard caps, pre-mining, token distribution, and how projects (Ethereum's own presale, Gnosis, Augur, and a dubious Visa-linked \"Card\" token that raised $12.5 million in half an hour) raise millions in minutes—while warning of broken incentive models, exit scams, unregulated Russian-hosted sites, and the need to scrutinize whitepapers, GitHub commits/contributors, vesting schedules, team reputation, and real token utility. The conversation weighs regulation versus trustlessness, Bitcoin's irreversibility (invoking the Apple–FBI San Bernardino case), unforeseeable design flaws like ASIC mining centralization and the 1MB block size debate, and cites the elegant, ICO-free Mimblewimble whitepaper as a counterexample of value created through peer review rather than hype. It closes with a market report on Bitcoin's unprecedented rally from around $1,700 to roughly $2,700 and how altcoin prices like Ethereum's rise and crash in tandem with Bitcoin.",
@@ -2421,7 +3525,68 @@
     "titleEn": "O Bitcoin, Where art thou - Key management",
     "publishedAt": "2017-04-29",
     "durationSec": 4199,
-    "chapters": [],
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 303,
+        "title": "مقدمه؛ آدرس بیت‌کوین، کلید خصوصی و کلید عمومی"
+      },
+      {
+        "startSec": 303,
+        "endSec": 735,
+        "title": "مثال HTTPS و مفهوم رمزنگاری"
+      },
+      {
+        "startSec": 735,
+        "endSec": 888,
+        "title": "بیت‌کوین کجاست؟ کلید خصوصی و انتقال مالکیت"
+      },
+      {
+        "startSec": 888,
+        "endSec": 1196,
+        "title": "کیف‌پول کاغذی، سخت‌افزاری و آنلاین"
+      },
+      {
+        "startSec": 1196,
+        "endSec": 1625,
+        "title": "Brain wallet، هدیه دادن بیت‌کوین و نسخه‌ی پشتیبان"
+      },
+      {
+        "startSec": 1625,
+        "endSec": 1874,
+        "title": "آدرس‌های چندامضایی یا multisig"
+      },
+      {
+        "startSec": 1874,
+        "endSec": 2149,
+        "title": "معیار انتخاب کیف‌پول تحت وب و موبایل"
+      },
+      {
+        "startSec": 2149,
+        "endSec": 2399,
+        "title": "HD wallet و master public key"
+      },
+      {
+        "startSec": 2399,
+        "endSec": 2643,
+        "title": "کارمزد و معایب multisig"
+      },
+      {
+        "startSec": 2643,
+        "endSec": 2950,
+        "title": "ردیابی تراکنش‌ها و سکه‌های فیزیکی بیت‌کوین"
+      },
+      {
+        "startSec": 2950,
+        "endSec": 3751,
+        "title": "گزارش بازار هفته"
+      },
+      {
+        "startSec": 3751,
+        "endSec": 4199,
+        "title": "فراخوان همکاری و جمع‌بندی"
+      }
+    ],
     "youtubeThumb": "https://i.ytimg.com/vi/Br0mwseqRtQ/maxresdefault.jpg",
     "descriptionFa": "در این قسمت می خواهیم درباره اینکه بیتکوین را چگونه نگهداری کنیم و نحوه عملکرد تراکنش های بیتکوین به چه صورت است صحبت کنیم.",
     "descriptionEn": "This episode of the Shir Ya Khat (Heads or Tails) podcast dives deep into Bitcoin key management, explaining how private keys and public keys work through the lens of public-key cryptography, digital signatures, and comparisons to RSA-based HTTPS/SSL certificates, hashing algorithms like SHA-256, and hash collisions. The hosts clarify that Bitcoin transactions don't move coins but transfer ownership recorded on the blockchain, and they survey a wide range of private-key storage methods: keeping encrypted keys on your hard drive (Bitcoin QT/Armory), paper wallets (bitaddress.org), brain wallets and their brute-force vulnerabilities, hardware wallets like Ledger Nano and Trezor, exchange/custodial and web wallets (Blockchain.info, MyEtherWallet, Mycelium, Copay), and the security-versus-usability trade-offs of each, stressing open-source verifiability and self-custody. They also cover advanced topics including multisig (multi-signature) addresses for shared/joint-account setups and their higher transaction fees due to larger byte size, HD/deterministic wallets with master private/public keys (xprv, extended public keys, BIP39 seed phrases), physical Bitcoins with hologram-hidden keys, gifting Bitcoin, and Bitcoin's pseudonymous \"glass wallet\" traceability. The episode closes with a market report analyzing Bitcoin's ascending price channel near $1,300–$1,500, ETF news, Tether-driven price gaps on Poloniex versus Bitfinex/OKCoin/BTC-e, the Poloniex altcoin delistings, how Bitcoin rallies pressure altcoins like Monero, Ether, and Zcash, and a call for contributors to earn Bitcoin through Coin Iran and the DigiArz logo contest.",
@@ -2454,7 +3619,68 @@
     "titleEn": "Open Mic (Q&A)- Essence of Bitcoin & Blockchain",
     "publishedAt": "2017-04-16",
     "durationSec": 4776,
-    "chapters": [],
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 383,
+        "title": "مقدمه؛ چرا بیت‌کوین ارزش دارد؟"
+      },
+      {
+        "startSec": 383,
+        "endSec": 602,
+        "title": "تفاوت بیت‌کوین با وب‌مانی و پول‌های آنلاین متمرکز"
+      },
+      {
+        "startSec": 602,
+        "endSec": 1122,
+        "title": "کاهش عرضه، پاداش ماینرها و سختی شبکه"
+      },
+      {
+        "startSec": 1122,
+        "endSec": 1399,
+        "title": "محاسبات ریاضی ماینینگ چیست؟"
+      },
+      {
+        "startSec": 1399,
+        "endSec": 1766,
+        "title": "Rainbow table و ماجرای ASICBoost"
+      },
+      {
+        "startSec": 1766,
+        "endSec": 2054,
+        "title": "آیا بیت‌کوین قابل ردیابی است؟"
+      },
+      {
+        "startSec": 2054,
+        "endSec": 2483,
+        "title": "عرضه‌ی ثابت و متغیر در آلت‌کوین‌ها"
+      },
+      {
+        "startSec": 2483,
+        "endSec": 2940,
+        "title": "بیت‌کوین، پول کثیف و ماجرای Silk Road"
+      },
+      {
+        "startSec": 2940,
+        "endSec": 3523,
+        "title": "فرصت بیت‌کوین برای ایران و نگاه اجتماعی به آن"
+      },
+      {
+        "startSec": 3523,
+        "endSec": 3926,
+        "title": "افزایش کارمزد تراکنش‌ها و بلاکچین برای امنیت دستگاه‌های متصل"
+      },
+      {
+        "startSec": 3926,
+        "endSec": 4146,
+        "title": "پرداخت‌های خرد، ماینینگ لایت‌کوین و شبکه لایتنینگ"
+      },
+      {
+        "startSec": 4146,
+        "endSec": 4776,
+        "title": "گسترش بیت‌کوین، فایده‌ی آن برای ایرانیان و آزادی اقتصادی"
+      }
+    ],
     "youtubeThumb": "https://i.ytimg.com/vi/SJ9s-5mfmMc/maxresdefault.jpg",
     "descriptionFa": "این هفته جلسه ی آزادی خواهیم داشت و تنها می خواهیم به سوالات دوستان پاسخ بدهیم.",
     "descriptionEn": "This is episode 6 of the \"Heads or Tails\" (Shir Ya Khat) podcast, a live open-mic Q&A session covering the fundamental nature of Bitcoin and blockchain, in which the hosts explain why Bitcoin has value through the lens of monetary history, supply and demand, and a \"social agreement\" model that requires no government or gold backing, contrasting Bitcoin's decentralized, serverless architecture (illustrated via torrent-like peer-to-peer full nodes and distributed ledgers) with custodial digital-money services like WebMoney, Perfect Money, and the shut-down Liberty Reserve. The discussion digs into Bitcoin's fixed 21-million supply cap, the block reward and its roughly four-year halving schedule (50 → 25 → 12.5 BTC), miner economics and transaction-fee incentives after 2140, mining difficulty adjustment, hashrate, SHA-256 proof-of-work, and the ASICBoost controversy involving Bitmain and Gregory Maxwell, while also debunking a listener's misconception that mining hashes could form a reverse-lookup rainbow table to crack passwords. The hosts address Bitcoin's pseudonymous (not fully anonymous) nature, chain-analysis and address-clustering tools like walletexplorer.com, Chainalysis, and Scorechain, privacy techniques such as CoinJoin, plus fungibility, \"dirty Bitcoin,\" Silk Road, and the argument that cash remains the dominant tool for illicit finance. They compare altcoin monetary policies—Ethereum's uncapped issuance, Dogecoin, Litecoin's scrypt algorithm and ASIC resistance, and Iceland's Auroracoin pre-mine failure—and touch on coin burning, difficulty-based supply adjustment, and validator/block-time design. The episode closes on blockchain's broader promise: micropayments and the Lightning Network (off-chain payment channels), smart contracts, IoT security use cases like Slock.it smart locks, and especially the potential for economic freedom in sanctioned Iran—enabling freelancers, handicraft exporters, and cross-border payments (including a Swiss company letting foreigners buy Iranian stocks via Bitcoin) to bypass the traditional banking system that blocks access to PayPal, Visa, and MasterCard.",
@@ -2482,7 +3708,68 @@
     "titleEn": "Bitcoin Fork, Bitcoin Unlimited and Blocksize debate",
     "publishedAt": "2017-04-01",
     "durationSec": 4526,
-    "chapters": [],
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 176,
+        "title": "مقدمه و تاریخچه‌ی بحث اندازه‌ی بلاک"
+      },
+      {
+        "startSec": 176,
+        "endSec": 393,
+        "title": "چرا اندازه‌ی بلاک را بزرگ‌تر نکنیم؟"
+      },
+      {
+        "startSec": 393,
+        "endSec": 608,
+        "title": "رأی‌گیری ماینرها و Bitcoin Unlimited"
+      },
+      {
+        "startSec": 608,
+        "endSec": 944,
+        "title": "هارد فورک و سافت فورک"
+      },
+      {
+        "startSec": 944,
+        "endSec": 1306,
+        "title": "SegWit و مسئله‌ی مقیاس‌پذیری بیت‌کوین"
+      },
+      {
+        "startSec": 1306,
+        "endSec": 2120,
+        "title": "شبکه‌ی لایتنینگ و کانال‌های پرداخت"
+      },
+      {
+        "startSec": 2120,
+        "endSec": 2437,
+        "title": "پیامدهای فورک برای بیت‌کوین"
+      },
+      {
+        "startSec": 2437,
+        "endSec": 2803,
+        "title": "چرا حالا؟ تقابل Bitcoin Core و کسب‌وکارها"
+      },
+      {
+        "startSec": 2803,
+        "endSec": 3105,
+        "title": "آیا بیت‌کوین به رهبر نیاز دارد؟"
+      },
+      {
+        "startSec": 3105,
+        "endSec": 3622,
+        "title": "آیا آلت‌کوین‌ها می‌توانند جای بیت‌کوین را بگیرند؟"
+      },
+      {
+        "startSec": 3622,
+        "endSec": 4383,
+        "title": "راجر ور و حمایت از Bitcoin Unlimited"
+      },
+      {
+        "startSec": 4383,
+        "endSec": 4526,
+        "title": "نگهداری امن بیت‌کوین هنگام فورک"
+      }
+    ],
     "youtubeThumb": "https://i.ytimg.com/vi/DfBW3fqshqQ/maxresdefault.jpg",
     "descriptionFa": "در این قسمت می خواهیم به موضوعاتی مثل اندازه بلاک، فورک یا انشعاب، bitcoin unlimited و مطالبی در این حوزه بپردازیم.",
     "descriptionEn": "This episode of the Shir Ya Khat podcast dives into Bitcoin's block size debate and the looming risk of a hard fork, tracing the history from Satoshi's original 1 MB block limit (set to curb spam) to the current push by Bitcoin Unlimited and figures like Gavin Andresen and Roger Ver to raise block sizes to 2, 8, or 20 MB. The hosts explain why larger blocks are contentious—slower block propagation causing orphaned blocks, the Great Firewall handicapping Chinese miners and their custom relay protocols, growing centralization of hash power and mining pools, and the rising cost of running full nodes (blockchain size, UTXO set in RAM) that threatens Bitcoin's decentralization ideology. They contrast miner-driven signaling and voting through Bitcoin Unlimited and Bitcoin Classic with Bitcoin Core's more conservative, ideology-driven roadmap, distinguishing soft forks from hard forks and covering SegWit (Segregated Witness), UASF (User Activated Soft Fork), transaction malleability, and 95% activation thresholds. A large portion is devoted to the Lightning Network as the real scalability solution—explaining payment channels, multisig accounts, timelocks, off-chain micropayments (per-second/pay-per-use billing), and on-chain settlement—alongside why SegWit is a prerequisite and why some miners fear reduced fees. The discussion also weighs the economics of a chain split (replay-style coin doubling, halved value, exchange listings, Bitcoin as digital gold and store of value), drawing parallels to the Ethereum/Ethereum Classic DAO fork, and touches on Litecoin's SegWit roadmap, altcoin rallies, and coins like Dash, Monero, and Ethereum. Finally, the hosts give practical advice for holders facing a potential fork—moving BTC off exchanges into hardware or self-custody wallets, splitting coins across chains, and not panic-spending—while debating whether decentralized development needs leadership (a \"benevolent dictator\") versus Bitcoin's founding decentralized principles.",
@@ -2513,7 +3800,63 @@
     "titleEn": "Mining, Proof of Work and ETF",
     "publishedAt": "2017-03-11",
     "durationSec": 2712,
-    "chapters": [],
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 74,
+        "title": "مقدمه و مفهوم هشینگ"
+      },
+      {
+        "startSec": 74,
+        "endSec": 289,
+        "title": "اثبات کار (Proof of Work) و سختی شبکه"
+      },
+      {
+        "startSec": 289,
+        "endSec": 387,
+        "title": "Proof of Stake و Proof of Burn"
+      },
+      {
+        "startSec": 387,
+        "endSec": 1037,
+        "title": "تجربه‌ی ماینینگ: از CPU و GPU تا دستگاه‌های ASIC"
+      },
+      {
+        "startSec": 1037,
+        "endSec": 1350,
+        "title": "هزینه‌ها و سودآوری ماینینگ"
+      },
+      {
+        "startSec": 1350,
+        "endSec": 1517,
+        "title": "ماینینگ پول‌ها و روش‌های پرداخت (PPS و PPLNS)"
+      },
+      {
+        "startSec": 1517,
+        "endSec": 1621,
+        "title": "قدرت هش شبکه در مقایسه با ابرکامپیوترها"
+      },
+      {
+        "startSec": 1621,
+        "endSec": 1749,
+        "title": "کلاد ماینینگ (Cloud Mining)"
+      },
+      {
+        "startSec": 1749,
+        "endSec": 2066,
+        "title": "تفاوت پردازنده‌های معمولی و ASIC"
+      },
+      {
+        "startSec": 2066,
+        "endSec": 2676,
+        "title": "گزارش بازار: رد ETF و تحلیل آلت‌کوین‌ها"
+      },
+      {
+        "startSec": 2676,
+        "endSec": 2712,
+        "title": "جمع‌بندی و خداحافظی"
+      }
+    ],
     "youtubeThumb": "https://i.ytimg.com/vi/eBgmCCIlJTk/maxresdefault.jpg",
     "descriptionFa": "در این اپیزود از پادکست «شیر یا خط» به‌طور کامل به مفهوم ماینینگ یا استخراج ارز دیجیتال و الگوریتم اجماع Proof of Work یا اثبات کار در بیت‌کوین می‌پردازیم و توضیح می‌دهیم که چگونه تابع هش، سختی محاسباتی (Difficulty) و هش‌ریت شبکه، امنیت بلاکچین را تضمین کرده و مشکل دابل اسپند را حل می‌کنند. سیر تکامل استخراج از CPU و GPU تا دستگاه‌های اختصاصی ASIC، تفاوت الگوریتم‌هایی مانند SHA-256 و Scrypt، شکل‌گیری ماینینگ پول‌ها و روش‌های پرداخت پاداش مثل PPS و PPLNS و همچنین مدل‌های جایگزین مانند Proof of Stake و Proof of Burn را بررسی می‌کنیم و درباره سودآوری ماینینگ، هزینه برق و خنک‌سازی و ریسک‌های کلاود ماینینگ گفت‌وگو می‌کنیم. در بخش گزارش بازار نیز به تأثیر خبر ETF بیت‌کوین بر نوسانات قیمت، تحلیل تکنیکال و روند آلت‌کوین‌هایی مانند اتریوم، اتریوم کلاسیک، دش و مونرو (XMR) پرداخته می‌شود.",
     "descriptionEn": "Iran's crypto podcast \"Shir Ya Khat\" (Heads or Tails) dedicates episode four to Bitcoin mining and Proof of Work, starting with the cryptographic fundamentals of hashing (a unique, tamper-evident function) and how Adam Back's 1997 Hashcash algorithm—originally an anti-spam, anti-DoS measure—underpins Bitcoin's SHA-256 proof-of-work, alongside alternatives like Litecoin's Scrypt, and it explains mining difficulty (the leading-zero target readjusting every 2016 blocks to hold ~10-minute block times), plus competing consensus models including Proof of Stake (Ethereum), Proof of Burn, and sidechain coins like Zerocoin. Guest miners trace the hardware evolution from CPU and GPU mining to purpose-built ASICs (Bitmain Antminer S9, Bitfury, early Dragon rigs at ~$2,500 per terahash), discussing terahash rates, watt consumption, the rising network hashrate, and the economics of return-on-investment, electricity, cooling, and location (free power in China, cold-climate farms in Iceland and northern Canada). The episode covers mining pools and reward schemes—solo, PPS (pay-per-share), and PPLNS (pay per last N shares)—decentralized options like P2Pool, multi-pool coin-switching for profitability, and a skeptical take on cloud mining as effectively gambling, noting AWS/App Engine's early ban on mining. It closes with a market report framed around the SEC's rejection of a Bitcoin ETF, analyzing price volatility, whale manipulation, and a long-term bullish outlook, followed by technical-analysis commentary (triangles, Elliott waves, support/resistance) on altcoins including Ethereum, Ethereum Classic, Dash, Monero (XMR), and numerous smaller tokens on exchanges like Bittrex.",
@@ -2549,7 +3892,68 @@
     "titleEn": "Other Blockchains + ETF",
     "publishedAt": "2017-03-05",
     "durationSec": 3430,
-    "chapters": [],
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 388,
+        "title": "مقدمه؛ مشکلات DNS و Namecoin"
+      },
+      {
+        "startSec": 388,
+        "endSec": 510,
+        "title": "چرا زیرساخت‌ها را روی بلاکچین بسازیم؟"
+      },
+      {
+        "startSec": 510,
+        "endSec": 845,
+        "title": "بلاکچین در صنعت موسیقی"
+      },
+      {
+        "startSec": 845,
+        "endSec": 1090,
+        "title": "بلاکچین در بانک‌ها و بلاکچین خصوصی"
+      },
+      {
+        "startSec": 1090,
+        "endSec": 1213,
+        "title": "چرا اولین کاربرد بلاکچین پول بود؟"
+      },
+      {
+        "startSec": 1213,
+        "endSec": 1490,
+        "title": "وان‌کوین (OneCoin)؛ چرا بلاکچین نیست؟"
+      },
+      {
+        "startSec": 1490,
+        "endSec": 2041,
+        "title": "عبور قیمت بیت‌کوین از طلا و ماجرای ETF"
+      },
+      {
+        "startSec": 2041,
+        "endSec": 2434,
+        "title": "گزارش بازار: بیت‌کوین، اتریوم، مونرو و دش"
+      },
+      {
+        "startSec": 2434,
+        "endSec": 2832,
+        "title": "برادران وینکلواس، نهنگ‌ها و احتمال رد ETF"
+      },
+      {
+        "startSec": 2832,
+        "endSec": 3104,
+        "title": "نمودار تومانی بیت‌کوین و نظرسنجی صرافی‌ها در دیجی‌ارز"
+      },
+      {
+        "startSec": 3104,
+        "endSec": 3285,
+        "title": "کاربردهای بلاکچین برای ایران"
+      },
+      {
+        "startSec": 3285,
+        "endSec": 3430,
+        "title": "بلاکچین یعنی چه؟ زنجیره‌ی بلاک‌ها"
+      }
+    ],
     "youtubeThumb": "https://i.ytimg.com/vi/2FRl09V-dII/maxresdefault.jpg",
     "descriptionFa": "موضوع این قسمت از پادکست شیر یا خط، کاربردهای فناوری بلاکچین فراتر از جنبه‌ی پولی و ارز دیجیتال است؛ از سیستم‌های غیرمتمرکز نام دامنه (Decentralized DNS) مانند نیم‌کوین به‌عنوان اولین فورک بیت‌کوین و پروژه‌های دامنه روی بلاکچین گرفته تا حذف واسطه‌ها در صنعت موسیقی و محتوای دیجیتال با پروژه‌هایی مثل میوزیک‌کوین، و همچنین استفاده بانک‌ها از بلاکچین خصوصی (Private Blockchain) برای پایگاه‌داده‌های داخلی. در ادامه به بررسی کلاهبرداری‌هایی مانند وان‌کوین که برخلاف ادعایش کریپتوکارنسی و بلاکچین واقعی نیست، اهمیت خبر تصمیم‌گیری کمیسیون بورس و اوراق بهادار آمریکا (SEC) درباره ETF بیت‌کوین توسط برادران وینکلواس و تأثیر آن بر قیمت بیت‌کوین، و تحلیل تکنیکال آلت‌کوین‌هایی مانند اتریوم، مونرو و دَش پرداخته می‌شود. در پایان نیز مفهوم پایه‌ای بلاکچین، پروف‌آف‌ورک و ماینینگ، کاربردهای بلاکچین برای اقتصاد ایران و امکانات پلتفرم دی‌جی‌ارز برای مشاهده قیمت تومانی بیت‌کوین و صرافی‌ها توضیح داده می‌شود.",
     "descriptionEn": "The third episode of the Shir Ya Khat (Heads or Tails) podcast moves beyond Bitcoin and Ethereum to explore other blockchain use cases and the pending Bitcoin ETF decision, opening with how decentralized DNS could replace the centralized, filterable, and hack-prone Domain Name Service and its flawed SSL/HTTPS Certificate Authority trust model, citing early projects like Namecoin (the first Bitcoin fork, launched October 2011, with .bit domains), Blockstack's approach of writing domain data into Bitcoin's message field, and Okturtles' DNSChain. The hosts discuss blockchain as a trustless, cryptographically verified database and its potential to disintermediate the music industry, highlighting MusicCoin (which had no ICO or pre-mine and pays composers, singers, lyricists, and session musicians directly), plus Decent and the older BitShares Music, while noting the unsolved copyright/copying problem of digital media. They cover enterprise and infrastructure applications—private/permissioned blockchains such as Chain.com's use for syncing databases across time zones, potential uses for banks, land and civil registries, and medical records—and warn against scams like OneCoin, dismissed as a centralized pyramid/network-marketing \"shitcoin\" with no mining, encryption, or decentralization. A major segment explains the U.S. SEC's upcoming ruling (around March 11–13) on the Winklevoss twins' proposed Bitcoin ETF under the ticker COIN, framing it against Bitcoin's price surpassing an ounce of gold (~$1264 vs. $1234), demand from the Indian market, China's exchange withdrawal freeze, and debate over whales, bubbles, and shorting risk. The episode closes with technical-analysis commentary on altcoins including Ethereum, Monero, and Dash (triangle breakout patterns), a plug for the DigiArz exchange-comparison site with its new Toman price charts and exchange-rating comment system, examples like Kenya's/Africa's BitPesa mobile-airtime-to-Bitcoin bridge for Iran's closed banking system, and a beginner-friendly explanation of what a blockchain actually is—a chain of blocks linked by hashes and secured through miners' Proof of Work.",
@@ -2583,7 +3987,68 @@
     "titleEn": "Ethereum",
     "publishedAt": "2017-02-19",
     "durationSec": 3896,
-    "chapters": [],
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 37,
+        "title": "مقدمه و معرفی موضوع"
+      },
+      {
+        "startSec": 37,
+        "endSec": 292,
+        "title": "اتریوم چیست؟ قراردادهای هوشمند"
+      },
+      {
+        "startSec": 292,
+        "endSec": 538,
+        "title": "تاریخچه‌ی اتریوم"
+      },
+      {
+        "startSec": 538,
+        "endSec": 873,
+        "title": "تفاوت ارزش اتر و بیت‌کوین؛ توکن‌ها و ICO"
+      },
+      {
+        "startSec": 873,
+        "endSec": 1027,
+        "title": "کاربردهای اتریوم"
+      },
+      {
+        "startSec": 1027,
+        "endSec": 1211,
+        "title": "از یادداشت تراکنش‌های بیت‌کوین تا اتریوم"
+      },
+      {
+        "startSec": 1211,
+        "endSec": 1466,
+        "title": "عرضه و تقاضای اتر و ماجرای The DAO"
+      },
+      {
+        "startSec": 1466,
+        "endSec": 1619,
+        "title": "RootStock و آینده‌ی اتریوم"
+      },
+      {
+        "startSec": 1619,
+        "endSec": 2352,
+        "title": "آیا فورک اتریوم لازم بود؟ اتریوم کلاسیک"
+      },
+      {
+        "startSec": 2352,
+        "endSec": 2624,
+        "title": "گزارش بازار هفته"
+      },
+      {
+        "startSec": 2624,
+        "endSec": 3598,
+        "title": "معرفی دیجی‌ارز؛ مقایسه‌ی قیمت صرافی‌های ایرانی"
+      },
+      {
+        "startSec": 3598,
+        "endSec": 3896,
+        "title": "کارمزد صرافی‌ها و جمع‌بندی"
+      }
+    ],
     "youtubeThumb": "https://i.ytimg.com/vi/vC42pSyz22s/maxresdefault.jpg",
     "descriptionFa": "در این قسمت از پادکست «شیر یا خط» به‌طور کامل به اتریوم (Ethereum)، نسل دوم بلاکچین و ساختار فنی آن پرداخته می‌شود؛ از مفهوم «کامپیوتر غیرمتمرکز» و قراردادهای هوشمند (Smart Contract) گرفته تا تفاوت بنیادی اتریوم با بیت‌کوین در مدل والت‌بیس در برابر ترنزکشن‌بیس و اصلاح درخت مرکل. میزبانان تاریخچه اتریوم از وایت‌پیپر ویتالیک بوترین و کراودسیل ۲۰۱۴ تا مکانیزم‌های پروف‌آف‌ورک و پروف‌آف‌استیک، مفهوم ایتر به‌عنوان «کریپتو فیول» و ارزش ذاتی توکن را بررسی می‌کنند و درباره‌ی ماجرای هک داو (The DAO)، هارد فورک جنجالی و پیدایش اتریوم کلاسیک، سانسورشیپ و فلسفه‌ی تمرکززدایی بحث می‌کنند. همچنین کاربردهای اتریوم شامل توکن‌سازی، آی‌سی‌او (ICO)، صرافی غیرمتمرکز، زبان برنامه‌نویسی سالیدیتی و مفهوم گس، پروژه‌ی رقیب روت‌استاک و در پایان گزارش هفتگی بازار بیت‌کوین، ریپل و دش‌کوین ارائه می‌شود.",
     "descriptionEn": "This episode of Shir Ya Khat dives into Ethereum as a second-generation blockchain, framing it as a \"decentralized computer\" in contrast to Bitcoin's \"decentralized database,\" and explaining how smart contracts written in languages like Solidity turn code into law (the \"code is law\" principle). The hosts trace Ethereum's history—Vitalik Buterin's late-2013 white paper, the 2014 crowd sale run through a Swiss company selling software licenses, the July 2015 Frontier launch, and the network's use of Proof of Work with an intended migration to Proof of Stake—while contrasting Ethereum's account/balance model against Bitcoin's transaction-based UTXO ledger and touching on its Merkle-tree tweak that preserves expired (\"uncle\") blocks. A major thread is the DAO hack (~$68–150 million in ETH drained via a smart-contract exploit) and the contentious hard fork that froze the attacker's balance, which the panel debates as a form of censorship that split the chain into Ethereum and Ethereum Classic, raised replay-attack concerns, and eroded investor trust despite protecting the ecosystem's value. They also discuss ETH's economics as \"crypto fuel\" (uncapped supply, gas costs) likened to oil rather than gold, the rise of ERC-style tokens and ICOs traded on exchanges like Bittrex and Poloniex, real-world use cases (decentralized exchanges, music-streaming platforms, IoT, replacing NASDAQ-style IPO intermediaries), and competing projects like RootStock. The episode closes with a market report covering Bitcoin trading around the $100K channel, Ripple hitting support near 560 satoshi, and Dashcoin's strength, plus a segment introducing \"DigiArz,\" a local Iranian price-aggregation and exchange-transparency service with a Telegram bot, alongside candid talk about exchanger spreads and \"dirty Bitcoin\" legal risks.",
@@ -2617,7 +4082,63 @@
     "titleEn": "Stay Safe with Bitcoin",
     "publishedAt": "2017-02-15",
     "durationSec": 3785,
-    "chapters": [],
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 133,
+        "title": "مقدمه و معرفی پادکست"
+      },
+      {
+        "startSec": 133,
+        "endSec": 470,
+        "title": "انواع کلاهبرداری با بیت‌کوین در ایران"
+      },
+      {
+        "startSec": 470,
+        "endSec": 656,
+        "title": "بیت‌کوین تمیز و غیرتمیز"
+      },
+      {
+        "startSec": 656,
+        "endSec": 1118,
+        "title": "کلاد ماینینگ (Cloud Mining) و دلایل کلاهبرداری بودن آن"
+      },
+      {
+        "startSec": 1118,
+        "endSec": 1274,
+        "title": "آلت‌کوین‌ها و ترفند Pump and Dump"
+      },
+      {
+        "startSec": 1274,
+        "endSec": 1641,
+        "title": "کلاهبرداری در ترید و سپردن سرمایه به دیگران"
+      },
+      {
+        "startSec": 1641,
+        "endSec": 1916,
+        "title": "مدیریت سرمایه، سیگنال‌ها و سایت‌های پانزی"
+      },
+      {
+        "startSec": 1916,
+        "endSec": 2405,
+        "title": "گزارش بازار هفته: صرافی‌های چین و آلت‌کوین‌ها"
+      },
+      {
+        "startSec": 2405,
+        "endSec": 2921,
+        "title": "نهنگ‌ها (Whale) و منابع خبری بازار"
+      },
+      {
+        "startSec": 2921,
+        "endSec": 3747,
+        "title": "چطور از دنیای رمزارزها درآمد کسب کنیم؟"
+      },
+      {
+        "startSec": 3747,
+        "endSec": 3785,
+        "title": "جمع‌بندی و خداحافظی"
+      }
+    ],
     "youtubeThumb": "https://i.ytimg.com/vi/cxKe5eLbKpo/maxresdefault.jpg",
     "descriptionFa": "در این قسمت از پادکست «شیر یا خط»، میزبان و کارشناسان درباره اسکم‌ها و کلاه‌برداری‌های بیت‌کوین و ارزهای دیجیتال در ایران گفتگو می‌کنند و توضیح می‌دهند چطور شرکت‌ها و پلتفرم‌های سالم را از ناسالم تشخیص دهیم؛ از کلاد ماینینگ (Cloud Mining) و طرح‌های هرمی و پانزی گرفته تا فروش بیت‌کوین «کثیف» و غیرقابل‌ردیابی زیر قیمت بازار. همچنین درباره خطرات ترید و سیگنال‌دهی، پامپ و دامپ آلت‌کوین‌ها، نقش نهنگ‌ها در بازار، مدیریت ریسک و سرمایه، و تفاوت تحلیل تکنیکال و فاندامنتال در بازار پرنوسان کریپتوکارنسی صحبت می‌شود. کارشناسان تأکید می‌کنند که هرگز سرمایه خود را به دست دیگران نسپارید، از منابع متعدد اطلاعات بگیرید، و بیت‌کوین را به‌عنوان یک دارایی محدود و بلندمدت برای پس‌انداز و کسب درآمد از طریق برنامه‌نویسی، ارائه سرویس و دریافت پرداخت با بیت‌کوین در نظر بگیرید.",
     "descriptionEn": "The Iranian people had money troubles, and Bitcoin scams were spreading... let me give you the summary. In this inaugural episode of the Shir Ya Khat (Heads or Tails) podcast, a group of Persian-speaking Bitcoin enthusiasts open their weekly conversation by dissecting cryptocurrency scams and fraud, with a focus on how bad actors exploit the ambiguous, unregulated crypto landscape in Iran. The hosts stress that Bitcoin is simply a form of digital money, so any conventional fraud—Ponzi and pyramid schemes, referral-based cloud mining operations, ASIC hardware cons like Butterfly Labs, and bogus trading services promising guaranteed returns—can be layered on top of it, made easier by pseudonymity and irreversible transactions. They walk through the concept of \"clean\" versus \"unclean\" (tainted or hacked) Bitcoin, blockchain traceability, and how exchanges like Coinbase and Coinolix freeze accounts flagged for AML compliance, referencing the Bitfinex hack and China's central bank forcing exchanges to restrict withdrawals. On trading, guest Ehsan explains market manipulation by \"whales,\" pump-and-dump schemes, paid Telegram signal groups, the difference between technical analysis and news-driven fundamentals, and recent altcoin moves (Komodo, Quatloo, Pascal, Litecoin on Bittrex), repeatedly warning listeners never to hand custody of their coins to anyone and to instead use API keys with withdrawal disabled. The episode closes with advice for newcomers on legitimately earning in crypto—accepting Bitcoin payments for freelance software, design, or services via tools like ShapeShift, long-term holding given Bitcoin's fixed supply, researching ICOs, whitepapers, CoinMarketCap data and Bitcoin Talk before buying—while emphasizing personal risk management, doing independent due diligence, and only investing money one can afford to lose.",
