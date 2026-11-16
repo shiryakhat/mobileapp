@@ -48,6 +48,14 @@ In production there is therefore:
 | Sign in with Apple      | Not required — no third-party login is shown                        |
 | Donations               | Kept: external Stripe link (`buy.stripe.com`), opens in the browser |
 
+## Roadmap (future versions)
+
+- **Archive.org links** — integrate each episode's archive.org item as an alternative
+  download / view link (a durable mirror alongside the primary audio). Surface it on the
+  episode screen (and in the share sheet) so listeners have a fallback source.
+- **MCP server** — expose the podcast corpus (episodes, transcripts, glossary, search) as an
+  MCP server wrapping `content/`, so agents can query the show without the app.
+
 ## When community is ENABLED, you MUST update before releasing
 
 Do not ship a build with `communityEnabled` on until every item below is done:
