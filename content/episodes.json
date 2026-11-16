@@ -2326,7 +2326,58 @@
     "titleEn": "Blockchain Through Philosophy - Interview with Creston Davis [English]",
     "publishedAt": "2020-04-24",
     "durationSec": 3515,
-    "chapters": [],
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 310,
+        "title": "مقدمه و معرفی پروفسور کرستون دیویس"
+      },
+      {
+        "startSec": 310,
+        "endSec": 665,
+        "title": "مشکل واسطه‌ها و بوروکراسی چیست؟"
+      },
+      {
+        "startSec": 665,
+        "endSec": 1010,
+        "title": "کرونا، پساحقیقت و بحران اعتماد"
+      },
+      {
+        "startSec": 1010,
+        "endSec": 1405,
+        "title": "فیک‌نیوز، نقد یا راه‌حل؟ ایده‌ی GCAS"
+      },
+      {
+        "startSec": 1405,
+        "endSec": 1864,
+        "title": "بانک‌ها، بدهی و استثمار دوباره"
+      },
+      {
+        "startSec": 1864,
+        "endSec": 2130,
+        "title": "بازار آزاد، نوسان و دست‌کاری بازار"
+      },
+      {
+        "startSec": 2130,
+        "endSec": 2230,
+        "title": "اقتصاد لیبیدویی و روانکاوی بازار"
+      },
+      {
+        "startSec": 2230,
+        "endSec": 2786,
+        "title": "نیمه‌ی تاریک بلاک‌چین، اتوماسیون و آینده‌ی کار"
+      },
+      {
+        "startSec": 2786,
+        "endSec": 3182,
+        "title": "اقتصادهای بسته، بیت‌کوین و بازتعریف ارزش"
+      },
+      {
+        "startSec": 3182,
+        "endSec": 3515,
+        "title": "تحریم اطلاعات، ساختار همتابه‌همتای GCAS و جمع‌بندی"
+      }
+    ],
     "youtubeThumb": "https://i.ytimg.com/vi/_OyN3hwI-Rw/maxresdefault.jpg",
     "descriptionFa": "در این قسمت از پادکست شیر یا خط با پروفسور کرستون دیویس، استاد فلسفه و از بنیان‌گذاران مدرسه مطالعات عالی جهانی (GCAS)، به بلاک‌چین به‌عنوان یک فناوری رادیکال نگاه می‌کنیم و از دریچه فلسفه به تمرکززدایی، آنارکو-کاپیتالیسم، بحران سرمایه‌داری، اتوماسیون و هوش مصنوعی می‌پردازیم. گفت‌وگو از حاکمیت فرد در بازار آزاد و بی‌اعتمادی به دولت تا نقش شرکت‌های بزرگ فناوری، نجات مالی بانک‌ها، استثمار نیروی کار و واسطه‌های مالی، و پیامدهای پاندمی کرونا و اخبار جعلی را در بر می‌گیرد. همچنین درباره ساختارهای همتا‌به‌همتا (P2P)، بیت‌کوین و امور مالی غیرمتمرکز (DeFi)، و ضرورت ساختن اعتماد، فرهنگ و اجتماع پایدار پیرامون بلاک‌چین صحبت می‌شود.",
     "descriptionEn": "This episode of the Shir Ya Khat (Sheer ya Khat) podcast breaks format as an English-language video interview—later to be released in Persian translation—featuring co-host Salman's former professor Creston Davis, a philosopher and co-founder of the Global Center for Advanced Studies (GCAS) in Dublin, in a wide-ranging philosophical conversation about blockchain, decentralization, and the political economy of technology. Grounding the talk in libertarian and anarcho-capitalist thought, individual sovereignty in free markets, and the distrust of states and corporations, the hosts and guest examine how Bitcoin and decentralized systems were meant to empower people yet often backfired—citing Wall Street bank bailouts, corporate rescues, and the deepening burden placed on individuals. Drawing on thinkers like Marx, Deleuze, Lyotard, Adam Greenfield, Jeremy Rifkin, and Bertrand Russell, the discussion connects fractional-reserve banking and financial intermediaries to a \"second exploitation\" of labor and money, while touching on DeFi (decentralized finance), speculative crypto markets, IPOs, market manipulation, and regulation. Much of the conversation reflects on the COVID-19 pandemic as a \"Petri dish\" for dystopian scenarios, exploring fake news, post-truth media, conspiracy theories, nationalism, xenophobia, surveillance capitalism (Facebook, Twitter, Google), automation, AI algorithms, and offshored labor. The dialogue also weighs the sustainability of protest movements—referencing Occupy Wall Street, Bernie Sanders, and Alain Badiou—and how GCAS was built as a P2P (peer-to-peer) collective to sustain autonomy over generations, closing on themes of trust, culture, and community as the necessary ethos underpinning decentralized technology, with notes on GCAS's open-source work via Slack and GitHub and its outreach to Iran.",
