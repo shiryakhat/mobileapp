@@ -1,7 +1,8 @@
+import { FlashList, type FlashListRef } from '@shopify/flash-list';
 import * as Clipboard from 'expo-clipboard';
 import { router } from 'expo-router';
 import { memo, useCallback, useEffect, useMemo, useRef, useState } from 'react';
-import { FlatList, Pressable, View } from 'react-native';
+import { Pressable, View } from 'react-native';
 import { cueIndexAt, type Cue, type Episode, type Transcript } from '@/content';
 import { segmentWithGlossary } from '@/content/glossaryMatch';
 import { useI18n } from '@/i18n';
@@ -129,16 +130,17 @@ const Row = memo(function Row({
 
 /** Follow-mode hops up to this many rows animate; anything farther jumps. */
 const MAX_ANIMATED_HOP = 12;
-const SETTLE_MS = 80;
-const MAX_SETTLE_TRIES = 10;
+/** Where the revealed cue sits in the viewport (0 = top edge, 1 = bottom edge). */
+const REVEAL_POSITION = 0.3;
 
 /** Bilingual transcript synced to playback: tap a line to seek, long-press for actions. */
 export function TranscriptView({ episode, transcript, onSeek, initialCueIndex }: Props) {
   const { t, isRTL, locale } = useI18n();
   const langs = useSettings((s) => s.transcriptLangs);
   const setLangs = useSettings((s) => s.setTranscriptLangs);
-  const listRef = useRef<FlatList<Cue>>(null);
+  const listRef = useRef<FlashListRef<Cue>>(null);
   const [follow, setFollow] = useState(initialCueIndex === undefined);
+  const [loaded, setLoaded] = useState(false);
   const [termSlug, setTermSlug] = useState<string>();
   const [actionIndex, setActionIndex] = useState<number>();
   const [copied, setCopied] = useState(false);
@@ -147,73 +149,35 @@ export function TranscriptView({ episode, transcript, onSeek, initialCueIndex }:
     transcript && s.episodeId === episode.id ? cueIndexAt(transcript, s.positionSec * 1000) : -1,
   );
 
-  // Rows have variable height, so a far target can't be animated to without a long
-  // visible roll. Far reveals land directly (non-animated, with bounded retries until
-  // the target row is measured); only short follow-mode hops animate.
-  const settle = useRef<{ timer?: ReturnType<typeof setTimeout>; tries: number }>({ tries: 0 });
-  const lastRevealed = useRef(-1);
+  // Rows have variable height (bilingual lines wrap differently). FlashList lays out
+  // unmeasured rows from estimates and corrects as it renders around the target, so a
+  // non-animated scrollToIndex lands on a far cue in one jump — no walking through the
+  // windows in between. Only short follow-mode hops animate.
+  //
+  // The list also opens already scrolled to its first target (the requested cue, or
+  // wherever playback is) rather than starting at the top; that needs the viewport
+  // height up front, so the list mounts once its container has been measured.
+  const [openAt] = useState(() => initialCueIndex ?? active);
+  const [viewportHeight, setViewportHeight] = useState(0);
+  const lastRevealed = useRef(initialCueIndex === undefined ? openAt : -1);
 
-  const cancelSettle = useCallback(() => {
-    clearTimeout(settle.current.timer);
-    settle.current.timer = undefined;
+  const reveal = useCallback((index: number, animated: boolean) => {
+    if (index < 0) return;
+    void listRef.current?.scrollToIndex({ index, viewPosition: REVEAL_POSITION, animated });
   }, []);
-
-  /** Jump straight to a cue, then once more to correct drift after nearby rows measure. */
-  const land = useCallback((index: number) => {
-    const jump = () =>
-      listRef.current?.scrollToIndex({ index, viewPosition: 0.25, animated: false });
-    clearTimeout(settle.current.timer);
-    // Scheduled before scrolling: onScrollToIndexFailed fires synchronously and replaces it.
-    settle.current.timer = setTimeout(jump, SETTLE_MS);
-    jump();
-  }, []);
-
-  const reveal = useCallback(
-    (index: number, animated: boolean) => {
-      if (index < 0) return;
-      settle.current.tries = 0;
-      if (animated) {
-        cancelSettle();
-        listRef.current?.scrollToIndex({ index, viewPosition: 0.25, animated: true });
-      } else {
-        land(index);
-      }
-    },
-    [cancelSettle, land],
-  );
-
-  const onScrollToIndexFailed = useCallback(
-    ({ index, averageItemLength }: { index: number; averageItemLength: number }) => {
-      cancelSettle();
-      if (settle.current.tries >= MAX_SETTLE_TRIES) return;
-      settle.current.tries += 1;
-      // Target isn't measured yet: jump near it, then land on it once it has rendered.
-      listRef.current?.scrollToOffset({ offset: index * averageItemLength, animated: false });
-      settle.current.timer = setTimeout(() => land(index), SETTLE_MS);
-    },
-    [cancelSettle, land],
-  );
-
-  useEffect(() => cancelSettle, [cancelSettle]);
 
   useEffect(() => {
+    if (!loaded) return;
     if (!follow) {
       // The user may have scrolled anywhere; the next sync must jump, not travel.
       lastRevealed.current = -1;
       return;
     }
     const prev = lastRevealed.current;
+    if (active === prev) return;
     lastRevealed.current = active;
     reveal(active, prev >= 0 && Math.abs(active - prev) <= MAX_ANIMATED_HOP);
-  }, [active, follow, reveal]);
-
-  useEffect(() => {
-    if (initialCueIndex !== undefined) {
-      const timer = setTimeout(() => reveal(initialCueIndex, false), 50);
-      return () => clearTimeout(timer);
-    }
-    return undefined;
-  }, [initialCueIndex, reveal]);
+  }, [active, follow, loaded, reveal]);
 
   const cues = transcript?.cues;
   const onPress = useCallback(
@@ -266,38 +230,43 @@ export function TranscriptView({ episode, transcript, onSeek, initialCueIndex }:
           <Chip icon="crosshair" label={t('followPlayback')} onPress={() => setFollow(true)} />
         ) : null}
       </View>
-      <FlatList
-        ref={listRef}
-        testID="transcript-list"
-        data={transcript.cues}
-        extraData={`${active}|${langs}|${locale}`}
-        keyExtractor={(_, i) => String(i)}
-        initialNumToRender={24}
-        windowSize={9}
-        onScrollBeginDrag={() => {
-          cancelSettle();
-          setFollow(false);
-        }}
-        onScrollToIndexFailed={onScrollToIndexFailed}
-        ListFooterComponent={
-          <Text variant="micro" color="faint" align="center" style={{ padding: space.xl }}>
-            {t('transcriptNote')}
-          </Text>
-        }
-        renderItem={({ item, index }) => (
-          <Row
-            cue={item}
-            index={index}
-            active={index === active}
-            langs={langs}
-            uiRTL={isRTL}
-            timeLabel={formatTime(item[0] / 1000, locale)}
-            onPress={onPress}
-            onLongPress={setActionIndex}
-            onTerm={setTermSlug}
+      <View
+        testID="transcript-viewport"
+        style={{ flex: 1 }}
+        onLayout={(e) => setViewportHeight(e.nativeEvent.layout.height)}
+      >
+        {viewportHeight > 0 ? (
+          <FlashList
+            ref={listRef}
+            testID="transcript-list"
+            data={transcript.cues}
+            extraData={`${active}|${langs}|${locale}`}
+            keyExtractor={(_, i) => String(i)}
+            initialScrollIndex={openAt > 0 ? openAt : undefined}
+            initialScrollIndexParams={{ viewOffset: -viewportHeight * REVEAL_POSITION }}
+            onLoad={() => setLoaded(true)}
+            onScrollBeginDrag={() => setFollow(false)}
+            ListFooterComponent={
+              <Text variant="micro" color="faint" align="center" style={{ padding: space.xl }}>
+                {t('transcriptNote')}
+              </Text>
+            }
+            renderItem={({ item, index }) => (
+              <Row
+                cue={item}
+                index={index}
+                active={index === active}
+                langs={langs}
+                uiRTL={isRTL}
+                timeLabel={formatTime(item[0] / 1000, locale)}
+                onPress={onPress}
+                onLongPress={setActionIndex}
+                onTerm={setTermSlug}
+              />
+            )}
           />
-        )}
-      />
+        ) : null}
+      </View>
 
       <GlossarySheet slug={termSlug} onClose={() => setTermSlug(undefined)} />
 
