@@ -72,7 +72,7 @@ jobs:
     needs: verify
     if: github.event_name == 'release' || inputs.platform == 'all' || inputs.platform == 'android'
     runs-on: ubuntu-latest
-    timeout-minutes: 60
+    timeout-minutes: 90
     env:
       EXPO_TOKEN: ${{ secrets.EXPO_TOKEN }}
       GOOGLE_SERVICE_ACCOUNT_KEY_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY_JSON }}
@@ -117,31 +117,8 @@ jobs:
           sha256sum "${APK_NAME}" "${AAB_NAME}" > SHA256SUMS
           cat SHA256SUMS
 
-      - name: Write Google Play service account key
-        if: github.event_name == 'release' || inputs.submit
-        run: |
-          set -euo pipefail
-          [ -n "$GOOGLE_SERVICE_ACCOUNT_KEY_JSON" ] || { echo "::error::GOOGLE_SERVICE_ACCOUNT_KEY_JSON not set"; exit 1; }
-          key_path="${RUNNER_TEMP}/google-service-account.json"
-          umask 077
-          case "$GOOGLE_SERVICE_ACCOUNT_KEY_JSON" in
-            "{"*) printf '%s' "$GOOGLE_SERVICE_ACCOUNT_KEY_JSON" > "$key_path" ;;
-            *) printf '%s' "$GOOGLE_SERVICE_ACCOUNT_KEY_JSON" | base64 --decode > "$key_path" ;;
-          esac
-          jq -e '.type == "service_account"' "$key_path" > /dev/null
-          echo "GOOGLE_SERVICE_ACCOUNT_KEY_PATH=${key_path}" >> "$GITHUB_ENV"
-
-      - name: Submit AAB to Google Play
-        if: github.event_name == 'release' || inputs.submit
-        run: |
-          set -euo pipefail
-          if [ -n "${PLAY_RELEASE_STATUS:-}" ]; then
-            jq --arg s "$PLAY_RELEASE_STATUS" '.submit.production.android += {releaseStatus:$s}' \
-              eas.json > "${RUNNER_TEMP}/eas.json" && mv "${RUNNER_TEMP}/eas.json" eas.json
-          fi
-          npx eas-cli submit --platform android --profile production \
-            --path "${RUNNER_TEMP}/${AAB_NAME}" --non-interactive --wait
-
+      # --- Publish the GitHub Release artifacts FIRST, so a slow Play upload
+      #     can never prevent the APK from landing on the Releases page. ---
       - name: Attach APK + checksums to the GitHub Release
         if: github.event_name == 'release'
         uses: softprops/action-gh-release@v2
@@ -149,6 +126,16 @@ jobs:
           files: |
             ${{ runner.temp }}/${{ env.APK_NAME }}
             ${{ runner.temp }}/SHA256SUMS
+
+      - name: Upload workflow artifacts
+        uses: actions/upload-artifact@v4
+        with:
+          name: shiryakhat-android-${{ github.ref_name }}
+          path: |
+            ${{ runner.temp }}/${{ env.APK_NAME }}
+            ${{ runner.temp }}/${{ env.AAB_NAME }}
+            ${{ runner.temp }}/SHA256SUMS
+          if-no-files-found: error
 
       - name: Append download info to the Release body
         if: github.event_name == 'release'
@@ -169,15 +156,27 @@ jobs:
           } > "${RUNNER_TEMP}/body.md"
           gh release edit "$TAG" -R "$GITHUB_REPOSITORY" --notes-file "${RUNNER_TEMP}/body.md"
 
-      - name: Upload workflow artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: shiryakhat-android-${{ github.ref_name }}
-          path: |
-            ${{ runner.temp }}/${{ env.APK_NAME }}
-            ${{ runner.temp }}/${{ env.AAB_NAME }}
-            ${{ runner.temp }}/SHA256SUMS
-          if-no-files-found: error
+      # --- Push the AAB to Google Play via the Developer API (no EAS submit
+      #     queue — avoids the queue-jam hang that can time the job out). ---
+      - name: Write Google Play service account key
+        if: github.event_name == 'release' || inputs.submit
+        run: |
+          set -euo pipefail
+          [ -n "$GOOGLE_SERVICE_ACCOUNT_KEY_JSON" ] || { echo "::error::GOOGLE_SERVICE_ACCOUNT_KEY_JSON not set"; exit 1; }
+          key_path="${RUNNER_TEMP}/google-service-account.json"
+          umask 077
+          case "$GOOGLE_SERVICE_ACCOUNT_KEY_JSON" in
+            "{"*) printf '%s' "$GOOGLE_SERVICE_ACCOUNT_KEY_JSON" > "$key_path" ;;
+            *) printf '%s' "$GOOGLE_SERVICE_ACCOUNT_KEY_JSON" | base64 --decode > "$key_path" ;;
+          esac
+          jq -e '.type == "service_account"' "$key_path" > /dev/null
+          echo "GOOGLE_SERVICE_ACCOUNT_KEY_PATH=${key_path}" >> "$GITHUB_ENV"
+
+      - name: Submit AAB to Google Play (internal track)
+        if: github.event_name == 'release' || inputs.submit
+        env:
+          PLAY_STATUS: ${{ vars.PLAY_RELEASE_STATUS || 'completed' }}
+        run: node scripts/play-upload.mjs "${RUNNER_TEMP}/${AAB_NAME}"
 
       - name: Remove key files
         if: always()
