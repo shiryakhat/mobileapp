@@ -172,9 +172,10 @@ jobs:
           jq -e '.type == "service_account"' "$key_path" > /dev/null
           echo "GOOGLE_SERVICE_ACCOUNT_KEY_PATH=${key_path}" >> "$GITHUB_ENV"
 
-      - name: Submit AAB to Google Play (internal track)
+      - name: Submit AAB to Google Play
         if: github.event_name == 'release' || inputs.submit
         env:
+          PLAY_TRACK: ${{ vars.PLAY_TRACK || 'beta' }}
           PLAY_STATUS: ${{ vars.PLAY_RELEASE_STATUS || 'completed' }}
         run: node scripts/play-upload.mjs "${RUNNER_TEMP}/${AAB_NAME}"
 
