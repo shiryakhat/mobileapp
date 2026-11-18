@@ -71,14 +71,11 @@ Run EAS CLI as `npx eas-cli@latest <command>` (written as `eas` below).
    needed if EAS should also create certificates/profiles with it).
    Download the `.p8` (only possible once) -> `ASC_API_KEY_P8`,
    Key ID -> `ASC_KEY_ID`, Issuer ID -> `ASC_ISSUER_ID`.
-4. Create signing credentials once, interactively, so CI never has to prompt:
-
-   ```sh
-   eas build --platform ios --profile production
-   ```
-
-   Let EAS generate and store the distribution certificate and provisioning
-   profile. CI then reuses them; the API key lets it repair them when they expire.
+4. Signing credentials: the `production` profile uses **local credentials**
+   (distribution `.p12` + App Store provisioning profile referenced by a
+   git-ignored `credentials.json`), see [1.4](#14-credentials-ios-local-android-eas-managed).
+   Do not run the interactive `eas credentials` Apple-ID login to create them:
+   it crashes on Node 24 (`The first argument must be of type string ... Received undefined`).
 
 ### 1.3 Google (Android)
 
@@ -111,18 +108,49 @@ Run EAS CLI as `npx eas-cli@latest <command>` (written as `eas` below).
    `PLAY_RELEASE_STATUS=draft` and roll the release out by hand in Play
    Console. Delete the variable after the app's first approval.
 
-### 1.4 Credentials: EAS-managed (default) vs local
+### 1.4 Credentials: iOS local, Android EAS-managed
 
-Default: signing credentials (iOS certificate + profile, Android keystore) are
-stored on EAS servers and fetched by the build. Nothing signing-related is in
-the repo or in GitHub.
+**Android**: the release keystore is stored on EAS servers and fetched by the
+build via `EXPO_TOKEN`. Nothing signing-related is in the repo or in GitHub.
 
-Alternative, if you must own the files: put them in the repo root as described
-in <https://docs.expo.dev/app-signing/local-credentials/> (`credentials.json`
-pointing to the keystore / `.p12` / `.mobileprovision`), set
-`"credentialsSource": "local"` on the `production` build profile, and have CI
-write those files from secrets before `eas build`. `credentials.json` and the
-key files must be git-ignored. This pipeline does not do that out of the box.
+**iOS**: the `production` build profile sets
+`"ios": { "credentialsSource": "local" }`, so `eas build -p ios --profile production`
+signs with the files named in a **git-ignored** `credentials.json` in the repo
+root (<https://docs.expo.dev/app-signing/local-credentials/>) instead of the
+EAS-managed credentials:
+
+```json
+{
+  "ios": {
+    "provisioningProfilePath": "/abs/path/profile.mobileprovision",
+    "distributionCertificate": { "path": "/abs/path/dist.p12", "password": "..." }
+  }
+}
+```
+
+The `.p12` ("Apple Distribution: Pangana Inc (2F556JZ8H9)"), its password and
+the App Store provisioning profile for `net.shiryakhat.app` live **outside the
+repo** on the release machine, next to a ready-made `credentials.json` that
+points at them with absolute paths. On a fresh checkout or worktree, copy that
+file into the repo root once; nothing else is needed. `credentials.json`,
+`*.p12`, `*.mobileprovision`, `*.pem` and `*.p8` are all in `.gitignore` —
+never commit them. The pair expires in November 2027; renew it then (new
+certificate + profile via the App Store Connect API) and replace the files in
+place.
+
+A local iOS release is therefore:
+
+```sh
+eas build --platform ios --profile production --local --non-interactive --output app.ipa
+eas submit --platform ios --profile production --path app.ipa --non-interactive
+```
+
+(`ascAppId` is committed in the `production` submit profile; the
+`ASC_API_KEY_*` variables supply the API key.)
+
+The gated CI `ios` job (`RUN_IOS`) builds the same profile on EAS cloud, so
+before enabling it, have the job write `credentials.json`, the `.p12` and the
+profile from secrets before `eas build`. It does not do that out of the box.
 
 ---
 
@@ -277,8 +305,9 @@ Anything that changes native code or config still requires a tagged store releas
 | `Tag 'vX' does not match the app config version`                                       | `package.json` and app config versions diverged, see [Versioning](#3-versioning)                                                                                      |
 | `Repository secret ... is not set`                                                     | Add the secret; secrets are not available to workflows triggered from forks                                                                                           |
 | Build fails with "credentials are not set up" / asks for input in non-interactive mode | Run `eas build -p <platform> --profile production` once locally (1.2 step 4 / 1.3 step 4)                                                                             |
-| iOS: provisioning profile / certificate expired or invalid                             | The `EXPO_ASC_*` variables let EAS regenerate them, which needs an API key with enough rights (Admin). Otherwise run `eas credentials -p ios` locally                 |
-| iOS submit: `Set ascAppId in the submit profile`                                       | `ASC_APP_ID` secret missing or empty                                                                                                                                  |
+| iOS: provisioning profile / certificate expired or invalid                             | Local credentials (1.4): mint a new certificate + profile via the App Store Connect API and replace the files `credentials.json` points at                            |
+| iOS build: `credentials.json does not exist` / `credentials.json must exist`           | Copy the ready-made `credentials.json` into the repo root (1.4)                                                                                                       |
+| iOS submit: `Set ascAppId in the submit profile`                                       | `ascAppId` missing from `submit.production.ios` in `eas.json` (it is committed; CI also merges the `ASC_APP_ID` secret)                                               |
 | iOS submit: authentication / 401 errors                                                | Wrong `ASC_KEY_ID` / `ASC_ISSUER_ID`, revoked key, or the `.p8` was pasted without its `BEGIN`/`END` lines                                                            |
 | iOS submit: "bundle version must be higher"                                            | Remote build number is behind the store: `eas build:version:set -p ios`                                                                                               |
 | Android submit: "Only releases with status draft may be created on draft app"          | Set variable `PLAY_RELEASE_STATUS=draft` (1.3 step 6)                                                                                                                 |
