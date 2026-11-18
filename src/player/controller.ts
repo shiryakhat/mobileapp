@@ -9,7 +9,13 @@
  *
  * Screens only talk to this module and to `usePlayback`.
  */
-import { createAudioPlayer, setAudioModeAsync, type AudioPlayer } from 'expo-audio';
+import {
+  createAudioPlayer,
+  setAudioModeAsync,
+  type AudioPlayer,
+  type AudioStatus,
+} from 'expo-audio';
+import { AppState, Platform } from 'react-native';
 import { getEpisode, type Episode } from '@/content';
 import { translate } from '@/i18n';
 import { cachedImageUri } from '@/lib/cache';
@@ -38,6 +44,19 @@ let youtube: YoutubeHandle | undefined;
 /** Position to jump to once the active engine is ready. */
 let pendingSeek: number | undefined;
 let lastSavedAt = -1;
+/**
+ * What the user last asked the native engine to do (play / pause). The engine's
+ * own `status.playing` is the truth once it has settled, but on Android it is
+ * stale while the player is buffering (see `resolvePlaying`).
+ */
+let wantPlaying = false;
+/**
+ * The native player lost its prepared source (a playback error — typically the
+ * network dropping or changing while the app was in the background — or the
+ * player being stopped underneath us). `play()` on such a player is a silent
+ * no-op, so the source has to be loaded again first (see `reloadNative`).
+ */
+let needsReload = false;
 
 const state = () => usePlayback.getState();
 const set = usePlayback.setState;
@@ -77,29 +96,85 @@ function ensureAudio(): AudioPlayer {
     updateInterval: 500,
     preferredForwardBufferDuration: BUFFER_AHEAD_SEC,
   });
-  player.addListener('playbackStatusUpdate', (status) => {
-    if (state().engine !== 'native') return;
-    if (status.isLoaded && pendingSeek !== undefined) {
-      const target = pendingSeek;
-      pendingSeek = undefined;
-      void player.seekTo(target);
-      return;
-    }
-    const ep = getEpisode(state().episodeId);
-    set({
-      playing: status.playing,
-      buffering: status.isBuffering,
-      positionSec: pendingSeek ?? status.currentTime,
-      durationSec: status.duration > 0 ? status.duration : (ep?.durationSec ?? 0),
-      error: status.error ?? undefined,
-    });
-    if (status.didJustFinish) {
-      set({ playing: false });
-      persistProgress(true);
-    } else persistProgress(!status.playing);
+  player.addListener('playbackStatusUpdate', (status) => applyStatus(player, status));
+  // Coming back to the app: re-read the engine, in case a status event was
+  // missed while the app was in the background (interruption by another app,
+  // the system pausing or stopping the player).
+  AppState.addEventListener('change', (next) => {
+    if (next === 'active') resyncNative();
   });
   audio = player;
   return player;
+}
+
+/**
+ * The play state to show for a native status.
+ *
+ * On Android, expo-audio reports a remembered value as `status.playing` while
+ * the player is buffering, and that value is only refreshed when playback
+ * actually starts or stops — not by `play()` / `pause()` issued *during* the
+ * buffering. After a seek to an unbuffered position (a chapter / transcript
+ * tap on a stream) every status therefore repeats the pre-seek play state: it
+ * would undo the user's pause (or play) in the store, the transport icon would
+ * flip back, and the next tap on it would do the opposite of what it shows.
+ * So while buffering, the user's intent is the truth; once the engine settles,
+ * the engine is (it may have been paused by an interruption or the lock screen).
+ */
+function resolvePlaying(status: AudioStatus): boolean {
+  if (status.didJustFinish) wantPlaying = false;
+  else if (Platform.OS === 'android' && status.isBuffering) return wantPlaying;
+  else wantPlaying = status.playing;
+  return wantPlaying;
+}
+
+function applyStatus(player: AudioPlayer, status: AudioStatus): void {
+  if (state().engine !== 'native') return;
+  if (status.error) needsReload = true;
+  // Android: 'idle' means no prepared source — after an error, or a stop from
+  // outside. (It is also reported for an instant while a source is being
+  // replaced; the 'buffering' status that follows clears the flag again.)
+  else if (Platform.OS === 'android') needsReload = status.playbackState === 'idle';
+  if (status.isLoaded && pendingSeek !== undefined) {
+    const target = pendingSeek;
+    pendingSeek = undefined;
+    void player.seekTo(target);
+    return;
+  }
+  const ep = getEpisode(state().episodeId);
+  const playing = resolvePlaying(status);
+  set({
+    playing,
+    buffering: status.isBuffering,
+    positionSec: pendingSeek ?? status.currentTime,
+    durationSec: status.duration > 0 ? status.duration : (ep?.durationSec ?? 0),
+    // Keep the error visible until the source has been loaded again.
+    error: status.error ?? (needsReload ? state().error : undefined),
+  });
+  persistProgress(status.didJustFinish || !playing);
+}
+
+function resyncNative(): void {
+  if (!audio || !state().episodeId || state().engine !== 'native') return;
+  try {
+    applyStatus(audio, audio.currentStatus);
+  } catch {
+    // best-effort: the next status event corrects the store
+  }
+}
+
+/** Load the current episode's source again, at the current position. */
+function reloadNative(): void {
+  const ep = getEpisode(state().episodeId);
+  const uri = ep && audioSourceFor(ep);
+  if (!uri) return;
+  needsReload = false;
+  const { positionSec, rate } = state();
+  pendingSeek = positionSec > 0 ? positionSec : undefined;
+  set({ error: undefined });
+  const player = ensureAudio();
+  player.replace({ uri });
+  player.setPlaybackRate(rate);
+  if (wantPlaying) player.play();
 }
 
 /** True once the episode player exists — from then on it owns the audio session mode. */
@@ -164,6 +239,8 @@ export function loadEpisode(ep: Episode, opts: LoadOptions = {}): void {
   const autoplay = opts.autoplay ?? (sameEpisode && current.playing);
   lastSavedAt = -1;
   pendingSeek = startAt > 0 ? startAt : undefined;
+  wantPlaying = engine === 'native' && autoplay;
+  needsReload = false;
 
   set({
     episodeId: ep.id,
@@ -194,11 +271,17 @@ export function setMode(mode: PlayerMode): void {
 }
 
 export function play(): void {
-  if (state().engine === 'native') ensureAudio().play();
+  if (state().engine === 'native') {
+    wantPlaying = true;
+    // A player that lost its source ignores play(): load the episode again.
+    if (needsReload) reloadNative();
+    else ensureAudio().play();
+  }
   set({ playing: true });
 }
 
 export function pause(): void {
+  wantPlaying = false;
   if (state().engine === 'native') audio?.pause();
   set({ playing: false });
   persistProgress(true);
@@ -236,6 +319,7 @@ export function cycleRate(): void {
 /** Stop everything and clear the current episode (mini-player close). */
 export function stop(): void {
   persistProgress(true);
+  wantPlaying = false;
   audio?.pause();
   try {
     audio?.clearLockScreenControls();
