@@ -1,0 +1,265 @@
+{
+  "id": "sp10",
+  "model": "claude-fable-5-2",
+  "generatedAt": "2026-11-19T23:43:38.485Z",
+  "summaryFa": "وبینار زندهٔ کمیتهٔ «متخصص خبرهٔ اتریوم» (CEP) در کنسرسیوم C4، آوریل ۲۰۲۲، که شایان اسکندری و دیگر اعضای کمیته در آن با ان برودی، پژوهشگر حکمرانی، و ویلی اوگورزالی از ShapeShift و Giveth دربارهٔ دائوها گفت‌وگو می‌کنند. بحث از تعریف دائو و تفاوتش با شرکت ثبت‌شده شروع می‌شود و به رأی‌گیری با توکن، توکنومیکس، شیوهٔ ورود به یک دائو و دستمزد گرفتن از آن می‌رسد. شایان در این میان بر مسئله‌های حل‌نشده دست می‌گذارد؛ از مرز دائو و شرکت پشت آن تا پرداخت دستمزد با توکنی که فروختنش در جامعه ناپسند است.",
+  "summaryEn": "A live webinar from April 2022 by the Certified Ethereum Professional (CEP) committee of C4, where Shayan Eskandari and fellow committee members talk about DAOs with governance researcher Ann Brody and Willy Ogorzaly of ShapeShift and Giveth. The conversation moves from what a DAO is and how it differs from an LLC to token voting, tokenomics, and how to join a DAO and get paid by one. Shayan keeps pointing at the unsolved parts, from the line between a DAO and the company behind it to paying contributors in a token they are frowned upon for selling.",
+  "quotes": [
+    {
+      "startSec": 309,
+      "fa": "تعریف محبوب من از دائو در اصلش این است: جمعی از آدم‌ها که خزانه‌ای از دارایی‌ها را با هم مدیریت می‌کنند.",
+      "en": "My favorite definition of what a DAO is at its core is just a community of individuals managing a treasury of assets.",
+      "speaker": "ویلی"
+    },
+    {
+      "startSec": 832,
+      "fa": "دائوی یونی‌سواپ یک دائو است، اما خود یونی‌سواپ یک شرکت است. باید این دو را از هم جدا کنیم.",
+      "en": "Uniswap DAO is a DAO. Uniswap itself is a company. We should differentiate those.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 1896,
+      "fa": "درست است که همه‌چیز دارد دائو می‌شود، اما باید ببینیم کدام‌یک از این دائوها واقعاً از آب بیرون می‌آید و راه می‌افتد.",
+      "en": "It's true that everything is becoming a DAO, but we have to see which of these DAOs actually come out of the water and start walking.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 2426,
+      "fa": "دائوها خیلی وقت‌ها دستمزد را با توکن خودشان می‌دهند. کسی که به پولش نیاز دارد باید آن را بفروشد، اما فروختن توکن در خود دائو ناپسند است.",
+      "en": "DAOs often pay contributors in their native token. If the contributor needs the money, they have to sell it, but selling it is frowned upon within the DAO.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 3008,
+      "fa": "مدیرعامل Gauntlet دربارهٔ دیفای گفته بود: ما همان اشتباه‌های وال‌استریت را تکرار می‌کنیم، اما هزار بار سریع‌تر و شفاف.",
+      "en": "The Gauntlet CEO said about DeFi: we are making the same mistakes as Wall Street, but a thousand times faster and transparently.",
+      "speaker": "شایان"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "DAO",
+      "termFa": "سازمان خودگردان غیرمتمرکز",
+      "definitionEn": "A community that manages a shared treasury and makes decisions through rules and votes recorded on a blockchain instead of through a registered company.",
+      "definitionFa": "جمعی که خزانهٔ مشترکش را اداره می‌کند و به‌جای شرکت ثبت‌شده، با قواعد و رأی‌هایی که روی بلاکچین ثبت می‌شود تصمیم می‌گیرد."
+    },
+    {
+      "term": "Governance Token",
+      "termFa": "توکن حکمرانی",
+      "definitionEn": "A token that gives its holder voting power over a DAO's decisions; usually more tokens mean more votes.",
+      "definitionFa": "توکنی که به دارنده‌اش در تصمیم‌های دائو حق رأی می‌دهد؛ معمولاً توکن بیشتر یعنی رأی بیشتر."
+    },
+    {
+      "term": "Progressive Decentralization",
+      "termFa": "غیرمتمرکزسازی تدریجی",
+      "definitionEn": "Handing control of a project from its founding team to its community step by step rather than all at once.",
+      "definitionFa": "واگذاری گام‌به‌گام کنترل یک پروژه از تیم سازنده به جامعهٔ آن، به‌جای واگذاری یک‌باره."
+    },
+    {
+      "term": "Treasury",
+      "termFa": "خزانه",
+      "definitionEn": "The pool of crypto assets a DAO holds and spends by member vote, visible to anyone on-chain.",
+      "definitionFa": "دارایی‌های رمزارزی یک دائو که با رأی اعضا خرج می‌شود و موجودی‌اش روی بلاکچین برای همه قابل دیدن است."
+    },
+    {
+      "term": "On-chain Governance",
+      "termFa": "حکمرانی آنچین",
+      "definitionEn": "Voting where the result is executed directly by smart contracts, with no person needed to carry out the decision.",
+      "definitionFa": "رأی‌گیری‌ای که نتیجه‌اش را قرارداد هوشمند مستقیم اجرا می‌کند و برای عملی شدن تصمیم به هیچ فردی نیاز نیست."
+    },
+    {
+      "term": "Multisig",
+      "termFa": "چندامضایی",
+      "definitionEn": "A wallet that moves funds only when several designated keyholders sign; many DAOs rely on one to carry out approved votes.",
+      "definitionFa": "کیف پولی که فقط با امضای چند کلیددار مشخص پول جابه‌جا می‌کند؛ بسیاری از دائوها رأی‌های تصویب‌شده را با آن اجرا می‌کنند."
+    },
+    {
+      "term": "Tokenomics",
+      "termFa": "توکنومیکس",
+      "definitionEn": "The economics of a project's token: how it is issued and distributed, what it is used for, and where its value comes from.",
+      "definitionFa": "اقتصاد توکن یک پروژه: چطور منتشر و توزیع می‌شود، چه کاربردی دارد و ارزشش از کجا می‌آید."
+    },
+    {
+      "term": "Liquidity Mining",
+      "termFa": "استخراج نقدینگی (لیکوییدیتی ماینینگ)",
+      "definitionEn": "Rewarding users with a project's token for supplying funds to its product, a common way to distribute governance tokens.",
+      "definitionFa": "پاداش دادن با توکن پروژه به کاربرانی که سرمایه در محصول آن می‌گذارند؛ راهی رایج برای توزیع توکن حکمرانی."
+    },
+    {
+      "term": "Quadratic Voting",
+      "termFa": "رأی‌گیری درجه دو",
+      "definitionEn": "A voting scheme where each extra vote costs more than the last, meant to limit large holders but easy to game with many addresses.",
+      "definitionFa": "شیوه‌ای که در آن هر رأی اضافه گران‌تر از قبلی است تا نفوذ دارندگان بزرگ کم شود، اما با ساختن آدرس‌های متعدد می‌توان دورش زد."
+    },
+    {
+      "term": "Bounty",
+      "termFa": "باونتی",
+      "definitionEn": "An open task with a posted reward: whoever delivers the work to spec gets paid, often in the DAO's token.",
+      "definitionFa": "کاری که با پاداش مشخص اعلام عمومی می‌شود؛ هر کس آن را طبق مشخصات تحویل دهد پاداش می‌گیرد، اغلب با توکن دائو."
+    },
+    {
+      "term": "Do-ocracy",
+      "termFa": "دو-اکراسی",
+      "definitionEn": "A way of organizing where whoever picks up a task and does it gets to decide how it is done.",
+      "definitionFa": "شیوه‌ای از سازمان‌دهی که در آن هر کس کاری را برمی‌دارد و انجام می‌دهد، خودش دربارهٔ چگونگی‌اش تصمیم می‌گیرد."
+    },
+    {
+      "term": "Assassination Market",
+      "termFa": "بازار ترور",
+      "definitionEn": "A prediction market abused as a bounty: people bet on a harmful event, and the pooled money rewards whoever makes it happen.",
+      "definitionFa": "سوءاستفاده از بازار پیش‌بینی به شکل جایزه: افراد روی رخدادی زیان‌بار شرط می‌بندند و پول جمع‌شده به کسی می‌رسد که آن را عملی کند."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "en",
+      "wrong": "Cheyenne",
+      "right": "Shayan"
+    },
+    {
+      "lang": "en",
+      "wrong": "Anne",
+      "right": "Ann"
+    },
+    {
+      "lang": "en",
+      "wrong": "Willie",
+      "right": "Willy"
+    },
+    {
+      "lang": "en",
+      "wrong": "Oreskevich",
+      "right": "Oreskovich"
+    },
+    {
+      "lang": "en",
+      "wrong": "certified theory and professional",
+      "right": "Certified Ethereum Professional"
+    },
+    {
+      "lang": "en",
+      "wrong": "Medigamma",
+      "right": "Meta Gamma"
+    },
+    {
+      "lang": "en",
+      "wrong": "DeltaDAO",
+      "right": "Delta DAO"
+    },
+    {
+      "lang": "en",
+      "wrong": "SPORCDAO",
+      "right": "SporkDAO"
+    },
+    {
+      "lang": "en",
+      "wrong": "Dow House",
+      "right": "DAOhaus"
+    },
+    {
+      "lang": "en",
+      "wrong": "Beats DAO",
+      "right": "BeetsDAO"
+    },
+    {
+      "lang": "en",
+      "wrong": "permable",
+      "right": "permabull"
+    },
+    {
+      "lang": "en",
+      "wrong": "give it",
+      "right": "Giveth"
+    },
+    {
+      "lang": "en",
+      "wrong": "shape shift",
+      "right": "ShapeShift"
+    },
+    {
+      "lang": "en",
+      "wrong": "Shapeshift",
+      "right": "ShapeShift"
+    },
+    {
+      "lang": "en",
+      "wrong": "shapeshift",
+      "right": "ShapeShift"
+    },
+    {
+      "lang": "en",
+      "wrong": "dows",
+      "right": "DAOs"
+    },
+    {
+      "lang": "en",
+      "wrong": "doubts",
+      "right": "DAOs"
+    },
+    {
+      "lang": "en",
+      "wrong": "board Ape",
+      "right": "Bored Ape"
+    },
+    {
+      "lang": "en",
+      "wrong": "defy summer",
+      "right": "DeFi Summer"
+    },
+    {
+      "lang": "en",
+      "wrong": "pickle finance",
+      "right": "Pickle Finance"
+    },
+    {
+      "lang": "en",
+      "wrong": "duocracies",
+      "right": "do-ocracies"
+    },
+    {
+      "lang": "en",
+      "wrong": "malik",
+      "right": "Moloch"
+    },
+    {
+      "lang": "en",
+      "wrong": "OneHive",
+      "right": "1Hive"
+    },
+    {
+      "lang": "fa",
+      "wrong": "Gitcoin",
+      "right": "Giveth"
+    },
+    {
+      "lang": "fa",
+      "wrong": "چاین",
+      "right": "شایان"
+    },
+    {
+      "lang": "fa",
+      "wrong": "Anne",
+      "right": "Ann"
+    },
+    {
+      "lang": "fa",
+      "wrong": "Willie",
+      "right": "Willy"
+    },
+    {
+      "lang": "fa",
+      "wrong": "Shapeshift",
+      "right": "ShapeShift"
+    },
+    {
+      "lang": "fa",
+      "wrong": "Dow House",
+      "right": "DAOhaus"
+    },
+    {
+      "lang": "fa",
+      "wrong": "duocracy",
+      "right": "do-ocracy"
+    }
+  ]
+}

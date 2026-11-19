@@ -1,0 +1,255 @@
+{
+  "id": "sp05",
+  "model": "claude-fable-5-2",
+  "generatedAt": "2026-11-19T23:43:38.475Z",
+  "summaryFa": "گفت‌وگویی آنلاین در رویداد DeFi Discussions (۱ مه ۲۰۲۰) میان آلخاندرو ماچادو از Open Money Initiative، بواز سوبرادو و شایان اسکندری دربارهٔ زندگی مالی مردم در ونزوئلا، کوبا و ایران. سه سخنران توضیح می‌دهند که کنترل سرمایه در داخل و تحریم و سخت‌گیری بیش از حد بانک‌ها و شرکت‌های فناوری از بیرون چطور مردم عادی را از پرداخت آنلاین، حواله و حتی کمک‌های بشردوستانه محروم می‌کند و بیت‌کوین در این میان چه گرهی را باز می‌کند. بحث به وابستگی به VPN و اینترنت، رواج طرح‌های پانزی و اهمیت حریم خصوصی هم می‌رسد.",
+  "summaryEn": "An online panel at DeFi Discussions (May 1, 2020) with Alejandro Machado of the Open Money Initiative, Boaz Sobrado and Shayan Eskandari on how ordinary people handle money in Venezuela, Cuba and Iran. They explain how domestic capital controls, US sanctions and over-compliance by banks and tech companies cut people off from online payments, remittances and even disaster relief, and where Bitcoin actually helps. The conversation also covers the dependence on VPNs and internet access, the spread of Ponzi schemes, and privacy.",
+  "quotes": [
+    {
+      "startSec": 1398,
+      "fa": "دلیل اصلی این است که بیت‌کوین چقدر به پول واقعی نزدیک است و چقدر راحت می‌شود آن را نقد کرد.",
+      "en": "The main reason is how close Bitcoin is to actual fiat money, how easy it is to convert.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 1656,
+      "fa": "حالا بیشتر از همیشه می‌دانند که اگر کیف پول خودشان را داشته باشند و کلیدها دست خودشان باشد، هیچ‌کس نمی‌تواند پولشان را از آن‌ها بگیرد.",
+      "en": "Now they know more than ever that if they have a local wallet and hold their own keys, no one can just take the money away from them.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 1872,
+      "fa": "همهٔ ما فکر می‌کنیم داریم روی فناوری‌های مقاوم در برابر سانسور کار می‌کنیم؛ اما وقتی کسی اینترنت را از برق بکشد چه می‌شود؟",
+      "en": "We all think we are working on censorship-resistant technologies, but what happens when someone unplugs the internet?",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 2748,
+      "fa": "نباید مجبور باشید برای انجام یک تراکنش ثابت کنید که پاک هستید. فرض باید این باشد که پول شما پاک است.",
+      "en": "You shouldn't have to prove that you're clean to transact. The assumption should be that your money is clean.",
+      "speaker": "آلخاندرو"
+    },
+    {
+      "startSec": 2798,
+      "fa": "در کوبا این یعنی آزادی خرید آنلاین، خرید بلیت هواپیما و شارژ کردن موبایل از خانه؛ اما این آزادی را هم به شما می‌دهد که همهٔ پولتان را خرج طرح‌های پانزی و کلاهبرداری کنید.",
+      "en": "In Cuba that means freedom to transact online, to buy a plane ticket, to top up your phone from the comfort of your house, but it also gives you the freedom to spend all your money on Ponzi schemes and scams.",
+      "speaker": "بواز"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Capital Controls",
+      "termFa": "کنترل سرمایه",
+      "definitionEn": "Government rules that restrict moving money into or out of a country, usually to protect the local currency.",
+      "definitionFa": "مقرراتی که دولت با آن ورود و خروج پول از کشور را محدود می‌کند، معمولاً برای حفظ ارزش پول ملی."
+    },
+    {
+      "term": "Over-compliance",
+      "termFa": "سخت‌گیری بیش از حد در اجرای تحریم",
+      "definitionEn": "When banks and companies block a whole country to avoid sanctions risk, even for activity the law actually allows.",
+      "definitionFa": "وقتی بانک‌ها و شرکت‌ها از ترس تحریم کل یک کشور را مسدود می‌کنند، حتی برای کارهایی که قانون اجازه داده است."
+    },
+    {
+      "term": "OFAC",
+      "termFa": "اوفک",
+      "definitionEn": "The US Treasury office that administers and enforces American economic sanctions.",
+      "definitionFa": "دفتری در وزارت خزانه‌داری آمریکا که تحریم‌های اقتصادی این کشور را تنظیم و اجرا می‌کند."
+    },
+    {
+      "term": "SDN List",
+      "termFa": "فهرست SDN",
+      "definitionEn": "OFAC's list of sanctioned persons and entities; in 2018 two Bitcoin addresses linked to Iranians were added to it.",
+      "definitionFa": "فهرست افراد و نهادهای تحریم‌شدهٔ اوفک؛ در سال ۲۰۱۸ دو آدرس بیت‌کوین مرتبط با ایرانی‌ها هم به آن اضافه شد."
+    },
+    {
+      "term": "Remittance",
+      "termFa": "حواله",
+      "definitionEn": "Money sent home by people living abroad, often to support family.",
+      "definitionFa": "پولی که افراد ساکن خارج برای خانواده یا نزدیکانشان به کشور خود می‌فرستند."
+    },
+    {
+      "term": "LocalBitcoins",
+      "termFa": "لوکال بیتکوین",
+      "definitionEn": "A peer-to-peer marketplace for trading Bitcoin against local currencies; it later blocked users from Iran and Cuba.",
+      "definitionFa": "بازاری همتابه‌همتا برای خریدوفروش بیت‌کوین با پول محلی که بعدها کاربران ایران و کوبا را مسدود کرد."
+    },
+    {
+      "term": "OTC Trading",
+      "termFa": "معاملهٔ خارج از صرافی (OTC)",
+      "definitionEn": "Buying and selling directly between two people or through a broker, outside an exchange, for example in Telegram groups.",
+      "definitionFa": "خریدوفروش مستقیم میان دو نفر یا از طریق یک واسطه، بیرون از صرافی؛ مثلاً در گروه‌های تلگرامی."
+    },
+    {
+      "term": "Censorship Resistance",
+      "termFa": "مقاومت در برابر سانسور",
+      "definitionEn": "The property of a network where no single party can block or reverse a valid transaction.",
+      "definitionFa": "ویژگی شبکه‌ای که در آن هیچ نهادی نمی‌تواند جلوی یک تراکنش معتبر را بگیرد یا آن را برگرداند."
+    },
+    {
+      "term": "KYC",
+      "termFa": "احراز هویت مشتری (کی‌وای‌سی)",
+      "definitionEn": "Identity checks that exchanges and banks require from customers; often impossible to pass for residents of sanctioned countries.",
+      "definitionFa": "بررسی هویتی که صرافی‌ها و بانک‌ها از مشتری می‌خواهند و ساکنان کشورهای تحریم‌شده اغلب نمی‌توانند از آن عبور کنند."
+    },
+    {
+      "term": "SPV",
+      "termFa": "تأیید پرداخت ساده‌شده",
+      "definitionEn": "A lightweight way for a phone wallet to verify Bitcoin payments without downloading the whole blockchain.",
+      "definitionFa": "روشی سبک که کیف پول موبایل با آن پرداخت‌های بیت‌کوین را بدون دانلود کل بلاکچین تأیید می‌کند."
+    },
+    {
+      "term": "CoinJoin",
+      "termFa": "کوین‌جوین",
+      "definitionEn": "A privacy technique that merges several users' payments into one transaction so coins are harder to trace; used by Wasabi and JoinMarket.",
+      "definitionFa": "روشی برای حفظ حریم خصوصی که پرداخت چند کاربر را در یک تراکنش ادغام می‌کند تا ردگیری سخت شود؛ Wasabi و JoinMarket از آن استفاده می‌کنند."
+    },
+    {
+      "term": "Ponzi Scheme",
+      "termFa": "طرح پانزی",
+      "definitionEn": "A fraud that pays earlier investors with money from new ones and collapses when new deposits stop.",
+      "definitionFa": "کلاهبرداری‌ای که سود اعضای قدیمی را از پول تازه‌واردها می‌دهد و با قطع شدن ورودی جدید فرو می‌ریزد."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "en",
+      "wrong": "Cheyenne",
+      "right": "Shayan"
+    },
+    {
+      "lang": "en",
+      "wrong": "cheyenne",
+      "right": "Shayan"
+    },
+    {
+      "lang": "en",
+      "wrong": "Shahan",
+      "right": "Shayan"
+    },
+    {
+      "lang": "en",
+      "wrong": "Shia Hat",
+      "right": "Shir ya Khat"
+    },
+    {
+      "lang": "en",
+      "wrong": "sharia podcast",
+      "right": "Shir ya Khat podcast"
+    },
+    {
+      "lang": "en",
+      "wrong": "Coin Iran",
+      "right": "CoinIran"
+    },
+    {
+      "lang": "en",
+      "wrong": "coin iran",
+      "right": "CoinIran"
+    },
+    {
+      "lang": "en",
+      "wrong": "Zuko",
+      "right": "Zooko"
+    },
+    {
+      "lang": "en",
+      "wrong": "Alberg",
+      "right": "Ahlborg"
+    },
+    {
+      "lang": "en",
+      "wrong": "polyvars",
+      "right": "bolivars"
+    },
+    {
+      "lang": "en",
+      "wrong": "local bitcoins",
+      "right": "LocalBitcoins"
+    },
+    {
+      "lang": "en",
+      "wrong": "local Bitcoins",
+      "right": "LocalBitcoins"
+    },
+    {
+      "lang": "en",
+      "wrong": "coin cap",
+      "right": "CoinCap"
+    },
+    {
+      "lang": "en",
+      "wrong": "copy information",
+      "right": "hyperinflation"
+    },
+    {
+      "lang": "en",
+      "wrong": "1,200 months",
+      "right": "1,200 tomans"
+    },
+    {
+      "lang": "en",
+      "wrong": "Karabat Bars",
+      "right": "Karatbars"
+    },
+    {
+      "lang": "en",
+      "wrong": "gold quest",
+      "right": "GoldQuest"
+    },
+    {
+      "lang": "en",
+      "wrong": "one coin",
+      "right": "OneCoin"
+    },
+    {
+      "lang": "en",
+      "wrong": "dag coin",
+      "right": "Dagcoin"
+    },
+    {
+      "lang": "en",
+      "wrong": "pi network",
+      "right": "Pi Network"
+    },
+    {
+      "lang": "en",
+      "wrong": "Nigerian prints",
+      "right": "Nigerian prince"
+    },
+    {
+      "lang": "en",
+      "wrong": "join markets",
+      "right": "JoinMarket"
+    },
+    {
+      "lang": "en",
+      "wrong": "old fact list",
+      "right": "OFAC list"
+    },
+    {
+      "lang": "en",
+      "wrong": "specially designated nations",
+      "right": "Specially Designated Nationals"
+    },
+    {
+      "lang": "fa",
+      "wrong": "شاین",
+      "right": "شایان"
+    },
+    {
+      "lang": "fa",
+      "wrong": "شاهان",
+      "right": "شایان"
+    },
+    {
+      "lang": "fa",
+      "wrong": "Coin Iran",
+      "right": "کوین‌ایران"
+    },
+    {
+      "lang": "fa",
+      "wrong": "Karabat Bars",
+      "right": "Karatbars"
+    }
+  ]
+}

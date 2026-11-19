@@ -1,0 +1,114 @@
+{
+  "id": "sp06",
+  "model": "claude-fable-5-2",
+  "generatedAt": "2026-11-19T23:43:38.476Z",
+  "summaryFa": "ارائه‌ی شایان اسکندری در رویداد آنلاین Liquidity 2020 (۱۸ اکتبر ۲۰۲۰) درباره‌ی مقاله‌ی در دست نگارش او در نظام‌مندسازی دانش اوراکل‌ها. او از تجربه‌ی سال ۲۰۱۶ خود در ساخت بازار مشتقات غیرمتمرکز Velocity شروع می‌کند که به‌خاطر اوراکل متمرکزش تعطیل شد. سپس مسیر داده را در سیزده ماژول، از حقیقت مبنا تا قرارداد مصرف‌کننده، دنبال می‌کند و در هر مرحله حمله‌های شناخته‌شده را با نمونه‌هایی از میکردائو، Chainlink، Uniswap و Augur نشان می‌دهد.",
+  "summaryEn": "Shayan Eskandari's talk at the online Liquidity 2020 event (October 18, 2020) on his in-progress systematization-of-knowledge paper about blockchain oracles. He starts from his 2016 experience building Velocity, a decentralized derivatives market that was shut down because its oracle was centralized. He then follows the data through a 13-module workflow, from ground truth to the consumer contract, pointing out known attacks at each step with examples from MakerDAO, Chainlink, Uniswap and Augur.",
+  "quotes": [
+    {
+      "startSec": 418,
+      "fa": "قدم بعدی چه بود؟ لابد ICO. ولی تصمیم گرفتیم پروژه را تعطیل کنیم، بیشتر به این دلیل که برای گرفتن قیمت به ما، یعنی به یک نقطه‌ی مرکزی، وابسته بود.",
+      "en": "What was the next step? Probably an ICO. But we decided to kill the project, mainly because it relied on us as a central point to get the price.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 498,
+      "fa": "اوراکل‌ها پل یا دروازه‌ای میان دانش دنیای واقعی و بلاکچین هستند. مسئله‌ی اوراکل هم هنوز واقعی است و هنوز حل نشده.",
+      "en": "Oracles are the bridges or gateways between real-world knowledge and the blockchain. And the oracle problem is still real, still a problem.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 935,
+      "fa": "همه از ویکی‌پدیا به‌عنوان منبع داده استفاده می‌کنند؛ پس هر کس صفحه‌ی ویکی‌پدیا را ویرایش کند، عملاً به همه می‌گوید حقیقت چیست.",
+      "en": "They all use Wikipedia as a data source, so whoever edits the Wikipedia page basically tells everyone what the truth is.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 1227,
+      "fa": "در پنجشنبه‌ی سیاه اوراکل‌های میکردائو درست کار نمی‌کردند؛ قیمت گس مدتی بالا پرید و قیمت گسی که آن‌ها می‌دادند با وضعیت شبکه نمی‌خواند.",
+      "en": "On Black Thursday, MakerDAO's oracles were not functioning properly, because the gas price spiked for a while and they were not using a gas price that reflected the state of the network.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 1550,
+      "fa": "استفاده از Uniswap v1 به‌عنوان اوراکل فکر خوبی نبود، چون می‌شد با دست‌کاری بازار قیمت را عوض کرد و به سیستمی که به آن تکیه داشت حمله کرد.",
+      "en": "On Uniswap v1, it was not a good idea to use Uniswap as the oracle, since the market could be manipulated to change the price and attack the system relying on it.",
+      "speaker": "شایان"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Oracle",
+      "termFa": "اوراکل",
+      "definitionEn": "A service that brings outside data, such as prices, onto the blockchain so smart contracts can use it.",
+      "definitionFa": "سرویسی که داده‌ی بیرون از بلاکچین، مثل قیمت، را به زنجیره می‌آورد تا قراردادهای هوشمند از آن استفاده کنند."
+    },
+    {
+      "term": "Oracle Problem",
+      "termFa": "مسئله‌ی اوراکل",
+      "definitionEn": "The difficulty of getting real-world data on-chain without having to trust a single party that could lie or fail.",
+      "definitionFa": "دشواری آوردن داده‌ی دنیای واقعی به زنجیره، بدون اعتماد به یک طرف واحد که ممکن است دروغ بگوید یا از کار بیفتد."
+    },
+    {
+      "term": "Ground Truth",
+      "termFa": "حقیقت مبنا",
+      "definitionEn": "The real-world fact an oracle tries to report, such as the actual price of an asset or the outcome of an event.",
+      "definitionFa": "واقعیتی در دنیای بیرون که اوراکل می‌خواهد گزارشش کند؛ مثل قیمت واقعی یک دارایی یا نتیجه‌ی یک رویداد."
+    },
+    {
+      "term": "Price Feed",
+      "termFa": "فید قیمت",
+      "definitionEn": "An on-chain contract holding regularly updated asset prices that other contracts can read.",
+      "definitionFa": "قراردادی روی زنجیره که قیمت دارایی‌ها مرتب در آن به‌روز می‌شود و قراردادهای دیگر آن را می‌خوانند."
+    },
+    {
+      "term": "Data Feeder",
+      "termFa": "فیدر داده",
+      "definitionEn": "An entity that collects data from sources and reports it to the oracle system.",
+      "definitionFa": "طرفی که داده را از منابع جمع می‌کند و به سیستم اوراکل گزارش می‌دهد."
+    },
+    {
+      "term": "Commit-Reveal",
+      "termFa": "کامیت و ریویل (تعهد و افشا)",
+      "definitionEn": "A two-step scheme: participants first publish a hash of their answer and reveal the answer later, so nobody can copy others.",
+      "definitionFa": "روشی دومرحله‌ای: هر کس اول هش پاسخش را ثبت می‌کند و بعد خود پاسخ را فاش می‌کند تا کسی نتواند از دیگران کپی کند."
+    },
+    {
+      "term": "Dispute Phase",
+      "termFa": "مرحله‌ی اعتراض",
+      "definitionEn": "A period in which participants can challenge an oracle's reported value before it becomes final.",
+      "definitionFa": "بازه‌ای که در آن شرکت‌کنندگان می‌توانند پیش از نهایی‌شدن مقدار گزارش‌شده‌ی اوراکل، به آن اعتراض کنند."
+    },
+    {
+      "term": "Trusted Execution Environment",
+      "termFa": "محیط اجرای امن (TEE)",
+      "definitionEn": "Hardware-isolated computing, such as Intel SGX, that lets others verify a server ran the expected code untampered.",
+      "definitionFa": "بخش ایزوله‌ی سخت‌افزاری مثل Intel SGX که نشان می‌دهد سرور همان کد مورد انتظار را بدون دست‌کاری اجرا کرده است."
+    },
+    {
+      "term": "TLSNotary",
+      "termFa": "TLSNotary",
+      "definitionEn": "A technique for proving that a piece of data really came from a given website over an HTTPS connection.",
+      "definitionFa": "روشی برای اثبات اینکه یک داده واقعاً از وب‌سایت مشخصی و روی اتصال HTTPS گرفته شده است."
+    },
+    {
+      "term": "MEV",
+      "termFa": "ارزش قابل استخراج ماینر / مف",
+      "definitionEn": "Extra profit a block producer can capture by choosing, reordering or inserting transactions in a block.",
+      "definitionFa": "سود اضافه‌ای که سازنده‌ی بلاک با انتخاب، جابه‌جایی یا افزودن تراکنش‌ها در بلاک به دست می‌آورد."
+    },
+    {
+      "term": "Chain Reorganization",
+      "termFa": "ری‌ارگ (بازسازماندهی زنجیره)",
+      "definitionEn": "When recent blocks are replaced by a competing chain, so transactions that looked confirmed can change or vanish.",
+      "definitionFa": "وقتی بلاک‌های اخیر با زنجیره‌ی رقیب جایگزین می‌شوند و تراکنش‌هایی که تأییدشده به نظر می‌رسیدند عوض یا حذف می‌شوند."
+    },
+    {
+      "term": "Oracle Manipulation",
+      "termFa": "دستکاری اوراکل",
+      "definitionEn": "An attack that distorts the data an oracle reports, for example by moving an on-chain market price, to exploit contracts that rely on it.",
+      "definitionFa": "حمله‌ای که داده‌ی اوراکل را منحرف می‌کند، مثلاً با جابه‌جاکردن قیمت یک بازار روی زنجیره، تا از قراردادهای وابسته به آن سوءاستفاده شود."
+    }
+  ],
+  "corrections": []
+}

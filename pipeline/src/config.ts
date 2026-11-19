@@ -9,6 +9,12 @@ export const CACHE_DIR = path.join(PIPELINE_DIR, '.cache');
 
 /** Read-only raw corpus (yt-dlp output + Whisper SRTs). Never written to. */
 export const CORPUS_DIR = process.env.SYK_CORPUS_DIR ?? '/Volumes/Beezhan/data/podcasts';
+/**
+ * Read-only assets of the specials that are not podcast uploads (conference
+ * talks): same yt-dlp + Whisper layout as the corpus. Only videos listed in
+ * `SPECIALS` are read from here; a special found in the corpus wins.
+ */
+export const TALKS_DIR = process.env.SYK_TALKS_DIR ?? '/Volumes/Beezhan/data/talks';
 /** Read-only clone of github.com/shiryakhat/website (see `npm run fetch-sources`). */
 export const WEBSITE_DIR = process.env.SYK_WEBSITE_DIR ?? path.join(CACHE_DIR, 'website');
 export const RSS_CACHE = path.join(CACHE_DIR, 'rss.xml');
@@ -55,5 +61,75 @@ export const SPECIALS: Record<
     id: 'sp01',
     titleFa: 'شایان اسکندری، هم‌بنیانگذار شیر یا خط و کوین‌ایران، در برنامه اسکریپت (اپیزود ۱۵)',
     titleEn: 'Shayan Eskandari on the Script show (Episode 15)',
+  },
+  // Shayan's conference talks, numbered by upload date. Sourced from TALKS_DIR
+  // and played from YouTube; set `archiveId` once a talk is on archive.org.
+  JfryEnYvX54: {
+    id: 'sp02',
+    titleFa: 'آشنایی با بیت‌کوین - دانشگاه شهید بهشتی',
+    titleEn: 'Introduction to Bitcoin (Shahid Beheshti University)',
+  },
+  tVgto0GtA4I: {
+    id: 'sp03',
+    titleFa: 'تقلب شفاف: رده‌بندی فرانت‌رانینگ در بلاکچین (دِوکان ۵)',
+    titleEn:
+      'Transparent Dishonesty: Blockchain Front-Running Taxonomy by Shayan Eskandari (Devcon5)',
+  },
+  'Zs-P5FSJvGQ': {
+    id: 'sp04',
+    titleFa: 'شکستن قراردادهای هوشمند (دِوکان ۵)',
+    titleEn: 'Breaking Smart Contracts (Devcon5)',
+  },
+  'VaqIFiY-Ks0': {
+    id: 'sp05',
+    titleFa: 'بیت‌کوین چطور پول را به اقتصادهای بسته می‌برد و از آن‌ها بیرون می‌آورد',
+    titleEn: 'How Bitcoin Moves Value In & Out Of Closed Economies',
+  },
+  '4AS64fSeRtA': {
+    id: 'sp06',
+    titleFa: 'اوراکل‌ها، از واقعیت بیرونی تا دست‌کاری بازار (Liquidity 2020)',
+    titleEn:
+      'Oracles from the Ground Truth to Market Manipulation - Shayan Eskandari - Liquidity2020',
+  },
+  gfD1KBtLWZI: {
+    id: 'sp07',
+    titleFa: 'امنیت از مرحلهٔ طراحی و ممیزی قراردادهای هوشمند',
+    titleEn: 'Security By Design & Smart Contract Audits | Shayan Eskandari',
+  },
+  'JaLv-iesrB0': {
+    id: 'sp08',
+    titleFa: 'بیت‌کوین یا اتریوم؟',
+    titleEn: 'Bitcoin vs. Ethereum?',
+  },
+  vzufW0SQOI8: {
+    id: 'sp09',
+    titleFa: 'الفبای امنیت عملیاتی',
+    titleEn: 'Operational Security 101',
+  },
+  '1ZFe_7ehlWw': {
+    id: 'sp10',
+    titleFa: 'آشنایی با دائوها',
+    titleEn: 'Introduction to DAOs',
+  },
+  G2_MJtbSe1s: {
+    id: 'sp11',
+    titleFa: 'وب۳ در دنیای واقعی و تحریم‌ها (Autonomous Ecologies #1)',
+    titleEn: 'Shayan Eskandari - IRL Web3 and Sanctions [Autonomous Ecologies #1]',
+  },
+  wI6zxfUxMI4: {
+    id: 'sp12',
+    titleFa: 'پنل: ارزش قابل استخراج از اوراکل؛ مدل‌های درآمدی تازه و پایداری اوراکل‌ها و دَپ‌ها',
+    titleEn:
+      'PANEL: Oracle Extractable Value: Unlocking New Revenue Models and Sustainability for Oracles & Dapps',
+  },
+  '3DDA_6l0wLQ': {
+    id: 'sp13',
+    titleFa: 'ساختن در دل محدودیت‌ها: یک دهه وب۳ در ایران',
+    titleEn: 'Building Through Constraints: A Decade of Web3 in Iran',
+  },
+  'p1bklAl3-BQ': {
+    id: 'sp14',
+    titleFa: 'کدنویسی از سر خشم و مادرِ همهٔ وی‌پی‌ان‌ها: یادداشت‌هایی از قطعی‌های اینترنت ایران',
+    titleEn: "Rage-Coding the Mother of All VPNs: Notes from Iran's Internet Blackouts",
   },
 };

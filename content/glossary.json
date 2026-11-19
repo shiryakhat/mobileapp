@@ -26,7 +26,8 @@
     ],
     "episodes": [
       "s03e01",
-      "s01e09"
+      "s01e09",
+      "sp02"
     ]
   },
   {
@@ -43,6 +44,20 @@
     "episodes": [
       "s07e05",
       "s07e03"
+    ]
+  },
+  {
+    "slug": "account-model",
+    "term": "Account Model",
+    "termFa": "مدل حساب",
+    "definitionEn": "Ethereum's bookkeeping model, in which every address has one stored balance instead of a set of separate unspent outputs.",
+    "definitionFa": "مدل حسابداری اتریوم که در آن هر آدرس یک موجودی ثبت‌شده دارد و لازم نیست خروجی‌های جداگانه جمع زده شوند.",
+    "aliases": [
+      "account model",
+      "مدل حساب"
+    ],
+    "episodes": [
+      "sp08"
     ]
   },
   {
@@ -265,6 +280,7 @@
       "s02e01",
       "s01e09",
       "s01e04",
+      "sp02",
       "sp01"
     ]
   },
@@ -281,6 +297,20 @@
     "episodes": [
       "s01e10",
       "s01e06"
+    ]
+  },
+  {
+    "slug": "assassination-market",
+    "term": "Assassination Market",
+    "termFa": "بازار ترور",
+    "definitionEn": "A prediction market abused as a bounty: people bet on a harmful event, and the pooled money rewards whoever makes it happen.",
+    "definitionFa": "سوءاستفاده از بازار پیش‌بینی به شکل جایزه: افراد روی رخدادی زیان‌بار شرط می‌بندند و پول جمع‌شده به کسی می‌رسد که آن را عملی کند.",
+    "aliases": [
+      "assassination market",
+      "بازار ترور"
+    ],
+    "episodes": [
+      "sp10"
     ]
   },
   {
@@ -370,6 +400,20 @@
     ]
   },
   {
+    "slug": "back-running",
+    "term": "Back-running",
+    "termFa": "بک‌رانینگ",
+    "definitionEn": "Placing your transaction immediately after a specific transaction, such as a price update, to profit from the change it causes.",
+    "definitionFa": "قرار دادن تراکنش خود درست بعد از یک تراکنش مشخص، مثل به‌روزرسانی قیمت، برای سود بردن از تغییری که ایجاد کرده است.",
+    "aliases": [
+      "back-running",
+      "بک رانینگ"
+    ],
+    "episodes": [
+      "sp12"
+    ]
+  },
+  {
     "slug": "balancer",
     "term": "Balancer",
     "termFa": "بالانسر",
@@ -408,7 +452,8 @@
       "زنجیره ی بیکن"
     ],
     "episodes": [
-      "s06e01"
+      "s06e01",
+      "sp08"
     ]
   },
   {
@@ -424,6 +469,20 @@
     ],
     "episodes": [
       "s06e04"
+    ]
+  },
+  {
+    "slug": "biometrics",
+    "term": "Biometrics",
+    "termFa": "بیومتریک",
+    "definitionEn": "Identifying a person by body features such as fingerprint, face or iris, which cannot be changed once copied.",
+    "definitionFa": "شناسایی فرد با ویژگی‌های بدنی مثل اثر انگشت، چهره یا عنبیه که اگر کپی شود دیگر نمی‌توان عوضش کرد.",
+    "aliases": [
+      "biometrics",
+      "بیومتریک"
+    ],
+    "episodes": [
+      "sp09"
     ]
   },
   {
@@ -614,6 +673,20 @@
     ]
   },
   {
+    "slug": "block-builder",
+    "term": "Block Builder",
+    "termFa": "بلاک‌بیلدر",
+    "definitionEn": "A specialized party that assembles transactions and searcher bundles into the most profitable block for a validator to propose.",
+    "definitionFa": "بازیگری تخصصی که تراکنش‌ها و بسته‌های سرچرها را کنار هم می‌چیند و سودآورترین بلاک را برای پیشنهاد به اعتبارسنج می‌سازد.",
+    "aliases": [
+      "block builder",
+      "بلاک بیلدر"
+    ],
+    "episodes": [
+      "sp12"
+    ]
+  },
+  {
     "slug": "block-gas-limit",
     "term": "Block Gas Limit",
     "termFa": "بلاک گس لیمیت",
@@ -624,7 +697,8 @@
       "بلاک گس لیمیت"
     ],
     "episodes": [
-      "s05e02"
+      "s05e02",
+      "sp04"
     ]
   },
   {
@@ -715,6 +789,20 @@
     ]
   },
   {
+    "slug": "bounty",
+    "term": "Bounty",
+    "termFa": "باونتی",
+    "definitionEn": "An open task with a posted reward: whoever delivers the work to spec gets paid, often in the DAO's token.",
+    "definitionFa": "کاری که با پاداش مشخص اعلام عمومی می‌شود؛ هر کس آن را طبق مشخصات تحویل دهد پاداش می‌گیرد، اغلب با توکن دائو.",
+    "aliases": [
+      "bounty",
+      "باونتی"
+    ],
+    "episodes": [
+      "sp10"
+    ]
+  },
+  {
     "slug": "brain-wallet",
     "term": "Brain Wallet",
     "termFa": "کیف‌پول ذهنی",
@@ -740,6 +828,20 @@
     ],
     "episodes": [
       "s04e01"
+    ]
+  },
+  {
+    "slug": "bridge",
+    "term": "Bridge",
+    "termFa": "بریج",
+    "definitionEn": "Technology for moving assets from one blockchain to another; often reliant on centrally controlled servers and a frequent target of hacks.",
+    "definitionFa": "فناوری انتقال دارایی از یک بلاکچین به بلاکچین دیگر که اغلب به سرورهای متمرکز تکیه دارد و بارها هدف هک بوده است.",
+    "aliases": [
+      "bridge",
+      "بریج"
+    ],
+    "episodes": [
+      "sp08"
     ]
   },
   {
@@ -772,6 +874,20 @@
     ]
   },
   {
+    "slug": "capital-controls",
+    "term": "Capital Controls",
+    "termFa": "کنترل سرمایه",
+    "definitionEn": "Government rules that restrict moving money into or out of a country, usually to protect the local currency.",
+    "definitionFa": "مقرراتی که دولت با آن ورود و خروج پول از کشور را محدود می‌کند، معمولاً برای حفظ ارزش پول ملی.",
+    "aliases": [
+      "capital controls",
+      "کنترل سرمایه"
+    ],
+    "episodes": [
+      "sp05"
+    ]
+  },
+  {
     "slug": "cdp",
     "term": "CDP",
     "termFa": "موقعیت بدهی وثیقه‌گذاری‌شده",
@@ -784,6 +900,21 @@
     ],
     "episodes": [
       "s04e02"
+    ]
+  },
+  {
+    "slug": "censorship-resistance",
+    "term": "Censorship Resistance",
+    "termFa": "مقاومت در برابر سانسور",
+    "definitionEn": "The property that no single party can stop a valid transaction. It holds at the protocol layer, not for the companies built on top.",
+    "definitionFa": "ویژگی‌ای که نمی‌گذارد هیچ نهادی جلوی تراکنش معتبر را بگیرد. این ویژگی در لایهٔ پروتکل برقرار است، نه در شرکت‌های ساخته‌شده روی آن.",
+    "aliases": [
+      "censorship resistance",
+      "مقاومت در برابر سانسور"
+    ],
+    "episodes": [
+      "sp13",
+      "sp05"
     ]
   },
   {
@@ -801,6 +932,20 @@
     ]
   },
   {
+    "slug": "chain-analysis",
+    "term": "Chain Analysis",
+    "termFa": "تحلیل زنجیره",
+    "definitionEn": "Tracing funds across public blockchain addresses, which can tell an ordinary user apart from a money launderer.",
+    "definitionFa": "ردگیری جابه‌جایی پول میان آدرس‌های عمومی بلاکچین، که می‌تواند کاربر عادی را از پول‌شو تشخیص دهد.",
+    "aliases": [
+      "chain analysis",
+      "تحلیل زنجیره"
+    ],
+    "episodes": [
+      "sp13"
+    ]
+  },
+  {
     "slug": "chain-reorganization",
     "term": "Chain Reorganization",
     "termFa": "ری‌ارگ (بازسازماندهی زنجیره)",
@@ -813,7 +958,8 @@
       "بازسازماندهی زنجیره"
     ],
     "episodes": [
-      "s03e01"
+      "s03e01",
+      "sp06"
     ]
   },
   {
@@ -859,6 +1005,20 @@
     ]
   },
   {
+    "slug": "checks-effects-interactions",
+    "term": "Checks-Effects-Interactions",
+    "termFa": "الگوی بررسی، اثر، تعامل",
+    "definitionEn": "A coding pattern: validate conditions first, then update the contract's state, and only then call external contracts.",
+    "definitionFa": "الگویی در کدنویسی: اول شرط‌ها بررسی می‌شود، بعد وضعیت قرارداد تغییر می‌کند و در آخر قرارداد بیرونی صدا زده می‌شود.",
+    "aliases": [
+      "checks-effects-interactions",
+      "الگوی بررسی، اثر، تعامل"
+    ],
+    "episodes": [
+      "sp04"
+    ]
+  },
+  {
     "slug": "circuit-breaker",
     "term": "Circuit Breaker",
     "termFa": "سیرکت‌بریکر (قطع‌کننده مدار)",
@@ -899,7 +1059,8 @@
     ],
     "episodes": [
       "s07e07",
-      "s01e06"
+      "s01e06",
+      "sp05"
     ]
   },
   {
@@ -933,6 +1094,20 @@
     ]
   },
   {
+    "slug": "colored-coins",
+    "term": "Colored Coins",
+    "termFa": "کوین‌های رنگی",
+    "definitionEn": "An early scheme that tagged specific satoshis to stand for other assets, such as tokens or shares, on top of the Bitcoin blockchain.",
+    "definitionFa": "روشی قدیمی که با نشانه‌گذاری چند ساتوشی مشخص، آن‌ها را نمایندهٔ دارایی دیگری مثل توکن یا سهام روی بلاکچین بیت‌کوین می‌کرد.",
+    "aliases": [
+      "colored coins",
+      "کوین های رنگی"
+    ],
+    "episodes": [
+      "sp08"
+    ]
+  },
+  {
     "slug": "commit-chain",
     "term": "Commit Chain",
     "termFa": "زنجیره‌ی تعهد",
@@ -944,6 +1119,24 @@
     ],
     "episodes": [
       "s06e02"
+    ]
+  },
+  {
+    "slug": "commit-reveal",
+    "term": "Commit-Reveal",
+    "termFa": "طرح تعهد و افشا (کامیت‌ریویل)",
+    "definitionEn": "A two-step pattern: first publish only a hash of your data, then reveal the data later so the contract can verify you committed first.",
+    "definitionFa": "الگویی دومرحله‌ای: اول فقط هش داده را ثبت می‌کنید و چند بلاک بعد خود داده را می‌فرستید تا قرارداد تقدم شما را تأیید کند.",
+    "aliases": [
+      "commit-reveal",
+      "طرح تعهد و افشا",
+      "کامیت ریویل",
+      "کامیت و ریویل",
+      "تعهد و افشا"
+    ],
+    "episodes": [
+      "sp07",
+      "sp06"
     ]
   },
   {
@@ -1077,6 +1270,21 @@
     ]
   },
   {
+    "slug": "cryptocurrency-security-standard",
+    "term": "CryptoCurrency Security Standard",
+    "termFa": "استاندارد امنیت رمزارز (CCSS)",
+    "definitionEn": "C4's open checklist of 33 security controls that grades how safely a business handles crypto, from level one to three.",
+    "definitionFa": "فهرست باز C4 با ۳۳ کنترل امنیتی که شیوهٔ نگهداری رمزارز در یک کسب‌وکار را از سطح یک تا سه رتبه‌بندی می‌کند.",
+    "aliases": [
+      "cryptocurrency security standard",
+      "ccss",
+      "استاندارد امنیت رمزارز"
+    ],
+    "episodes": [
+      "sp09"
+    ]
+  },
+  {
     "slug": "cryptojacking",
     "term": "Cryptojacking",
     "termFa": "کریپتوجکینگ",
@@ -1134,6 +1342,20 @@
     ]
   },
   {
+    "slug": "cypherpunk",
+    "term": "Cypherpunk",
+    "termFa": "سایفرپانک",
+    "definitionEn": "A movement of technologists who build cryptographic tools to protect privacy and free communication; Bitcoin and Tor grew out of it.",
+    "definitionFa": "جنبشی از اهل فن که با ابزارهای رمزنگاری از حریم خصوصی و ارتباط آزاد دفاع می‌کنند؛ بیت‌کوین و Tor از دل آن بیرون آمدند.",
+    "aliases": [
+      "cypherpunk",
+      "سایفرپانک"
+    ],
+    "episodes": [
+      "sp14"
+    ]
+  },
+  {
     "slug": "dag",
     "term": "DAG",
     "termFa": "دگ (فایل DAG)",
@@ -1175,7 +1397,9 @@
       "سازمان خودگردان غیرمتمرکز"
     ],
     "episodes": [
-      "s01e08"
+      "s01e08",
+      "sp11",
+      "sp10"
     ]
   },
   {
@@ -1193,6 +1417,20 @@
       "s07e01",
       "s06e02",
       "s06e01"
+    ]
+  },
+  {
+    "slug": "data-feeder",
+    "term": "Data Feeder",
+    "termFa": "فیدر داده",
+    "definitionEn": "An entity that collects data from sources and reports it to the oracle system.",
+    "definitionFa": "طرفی که داده را از منابع جمع می‌کند و به سیستم اوراکل گزارش می‌دهد.",
+    "aliases": [
+      "data feeder",
+      "فیدر داده"
+    ],
+    "episodes": [
+      "sp06"
     ]
   },
   {
@@ -1221,6 +1459,21 @@
     ],
     "episodes": [
       "s01e03"
+    ]
+  },
+  {
+    "slug": "deep-packet-inspection",
+    "term": "Deep Packet Inspection",
+    "termFa": "بازرسی عمیق بسته‌ها (DPI)",
+    "definitionEn": "Network equipment that examines the content and shape of traffic to recognise and block specific protocols such as VPNs.",
+    "definitionFa": "تجهیزاتی در شبکه که محتوا و الگوی ترافیک را بررسی می‌کنند تا پروتکل‌های خاصی مثل VPN را بشناسند و ببندند.",
+    "aliases": [
+      "deep packet inspection",
+      "dpi",
+      "بازرسی عمیق بسته ها"
+    ],
+    "episodes": [
+      "sp14"
     ]
   },
   {
@@ -1287,6 +1540,20 @@
     ]
   },
   {
+    "slug": "deterministic-execution",
+    "term": "Deterministic Execution",
+    "termFa": "اجرای قطعی",
+    "definitionEn": "Every node must get exactly the same result from running the same transaction, which rules out randomness and outside data inside contracts.",
+    "definitionFa": "همهٔ نودها باید از اجرای یک تراکنش دقیقاً به یک نتیجه برسند؛ برای همین عدد تصادفی و دادهٔ بیرونی در قرارداد جایی ندارد.",
+    "aliases": [
+      "deterministic execution",
+      "اجرای قطعی"
+    ],
+    "episodes": [
+      "sp07"
+    ]
+  },
+  {
     "slug": "devcon",
     "term": "Devcon",
     "termFa": "دِوکان",
@@ -1342,7 +1609,8 @@
     ],
     "episodes": [
       "s04e03",
-      "s04e01"
+      "s04e01",
+      "sp03"
     ]
   },
   {
@@ -1384,7 +1652,8 @@
       "تنظیم سختی"
     ],
     "episodes": [
-      "s01e06"
+      "s01e06",
+      "sp02"
     ]
   },
   {
@@ -1421,6 +1690,62 @@
     ]
   },
   {
+    "slug": "displacement-attack",
+    "term": "Displacement Attack",
+    "termFa": "حملهٔ جابه‌جایی",
+    "definitionEn": "A front-running attack where the attacker takes the victim's place and does not care whether the victim's transaction runs afterwards.",
+    "definitionFa": "نوعی فرانت‌رانینگ که مهاجم جای قربانی را می‌گیرد و برایش مهم نیست تراکنش قربانی بعداً اجرا شود یا نه.",
+    "aliases": [
+      "displacement attack",
+      "حمله جابه جایی"
+    ],
+    "episodes": [
+      "sp03"
+    ]
+  },
+  {
+    "slug": "dispute-phase",
+    "term": "Dispute Phase",
+    "termFa": "مرحله‌ی اعتراض",
+    "definitionEn": "A period in which participants can challenge an oracle's reported value before it becomes final.",
+    "definitionFa": "بازه‌ای که در آن شرکت‌کنندگان می‌توانند پیش از نهایی‌شدن مقدار گزارش‌شده‌ی اوراکل، به آن اعتراض کنند.",
+    "aliases": [
+      "dispute phase",
+      "مرحله ی اعتراض"
+    ],
+    "episodes": [
+      "sp06"
+    ]
+  },
+  {
+    "slug": "dns-tunneling",
+    "term": "DNS Tunneling",
+    "termFa": "تونل DNS",
+    "definitionEn": "Hiding data inside DNS queries and replies, which often keep working when other traffic is blocked.",
+    "definitionFa": "پنهان کردن داده داخل پرس‌وجوها و پاسخ‌های DNS، که اغلب حتی وقتی بقیهٔ ترافیک بسته است کار می‌کنند.",
+    "aliases": [
+      "dns tunneling",
+      "تونل dns"
+    ],
+    "episodes": [
+      "sp14"
+    ]
+  },
+  {
+    "slug": "do-ocracy",
+    "term": "Do-ocracy",
+    "termFa": "دو-اکراسی",
+    "definitionEn": "A way of organizing where whoever picks up a task and does it gets to decide how it is done.",
+    "definitionFa": "شیوه‌ای از سازمان‌دهی که در آن هر کس کاری را برمی‌دارد و انجام می‌دهد، خودش دربارهٔ چگونگی‌اش تصمیم می‌گیرد.",
+    "aliases": [
+      "do-ocracy",
+      "دو-اکراسی"
+    ],
+    "episodes": [
+      "sp10"
+    ]
+  },
+  {
     "slug": "dorahacks",
     "term": "DoraHacks",
     "termFa": "دوراهکس",
@@ -1445,7 +1770,8 @@
       "حمله دابل اسپند"
     ],
     "episodes": [
-      "s03e01"
+      "s03e01",
+      "sp02"
     ]
   },
   {
@@ -1665,6 +1991,20 @@
     ]
   },
   {
+    "slug": "enshittification",
+    "term": "Enshittification",
+    "termFa": "enshittification (گندیدن پلتفرم)",
+    "definitionEn": "Cory Doctorow's term for how platforms first serve users, then exploit them for business customers, then squeeze both for shareholders.",
+    "definitionFa": "اصطلاح Cory Doctorow برای مسیر پلتفرم‌ها: اول به کاربر خدمت می‌کنند، بعد او را خرج مشتری تجاری می‌کنند و آخر هر دو را خرج سهام‌دار.",
+    "aliases": [
+      "enshittification",
+      "گندیدن پلتفرم"
+    ],
+    "episodes": [
+      "sp14"
+    ]
+  },
+  {
     "slug": "equihash",
     "term": "Equihash",
     "termFa": "اکوی‌هش",
@@ -1804,7 +2144,9 @@
       "سرویس نام اتریوم"
     ],
     "episodes": [
-      "s03e03"
+      "s03e03",
+      "sp07",
+      "sp03"
     ]
   },
   {
@@ -1866,6 +2208,21 @@
     ]
   },
   {
+    "slug": "externally-owned-account",
+    "term": "Externally Owned Account",
+    "termFa": "حساب با مالکیت خارجی (EOA)",
+    "definitionEn": "An Ethereum account controlled by a private key, with no code or storage of its own.",
+    "definitionFa": "حسابی در اتریوم که با کلید خصوصی کنترل می‌شود و کد و استوریج ندارد.",
+    "aliases": [
+      "externally owned account",
+      "eoa",
+      "حساب با مالکیت خارجی"
+    ],
+    "episodes": [
+      "sp04"
+    ]
+  },
+  {
     "slug": "facial-recognition",
     "term": "Facial Recognition",
     "termFa": "تشخیص چهره",
@@ -1891,6 +2248,20 @@
     ],
     "episodes": [
       "s04e04"
+    ]
+  },
+  {
+    "slug": "fallback-function",
+    "term": "Fallback Function",
+    "termFa": "تابع فال‌بک",
+    "definitionEn": "The function a contract runs when it receives ether or a call that matches none of its function names.",
+    "definitionFa": "تابعی که وقتی قرارداد اتر می‌گیرد یا فراخوانی با هیچ‌کدام از تابع‌هایش جور نیست، اجرا می‌شود.",
+    "aliases": [
+      "fallback function",
+      "تابع فال بک"
+    ],
+    "episodes": [
+      "sp04"
     ]
   },
   {
@@ -1980,7 +2351,21 @@
     "episodes": [
       "s04e06",
       "s04e02",
-      "s04e01"
+      "s04e01",
+      "sp11"
+    ]
+  },
+  {
+    "slug": "fomo3d",
+    "term": "Fomo3D",
+    "termFa": "Fomo3D",
+    "definitionEn": "A 2018 lottery-style game on Ethereum whose jackpot went to the last ticket buyer before a timer ran out.",
+    "definitionFa": "یک بازی لاتاری‌مانند روی اتریوم در سال ۲۰۱۸ که جایزه‌اش به آخرین خریدار بلیت پیش از تمام شدن زمان می‌رسید.",
+    "aliases": [
+      "fomo3d"
+    ],
+    "episodes": [
+      "sp03"
     ]
   },
   {
@@ -2023,7 +2408,24 @@
       "فرانت رانینگ"
     ],
     "episodes": [
-      "s04e03"
+      "s04e03",
+      "sp12",
+      "sp07",
+      "sp03"
+    ]
+  },
+  {
+    "slug": "full-node",
+    "term": "Full Node",
+    "termFa": "فول نود",
+    "definitionEn": "A computer that keeps a complete copy of the blockchain and independently verifies every block and transaction.",
+    "definitionFa": "کامپیوتری که نسخهٔ کامل بلاکچین را نگه می‌دارد و هر بلاک و تراکنش را خودش تأیید می‌کند.",
+    "aliases": [
+      "full node",
+      "فول نود"
+    ],
+    "episodes": [
+      "sp02"
     ]
   },
   {
@@ -2124,7 +2526,8 @@
       "گس پرایس"
     ],
     "episodes": [
-      "s05e02"
+      "s05e02",
+      "sp07"
     ]
   },
   {
@@ -2143,6 +2546,36 @@
     ]
   },
   {
+    "slug": "general-license-d-2",
+    "term": "General License D-2",
+    "termFa": "مجوز عمومی D-2",
+    "definitionEn": "A September 2022 OFAC license letting US entities offer Iranians services for secure communication, free internet access and education.",
+    "definitionFa": "مجوزی که اوفک در سپتامبر ۲۰۲۲ داد تا نهادهای آمریکایی بتوانند خدمات ارتباط امن، دسترسی آزاد به اینترنت و آموزش به ایرانی‌ها بدهند.",
+    "aliases": [
+      "general license d-2",
+      "مجوز عمومی d-2"
+    ],
+    "episodes": [
+      "sp11"
+    ]
+  },
+  {
+    "slug": "geo-blocking",
+    "term": "Geo-blocking",
+    "termFa": "مسدودسازی جغرافیایی",
+    "definitionEn": "Denying access to a website or app based on the user's location, usually guessed from their IP address.",
+    "definitionFa": "بستن دسترسی به سایت یا اپلیکیشن بر اساس موقعیت کاربر، که معمولاً از روی نشانی IP حدس زده می‌شود.",
+    "aliases": [
+      "geo-blocking",
+      "مسدودسازی جغرافیایی",
+      "ژئوبلاک"
+    ],
+    "episodes": [
+      "sp13",
+      "sp11"
+    ]
+  },
+  {
     "slug": "gitcoin",
     "term": "Gitcoin",
     "termFa": "گیت‌کوین",
@@ -2154,7 +2587,22 @@
     ],
     "episodes": [
       "s03e06",
-      "s03e03"
+      "s03e03",
+      "sp11"
+    ]
+  },
+  {
+    "slug": "giveth",
+    "term": "Giveth",
+    "termFa": "گیوت",
+    "definitionEn": "A crypto donation platform for public-good projects; it hosted CryptoZan's grants after Gitcoin suspended them.",
+    "definitionFa": "پلتفرم کمک مالی کریپتویی برای پروژه‌های عام‌المنفعه که پس از تعلیق در گیت‌کوین، میزبان گرنت‌های کریپتوزن شد.",
+    "aliases": [
+      "giveth",
+      "گیوت"
+    ],
+    "episodes": [
+      "sp11"
     ]
   },
   {
@@ -2184,7 +2632,8 @@
     ],
     "episodes": [
       "s04e06",
-      "s04e02"
+      "s04e02",
+      "sp10"
     ]
   },
   {
@@ -2216,6 +2665,20 @@
     ]
   },
   {
+    "slug": "ground-truth",
+    "term": "Ground Truth",
+    "termFa": "حقیقت مبنا",
+    "definitionEn": "The real-world fact an oracle tries to report, such as the actual price of an asset or the outcome of an event.",
+    "definitionFa": "واقعیتی در دنیای بیرون که اوراکل می‌خواهد گزارشش کند؛ مثل قیمت واقعی یک دارایی یا نتیجه‌ی یک رویداد.",
+    "aliases": [
+      "ground truth",
+      "حقیقت مبنا"
+    ],
+    "episodes": [
+      "sp06"
+    ]
+  },
+  {
     "slug": "halving",
     "term": "Halving",
     "termFa": "هاوینگ (نصف شدن پاداش)",
@@ -2229,7 +2692,8 @@
     "episodes": [
       "s03e05",
       "s03e04",
-      "s01e06"
+      "s01e06",
+      "sp02"
     ]
   },
   {
@@ -2267,6 +2731,20 @@
     ]
   },
   {
+    "slug": "hardware-security-key",
+    "term": "Hardware Security Key",
+    "termFa": "کلید امنیتی سخت‌افزاری",
+    "definitionEn": "A small physical device, such as a YubiKey, that provides the second login factor and cannot be copied by malware.",
+    "definitionFa": "دستگاه فیزیکی کوچکی مثل YubiKey که عامل دوم ورود را فراهم می‌کند و بدافزار نمی‌تواند از آن کپی بگیرد.",
+    "aliases": [
+      "hardware security key",
+      "کلید امنیتی سخت افزاری"
+    ],
+    "episodes": [
+      "sp09"
+    ]
+  },
+  {
     "slug": "hardware-wallet",
     "term": "Hardware Wallet",
     "termFa": "کیف‌پول سخت‌افزاری",
@@ -2278,7 +2756,8 @@
     ],
     "episodes": [
       "s02e03",
-      "s01e07"
+      "s01e07",
+      "sp09"
     ]
   },
   {
@@ -2438,6 +2917,20 @@
     ]
   },
   {
+    "slug": "inactivity-leak",
+    "term": "Inactivity Leak",
+    "termFa": "جریمهٔ عدم فعالیت",
+    "definitionEn": "An Ethereum mechanism that gradually drains the stake of validators that stay offline, so a long outage costs stakers their own funds.",
+    "definitionFa": "سازوکاری در اتریوم که سپردهٔ اعتبارسنج‌های آفلاین را کم‌کم کاهش می‌دهد؛ برای همین قطعی طولانی به اصل پول استیکرها ضرر می‌زند.",
+    "aliases": [
+      "inactivity leak",
+      "جریمه عدم فعالیت"
+    ],
+    "episodes": [
+      "sp13"
+    ]
+  },
+  {
     "slug": "inbound-liquidity",
     "term": "Inbound Liquidity",
     "termFa": "نقدینگی ورودی",
@@ -2463,6 +2956,50 @@
     ],
     "episodes": [
       "sp01"
+    ]
+  },
+  {
+    "slug": "insertion-attack",
+    "term": "Insertion Attack",
+    "termFa": "حملهٔ درج",
+    "definitionEn": "A front-running attack where the attacker places a transaction right before the victim's and needs the victim's transaction to execute, as in sandwiching a trade.",
+    "definitionFa": "نوعی فرانت‌رانینگ که مهاجم تراکنشش را درست قبل از تراکنش قربانی جا می‌دهد و به اجرای آن نیاز دارد؛ مثل ساندویچ کردن یک معامله.",
+    "aliases": [
+      "insertion attack",
+      "حمله درج"
+    ],
+    "episodes": [
+      "sp03"
+    ]
+  },
+  {
+    "slug": "integer-overflow",
+    "term": "Integer Overflow",
+    "termFa": "سرریز عدد صحیح",
+    "definitionEn": "A bug where a number grows past its maximum (or drops below zero) and wraps around, which has broken many token contracts.",
+    "definitionFa": "باگی که در آن عدد از سقف مجاز می‌گذرد یا از صفر پایین‌تر می‌رود و دور می‌زند؛ توکن‌های زیادی از آن ضربه خورده‌اند.",
+    "aliases": [
+      "integer overflow",
+      "سرریز عدد صحیح",
+      "سرریز و زیرریز عدد صحیح"
+    ],
+    "episodes": [
+      "sp07",
+      "sp04"
+    ]
+  },
+  {
+    "slug": "intent",
+    "term": "Intent",
+    "termFa": "اینتنت (intent)",
+    "definitionEn": "A signed message stating the outcome a user wants, which someone else can later turn into an on-chain transaction.",
+    "definitionFa": "پیامی امضاشده که نتیجهٔ دلخواه کاربر را بیان می‌کند و فرد دیگری می‌تواند بعداً آن را به تراکنش روی زنجیره تبدیل کند.",
+    "aliases": [
+      "intent",
+      "اینتنت"
+    ],
+    "episodes": [
+      "sp14"
     ]
   },
   {
@@ -2511,6 +3048,20 @@
     ]
   },
   {
+    "slug": "keccak-256",
+    "term": "Keccak-256",
+    "termFa": "کچاک-۲۵۶",
+    "definitionEn": "The secure hash function built into Ethereum, almost identical to the SHA-3 standard.",
+    "definitionFa": "تابع هش امنی که در اتریوم تعبیه شده و تقریباً همان استاندارد SHA-3 است.",
+    "aliases": [
+      "keccak-256",
+      "کچاک-256"
+    ],
+    "episodes": [
+      "sp07"
+    ]
+  },
+  {
     "slug": "knowledge-graph",
     "term": "Knowledge Graph",
     "termFa": "نالج‌گراف",
@@ -2537,7 +3088,9 @@
       "کی وای سی"
     ],
     "episodes": [
-      "s03e05"
+      "s03e05",
+      "sp13",
+      "sp05"
     ]
   },
   {
@@ -2614,6 +3167,19 @@
     ]
   },
   {
+    "slug": "libsubmarine",
+    "term": "LibSubmarine",
+    "termFa": "LibSubmarine",
+    "definitionEn": "A smart contract library that hides a transaction's purpose until it is later revealed, so others cannot front-run it.",
+    "definitionFa": "کتابخانه‌ای برای قراردادهای هوشمند که هدف تراکنش را تا زمان افشای بعدی پنهان نگه می‌دارد تا کسی نتواند آن را فرانت‌ران کند.",
+    "aliases": [
+      "libsubmarine"
+    ],
+    "episodes": [
+      "sp03"
+    ]
+  },
+  {
     "slug": "lightning-network",
     "term": "Lightning Network",
     "termFa": "شبکه‌ی لایتنینگ",
@@ -2632,7 +3198,8 @@
       "s03e02",
       "s01e10",
       "s01e06",
-      "s01e05"
+      "s01e05",
+      "sp08"
     ]
   },
   {
@@ -2679,7 +3246,8 @@
     "episodes": [
       "s04e06",
       "s04e02",
-      "s03e06"
+      "s03e06",
+      "sp12"
     ]
   },
   {
@@ -2696,7 +3264,8 @@
     ],
     "episodes": [
       "s04e03",
-      "s04e02"
+      "s04e02",
+      "sp10"
     ]
   },
   {
@@ -2741,7 +3310,8 @@
       "لوکال بیتکوین"
     ],
     "episodes": [
-      "s03e06"
+      "s03e06",
+      "sp05"
     ]
   },
   {
@@ -2856,7 +3426,9 @@
       "ممپول"
     ],
     "episodes": [
-      "s03e01"
+      "s03e01",
+      "sp07",
+      "sp03"
     ]
   },
   {
@@ -2871,6 +3443,34 @@
     ],
     "episodes": [
       "s07e02"
+    ]
+  },
+  {
+    "slug": "merkle-tree",
+    "term": "Merkle Tree",
+    "termFa": "درخت مرکل",
+    "definitionEn": "A tree of hashes that condenses all of a block's transactions into one root hash stored in the block.",
+    "definitionFa": "درختی از هش‌ها که همهٔ تراکنش‌های یک بلاک را در یک هش ریشه خلاصه می‌کند و آن ریشه در بلاک ثبت می‌شود.",
+    "aliases": [
+      "merkle tree",
+      "درخت مرکل"
+    ],
+    "episodes": [
+      "sp02"
+    ]
+  },
+  {
+    "slug": "mesh-network",
+    "term": "Mesh Network",
+    "termFa": "شبکهٔ مش",
+    "definitionEn": "A network where nearby devices connect directly and pass messages along for each other, without needing an internet provider.",
+    "definitionFa": "شبکه‌ای که در آن دستگاه‌های نزدیک مستقیم به هم وصل می‌شوند و پیام یکدیگر را دست‌به‌دست می‌کنند، بدون نیاز به ارائه‌دهندهٔ اینترنت.",
+    "aliases": [
+      "mesh network",
+      "شبکه مش"
+    ],
+    "episodes": [
+      "sp14"
     ]
   },
   {
@@ -2899,7 +3499,9 @@
       "ارزش قابل استخراج ماینر / مف"
     ],
     "episodes": [
-      "s05e02"
+      "s05e02",
+      "sp12",
+      "sp06"
     ]
   },
   {
@@ -2961,7 +3563,22 @@
       "s02e01",
       "s01e09",
       "s01e05",
-      "s01e04"
+      "s01e04",
+      "sp02"
+    ]
+  },
+  {
+    "slug": "moav",
+    "term": "MoaV",
+    "termFa": "MoaV (مادر همهٔ VPNها)",
+    "definitionEn": "Shayan's open-source \"Mother of All VPNs\": a server bundle that runs many circumvention protocols at once and also relays for Tor and Psiphon.",
+    "definitionFa": "پروژهٔ متن‌باز شایان: بسته‌ای برای سرور که چندین پروتکل دور زدن فیلترینگ را هم‌زمان اجرا می‌کند و به شبکه‌های Tor و Psiphon هم کمک می‌رساند.",
+    "aliases": [
+      "moav",
+      "مادر همه vpnها"
+    ],
+    "episodes": [
+      "sp14"
     ]
   },
   {
@@ -3054,7 +3671,8 @@
     "episodes": [
       "s06e03",
       "s04e05",
-      "s01e07"
+      "s01e07",
+      "sp10"
     ]
   },
   {
@@ -3098,6 +3716,19 @@
     ],
     "episodes": [
       "s01e07"
+    ]
+  },
+  {
+    "slug": "mythx",
+    "term": "MythX",
+    "termFa": "MythX",
+    "definitionEn": "ConsenSys's security analysis service that scans smart contracts for common vulnerabilities, available as a Remix plugin and command-line tools.",
+    "definitionFa": "سرویس تحلیل امنیتی کانسنسیس که قرارداد هوشمند را برای باگ‌های رایج اسکن می‌کند و به شکل پلاگین Remix و ابزار خط فرمان در دسترس است.",
+    "aliases": [
+      "mythx"
+    ],
+    "episodes": [
+      "sp04"
     ]
   },
   {
@@ -3157,6 +3788,20 @@
     ]
   },
   {
+    "slug": "nonce",
+    "term": "Nonce",
+    "termFa": "نانس",
+    "definitionEn": "A number miners keep changing until the block's hash starts with the required number of zeros.",
+    "definitionFa": "عددی که ماینر آن‌قدر عوضش می‌کند تا هش بلاک با تعداد صفر لازم شروع شود.",
+    "aliases": [
+      "nonce",
+      "نانس"
+    ],
+    "episodes": [
+      "sp02"
+    ]
+  },
+  {
     "slug": "nothing-at-stake",
     "term": "Nothing at Stake",
     "termFa": "هیچ چیز در خطر نیست",
@@ -3195,7 +3840,52 @@
       "اوفک"
     ],
     "episodes": [
-      "s07e07"
+      "s07e07",
+      "sp13",
+      "sp11",
+      "sp05"
+    ]
+  },
+  {
+    "slug": "offline-transaction",
+    "term": "Offline Transaction",
+    "termFa": "تراکنش آفلاین",
+    "definitionEn": "A payment that can be signed and handed over without an internet connection and settled on-chain later.",
+    "definitionFa": "پرداختی که بدون اتصال به اینترنت امضا و تحویل می‌شود و بعداً روی زنجیره ثبت می‌شود.",
+    "aliases": [
+      "offline transaction",
+      "تراکنش افلاین"
+    ],
+    "episodes": [
+      "sp13"
+    ]
+  },
+  {
+    "slug": "on-chain-governance",
+    "term": "On-chain Governance",
+    "termFa": "حکمرانی آنچین",
+    "definitionEn": "Voting where the result is executed directly by smart contracts, with no person needed to carry out the decision.",
+    "definitionFa": "رأی‌گیری‌ای که نتیجه‌اش را قرارداد هوشمند مستقیم اجرا می‌کند و برای عملی شدن تصمیم به هیچ فردی نیاز نیست.",
+    "aliases": [
+      "on-chain governance",
+      "حکمرانی انچین"
+    ],
+    "episodes": [
+      "sp10"
+    ]
+  },
+  {
+    "slug": "on-chain-randomness",
+    "term": "On-chain Randomness",
+    "termFa": "عدد تصادفی روی زنجیره",
+    "definitionEn": "Random-looking values derived from block data such as the block hash or timestamp, which other contracts and miners can predict.",
+    "definitionFa": "عددی به‌ظاهر تصادفی که از داده‌ی بلاک مثل هش یا زمان آن ساخته می‌شود و قراردادهای دیگر و ماینرها می‌توانند پیش‌بینی‌اش کنند.",
+    "aliases": [
+      "on-chain randomness",
+      "عدد تصادفی روی زنجیره"
+    ],
+    "episodes": [
+      "sp04"
     ]
   },
   {
@@ -3264,6 +3954,19 @@
     ]
   },
   {
+    "slug": "op-return",
+    "term": "OP_RETURN",
+    "termFa": "OP_RETURN",
+    "definitionEn": "A Bitcoin script opcode that lets a transaction carry a small piece of arbitrary data, used by protocols like Omni to mark tokens.",
+    "definitionFa": "دستوری در اسکریپت بیت‌کوین که اجازه می‌دهد تراکنش مقدار کمی دادهٔ دلخواه حمل کند؛ پروتکل‌هایی مثل Omni توکن‌ها را با آن علامت می‌زدند.",
+    "aliases": [
+      "op_return"
+    ],
+    "episodes": [
+      "sp08"
+    ]
+  },
+  {
     "slug": "open-source-observer",
     "term": "Open Source Observer",
     "termFa": "اوپن‌سورس آبزرور",
@@ -3275,6 +3978,35 @@
     ],
     "episodes": [
       "s07e03"
+    ]
+  },
+  {
+    "slug": "operational-security",
+    "term": "Operational Security",
+    "termFa": "امنیت عملیاتی",
+    "definitionEn": "Everyday habits that keep attackers from learning who you are, what you hold and how to reach your accounts.",
+    "definitionFa": "عادت‌های روزمره‌ای که نمی‌گذارد مهاجم بفهمد شما چه کسی هستید، چه دارایی‌ای دارید و چطور می‌شود به حساب‌هایتان رسید.",
+    "aliases": [
+      "operational security",
+      "opsec",
+      "امنیت عملیاتی"
+    ],
+    "episodes": [
+      "sp09"
+    ]
+  },
+  {
+    "slug": "optimistic-oracle",
+    "term": "Optimistic Oracle",
+    "termFa": "اوراکل خوش‌بینانه",
+    "definitionEn": "An oracle that accepts a proposed answer as true unless someone disputes it within a time window. UMA's oracle works this way.",
+    "definitionFa": "اوراکلی که پاسخ پیشنهادی را درست فرض می‌کند، مگر اینکه کسی در مهلت معین به آن اعتراض کند. اوراکل UMA همین‌طور کار می‌کند.",
+    "aliases": [
+      "optimistic oracle",
+      "اوراکل خوش بینانه"
+    ],
+    "episodes": [
+      "sp12"
     ]
   },
   {
@@ -3304,7 +4036,25 @@
     "episodes": [
       "s04e02",
       "s04e01",
-      "s03e06"
+      "s03e06",
+      "sp08",
+      "sp07",
+      "sp06"
+    ]
+  },
+  {
+    "slug": "oracle-extractable-value",
+    "term": "Oracle Extractable Value",
+    "termFa": "ارزش قابل استخراج از اوراکل (OEV)",
+    "definitionEn": "Profit that can be captured by ordering transactions around an oracle update, for example by being first to liquidate after a new price lands.",
+    "definitionFa": "سودی که از چیدن تراکنش‌ها پیرامون به‌روزرسانی اوراکل به دست می‌آید؛ مثلاً وقتی کسی بلافاصله بعد از قیمت جدید، اولین لیکوییدیشن را انجام می‌دهد.",
+    "aliases": [
+      "oracle extractable value",
+      "oev",
+      "ارزش قابل استخراج از اوراکل"
+    ],
+    "episodes": [
+      "sp12"
     ]
   },
   {
@@ -3318,7 +4068,22 @@
       "دستکاری اوراکل"
     ],
     "episodes": [
-      "s04e06"
+      "s04e06",
+      "sp06"
+    ]
+  },
+  {
+    "slug": "oracle-problem",
+    "term": "Oracle Problem",
+    "termFa": "مسئله‌ی اوراکل",
+    "definitionEn": "The difficulty of getting real-world data on-chain without having to trust a single party that could lie or fail.",
+    "definitionFa": "دشواری آوردن داده‌ی دنیای واقعی به زنجیره، بدون اعتماد به یک طرف واحد که ممکن است دروغ بگوید یا از کار بیفتد.",
+    "aliases": [
+      "oracle problem",
+      "مسئله ی اوراکل"
+    ],
+    "episodes": [
+      "sp06"
     ]
   },
   {
@@ -3334,6 +4099,21 @@
     ],
     "episodes": [
       "s04e03"
+    ]
+  },
+  {
+    "slug": "order-flow-auction",
+    "term": "Order Flow Auction",
+    "termFa": "حراج جریان سفارش (OFA)",
+    "definitionEn": "An auction where searchers bid for the right to back-run a transaction, with the proceeds returned to whoever originated it.",
+    "definitionFa": "حراجی که در آن سرچرها برای حق بک‌رانینگ یک تراکنش پیشنهاد می‌دهند و درآمدش به فرستندهٔ همان تراکنش برمی‌گردد.",
+    "aliases": [
+      "order flow auction",
+      "ofa",
+      "حراج جریان سفارش"
+    ],
+    "episodes": [
+      "sp12"
     ]
   },
   {
@@ -3365,6 +4145,21 @@
     ]
   },
   {
+    "slug": "otc-trading",
+    "term": "OTC Trading",
+    "termFa": "معاملهٔ خارج از صرافی (OTC)",
+    "definitionEn": "Buying and selling directly between two people or through a broker, outside an exchange, for example in Telegram groups.",
+    "definitionFa": "خریدوفروش مستقیم میان دو نفر یا از طریق یک واسطه، بیرون از صرافی؛ مثلاً در گروه‌های تلگرامی.",
+    "aliases": [
+      "otc trading",
+      "معامله خارج از صرافی",
+      "otc"
+    ],
+    "episodes": [
+      "sp05"
+    ]
+  },
+  {
     "slug": "over-collateralization",
     "term": "Over-collateralization",
     "termFa": "وثیقه‌گذاری بیش از حد",
@@ -3380,6 +4175,22 @@
       "s04e06",
       "s04e05",
       "s04e02"
+    ]
+  },
+  {
+    "slug": "over-compliance",
+    "term": "Over-compliance",
+    "termFa": "تبعیت افراطی از تحریم",
+    "definitionEn": "Excluding a whole population out of caution, beyond what sanctions law actually requires, instead of assessing and managing the real risk.",
+    "definitionFa": "کنار گذاشتن یک جمعیت کامل از سر احتیاط و فراتر از الزام قانون تحریم، به جای سنجیدن و مدیریت ریسک واقعی.",
+    "aliases": [
+      "over-compliance",
+      "تبعیت افراطی از تحریم",
+      "سخت گیری بیش از حد در اجرای تحریم"
+    ],
+    "episodes": [
+      "sp13",
+      "sp05"
     ]
   },
   {
@@ -3424,6 +4235,20 @@
     ],
     "episodes": [
       "s01e07"
+    ]
+  },
+  {
+    "slug": "password-manager",
+    "term": "Password Manager",
+    "termFa": "مدیر رمز عبور",
+    "definitionEn": "An encrypted app that generates and stores a unique random password for every account, unlocked by one master password.",
+    "definitionFa": "برنامه‌ای رمزنگاری‌شده که برای هر حساب یک رمز تصادفی و یکتا می‌سازد و نگه می‌دارد و با یک رمز اصلی باز می‌شود.",
+    "aliases": [
+      "password manager",
+      "مدیر رمز عبور"
+    ],
+    "episodes": [
+      "sp09"
     ]
   },
   {
@@ -3510,7 +4335,8 @@
       "پواپ"
     ],
     "episodes": [
-      "s07e04"
+      "s07e04",
+      "sp11"
     ]
   },
   {
@@ -3539,7 +4365,8 @@
     ],
     "episodes": [
       "s02e01",
-      "s01e01"
+      "s01e01",
+      "sp05"
     ]
   },
   {
@@ -3643,6 +4470,35 @@
     ]
   },
   {
+    "slug": "prediction-market",
+    "term": "Prediction Market",
+    "termFa": "بازار پیش‌بینی",
+    "definitionEn": "A market where people trade on the outcome of future events, such as an election, and an oracle settles the result.",
+    "definitionFa": "بازاری که در آن روی نتیجهٔ رویدادهای آینده، مثل انتخابات، معامله می‌شود و اوراکل نتیجهٔ نهایی را اعلام می‌کند.",
+    "aliases": [
+      "prediction market",
+      "بازار پیش بینی"
+    ],
+    "episodes": [
+      "sp12"
+    ]
+  },
+  {
+    "slug": "price-feed",
+    "term": "Price Feed",
+    "termFa": "فید قیمت",
+    "definitionEn": "A stream of asset prices that an oracle publishes on-chain for protocols such as lending markets to read.",
+    "definitionFa": "جریانی از قیمت دارایی‌ها که اوراکل روی زنجیره منتشر می‌کند تا پروتکل‌هایی مثل بازارهای وام‌دهی از آن استفاده کنند.",
+    "aliases": [
+      "price feed",
+      "فید قیمت"
+    ],
+    "episodes": [
+      "sp12",
+      "sp06"
+    ]
+  },
+  {
     "slug": "private-blockchain",
     "term": "Private Blockchain",
     "termFa": "بلاکچین خصوصی",
@@ -3668,7 +4524,8 @@
     ],
     "episodes": [
       "s02e03",
-      "s01e07"
+      "s01e07",
+      "sp02"
     ]
   },
   {
@@ -3696,6 +4553,20 @@
     ],
     "episodes": [
       "s05e01"
+    ]
+  },
+  {
+    "slug": "progressive-decentralization",
+    "term": "Progressive Decentralization",
+    "termFa": "غیرمتمرکزسازی تدریجی",
+    "definitionEn": "Handing control of a project from its founding team to its community step by step rather than all at once.",
+    "definitionFa": "واگذاری گام‌به‌گام کنترل یک پروژه از تیم سازنده به جامعهٔ آن، به‌جای واگذاری یک‌باره.",
+    "aliases": [
+      "progressive decentralization",
+      "غیرمتمرکزسازی تدریجی"
+    ],
+    "episodes": [
+      "sp10"
     ]
   },
   {
@@ -3741,6 +4612,7 @@
       "s01e09",
       "s01e04",
       "s01e02",
+      "sp08",
       "sp01"
     ]
   },
@@ -3761,7 +4633,23 @@
       "s01e04",
       "s01e03",
       "s01e02",
+      "sp08",
+      "sp02",
       "sp01"
+    ]
+  },
+  {
+    "slug": "proxy-contract",
+    "term": "Proxy Contract",
+    "termFa": "قرارداد پروکسی",
+    "definitionEn": "A contract with a fixed address that forwards calls to replaceable logic behind it, making upgrades possible but adding a trust risk.",
+    "definitionFa": "قراردادی با آدرس ثابت که فراخوانی‌ها را به منطق قابل‌تعویض پشت سرش می‌فرستد؛ ارتقا را ممکن می‌کند ولی ریسک اعتماد هم می‌آورد.",
+    "aliases": [
+      "proxy contract",
+      "قرارداد پروکسی"
+    ],
+    "episodes": [
+      "sp07"
     ]
   },
   {
@@ -3810,6 +4698,20 @@
     ]
   },
   {
+    "slug": "public-goods",
+    "term": "Public Goods",
+    "termFa": "کالای عمومی",
+    "definitionEn": "Things that benefit everyone and that no one can be excluded from, such as open-source code and free educational content.",
+    "definitionFa": "چیزهایی که به سود همه است و نمی‌توان کسی را از آن محروم کرد، مثل کد متن‌باز و محتوای آموزشی رایگان.",
+    "aliases": [
+      "public goods",
+      "کالای عمومی"
+    ],
+    "episodes": [
+      "sp11"
+    ]
+  },
+  {
     "slug": "public-key",
     "term": "Public Key",
     "termFa": "کلید عمومی",
@@ -3820,7 +4722,8 @@
       "کلید عمومی"
     ],
     "episodes": [
-      "s01e07"
+      "s01e07",
+      "sp02"
     ]
   },
   {
@@ -3848,7 +4751,8 @@
       "رای گیری درجه دو"
     ],
     "episodes": [
-      "s03e03"
+      "s03e03",
+      "sp10"
     ]
   },
   {
@@ -3936,6 +4840,22 @@
     ]
   },
   {
+    "slug": "reentrancy",
+    "term": "Reentrancy",
+    "termFa": "ری‌انترنسی (ورود مجدد)",
+    "definitionEn": "A bug where an external contract you call calls back into yours before your state is updated, as in the DAO hack.",
+    "definitionFa": "باگی که در آن قرارداد بیرونی، پیش از به‌روز شدن وضعیت، دوباره تابع شما را صدا می‌زند؛ هک DAO از همین نوع بود.",
+    "aliases": [
+      "reentrancy",
+      "ری انترنسی",
+      "ورود مجدد"
+    ],
+    "episodes": [
+      "sp07",
+      "sp04"
+    ]
+  },
+  {
     "slug": "rehypothecation",
     "term": "Rehypothecation",
     "termFa": "ری‌هایپوتکیشن (عرضی‌سازی مجدد)",
@@ -3963,6 +4883,20 @@
     "episodes": [
       "s07e07",
       "s04e03"
+    ]
+  },
+  {
+    "slug": "remittance",
+    "term": "Remittance",
+    "termFa": "حواله",
+    "definitionEn": "Money sent home by people living abroad, often to support family.",
+    "definitionFa": "پولی که افراد ساکن خارج برای خانواده یا نزدیکانشان به کشور خود می‌فرستند.",
+    "aliases": [
+      "remittance",
+      "حواله"
+    ],
+    "episodes": [
+      "sp05"
     ]
   },
   {
@@ -4131,6 +5065,20 @@
     ]
   },
   {
+    "slug": "sanctions",
+    "term": "Sanctions",
+    "termFa": "تحریم",
+    "definitionEn": "Legal restrictions, here mainly from the US, that bar companies from serving certain countries and push many services to block Iranian users.",
+    "definitionFa": "محدودیت‌های قانونی، اینجا بیشتر از سوی آمریکا، که شرکت‌ها را از خدمت‌رسانی به بعضی کشورها منع می‌کند و باعث مسدود شدن کاربران ایرانی می‌شود.",
+    "aliases": [
+      "sanctions",
+      "تحریم"
+    ],
+    "episodes": [
+      "sp11"
+    ]
+  },
+  {
     "slug": "satoshi",
     "term": "Satoshi",
     "termFa": "ساتوشی",
@@ -4188,6 +5136,34 @@
     ]
   },
   {
+    "slug": "sdn-list",
+    "term": "SDN List",
+    "termFa": "فهرست SDN",
+    "definitionEn": "OFAC's list of sanctioned persons and entities; in 2018 two Bitcoin addresses linked to Iranians were added to it.",
+    "definitionFa": "فهرست افراد و نهادهای تحریم‌شدهٔ اوفک؛ در سال ۲۰۱۸ دو آدرس بیت‌کوین مرتبط با ایرانی‌ها هم به آن اضافه شد.",
+    "aliases": [
+      "sdn list",
+      "فهرست sdn"
+    ],
+    "episodes": [
+      "sp05"
+    ]
+  },
+  {
+    "slug": "searcher",
+    "term": "Searcher",
+    "termFa": "سرچر",
+    "definitionEn": "A bot operator who scans for MEV opportunities such as liquidations and arbitrage and bids to have their transactions included first.",
+    "definitionFa": "گردانندهٔ رباتی که دنبال فرصت‌های MEV مثل لیکوییدیشن و آربیتراژ می‌گردد و برای زودتر ثبت شدن تراکنشش پیشنهاد قیمت می‌دهد.",
+    "aliases": [
+      "searcher",
+      "سرچر"
+    ],
+    "episodes": [
+      "sp12"
+    ]
+  },
+  {
     "slug": "sec",
     "term": "SEC",
     "termFa": "کمیسیون بورس و اوراق بهادار آمریکا",
@@ -4228,7 +5204,8 @@
       "سید"
     ],
     "episodes": [
-      "s02e03"
+      "s02e03",
+      "sp09"
     ]
   },
   {
@@ -4321,6 +5298,20 @@
     ]
   },
   {
+    "slug": "session-key",
+    "term": "Session Key",
+    "termFa": "کلید نشست (session key)",
+    "definitionEn": "A temporary, limited key that a smart account authorises to sign on its behalf, for example only small payments up to a cap.",
+    "definitionFa": "کلیدی موقت و محدود که اسمارت اکانت به آن اجازهٔ امضا می‌دهد؛ مثلاً فقط برای پرداخت‌های کوچک تا یک سقف مشخص.",
+    "aliases": [
+      "session key",
+      "کلید نشست"
+    ],
+    "episodes": [
+      "sp14"
+    ]
+  },
+  {
     "slug": "sha-256",
     "term": "SHA-256",
     "termFa": "SHA-256",
@@ -4392,6 +5383,21 @@
     ]
   },
   {
+    "slug": "sim-swap",
+    "term": "SIM Swap",
+    "termFa": "تعویض سیم‌کارت (سیم‌سواپ)",
+    "definitionEn": "An attacker tricks a phone carrier into moving your number to their SIM, then receives your calls and text codes.",
+    "definitionFa": "مهاجم اپراتور را فریب می‌دهد تا شمارهٔ شما را به سیم‌کارت خودش منتقل کند و تماس‌ها و کدهای پیامکی‌تان را بگیرد.",
+    "aliases": [
+      "sim swap",
+      "تعویض سیم کارت",
+      "سیم سواپ"
+    ],
+    "episodes": [
+      "sp09"
+    ]
+  },
+  {
     "slug": "slashing",
     "term": "Slashing",
     "termFa": "اسلشینگ",
@@ -4402,7 +5408,8 @@
       "اسلشینگ"
     ],
     "episodes": [
-      "s07e02"
+      "s07e02",
+      "sp08"
     ]
   },
   {
@@ -4453,6 +5460,22 @@
     ]
   },
   {
+    "slug": "smart-contract-audit",
+    "term": "Smart Contract Audit",
+    "termFa": "ممیزی قرارداد هوشمند",
+    "definitionEn": "An independent security review of a contract's code and documentation, done mostly by hand, that reports bugs and trust assumptions before launch.",
+    "definitionFa": "بازبینی امنیتی مستقل کد و مستندات قرارداد که بیشتر دستی انجام می‌شود و باگ‌ها و فرض‌های اعتماد را پیش از انتشار گزارش می‌کند.",
+    "aliases": [
+      "smart contract audit",
+      "ممیزی قرارداد هوشمند",
+      "ادیت قرارداد هوشمند"
+    ],
+    "episodes": [
+      "sp07",
+      "sp04"
+    ]
+  },
+  {
     "slug": "smart-order-routing",
     "term": "Smart Order Routing",
     "termFa": "مسیریابی هوشمند سفارش",
@@ -4465,6 +5488,20 @@
     ],
     "episodes": [
       "s04e04"
+    ]
+  },
+  {
+    "slug": "sni-spoofing",
+    "term": "SNI Spoofing",
+    "termFa": "جعل SNI",
+    "definitionEn": "Making encrypted traffic claim it is headed to an allowed site, so the censor's filter lets it through.",
+    "definitionFa": "ترفندی که در آن ترافیک رمزشده مقصدش را یک سایت مجاز اعلام می‌کند تا فیلتر سانسورچی اجازهٔ عبور بدهد.",
+    "aliases": [
+      "sni spoofing",
+      "جعل sni"
+    ],
+    "episodes": [
+      "sp14"
     ]
   },
   {
@@ -4511,6 +5548,20 @@
     ]
   },
   {
+    "slug": "spear-phishing",
+    "term": "Spear Phishing",
+    "termFa": "فیشینگ هدفمند",
+    "definitionEn": "A phishing attack aimed at one specific person, usually because the attacker knows that person holds something valuable.",
+    "definitionFa": "حملهٔ فیشینگی که یک فرد مشخص را نشانه می‌گیرد، معمولاً چون مهاجم می‌داند او دارایی باارزشی دارد.",
+    "aliases": [
+      "spear phishing",
+      "فیشینگ هدفمند"
+    ],
+    "episodes": [
+      "sp09"
+    ]
+  },
+  {
     "slug": "specification-gaming-reward-hacking",
     "term": "Specification Gaming / Reward Hacking",
     "termFa": "بازی با مشخصات / هک پاداش",
@@ -4536,7 +5587,8 @@
       "تایید پرداخت ساده شده"
     ],
     "episodes": [
-      "s01e10"
+      "s01e10",
+      "sp05"
     ]
   },
   {
@@ -4552,7 +5604,23 @@
     ],
     "episodes": [
       "s04e02",
-      "s04e01"
+      "s04e01",
+      "sp14",
+      "sp13"
+    ]
+  },
+  {
+    "slug": "staking",
+    "term": "Staking",
+    "termFa": "استیکینگ",
+    "definitionEn": "Locking up coins to run a validator that helps secure a proof-of-stake network in return for rewards. It needs a constant internet connection.",
+    "definitionFa": "قفل کردن کوین برای اجرای اعتبارسنج و کمک به امنیت شبکهٔ اثبات سهام در ازای پاداش. این کار به اینترنت دائمی نیاز دارد.",
+    "aliases": [
+      "staking",
+      "استیکینگ"
+    ],
+    "episodes": [
+      "sp13"
     ]
   },
   {
@@ -4567,6 +5635,20 @@
     ],
     "episodes": [
       "s06e02"
+    ]
+  },
+  {
+    "slug": "storage-slot",
+    "term": "Storage Slot",
+    "termFa": "اسلات استوریج",
+    "definitionEn": "A numbered 32-byte cell in a contract's permanent storage; anyone can read it from a node, even for private variables.",
+    "definitionFa": "خانه‌ای ۳۲ بایتی و شماره‌دار در حافظه‌ی دائمی قرارداد که هر کسی می‌تواند از روی نود بخواند، حتی اگر متغیر private باشد.",
+    "aliases": [
+      "storage slot",
+      "اسلات استوریج"
+    ],
+    "episodes": [
+      "sp04"
     ]
   },
   {
@@ -4596,6 +5678,20 @@
     ],
     "episodes": [
       "s06e05"
+    ]
+  },
+  {
+    "slug": "suppression-attack",
+    "term": "Suppression Attack",
+    "termFa": "حملهٔ سرکوب",
+    "definitionEn": "A front-running attack that keeps other users' transactions out of blocks for a while, for example by filling blocks; also called block stuffing.",
+    "definitionFa": "نوعی فرانت‌رانینگ که مهاجم مدتی جلوی ثبت تراکنش دیگران را می‌گیرد، مثلاً با پر کردن بلاک‌ها؛ به آن block stuffing هم می‌گویند.",
+    "aliases": [
+      "suppression attack",
+      "حمله سرکوب"
+    ],
+    "episodes": [
+      "sp03"
     ]
   },
   {
@@ -4655,6 +5751,20 @@
     ]
   },
   {
+    "slug": "symbolic-execution",
+    "term": "Symbolic Execution",
+    "termFa": "اجرای نمادین",
+    "definitionEn": "An analysis technique that explores a program's possible paths with symbolic inputs to find inputs that trigger bugs.",
+    "definitionFa": "روشی برای تحلیل برنامه که مسیرهای ممکن اجرا را با ورودی‌های نمادین می‌پیماید تا ورودی‌های باگ‌ساز را پیدا کند.",
+    "aliases": [
+      "symbolic execution",
+      "اجرای نمادین"
+    ],
+    "episodes": [
+      "sp04"
+    ]
+  },
+  {
     "slug": "systematic-risk",
     "term": "Systematic Risk",
     "termFa": "ریسک سیستماتیک",
@@ -4680,6 +5790,20 @@
     ],
     "episodes": [
       "s01e01"
+    ]
+  },
+  {
+    "slug": "tamper-evident-bag",
+    "term": "Tamper-Evident Bag",
+    "termFa": "کیسهٔ پلمب‌دار",
+    "definitionEn": "A sealed bag that cannot be opened without visible damage, so you can tell if someone looked at your seed backup.",
+    "definitionFa": "کیسه‌ای مهروموم‌شده که بدون آسیب آشکار باز نمی‌شود و نشان می‌دهد کسی به نسخهٔ پشتیبان عبارت بازیابی دست زده است یا نه.",
+    "aliases": [
+      "tamper-evident bag",
+      "کیسه پلمب دار"
+    ],
+    "episodes": [
+      "sp09"
     ]
   },
   {
@@ -4751,7 +5875,8 @@
       "داو"
     ],
     "episodes": [
-      "s01e02"
+      "s01e02",
+      "sp04"
     ]
   },
   {
@@ -4783,6 +5908,19 @@
     ]
   },
   {
+    "slug": "tlsnotary",
+    "term": "TLSNotary",
+    "termFa": "TLSNotary",
+    "definitionEn": "A technique for proving that a piece of data really came from a given website over an HTTPS connection.",
+    "definitionFa": "روشی برای اثبات اینکه یک داده واقعاً از وب‌سایت مشخصی و روی اتصال HTTPS گرفته شده است.",
+    "aliases": [
+      "tlsnotary"
+    ],
+    "episodes": [
+      "sp06"
+    ]
+  },
+  {
     "slug": "token",
     "term": "Token",
     "termFa": "توکن",
@@ -4794,6 +5932,34 @@
     ],
     "episodes": [
       "s01e08"
+    ]
+  },
+  {
+    "slug": "tokenomics",
+    "term": "Tokenomics",
+    "termFa": "توکنومیکس",
+    "definitionEn": "The economics of a project's token: how it is issued and distributed, what it is used for, and where its value comes from.",
+    "definitionFa": "اقتصاد توکن یک پروژه: چطور منتشر و توزیع می‌شود، چه کاربردی دارد و ارزشش از کجا می‌آید.",
+    "aliases": [
+      "tokenomics",
+      "توکنومیکس"
+    ],
+    "episodes": [
+      "sp10"
+    ]
+  },
+  {
+    "slug": "tor",
+    "term": "Tor",
+    "termFa": "تور (Tor)",
+    "definitionEn": "A volunteer-run network that bounces traffic through several relays to hide who is talking to whom; Snowflake proxies help censored users reach it.",
+    "definitionFa": "شبکه‌ای داوطلبانه که ترافیک را از چند رله عبور می‌دهد تا معلوم نشود چه کسی با کجا در ارتباط است. پروکسی‌های Snowflake راه ورود آن‌اند.",
+    "aliases": [
+      "tor",
+      "تور"
+    ],
+    "episodes": [
+      "sp14"
     ]
   },
   {
@@ -4860,6 +6026,20 @@
     ]
   },
   {
+    "slug": "treasury",
+    "term": "Treasury",
+    "termFa": "خزانه",
+    "definitionEn": "The pool of crypto assets a DAO holds and spends by member vote, visible to anyone on-chain.",
+    "definitionFa": "دارایی‌های رمزارزی یک دائو که با رأی اعضا خرج می‌شود و موجودی‌اش روی بلاکچین برای همه قابل دیدن است.",
+    "aliases": [
+      "treasury",
+      "خزانه"
+    ],
+    "episodes": [
+      "sp10"
+    ]
+  },
+  {
     "slug": "trusted-execution-environment",
     "term": "Trusted Execution Environment",
     "termFa": "محیط اجرای امن (TEE)",
@@ -4871,7 +6051,9 @@
       "محیط اجرای امن"
     ],
     "episodes": [
-      "s07e06"
+      "s07e06",
+      "sp12",
+      "sp06"
     ]
   },
   {
@@ -4888,6 +6070,35 @@
     "episodes": [
       "s07e07",
       "s07e01"
+    ]
+  },
+  {
+    "slug": "turing-completeness",
+    "term": "Turing Completeness",
+    "termFa": "تورینگ‌کامل بودن",
+    "definitionEn": "The property of a programming language that can express any computation; Ethereum's contract language has it, while Bitcoin Script is deliberately limited.",
+    "definitionFa": "ویژگی زبانی که می‌تواند هر محاسبه‌ای را بیان کند؛ زبان قراردادهای اتریوم این ویژگی را دارد و اسکریپت بیت‌کوین عمداً محدود است.",
+    "aliases": [
+      "turing completeness",
+      "تورینگ کامل بودن"
+    ],
+    "episodes": [
+      "sp08"
+    ]
+  },
+  {
+    "slug": "two-factor-authentication",
+    "term": "Two-Factor Authentication",
+    "termFa": "احراز هویت دومرحله‌ای",
+    "definitionEn": "A second login step after the password, such as a six-digit code from an app or a hardware key.",
+    "definitionFa": "مرحلهٔ دوم ورود بعد از رمز عبور، مثل کد شش‌رقمی یک اپلیکیشن یا یک کلید سخت‌افزاری.",
+    "aliases": [
+      "two-factor authentication",
+      "2fa",
+      "احراز هویت دومرحله ای"
+    ],
+    "episodes": [
+      "sp09"
     ]
   },
   {
@@ -4985,7 +6196,8 @@
       "s06e03",
       "s06e01",
       "s01e05",
-      "s01e02"
+      "s01e02",
+      "sp08"
     ]
   },
   {
@@ -5056,6 +6268,20 @@
     ],
     "episodes": [
       "s07e06"
+    ]
+  },
+  {
+    "slug": "vpn",
+    "term": "VPN",
+    "termFa": "وی‌پی‌ان (VPN)",
+    "definitionEn": "A tool that sends your internet traffic through an encrypted tunnel to another server, used here to get past state filtering.",
+    "definitionFa": "ابزاری که ترافیک اینترنت را از یک تونل رمزشده به سروری دیگر می‌فرستد؛ در این سخنرانی برای عبور از فیلترینگ حکومتی.",
+    "aliases": [
+      "vpn",
+      "وی پی ان"
+    ],
+    "episodes": [
+      "sp14"
     ]
   },
   {
@@ -5216,6 +6442,20 @@
     ],
     "episodes": [
       "s06e01"
+    ]
+  },
+  {
+    "slug": "zk-badge",
+    "term": "ZK Badge",
+    "termFa": "نشان دانش‌صفر",
+    "definitionEn": "A badge, like those from Sismo, that proves you belong to a group using zero-knowledge proofs without revealing your address.",
+    "definitionFa": "نشانی مثل نشان‌های Sismo که با اثبات دانش صفر، عضویت شما در یک گروه را بدون فاش کردن آدرستان ثابت می‌کند.",
+    "aliases": [
+      "zk badge",
+      "نشان دانش صفر"
+    ],
+    "episodes": [
+      "sp11"
     ]
   },
   {

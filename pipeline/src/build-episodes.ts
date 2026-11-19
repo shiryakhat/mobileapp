@@ -4,7 +4,8 @@
  *
  * The corpus has 49 videos for 40 canonical episodes (+1 special): seasons 4-6
  * were uploaded twice (original video + 2025 audio mirror). We dedupe by
- * episode code and keep the alternates in `altYoutubeIds`.
+ * episode code and keep the alternates in `altYoutubeIds`. The other specials
+ * (conference talks) are read from TALKS_DIR.
  */
 import fs from 'node:fs';
 import path from 'node:path';
@@ -15,6 +16,7 @@ import {
   EPISODE_CODE_OVERRIDES,
   RSS_CACHE,
   SPECIALS,
+  TALKS_DIR,
   WEBSITE_DIR,
 } from './config.js';
 import { readJson, readJsonIfExists, writeJson } from './lib/io.js';
@@ -62,17 +64,33 @@ function requireDir(dir: string, hint: string): void {
   }
 }
 
-function loadVideos(): Video[] {
-  requireDir(CORPUS_DIR, 'mount the corpus or set SYK_CORPUS_DIR');
+function readVideos(dir: string): Video[] {
   return fs
-    .readdirSync(CORPUS_DIR)
+    .readdirSync(dir)
     .filter((f) => f.endsWith('.info.json') && !f.startsWith('._'))
     .sort()
     .map((f) => {
-      const info = readJson<InfoJson>(path.join(CORPUS_DIR, f));
+      const info = readJson<InfoJson>(path.join(dir, f));
       const code = EPISODE_CODE_OVERRIDES[info.id] ?? CODE.exec(info.title)?.[0]?.toUpperCase();
       return { stem: f.slice(0, -'.info.json'.length), info, code };
     });
+}
+
+/** The corpus, plus the specials that only exist in TALKS_DIR (conference talks). */
+function loadVideos(): Video[] {
+  requireDir(CORPUS_DIR, 'mount the corpus or set SYK_CORPUS_DIR');
+  const videos = readVideos(CORPUS_DIR);
+  const have = new Set(videos.map((v) => v.info.id));
+  const wanted = Object.keys(SPECIALS).filter((id) => !have.has(id));
+  if (wanted.length === 0) return videos;
+  requireDir(TALKS_DIR, 'mount the talks or set SYK_TALKS_DIR');
+  const talks = readVideos(TALKS_DIR).filter((v) => wanted.includes(v.info.id));
+  for (const id of wanted) {
+    if (!talks.some((v) => v.info.id === id)) {
+      console.warn(`! special ${SPECIALS[id]!.id} (${id}) not found in the corpus or ${TALKS_DIR}`);
+    }
+  }
+  return [...videos, ...talks];
 }
 
 function cleanUrl(v: unknown): string | undefined {
@@ -222,6 +240,7 @@ function main(): void {
   for (const v of videos) {
     const special = SPECIALS[v.info.id];
     if (special) {
+      const description = (v.info.description ?? '').trim();
       episodes.push({
         id: special.id,
         youtubeId: v.info.id,
@@ -237,8 +256,9 @@ function main(): void {
           ? chaptersOf(v.info)
           : (previous.get(special.id)?.chapters ?? []),
         youtubeThumb: thumbOf(v.info),
-        descriptionFa: (v.info.description ?? '').trim(),
-        descriptionEn: '',
+        // Talks given in English carry an English description.
+        descriptionFa: hasPersian(description) ? description : '',
+        descriptionEn: hasPersian(description) ? '' : description,
         keywords: [],
         viewCount: v.info.view_count,
         likeCount: v.info.like_count,

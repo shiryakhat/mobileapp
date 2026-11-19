@@ -80,12 +80,15 @@ Nothing heavy is re-hosted.
 
 - **Video** streams from YouTube by video id.
 - **Audio** streams from the podcast's public RSS enclosures (all 40 regular episodes are matched by
-  episode code). The one special without an RSS item falls back to YouTube for audio.
+  episode code). Specials (season 0: a guest interview and Shayan's conference talks) have no RSS
+  item and play from YouTube.
 - **Thumbnails** are YouTube thumbnail URLs.
 
 The corpus holds 49 videos for 40 episodes plus one special, because seasons 4 to 6 were uploaded
 twice. The pipeline de-duplicates by episode code, prefers the upload that has chapters and then the
-original upload, and keeps the others in `altYoutubeIds`.
+original upload, and keeps the others in `altYoutubeIds`. The conference talks are not podcast
+uploads: they are listed in `SPECIALS` (`pipeline/src/config.ts`) and read from a separate
+directory (`/Volumes/Beezhan/data/talks`, override with `SYK_TALKS_DIR`).
 
 ## RTL
 

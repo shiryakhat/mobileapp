@@ -1,0 +1,249 @@
+{
+  "id": "sp09",
+  "model": "claude-fable-5-2",
+  "generatedAt": "2026-11-19T23:43:38.482Z",
+  "summaryFa": "وبینار زندهٔ کنسرسیوم C4 که در مارس ۲۰۲۲ منتشر شد. مایکل پرکلین، مدیر پیشین امنیت اطلاعات ShapeShift، اصول امنیت عملیاتی را برای دارندگان رمزارز مرور می‌کند: پنهان ماندن از فیشینگ هدفمند، احراز هویت دومرحله‌ای بدون شماره تلفن، مدیر رمز عبور و نگهداری کلیدها در کیف پول سخت‌افزاری. شایان اسکندری و جاشوا مک‌دوگال از تجربه‌های خودشان می‌گویند و به پرسش‌های مخاطبان جواب می‌دهند.",
+  "summaryEn": "A C4 (CryptoCurrency Certification Consortium) live stream published in March 2022. Michael Perklin, former chief information security officer of ShapeShift, walks through operational security basics for crypto holders: staying out of spear phishers' sights, two-factor authentication without a phone number, password managers, and keeping keys on a hardware wallet. Shayan Eskandari and Joshua McDougall add their own experience and take audience questions.",
+  "quotes": [
+    {
+      "startSec": 441,
+      "fa": "بهترین راه پیشگیری این است که اصلاً شناخته‌شده نباشید. اگر کسی نداند رمزارز دارید، برای دزدیدنش هم سراغتان نمی‌آید.",
+      "en": "The best way to prevent it is to simply not be known. If people don't know you have crypto, they won't target you to steal it.",
+      "speaker": "مایکل"
+    },
+    {
+      "startSec": 1131,
+      "fa": "هرچه امنیت را بیشتر کنید، احتمال اینکه خودتان پشت در حساب‌هایتان بمانید هم بیشتر می‌شود.",
+      "en": "With more security, there's a higher chance that you lock yourself out of your own accounts.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 1288,
+      "fa": "بیومتریک خیلی باحال به نظر می‌رسد، ولی باحال بودن و امن بودن دو چیز کاملاً متفاوت‌اند.",
+      "en": "Biometrics look really, really cool, but cool and secure are very different things.",
+      "speaker": "مایکل"
+    },
+    {
+      "startSec": 2708,
+      "fa": "بیشتر هک‌ها به خاطر رمزهای لورفته اتفاق می‌افتد، نه لزوماً به این خاطر که کامپیوتر خودتان هک شده باشد.",
+      "en": "Most hacks happen because of leaked passwords, not necessarily because your computer was hacked.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 3222,
+      "fa": "اگر دیدید دارید عبارت بازیابی‌تان را با کیبورد تایپ می‌کنید، چه کیبورد گوشی و چه کامپیوتر، همان لحظه دست نگه دارید.",
+      "en": "If you catch yourself typing your seed phrase on a keyboard, whether it is a phone keyboard or a computer keyboard, immediately stop.",
+      "speaker": "مایکل"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Operational Security (OpSec)",
+      "termFa": "امنیت عملیاتی",
+      "definitionEn": "Everyday habits that keep attackers from learning who you are, what you hold and how to reach your accounts.",
+      "definitionFa": "عادت‌های روزمره‌ای که نمی‌گذارد مهاجم بفهمد شما چه کسی هستید، چه دارایی‌ای دارید و چطور می‌شود به حساب‌هایتان رسید."
+    },
+    {
+      "term": "Spear Phishing",
+      "termFa": "فیشینگ هدفمند",
+      "definitionEn": "A phishing attack aimed at one specific person, usually because the attacker knows that person holds something valuable.",
+      "definitionFa": "حملهٔ فیشینگی که یک فرد مشخص را نشانه می‌گیرد، معمولاً چون مهاجم می‌داند او دارایی باارزشی دارد."
+    },
+    {
+      "term": "Two-Factor Authentication (2FA)",
+      "termFa": "احراز هویت دومرحله‌ای",
+      "definitionEn": "A second login step after the password, such as a six-digit code from an app or a hardware key.",
+      "definitionFa": "مرحلهٔ دوم ورود بعد از رمز عبور، مثل کد شش‌رقمی یک اپلیکیشن یا یک کلید سخت‌افزاری."
+    },
+    {
+      "term": "SIM Swap",
+      "termFa": "تعویض سیم‌کارت (سیم‌سواپ)",
+      "definitionEn": "An attacker tricks a phone carrier into moving your number to their SIM, then receives your calls and text codes.",
+      "definitionFa": "مهاجم اپراتور را فریب می‌دهد تا شمارهٔ شما را به سیم‌کارت خودش منتقل کند و تماس‌ها و کدهای پیامکی‌تان را بگیرد."
+    },
+    {
+      "term": "Hardware Security Key",
+      "termFa": "کلید امنیتی سخت‌افزاری",
+      "definitionEn": "A small physical device, such as a YubiKey, that provides the second login factor and cannot be copied by malware.",
+      "definitionFa": "دستگاه فیزیکی کوچکی مثل YubiKey که عامل دوم ورود را فراهم می‌کند و بدافزار نمی‌تواند از آن کپی بگیرد."
+    },
+    {
+      "term": "Password Manager",
+      "termFa": "مدیر رمز عبور",
+      "definitionEn": "An encrypted app that generates and stores a unique random password for every account, unlocked by one master password.",
+      "definitionFa": "برنامه‌ای رمزنگاری‌شده که برای هر حساب یک رمز تصادفی و یکتا می‌سازد و نگه می‌دارد و با یک رمز اصلی باز می‌شود."
+    },
+    {
+      "term": "Biometrics",
+      "termFa": "بیومتریک",
+      "definitionEn": "Identifying a person by body features such as fingerprint, face or iris, which cannot be changed once copied.",
+      "definitionFa": "شناسایی فرد با ویژگی‌های بدنی مثل اثر انگشت، چهره یا عنبیه که اگر کپی شود دیگر نمی‌توان عوضش کرد."
+    },
+    {
+      "term": "Hardware Wallet",
+      "termFa": "کیف‌پول سخت‌افزاری",
+      "definitionEn": "A dedicated device that keeps private keys off your computer, so malware on the computer cannot steal them.",
+      "definitionFa": "دستگاهی جداگانه که کلیدهای خصوصی را بیرون از کامپیوتر نگه می‌دارد تا بدافزار روی کامپیوتر نتواند آن‌ها را بدزدد."
+    },
+    {
+      "term": "Seed Phrase",
+      "termFa": "عبارت بازیابی (سید)",
+      "definitionEn": "The 12, 18 or 24 words that back up a wallet; anyone who sees them can take all its funds.",
+      "definitionFa": "۱۲، ۱۸ یا ۲۴ کلمه‌ای که پشتیبان کیف پول است؛ هر کس آن را ببیند می‌تواند همهٔ دارایی را بردارد."
+    },
+    {
+      "term": "Tamper-Evident Bag",
+      "termFa": "کیسهٔ پلمب‌دار",
+      "definitionEn": "A sealed bag that cannot be opened without visible damage, so you can tell if someone looked at your seed backup.",
+      "definitionFa": "کیسه‌ای مهروموم‌شده که بدون آسیب آشکار باز نمی‌شود و نشان می‌دهد کسی به نسخهٔ پشتیبان عبارت بازیابی دست زده است یا نه."
+    },
+    {
+      "term": "CryptoCurrency Security Standard (CCSS)",
+      "termFa": "استاندارد امنیت رمزارز (CCSS)",
+      "definitionEn": "C4's open checklist of 33 security controls that grades how safely a business handles crypto, from level one to three.",
+      "definitionFa": "فهرست باز C4 با ۳۳ کنترل امنیتی که شیوهٔ نگهداری رمزارز در یک کسب‌وکار را از سطح یک تا سه رتبه‌بندی می‌کند."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "en",
+      "wrong": "Cheyenne",
+      "right": "Shayan"
+    },
+    {
+      "lang": "en",
+      "wrong": "Shane",
+      "right": "Shayan"
+    },
+    {
+      "lang": "en",
+      "wrong": "Bielebek",
+      "right": "Levesque"
+    },
+    {
+      "lang": "en",
+      "wrong": "mcdougall",
+      "right": "McDougall"
+    },
+    {
+      "lang": "en",
+      "wrong": "Fox chain",
+      "right": "FOXChain"
+    },
+    {
+      "lang": "en",
+      "wrong": "KeyPass",
+      "right": "KeePass"
+    },
+    {
+      "lang": "en",
+      "wrong": "KeyPay",
+      "right": "KeepKey"
+    },
+    {
+      "lang": "en",
+      "wrong": "keep key",
+      "right": "KeepKey"
+    },
+    {
+      "lang": "en",
+      "wrong": "treasures",
+      "right": "Trezors"
+    },
+    {
+      "lang": "en",
+      "wrong": "Kapersky",
+      "right": "Kaspersky"
+    },
+    {
+      "lang": "en",
+      "wrong": "crypto steel",
+      "right": "Cryptosteel"
+    },
+    {
+      "lang": "en",
+      "wrong": "your sea",
+      "right": "your seed"
+    },
+    {
+      "lang": "en",
+      "wrong": "mnemonic seat",
+      "right": "mnemonic seed"
+    },
+    {
+      "lang": "en",
+      "wrong": "phone base to a Faye",
+      "right": "phone-based 2FA"
+    },
+    {
+      "lang": "en",
+      "wrong": "Techspace",
+      "right": "text-based 2FA"
+    },
+    {
+      "lang": "en",
+      "wrong": "CCSSA",
+      "right": "CCSS-A"
+    },
+    {
+      "lang": "en",
+      "wrong": "technical Michael Boucher- technical issue",
+      "right": "technical issue"
+    },
+    {
+      "lang": "en",
+      "wrong": "Boucher- So why",
+      "right": "So why"
+    },
+    {
+      "lang": "en",
+      "wrong": "Jessica Gronsbell- So obviously",
+      "right": "So obviously"
+    },
+    {
+      "lang": "en",
+      "wrong": "Jason Gammacko, M.D.: Yes, thanks JESSICA",
+      "right": "Yes, thanks Jessica"
+    },
+    {
+      "lang": "en",
+      "wrong": "Michael Lauer, CSA, That's",
+      "right": "That's"
+    },
+    {
+      "lang": "fa",
+      "wrong": "شین، می‌خواستی",
+      "right": "شایان، می‌خواستی"
+    },
+    {
+      "lang": "fa",
+      "wrong": "شِین",
+      "right": "شایان"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بوچر- خب چرا",
+      "right": "خب چرا"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مایکل لاوئر، CSA، سؤال",
+      "right": "سؤال"
+    },
+    {
+      "lang": "fa",
+      "wrong": "KeyPass",
+      "right": "KeePass"
+    },
+    {
+      "lang": "fa",
+      "wrong": "KeyPay",
+      "right": "KeepKey"
+    },
+    {
+      "lang": "fa",
+      "wrong": "mnemonic seat",
+      "right": "mnemonic seed"
+    }
+  ]
+}

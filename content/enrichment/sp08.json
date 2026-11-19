@@ -1,0 +1,260 @@
+{
+  "id": "sp08",
+  "model": "claude-fable-5-2",
+  "generatedAt": "2026-11-19T23:43:38.479Z",
+  "summaryFa": "وبینار زندهٔ C4 (نهاد صادرکنندهٔ گواهی‌نامه‌های CBP و CEP) در فوریهٔ ۲۰۲۲، چند روز پیش از ETHDenver. شایان اسکندری، سرپرست کمیتهٔ گواهی‌نامهٔ اتریوم، همراه با درک اندرسون، کنت بارتون، جاش مک‌دوگال و جسیکا لوِسک توضیح می‌دهند که بیت‌کوین برای پول ساخته شد و اتریوم برای محاسبه، و تفاوت‌هایی مثل UTXO در برابر مدل حساب، اثبات کار در برابر اثبات سهام و سرعت تغییر پروتکل از همین‌جا می‌آید. در بخش پرسش و پاسخ هم از مسئلهٔ اوراکل، خطر بریج‌ها و شیوهٔ برگزاری آزمون‌های C4 صحبت می‌شود.",
+  "summaryEn": "A live C4 webinar from February 2022, held the week before ETHDenver, in which Shayan Eskandari (lead of the Certified Ethereum Professional committee), Dirk Anderson, Kent Barton, Josh McDougall and host Jessica Levesque compare Bitcoin and Ethereum. They argue that neither is better: Bitcoin was built as money and Ethereum as a computing platform, which explains differences such as UTXO versus account balances, proof of work versus proof of stake, and how fast each protocol changes. The Q&A covers the oracle problem, the risks of bridges, and how C4's certification exams work.",
+  "quotes": [
+    {
+      "startSec": 486,
+      "fa": "خیلی‌ها فکر می‌کنند بیت‌کوین یک نوآوری بود. لزوماً چیز تازه‌ای نبود؛ فقط همهٔ تکه‌ها را کنار هم گذاشت و تصویر بزرگ‌تری ساخت که واقعاً کار می‌کند.",
+      "en": "A lot of people think Bitcoin was an innovation. It wasn't necessarily a new thing. It was just putting everything together and making this bigger picture that just works.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 1079,
+      "fa": "اصل ماجرا این است که فضای بلاک محدود است. تا وقتی ترافیک و تراکنشی نباشد، ارزان است؛ ولی وقتی ترافیک بیاید و بازار کارمزد راه بیفتد، گران می‌شود.",
+      "en": "The whole point is that block space is limited. As long as there's no traffic, no transactions, it is cheaper. But when there is traffic and the fee market kicks in, it gets expensive.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 1448,
+      "fa": "به نظر من اصلاً هدف بیت‌کوین همین است: آرام و منظم، هر بار ده دقیقه، در تاریخ جلو می‌رود.",
+      "en": "I would argue that that's actually the point of Bitcoin. It just methodically moves forward, 10 minutes at a time, through history.",
+      "speaker": "جاش"
+    },
+    {
+      "startSec": 2461,
+      "fa": "مثل این است که موتور هواپیما را وسط پرواز و با مسافر عوض کنی. رفتن اتریوم به اثبات سهام چنین کاری است.",
+      "en": "The analogy is changing the airplane's engine while it's flying and has passengers. That's what Ethereum moving to proof of stake is like.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 2688,
+      "fa": "بریج‌ها چیزی‌اند که من را بیشتر از هر چیز دیگری در این فضا می‌ترسانند. هک‌های زیادی روی بریج‌ها دیده‌ایم، چون درست ساختنشان واقعاً سخت است.",
+      "en": "Bridges are something that makes me so afraid in this space. We've seen a lot of hacks happening with bridges, because it's really hard to get that right.",
+      "speaker": "شایان"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Colored Coins",
+      "termFa": "کوین‌های رنگی",
+      "definitionEn": "An early scheme that tagged specific satoshis to stand for other assets, such as tokens or shares, on top of the Bitcoin blockchain.",
+      "definitionFa": "روشی قدیمی که با نشانه‌گذاری چند ساتوشی مشخص، آن‌ها را نمایندهٔ دارایی دیگری مثل توکن یا سهام روی بلاکچین بیت‌کوین می‌کرد."
+    },
+    {
+      "term": "UTXO",
+      "termFa": "UTXO (خروجی تراکنش خرج‌نشده)",
+      "definitionEn": "Bitcoin's bookkeeping model: a wallet's balance is the sum of all the unspent transaction outputs it controls.",
+      "definitionFa": "مدل حسابداری بیت‌کوین که در آن موجودی کیف پول از جمع خروجی‌های خرج‌نشدهٔ متعلق به آن به دست می‌آید."
+    },
+    {
+      "term": "Account Model",
+      "termFa": "مدل حساب",
+      "definitionEn": "Ethereum's bookkeeping model, in which every address has one stored balance instead of a set of separate unspent outputs.",
+      "definitionFa": "مدل حسابداری اتریوم که در آن هر آدرس یک موجودی ثبت‌شده دارد و لازم نیست خروجی‌های جداگانه جمع زده شوند."
+    },
+    {
+      "term": "OP_RETURN",
+      "termFa": "OP_RETURN",
+      "definitionEn": "A Bitcoin script opcode that lets a transaction carry a small piece of arbitrary data, used by protocols like Omni to mark tokens.",
+      "definitionFa": "دستوری در اسکریپت بیت‌کوین که اجازه می‌دهد تراکنش مقدار کمی دادهٔ دلخواه حمل کند؛ پروتکل‌هایی مثل Omni توکن‌ها را با آن علامت می‌زدند."
+    },
+    {
+      "term": "Turing Completeness",
+      "termFa": "تورینگ‌کامل بودن",
+      "definitionEn": "The property of a programming language that can express any computation; Ethereum's contract language has it, while Bitcoin Script is deliberately limited.",
+      "definitionFa": "ویژگی زبانی که می‌تواند هر محاسبه‌ای را بیان کند؛ زبان قراردادهای اتریوم این ویژگی را دارد و اسکریپت بیت‌کوین عمداً محدود است."
+    },
+    {
+      "term": "Proof of Work",
+      "termFa": "اثبات کار",
+      "definitionEn": "A consensus method in which miners spend electricity and computing power on a puzzle to earn the right to add blocks.",
+      "definitionFa": "روش اجماعی که در آن ماینرها با صرف برق و توان پردازشی برای حل یک معما، حق افزودن بلاک را به دست می‌آورند."
+    },
+    {
+      "term": "Proof of Stake",
+      "termFa": "اثبات سهام",
+      "definitionEn": "A consensus method in which validators lock up the network's native token as collateral instead of spending energy on mining.",
+      "definitionFa": "روش اجماعی که در آن اعتبارسنج‌ها به جای مصرف انرژی، توکن بومی شبکه را به عنوان وثیقه قفل می‌کنند."
+    },
+    {
+      "term": "Slashing",
+      "termFa": "اسلشینگ",
+      "definitionEn": "The penalty in proof of stake that takes away part of a validator's deposit for malicious behavior.",
+      "definitionFa": "جریمه‌ای در اثبات سهام که بخشی از سپردهٔ اعتبارسنج متخلف را از او می‌گیرد."
+    },
+    {
+      "term": "Beacon Chain",
+      "termFa": "زنجیره‌ی بیکن",
+      "definitionEn": "The proof-of-stake chain Ethereum ran alongside its proof-of-work chain to test the new consensus before switching over.",
+      "definitionFa": "زنجیرهٔ اثبات سهامی که اتریوم در کنار زنجیرهٔ اثبات کار خود راه انداخت تا اجماع جدید را پیش از مهاجرت بیازماید."
+    },
+    {
+      "term": "Lightning Network",
+      "termFa": "شبکه‌ی لایتنینگ",
+      "definitionEn": "A payment layer on top of Bitcoin where transactions happen off-chain and only disputes or final balances go to the blockchain.",
+      "definitionFa": "لایهٔ پرداختی روی بیت‌کوین که تراکنش‌ها در آن بیرون از زنجیره انجام می‌شود و فقط اختلاف‌ها یا تسویهٔ نهایی به بلاکچین می‌رود."
+    },
+    {
+      "term": "Oracle",
+      "termFa": "اوراکل",
+      "definitionEn": "A service that feeds real-world data, such as prices or weather, into smart contracts, which cannot see anything outside the blockchain.",
+      "definitionFa": "سرویسی که دادهٔ دنیای واقعی، مثل قیمت یا وضع هوا، را به قراردادهای هوشمند می‌رساند؛ چون قرارداد بیرون از بلاکچین را نمی‌بیند."
+    },
+    {
+      "term": "Bridge",
+      "termFa": "بریج",
+      "definitionEn": "Technology for moving assets from one blockchain to another; often reliant on centrally controlled servers and a frequent target of hacks.",
+      "definitionFa": "فناوری انتقال دارایی از یک بلاکچین به بلاکچین دیگر که اغلب به سرورهای متمرکز تکیه دارد و بارها هدف هک بوده است."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "en",
+      "wrong": "Cheyenne",
+      "right": "Shayan"
+    },
+    {
+      "lang": "en",
+      "wrong": "cheyenne",
+      "right": "Shayan"
+    },
+    {
+      "lang": "en",
+      "wrong": "derek",
+      "right": "Dirk"
+    },
+    {
+      "lang": "en",
+      "wrong": "ken was",
+      "right": "Kent was"
+    },
+    {
+      "lang": "en",
+      "wrong": "light day for both",
+      "right": "white paper was"
+    },
+    {
+      "lang": "en",
+      "wrong": "small contract",
+      "right": "smart contract"
+    },
+    {
+      "lang": "en",
+      "wrong": "David Sean",
+      "right": "David Chaum"
+    },
+    {
+      "lang": "en",
+      "wrong": "bitcoin academic degree",
+      "right": "Bitcoin's Academic Pedigree"
+    },
+    {
+      "lang": "en",
+      "wrong": "master point",
+      "right": "Mastercoin"
+    },
+    {
+      "lang": "en",
+      "wrong": "lighting networks",
+      "right": "Lightning Network"
+    },
+    {
+      "lang": "en",
+      "wrong": "lighting network",
+      "right": "Lightning Network"
+    },
+    {
+      "lang": "en",
+      "wrong": "east denver",
+      "right": "ETH Denver"
+    },
+    {
+      "lang": "en",
+      "wrong": "East Denver",
+      "right": "ETH Denver"
+    },
+    {
+      "lang": "en",
+      "wrong": "eath",
+      "right": "ETH"
+    },
+    {
+      "lang": "en",
+      "wrong": "MicroTik",
+      "right": "Microtick"
+    },
+    {
+      "lang": "en",
+      "wrong": "Shapeshift",
+      "right": "ShapeShift"
+    },
+    {
+      "lang": "en",
+      "wrong": "CERTO",
+      "right": "cert"
+    },
+    {
+      "lang": "en",
+      "wrong": "dap developer",
+      "right": "dapp developer"
+    },
+    {
+      "lang": "en",
+      "wrong": "Preston Pysh, MD, PhD I think",
+      "right": "I think"
+    },
+    {
+      "lang": "fa",
+      "wrong": "Cheyenne",
+      "right": "شایان"
+    },
+    {
+      "lang": "fa",
+      "wrong": "شاین",
+      "right": "شایان"
+    },
+    {
+      "lang": "fa",
+      "wrong": "Derek",
+      "right": "Dirk"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دِرِک",
+      "right": "Dirk"
+    },
+    {
+      "lang": "fa",
+      "wrong": "Ken اضافه",
+      "right": "Kent اضافه"
+    },
+    {
+      "lang": "fa",
+      "wrong": "Bitcoin academic degree",
+      "right": "Bitcoin's Academic Pedigree"
+    },
+    {
+      "lang": "fa",
+      "wrong": "East Denver",
+      "right": "ETH Denver"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایست دنور",
+      "right": "ETH Denver"
+    },
+    {
+      "lang": "fa",
+      "wrong": "MicroTik",
+      "right": "Microtick"
+    },
+    {
+      "lang": "fa",
+      "wrong": "پرستون پایش، فکر کنم",
+      "right": "فکر کنم"
+    }
+  ]
+}

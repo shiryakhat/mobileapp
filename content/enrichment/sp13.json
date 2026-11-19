@@ -1,0 +1,113 @@
+{
+  "id": "sp13",
+  "model": "claude-fable-5-2",
+  "generatedAt": "2026-11-19T23:43:38.489Z",
+  "summaryFa": "گفت‌وگوی شایان اسکندری و فاطمه فنی‌زاده، وکیل ایرانی‌سوئیسی، در Devcon بمبئی دربارهٔ ده سال فعالیت جامعهٔ فارسی‌زبان بلاکچین؛ از کوین‌ایران و پادکست شیر یا خط تا گروه «زنان در بلاکچین ایران». آن‌ها روایت می‌کنند که تحریم، KYC، مسدودسازی جغرافیایی و قطعی چندماههٔ اینترنت چطور ایرانی‌ها را از دوره‌های آموزشی و گرنت‌ها، و گاهی از دسترسی به کیف پول خودشان، محروم کرد. پیشنهادشان به اکوسیستم اتریوم این است که در تبعیت از تحریم زیاده‌روی نکند و ابزارهایی مثل تراکنش آفلاین بسازد که بدون اینترنت هم کار کند.",
+  "summaryEn": "Shayan Eskandari and Fatemeh Fannizadeh, an Iranian-Swiss lawyer, look back at a decade of the Persian-speaking blockchain community at Devcon in Mumbai, from CoinIran and the Shir ya Khat podcast to Women in Blockchain Iran. They recount how sanctions, KYC, geo-blocking and months-long internet blackouts cut Iranians off from courses and grants, and at times from their own wallets. Their ask to the Ethereum ecosystem is to stop over-complying with sanctions and to build tools, such as offline transactions, that keep working without an internet connection.",
+  "quotes": [
+    {
+      "startSec": 548,
+      "fa": "ما که ایرانی هستیم و در ایران بزرگ شده‌ایم، می‌دانیم به دیوار خوردن اتفاق هرروزه است. پس ادامه دادیم.",
+      "en": "Being Iranian and growing up in Iran, we all know that hitting a wall is an everyday event. So we just continued.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 742,
+      "fa": "استیکرها وقتی اینترنت قطع شد داشتند دیوانه می‌شدند. فقط امیدوار بودند اینترنت برگردد، پیش از آنکه inactivity leak شروع شود و پولشان کم شود.",
+      "en": "For stakers, when the internet shutdown happened, they were just going nuts. They were hoping the internet would come back before the inactivity leak kicked in and they started losing money.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 863,
+      "fa": "اگر موقع قطعی اینترنت در ایران باشید، اتریوم برای شما ۱۰۰ درصد از کار افتاده است.",
+      "en": "If you are in Iran during an internet shutdown, Ethereum is 100% down for you.",
+      "speaker": "فاطمه"
+    },
+    {
+      "startSec": 1298,
+      "fa": "اگر دو بچهٔ ایرانی توانسته‌اند راه قانونی این کار را پیدا کنند، تیم حقوقی شما هم می‌تواند.",
+      "en": "If two Iranian kids can figure out how to do this legally, your legal team can do that.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 1505,
+      "fa": "کسی که در ایران بزرگ می‌شود، حتی در پنج‌سالگی می‌داند VPN چیست.",
+      "en": "Growing up in Iran, even a five-year-old knows what a VPN is.",
+      "speaker": "شایان"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "KYC",
+      "termFa": "احراز هویت مشتری (کی‌وای‌سی)",
+      "definitionEn": "Identity checks a service runs before letting you use it. Third-party KYC providers often reject Iranian passports outright as high risk.",
+      "definitionFa": "بررسی هویت کاربر پیش از ارائهٔ خدمت. سرویس‌های احراز هویت اغلب پاسپورت ایرانی را بی‌درنگ به‌عنوان کاربر پرریسک رد می‌کنند."
+    },
+    {
+      "term": "Geo-blocking",
+      "termFa": "مسدودسازی جغرافیایی",
+      "definitionEn": "Denying access to a website or app based on the user's location, usually guessed from their IP address.",
+      "definitionFa": "بستن دسترسی به سایت یا اپلیکیشن بر اساس موقعیت کاربر، که معمولاً از روی نشانی IP حدس زده می‌شود."
+    },
+    {
+      "term": "Over-compliance",
+      "termFa": "تبعیت افراطی از تحریم",
+      "definitionEn": "Excluding a whole population out of caution, beyond what sanctions law actually requires, instead of assessing and managing the real risk.",
+      "definitionFa": "کنار گذاشتن یک جمعیت کامل از سر احتیاط و فراتر از الزام قانون تحریم، به جای سنجیدن و مدیریت ریسک واقعی."
+    },
+    {
+      "term": "OFAC",
+      "termFa": "اوفک",
+      "definitionEn": "The US Treasury office that administers sanctions lists. Some block builders refuse transactions from addresses it has listed.",
+      "definitionFa": "دفتری در خزانه‌داری آمریکا که فهرست‌های تحریم را اداره می‌کند. بعضی بلاک‌بیلدرها تراکنش آدرس‌های این فهرست را نمی‌پذیرند."
+    },
+    {
+      "term": "Staking",
+      "termFa": "استیکینگ",
+      "definitionEn": "Locking up coins to run a validator that helps secure a proof-of-stake network in return for rewards. It needs a constant internet connection.",
+      "definitionFa": "قفل کردن کوین برای اجرای اعتبارسنج و کمک به امنیت شبکهٔ اثبات سهام در ازای پاداش. این کار به اینترنت دائمی نیاز دارد."
+    },
+    {
+      "term": "Inactivity Leak",
+      "termFa": "جریمهٔ عدم فعالیت",
+      "definitionEn": "An Ethereum mechanism that gradually drains the stake of validators that stay offline, so a long outage costs stakers their own funds.",
+      "definitionFa": "سازوکاری در اتریوم که سپردهٔ اعتبارسنج‌های آفلاین را کم‌کم کاهش می‌دهد؛ برای همین قطعی طولانی به اصل پول استیکرها ضرر می‌زند."
+    },
+    {
+      "term": "Stablecoin",
+      "termFa": "کوین پایدار / استیبل‌کوین",
+      "definitionEn": "A token pegged to a currency such as the US dollar, like USDT. Many Iranians hold it as a hedge against inflation.",
+      "definitionFa": "توکنی که ارزشش به پولی مثل دلار وابسته است، مانند USDT. بسیاری از ایرانی‌ها برای حفظ ارزش پولشان در برابر تورم آن را نگه می‌دارند."
+    },
+    {
+      "term": "Offline Transaction",
+      "termFa": "تراکنش آفلاین",
+      "definitionEn": "A payment that can be signed and handed over without an internet connection and settled on-chain later.",
+      "definitionFa": "پرداختی که بدون اتصال به اینترنت امضا و تحویل می‌شود و بعداً روی زنجیره ثبت می‌شود."
+    },
+    {
+      "term": "Censorship Resistance",
+      "termFa": "مقاومت در برابر سانسور",
+      "definitionEn": "The property that no single party can stop a valid transaction. It holds at the protocol layer, not for the companies built on top.",
+      "definitionFa": "ویژگی‌ای که نمی‌گذارد هیچ نهادی جلوی تراکنش معتبر را بگیرد. این ویژگی در لایهٔ پروتکل برقرار است، نه در شرکت‌های ساخته‌شده روی آن."
+    },
+    {
+      "term": "Chain Analysis",
+      "termFa": "تحلیل زنجیره",
+      "definitionEn": "Tracing funds across public blockchain addresses, which can tell an ordinary user apart from a money launderer.",
+      "definitionFa": "ردگیری جابه‌جایی پول میان آدرس‌های عمومی بلاکچین، که می‌تواند کاربر عادی را از پول‌شو تشخیص دهد."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "en",
+      "wrong": "Shir Ya Khat",
+      "right": "Shir ya Khat"
+    },
+    {
+      "lang": "fa",
+      "wrong": "کوین ایران",
+      "right": "کوین‌ایران"
+    }
+  ]
+}

@@ -4249,6 +4249,1159 @@
     "archiveAudioUrl": "https://archive.org/download/shiryakhat-cxKe5eLbKpo/60%20-%20Stay%20Safe%20with%20Bitcoin%20(S01E01)%20%5BcxKe5eLbKpo%5D.mp3"
   },
   {
+    "id": "sp14",
+    "youtubeId": "p1bklAl3-BQ",
+    "altYoutubeIds": [],
+    "season": 0,
+    "episode": 14,
+    "code": "SP14",
+    "titleFa": "کدنویسی از سر خشم و مادرِ همهٔ وی‌پی‌ان‌ها: یادداشت‌هایی از قطعی‌های اینترنت ایران",
+    "titleEn": "Rage-Coding the Mother of All VPNs: Notes from Iran's Internet Blackouts",
+    "publishedAt": "2026-11-06",
+    "durationSec": 1543,
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 95,
+        "title": "چهار روز بی‌خبری"
+      },
+      {
+        "startSec": 95,
+        "endSec": 182,
+        "title": "دو دهه قطعی اینترنت در ایران"
+      },
+      {
+        "startSec": 182,
+        "endSec": 232,
+        "title": "سانسور، پیش‌فرض تازهٔ دنیا"
+      },
+      {
+        "startSec": 232,
+        "endSec": 386,
+        "title": "گندیدن اینترنت و وعدهٔ فراموش‌شدهٔ وب۳"
+      },
+      {
+        "startSec": 386,
+        "endSec": 519,
+        "title": "کدنویسی از سر خشم و تولد MoaV"
+      },
+      {
+        "startSec": 519,
+        "endSec": 581,
+        "title": "Nedagram: کانفیگ از پشت تلفن"
+      },
+      {
+        "startSec": 581,
+        "endSec": 704,
+        "title": "ترفندهای دور زدن فیلترینگ"
+      },
+      {
+        "startSec": 704,
+        "endSec": 773,
+        "title": "MoaV چطور کار می‌کند"
+      },
+      {
+        "startSec": 773,
+        "endSec": 899,
+        "title": "اپ موبایل و ابزار پژوهشی"
+      },
+      {
+        "startSec": 899,
+        "endSec": 982,
+        "title": "غریبه‌ها زیرساخت می‌شوند"
+      },
+      {
+        "startSec": 982,
+        "endSec": 1037,
+        "title": "شبکه‌های مش موقت"
+      },
+      {
+        "startSec": 1037,
+        "endSec": 1142,
+        "title": "پرداخت آفلاین با استیبل‌کوین"
+      },
+      {
+        "startSec": 1142,
+        "endSec": 1221,
+        "title": "آنچه می‌خواهید ببینید، بسازید"
+      },
+      {
+        "startSec": 1221,
+        "endSec": 1543,
+        "title": "پرسش و پاسخ"
+      }
+    ],
+    "youtubeThumb": "https://i.ytimg.com/vi/p1bklAl3-BQ/maxresdefault.jpg",
+    "descriptionFa": "",
+    "descriptionEn": "\"Cypherpunks write code.\" The manifesto promised censorship-resistant communication, and that code became Tor and Signal. Web3 inherited the same promise, then let VCs capture it: financial privacy has a business model, communications privacy for someone in Tehran does not. We built \"decentralized\" systems on an access layer we do not control, ten years on wallets, L2s and ZK while ignoring the chokepoint underneath: the ISPs and state-controlled fiber. Cut it and everything above vanishes.\n\nThis is not Iran's problem alone. VPN demand spikes, the UK on an age-verification law, Russia now DDoS-ing VPNs, one outage at a time toward a global default. When Iran went dark I rage coded for months, defeat and all, down to a VPN config sung through a phone call with the error correction NASA flew past Pluto. The layers to build now: the last mile, offline payments, mesh, exotic routing. become the infrastructure, because a stranger with a spare box is what carries someone out.\n\nSpeakers: Shayan Eskandari\n\nTrack: Permissionless Networks",
+    "keywords": [],
+    "viewCount": 70,
+    "likeCount": 5,
+    "sourceStem": "39 - Rage-Coding the Mother of All VPNs： Notes from Iran's Internet Blackouts [p1bklAl3-BQ]"
+  },
+  {
+    "id": "sp13",
+    "youtubeId": "3DDA_6l0wLQ",
+    "altYoutubeIds": [],
+    "season": 0,
+    "episode": 13,
+    "code": "SP13",
+    "titleFa": "ساختن در دل محدودیت‌ها: یک دهه وب۳ در ایران",
+    "titleEn": "Building Through Constraints: A Decade of Web3 in Iran",
+    "publishedAt": "2026-11-05",
+    "durationSec": 1555,
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 106,
+        "title": "Introduction and context"
+      },
+      {
+        "startSec": 106,
+        "endSec": 207,
+        "title": "The Iranian environment"
+      },
+      {
+        "startSec": 207,
+        "endSec": 358,
+        "title": "The birth of a community"
+      },
+      {
+        "startSec": 358,
+        "endSec": 660,
+        "title": "Barriers to adoption"
+      },
+      {
+        "startSec": 660,
+        "endSec": 844,
+        "title": "Living through blackouts"
+      },
+      {
+        "startSec": 844,
+        "endSec": 921,
+        "title": "Ethereum and resilience"
+      },
+      {
+        "startSec": 921,
+        "endSec": 1063,
+        "title": "The state of the community"
+      },
+      {
+        "startSec": 1063,
+        "endSec": 1133,
+        "title": "A vision for the future"
+      },
+      {
+        "startSec": 1133,
+        "endSec": 1555,
+        "title": "Q&A and closing remarks"
+      }
+    ],
+    "youtubeThumb": "https://i.ytimg.com/vi/3DDA_6l0wLQ/maxresdefault.jpg",
+    "descriptionFa": "",
+    "descriptionEn": "For many Iranians, Web3 has been less a theory than a practical tool for participation: a way to build, exchange value, collaborate internationally, and remain connected to a global ecosystem. This roundtable explores a decade of lived experience, focusing on the ingenuity, adaptations, and community practices that emerged under sanctions, censorship, platform restrictions, and unreliable connectivity.\n\nParticipants will examine which tools proved most useful, how communities navigated barriers, where decentralised infrastructure created real opportunities, and what the broader Ethereum ecosystem can learn from these experiences. The session will invite contributions from other regions facing similar constraints and conclude with concrete design principles for making Web3 more resilient, inclusive, and globally accessible.\n\nSpeakers: Fatemeh Fannizadeh, Shayan Eskandari\n\nTrack: Rights, Freedoms, and Governance",
+    "keywords": [],
+    "viewCount": 113,
+    "likeCount": 9,
+    "sourceStem": "38 - Building Through Constraints： A Decade of Web3 in Iran [3DDA_6l0wLQ]"
+  },
+  {
+    "id": "sp12",
+    "youtubeId": "wI6zxfUxMI4",
+    "altYoutubeIds": [],
+    "season": 0,
+    "episode": 12,
+    "code": "SP12",
+    "titleFa": "پنل: ارزش قابل استخراج از اوراکل؛ مدل‌های درآمدی تازه و پایداری اوراکل‌ها و دَپ‌ها",
+    "titleEn": "PANEL: Oracle Extractable Value: Unlocking New Revenue Models and Sustainability for Oracles & Dapps",
+    "publishedAt": "2024-11-18",
+    "durationSec": 2316,
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 106,
+        "title": "معرفی اعضای پنل"
+      },
+      {
+        "startSec": 106,
+        "endSec": 283,
+        "title": "OEV چیست؟"
+      },
+      {
+        "startSec": 283,
+        "endSec": 378,
+        "title": "Oval؛ لایه‌ای روی هر اوراکل"
+      },
+      {
+        "startSec": 378,
+        "endSec": 533,
+        "title": "همکاری UMA و Flashbots"
+      },
+      {
+        "startSec": 533,
+        "endSec": 723,
+        "title": "شبکهٔ OEV در API3"
+      },
+      {
+        "startSec": 723,
+        "endSec": 797,
+        "title": "سود پروتکل‌ها و کاربران"
+      },
+      {
+        "startSec": 797,
+        "endSec": 994,
+        "title": "Gyroscope و OEV مخرب"
+      },
+      {
+        "startSec": 994,
+        "endSec": 1246,
+        "title": "OEV به چه کسی برسد؟"
+      },
+      {
+        "startSec": 1246,
+        "endSec": 1478,
+        "title": "ریسک‌های امنیتی حراج"
+      },
+      {
+        "startSec": 1478,
+        "endSec": 1700,
+        "title": "اثر OEV بر زیرساخت"
+      },
+      {
+        "startSec": 1700,
+        "endSec": 1834,
+        "title": "پنجرهٔ حراج چقدر باشد؟"
+      },
+      {
+        "startSec": 1834,
+        "endSec": 1984,
+        "title": "روندهای آیندهٔ OEV"
+      },
+      {
+        "startSec": 1984,
+        "endSec": 2065,
+        "title": "اوراکل‌های فراتر از قیمت"
+      },
+      {
+        "startSec": 2065,
+        "endSec": 2316,
+        "title": "پرسش حاضران و پایان"
+      }
+    ],
+    "youtubeThumb": "https://i.ytimg.com/vi/wI6zxfUxMI4/maxresdefault.jpg",
+    "descriptionFa": "",
+    "descriptionEn": "PANEL: Oracle Extractable Value (OEV): Unlocking New Revenue Models and Sustainability for Oracles & Dapps\n\nPanelists:\nUgur Mesinlioglu, Strategy Lead, API3\nAriah Klages-Mundt, Co-founder, Gyroscope\nTesa Ho, Head of Market Research, Flashbots\nMatt Rice, UMA\nModerator: Shayan Eskandari, Co-founder & Security Engineer, theCreed.xyz",
+    "keywords": [],
+    "viewCount": 144,
+    "likeCount": 3,
+    "sourceStem": "35 - PANEL： Oracle Extractable Value： Unlocking New Revenue Models and Sustainability for Oracles & Dapps [wI6zxfUxMI4]"
+  },
+  {
+    "id": "sp11",
+    "youtubeId": "G2_MJtbSe1s",
+    "altYoutubeIds": [],
+    "season": 0,
+    "episode": 11,
+    "code": "SP11",
+    "titleFa": "وب۳ در دنیای واقعی و تحریم‌ها (Autonomous Ecologies #1)",
+    "titleEn": "Shayan Eskandari - IRL Web3 and Sanctions [Autonomous Ecologies #1]",
+    "publishedAt": "2023-03-28",
+    "durationSec": 834,
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 52,
+        "title": "Intro"
+      },
+      {
+        "startSec": 52,
+        "endSec": 77,
+        "title": "CoinIran"
+      },
+      {
+        "startSec": 77,
+        "endSec": 106,
+        "title": "Education"
+      },
+      {
+        "startSec": 106,
+        "endSec": 144,
+        "title": "Podcast"
+      },
+      {
+        "startSec": 144,
+        "endSec": 194,
+        "title": "Blockchain"
+      },
+      {
+        "startSec": 194,
+        "endSec": 229,
+        "title": "Cryptozan"
+      },
+      {
+        "startSec": 229,
+        "endSec": 268,
+        "title": "Coin Iran"
+      },
+      {
+        "startSec": 268,
+        "endSec": 325,
+        "title": "Crypt Design"
+      },
+      {
+        "startSec": 325,
+        "endSec": 379,
+        "title": "Consensus Academy"
+      },
+      {
+        "startSec": 379,
+        "endSec": 452,
+        "title": "Sanctions"
+      },
+      {
+        "startSec": 452,
+        "endSec": 474,
+        "title": "Women Blockchain Farsi"
+      },
+      {
+        "startSec": 474,
+        "endSec": 507,
+        "title": "Grant Suspension"
+      },
+      {
+        "startSec": 507,
+        "endSec": 557,
+        "title": "Gitcoin"
+      },
+      {
+        "startSec": 557,
+        "endSec": 584,
+        "title": "Solidity"
+      },
+      {
+        "startSec": 584,
+        "endSec": 605,
+        "title": "Gratitude"
+      },
+      {
+        "startSec": 605,
+        "endSec": 633,
+        "title": "Shoutouts"
+      },
+      {
+        "startSec": 633,
+        "endSec": 685,
+        "title": "The Forum"
+      },
+      {
+        "startSec": 685,
+        "endSec": 719,
+        "title": "Metamask Ban"
+      },
+      {
+        "startSec": 719,
+        "endSec": 749,
+        "title": "Show Must Go On"
+      },
+      {
+        "startSec": 749,
+        "endSec": 778,
+        "title": "Sismo"
+      },
+      {
+        "startSec": 778,
+        "endSec": 834,
+        "title": "Part Time"
+      }
+    ],
+    "youtubeThumb": "https://i.ytimg.com/vi/G2_MJtbSe1s/maxresdefault.jpg",
+    "descriptionFa": "",
+    "descriptionEn": "Autonomous Ecologies #1 was organized by Black Sky (https://www.blacksky.network/) & Anoma  (https://anoma.net/) and took place March 4th, 2023 in Denver, CO. For more information visit https://www.autonomousecologies.xyz",
+    "keywords": [],
+    "viewCount": 348,
+    "likeCount": 11,
+    "sourceStem": "33 - Shayan Eskandari - IRL Web3 and Sanctions [Autonomous Ecologies #1] [G2_MJtbSe1s]"
+  },
+  {
+    "id": "sp10",
+    "youtubeId": "1ZFe_7ehlWw",
+    "altYoutubeIds": [],
+    "season": 0,
+    "episode": 10,
+    "code": "SP10",
+    "titleFa": "آشنایی با دائوها",
+    "titleEn": "Introduction to DAOs",
+    "publishedAt": "2022-04-27",
+    "durationSec": 3574,
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 19,
+        "title": "<Untitled Chapter 1>"
+      },
+      {
+        "startSec": 19,
+        "endSec": 76,
+        "title": "Intros"
+      },
+      {
+        "startSec": 76,
+        "endSec": 134,
+        "title": "Josh Mcdougall"
+      },
+      {
+        "startSec": 134,
+        "endSec": 165,
+        "title": "Hannah Oreskovich"
+      },
+      {
+        "startSec": 165,
+        "endSec": 260,
+        "title": "Ann Brodie"
+      },
+      {
+        "startSec": 260,
+        "endSec": 760,
+        "title": "What a Dao Is"
+      },
+      {
+        "startSec": 760,
+        "endSec": 854,
+        "title": "Investment Dows"
+      },
+      {
+        "startSec": 854,
+        "endSec": 989,
+        "title": "Governance"
+      },
+      {
+        "startSec": 989,
+        "endSec": 1077,
+        "title": "Compare Llc to Dao"
+      },
+      {
+        "startSec": 1077,
+        "endSec": 1249,
+        "title": "Token Voting"
+      },
+      {
+        "startSec": 1249,
+        "endSec": 1477,
+        "title": "Off-Chain Voting and On-Chain Voting"
+      },
+      {
+        "startSec": 1477,
+        "endSec": 1617,
+        "title": "Reasons That People Contribute to Dao"
+      },
+      {
+        "startSec": 1617,
+        "endSec": 2005,
+        "title": "Metagama Delta"
+      },
+      {
+        "startSec": 2005,
+        "endSec": 2065,
+        "title": "How Would You Enter a Dao"
+      },
+      {
+        "startSec": 2065,
+        "endSec": 2194,
+        "title": "Work Streams"
+      },
+      {
+        "startSec": 2194,
+        "endSec": 2313,
+        "title": "Tokenomics"
+      },
+      {
+        "startSec": 2313,
+        "endSec": 2674,
+        "title": "Challenges"
+      },
+      {
+        "startSec": 2674,
+        "endSec": 2801,
+        "title": "Bounties"
+      },
+      {
+        "startSec": 2801,
+        "endSec": 3574,
+        "title": "Assassination Market"
+      }
+    ],
+    "youtubeThumb": "https://i.ytimg.com/vi/1ZFe_7ehlWw/maxresdefault.jpg",
+    "descriptionFa": "",
+    "descriptionEn": "Have you heard about DAOs but aren't quite sure what they are? Join the Certified Ethereum Professional (CEP) Committee to learn about Decentralized Autonomous Organizations (DAOs)! In this live talk, CEP committee members are joined by Ann Brody, Governance researcher, PhD candidate, and DAO contributor, and Willy Ogorzaly, Head of Decentralization for Fox Foundation + Product at Giveth. \r\n\r\nFollow C4 on Twitter: https://twitter.com/LearnMoreWithC4\r\nWebsite: Cryptoconsortium.org\r\n\r\nLivestream Guests: Ann Brody: https://twitter.com/annbrody7 Willy Ogorzaly: https://twitter.com/WillyOgo\r\n\r\nCEP Committee Members: Shayan Eskandari: https://twitter.com/sbetamc Kent Barton: https://twitter.com/seven7hwave Joshua McDougall: https://twitter.com/Abstr_ct Hannah Oreskovich: https://twitter.com/blondontherun\r\nExecutive Director of C4: Jessica Levesque: https://twitter.com/JesLeveq",
+    "keywords": [],
+    "viewCount": 517,
+    "likeCount": 36,
+    "sourceStem": "29 - Introduction to DAOs [1ZFe_7ehlWw]"
+  },
+  {
+    "id": "sp09",
+    "youtubeId": "vzufW0SQOI8",
+    "altYoutubeIds": [],
+    "season": 0,
+    "episode": 9,
+    "code": "SP09",
+    "titleFa": "الفبای امنیت عملیاتی",
+    "titleEn": "Operational Security 101",
+    "publishedAt": "2022-03-23",
+    "durationSec": 4005,
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 143,
+        "title": "<Untitled Chapter 1>"
+      },
+      {
+        "startSec": 143,
+        "endSec": 172,
+        "title": "Josh Mcdougall"
+      },
+      {
+        "startSec": 172,
+        "endSec": 375,
+        "title": "Michael Parkland"
+      },
+      {
+        "startSec": 375,
+        "endSec": 519,
+        "title": "Spear Phishing"
+      },
+      {
+        "startSec": 519,
+        "endSec": 626,
+        "title": "Why Would You Want To Use a Alias"
+      },
+      {
+        "startSec": 626,
+        "endSec": 771,
+        "title": "Authentication"
+      },
+      {
+        "startSec": 771,
+        "endSec": 815,
+        "title": "Google Authenticator"
+      },
+      {
+        "startSec": 815,
+        "endSec": 873,
+        "title": "Yubikey"
+      },
+      {
+        "startSec": 873,
+        "endSec": 931,
+        "title": "Phonebase2fa"
+      },
+      {
+        "startSec": 931,
+        "endSec": 1204,
+        "title": "Why Phonebase2fa Is So Dangerous"
+      },
+      {
+        "startSec": 1204,
+        "endSec": 1269,
+        "title": "Caveats"
+      },
+      {
+        "startSec": 1269,
+        "endSec": 1450,
+        "title": "Biometrics"
+      },
+      {
+        "startSec": 1450,
+        "endSec": 1658,
+        "title": "Password Revocation Is Not Pretty"
+      },
+      {
+        "startSec": 1658,
+        "endSec": 1976,
+        "title": "Password Database"
+      },
+      {
+        "startSec": 1976,
+        "endSec": 2108,
+        "title": "One Password"
+      },
+      {
+        "startSec": 2108,
+        "endSec": 2356,
+        "title": "The Mind Palace Technique"
+      },
+      {
+        "startSec": 2356,
+        "endSec": 2823,
+        "title": "How Do You Feel about Chrome's Internal Password Manager"
+      },
+      {
+        "startSec": 2823,
+        "endSec": 3069,
+        "title": "Cryptocurrency Wallets"
+      },
+      {
+        "startSec": 3069,
+        "endSec": 3270,
+        "title": "Tamper Evident Bags"
+      },
+      {
+        "startSec": 3270,
+        "endSec": 3334,
+        "title": "How Do You Leave Private Keys for Loved Ones in Case of Sudden Death"
+      },
+      {
+        "startSec": 3334,
+        "endSec": 3615,
+        "title": "Cryptocurrency Security Standard"
+      },
+      {
+        "startSec": 3615,
+        "endSec": 3690,
+        "title": "How To Stay up to Date with Security Practices"
+      },
+      {
+        "startSec": 3690,
+        "endSec": 3885,
+        "title": "How To Keep up to Date with the Security Practices"
+      },
+      {
+        "startSec": 3885,
+        "endSec": 4005,
+        "title": "Ccss Auditor Designation"
+      }
+    ],
+    "youtubeThumb": "https://i.ytimg.com/vi/vzufW0SQOI8/maxresdefault.jpg",
+    "descriptionFa": "",
+    "descriptionEn": "Join the Certified Ethereum Professional Committee, plus special guest Michael Perklin, to learn about operational security.\n\nFollow C4 on Twitter: https://twitter.com/LearnMoreWithC4\nWebsite: Cryptoconsortium.org\n\nSpecial Guest, C4's Chairman of the Board\nMichael Perklin: https://twitter.com/mperklin\nCEP Committee Members:\nShayan Eskandari: https://twitter.com/sbetamc\nKent Barton: https://twitter.com/seven7hwave\nJoshua McDougall: https://twitter.com/Abstr_ct\nExecutive Director of C4:\nJessica Levesque: https://twitter.com/JesLeveq",
+    "keywords": [],
+    "viewCount": 576,
+    "likeCount": 31,
+    "sourceStem": "27 - Operational Security 101 [vzufW0SQOI8]"
+  },
+  {
+    "id": "sp08",
+    "youtubeId": "JaLv-iesrB0",
+    "altYoutubeIds": [],
+    "season": 0,
+    "episode": 8,
+    "code": "SP08",
+    "titleFa": "بیت‌کوین یا اتریوم؟",
+    "titleEn": "Bitcoin vs. Ethereum?",
+    "publishedAt": "2022-02-09",
+    "durationSec": 3565,
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 501,
+        "title": "<Untitled Chapter 1>"
+      },
+      {
+        "startSec": 501,
+        "endSec": 553,
+        "title": "How Bitcoin Brought Us to Ethereum"
+      },
+      {
+        "startSec": 553,
+        "endSec": 858,
+        "title": "Colored Coins"
+      },
+      {
+        "startSec": 858,
+        "endSec": 1737,
+        "title": "Public Key Cryptography"
+      },
+      {
+        "startSec": 1737,
+        "endSec": 1814,
+        "title": "How To Prepare for the Exams"
+      },
+      {
+        "startSec": 1814,
+        "endSec": 2175,
+        "title": "How the Certification Process Works"
+      },
+      {
+        "startSec": 2175,
+        "endSec": 2836,
+        "title": "Proof of Stake"
+      },
+      {
+        "startSec": 2836,
+        "endSec": 3110,
+        "title": "Crowd Queue"
+      },
+      {
+        "startSec": 3110,
+        "endSec": 3545,
+        "title": "What Is the Oracle Problem"
+      },
+      {
+        "startSec": 3545,
+        "endSec": 3565,
+        "title": "Parting Words"
+      }
+    ],
+    "youtubeThumb": "https://i.ytimg.com/vi/JaLv-iesrB0/maxresdefault.jpg",
+    "descriptionFa": "",
+    "descriptionEn": "Bitcoin or Ethereum? Is one better than the other? Nope! They just serve different purposes. Join C4 LIVE to learn how Bitcoin and Ethereum are similar, different, and why they both matter.\n\nFollow C4 on Twitter: https://twitter.com/LearnMoreWithC4\nWebsite: Cryptoconsortium.org\n\nCBP Committee Member: \nS. Dirk Anderson: https://twitter.com/SDirkAnderson\nCEP Committee Members:\nShayan Eskandari: https://twitter.com/sbetamc\nKent Barton: https://twitter.com/seven7hwave\nJoshua McDougall: https://twitter.com/Abstr_ct\nExecutive Director of C4:\nJessica Levesque: https://twitter.com/JesLeveq",
+    "keywords": [],
+    "viewCount": 278,
+    "likeCount": 15,
+    "sourceStem": "20 - Bitcoin vs. Ethereum？ [JaLv-iesrB0]"
+  },
+  {
+    "id": "sp07",
+    "youtubeId": "gfD1KBtLWZI",
+    "altYoutubeIds": [],
+    "season": 0,
+    "episode": 7,
+    "code": "SP07",
+    "titleFa": "امنیت از مرحلهٔ طراحی و ممیزی قراردادهای هوشمند",
+    "titleEn": "Security By Design & Smart Contract Audits | Shayan Eskandari",
+    "publishedAt": "2021-01-11",
+    "durationSec": 2146,
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 88,
+        "title": "Introduction"
+      },
+      {
+        "startSec": 88,
+        "endSec": 635,
+        "title": "Smart contracts vs traditional software development"
+      },
+      {
+        "startSec": 635,
+        "endSec": 878,
+        "title": "Front-running vulnerability"
+      },
+      {
+        "startSec": 878,
+        "endSec": 1711,
+        "title": "Code Auditing"
+      },
+      {
+        "startSec": 1711,
+        "endSec": 1922,
+        "title": "Smart Contract Vulnerabilities"
+      },
+      {
+        "startSec": 1922,
+        "endSec": 2146,
+        "title": "Resources"
+      }
+    ],
+    "youtubeThumb": "https://i.ytimg.com/vi/gfD1KBtLWZI/maxresdefault.jpg",
+    "descriptionFa": "",
+    "descriptionEn": "Welcome to \"Security By Design and Smart Contract Audits\" with Shayan Eskandari. This presentation was delivered on Friday, August 30th 2019.\n\nWhat will students learn?\nThis course is appropriate for current and aspiring developers who want to implement security by design and financial smart contract applications. The idea of a serverless application running in a public ledger with open interface is new to most developers and hence common practices in traditional programming could easily result in security vulnerabilities in decentralized applications. In this session, discover smart contract security best practices and how to think about security in the design of decentralized applications (security by design). The second half of the session focuses on smart contract code auditing and a hands-on code review on real smart contracts.\n\nChapters\n00:00 Introduction\n1:28 Smart contracts vs traditional software development\n10:35 Front-running vulnerability\n14:38 Code Auditing\n28:31 Smart Contract Vulnerabilities\n32:02 Resources\n\n====\n\nShayan Eskandari is currently completing his doctoral studies in Information Systems Engineering at Concordia University. He has worked in network and information systems security for several years and has extensive experience as a blockchain engineer in startups as well as contributing to open source projects. Currently he is working as the security engineer and smart contract auditor at ConsenSys Diligence.\n\nFollow the CryptoCurrency Certification Consortium (C4) at:\nhttps://cryptoconsortium.org/\nhttps://twitter.com/LearnMoreWithC4\n\nFollow the Blockchain Training Conference at:\nhttps://blockchaintraining.org\n\nNote: Downloadable slides for this presentation are not available.\n\nPrerequisite: Participants should have a general idea of how Ethereum works, understand the basic structure of smart contracts and Solidity. If possible, please pre-install these tools in order to save time during the session:  VSCode, Solidity and Solidity Visual Auditor extensions.",
+    "keywords": [],
+    "viewCount": 6931,
+    "likeCount": 264,
+    "sourceStem": "15 - Security By Design & Smart Contract Audits ｜ Shayan Eskandari [gfD1KBtLWZI]"
+  },
+  {
+    "id": "sp06",
+    "youtubeId": "4AS64fSeRtA",
+    "altYoutubeIds": [],
+    "season": 0,
+    "episode": 6,
+    "code": "SP06",
+    "titleFa": "اوراکل‌ها، از واقعیت بیرونی تا دست‌کاری بازار (Liquidity 2020)",
+    "titleEn": "Oracles from the Ground Truth to Market Manipulation - Shayan Eskandari - Liquidity2020",
+    "publishedAt": "2020-10-19",
+    "durationSec": 1835,
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 424,
+        "title": "<Untitled Chapter 1>"
+      },
+      {
+        "startSec": 424,
+        "endSec": 705,
+        "title": "Velocity (2015 - 2016) RIP • Velocity was well on their way to finalizing integration of real-time data. The team even developed Pricegeth to post date on the blockchain every time a new block was generated . Decentralization is critical. For Velocity, it turned out there was still centralization, Running the risk of having liquidity providers exploited should be avoided at al costs"
+      },
+      {
+        "startSec": 705,
+        "endSec": 1150,
+        "title": "Data Feeders Entities who gather and report the data from the source to the oracle system . Data Authentication: Establishing data integrity (e.g. TLSNotary) • Confidentiality • Non-Repudiation Mechanism: Tunnel spectrum through which data may be contaminated at source, at the stage of dating, or even after the event (e.g. Commit-reveal)"
+      },
+      {
+        "startSec": 1150,
+        "endSec": 1199,
+        "title": "Server's Network - Any server has two sides of connections: • A connection between the off-chain components e.g. • A connection between the server and the blockchain (e.g. broadcasting to the blockchain using a node) . MITM attacks or blocking the connection (availability) • Many Network Partitioning attacks should be considered here Chil, Eclipse Attack, P2P DoS attacks"
+      },
+      {
+        "startSec": 1199,
+        "endSec": 1253,
+        "title": "Transaction Creation The process of creating the required data blob, signing it using the private key, and broadcasting it to the network. • Secure storage & usage of private key • Hold enough funds for the transaction gas - Dynamic gasPrice calculation"
+      },
+      {
+        "startSec": 1253,
+        "endSec": 1366,
+        "title": "Block Creation The process of transaction inclusion in a block by miners • mempool is a dark forest • Transaction Ordering - Front-running • Miner Extractable Value (MEV)"
+      },
+      {
+        "startSec": 1366,
+        "endSec": 1432,
+        "title": "Oracle's Smart Contract The smart contract module as the main on-chain component to finalize the data and respond to the data consumer smart contract • Defects on the code & security issues . All possible smart contract vulnerabilities . Governance Decide on the Oracle's parameters (eg. Maker's bar)"
+      },
+      {
+        "startSec": 1432,
+        "endSec": 1835,
+        "title": "The consumer of the data who needs data for its business logic • Defects on how to handle the oracle response & possible security flaws • Must do proper verification • Verify the Oracle smart contract (e.g. Nexus Mutual bug)"
+      }
+    ],
+    "youtubeThumb": "https://i.ytimg.com/vi/4AS64fSeRtA/maxresdefault.jpg",
+    "descriptionFa": "",
+    "descriptionEn": "Oracles from the Ground Truth to Market Manipulation - Shayan Eskandari \n\nAbstract. Many interesting smart contracts have been developed in recent years to provide services for finance and other applications. One fundamental limitation of blockchain-based smart contracts is that they execute in a closed environment and only have access to the data and functionality that is fed into the blockchain or already on the blockchain. Any interactions with the real world need to be mediated by a bridge service, which is called an oracle. As decentralized applications mature, oracles are playing an increasingly prominent role. With their evolution comes more attacks, necessitating a greater attention to the trust model of using oracles. In this SoK, we systemize the design alternatives for oracles, develop a threat model and showcase attacks, and discuss attack mitigation strategies.\n\nVenue: Liquidity2020 by Dystopia Labs http://liquidity2020.dystopialabs.com/\nDate: October 18, 2020\n\nOn the Feasibility of Decentralized Derivatives Markets: https://arxiv.org/abs/1802.04915\nSoK: Transparent Dishonesty: front-running attacks on Blockchain: https://arxiv.org/abs/1902.05164",
+    "keywords": [],
+    "viewCount": 301,
+    "likeCount": 13,
+    "sourceStem": "Oracles from the Ground Truth to Market Manipulation - Shayan Eskandari - Liquidity2020 [4AS64fSeRtA]"
+  },
+  {
+    "id": "sp05",
+    "youtubeId": "VaqIFiY-Ks0",
+    "altYoutubeIds": [],
+    "season": 0,
+    "episode": 5,
+    "code": "SP05",
+    "titleFa": "بیت‌کوین چطور پول را به اقتصادهای بسته می‌برد و از آن‌ها بیرون می‌آورد",
+    "titleEn": "How Bitcoin Moves Value In & Out Of Closed Economies",
+    "publishedAt": "2020-05-08",
+    "durationSec": 3571,
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 185,
+        "title": "Introduction"
+      },
+      {
+        "startSec": 185,
+        "endSec": 265,
+        "title": "Who am I"
+      },
+      {
+        "startSec": 265,
+        "endSec": 695,
+        "title": "How people live in Iran"
+      },
+      {
+        "startSec": 695,
+        "endSec": 733,
+        "title": "Venezuela"
+      },
+      {
+        "startSec": 733,
+        "endSec": 838,
+        "title": "Capital controls"
+      },
+      {
+        "startSec": 838,
+        "endSec": 963,
+        "title": "Cash"
+      },
+      {
+        "startSec": 963,
+        "endSec": 1370,
+        "title": "US Sanctions"
+      },
+      {
+        "startSec": 1370,
+        "endSec": 1453,
+        "title": "Why Bitcoin"
+      },
+      {
+        "startSec": 1453,
+        "endSec": 1538,
+        "title": "Cuba"
+      },
+      {
+        "startSec": 1538,
+        "endSec": 1674,
+        "title": "Decentralization"
+      },
+      {
+        "startSec": 1674,
+        "endSec": 1793,
+        "title": "Financial Technologies"
+      },
+      {
+        "startSec": 1793,
+        "endSec": 1959,
+        "title": "VPNs"
+      },
+      {
+        "startSec": 1959,
+        "endSec": 2100,
+        "title": "Internet in Cuba"
+      },
+      {
+        "startSec": 2100,
+        "endSec": 2206,
+        "title": "Relief efforts"
+      },
+      {
+        "startSec": 2206,
+        "endSec": 2329,
+        "title": "Earthquake in Iran"
+      },
+      {
+        "startSec": 2329,
+        "endSec": 2380,
+        "title": "Corruption in Iran"
+      },
+      {
+        "startSec": 2380,
+        "endSec": 2440,
+        "title": "Iran Flash Floods"
+      },
+      {
+        "startSec": 2440,
+        "endSec": 2515,
+        "title": "Cuba GoFundMe"
+      },
+      {
+        "startSec": 2515,
+        "endSec": 2893,
+        "title": "Cuban Private Entrepreneurs"
+      },
+      {
+        "startSec": 2893,
+        "endSec": 3032,
+        "title": "Scams"
+      },
+      {
+        "startSec": 3032,
+        "endSec": 3203,
+        "title": "Ponzi Schemes"
+      },
+      {
+        "startSec": 3203,
+        "endSec": 3571,
+        "title": "Privacy Protection"
+      }
+    ],
+    "youtubeThumb": "https://i.ytimg.com/vi/VaqIFiY-Ks0/maxresdefault.jpg",
+    "descriptionFa": "",
+    "descriptionEn": "How Bitcoin Moves Value In & Out Of Closed Economies (Iran, Cuba, and Venezuela) - DeFi Discussions\n\n- Alejandro Machado, Co-Founder of the Open Money Initiative\n- Boaz Sobrado, founder at WhyNotCuba.com\n- Shayan Eskandari, Co-founder of CoinIran.com educational website and Shir ya Khat podcast\n\n-----------------------------------------------\nFri, May 1, 2020 2:30 PM\nhttps://www.crowdcast.io/e/defi-discussions/5",
+    "keywords": [],
+    "viewCount": 166,
+    "likeCount": 2,
+    "sourceStem": "16 - How Bitcoin Moves Value In & Out Of Closed Economies [VaqIFiY-Ks0]"
+  },
+  {
+    "id": "sp04",
+    "youtubeId": "Zs-P5FSJvGQ",
+    "altYoutubeIds": [],
+    "season": 0,
+    "episode": 4,
+    "code": "SP04",
+    "titleFa": "شکستن قراردادهای هوشمند (دِوکان ۵)",
+    "titleEn": "Breaking Smart Contracts (Devcon5)",
+    "publishedAt": "2019-12-27",
+    "durationSec": 3230,
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 113,
+        "title": "Intro"
+      },
+      {
+        "startSec": 113,
+        "endSec": 367,
+        "title": "State"
+      },
+      {
+        "startSec": 367,
+        "endSec": 552,
+        "title": "Whiteboard"
+      },
+      {
+        "startSec": 552,
+        "endSec": 690,
+        "title": "Node"
+      },
+      {
+        "startSec": 690,
+        "endSec": 850,
+        "title": "Tools"
+      },
+      {
+        "startSec": 850,
+        "endSec": 1315,
+        "title": "Challenges"
+      },
+      {
+        "startSec": 1315,
+        "endSec": 1765,
+        "title": "Practice"
+      },
+      {
+        "startSec": 1765,
+        "endSec": 3230,
+        "title": "Attack"
+      }
+    ],
+    "youtubeThumb": "https://i.ytimg.com/vi/Zs-P5FSJvGQ/maxresdefault.jpg",
+    "descriptionFa": "",
+    "descriptionEn": "Visit the https://archive.devcon.org/ to gain access to the entire library of Devcon talks with the ease of filtering, playlists, personalized suggestions, decentralized access on IPFS and more.\nhttps://archive.devcon.org/archive/watch/5/breaking-smart-contracts\n\nSome of the most financially devastating hacks in recent years have happened on the blockchain. In this workshop, we will walk through a series of simple Solidity coding challenges and common mistakes, where participants are asked read code, understand and try to break them. Regarding each challenge, we will talk about the history of the hacks involving that family of bug. We will talk about the attacks and possible solutions.\n\nSpeaker(s): Shayan Eskandari, Sergii Kravchenko, John Mardlin, Bernhard Mueller\nSkill level: Intermediate\nTrack: Security\nKeywords: technical\n\nFollow us: https://twitter.com/efdevcon, https://twitter.com/ethereum\nLearn more about devcon: https://www.devcon.org/\nLearn more about ethereum: https://ethereum.org/ \n\nDevcon is the Ethereum conference for developers, researchers, thinkers, and makers. \nDevcon 5 was held in Osaka, Japan on Oct 8 - 11, 2019.\nDevcon is organized and presented by the Ethereum Foundation, with the support of our sponsors. To find out more, please visit https://ethereum.foundation/",
+    "keywords": [],
+    "viewCount": 330,
+    "likeCount": 7,
+    "sourceStem": "10 - Breaking Smart Contracts (Devcon5) [Zs-P5FSJvGQ]"
+  },
+  {
+    "id": "sp03",
+    "youtubeId": "tVgto0GtA4I",
+    "altYoutubeIds": [],
+    "season": 0,
+    "episode": 3,
+    "code": "SP03",
+    "titleFa": "تقلب شفاف: رده‌بندی فرانت‌رانینگ در بلاکچین (دِوکان ۵)",
+    "titleEn": "Transparent Dishonesty: Blockchain Front-Running Taxonomy by Shayan Eskandari (Devcon5)",
+    "publishedAt": "2019-12-27",
+    "durationSec": 307,
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 38,
+        "title": "معرفی مقالهٔ «تقلب شفاف»"
+      },
+      {
+        "startSec": 38,
+        "endSec": 108,
+        "title": "پیشینهٔ فرانت‌رانینگ"
+      },
+      {
+        "startSec": 108,
+        "endSec": 146,
+        "title": "تعریف فرانت‌رانینگ"
+      },
+      {
+        "startSec": 146,
+        "endSec": 253,
+        "title": "سه نوع حمله با مثال"
+      },
+      {
+        "startSec": 253,
+        "endSec": 307,
+        "title": "جدول رده‌بندی و راهکارها"
+      }
+    ],
+    "youtubeThumb": "https://i.ytimg.com/vi/tVgto0GtA4I/maxresdefault.jpg",
+    "descriptionFa": "",
+    "descriptionEn": "Visit the https://archive.devcon.org/ to gain access to the entire library of Devcon talks with the ease of filtering, playlists, personalized suggestions, decentralized access on IPFS and more.\nhttps://archive.devcon.org/archive/watch/5/transparent-dishonesty-blockchain-front-running-taxonomy\n\nFront-running has been an issue in financial instrument markets since the 1970s. With the advent of the blockchain technology, front-running has resurfaced in new forms we explore here, instigated by blockchains decentralized and transparent nature. In this paper, we draw from a scattered body of knowledge and instances of front-running across the top 25 most active decentral applications (DApps) deployed on Ethereum blockchain, and an instance of abnormal behaviour of a mining pool to participate in an ICO. We also introduce a taxonomy of front-running attacks on blockchain and map the proposed solutions to front-running into useful categories.\nPublished at Financial Cryptography and Data Security 2019: https://arxiv.org/abs/1902.05164\n\nSpeaker(s): Shayan Eskandari\nSkill level: Advanced\nTrack: Economics\nKeywords: academic\n\nFollow us: https://twitter.com/efdevcon, https://twitter.com/ethereum\nLearn more about devcon: https://www.devcon.org/\nLearn more about ethereum: https://ethereum.org/ \n\nDevcon is the Ethereum conference for developers, researchers, thinkers, and makers. \nDevcon 5 was held in Osaka, Japan on Oct 8 - 11, 2019.\nDevcon is organized and presented by the Ethereum Foundation, with the support of our sponsors. To find out more, please visit https://ethereum.foundation/",
+    "keywords": [],
+    "viewCount": 265,
+    "likeCount": 7,
+    "sourceStem": "09 - Transparent Dishonesty： Blockchain Front-Running Taxonomy by Shayan Eskandari (Devcon5) [tVgto0GtA4I]"
+  },
+  {
+    "id": "sp02",
+    "youtubeId": "JfryEnYvX54",
+    "altYoutubeIds": [],
+    "season": 0,
+    "episode": 2,
+    "code": "SP02",
+    "titleFa": "آشنایی با بیت‌کوین - دانشگاه شهید بهشتی",
+    "titleEn": "Introduction to Bitcoin (Shahid Beheshti University)",
+    "publishedAt": "2016-01-03",
+    "durationSec": 2884,
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 117,
+        "title": "معرفی و تعریف بیت‌کوین"
+      },
+      {
+        "startSec": 117,
+        "endSec": 263,
+        "title": "ریشه‌های رمزنگاری و ساتوشی"
+      },
+      {
+        "startSec": 263,
+        "endSec": 412,
+        "title": "پول دیجیتال پیش از بیت‌کوین"
+      },
+      {
+        "startSec": 412,
+        "endSec": 612,
+        "title": "کلید عمومی، کلید خصوصی و آدرس"
+      },
+      {
+        "startSec": 612,
+        "endSec": 749,
+        "title": "تراکنش چطور تأیید می‌شود"
+      },
+      {
+        "startSec": 749,
+        "endSec": 944,
+        "title": "سخت‌افزار استخراج و تنظیم سختی"
+      },
+      {
+        "startSec": 944,
+        "endSec": 1073,
+        "title": "ساختار بلاکچین و فورک"
+      },
+      {
+        "startSec": 1073,
+        "endSec": 1191,
+        "title": "اقتصاد بیت‌کوین و عرضهٔ محدود"
+      },
+      {
+        "startSec": 1191,
+        "endSec": 1290,
+        "title": "چرا به بیت‌کوین نیاز داریم"
+      },
+      {
+        "startSec": 1290,
+        "endSec": 1490,
+        "title": "وضعیت شبکه و تاریخچهٔ قیمت"
+      },
+      {
+        "startSec": 1490,
+        "endSec": 1856,
+        "title": "پرسش و پاسخ: پاداش استخراج و قیمت"
+      },
+      {
+        "startSec": 1856,
+        "endSec": 2104,
+        "title": "کاربردهای بلاکچین فراتر از پول"
+      },
+      {
+        "startSec": 2104,
+        "endSec": 2227,
+        "title": "حملهٔ ۵۱ درصدی و استخرهای ماینینگ"
+      },
+      {
+        "startSec": 2227,
+        "endSec": 2599,
+        "title": "اثبات کار قدم به قدم"
+      },
+      {
+        "startSec": 2599,
+        "endSec": 2753,
+        "title": "نقش رمزنگاری و مسئلهٔ P=NP"
+      },
+      {
+        "startSec": 2753,
+        "endSec": 2884,
+        "title": "اتریوم، آلت‌کوین‌ها و جمع‌بندی"
+      }
+    ],
+    "youtubeThumb": "https://i.ytimg.com/vi/JfryEnYvX54/maxresdefault.jpg",
+    "descriptionFa": "بیت کوین (و یا بیتکوین) اولین ارز غیر متمرکز همتا به همتا (P۲P) است که به کمک توابع رمز نگاری نیاز به وجود یک بانک مرکزی را حذف کرده است.\n\nMirror: http://www.aparat.com/v/LQSVy\n\nBitcoin Introduction at Shahid Beheshti University\n Tehran, Iran\nThanks to Computer Science Scientific Association\n \nسمینار آشنایی با بیت کوین در دانشگاه شهید بهشتی \nسخنران: شایان اسکندری\n ۲۹ آذر ۱۳۹۴\n\n با تشکر از انجمن علمی علوم کامپیوتر دانشگاه شهید بهشتی\n\nبرای اطلاعات بیشتر: http://btctalk.com",
+    "descriptionEn": "",
+    "keywords": [],
+    "viewCount": 5068,
+    "likeCount": 34,
+    "sourceStem": "12 - آشنایی با بیت کوین - دانشگاه شهید بهشتی [JfryEnYvX54]"
+  },
+  {
     "id": "sp01",
     "youtubeId": "vLWps05G_IQ",
     "altYoutubeIds": [],

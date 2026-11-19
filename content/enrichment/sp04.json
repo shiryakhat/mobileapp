@@ -1,0 +1,250 @@
+{
+  "id": "sp04",
+  "model": "claude-fable-5-2",
+  "generatedAt": "2026-11-19T23:43:38.472Z",
+  "summaryFa": "کارگاه عملی امنیت در دِوکان ۵ (اوساکا، اکتبر ۲۰۱۹) که در آن شایان اسکندری و همکارانش در کانسنسیس دیلیجنس چند قرارداد کوچک سالیدیتی را جلوی چشم شرکت‌کنندگان می‌شکنند. چالش‌ها از زیرریز عدد صحیح و ذخیره‌ی راز روی بلاکچین شروع می‌شود و به عدد تصادفی مبتنی بر هش بلاک و باگ ری‌انترنسیِ هک داو می‌رسد؛ در کنارش ابزارهایی مثل MythX و Legions هم نمایش داده می‌شود. بخش پایانی به این می‌پردازد که تیم‌ها پیش از آدیت چطور کدشان را آماده کنند.",
+  "summaryEn": "A hands-on security workshop from Devcon 5 (Osaka, October 2019) in which Shayan Eskandari and his ConsenSys Diligence colleagues break a series of small Solidity contracts live. The challenges move from integer underflow and secrets stored on-chain to blockhash-based randomness and the reentrancy bug behind The DAO hack, with demos of tools such as MythX and Legions along the way. It closes with practical advice on getting code ready for an audit.",
+  "quotes": [
+    {
+      "startSec": 292,
+      "fa": "بلاک گس لیمیت می‌تواند حسابی به دردسرتان بیندازد: وقتی به بیشتر از همه‌ی گسی نیاز پیدا کنید که یک ماینر حاضر است به شما بدهد.",
+      "en": "The block gas limit can get you in a lot of trouble if you run out of all the possible gas that any miner will ever give you.",
+      "speaker": "جان"
+    },
+    {
+      "startSec": 616,
+      "fa": "ده اسلات اول استوریج را می‌خواند و می‌بینید که این داده، با اینکه طبق منطق توسعه‌ی نرم‌افزار نباید از بیرون دیده شود، دیده می‌شود.",
+      "en": "It reads the first ten storage slots, and you can see that even though that storage should not be visible from outside, at least by software development logic, it is.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 1766,
+      "fa": "یکی از نکته‌های اصلی این بود که می‌شود با یک قرارداد به قرارداد دیگری حمله کرد؛ در همان محیط، با همان متغیرها و با هر چیزی که آن قرارداد به آن دسترسی دارد.",
+      "en": "One of the main points here is that you can attack a contract with another contract: the same environment, the same variables, everything the other contract has access to.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 2017,
+      "fa": "آخرش آن همه پول دزدیده شد، فقط چون جای این دو خط باید برعکس می‌بود. امنیت در اتریوم برای همین واقعاً سخت است: کد به نظر درست می‌آید، ولی باید برعکس باشد.",
+      "en": "In the end, all that money was stolen because two lines should have been the other way around. That is what makes security on Ethereum really hard: it seems fine, but it should be the other way around.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 3014,
+      "fa": "اگر بنشینید و بخواهید به زبان ساده برای یک نفر دیگر بنویسید که کدتان چه می‌کند، مجبورید خودتان آن را بخوانید. تضمین می‌کنم چیزی پیدا می‌کنید.",
+      "en": "If you sit down and try to explain in plain English to someone else what your code does, you have to read it. I guarantee you'll find something.",
+      "speaker": "جان"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Reentrancy",
+      "termFa": "ری‌انترنسی (ورود مجدد)",
+      "definitionEn": "A bug where an external call lets the callee call back into the contract before its state is updated, so funds can be withdrawn repeatedly.",
+      "definitionFa": "باگی که در آن قرارداد پیش از به‌روزکردن وضعیتش قرارداد دیگری را صدا می‌زند و مهاجم با فراخوانی دوباره، چند بار برداشت می‌کند."
+    },
+    {
+      "term": "Checks-Effects-Interactions",
+      "termFa": "الگوی بررسی، اثر، تعامل",
+      "definitionEn": "A coding pattern: validate conditions first, then update the contract's state, and only then call external contracts.",
+      "definitionFa": "الگویی در کدنویسی: اول شرط‌ها بررسی می‌شود، بعد وضعیت قرارداد تغییر می‌کند و در آخر قرارداد بیرونی صدا زده می‌شود."
+    },
+    {
+      "term": "Fallback Function",
+      "termFa": "تابع فال‌بک",
+      "definitionEn": "The function a contract runs when it receives ether or a call that matches none of its function names.",
+      "definitionFa": "تابعی که وقتی قرارداد اتر می‌گیرد یا فراخوانی با هیچ‌کدام از تابع‌هایش جور نیست، اجرا می‌شود."
+    },
+    {
+      "term": "Integer Overflow",
+      "termFa": "سرریز و زیرریز عدد صحیح",
+      "definitionEn": "When arithmetic goes past a number type's limits and wraps around, for example zero minus one becoming a huge balance.",
+      "definitionFa": "وقتی حاصل یک محاسبه از محدوده‌ی نوع عددی بیرون می‌زند و دور می‌خورد؛ مثلاً صفر منهای یک به موجودی بسیار بزرگی تبدیل می‌شود."
+    },
+    {
+      "term": "Storage Slot",
+      "termFa": "اسلات استوریج",
+      "definitionEn": "A numbered 32-byte cell in a contract's permanent storage; anyone can read it from a node, even for private variables.",
+      "definitionFa": "خانه‌ای ۳۲ بایتی و شماره‌دار در حافظه‌ی دائمی قرارداد که هر کسی می‌تواند از روی نود بخواند، حتی اگر متغیر private باشد."
+    },
+    {
+      "term": "On-chain Randomness",
+      "termFa": "عدد تصادفی روی زنجیره",
+      "definitionEn": "Random-looking values derived from block data such as the block hash or timestamp, which other contracts and miners can predict.",
+      "definitionFa": "عددی به‌ظاهر تصادفی که از داده‌ی بلاک مثل هش یا زمان آن ساخته می‌شود و قراردادهای دیگر و ماینرها می‌توانند پیش‌بینی‌اش کنند."
+    },
+    {
+      "term": "Externally Owned Account (EOA)",
+      "termFa": "حساب با مالکیت خارجی (EOA)",
+      "definitionEn": "An Ethereum account controlled by a private key, with no code or storage of its own.",
+      "definitionFa": "حسابی در اتریوم که با کلید خصوصی کنترل می‌شود و کد و استوریج ندارد."
+    },
+    {
+      "term": "MythX",
+      "termFa": "MythX",
+      "definitionEn": "ConsenSys's security analysis service that scans smart contracts for common vulnerabilities, available as a Remix plugin and command-line tools.",
+      "definitionFa": "سرویس تحلیل امنیتی کانسنسیس که قرارداد هوشمند را برای باگ‌های رایج اسکن می‌کند و به شکل پلاگین Remix و ابزار خط فرمان در دسترس است."
+    },
+    {
+      "term": "Symbolic Execution",
+      "termFa": "اجرای نمادین",
+      "definitionEn": "An analysis technique that explores a program's possible paths with symbolic inputs to find inputs that trigger bugs.",
+      "definitionFa": "روشی برای تحلیل برنامه که مسیرهای ممکن اجرا را با ورودی‌های نمادین می‌پیماید تا ورودی‌های باگ‌ساز را پیدا کند."
+    },
+    {
+      "term": "Block Gas Limit",
+      "termFa": "بلاک گس لیمیت",
+      "definitionEn": "The maximum total gas all transactions in one block may use; a function needing more than this can never run.",
+      "definitionFa": "سقف مجموع گسی که تراکنش‌های یک بلاک می‌توانند مصرف کنند؛ تابعی که بیشتر از این گس بخواهد هیچ‌وقت اجرا نمی‌شود."
+    },
+    {
+      "term": "The DAO",
+      "termFa": "داو",
+      "definitionEn": "A 2016 Ethereum investment fund built by Slock.it that was drained through a reentrancy bug.",
+      "definitionFa": "صندوق سرمایه‌گذاری سال ۲۰۱۶ روی اتریوم، ساخته‌ی Slock.it، که با یک باگ ری‌انترنسی خالی شد."
+    },
+    {
+      "term": "Smart Contract Audit",
+      "termFa": "آدیت قرارداد هوشمند",
+      "definitionEn": "A review of a contract's code by outside security engineers to find bugs before it is deployed with real money.",
+      "definitionFa": "بازبینی کد قرارداد به دست مهندسان امنیتِ بیرون از تیم، تا باگ‌ها پیش از دیپلوی با پول واقعی پیدا شود."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "en",
+      "wrong": "Conscious and Diligent",
+      "right": "ConsenSys Diligence"
+    },
+    {
+      "lang": "en",
+      "wrong": "MeetLix",
+      "right": "MythX"
+    },
+    {
+      "lang": "en",
+      "wrong": "premix",
+      "right": "Remix"
+    },
+    {
+      "lang": "en",
+      "wrong": "NIFX",
+      "right": "MythX"
+    },
+    {
+      "lang": "en",
+      "wrong": "Mythix",
+      "right": "MythX"
+    },
+    {
+      "lang": "en",
+      "wrong": "Mythics",
+      "right": "MythX"
+    },
+    {
+      "lang": "en",
+      "wrong": "MATCHX",
+      "right": "MythX"
+    },
+    {
+      "lang": "en",
+      "wrong": "Morellian",
+      "right": "Maurelian"
+    },
+    {
+      "lang": "en",
+      "wrong": "Cheyenne",
+      "right": "Shayan"
+    },
+    {
+      "lang": "en",
+      "wrong": "one way",
+      "right": "one wei"
+    },
+    {
+      "lang": "en",
+      "wrong": "VRAW",
+      "right": "Infura"
+    },
+    {
+      "lang": "en",
+      "wrong": "Robsten",
+      "right": "Ropsten"
+    },
+    {
+      "lang": "en",
+      "wrong": "Ketchy",
+      "right": "Keccak"
+    },
+    {
+      "lang": "en",
+      "wrong": "Solid Entity",
+      "right": "Solidity"
+    },
+    {
+      "lang": "en",
+      "wrong": "Plastic",
+      "right": "Slock.it"
+    },
+    {
+      "lang": "en",
+      "wrong": "ATT&CK",
+      "right": "attack"
+    },
+    {
+      "lang": "en",
+      "wrong": "re-interested",
+      "right": "reentrancy"
+    },
+    {
+      "lang": "en",
+      "wrong": "knowns",
+      "right": "nonce"
+    },
+    {
+      "lang": "en",
+      "wrong": "top codes",
+      "right": "opcodes"
+    },
+    {
+      "lang": "fa",
+      "wrong": "Conscious و Diligent",
+      "right": "ConsenSys Diligence"
+    },
+    {
+      "lang": "fa",
+      "wrong": "MeetLix",
+      "right": "MythX"
+    },
+    {
+      "lang": "fa",
+      "wrong": "premix",
+      "right": "Remix"
+    },
+    {
+      "lang": "fa",
+      "wrong": "MATCHX",
+      "right": "MythX"
+    },
+    {
+      "lang": "fa",
+      "wrong": "Cheyenne",
+      "right": "شایان"
+    },
+    {
+      "lang": "fa",
+      "wrong": "یک way",
+      "right": "یک wei"
+    },
+    {
+      "lang": "fa",
+      "wrong": "Plastic",
+      "right": "Slock.it"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ATT&CK",
+      "right": "attack"
+    }
+  ]
+}

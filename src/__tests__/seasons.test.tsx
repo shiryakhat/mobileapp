@@ -57,9 +57,13 @@ describe('season chips', () => {
     await fireEvent.press(screen.getByTestId('season-chip-0'));
     expect(selected('season-chip-0')).toBe(true);
     expect(sectionTitles()).toEqual(['Specials']);
-    for (const e of season(0).data) {
+    // The list is virtualised: only the first screenful of specials is mounted.
+    for (const e of season(0).data.slice(0, 5)) {
       expect(screen.getByTestId(`episode-card-${e.id}`)).toBeTruthy();
     }
+    expect(
+      screen.getByText(translate('en', 'episodesCount', { n: season(0).data.length })),
+    ).toBeTruthy();
     expect(screen.queryByTestId(`episode-card-${seasons[0]!.data[0]!.id}`)).toBeNull();
 
     await fireEvent.press(screen.getByTestId('season-chip-all'));
