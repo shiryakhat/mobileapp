@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useRef } from 'react';
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 import { View } from 'react-native';
 import YoutubePlayer, { type YoutubeIframeRef } from 'react-native-youtube-iframe';
 import { attachYoutube, detachYoutube, reportYoutube } from '@/player/controller';
@@ -18,7 +18,25 @@ export function YoutubeSurface({ videoId, width, hidden }: Props) {
   const playing = usePlayback((s) => s.playing);
   const rate = usePlayback((s) => s.rate);
 
-  const handle = useMemo(() => ({ seekTo: (sec: number) => ref.current?.seekTo(sec, true) }), []);
+  // The library only messages the iframe when its `play` prop changes. To send
+  // a command again (the iframe did not follow the first one) the prop is
+  // flipped for one commit and then handed back to the store.
+  const [flip, setFlip] = useState<boolean>();
+
+  const handle = useMemo(
+    () => ({
+      seekTo: (sec: number) => ref.current?.seekTo(sec, true),
+      resend: (want: boolean) => setFlip(!want),
+    }),
+    [],
+  );
+
+  useEffect(() => {
+    if (flip === undefined) return;
+    // By now the flipped prop has been committed (and so sent): hand it back.
+    const timer = setTimeout(() => setFlip(undefined), 0);
+    return () => clearTimeout(timer);
+  }, [flip]);
 
   useEffect(() => {
     startRef.current = attachYoutube(handle);
@@ -69,7 +87,7 @@ export function YoutubeSurface({ videoId, width, hidden }: Props) {
         height={height}
         width={width}
         videoId={videoId}
-        play={playing}
+        play={flip ?? playing}
         playbackRate={rate}
         onReady={onReady}
         onChangeState={onChangeState}
