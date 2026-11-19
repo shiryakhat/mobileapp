@@ -35,8 +35,18 @@ const SAVE_EVERY_SEC = 5;
  */
 const BUFFER_AHEAD_SEC = 120;
 
+/**
+ * How long after a command (play / pause / seek) the YouTube iframe gets to
+ * catch up before its reported play state is believed over the user's intent
+ * (see `reportYoutube`). Covers the WebView bridge round trip and the burst of
+ * state events around a seek; a longer rebuffer is covered by `buffering`.
+ */
+const YOUTUBE_SETTLE_MS = 1000;
+
 interface YoutubeHandle {
   seekTo: (sec: number) => void;
+  /** Send play / pause to the iframe again (it is otherwise only told on a change). */
+  resend: (playing: boolean) => void;
 }
 
 let audio: AudioPlayer | undefined;
@@ -45,11 +55,17 @@ let youtube: YoutubeHandle | undefined;
 let pendingSeek: number | undefined;
 let lastSavedAt = -1;
 /**
- * What the user last asked the native engine to do (play / pause). The engine's
- * own `status.playing` is the truth once it has settled, but on Android it is
- * stale while the player is buffering (see `resolvePlaying`).
+ * What the user last asked the active engine to do (play / pause). The engine's
+ * own play state is the truth once it has settled, but not while it is still
+ * catching up with a command: on Android the native status is stale while the
+ * player is buffering (see `resolvePlaying`), and the YouTube iframe keeps
+ * emitting the state events of a seek after a pause (see `reportYoutube`).
  */
 let wantPlaying = false;
+/** The play state the YouTube iframe last reported; undefined until it has. */
+let youtubeReported: boolean | undefined;
+/** Running while the YouTube iframe is given time to follow the last command. */
+let youtubeSettle: ReturnType<typeof setTimeout> | undefined;
 /**
  * The native player lost its prepared source (a playback error — typically the
  * network dropping or changing while the app was in the background — or the
@@ -239,8 +255,9 @@ export function loadEpisode(ep: Episode, opts: LoadOptions = {}): void {
   const autoplay = opts.autoplay ?? (sameEpisode && current.playing);
   lastSavedAt = -1;
   pendingSeek = startAt > 0 ? startAt : undefined;
-  wantPlaying = engine === 'native' && autoplay;
+  wantPlaying = autoplay;
   needsReload = false;
+  forgetYoutube();
 
   set({
     episodeId: ep.id,
@@ -271,18 +288,19 @@ export function setMode(mode: PlayerMode): void {
 }
 
 export function play(): void {
+  wantPlaying = true;
   if (state().engine === 'native') {
-    wantPlaying = true;
     // A player that lost its source ignores play(): load the episode again.
     if (needsReload) reloadNative();
     else ensureAudio().play();
-  }
+  } else awaitYoutube();
   set({ playing: true });
 }
 
 export function pause(): void {
   wantPlaying = false;
   if (state().engine === 'native') audio?.pause();
+  else awaitYoutube();
   set({ playing: false });
   persistProgress(true);
 }
@@ -299,8 +317,10 @@ export function seekTo(sec: number): void {
   if (engine === 'native') {
     if (audio?.isLoaded) void audio.seekTo(target);
     else pendingSeek = target;
-  } else if (youtube) youtube.seekTo(target);
-  else pendingSeek = target;
+  } else if (youtube) {
+    youtube.seekTo(target);
+    awaitYoutube();
+  } else pendingSeek = target;
 }
 
 export const skip = (deltaSec: number) => seekTo(state().positionSec + deltaSec);
@@ -320,6 +340,7 @@ export function cycleRate(): void {
 export function stop(): void {
   persistProgress(true);
   wantPlaying = false;
+  forgetYoutube();
   audio?.pause();
   try {
     audio?.clearLockScreenControls();
@@ -334,6 +355,7 @@ export function stop(): void {
 /** Returns the position the surface should start from, if any. */
 export function attachYoutube(handle: YoutubeHandle): number | undefined {
   youtube = handle;
+  forgetYoutube();
   const start = pendingSeek;
   pendingSeek = undefined;
   return start;
@@ -346,7 +368,43 @@ export function detachYoutube(handle: YoutubeHandle): void {
     persistProgress(true);
     // Remember where we were so re-mounting (or switching to audio) resumes there.
     pendingSeek = state().positionSec;
+    wantPlaying = false;
+    forgetYoutube();
     set({ playing: false });
+  }
+}
+
+function forgetYoutube(): void {
+  clearTimeout(youtubeSettle);
+  youtubeSettle = undefined;
+  youtubeReported = undefined;
+}
+
+/** A command was just sent to the iframe: give it time to follow (see `reportYoutube`). */
+function awaitYoutube(retry = true): void {
+  clearTimeout(youtubeSettle);
+  youtubeSettle = setTimeout(() => settleYoutube(retry), YOUTUBE_SETTLE_MS);
+}
+
+/**
+ * The iframe has had its time. If it is still not doing what the user asked,
+ * the command is sent once more (it may have been lost, or overtaken by the
+ * seek); if that does not help either, the store follows the iframe, so the
+ * transport button at least shows what is really happening.
+ */
+function settleYoutube(retry: boolean): void {
+  youtubeSettle = undefined;
+  if (state().engine !== 'youtube' || !youtube) return;
+  if (youtubeReported === undefined || youtubeReported === wantPlaying) return;
+  // Still rebuffering: the state event that ends it re-opens this check.
+  if (state().buffering) return;
+  if (retry) {
+    youtube.resend(wantPlaying);
+    awaitYoutube(false);
+  } else {
+    wantPlaying = youtubeReported;
+    set({ playing: wantPlaying });
+    if (!wantPlaying) persistProgress(true);
   }
 }
 
@@ -358,7 +416,40 @@ export function reportYoutube(update: {
   ended?: boolean;
 }): void {
   if (state().engine !== 'youtube') return;
-  const { ended, ...rest } = update;
-  set(rest);
-  persistProgress(Boolean(ended) || update.playing === false);
+  const { ended, playing, ...rest } = update;
+  if (playing === undefined) {
+    set(rest);
+    persistProgress();
+    return;
+  }
+  youtubeReported = playing;
+  if (ended) {
+    wantPlaying = false;
+    clearTimeout(youtubeSettle);
+    youtubeSettle = undefined;
+    set({ ...rest, playing: false, buffering: false });
+    persistProgress(true);
+    return;
+  }
+  // The store's `playing` is also what <YoutubeSurface/> sends back to the
+  // iframe as its `play` prop, so a reported state written into it becomes a
+  // command. Around a seek (a chapter / transcript tap) the iframe emits a
+  // burst of state events — 'paused' and 'buffering', then 'playing' once it
+  // has data — and those still arrive after the user has tapped pause (or
+  // play): believing them would flip the transport button back and tell the
+  // iframe to resume (or pause). So, as on the native engine, the user's
+  // intent is the truth while the iframe is catching up with a command or
+  // rebuffering; once it has settled, the iframe is (its own controls in
+  // video mode, an interruption).
+  if (playing !== wantPlaying) {
+    if (youtubeSettle !== undefined || state().buffering) {
+      set(rest);
+      // Check again once the events have died down (see `settleYoutube`).
+      if (youtubeSettle === undefined) awaitYoutube();
+      return;
+    }
+    wantPlaying = playing;
+  }
+  set({ ...rest, playing });
+  persistProgress(!playing);
 }

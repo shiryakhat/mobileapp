@@ -8,11 +8,25 @@
  *  - A player that lost its source (playback error, stopped by the system)
  *    ignores play(); the episode has to be loaded again, where it was.
  *  - Returning to the app re-reads the engine.
+ *
+ * The same holds for the YouTube engine, which the specials (season 0, no
+ * public audio URL) always use: the state events the iframe emits around a
+ * seek must not undo the user's pause or play either.
  */
 import type { AudioStatus } from 'expo-audio';
 import { AppState, Platform, type AppStateStatus } from 'react-native';
 import { episodes } from '@/content';
-import { loadEpisode, pause, play, seekTo, stop, toggle } from '@/player/controller';
+import {
+  attachYoutube,
+  detachYoutube,
+  loadEpisode,
+  pause,
+  play,
+  reportYoutube,
+  seekTo,
+  stop,
+  toggle,
+} from '@/player/controller';
 import { usePlayback } from '@/player/store';
 
 const mockPlayer = {
@@ -221,5 +235,132 @@ describe('returning to the app', () => {
   it('leaves the seek helpers untouched', () => {
     seekTo(42);
     expect(mockPlayer.seekTo).toHaveBeenCalledWith(42);
+  });
+});
+
+describe('specials: key-point tap, then pause (YouTube engine)', () => {
+  const special = episodes.find((e) => e.season === 0)!;
+  const surface = { seekTo: jest.fn(), resend: jest.fn() };
+  /** Longer than the time the iframe is given to follow a command. */
+  const settle = () => jest.advanceTimersByTime(1100);
+
+  beforeEach(() => {
+    jest.useFakeTimers();
+    surface.seekTo.mockClear();
+    surface.resend.mockClear();
+    // Opening the episode screen: the special becomes current, the iframe mounts.
+    loadEpisode(special);
+    attachYoutube(surface);
+    // Playing, and settled.
+    play();
+    reportYoutube({ playing: true, buffering: false });
+    settle();
+  });
+
+  afterEach(() => {
+    detachYoutube(surface);
+    jest.useRealTimers();
+  });
+
+  it('plays specials through the YouTube engine, not the native one', () => {
+    expect(special.audioUrl).toBeUndefined();
+    expect(usePlayback.getState()).toMatchObject({ engine: 'youtube', mode: 'audio' });
+    expect(mockPlayer.replace).not.toHaveBeenCalled();
+  });
+
+  it('keeps the pause when the seek still reports "playing" afterwards', () => {
+    loadEpisode(special, { startAt: 600, autoplay: true });
+    expect(surface.seekTo).toHaveBeenCalledWith(600);
+    reportYoutube({ buffering: true });
+
+    toggle(); // the user pauses during the rebuffer
+    expect(playing()).toBe(false);
+    // The seek completes in the iframe: it must not flip the store back (the
+    // store's `playing` is the iframe's `play` prop — it would resume).
+    reportYoutube({ playing: true, buffering: false });
+    expect(playing()).toBe(false);
+    // ...and then the pause lands.
+    reportYoutube({ playing: false, buffering: false });
+    settle();
+    expect(playing()).toBe(false);
+    expect(surface.resend).not.toHaveBeenCalled();
+
+    // The next tap therefore resumes.
+    toggle();
+    expect(playing()).toBe(true);
+  });
+
+  it('keeps the pause when the rebuffer outlasts the settle time', () => {
+    loadEpisode(special, { startAt: 600, autoplay: true });
+    reportYoutube({ buffering: true });
+    pause();
+    settle(); // slow connection: still buffering
+    settle();
+    reportYoutube({ playing: true, buffering: false });
+    expect(playing()).toBe(false);
+    reportYoutube({ playing: false, buffering: false });
+    settle();
+    expect(playing()).toBe(false);
+    expect(surface.resend).not.toHaveBeenCalled();
+  });
+
+  it('keeps playing through the "paused" the iframe emits at the start of a seek', () => {
+    loadEpisode(special, { startAt: 600, autoplay: true });
+    reportYoutube({ playing: false, buffering: false });
+    expect(playing()).toBe(true);
+    reportYoutube({ buffering: true });
+    settle(); // a slow rebuffer is not a pause
+    settle();
+    expect(playing()).toBe(true);
+    expect(surface.resend).not.toHaveBeenCalled();
+    reportYoutube({ playing: true, buffering: false });
+    expect(playing()).toBe(true);
+  });
+
+  it('starts from a paused special on a key-point tap, and then pauses', () => {
+    pause();
+    reportYoutube({ playing: false, buffering: false });
+    settle();
+
+    loadEpisode(special, { startAt: 600, autoplay: true });
+    expect(playing()).toBe(true);
+    reportYoutube({ buffering: true });
+    toggle();
+    reportYoutube({ playing: true, buffering: false });
+    expect(playing()).toBe(false);
+  });
+
+  it('pauses again when the iframe really kept playing, then follows it', () => {
+    loadEpisode(special, { startAt: 600, autoplay: true });
+    pause();
+    reportYoutube({ playing: true, buffering: false });
+    expect(playing()).toBe(false);
+
+    settle(); // no 'paused' came: the command is sent once more
+    expect(surface.resend).toHaveBeenCalledTimes(1);
+    expect(surface.resend).toHaveBeenCalledWith(false);
+    expect(playing()).toBe(false);
+
+    settle(); // still playing: show what is really happening
+    expect(surface.resend).toHaveBeenCalledTimes(1);
+    expect(playing()).toBe(true);
+    toggle();
+    expect(playing()).toBe(false);
+  });
+
+  it('follows the iframe once it has settled (its own controls, an interruption)', () => {
+    reportYoutube({ playing: false, buffering: false });
+    expect(playing()).toBe(false);
+    reportYoutube({ playing: true, buffering: false });
+    expect(playing()).toBe(true);
+    settle();
+    expect(surface.resend).not.toHaveBeenCalled();
+  });
+
+  it('stops at the end of the video', () => {
+    reportYoutube({ playing: false, ended: true });
+    expect(usePlayback.getState()).toMatchObject({ playing: false, buffering: false });
+    toggle();
+    expect(playing()).toBe(true);
   });
 });
