@@ -2,10 +2,11 @@
  * Unified player: one API over two engines.
  *
  *  - native  : expo-audio, streams the podcast RSS enclosure (or a downloaded
- *              file). Survives navigation, plays in the background and drives
- *              the lock-screen / now-playing controls.
+ *              file; archive.org is the fallback). Survives navigation, plays
+ *              in the background and drives the lock-screen / now-playing
+ *              controls.
  *  - youtube : the YouTube iframe on the episode screen (video mode, and the
- *              audio fallback for episodes with no public audio URL).
+ *              audio fallback for episodes with no audio URL at all).
  *
  * Screens only talk to this module and to `usePlayback`.
  */
@@ -61,16 +62,60 @@ let needsReload = false;
 const state = () => usePlayback.getState();
 const set = usePlayback.setState;
 
-// TODO: archive.org as a fallback source. Most episodes are also on archive.org
-// (creator "Shir Ya Khat": https://archive.org/search?query=creator%3A%22Shir+Ya+Khat%22),
-// which could back up the audio (and video) when the RSS enclosure is unavailable.
-// Not wired up yet; downloads (src/state/downloads.ts) would need the same fallback.
-// Do VIDEO downloads in the same piece of work: downloads are audio-only today and
-// video only streams from YouTube, which may be filtered or geo-blocked for part of
-// the audience. The video files could come from archive.org too, or be hosted on
-// Cloudflare (R2 / Stream) for easier access.
-function audioSourceFor(ep: Episode): string | undefined {
-  return localAudioUri(ep.id) ?? ep.audioUrl;
+/**
+ * Episodes whose RSS enclosure failed to load this session; they stream from
+ * archive.org instead (see `retryFromArchive`).
+ */
+const primaryFailed = new Set<string>();
+
+/**
+ * Where the native engine plays an episode from: the downloaded file, else the
+ * podcast RSS enclosure, else archive.org.
+ *
+ * archive.org mirrors every episode (creator "Shir Ya Khat"); the pipeline
+ * resolves the file URLs at build time (pipeline/src/archive.ts) into
+ * `archiveAudioUrl` / `archiveVideoUrl`, so nothing is looked up at runtime.
+ * It backs the audio up twice: as the last entry in this chain (an episode
+ * without an RSS enclosure — a special — plays natively instead of through the
+ * YouTube iframe), and as a one-off retry when the enclosure errors out.
+ * For episodes uploaded as video, `archiveAudioUrl` is the item's mp4: the
+ * native player streams its audio track.
+ *
+ * TODO: downloads (src/state/downloads.ts) still only fetch the RSS enclosure;
+ * give them the same fallback, together with VIDEO downloads.
+ */
+export function audioSourceFor(ep: Episode): string | undefined {
+  const local = localAudioUri(ep.id);
+  if (local) return local;
+  if (primaryFailed.has(ep.id) && ep.archiveAudioUrl) return ep.archiveAudioUrl;
+  return ep.audioUrl ?? ep.archiveAudioUrl;
+}
+
+/**
+ * The archive.org mp4 (H.264) of an episode, for the video path.
+ *
+ * TODO: not played yet. Video only streams through the YouTube iframe, which
+ * may be filtered or geo-blocked for part of the audience; falling back to this
+ * file needs a native video surface (expo-video — a new native module, hence a
+ * new build) plus a third engine next to 'native' / 'youtube'. Cloudflare
+ * (R2 / Stream) is an alternative host if archive.org proves too slow.
+ */
+export const archiveVideoSourceFor = (ep: Episode): string | undefined => ep.archiveVideoUrl;
+
+/**
+ * The RSS enclosure failed (host unreachable, file gone): load the archive.org
+ * copy instead, at the same position. Once per episode per session — if that
+ * fails too, the error is shown as usual and `play()` retries archive.org.
+ * A failing download or archive.org source is left alone.
+ */
+function retryFromArchive(): boolean {
+  const ep = getEpisode(state().episodeId);
+  const archive = ep?.archiveAudioUrl;
+  if (!ep || !archive || archive === ep.audioUrl || primaryFailed.has(ep.id)) return false;
+  if (audioSourceFor(ep) !== ep.audioUrl) return false;
+  primaryFailed.add(ep.id);
+  reloadNative();
+  return true;
 }
 
 function engineFor(ep: Episode, mode: PlayerMode): PlayerEngine {
@@ -129,6 +174,7 @@ function resolvePlaying(status: AudioStatus): boolean {
 
 function applyStatus(player: AudioPlayer, status: AudioStatus): void {
   if (state().engine !== 'native') return;
+  if (status.error && retryFromArchive()) return;
   if (status.error) needsReload = true;
   // Android: 'idle' means no prepared source — after an error, or a stop from
   // outside. (It is also reported for an instant while a source is being

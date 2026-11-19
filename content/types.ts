@@ -27,6 +27,19 @@ export interface Episode {
   keywords: string[];
   /** Public RSS enclosure; when absent the app falls back to YouTube for audio. */
   audioUrl?: string;
+  /**
+   * archive.org item mirroring this episode. Defaults to `shiryakhat-<youtubeId>`;
+   * set it in the source data when an item (e.g. a special) is named differently.
+   */
+  archiveId?: string;
+  /**
+   * Fallback audio from archive.org, resolved at build time by the pipeline.
+   * An mp3 where the item has one; otherwise the item's mp4, of which the
+   * native player streams the audio track.
+   */
+  archiveAudioUrl?: string;
+  /** Fallback H.264 mp4 from archive.org (absent for audio-only episodes). */
+  archiveVideoUrl?: string;
   spotifyUrl?: string;
   appleUrl?: string;
   castboxUrl?: string;

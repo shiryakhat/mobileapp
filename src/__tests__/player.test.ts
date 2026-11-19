@@ -39,6 +39,9 @@ jest.mock('@/player/artwork', () => ({
   resolveLocalArtwork: jest.fn(() => Promise.resolve(undefined)),
 }));
 
+// These tests are about the primary source alone; the archive.org fallback is
+// covered by archive-fallback.test.ts.
+for (const e of episodes) delete e.archiveAudioUrl;
 const episode = episodes.find((e) => e.audioUrl)!;
 const appStateSpy = jest.spyOn(AppState, 'addEventListener');
 

@@ -1,5 +1,6 @@
 /**
  * Corpus info.json + website _posts + RSS  ->  content/episodes.json
+ * (the archive.org fallback URLs are added afterwards by archive.ts)
  *
  * The corpus has 49 videos for 40 canonical episodes (+1 special): seasons 4-6
  * were uploaded twice (original video + 2025 audio mirror). We dedupe by
@@ -188,6 +189,24 @@ function pickPrimary(videos: Video[]): Video {
   })[0]!;
 }
 
+/**
+ * archive.org fallback fields are resolved by the `archive` step (network).
+ * Carry the previous build's values over so a rebuild without that step does
+ * not drop them — unless the episode now points at another upload.
+ */
+function archiveFields(
+  prev: Episode | undefined,
+  youtubeId: string,
+  archiveId?: string,
+): Pick<Episode, 'archiveId' | 'archiveAudioUrl' | 'archiveVideoUrl'> {
+  const same = prev?.youtubeId === youtubeId && (!archiveId || prev.archiveId === archiveId);
+  return {
+    archiveId: archiveId ?? (same ? prev?.archiveId : undefined),
+    archiveAudioUrl: same ? prev?.archiveAudioUrl : undefined,
+    archiveVideoUrl: same ? prev?.archiveVideoUrl : undefined,
+  };
+}
+
 function main(): void {
   const videos = loadVideos();
   const posts = loadPosts();
@@ -224,6 +243,7 @@ function main(): void {
         viewCount: v.info.view_count,
         likeCount: v.info.like_count,
         sourceStem: v.stem,
+        ...archiveFields(previous.get(special.id), v.info.id, special.archiveId),
       });
       continue;
     }
@@ -279,6 +299,7 @@ function main(): void {
       viewCount: vids.reduce((n, v) => n + (v.info.view_count ?? 0), 0),
       likeCount: vids.reduce((n, v) => n + (v.info.like_count ?? 0), 0),
       sourceStem: primary.stem,
+      ...archiveFields(previous.get(id), primary.info.id),
     });
   }
 

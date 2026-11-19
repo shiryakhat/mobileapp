@@ -16,6 +16,19 @@ export const RSS_CACHE = path.join(CACHE_DIR, 'rss.xml');
 export const WEBSITE_REPO = 'https://github.com/shiryakhat/website';
 export const RSS_URL = 'https://anchor.fm/s/11aa853c/podcast/rss';
 
+/** archive.org mirrors every upload; the app uses it as a fallback media host. */
+export const ARCHIVE_METADATA_URL = 'https://archive.org/metadata';
+export const ARCHIVE_DOWNLOAD_URL = 'https://archive.org/download';
+/** Item identifiers are `shiryakhat-<youtubeId>` unless overridden below. */
+export const ARCHIVE_ID_PREFIX = 'shiryakhat-';
+/**
+ * Episodes whose archive.org item does not follow the convention, keyed by
+ * episode id (e.g. `sp02: 'some-talk-identifier'` for a special that was
+ * uploaded to archive.org on its own). Specials can also set `archiveId` in
+ * `SPECIALS`.
+ */
+export const ARCHIVE_ID_OVERRIDES: Record<string, string> = {};
+
 export const CONTENT_DIR = path.join(REPO_DIR, 'content');
 export const EPISODES_JSON = path.join(CONTENT_DIR, 'episodes.json');
 export const TRANSCRIPTS_DIR = path.join(CONTENT_DIR, 'transcripts');
@@ -34,7 +47,10 @@ export const EPISODE_CODE_OVERRIDES: Record<string, string> = {
 };
 
 /** Videos that are not regular episodes; surfaced as "specials" (season 0). */
-export const SPECIALS: Record<string, { id: string; titleFa: string; titleEn: string }> = {
+export const SPECIALS: Record<
+  string,
+  { id: string; titleFa: string; titleEn: string; archiveId?: string }
+> = {
   vLWps05G_IQ: {
     id: 'sp01',
     titleFa: 'شایان اسکندری، هم‌بنیانگذار شیر یا خط و کوین‌ایران، در برنامه اسکریپت (اپیزود ۱۵)',
