@@ -31,6 +31,7 @@ locally, commit the result, push.
 | step          | command (repo root)                      | needs                            | where                     |
 | ------------- | ---------------------------------------- | -------------------------------- | ------------------------- |
 | `episodes`    | `npm --prefix pipeline run episodes`     | corpus, website clone, RSS cache | **local only**            |
+| `archive`     | `npm --prefix pipeline run archive`      | network (archive.org)            | **local only**            |
 | `transcripts` | `npm --prefix pipeline run transcripts`  | corpus                           | **local only**            |
 | `enrich`      | `npm run pipeline:enrich -- --only <id>` | `ANTHROPIC_API_KEY`, network     | **local only**            |
 | `finalize`    | `npm run pipeline:finalize`              | nothing                          | local + **checked in CI** |
@@ -106,7 +107,16 @@ holds: if YouTube **does** supply chapters, they win and replace your edits on t
 `git diff content/episodes.json` before committing.
 
 Other fields in `episodes.json` are not preserved this way (except `audioUrl`, kept when
-the RSS cache has no entry). Titles feed the search index, so a title edit needs
+the RSS cache has no entry, and the archive.org fields below).
+
+**archive.org fallback.** `npm --prefix pipeline run archive` looks every episode up at
+`https://archive.org/metadata/shiryakhat-<youtubeId>` and writes `archiveId`,
+`archiveAudioUrl` and `archiveVideoUrl` into `episodes.json`; the app plays those when the
+RSS enclosure is missing or unreachable. It needs the network but not the corpus, never
+fails (an unreachable archive.org keeps the previous values, a missing item clears them),
+and `episodes` carries the fields over. For an item that does not follow the naming
+convention (a talk uploaded on its own), set `archiveId` in `SPECIALS` or
+`ARCHIVE_ID_OVERRIDES` (`pipeline/src/config.ts`). Titles feed the search index, so a title edit needs
 `finalize`.
 
 ```bash

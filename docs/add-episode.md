@@ -27,11 +27,12 @@ Pipeline steps (`pipeline/package.json`), run from repo root:
 
 | script | needs | writes |
 |---|---|---|
-| `npm run pipeline:build` → `episodes` → `transcripts` → `finalize` | corpus (read-only), website clone, RSS cache | episodes.json, transcripts/, glossary.json, search-index.json, index.generated.ts |
+| `npm run pipeline:build` → `episodes` → `archive` → `transcripts` → `finalize` | corpus (read-only), website clone, RSS cache, network (archive.org) | episodes.json, transcripts/, glossary.json, search-index.json, index.generated.ts |
 | `npm run pipeline:enrich` | `ANTHROPIC_API_KEY`, corpus transcripts | enrichment/<id>.json, enrichment/manifest.json |
 
-`build-episodes` and `finalize` are pure/offline. `fetch-sources` and `enrich` are the
-only network steps. `enrich` is the only step that costs money.
+`build-episodes` and `finalize` are pure/offline. `fetch-sources`, `archive` and `enrich`
+are the only network steps; `archive` (archive.org fallback URLs) never fails the build —
+see docs/updating-content.md. `enrich` is the only step that costs money.
 
 - **Corpus is read-only** — `/Volumes/Beezhan/data/podcasts` (override `SYK_CORPUS_DIR`).
   The pipeline never writes to it; a new episode is added by **placing new raw files there**.

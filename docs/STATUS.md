@@ -50,9 +50,11 @@ In production there is therefore:
 
 ## Roadmap (future versions)
 
-- **Archive.org links** — integrate each episode's archive.org item as an alternative
-  download / view link (a durable mirror alongside the primary audio). Surface it on the
-  episode screen (and in the share sheet) so listeners have a fallback source.
+- **Archive.org, remaining work** — audio already falls back to each episode's
+  archive.org item (`archiveAudioUrl`, resolved at build time; see `audioSourceFor` in
+  `src/player/controller.ts`). Still open: play `archiveVideoUrl` when YouTube is
+  unavailable (needs a native video surface), use archive.org for downloads, and surface
+  the item as an alternative download / view link on the episode screen and share sheet.
 - **MCP server** — expose the podcast corpus (episodes, transcripts, glossary, search) as an
   MCP server wrapping `content/`, so agents can query the show without the app.
 

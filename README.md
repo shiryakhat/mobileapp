@@ -110,6 +110,7 @@ cd pipeline && npm install
 | ------------- | ----------------------- | ------------------- | ------------------------------------------------------------------- |
 | Fetch sources | `npm run fetch-sources` | network             | `pipeline/.cache/website`, `pipeline/.cache/rss.xml`                |
 | Episodes      | `npm run episodes`      | corpus, cache       | `content/episodes.json`                                             |
+| Archive.org   | `npm run archive`       | network             | archive.org fallback URLs in `content/episodes.json`                |
 | Transcripts   | `npm run transcripts`   | corpus              | `content/transcripts/*.json`                                        |
 | Enrichment    | `npm run enrich`        | `ANTHROPIC_API_KEY` | `content/enrichment/*.json`                                         |
 | Finalize      | `npm run finalize`      | nothing             | glossary, corrected transcripts, search index, `index.generated.ts` |
