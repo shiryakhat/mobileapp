@@ -10,6 +10,7 @@ import {
   pauseDownload,
   resumeDownload,
   startDownload,
+  toBytes,
   useDownloads,
   type DownloadItem,
   type DownloadKind,
@@ -21,8 +22,13 @@ import { Icon, IconButton, ProgressRing, Sheet, Text, type IconName } from './ui
 const BOX = 40;
 
 /** Share of the file on disk, 0–1 (0 until the server has announced the size). */
-export const downloadFraction = (item: Pick<DownloadItem, 'bytesWritten' | 'totalBytes'>) =>
-  item.totalBytes > 0 ? Math.min(1, Math.max(0, item.bytesWritten / item.totalBytes)) : 0;
+export const downloadFraction = (item: Pick<DownloadItem, 'bytesWritten' | 'totalBytes'>) => {
+  // Coerced on the way in: this runs during render, where a stray BigInt (what
+  // the native progress event carries) would throw and take the screen down.
+  const written = toBytes(item.bytesWritten);
+  const total = toBytes(item.totalBytes);
+  return total > 0 ? Math.min(1, written / total) : 0;
+};
 
 /**
  * A download in flight: the round icon with its live progress as a ring around
