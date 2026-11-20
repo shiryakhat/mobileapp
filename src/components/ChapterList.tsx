@@ -2,6 +2,7 @@ import { Pressable, View } from 'react-native';
 import { chapterIndexAt, type Episode } from '@/content';
 import { useI18n } from '@/i18n';
 import { formatTime } from '@/lib/format';
+import { hasPersian } from '@/lib/text';
 import { usePlayback } from '@/player/store';
 import { radius, space, useTheme } from '@/theme';
 import { EmptyState, Text } from './ui';
@@ -54,11 +55,11 @@ export function ChapterList({ episode, onSeek }: Props) {
             >
               {formatTime(c.startSec, locale)}
             </Text>
-            {/* Chapter titles are authored in Persian. */}
+            {/* Chapter titles are authored in Persian; talks given in English keep English ones. */}
             <Text
               style={{ flex: 1 }}
               weight={isActive ? 'medium' : 'regular'}
-              dir="rtl"
+              dir={hasPersian(c.title) ? 'rtl' : 'ltr'}
               align="start"
             >
               {c.title}

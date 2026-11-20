@@ -1,0 +1,265 @@
+{
+  "id": "sp12",
+  "model": "claude-fable-5-2",
+  "generatedAt": "2026-11-19T23:43:38.488Z",
+  "summaryFa": "پنلی در DeFiConnect ۲۰۲۴ به گردانندگی شایان اسکندری و با حضور نمایندگان Flashbots، API3، UMA و Gyroscope دربارهٔ ارزش قابل استخراج از اوراکل (OEV)؛ یعنی سودی که از چیدن تراکنش‌ها پیرامون به‌روزرسانی قیمت اوراکل به دست می‌آید. دو راهکار Oval و شبکهٔ OEV با هم مقایسه می‌شوند و بحث به تقسیم این درآمد میان اوراکل، پروتکل و کاربر، خطر انگیزه‌های مخرب و تمرکز حراج‌ها می‌رسد. اهمیت موضوع در این است که به گفتهٔ اعضای پنل، فید قیمت به‌تنهایی برای اوراکل‌ها درآمدی ندارد و OEV می‌تواند مدل درآمدی آن‌ها را عوض کند.",
+  "summaryEn": "A DeFiConnect 2024 panel moderated by Shayan Eskandari, with speakers from Flashbots, API3, UMA and Gyroscope, on oracle extractable value (OEV): the profit available from ordering transactions around an oracle price update. The panel compares UMA's Oval and API3's OEV Network, then debates how the captured value should be split among oracles, protocols and users, and what perverse incentives and auction centralization it may bring. It matters because, as the panelists put it, price feeds alone earn oracles almost nothing, and OEV could change how they are funded.",
+  "quotes": [
+    {
+      "startSec": 121,
+      "fa": "ارزش قابل استخراج از اوراکل را این‌طور تعریف می‌کنم: MEVای که از به‌روزرسانی اوراکل به دست می‌آید.",
+      "en": "I would define oracle extractable value as MEV that is derived from an oracle update.",
+      "speaker": "تسا"
+    },
+    {
+      "startSec": 819,
+      "fa": "OEV صادقانه به یک معنا برای پروتکل‌ها خوب است؛ همان چیزی است که ویژگی‌های طراحی‌شده در پروتکل را عملاً اجرا می‌کند.",
+      "en": "Honest OEV is actually good for protocols in some sense. It is what enforces the properties that you built into your protocol.",
+      "speaker": "آریا"
+    },
+    {
+      "startSec": 1069,
+      "fa": "مشکل اصلی صنعت اوراکل، وقتی به فیدهای قیمت نگاه می‌کنید، این است که هیچ‌کس از ارائهٔ آن‌ها پولی درنمی‌آورد.",
+      "en": "The core problem with the oracle industry, when you look at price feeds, is that nobody makes money providing them.",
+      "speaker": "اوغور"
+    },
+    {
+      "startSec": 1461,
+      "fa": "همهٔ این زیرساخت وقتی گاه‌به‌گاه یک لیکوییدیشن پیش می‌آید خوب کار می‌کند. اما اگر قیمت اتر در یک روز ۵۰ درصد سقوط کند، این سیستم‌ها دوام می‌آورند؟ خواهیم دید.",
+      "en": "All of this infrastructure works pretty well when you have a liquidation here or there. But when ETH tanks by 50 percent in a day, are these systems going to hold up? We'll see.",
+      "speaker": "مت"
+    },
+    {
+      "startSec": 1805,
+      "fa": "حتی کتاب Flash Boys هم همین را می‌گوید: همه دنبال تراکنش سریع‌تر بودند و بعد فهمیدند باید سرعتشان را کم کنند تا سفارش‌ها دقیقاً هم‌زمان به همهٔ کارگزارها برسد.",
+      "en": "Even the book Flash Boys talks about how everyone was chasing faster transactions, and then they realized they actually needed to slow down so they hit all the brokers at exactly the same time.",
+      "speaker": "شایان"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Oracle Extractable Value (OEV)",
+      "termFa": "ارزش قابل استخراج از اوراکل (OEV)",
+      "definitionEn": "Profit that can be captured by ordering transactions around an oracle update, for example by being first to liquidate after a new price lands.",
+      "definitionFa": "سودی که از چیدن تراکنش‌ها پیرامون به‌روزرسانی اوراکل به دست می‌آید؛ مثلاً وقتی کسی بلافاصله بعد از قیمت جدید، اولین لیکوییدیشن را انجام می‌دهد."
+    },
+    {
+      "term": "MEV",
+      "termFa": "ارزش قابل استخراج ماینر / مف",
+      "definitionEn": "Value that whoever orders transactions in a block can extract by including, excluding or reordering them. OEV is one slice of it.",
+      "definitionFa": "ارزشی که تعیین‌کنندهٔ ترتیب تراکنش‌های بلاک با افزودن، حذف یا جابه‌جایی آن‌ها به دست می‌آورد. OEV بخشی از همین ارزش است."
+    },
+    {
+      "term": "Back-running",
+      "termFa": "بک‌رانینگ",
+      "definitionEn": "Placing your transaction immediately after a specific transaction, such as a price update, to profit from the change it causes.",
+      "definitionFa": "قرار دادن تراکنش خود درست بعد از یک تراکنش مشخص، مثل به‌روزرسانی قیمت، برای سود بردن از تغییری که ایجاد کرده است."
+    },
+    {
+      "term": "Front-Running",
+      "termFa": "جلو زدن (فرانت‌رانینگ)",
+      "definitionEn": "Getting your transaction in ahead of a known pending transaction to profit at its expense.",
+      "definitionFa": "جا دادن تراکنش خود پیش از تراکنشی که می‌دانید در راه است، برای سود بردن به زیان فرستندهٔ آن."
+    },
+    {
+      "term": "Order Flow Auction (OFA)",
+      "termFa": "حراج جریان سفارش (OFA)",
+      "definitionEn": "An auction where searchers bid for the right to back-run a transaction, with the proceeds returned to whoever originated it.",
+      "definitionFa": "حراجی که در آن سرچرها برای حق بک‌رانینگ یک تراکنش پیشنهاد می‌دهند و درآمدش به فرستندهٔ همان تراکنش برمی‌گردد."
+    },
+    {
+      "term": "Searcher",
+      "termFa": "سرچر",
+      "definitionEn": "A bot operator who scans for MEV opportunities such as liquidations and arbitrage and bids to have their transactions included first.",
+      "definitionFa": "گردانندهٔ رباتی که دنبال فرصت‌های MEV مثل لیکوییدیشن و آربیتراژ می‌گردد و برای زودتر ثبت شدن تراکنشش پیشنهاد قیمت می‌دهد."
+    },
+    {
+      "term": "Block Builder",
+      "termFa": "بلاک‌بیلدر",
+      "definitionEn": "A specialized party that assembles transactions and searcher bundles into the most profitable block for a validator to propose.",
+      "definitionFa": "بازیگری تخصصی که تراکنش‌ها و بسته‌های سرچرها را کنار هم می‌چیند و سودآورترین بلاک را برای پیشنهاد به اعتبارسنج می‌سازد."
+    },
+    {
+      "term": "Liquidation",
+      "termFa": "نقد شدن / لیکوییدیشن",
+      "definitionEn": "Forced sale of a borrower's collateral when its value drops too low. The liquidator earns a fee, which is the main source of OEV.",
+      "definitionFa": "فروش اجباری وثیقهٔ وام‌گیرنده وقتی ارزشش بیش از حد افت می‌کند. کارمزدی که لیکوییدیتور می‌گیرد منبع اصلی OEV است."
+    },
+    {
+      "term": "Price Feed",
+      "termFa": "فید قیمت",
+      "definitionEn": "A stream of asset prices that an oracle publishes on-chain for protocols such as lending markets to read.",
+      "definitionFa": "جریانی از قیمت دارایی‌ها که اوراکل روی زنجیره منتشر می‌کند تا پروتکل‌هایی مثل بازارهای وام‌دهی از آن استفاده کنند."
+    },
+    {
+      "term": "Optimistic Oracle",
+      "termFa": "اوراکل خوش‌بینانه",
+      "definitionEn": "An oracle that accepts a proposed answer as true unless someone disputes it within a time window. UMA's oracle works this way.",
+      "definitionFa": "اوراکلی که پاسخ پیشنهادی را درست فرض می‌کند، مگر اینکه کسی در مهلت معین به آن اعتراض کند. اوراکل UMA همین‌طور کار می‌کند."
+    },
+    {
+      "term": "Prediction Market",
+      "termFa": "بازار پیش‌بینی",
+      "definitionEn": "A market where people trade on the outcome of future events, such as an election, and an oracle settles the result.",
+      "definitionFa": "بازاری که در آن روی نتیجهٔ رویدادهای آینده، مثل انتخابات، معامله می‌شود و اوراکل نتیجهٔ نهایی را اعلام می‌کند."
+    },
+    {
+      "term": "Trusted Execution Environment",
+      "termFa": "محیط اجرای امن (TEE)",
+      "definitionEn": "A hardware-isolated enclave that runs code privately and can prove what it ran, used here to make auctions verifiably fair.",
+      "definitionFa": "بخشی ایزوله در سخت‌افزار که کد را محرمانه اجرا می‌کند و می‌تواند درستی اجرا را ثابت کند؛ اینجا برای اثبات سالم بودن حراج‌ها مطرح می‌شود."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "en",
+      "wrong": "Cheyenne",
+      "right": "Shayan"
+    },
+    {
+      "lang": "en",
+      "wrong": "Ugar",
+      "right": "Ugur"
+    },
+    {
+      "lang": "en",
+      "wrong": "API 3",
+      "right": "API3"
+    },
+    {
+      "lang": "en",
+      "wrong": "Juma",
+      "right": "UMA"
+    },
+    {
+      "lang": "en",
+      "wrong": "OMA wraps",
+      "right": "UMA wraps"
+    },
+    {
+      "lang": "en",
+      "wrong": "Jira Scopus",
+      "right": "Gyroscope"
+    },
+    {
+      "lang": "en",
+      "wrong": "Chatfire",
+      "right": "TradFi"
+    },
+    {
+      "lang": "en",
+      "wrong": "Chainlink Steko",
+      "right": "Chainlink DECO"
+    },
+    {
+      "lang": "en",
+      "wrong": "PIVS express relay",
+      "right": "Pyth Express Relay"
+    },
+    {
+      "lang": "en",
+      "wrong": "Pith",
+      "right": "Pyth"
+    },
+    {
+      "lang": "en",
+      "wrong": "OVO evolve",
+      "right": "Oval involve"
+    },
+    {
+      "lang": "en",
+      "wrong": "production market",
+      "right": "prediction market"
+    },
+    {
+      "lang": "en",
+      "wrong": "arbitrums time bill boost",
+      "right": "Arbitrum's Timeboost"
+    },
+    {
+      "lang": "en",
+      "wrong": "arbitrage block",
+      "right": "Arbitrum block"
+    },
+    {
+      "lang": "en",
+      "wrong": "aetherium",
+      "right": "Ethereum"
+    },
+    {
+      "lang": "fa",
+      "wrong": "شاین",
+      "right": "شایان"
+    },
+    {
+      "lang": "fa",
+      "wrong": "اوگار",
+      "right": "اوغور"
+    },
+    {
+      "lang": "fa",
+      "wrong": "API 3",
+      "right": "API3"
+    },
+    {
+      "lang": "fa",
+      "wrong": "Juma",
+      "right": "UMA"
+    },
+    {
+      "lang": "fa",
+      "wrong": "Jira Scopus",
+      "right": "Gyroscope"
+    },
+    {
+      "lang": "fa",
+      "wrong": "Chatfire",
+      "right": "TradFi"
+    },
+    {
+      "lang": "fa",
+      "wrong": "Chainlink Steko",
+      "right": "Chainlink DECO"
+    },
+    {
+      "lang": "fa",
+      "wrong": "production market",
+      "right": "prediction market"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بلاک آربیتراژ",
+      "right": "بلاک Arbitrum"
+    },
+    {
+      "lang": "en",
+      "wrong": "OUV network",
+      "right": "OEV Network"
+    },
+    {
+      "lang": "en",
+      "wrong": "OAV network",
+      "right": "OEV Network"
+    },
+    {
+      "lang": "en",
+      "wrong": "the OEB",
+      "right": "the OEV"
+    },
+    {
+      "lang": "en",
+      "wrong": "the OAB",
+      "right": "the OEV"
+    },
+    {
+      "lang": "en",
+      "wrong": "is OAB",
+      "right": "is OEV"
+    },
+    {
+      "lang": "fa",
+      "wrong": "شبکه OAV",
+      "right": "شبکه OEV"
+    }
+  ]
+}

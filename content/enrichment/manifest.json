@@ -327,6 +327,84 @@
       "model": "claude-sonnet-4-6",
       "inputTokens": 59397,
       "outputTokens": 3532
+    },
+    "sp02": {
+      "status": "done",
+      "at": "2026-11-19T23:43:38.469Z",
+      "promptVersion": 1,
+      "model": "claude-fable-5-2"
+    },
+    "sp03": {
+      "status": "done",
+      "at": "2026-11-19T23:43:38.470Z",
+      "promptVersion": 1,
+      "model": "claude-fable-5-2"
+    },
+    "sp04": {
+      "status": "done",
+      "at": "2026-11-19T23:43:38.472Z",
+      "promptVersion": 1,
+      "model": "claude-fable-5-2"
+    },
+    "sp05": {
+      "status": "done",
+      "at": "2026-11-19T23:43:38.475Z",
+      "promptVersion": 1,
+      "model": "claude-fable-5-2"
+    },
+    "sp06": {
+      "status": "done",
+      "at": "2026-11-19T23:43:38.476Z",
+      "promptVersion": 1,
+      "model": "claude-fable-5-2"
+    },
+    "sp07": {
+      "status": "done",
+      "at": "2026-11-19T23:43:38.477Z",
+      "promptVersion": 1,
+      "model": "claude-fable-5-2"
+    },
+    "sp08": {
+      "status": "done",
+      "at": "2026-11-19T23:43:38.479Z",
+      "promptVersion": 1,
+      "model": "claude-fable-5-2"
+    },
+    "sp09": {
+      "status": "done",
+      "at": "2026-11-19T23:43:38.482Z",
+      "promptVersion": 1,
+      "model": "claude-fable-5-2"
+    },
+    "sp10": {
+      "status": "done",
+      "at": "2026-11-19T23:43:38.485Z",
+      "promptVersion": 1,
+      "model": "claude-fable-5-2"
+    },
+    "sp11": {
+      "status": "done",
+      "at": "2026-11-19T23:43:38.486Z",
+      "promptVersion": 1,
+      "model": "claude-fable-5-2"
+    },
+    "sp12": {
+      "status": "done",
+      "at": "2026-11-19T23:43:38.488Z",
+      "promptVersion": 1,
+      "model": "claude-fable-5-2"
+    },
+    "sp13": {
+      "status": "done",
+      "at": "2026-11-19T23:43:38.489Z",
+      "promptVersion": 1,
+      "model": "claude-fable-5-2"
+    },
+    "sp14": {
+      "status": "done",
+      "at": "2026-11-19T23:43:38.489Z",
+      "promptVersion": 1,
+      "model": "claude-fable-5-2"
     }
   }
 }

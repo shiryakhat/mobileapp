@@ -6,7 +6,7 @@ import { normalize, tokenize } from '@/lib/text';
 
 describe('content bundle', () => {
   it('ships every episode with the fields the app relies on', () => {
-    expect(episodes.length).toBeGreaterThanOrEqual(41);
+    expect(episodes.length).toBeGreaterThanOrEqual(54);
     for (const e of episodes) {
       expect(e.id).toMatch(/^(s\d{2}e\d{2}|sp\d{2})$/);
       expect(e.youtubeId).toHaveLength(11);
@@ -18,6 +18,33 @@ describe('content bundle', () => {
     expect(new Set(episodes.map((e) => e.id)).size).toBe(episodes.length);
   });
 
+  it('ships the conference talks as YouTube-only specials with chapters and key points', () => {
+    const specials = episodes.filter((e) => e.season === 0);
+    expect(specials.map((e) => e.id)).toEqual(
+      Array.from({ length: 14 }, (_, i) => `sp${String(14 - i).padStart(2, '0')}`),
+    );
+    for (const e of specials) {
+      expect(e.code).toBe(e.id.toUpperCase());
+      expect(e.episode).toBe(Number(e.id.slice(2)));
+      // No RSS enclosure: the player picks the YouTube engine for these.
+      expect(e.audioUrl).toBeUndefined();
+      expect(e.titleFa && e.titleEn).toBeTruthy();
+      expect(e.chapters.length).toBeGreaterThan(2);
+      expect(e.chapters[0]!.startSec).toBe(0);
+      expect(e.chapters.at(-1)!.endSec).toBe(e.durationSec);
+      const cues = getTranscript(e.id)!.cues;
+      // Bilingual subtitles: both tracks are there for (nearly) every cue.
+      expect(cues.filter((c) => c[2] && c[3]).length).toBeGreaterThan(cues.length * 0.95);
+      const enrichment = getEnrichment(e.id)!;
+      expect(enrichment.quotes.length).toBeGreaterThanOrEqual(3);
+      expect(enrichment.glossary.length).toBeGreaterThanOrEqual(5);
+      for (const g of enrichment.glossary) {
+        expect(glossary.some((entry) => entry.episodes.includes(e.id) && entry.term)).toBe(true);
+        expect(g.term && g.termFa && g.definitionEn && g.definitionFa).toBeTruthy();
+      }
+    }
+  });
+
   it('groups seasons newest first with specials last', () => {
     expect(seasons[0]!.season).toBe(7);
     expect(seasons.at(-1)!.season).toBe(0);
@@ -26,7 +53,8 @@ describe('content bundle', () => {
   it('has a transcript with ordered cues for every episode', () => {
     for (const e of episodes) {
       const t = getTranscript(e.id);
-      expect(t?.cues.length).toBeGreaterThan(100);
+      // The shortest special is a five-minute lightning talk.
+      expect(t?.cues.length).toBeGreaterThan(50);
       const starts = t!.cues.map((c) => c[0]);
       expect([...starts].sort((a, b) => a - b)).toEqual(starts);
     }

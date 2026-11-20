@@ -1,0 +1,90 @@
+{
+  "id": "sp03",
+  "model": "claude-fable-5-2",
+  "generatedAt": "2026-11-19T23:43:38.470Z",
+  "summaryFa": "شایان اسکندری در یک ارائهٔ پنج‌دقیقه‌ای در Devcon 5 (اوساکا، اکتبر ۲۰۱۹) مقالهٔ «تقلب شفاف» را معرفی می‌کند که در کنفرانس Financial Cryptography 2019 منتشر شده است. او فرانت‌رانینگ را «سود بردن از اقدام بر پایهٔ دسترسی زودهنگام به اطلاعات» تعریف می‌کند و با چند مثال از اتریوم، حمله‌ها را در سه دستهٔ جابه‌جایی، درج و سرکوب جا می‌دهد. با این رده‌بندی می‌شود هر حملهٔ فرانت‌رانینگ را با دو سه کلمه توصیف کرد.",
+  "summaryEn": "In a five-minute lightning talk at Devcon 5 (Osaka, October 2019), Shayan Eskandari presents his paper \"Transparent Dishonesty\", published at Financial Cryptography 2019. He defines front-running as benefiting from acting on early access to information and uses Ethereum examples to sort attacks into three types: displacement, insertion and suppression. The taxonomy gives researchers and auditors a shared vocabulary for describing any front-running attack in two or three words.",
+  "quotes": [
+    {
+      "startSec": 38,
+      "fa": "فرانت‌رانینگ چیست؟ بیش از سه دهه است که در بازارهای مالی وجود دارد و هنوز تعریف روشنی از آن نداریم.",
+      "en": "What is front-running? It has been around in financial markets for more than three decades, and there is still no clear definition of it.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 87,
+      "fa": "این هم مقالهٔ خیلی خوب Flash Boys 2.0 از Phil Daian است. البته مقالهٔ من آن را فرانت‌ران کرد، پس من اولم.",
+      "en": "This is a great paper, Flash Boys 2.0 by Phil Daian. My paper front-ran it, though, so I'm first.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 108,
+      "fa": "برای اینکه مبنای مشترکی داشته باشیم، فرانت‌رانینگ را این‌طور تعریف می‌کنم: سود بردن از اقدام بر پایهٔ دسترسی زودهنگام به اطلاعات.",
+      "en": "To have a common base, I define front-running as benefiting from acting on early access to information.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 258,
+      "fa": "با این رده‌بندی می‌توانید هر نوع حمله‌ای را با دو سه کلمه توضیح بدهید، به‌جای اینکه یک پاراگراف کامل درباره‌اش بنویسید.",
+      "en": "You can explain any kind of attack with two or three words, instead of writing a whole paragraph or more about it.",
+      "speaker": "شایان"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Front-Running",
+      "termFa": "جلو زدن (فرانت‌رانینگ)",
+      "definitionEn": "Profiting by acting on early knowledge of someone else's pending transaction, usually by getting your own transaction processed ahead of it.",
+      "definitionFa": "سود بردن از خبر داشتن زودهنگام از تراکنش در انتظارِ دیگران؛ معمولاً با جلو انداختن تراکنش خود از تراکنش آن‌ها."
+    },
+    {
+      "term": "Mempool",
+      "termFa": "ممپول",
+      "definitionEn": "The pool of broadcast but not yet confirmed transactions that every node can see before they are included in a block.",
+      "definitionFa": "صف تراکنش‌هایی که در شبکه پخش شده‌اند ولی هنوز در بلاک نرفته‌اند و همهٔ نودها می‌توانند آن‌ها را ببینند."
+    },
+    {
+      "term": "Displacement Attack",
+      "termFa": "حملهٔ جابه‌جایی",
+      "definitionEn": "A front-running attack where the attacker takes the victim's place and does not care whether the victim's transaction runs afterwards.",
+      "definitionFa": "نوعی فرانت‌رانینگ که مهاجم جای قربانی را می‌گیرد و برایش مهم نیست تراکنش قربانی بعداً اجرا شود یا نه."
+    },
+    {
+      "term": "Insertion Attack",
+      "termFa": "حملهٔ درج",
+      "definitionEn": "A front-running attack where the attacker places a transaction right before the victim's and needs the victim's transaction to execute, as in sandwiching a trade.",
+      "definitionFa": "نوعی فرانت‌رانینگ که مهاجم تراکنشش را درست قبل از تراکنش قربانی جا می‌دهد و به اجرای آن نیاز دارد؛ مثل ساندویچ کردن یک معامله."
+    },
+    {
+      "term": "Suppression Attack",
+      "termFa": "حملهٔ سرکوب",
+      "definitionEn": "A front-running attack that keeps other users' transactions out of blocks for a while, for example by filling blocks; also called block stuffing.",
+      "definitionFa": "نوعی فرانت‌رانینگ که مهاجم مدتی جلوی ثبت تراکنش دیگران را می‌گیرد، مثلاً با پر کردن بلاک‌ها؛ به آن block stuffing هم می‌گویند."
+    },
+    {
+      "term": "DEX",
+      "termFa": "صرافی غیرمتمرکز (دکس)",
+      "definitionEn": "An exchange run by smart contracts where users trade directly from their own wallets, with orders visible on-chain.",
+      "definitionFa": "صرافی‌ای که با قرارداد هوشمند کار می‌کند و کاربران مستقیم از کیف پول خودشان معامله می‌کنند؛ سفارش‌ها هم روی زنجیره دیده می‌شود."
+    },
+    {
+      "term": "ENS",
+      "termFa": "سرویس نام اتریوم (ENS)",
+      "definitionEn": "Ethereum Name Service, a system for registering readable names such as alice.eth that point to Ethereum addresses.",
+      "definitionFa": "سرویسی روی اتریوم برای ثبت نام‌های خوانا مثل alice.eth که به آدرس‌های اتریوم اشاره می‌کنند."
+    },
+    {
+      "term": "Fomo3D",
+      "termFa": "Fomo3D",
+      "definitionEn": "A 2018 lottery-style game on Ethereum whose jackpot went to the last ticket buyer before a timer ran out.",
+      "definitionFa": "یک بازی لاتاری‌مانند روی اتریوم در سال ۲۰۱۸ که جایزه‌اش به آخرین خریدار بلیت پیش از تمام شدن زمان می‌رسید."
+    },
+    {
+      "term": "LibSubmarine",
+      "termFa": "LibSubmarine",
+      "definitionEn": "A smart contract library that hides a transaction's purpose until it is later revealed, so others cannot front-run it.",
+      "definitionFa": "کتابخانه‌ای برای قراردادهای هوشمند که هدف تراکنش را تا زمان افشای بعدی پنهان نگه می‌دارد تا کسی نتواند آن را فرانت‌ران کند."
+    }
+  ],
+  "corrections": []
+}

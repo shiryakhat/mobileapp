@@ -1,0 +1,139 @@
+{
+  "id": "sp11",
+  "model": "claude-fable-5-2",
+  "generatedAt": "2026-11-19T23:43:38.486Z",
+  "summaryFa": "شایان اسکندری در رویداد Autonomous Ecologies #1 (۴ مارس ۲۰۲۳، دنور) ماجرای جامعهٔ فارسی‌زبان بلاکچین را روایت می‌کند: از کوین‌ایران و پادکست شیر یا خط تا کریپتوزن و دورهٔ فارسی سالیدیتی آن. بعد نشان می‌دهد تحریم‌ها چطور پای همین کارهای آموزشی و داوطلبانه را هم گرفت: کانسنسیس آکادمی ثبت‌نام ۴۳ دانشجو را معلق کرد، گرنت گیت‌کوین یک روز بیشتر دوام نیاورد و POAP قدردانی هم رد شد. صحبت با مجوز عمومی D-2 اوفک و درخواست‌های مشخص از این پروژه‌ها تمام می‌شود.",
+  "summaryEn": "At Autonomous Ecologies #1 (March 4, 2023, Denver), Shayan Eskandari tells the story of the Farsi-speaking blockchain community: CoinIran, the Shir ya Khat podcast, and CryptoZan with its Farsi Solidity course. He then shows how sanctions hit even this volunteer, educational work: ConsenSys Academy suspended 43 students, a Gitcoin grant lasted one day, and a POAP of gratitude was denied. He ends with OFAC's General License D-2 and concrete asks to those projects.",
+  "quotes": [
+    {
+      "startSec": 48,
+      "fa": "سال ۲۰۱۲ جواب زیادی نگرفتیم، ولی کاش همان موقع بیت‌کوین بیشتری خریده بودیم.",
+      "en": "We didn't get that many responses in 2012, but I wish we had bought more bitcoins back then.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 399,
+      "fa": "ایرانی‌ها در این چند دهه یاد گرفته‌اند که هیچ‌چیز آسان به دست نمی‌آید و حتی برای حق اولیهٔ دسترسی به اطلاعات هم باید جنگید.",
+      "en": "Iranians in the last few decades have been trained that nothing comes easy, and you have to fight even for your basic right to information.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 456,
+      "fa": "گفتند پول را فراموش کنید؛ بیایید همه‌چیز را متن‌باز کنیم.",
+      "en": "They said, forget about money. Let's just open source everything.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 577,
+      "fa": "چند تا دائو سراغ دارید که انجمنی با بیش از ۳٬۵۰۰ کاربر داشته باشد؟",
+      "en": "How many DAOs out there have a forum with more than 3,500 users?",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 744,
+      "fa": "تا اسم ایران می‌آید، طرف می‌گوید با من حرف نزن.",
+      "en": "As soon as they say Iran, people are just: don't talk to me.",
+      "speaker": "شایان"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Sanctions",
+      "termFa": "تحریم",
+      "definitionEn": "Legal restrictions, here mainly from the US, that bar companies from serving certain countries and push many services to block Iranian users.",
+      "definitionFa": "محدودیت‌های قانونی، اینجا بیشتر از سوی آمریکا، که شرکت‌ها را از خدمت‌رسانی به بعضی کشورها منع می‌کند و باعث مسدود شدن کاربران ایرانی می‌شود."
+    },
+    {
+      "term": "OFAC",
+      "termFa": "اوفک",
+      "definitionEn": "The US Treasury office that administers and enforces sanctions, and issues licenses that exempt certain activities.",
+      "definitionFa": "دفتری در وزارت خزانه‌داری آمریکا که تحریم‌ها را اجرا می‌کند و برای بعضی فعالیت‌ها مجوز معافیت می‌دهد."
+    },
+    {
+      "term": "General License D-2",
+      "termFa": "مجوز عمومی D-2",
+      "definitionEn": "A September 2022 OFAC license letting US entities offer Iranians services for secure communication, free internet access and education.",
+      "definitionFa": "مجوزی که اوفک در سپتامبر ۲۰۲۲ داد تا نهادهای آمریکایی بتوانند خدمات ارتباط امن، دسترسی آزاد به اینترنت و آموزش به ایرانی‌ها بدهند."
+    },
+    {
+      "term": "POAP",
+      "termFa": "پواپ",
+      "definitionEn": "A free NFT badge given out as proof that someone attended an event or contributed to something.",
+      "definitionFa": "نشان NFT رایگانی که به‌عنوان گواه حضور در یک رویداد یا مشارکت در یک کار به افراد داده می‌شود."
+    },
+    {
+      "term": "Gitcoin",
+      "termFa": "گیت‌کوین",
+      "definitionEn": "A platform for crowdfunding open-source and public-good projects in crypto through community grant rounds.",
+      "definitionFa": "پلتفرمی برای تأمین مالی جمعی پروژه‌های متن‌باز و عام‌المنفعهٔ دنیای کریپتو از راه دورهای گرنت."
+    },
+    {
+      "term": "Giveth",
+      "termFa": "گیوت",
+      "definitionEn": "A crypto donation platform for public-good projects; it hosted CryptoZan's grants after Gitcoin suspended them.",
+      "definitionFa": "پلتفرم کمک مالی کریپتویی برای پروژه‌های عام‌المنفعه که پس از تعلیق در گیت‌کوین، میزبان گرنت‌های کریپتوزن شد."
+    },
+    {
+      "term": "Geo-blocking",
+      "termFa": "مسدودسازی جغرافیایی (ژئوبلاک)",
+      "definitionEn": "Cutting off users by the country of their IP address, as MetaMask and OpenSea did with Iranian users.",
+      "definitionFa": "بستن دسترسی کاربران بر اساس کشورِ آدرس IP آن‌ها؛ کاری که متامسک و OpenSea با کاربران ایرانی کردند."
+    },
+    {
+      "term": "ZK Badge",
+      "termFa": "نشان دانش‌صفر",
+      "definitionEn": "A badge, like those from Sismo, that proves you belong to a group using zero-knowledge proofs without revealing your address.",
+      "definitionFa": "نشانی مثل نشان‌های Sismo که با اثبات دانش صفر، عضویت شما در یک گروه را بدون فاش کردن آدرستان ثابت می‌کند."
+    },
+    {
+      "term": "Public Goods",
+      "termFa": "کالای عمومی",
+      "definitionEn": "Things that benefit everyone and that no one can be excluded from, such as open-source code and free educational content.",
+      "definitionFa": "چیزهایی که به سود همه است و نمی‌توان کسی را از آن محروم کرد، مثل کد متن‌باز و محتوای آموزشی رایگان."
+    },
+    {
+      "term": "DAO",
+      "termFa": "سازمان خودگردان غیرمتمرکز",
+      "definitionEn": "An organization whose rules and treasury are run by smart contracts and member votes rather than a central management.",
+      "definitionFa": "سازمانی که قواعد و خزانه‌اش را به‌جای مدیریت مرکزی، قراردادهای هوشمند و رأی اعضا اداره می‌کنند."
+    },
+    {
+      "term": "Flash Loan",
+      "termFa": "وام لحظه‌ای / فلش لون",
+      "definitionEn": "A DeFi loan with no collateral that must be borrowed and repaid within a single transaction.",
+      "definitionFa": "وامی بدون وثیقه در دیفای که باید در همان یک تراکنش گرفته و پس داده شود."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "en",
+      "wrong": "Shiri Akhat",
+      "right": "Shir ya Khat"
+    },
+    {
+      "lang": "en",
+      "wrong": "Consensus",
+      "right": "ConsenSys"
+    },
+    {
+      "lang": "fa",
+      "wrong": "Consensus",
+      "right": "ConsenSys"
+    },
+    {
+      "lang": "en",
+      "wrong": "Tessie Mehrane",
+      "right": "Thessy Mehrain"
+    },
+    {
+      "lang": "fa",
+      "wrong": "Tessie Mehrane",
+      "right": "Thessy Mehrain"
+    },
+    {
+      "lang": "en",
+      "wrong": "general license D2",
+      "right": "General License D-2"
+    }
+  ]
+}

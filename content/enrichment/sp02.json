@@ -1,0 +1,255 @@
+{
+  "id": "sp02",
+  "model": "claude-fable-5-2",
+  "generatedAt": "2026-11-19T23:43:38.469Z",
+  "summaryFa": "شایان اسکندری در سمینار ۲۹ آذر ۱۳۹۴ دانشگاه شهید بهشتی، بیت‌کوین را از پایه توضیح می‌دهد: از کلید عمومی و خصوصی و آدرس تا تراکنش، استخراج، ساختار بلاکچین و عرضهٔ محدود ۲۱ میلیونی. در ادامه به تاریخچهٔ قیمت و کاربردهای بلاکچین فراتر از پول می‌رسد و به پرسش‌های دانشجویان دربارهٔ اثبات کار و حملهٔ ۵۱ درصدی جواب می‌دهد. این سخنرانی برای کسی که می‌خواهد سازوکار بیت‌کوین را به فارسی و بدون پیش‌نیاز بفهمد نقطهٔ شروع خوبی است.",
+  "summaryEn": "At a seminar at Shahid Beheshti University in Tehran on 20 December 2015, Shayan Eskandari explains Bitcoin from the ground up: keys and addresses, transactions, mining, the structure of the blockchain, and the fixed 21 million supply. He then covers Bitcoin's price history and uses of blockchain beyond money, and answers student questions on Proof of Work and the 51% attack. It is a prerequisite-free starting point, in Persian, for understanding how Bitcoin actually works.",
+  "quotes": [
+    {
+      "startSec": 117,
+      "fa": "کلاً بیت‌کوین کار جدیدی در نوع خودش اون‌قدر نکرده؛ بیشتر الگوریتم‌های رمزنگاری دههٔ ۷۰ و ۸۰ و ۹۰ رو با هم تلفیق کرده و یه پرش کرده.",
+      "en": "Bitcoin didn't really do much that was new in itself; it mostly combined the cryptographic building blocks of the '70s, '80s and '90s and made a leap.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 556,
+      "fa": "همون کلید عمومی در واقع میشه آدرس بیت‌کوین و کلید خصوصی میشه قابلیت خرج کردن از اون آدرس.",
+      "en": "The public key is in effect the Bitcoin address, and the private key is the ability to spend from that address.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 1253,
+      "fa": "خوبیش اینه که تا به اینترنت دسترسی دارین، به این ارز دسترسی دارین و هیچ‌کس نمی‌تونه محدودش کنه.",
+      "en": "The good thing is that as long as you have internet access, you have access to this currency, and no one can restrict it.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 1856,
+      "fa": "از تکنولوژی بلاکچین به‌جز ارز خیلی کار دیگه میشه کرد؛ هر گونه سیستم غیرمتمرکزی رو میشه باهاش پیاده‌سازی کرد.",
+      "en": "With blockchain technology you can do much more than currency; any kind of decentralized system can be built on it.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 2706,
+      "fa": "هرچی هم سریع‌تر بشه، آخرش خود الگوریتم تنظیم می‌کنه و مسئله رو سخت‌تر می‌کنه.",
+      "en": "However fast the hardware gets, in the end the algorithm adjusts itself and makes the problem harder.",
+      "speaker": "شایان"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Double-Spend Attack",
+      "termFa": "حمله دابل‌اسپند",
+      "definitionEn": "Spending the same digital coin twice by copying it; the core problem of decentralized money that Bitcoin solved.",
+      "definitionFa": "خرج کردن دوبارهٔ یک سکهٔ دیجیتال با کپی کردن آن؛ مشکل اصلی پول غیرمتمرکز که بیت‌کوین حلش کرد."
+    },
+    {
+      "term": "Proof of Work",
+      "termFa": "اثبات کار",
+      "definitionEn": "A mechanism where miners must spend real computing power to find a valid block, which makes spam and cheating expensive.",
+      "definitionFa": "سازوکاری که ماینر را وادار می‌کند برای ساختن بلاک معتبر توان محاسباتی واقعی خرج کند تا اسپم و تقلب گران تمام شود."
+    },
+    {
+      "term": "Public Key",
+      "termFa": "کلید عمومی",
+      "definitionEn": "The shareable half of a key pair; a Bitcoin address is derived from it and others send coins to it.",
+      "definitionFa": "نیمهٔ قابل‌انتشار یک جفت کلید؛ آدرس بیت‌کوین از آن ساخته می‌شود و دیگران به آن پول می‌فرستند."
+    },
+    {
+      "term": "Private Key",
+      "termFa": "کلید خصوصی",
+      "definitionEn": "The secret number that signs transactions; whoever holds it can spend the coins at that address.",
+      "definitionFa": "عدد محرمانه‌ای که تراکنش را امضا می‌کند؛ هر کس آن را داشته باشد می‌تواند موجودی آن آدرس را خرج کند."
+    },
+    {
+      "term": "Nonce",
+      "termFa": "نانس",
+      "definitionEn": "A number miners keep changing until the block's hash starts with the required number of zeros.",
+      "definitionFa": "عددی که ماینر آن‌قدر عوضش می‌کند تا هش بلاک با تعداد صفر لازم شروع شود."
+    },
+    {
+      "term": "Merkle Tree",
+      "termFa": "درخت مرکل",
+      "definitionEn": "A tree of hashes that condenses all of a block's transactions into one root hash stored in the block.",
+      "definitionFa": "درختی از هش‌ها که همهٔ تراکنش‌های یک بلاک را در یک هش ریشه خلاصه می‌کند و آن ریشه در بلاک ثبت می‌شود."
+    },
+    {
+      "term": "Full Node",
+      "termFa": "فول نود",
+      "definitionEn": "A computer that keeps a complete copy of the blockchain and independently verifies every block and transaction.",
+      "definitionFa": "کامپیوتری که نسخهٔ کامل بلاکچین را نگه می‌دارد و هر بلاک و تراکنش را خودش تأیید می‌کند."
+    },
+    {
+      "term": "Difficulty Adjustment",
+      "termFa": "تنظیم سختی",
+      "definitionEn": "Bitcoin's automatic retuning of the mining puzzle so that blocks keep arriving about every ten minutes.",
+      "definitionFa": "تنظیم خودکار سختی مسئلهٔ استخراج در بیت‌کوین تا فاصلهٔ بلاک‌ها حدود ده دقیقه بماند."
+    },
+    {
+      "term": "Halving",
+      "termFa": "هاوینگ (نصف شدن پاداش)",
+      "definitionEn": "The halving of the miners' block reward roughly every four years, which caps Bitcoin's supply at 21 million.",
+      "definitionFa": "نصف شدن پاداش بلاک ماینرها تقریباً هر چهار سال یک بار که عرضهٔ بیت‌کوین را به ۲۱ میلیون محدود می‌کند."
+    },
+    {
+      "term": "51% Attack",
+      "termFa": "حمله ۵۱ درصدی",
+      "definitionEn": "An attack where one party controls most of the network's mining power and can decide which transactions get confirmed.",
+      "definitionFa": "حمله‌ای که در آن یک طرف بیشتر توان استخراج شبکه را در دست دارد و تعیین می‌کند کدام تراکنش‌ها تأیید شوند."
+    },
+    {
+      "term": "Mining Pool",
+      "termFa": "استخر ماینینگ",
+      "definitionEn": "A group of miners who combine their computing power and share the block rewards.",
+      "definitionFa": "گروهی از ماینرها که توان محاسباتی‌شان را روی هم می‌گذارند و پاداش بلاک را بین خود تقسیم می‌کنند."
+    },
+    {
+      "term": "ASIC",
+      "termFa": "آسیک",
+      "definitionEn": "A chip built to run only one mining algorithm, far faster and more efficient than CPUs or graphics cards.",
+      "definitionFa": "تراشه‌ای که فقط برای اجرای یک الگوریتم استخراج ساخته شده و از CPU و کارت گرافیک بسیار سریع‌تر و کم‌مصرف‌تر است."
+    }
+  ],
+  "corrections": [
+    {
+      "lang": "fa",
+      "wrong": "بیتکوین",
+      "right": "بیت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتوین",
+      "right": "بیت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکن",
+      "right": "بیت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکاین",
+      "right": "بیت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتوانی",
+      "right": "بیت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکروم",
+      "right": "بیت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکورن",
+      "right": "بیت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکران",
+      "right": "بیت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکرین",
+      "right": "بیت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکورد",
+      "right": "بیت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بیتکان",
+      "right": "بیت‌کوین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بلکچین",
+      "right": "بلاکچین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بلاتچین",
+      "right": "بلاکچین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "بلاتشین",
+      "right": "بلاکچین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دلکچین",
+      "right": "بلاکچین"
+    },
+    {
+      "lang": "fa",
+      "wrong": "مینر",
+      "right": "ماینر"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ترزکشن",
+      "right": "ترنزکشن"
+    },
+    {
+      "lang": "fa",
+      "wrong": "تنزکشن",
+      "right": "ترنزکشن"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ناکرماتو",
+      "right": "ناکاموتو"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ناکاماتا",
+      "right": "ناکاموتو"
+    },
+    {
+      "lang": "fa",
+      "wrong": "دوید شام",
+      "right": "دیوید چام"
+    },
+    {
+      "lang": "fa",
+      "wrong": "میکل",
+      "right": "مرکل"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایلند",
+      "right": "ایسلند"
+    },
+    {
+      "lang": "fa",
+      "wrong": "زینبابا",
+      "right": "زیمبابوه"
+    },
+    {
+      "lang": "fa",
+      "wrong": "ایتریوم",
+      "right": "اتریوم"
+    },
+    {
+      "lang": "fa",
+      "wrong": "HTTP Pro2",
+      "right": "HTTP 402"
+    },
+    {
+      "lang": "en",
+      "wrong": "HTTP Pro2",
+      "right": "HTTP 402"
+    },
+    {
+      "lang": "en",
+      "wrong": "bitcoinwisdomdata.com",
+      "right": "bitcoinwisdom.com"
+    }
+  ]
+}

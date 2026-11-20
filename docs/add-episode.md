@@ -65,7 +65,13 @@ Required files for one stem (`<stem>` = filename without extension):
 
 If the title has **no `(SxxEyy)` code**, add the YouTube id → code mapping to
 `EPISODE_CODE_OVERRIDES` in `pipeline/src/config.ts`. If it is **not a regular episode**
-(interview, guest spot), add it to `SPECIALS` instead (becomes season 0 / `spNN`).
+(interview, guest spot, conference talk), add it to `SPECIALS` instead (becomes season 0 /
+`spNN`). A special that is not a podcast upload can live outside the corpus: put the same
+files (`<stem>.info.json`, `.fa.srt`, `.en.srt`) in the talks directory
+(`/Volumes/Beezhan/data/talks`, override `SYK_TALKS_DIR`); only ids listed in `SPECIALS`
+are read from there. Specials have no RSS audio, so they play from YouTube. To build the
+transcript of just the new one without rewriting the others from the corpus:
+`npm --prefix pipeline run transcripts -- --only sp15`.
 
 ## 2. Transcribe (Whisper, bilingual)
 

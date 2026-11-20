@@ -1,0 +1,114 @@
+{
+  "id": "sp14",
+  "model": "claude-fable-5-2",
+  "generatedAt": "2026-11-19T23:43:38.489Z",
+  "summaryFa": "شایان اسکندری در این سخنرانی سال ۲۰۲۶ از قطعی‌های اینترنت ایران می‌گوید، از جمله ۸۸ روز خاموشی همان سال، و توضیح می‌دهد چرا وب۳ با نادیده گرفتن لایهٔ دسترسی، وعدهٔ ارتباطات مقاوم در برابر سانسور را فراموش کرده است. او ماجرای ساختن MoaV («مادر همهٔ VPNها») و Nedagram را تعریف می‌کند و روش‌هایی را مرور می‌کند که مردم برای دور زدن فیلترینگ پیدا کردند. پیشنهادش برای قدم بعدی، شبکه‌های مش موقت و پرداخت آفلاین با استیبل‌کوین است، چون به گفتهٔ او قطعی بعدی حتمی است.",
+  "summaryEn": "In this 2026 talk, Shayan Eskandari recounts Iran's internet blackouts, including that year's 88-day shutdown, and argues that Web3 forgot its promise of censorship-resistant communication by ignoring the access layer underneath it. He tells how frustration led him to build MoaV (the \"Mother of All VPNs\") and Nedagram, and surveys the circumvention tricks people found under censorship. He closes by calling on builders to work on pop-up mesh networks and offline stablecoin payments before the next blackout, which he considers inevitable.",
+  "quotes": [
+    {
+      "startSec": 135,
+      "fa": "قطعی بعدی یک «احتمال» نیست؛ حتمی است.",
+      "en": "The next blackout isn't a risk, it's inevitable.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 404,
+      "fa": "در لیسبون نشسته بودم و فکر می‌کردم: نکند یک دهه از عمر خودم و هزاران نفر دیگر را هدر داده‌ام، با حرف زدن از چیزی که درست وقتی لازمش دارند کار نمی‌کند؟",
+      "en": "I was sitting in Lisbon thinking: did I waste a decade of my life, and of thousands of people's lives, talking about something that won't work when they need it?",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 704,
+      "fa": "کاری که MoaV می‌کند این است: نگشتم بهترین پروتکل را انتخاب کنم؛ همه را انتخاب کردم.",
+      "en": "What MoaV does is this: I didn't choose the most perfect protocol. I chose all of them.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 1055,
+      "fa": "تراکنشِ امضاشده فقط داده است. می‌شود هر جایی امضایش کرد، از هر کانالی ردش کرد و بعد منتشرش کرد.",
+      "en": "A signed transaction is just data. We can sign it anywhere, carry it over any channel and then broadcast it.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 1193,
+      "fa": "حرفم با شما این است: برای مسئله‌های سخت و واقعی بسازید؛ لوله‌کشیِ قطعی بعدی را بسازید، نه یک اپ دیفای دیگر.",
+      "en": "My point to you is: build for the hard problems, the real problems. Build the plumbing for the next blackout, not just another DeFi app.",
+      "speaker": "شایان"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "MoaV",
+      "termFa": "MoaV (مادر همهٔ VPNها)",
+      "definitionEn": "Shayan's open-source \"Mother of All VPNs\": a server bundle that runs many circumvention protocols at once and also relays for Tor and Psiphon.",
+      "definitionFa": "پروژهٔ متن‌باز شایان: بسته‌ای برای سرور که چندین پروتکل دور زدن فیلترینگ را هم‌زمان اجرا می‌کند و به شبکه‌های Tor و Psiphon هم کمک می‌رساند."
+    },
+    {
+      "term": "VPN",
+      "termFa": "وی‌پی‌ان (VPN)",
+      "definitionEn": "A tool that sends your internet traffic through an encrypted tunnel to another server, used here to get past state filtering.",
+      "definitionFa": "ابزاری که ترافیک اینترنت را از یک تونل رمزشده به سروری دیگر می‌فرستد؛ در این سخنرانی برای عبور از فیلترینگ حکومتی."
+    },
+    {
+      "term": "Deep Packet Inspection (DPI)",
+      "termFa": "بازرسی عمیق بسته‌ها (DPI)",
+      "definitionEn": "Network equipment that examines the content and shape of traffic to recognise and block specific protocols such as VPNs.",
+      "definitionFa": "تجهیزاتی در شبکه که محتوا و الگوی ترافیک را بررسی می‌کنند تا پروتکل‌های خاصی مثل VPN را بشناسند و ببندند."
+    },
+    {
+      "term": "SNI Spoofing",
+      "termFa": "جعل SNI",
+      "definitionEn": "Making encrypted traffic claim it is headed to an allowed site, so the censor's filter lets it through.",
+      "definitionFa": "ترفندی که در آن ترافیک رمزشده مقصدش را یک سایت مجاز اعلام می‌کند تا فیلتر سانسورچی اجازهٔ عبور بدهد."
+    },
+    {
+      "term": "DNS Tunneling",
+      "termFa": "تونل DNS",
+      "definitionEn": "Hiding data inside DNS queries and replies, which often keep working when other traffic is blocked.",
+      "definitionFa": "پنهان کردن داده داخل پرس‌وجوها و پاسخ‌های DNS، که اغلب حتی وقتی بقیهٔ ترافیک بسته است کار می‌کنند."
+    },
+    {
+      "term": "Tor",
+      "termFa": "تور (Tor)",
+      "definitionEn": "A volunteer-run network that bounces traffic through several relays to hide who is talking to whom; Snowflake proxies help censored users reach it.",
+      "definitionFa": "شبکه‌ای داوطلبانه که ترافیک را از چند رله عبور می‌دهد تا معلوم نشود چه کسی با کجا در ارتباط است. پروکسی‌های Snowflake راه ورود آن‌اند."
+    },
+    {
+      "term": "Cypherpunk",
+      "termFa": "سایفرپانک",
+      "definitionEn": "A movement of technologists who build cryptographic tools to protect privacy and free communication; Bitcoin and Tor grew out of it.",
+      "definitionFa": "جنبشی از اهل فن که با ابزارهای رمزنگاری از حریم خصوصی و ارتباط آزاد دفاع می‌کنند؛ بیت‌کوین و Tor از دل آن بیرون آمدند."
+    },
+    {
+      "term": "Enshittification",
+      "termFa": "enshittification (گندیدن پلتفرم)",
+      "definitionEn": "Cory Doctorow's term for how platforms first serve users, then exploit them for business customers, then squeeze both for shareholders.",
+      "definitionFa": "اصطلاح Cory Doctorow برای مسیر پلتفرم‌ها: اول به کاربر خدمت می‌کنند، بعد او را خرج مشتری تجاری می‌کنند و آخر هر دو را خرج سهام‌دار."
+    },
+    {
+      "term": "Mesh Network",
+      "termFa": "شبکهٔ مش",
+      "definitionEn": "A network where nearby devices connect directly and pass messages along for each other, without needing an internet provider.",
+      "definitionFa": "شبکه‌ای که در آن دستگاه‌های نزدیک مستقیم به هم وصل می‌شوند و پیام یکدیگر را دست‌به‌دست می‌کنند، بدون نیاز به ارائه‌دهندهٔ اینترنت."
+    },
+    {
+      "term": "Stablecoin",
+      "termFa": "کوین پایدار / استیبل‌کوین",
+      "definitionEn": "A crypto token designed to hold a steady value, usually one US dollar, such as USDT.",
+      "definitionFa": "توکنی که برای حفظ ارزش ثابت طراحی شده است، معمولاً برابر با یک دلار آمریکا؛ مثل USDT."
+    },
+    {
+      "term": "Session Key",
+      "termFa": "کلید نشست (session key)",
+      "definitionEn": "A temporary, limited key that a smart account authorises to sign on its behalf, for example only small payments up to a cap.",
+      "definitionFa": "کلیدی موقت و محدود که اسمارت اکانت به آن اجازهٔ امضا می‌دهد؛ مثلاً فقط برای پرداخت‌های کوچک تا یک سقف مشخص."
+    },
+    {
+      "term": "Intent",
+      "termFa": "اینتنت (intent)",
+      "definitionEn": "A signed message stating the outcome a user wants, which someone else can later turn into an on-chain transaction.",
+      "definitionFa": "پیامی امضاشده که نتیجهٔ دلخواه کاربر را بیان می‌کند و فرد دیگری می‌تواند بعداً آن را به تراکنش روی زنجیره تبدیل کند."
+    }
+  ],
+  "corrections": []
+}

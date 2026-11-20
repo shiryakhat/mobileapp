@@ -1,0 +1,114 @@
+{
+  "id": "sp07",
+  "model": "claude-fable-5-2",
+  "generatedAt": "2026-11-19T23:43:38.477Z",
+  "summaryFa": "شایان اسکندری در این کارگاه که ۳۰ اوت ۲۰۱۹ در کنفرانس BTC 2019 برگزار شد، با چند مثال ساده نشان می‌دهد چرا عادت‌های برنامه‌نویسی سنتی در قرارداد هوشمند به حفرهٔ امنیتی ختم می‌شود: داده‌ها عمومی‌اند، تراکنش‌ها پیش از تأیید در ممپول دیده می‌شوند و هر کسی می‌تواند با کارمزد بیشتر جلو بزند. در نیمهٔ دوم، کد ثبت دامنهٔ ENS را قدم‌به‌قدم ممیزی می‌کند و باگی واقعی را در طرح تعهد و افشای آن نشان می‌دهد که هیچ ابزار خودکاری پیدایش نمی‌کرد. مرور کوتاهی بر آسیب‌پذیری‌های رایج و منابع یادگیری ممیزی پایان‌بخش صحبت است.",
+  "summaryEn": "In this workshop, delivered on August 30, 2019 at the BTC 2019 conference, Shayan Eskandari uses a few simple examples to show why habits from traditional programming turn into security holes in smart contracts: all data is public, transactions are visible in the mempool before they are mined, and anyone can jump ahead by paying a higher fee. In the second half he audits the ENS domain registration code step by step and walks through a real front-running bug in its commit-reveal scheme that no automated tool would have caught. He closes with a quick tour of common vulnerabilities and resources for learning to audit.",
+  "quotes": [
+    {
+      "startSec": 92,
+      "fa": "جالب است که اگر قبلاً برنامه‌نویسی کرده باشید، شاید کدنویسی با سالیدیتی برایتان سخت‌تر باشد تا برای کسی که اصلاً کد ننوشته است.",
+      "en": "It's interesting that if you have coded before, it might be harder for you to do Solidity coding than for people who have not coded at all.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 307,
+      "fa": "داده‌هایی که روی بلاکچین ذخیره می‌شود همه عمومی است. هیچ رازی را نمی‌توانید در هیچ متغیری نگه دارید، حتی اگر آن متغیر private باشد.",
+      "en": "The data stored on the blockchain is all public. There's no secret that you can save in any of the variables, even if the variable is private.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 685,
+      "fa": "در بلاکچین هر فول‌نود در این جایگاه ممتاز قرار دارد. همه تراکنش‌های تازه‌ای را که هنوز نهایی نشده می‌بینند و هر کسی می‌تواند از این اطلاعات سود ببرد.",
+      "en": "In blockchains, every full node is in this privileged position. All of them see the recent transactions that are not finalized yet, so anyone can use this information to profit.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 1668,
+      "fa": "این باگی است که با هیچ ابزاری پیدا نمی‌شود. باید مشخصات را بخوانید، سیستم را بشناسید و بدانید چطور کار می‌کند.",
+      "en": "This is a bug that you cannot find with any tools. You have to read the specification, know the system, and know how it works.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 1797,
+      "fa": "هک DAO که ۱۶۰ میلیون دلار به باد داد فقط سر دو خط کد بود که باید جایشان عوض می‌شد: اول موجودی را تغییر بده، بعد پول را بفرست.",
+      "en": "The DAO hack, a 160 million dollar hack, was just two lines of code that had to be the other way around: change the balance first, and then send the transfer.",
+      "speaker": "شایان"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Front-Running",
+      "termFa": "جلو زدن (فرانت‌رانینگ)",
+      "definitionEn": "Profiting from seeing a pending transaction by getting your own transaction mined ahead of it, usually by paying a higher fee.",
+      "definitionFa": "سود بردن از دیدن تراکنشی که هنوز تأیید نشده، با فرستادن تراکنش خودتان با کارمزد بیشتر تا زودتر از آن ثبت شود."
+    },
+    {
+      "term": "Mempool",
+      "termFa": "ممپول",
+      "definitionEn": "The waiting area on each node where broadcast transactions sit, visible to everyone, until a miner includes them in a block.",
+      "definitionFa": "صف انتظار هر نود که تراکنش‌های منتشرشده تا پیش از قرار گرفتن در بلاک در آن می‌مانند و همه می‌توانند آن‌ها را ببینند."
+    },
+    {
+      "term": "Commit-Reveal",
+      "termFa": "طرح تعهد و افشا (کامیت‌ریویل)",
+      "definitionEn": "A two-step pattern: first publish only a hash of your data, then reveal the data later so the contract can verify you committed first.",
+      "definitionFa": "الگویی دومرحله‌ای: اول فقط هش داده را ثبت می‌کنید و چند بلاک بعد خود داده را می‌فرستید تا قرارداد تقدم شما را تأیید کند."
+    },
+    {
+      "term": "Gas Price",
+      "termFa": "گس پرایس",
+      "definitionEn": "The amount you offer to pay per unit of gas; a higher gas price makes miners pick your transaction sooner.",
+      "definitionFa": "مبلغی که برای هر واحد گس پیشنهاد می‌دهید؛ هرچه بیشتر باشد، ماینرها تراکنش شما را زودتر در بلاک می‌گذارند."
+    },
+    {
+      "term": "Smart Contract Audit",
+      "termFa": "ممیزی قرارداد هوشمند",
+      "definitionEn": "An independent security review of a contract's code and documentation, done mostly by hand, that reports bugs and trust assumptions before launch.",
+      "definitionFa": "بازبینی امنیتی مستقل کد و مستندات قرارداد که بیشتر دستی انجام می‌شود و باگ‌ها و فرض‌های اعتماد را پیش از انتشار گزارش می‌کند."
+    },
+    {
+      "term": "Ethereum Name Service",
+      "termFa": "سرویس نام اتریوم",
+      "definitionEn": "A naming system on Ethereum that maps readable .eth names to addresses, much like DNS does for websites.",
+      "definitionFa": "سامانهٔ نام‌گذاری روی اتریوم که مثل DNS برای وب‌سایت‌ها، نام‌های خوانای ‎.eth را به آدرس وصل می‌کند."
+    },
+    {
+      "term": "Reentrancy",
+      "termFa": "ری‌انترنسی (ورود مجدد)",
+      "definitionEn": "A bug where an external contract you call calls back into yours before your state is updated, as in the DAO hack.",
+      "definitionFa": "باگی که در آن قرارداد بیرونی، پیش از به‌روز شدن وضعیت، دوباره تابع شما را صدا می‌زند؛ هک DAO از همین نوع بود."
+    },
+    {
+      "term": "Oracle",
+      "termFa": "اوراکل",
+      "definitionEn": "A service that brings outside data, such as prices or weather, onto the blockchain, since contracts cannot call internet APIs themselves.",
+      "definitionFa": "سرویسی که دادهٔ بیرونی مثل قیمت یا وضع هوا را به بلاکچین می‌آورد، چون قرارداد هوشمند خودش به اینترنت دسترسی ندارد."
+    },
+    {
+      "term": "Deterministic Execution",
+      "termFa": "اجرای قطعی",
+      "definitionEn": "Every node must get exactly the same result from running the same transaction, which rules out randomness and outside data inside contracts.",
+      "definitionFa": "همهٔ نودها باید از اجرای یک تراکنش دقیقاً به یک نتیجه برسند؛ برای همین عدد تصادفی و دادهٔ بیرونی در قرارداد جایی ندارد."
+    },
+    {
+      "term": "Keccak-256",
+      "termFa": "کچاک-۲۵۶",
+      "definitionEn": "The secure hash function built into Ethereum, almost identical to the SHA-3 standard.",
+      "definitionFa": "تابع هش امنی که در اتریوم تعبیه شده و تقریباً همان استاندارد SHA-3 است."
+    },
+    {
+      "term": "Proxy Contract",
+      "termFa": "قرارداد پروکسی",
+      "definitionEn": "A contract with a fixed address that forwards calls to replaceable logic behind it, making upgrades possible but adding a trust risk.",
+      "definitionFa": "قراردادی با آدرس ثابت که فراخوانی‌ها را به منطق قابل‌تعویض پشت سرش می‌فرستد؛ ارتقا را ممکن می‌کند ولی ریسک اعتماد هم می‌آورد."
+    },
+    {
+      "term": "Integer Overflow",
+      "termFa": "سرریز عدد صحیح",
+      "definitionEn": "A bug where a number grows past its maximum (or drops below zero) and wraps around, which has broken many token contracts.",
+      "definitionFa": "باگی که در آن عدد از سقف مجاز می‌گذرد یا از صفر پایین‌تر می‌رود و دور می‌زند؛ توکن‌های زیادی از آن ضربه خورده‌اند."
+    }
+  ],
+  "corrections": []
+}
