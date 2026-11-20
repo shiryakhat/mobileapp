@@ -1,0 +1,114 @@
+{
+  "id": "sp15",
+  "model": "claude-fable-5-2",
+  "generatedAt": "2026-11-20T10:09:29.000Z",
+  "summaryFa": "شایان اسکندری در کنفرانس بلاکچین استنفورد (فوریهٔ ۲۰۲۰) نسخهٔ مفصل مقالهٔ «تقلب شفاف» را با سه داستان ارائه می‌کند: استخر F2Pool که در ICO استتوس تراکنش‌های خودش را جلو انداخت، بازیکنی که با پر کردن بلاک‌ها جایزهٔ Fomo3D را برد، و رباتی که در صرافی‌های غیرمتمرکز سفارشِ در حال لغو را پر می‌کند. بعد نشان می‌دهد این سه ماجرا با اینکه همه «فرانت‌رانینگ» نام گرفته‌اند حمله‌های متفاوتی‌اند و با رده‌بندی جابه‌جایی، درج و سرکوب می‌شود دقیق درباره‌شان حرف زد. بخش آخر به راه‌های مقابله می‌رسد: ترتیب‌دهی تراکنش‌ها، محرمانگی (مثل commit-reveal و LibSubmarine) و طراحی‌هایی که ترتیب در آن‌ها سودی ندارد.",
+  "summaryEn": "At the Stanford Blockchain Conference (February 2020), Shayan Eskandari gives the long version of his paper \"Transparent Dishonesty\" through three stories: the F2Pool mining pool putting its own purchases first in the Status ICO, a player who won the Fomo3D jackpot by stuffing blocks, and a bot that fills a DEX order while its owner is trying to cancel it. He shows that these are different attacks even though all were called front-running, and that the displacement, insertion and suppression taxonomy lets people name each one precisely. He closes with the three families of mitigation: transaction sequencing, confidentiality (commit-reveal, LibSubmarine) and designs where ordering brings no benefit.",
+  "quotes": [
+    {
+      "startSec": 398,
+      "fa": "ماینر نباید کاری داشته باشد که تراکنش چه معنایی دارد؛ فقط گسِ محاسبه را می‌خواهد. ولی اینجا ظاهراً F2Pool داخل تراکنش‌ها را نگاه کرده و بعضی‌هایشان را دست‌چین کرده است.",
+      "en": "The miner should not care what a transaction means; they just need the gas for the computation. But in this case F2Pool actually looked into the transactions and chose some of them.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 489,
+      "fa": "Fomo3D بازی‌ای است که با طمع آدم‌ها بازی می‌کند. حرفش هم این است که هر کسی می‌تواند سر بقیه کلاه بگذارد.",
+      "en": "Fomo3D is this game that plays with human greed. It's basically saying everyone can scam everyone else.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 796,
+      "fa": "والتر را از بازی قبلی یادتان هست؟ هنوز دارد نگاه می‌کند. چشمش همیشه به ممپول است.",
+      "en": "Do you remember Walter from the previous game? He's still watching. He's always watching the mempool.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 880,
+      "fa": "ولی آیا این سه واقعاً یک حمله بودند؟ حمله‌هایی کاملاً متفاوت بودند. نمی‌شود فقط گفت «فرانت‌رانینگ» و منظور را رساند.",
+      "en": "But were they all the same attack? They were totally different attacks. You can't just say \"front-running\" and communicate what you mean.",
+      "speaker": "شایان"
+    },
+    {
+      "startSec": 1431,
+      "fa": "فرانت‌رانینگ مشکلی فراگیر در dAppهای اتریوم است. می‌خواهیم راهی داشته باشیم که انواع حمله را ساده بیان کنیم، نه اینکه هر بار چند پاراگراف توضیح بدهیم.",
+      "en": "Front-running is a pervasive issue in Ethereum dApps. We want a way to simply talk about the different kinds of attacks rather than explaining them in paragraphs.",
+      "speaker": "شایان"
+    }
+  ],
+  "glossary": [
+    {
+      "term": "Front-Running",
+      "termFa": "جلو زدن (فرانت‌رانینگ)",
+      "definitionEn": "Profiting by acting on early knowledge of someone else's pending transaction, usually by getting your own transaction processed ahead of it.",
+      "definitionFa": "سود بردن از خبر داشتن زودهنگام از تراکنش در انتظارِ دیگران؛ معمولاً با جلو انداختن تراکنش خود از تراکنش آن‌ها."
+    },
+    {
+      "term": "Displacement Attack",
+      "termFa": "حملهٔ جابه‌جایی",
+      "definitionEn": "A front-running attack where the attacker takes the victim's place and does not care whether the victim's transaction runs afterwards.",
+      "definitionFa": "نوعی فرانت‌رانینگ که مهاجم جای قربانی را می‌گیرد و برایش مهم نیست تراکنش قربانی بعداً اجرا شود یا نه."
+    },
+    {
+      "term": "Suppression Attack",
+      "termFa": "حملهٔ سرکوب",
+      "definitionEn": "A front-running attack that keeps other users' transactions out of blocks for a while, for example by filling blocks; also called block stuffing.",
+      "definitionFa": "نوعی فرانت‌رانینگ که مهاجم مدتی جلوی ثبت تراکنش دیگران را می‌گیرد، مثلاً با پر کردن بلاک‌ها؛ به آن block stuffing هم می‌گویند."
+    },
+    {
+      "term": "ICO",
+      "termFa": "عرضه اولیه سکه (ICO)",
+      "definitionEn": "Initial Coin Offering; a fundraising method where a project sells newly created tokens to the public.",
+      "definitionFa": "روشی برای جذب سرمایه که در آن یک پروژه توکن‌های جدید خود را به عموم می‌فروشد."
+    },
+    {
+      "term": "Gas Price",
+      "termFa": "گس پرایس",
+      "definitionEn": "The amount of ether a user offers to pay per unit of gas, used in the legacy fee model.",
+      "definitionFa": "مقدار اتری که کاربر حاضر است به ازای هر واحد گس بپردازد؛ مفهومی مربوط به مدل کارمزد قدیمی."
+    },
+    {
+      "term": "Mining Pool",
+      "termFa": "استخر ماینینگ",
+      "definitionEn": "A collective of miners who combine their hash power and share block rewards proportionally, reducing income variance.",
+      "definitionFa": "گروهی از ماینرها که توان هش خود را با هم ترکیب می‌کنند و پاداش بلاک را به‌نسبت بین خود تقسیم می‌کنند."
+    },
+    {
+      "term": "Fomo3D",
+      "termFa": "Fomo3D",
+      "definitionEn": "A 2018 lottery-style game on Ethereum whose jackpot went to the last ticket buyer before a timer ran out.",
+      "definitionFa": "یک بازی لاتاری‌مانند روی اتریوم در سال ۲۰۱۸ که جایزه‌اش به آخرین خریدار بلیت پیش از تمام شدن زمان می‌رسید."
+    },
+    {
+      "term": "Order Book",
+      "termFa": "دفتر سفارشات (اردربوک)",
+      "definitionEn": "A list of buy and sell orders in a market, matched by an exchange engine to execute trades.",
+      "definitionFa": "فهرستی از سفارش‌های خرید و فروش که موتور صرافی آن‌ها را با هم تطبیق داده و معامله انجام می‌دهد."
+    },
+    {
+      "term": "Mempool",
+      "termFa": "ممپول",
+      "definitionEn": "The pool of broadcast but not yet confirmed transactions that every node can see before they are included in a block.",
+      "definitionFa": "صف تراکنش‌هایی که در شبکه پخش شده‌اند ولی هنوز در بلاک نرفته‌اند و همهٔ نودها می‌توانند آن‌ها را ببینند."
+    },
+    {
+      "term": "Commit-Reveal",
+      "termFa": "طرح تعهد و افشا (کامیت‌ریویل)",
+      "definitionEn": "A two-step pattern: first publish only a hash of your data, then reveal the data later so the contract can verify you committed first.",
+      "definitionFa": "الگویی دومرحله‌ای: اول فقط هش داده را ثبت می‌کنید و چند بلاک بعد خود داده را می‌فرستید تا قرارداد تقدم شما را تأیید کند."
+    },
+    {
+      "term": "LibSubmarine",
+      "termFa": "LibSubmarine",
+      "definitionEn": "A smart contract library that hides a transaction's purpose until it is later revealed, so others cannot front-run it.",
+      "definitionFa": "کتابخانه‌ای برای قراردادهای هوشمند که هدف تراکنش را تا زمان افشای بعدی پنهان نگه می‌دارد تا کسی نتواند آن را فرانت‌ران کند."
+    },
+    {
+      "term": "Call Market",
+      "termFa": "بازار حراج دوره‌ای (call market)",
+      "definitionEn": "A market that collects orders and matches them together at set or random closing times, so arriving first gives no advantage.",
+      "definitionFa": "بازاری که سفارش‌ها را جمع می‌کند و در زمان‌های مشخص یا تصادفی یک‌جا تطبیق می‌دهد؛ پس زودتر رسیدن امتیازی ندارد."
+    }
+  ],
+  "corrections": []
+}

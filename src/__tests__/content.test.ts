@@ -6,7 +6,7 @@ import { normalize, tokenize } from '@/lib/text';
 
 describe('content bundle', () => {
   it('ships every episode with the fields the app relies on', () => {
-    expect(episodes.length).toBeGreaterThanOrEqual(54);
+    expect(episodes.length).toBeGreaterThanOrEqual(55);
     for (const e of episodes) {
       expect(e.id).toMatch(/^(s\d{2}e\d{2}|sp\d{2})$/);
       expect(e.youtubeId).toHaveLength(11);
@@ -21,7 +21,7 @@ describe('content bundle', () => {
   it('ships the conference talks as YouTube-only specials with chapters and key points', () => {
     const specials = episodes.filter((e) => e.season === 0);
     expect(specials.map((e) => e.id)).toEqual(
-      Array.from({ length: 14 }, (_, i) => `sp${String(14 - i).padStart(2, '0')}`),
+      Array.from({ length: 15 }, (_, i) => `sp${String(15 - i).padStart(2, '0')}`),
     );
     for (const e of specials) {
       expect(e.code).toBe(e.id.toUpperCase());

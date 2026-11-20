@@ -4249,6 +4249,107 @@
     "archiveAudioUrl": "https://archive.org/download/shiryakhat-cxKe5eLbKpo/60%20-%20Stay%20Safe%20with%20Bitcoin%20(S01E01)%20%5BcxKe5eLbKpo%5D.mp3"
   },
   {
+    "id": "sp15",
+    "youtubeId": "mSmp_-z3UOg",
+    "altYoutubeIds": [],
+    "season": 0,
+    "episode": 15,
+    "code": "SP15",
+    "titleFa": "تقلب شفاف: حمله‌های فرانت‌رانینگ در بلاکچین (کنفرانس بلاکچین استنفورد ۲۰۲۰)",
+    "titleEn": "Transparent Dishonesty: front-running attacks on Blockchain (Stanford Blockchain Conference 2020)",
+    "publishedAt": "2020-03-02",
+    "durationSec": 1699,
+    "chapters": [
+      {
+        "startSec": 0,
+        "endSec": 55,
+        "title": "معرفی جلسه"
+      },
+      {
+        "startSec": 55,
+        "endSec": 109,
+        "title": "سخنران و مقالهٔ «تقلب شفاف»"
+      },
+      {
+        "startSec": 109,
+        "endSec": 241,
+        "title": "داستان اول: تب ICO و نهنگ‌ها"
+      },
+      {
+        "startSec": 241,
+        "endSec": 337,
+        "title": "ICO استتوس و تلاش برای عرضهٔ منصفانه"
+      },
+      {
+        "startSec": 337,
+        "endSec": 476,
+        "title": "ردپای F2Pool در داده‌ها"
+      },
+      {
+        "startSec": 476,
+        "endSec": 549,
+        "title": "داستان دوم: Fomo3D"
+      },
+      {
+        "startSec": 549,
+        "endSec": 696,
+        "title": "والتر بلاک‌ها را پر می‌کند"
+      },
+      {
+        "startSec": 696,
+        "endSec": 868,
+        "title": "داستان سوم: لغو سفارش در صرافی غیرمتمرکز"
+      },
+      {
+        "startSec": 868,
+        "endSec": 978,
+        "title": "فرانت‌رانینگ چیست؟"
+      },
+      {
+        "startSec": 978,
+        "endSec": 1085,
+        "title": "رده‌بندی حمله‌ها"
+      },
+      {
+        "startSec": 1085,
+        "endSec": 1125,
+        "title": "بررسی ۲۵ دَپ پرکاربرد"
+      },
+      {
+        "startSec": 1125,
+        "endSec": 1229,
+        "title": "راهکار اول: ترتیب‌دهی تراکنش‌ها"
+      },
+      {
+        "startSec": 1229,
+        "endSec": 1385,
+        "title": "راهکار دوم: محرمانگی"
+      },
+      {
+        "startSec": 1385,
+        "endSec": 1431,
+        "title": "راهکار سوم: طراحی بی‌نیاز از ترتیب"
+      },
+      {
+        "startSec": 1431,
+        "endSec": 1499,
+        "title": "جمع‌بندی و کارهای بعدی"
+      },
+      {
+        "startSec": 1499,
+        "endSec": 1699,
+        "title": "پرسش و پاسخ"
+      }
+    ],
+    "youtubeThumb": "https://i.ytimg.com/vi/mSmp_-z3UOg/maxresdefault.jpg",
+    "descriptionFa": "",
+    "descriptionEn": "Transparent Dishonesty: front-running attacks on Blockchain \nShayan Eskandari \n\nPaper: https://arxiv.org/abs/1902.05164 \n\nPresented at: The Stanford Blockchain Conference 2020 \nFeb. 19-21\n\n--------------------\nAbstract:\nWe consider front-running to be a course of action where an entity benefits from prior access to privileged market information about upcoming transactions and trades. Front-running has been an issue in financial instrument markets since the 1970s. With the advent of the blockchain technology, front-running has resurfaced in new forms we explore here, instigated by blockchains decentralized and transparent nature. In this paper, we draw from a scattered body of knowledge and instances of front-running across the top 25 most active decentral applications (DApps) deployed on Ethereum blockchain. Additionally, we carry out a detailed analysis of this status.im initial coin offering (ICO) and show evidence of abnormal miners behavior indicative of front-running token purchases. Finally, we map the proposed solutions to front-running into useful categories.",
+    "keywords": [],
+    "viewCount": 461,
+    "likeCount": 8,
+    "sourceStem": "Transparent Dishonesty： front-running attacks on Blockchain - Shayan Eskandari - SBC20 [mSmp_-z3UOg]"
+  },
+  {
     "id": "sp14",
     "youtubeId": "p1bklAl3-BQ",
     "altYoutubeIds": [],
