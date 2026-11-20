@@ -1,17 +1,21 @@
 import Feather from '@expo/vector-icons/Feather';
-import { Alert, Pressable } from 'react-native';
+import { useState } from 'react';
+import { Alert, Pressable, View } from 'react-native';
 import type { Episode } from '@/content';
 import { useI18n } from '@/i18n';
 import {
   deleteDownload,
+  downloadKind,
+  downloadKindsFor,
   pauseDownload,
   resumeDownload,
   startDownload,
   useDownloads,
   type DownloadItem,
+  type DownloadKind,
 } from '@/state/downloads';
-import { brand, dark, HIT_SLOP } from '@/theme';
-import { IconButton, ProgressRing } from './ui';
+import { brand, dark, HIT_SLOP, radius, space, useTheme } from '@/theme';
+import { Icon, IconButton, ProgressRing, Sheet, Text, type IconName } from './ui';
 
 /** Same footprint as an <IconButton/>, so the control does not jump between states. */
 const BOX = 40;
@@ -65,13 +69,57 @@ function DownloadRing({
   );
 }
 
-/** One button, four states: download → pause → resume → downloaded (tap to delete). */
+const KIND_ICON: Record<DownloadKind, IconName> = { audio: 'headphones', video: 'film' };
+
+/** One row of the chooser: what you get, and what it costs in space. */
+function KindOption({ kind, onPress }: { kind: DownloadKind; onPress: () => void }) {
+  const theme = useTheme();
+  const { t } = useI18n();
+  return (
+    <Pressable
+      testID={`download-${kind}`}
+      accessibilityRole="button"
+      accessibilityLabel={t(kind)}
+      accessibilityHint={t(kind === 'video' ? 'downloadVideoHint' : 'downloadAudioHint')}
+      onPress={onPress}
+      style={({ pressed }) => ({
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: space.md,
+        padding: space.md,
+        borderRadius: radius.md,
+        backgroundColor: theme.raised,
+        opacity: pressed ? 0.7 : 1,
+      })}
+    >
+      <Icon name={KIND_ICON[kind]} size={20} color="accent" />
+      <View style={{ flex: 1, gap: 2 }}>
+        <Text weight="medium">{t(kind)}</Text>
+        <Text variant="small" color="muted">
+          {t(kind === 'video' ? 'downloadVideoHint' : 'downloadAudioHint')}
+        </Text>
+      </View>
+      <Icon name="download" size={18} color="muted" />
+    </Pressable>
+  );
+}
+
+/**
+ * One button, four states: download → pause → resume → downloaded (tap to delete).
+ *
+ * Starting a download asks "Audio or Video?" in a bottom sheet when the episode
+ * has both (an archive.org mp4 next to its audio); with a single kind on offer
+ * it just starts, as it always did.
+ */
 export function DownloadButton({ episode }: { episode: Episode }) {
   const { t } = useI18n();
   const item = useDownloads((s) => s.items[episode.id]);
-  // Downloadable if there's any audio source: the RSS enclosure or the
-  // archive.org mp3 fallback (the talk specials have only the latter).
-  if (!episode.audioUrl && !episode.archiveAudioUrl) return null;
+  const [choosing, setChoosing] = useState(false);
+  // Downloadable as audio (the RSS enclosure, or the archive.org mp3 fallback
+  // the talk specials have) and / or as video (the archive.org mp4).
+  const kinds = downloadKindsFor(episode);
+  if (kinds.length === 0) return null;
+  const kind = downloadKind(item);
 
   switch (item?.status) {
     case 'downloading':
@@ -98,11 +146,13 @@ export function DownloadButton({ episode }: { episode: Episode }) {
     case 'done':
       return (
         <IconButton
-          icon="check-circle"
+          // The kind on disk is told apart at a glance: a film strip for video.
+          icon={kind === 'video' ? 'film' : 'check-circle'}
           color="success"
-          label={t('downloaded')}
+          testID={`downloaded-${kind}`}
+          label={t(kind === 'video' ? 'downloadedVideo' : 'downloadedAudio')}
           onPress={() =>
-            Alert.alert(t('downloaded'), undefined, [
+            Alert.alert(t(kind === 'video' ? 'downloadedVideo' : 'downloadedAudio'), undefined, [
               { text: t('cancel'), style: 'cancel' },
               {
                 text: t('delete'),
@@ -115,12 +165,32 @@ export function DownloadButton({ episode }: { episode: Episode }) {
       );
     default:
       return (
-        <IconButton
-          testID="download-button"
-          icon="download"
-          label={t('download')}
-          onPress={() => startDownload(episode)}
-        />
+        <>
+          <IconButton
+            testID="download-button"
+            icon="download"
+            label={t(kinds.length === 1 && kinds[0] === 'audio' ? 'download' : 'downloadEpisode')}
+            onPress={() => {
+              if (kinds.length > 1) setChoosing(true);
+              else startDownload(episode, kinds[0]);
+            }}
+          />
+          {kinds.length > 1 ? (
+            <Sheet visible={choosing} onClose={() => setChoosing(false)}>
+              <Text variant="title">{t('downloadChoose')}</Text>
+              {kinds.map((k) => (
+                <KindOption
+                  key={k}
+                  kind={k}
+                  onPress={() => {
+                    setChoosing(false);
+                    startDownload(episode, k);
+                  }}
+                />
+              ))}
+            </Sheet>
+          ) : null}
+        </>
       );
   }
 }
