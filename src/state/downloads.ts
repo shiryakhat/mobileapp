@@ -85,6 +85,33 @@ export const useDownloads = create<DownloadsState>()(
 const tasks = new Map<string, DownloadTask>();
 const store = () => useDownloads.getState();
 
+/**
+ * A byte count as a plain, finite, non-negative number.
+ *
+ * expo-file-system's native progress events carry `bytesWritten` / `totalBytes`
+ * as Int64, which reaches JS as a **BigInt** (typed `number`). A BigInt in the
+ * store is poison: `JSON.stringify` throws on it (the persist middleware) and so
+ * does `Math.min/max` (the progress ring, during render) — which took the whole
+ * app down the moment a download reported progress (v1.3.0, build 36).
+ * Everything that enters the store goes through here. Unknown sizes (-1) are 0.
+ */
+export function toBytes(value: unknown): number {
+  const n = typeof value === 'number' ? value : typeof value === 'bigint' ? Number(value) : NaN;
+  return Number.isFinite(n) && n > 0 ? n : 0;
+}
+
+const message = (err: unknown) => (err instanceof Error ? err.message : String(err));
+
+/** Mark a download as failed; the button then offers a retry. Never throws. */
+function fail(episodeId: string, err: unknown): void {
+  tasks.delete(episodeId);
+  try {
+    store().patch(episodeId, { status: 'error', error: message(err), pauseState: undefined });
+  } catch {
+    // Nothing more we can do; the caller must still not crash.
+  }
+}
+
 function audioDir(): Directory {
   const dir = new Directory(Paths.document, 'audio');
   if (!dir.exists) dir.create({ intermediates: true, idempotent: true });
@@ -161,11 +188,12 @@ function track(episodeId: string, task: DownloadTask, run: Promise<File | null>)
       // null => paused or cancelled; state was already updated by the caller.
       if (!file) return;
       tasks.delete(episodeId);
+      const size = toBytes(file.size) || toBytes(store().items[episodeId]?.totalBytes);
       store().patch(episodeId, {
         status: 'done',
         fileUri: file.uri,
-        bytesWritten: file.size ?? store().items[episodeId]?.totalBytes ?? 0,
-        totalBytes: file.size ?? store().items[episodeId]?.totalBytes ?? 0,
+        bytesWritten: size,
+        totalBytes: size,
         pauseState: undefined,
         error: undefined,
       });
@@ -173,20 +201,27 @@ function track(episodeId: string, task: DownloadTask, run: Promise<File | null>)
     .catch((err: unknown) => {
       tasks.delete(episodeId);
       if (store().items[episodeId]?.status !== 'downloading') return;
-      store().patch(episodeId, {
-        status: 'error',
-        error: err instanceof Error ? err.message : String(err),
-      });
+      fail(episodeId, err);
     });
 }
 
 const onProgress = (episodeId: string) => {
   let last = 0;
-  return ({ bytesWritten, totalBytes }: { bytesWritten: number; totalBytes: number }) => {
-    const now = Date.now();
-    if (now - last < 400 && bytesWritten < totalBytes) return; // throttle re-renders
-    last = now;
-    store().patch(episodeId, { bytesWritten, totalBytes });
+  return (progress: { bytesWritten: number | bigint; totalBytes: number | bigint }) => {
+    // Called straight from a native event: it must never throw.
+    try {
+      // Native sends Int64 → BigInt; the store only ever holds plain numbers.
+      const bytesWritten = toBytes(progress?.bytesWritten);
+      const totalBytes = toBytes(progress?.totalBytes);
+      const now = Date.now();
+      if (now - last < 400 && bytesWritten < totalBytes) return; // throttle re-renders
+      last = now;
+      // A late event must not revive a download that was paused, failed or deleted.
+      if (store().items[episodeId]?.status !== 'downloading') return;
+      store().patch(episodeId, { bytesWritten, totalBytes });
+    } catch {
+      // A missed progress tick is harmless.
+    }
   };
 };
 
@@ -196,32 +231,44 @@ const onProgress = (episodeId: string) => {
  * and audio for an episode that was never downloaded.
  */
 export function startDownload(ep: Episode, kind?: DownloadKind): void {
-  const want = kind ?? downloadKind(store().items[ep.id]);
-  const src = downloadSourceFor(ep, want);
-  // "Done" only counts while the file is really there; otherwise fetch it again.
-  if (!src || tasks.has(ep.id) || localUri(ep.id, want)) return;
-  // One kind per episode: a leftover of this or the other kind goes first.
-  removeFiles(ep.id);
-  const destination = fileFor(ep.id, want);
-  store().patch(ep.id, {
-    kind: want,
-    status: 'downloading',
-    bytesWritten: 0,
-    totalBytes: 0,
-    error: undefined,
-    pauseState: undefined,
-    fileUri: undefined,
-  });
-  const task = File.createDownloadTask(src, destination, { onProgress: onProgress(ep.id) });
-  track(ep.id, task, task.downloadAsync());
+  // Runs inside a press handler: whatever the file system or the native task
+  // throws ends as the item's `error` state (tap to retry), never as a crash.
+  try {
+    const want = kind ?? downloadKind(store().items[ep.id]);
+    const src = downloadSourceFor(ep, want);
+    // "Done" only counts while the file is really there; otherwise fetch it again.
+    if (!src || tasks.has(ep.id) || localUri(ep.id, want)) return;
+    // One kind per episode: a leftover of this or the other kind goes first.
+    removeFiles(ep.id);
+    store().patch(ep.id, {
+      kind: want,
+      status: 'downloading',
+      bytesWritten: 0,
+      totalBytes: 0,
+      error: undefined,
+      pauseState: undefined,
+      fileUri: undefined,
+    });
+    const destination = fileFor(ep.id, want);
+    const task = File.createDownloadTask(src, destination, { onProgress: onProgress(ep.id) });
+    track(ep.id, task, task.downloadAsync());
+  } catch (err) {
+    fail(ep.id, err);
+  }
 }
 
 export async function pauseDownload(episodeId: string): Promise<void> {
   const task = tasks.get(episodeId);
   if (!task) return;
-  store().patch(episodeId, { status: 'paused' });
-  await task.pauseAsync();
-  store().patch(episodeId, { pauseState: task.savable() });
+  try {
+    store().patch(episodeId, { status: 'paused' });
+    await task.pauseAsync();
+    store().patch(episodeId, { pauseState: task.savable() });
+  } catch {
+    // No resume data (e.g. paused before the first byte): the item stays
+    // 'paused' without it, and resuming starts the download over.
+    tasks.delete(episodeId);
+  }
 }
 
 export function resumeDownload(ep: Episode): void {
@@ -239,12 +286,20 @@ export function resumeDownload(ep: Episode): void {
     startDownload(ep);
     return;
   }
-  store().patch(ep.id, { status: 'downloading', error: undefined });
-  track(ep.id, task, task.resumeAsync());
+  try {
+    store().patch(ep.id, { status: 'downloading', error: undefined });
+    track(ep.id, task, task.resumeAsync());
+  } catch (err) {
+    fail(ep.id, err);
+  }
 }
 
 export function deleteDownload(episodeId: string): void {
-  tasks.get(episodeId)?.cancel();
+  try {
+    tasks.get(episodeId)?.cancel();
+  } catch {
+    // Already finished or released — nothing to cancel.
+  }
   tasks.delete(episodeId);
   removeFiles(episodeId);
   store().drop(episodeId);
@@ -257,23 +312,23 @@ export function deleteAllDownloads(): void {
 /** Bytes the download folders (audio + video) really occupy, unfinished downloads included. */
 export function downloadsBytes(): number {
   try {
-    const audio = audioDir().size;
-    const video = videoDir().size;
-    if (typeof audio === 'number' && typeof video === 'number') return audio + video;
+    const audio: unknown = audioDir().size;
+    const video: unknown = videoDir().size;
+    if (audio != null && video != null) return toBytes(audio) + toBytes(video);
   } catch {
     // Fall through to the bookkeeping figure (web, or an unreadable folder).
   }
-  return Object.values(store().items).reduce((n, i) => n + i.bytesWritten, 0);
+  return Object.values(store().items).reduce((n, i) => n + toBytes(i.bytesWritten), 0);
 }
 
 /** Bytes of finished downloads, of both kinds, by the bookkeeping. */
 export function storageStats(): { usedBytes: number; freeBytes: number } {
   const usedBytes = Object.values(store().items)
     .filter((i) => i.status === 'done')
-    .reduce((n, i) => n + i.totalBytes, 0);
+    .reduce((n, i) => n + toBytes(i.totalBytes), 0);
   let freeBytes = 0;
   try {
-    freeBytes = Paths.availableDiskSpace;
+    freeBytes = toBytes(Paths.availableDiskSpace);
   } catch {
     // unavailable on web
   }
