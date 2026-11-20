@@ -32,13 +32,23 @@ export interface SeasonSection {
   data: Episode[];
 }
 
-/** Newest season first; specials (season 0) last. Episodes newest-first within a season. */
+/** Specials are numbered in the order they were added, not by date: latest talk first. */
+const byDateDesc = (a: Episode, b: Episode) =>
+  b.publishedAt.localeCompare(a.publishedAt) || b.episode - a.episode;
+
+/**
+ * Newest season first; specials (season 0) last. Episodes newest-first within a
+ * season: by episode number, and by date for the specials.
+ */
 export const seasons: SeasonSection[] = (() => {
   const map = new Map<number, Episode[]>();
   for (const e of episodes) map.set(e.season, [...(map.get(e.season) ?? []), e]);
   return [...map.entries()]
     .sort(([a], [b]) => (a === 0 ? 1 : b === 0 ? -1 : b - a))
-    .map(([season, data]) => ({ season, data: data.sort((a, b) => b.episode - a.episode) }));
+    .map(([season, data]) => ({
+      season,
+      data: data.sort(season === 0 ? byDateDesc : (a, b) => b.episode - a.episode),
+    }));
 })();
 
 const transcriptCache = new Map<string, Transcript>();

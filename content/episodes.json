@@ -4257,6 +4257,8 @@
     "code": "SP15",
     "titleFa": "تقلب شفاف: حمله‌های فرانت‌رانینگ در بلاکچین (کنفرانس بلاکچین استنفورد ۲۰۲۰)",
     "titleEn": "Transparent Dishonesty: front-running attacks on Blockchain (Stanford Blockchain Conference 2020)",
+    "conferenceEn": "Stanford Blockchain Conference 2020",
+    "conferenceFa": "کنفرانس بلاکچین استنفورد ۲۰۲۰",
     "publishedAt": "2020-03-02",
     "durationSec": 1699,
     "chapters": [
@@ -4361,6 +4363,8 @@
     "code": "SP14",
     "titleFa": "کدنویسی از سر خشم و مادرِ همهٔ وی‌پی‌ان‌ها: یادداشت‌هایی از قطعی‌های اینترنت ایران",
     "titleEn": "Rage-Coding the Mother of All VPNs: Notes from Iran's Internet Blackouts",
+    "conferenceEn": "Devcon 8",
+    "conferenceFa": "دِوکان ۸",
     "publishedAt": "2026-11-06",
     "durationSec": 1543,
     "chapters": [
@@ -4455,6 +4459,8 @@
     "code": "SP13",
     "titleFa": "ساختن در دل محدودیت‌ها: یک دهه وب۳ در ایران",
     "titleEn": "Building Through Constraints: A Decade of Web3 in Iran",
+    "conferenceEn": "Devcon 8",
+    "conferenceFa": "دِوکان ۸",
     "publishedAt": "2026-11-05",
     "durationSec": 1555,
     "chapters": [
@@ -4524,6 +4530,8 @@
     "code": "SP12",
     "titleFa": "پنل: ارزش قابل استخراج از اوراکل؛ مدل‌های درآمدی تازه و پایداری اوراکل‌ها و دَپ‌ها",
     "titleEn": "PANEL: Oracle Extractable Value: Unlocking New Revenue Models and Sustainability for Oracles & Dapps",
+    "conferenceEn": "DeFiConnect",
+    "conferenceFa": "DeFiConnect",
     "publishedAt": "2024-11-18",
     "durationSec": 2316,
     "chapters": [
@@ -4618,6 +4626,8 @@
     "code": "SP11",
     "titleFa": "وب۳ در دنیای واقعی و تحریم‌ها (Autonomous Ecologies #1)",
     "titleEn": "Shayan Eskandari - IRL Web3 and Sanctions [Autonomous Ecologies #1]",
+    "conferenceEn": "Autonomous Ecologies #1",
+    "conferenceFa": "Autonomous Ecologies #1",
     "publishedAt": "2023-03-28",
     "durationSec": 834,
     "chapters": [
@@ -4747,6 +4757,8 @@
     "code": "SP10",
     "titleFa": "آشنایی با دائوها",
     "titleEn": "Introduction to DAOs",
+    "conferenceEn": "C4 Live",
+    "conferenceFa": "C4 Live",
     "publishedAt": "2022-04-27",
     "durationSec": 3574,
     "chapters": [
@@ -4866,6 +4878,8 @@
     "code": "SP09",
     "titleFa": "الفبای امنیت عملیاتی",
     "titleEn": "Operational Security 101",
+    "conferenceEn": "C4 Live",
+    "conferenceFa": "C4 Live",
     "publishedAt": "2022-03-23",
     "durationSec": 4005,
     "chapters": [
@@ -5010,6 +5024,8 @@
     "code": "SP08",
     "titleFa": "بیت‌کوین یا اتریوم؟",
     "titleEn": "Bitcoin vs. Ethereum?",
+    "conferenceEn": "C4 Live",
+    "conferenceFa": "C4 Live",
     "publishedAt": "2022-02-09",
     "durationSec": 3565,
     "chapters": [
@@ -5084,6 +5100,8 @@
     "code": "SP07",
     "titleFa": "امنیت از مرحلهٔ طراحی و ممیزی قراردادهای هوشمند",
     "titleEn": "Security By Design & Smart Contract Audits | Shayan Eskandari",
+    "conferenceEn": "C4",
+    "conferenceFa": "C4",
     "publishedAt": "2021-01-11",
     "durationSec": 2146,
     "chapters": [
@@ -5138,6 +5156,8 @@
     "code": "SP06",
     "titleFa": "اوراکل‌ها، از واقعیت بیرونی تا دست‌کاری بازار (Liquidity 2020)",
     "titleEn": "Oracles from the Ground Truth to Market Manipulation - Shayan Eskandari - Liquidity2020",
+    "conferenceEn": "Liquidity 2020",
+    "conferenceFa": "Liquidity 2020",
     "publishedAt": "2020-10-19",
     "durationSec": 1835,
     "chapters": [
@@ -5202,6 +5222,8 @@
     "code": "SP05",
     "titleFa": "بیت‌کوین چطور پول را به اقتصادهای بسته می‌برد و از آن‌ها بیرون می‌آورد",
     "titleEn": "How Bitcoin Moves Value In & Out Of Closed Economies",
+    "conferenceEn": "DeFi Discussions",
+    "conferenceFa": "DeFi Discussions",
     "publishedAt": "2020-05-08",
     "durationSec": 3571,
     "chapters": [
@@ -5336,6 +5358,8 @@
     "code": "SP04",
     "titleFa": "شکستن قراردادهای هوشمند (دِوکان ۵)",
     "titleEn": "Breaking Smart Contracts (Devcon5)",
+    "conferenceEn": "Devcon 5",
+    "conferenceFa": "دِوکان ۵",
     "publishedAt": "2019-12-27",
     "durationSec": 3230,
     "chapters": [
@@ -5400,6 +5424,8 @@
     "code": "SP03",
     "titleFa": "تقلب شفاف: رده‌بندی فرانت‌رانینگ در بلاکچین (دِوکان ۵)",
     "titleEn": "Transparent Dishonesty: Blockchain Front-Running Taxonomy by Shayan Eskandari (Devcon5)",
+    "conferenceEn": "Devcon 5",
+    "conferenceFa": "دِوکان ۵",
     "publishedAt": "2019-12-27",
     "durationSec": 307,
     "chapters": [
@@ -5449,6 +5475,8 @@
     "code": "SP02",
     "titleFa": "آشنایی با بیت‌کوین - دانشگاه شهید بهشتی",
     "titleEn": "Introduction to Bitcoin (Shahid Beheshti University)",
+    "conferenceEn": "Shahid Beheshti University",
+    "conferenceFa": "دانشگاه شهید بهشتی",
     "publishedAt": "2016-01-03",
     "durationSec": 2884,
     "chapters": [
@@ -5553,6 +5581,8 @@
     "code": "SP01",
     "titleFa": "شایان اسکندری، هم‌بنیانگذار شیر یا خط و کوین‌ایران، در برنامه اسکریپت (اپیزود ۱۵)",
     "titleEn": "Shayan Eskandari on the Script show (Episode 15)",
+    "conferenceEn": "Script show",
+    "conferenceFa": "برنامه اسکریپت",
     "publishedAt": "2020-11-29",
     "durationSec": 3581,
     "chapters": [

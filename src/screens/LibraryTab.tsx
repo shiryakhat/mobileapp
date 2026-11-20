@@ -10,6 +10,7 @@ import { liveBookmarks, useBookmarks, type Bookmark } from '@/state/bookmarks';
 import {
   deleteAllDownloads,
   deleteDownload,
+  downloadedKinds,
   downloadKind,
   startDownload,
   storageStats,
@@ -84,7 +85,11 @@ function DownloadRow({ item }: { item: DownloadItem }) {
   const kind = t(downloadKind(item));
   const status =
     item.status === 'done'
-      ? joinMeta(kind, formatBytes(item.totalBytes, locale))
+      ? joinMeta(
+          // Both kinds can be on disk for one episode: name them, and add them up.
+          ...downloadedKinds(item).map((k) => t(k)),
+          formatBytes(item.totalBytes + (item.also?.totalBytes ?? 0), locale),
+        )
       : item.status === 'error'
         ? t('downloadFailed')
         : joinMeta(

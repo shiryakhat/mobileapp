@@ -250,6 +250,8 @@ function main(): void {
         code: special.id.toUpperCase(),
         titleFa: special.titleFa,
         titleEn: special.titleEn,
+        ...(special.conferenceEn ? { conferenceEn: special.conferenceEn } : {}),
+        ...(special.conferenceFa ? { conferenceFa: special.conferenceFa } : {}),
         publishedAt: isoDate(v.info.upload_date),
         durationSec: Math.round(v.info.duration),
         chapters: chaptersOf(v.info).length

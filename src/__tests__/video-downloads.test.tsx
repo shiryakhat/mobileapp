@@ -1,21 +1,24 @@
 /**
- * Offline video: an episode downloads as ONE kind — audio (mp3) or video (the
- * archive.org mp4) — the kind is persisted with the item, and the download
- * button only asks "Audio or Video?" when the episode really has both.
+ * Offline video: an episode downloads as audio (mp3) or video (the archive.org
+ * mp4) — the kind is persisted with the item, and the download button only asks
+ * "Audio or Video?" when the episode really has both. Since v1.3.2 the other
+ * kind can be fetched next to the first, and the downloaded button opens a menu
+ * to get it or to delete what is on disk.
  */
 import { act, fireEvent, render, screen } from '@testing-library/react-native';
 import { File } from 'expo-file-system';
-import { Alert } from 'react-native';
 import { DownloadButton } from '@/components/DownloadButton';
 import { episodes, type Episode } from '@/content';
 import { translate } from '@/i18n';
 import {
   deleteDownload,
+  downloadedKinds,
   downloadKind,
   downloadKindsFor,
   downloadsBytes,
   localAudioUri,
   localVideoUri,
+  manageActionsFor,
   pauseDownload,
   resumeDownload,
   startDownload,
@@ -178,17 +181,98 @@ describe('download kinds', () => {
     expect(lastTask().to.uri).toBe(MP4);
   });
 
-  it('keeps one kind per episode: switching replaces the other file', async () => {
+  it('keeps a finished download when the other kind is fetched next to it', async () => {
     startDownload(withVideo, 'audio');
     lastTask().finish(1000);
     await settled();
 
     startDownload(withVideo, 'video');
-    expect(files.has(MP3)).toBe(false);
+    // The mp3 stays, and stays playable, while the mp4 comes down.
+    expect(files.has(MP3)).toBe(true);
+    expect(item(withVideo)).toMatchObject({
+      kind: 'video',
+      status: 'downloading',
+      also: { kind: 'audio', totalBytes: 1000 },
+    });
+    expect(localAudioUri(withVideo.id)).toBe(MP3);
     lastTask().finish(5000);
     await settled();
     expect(item(withVideo)).toMatchObject({ kind: 'video', status: 'done' });
+    expect(downloadedKinds(item(withVideo))).toEqual(['audio', 'video']);
+    expect([...files.keys()].sort()).toEqual([MP3, MP4]);
+    expect(localAudioUri(withVideo.id)).toBe(MP3);
+    expect(localVideoUri(withVideo.id)).toBe(MP4);
+    expect(storageStats().usedBytes).toBe(6000);
+  });
+
+  it('clears an unfinished download of the other kind instead of keeping it', () => {
+    // A failed audio download left a partial mp3 behind.
+    files.set(MP3, 'partial');
+    useDownloads.getState().patch(withVideo.id, { kind: 'audio', status: 'error' });
+
+    startDownload(withVideo, 'video');
+    expect(files.has(MP3)).toBe(false);
+    expect(item(withVideo)).toMatchObject({ kind: 'video', status: 'downloading' });
+    expect(item(withVideo)!.also).toBeUndefined();
+  });
+
+  it('deletes one kind and keeps the other', async () => {
+    startDownload(withVideo, 'audio');
+    lastTask().finish(1000);
+    await settled();
+    startDownload(withVideo, 'video');
+    lastTask().finish(5000);
+    await settled();
+
+    // The kept one (audio) goes: the item is untouched otherwise.
+    deleteDownload(withVideo.id, 'audio');
     expect([...files.keys()]).toEqual([MP4]);
+    expect(item(withVideo)).toMatchObject({ kind: 'video', status: 'done', totalBytes: 5000 });
+    expect(item(withVideo)!.also).toBeUndefined();
+
+    // Asking for a kind that is not there is a no-op.
+    deleteDownload(withVideo.id, 'audio');
+    expect(item(withVideo)).toMatchObject({ kind: 'video', status: 'done' });
+
+    // The last one goes: nothing is left.
+    deleteDownload(withVideo.id, 'video');
+    expect(files.size).toBe(0);
+    expect(item(withVideo)).toBeUndefined();
+  });
+
+  it('promotes the kept kind when the one fetched last is deleted', async () => {
+    startDownload(withVideo, 'audio');
+    lastTask().finish(1000);
+    await settled();
+    startDownload(withVideo, 'video');
+    lastTask().finish(5000);
+    await settled();
+
+    deleteDownload(withVideo.id, 'video');
+    expect([...files.keys()]).toEqual([MP3]);
+    expect(item(withVideo)).toMatchObject({ kind: 'audio', status: 'done', totalBytes: 1000 });
+    expect(item(withVideo)!.also).toBeUndefined();
+    expect(localAudioUri(withVideo.id)).toBe(MP3);
+    expect(localVideoUri(withVideo.id)).toBeUndefined();
+    expect(storageStats().usedBytes).toBe(1000);
+  });
+
+  it('survives a file system that throws while deleting one kind', async () => {
+    startDownload(withVideo, 'audio');
+    lastTask().finish(1000);
+    await settled();
+    startDownload(withVideo, 'video');
+    lastTask().finish(5000);
+    await settled();
+
+    const del = jest.spyOn(File.prototype, 'delete').mockImplementation(() => {
+      throw new Error('EBUSY');
+    });
+    expect(() => deleteDownload(withVideo.id, 'audio')).not.toThrow();
+    expect(() => deleteDownload(withVideo.id, 'video')).not.toThrow();
+    expect(() => deleteDownload(withVideo.id)).not.toThrow();
+    del.mockRestore();
+    expect(item(withVideo)).toBeUndefined();
   });
 
   it('pauses and resumes a video download as video', async () => {
@@ -265,8 +349,7 @@ describe('<DownloadButton/> chooser', () => {
     expect(item(audioOnly)).toMatchObject({ kind: 'audio', status: 'downloading' });
   });
 
-  it('says which kind is on disk, and deletes it after a confirm', async () => {
-    const alert = jest.spyOn(Alert, 'alert').mockImplementation(() => undefined);
+  it('says which kind is on disk', async () => {
     startDownload(withVideo, 'video');
     lastTask().finish(5000);
     await settled();
@@ -275,13 +358,6 @@ describe('<DownloadButton/> chooser', () => {
     expect(screen.queryByTestId('downloaded-audio')).toBeNull();
     const done = screen.getByTestId('downloaded-video');
     expect(done.props.accessibilityLabel).toBe(translate('en', 'downloadedVideo'));
-
-    await fireEvent.press(done);
-    type AlertButton = { style?: string; onPress?: () => void };
-    const buttons = alert.mock.calls.at(-1)![2] as AlertButton[];
-    await act(async () => buttons.find((b) => b.style === 'destructive')!.onPress!());
-    expect(files.has(MP4)).toBe(false);
-    expect(screen.getByTestId('download-button')).toBeTruthy();
   });
 
   it('has every new string in both locales', () => {
@@ -292,9 +368,149 @@ describe('<DownloadButton/> chooser', () => {
       'downloadVideoHint',
       'downloadedAudio',
       'downloadedVideo',
+      'downloadedBoth',
+      'getAudio',
+      'getVideo',
+      'deleteAudio',
+      'deleteVideo',
+      'deleteBoth',
+      'deleteDownload',
     ] as const) {
       expect(translate('fa', key)).not.toBe(translate('en', key));
       expect(translate('fa', key)).not.toBe(key);
     }
+  });
+});
+
+describe('menu of a downloaded episode: the choices', () => {
+  const done = (kind: 'audio' | 'video') => ({ kind, status: 'done' as const });
+
+  it('offers nothing while nothing is on disk', () => {
+    expect(manageActionsFor(withVideo, undefined)).toEqual([]);
+    expect(manageActionsFor(withVideo, { kind: 'audio', status: 'downloading' })).toEqual([]);
+  });
+
+  it('audio on disk, video available: get the video, or delete the audio', () => {
+    expect(manageActionsFor(withVideo, done('audio'))).toEqual(['download-video', 'delete-audio']);
+  });
+
+  it('video on disk, audio available: get the audio, or delete the video', () => {
+    expect(manageActionsFor(withVideo, done('video'))).toEqual(['download-audio', 'delete-video']);
+  });
+
+  it('both on disk: delete either, or both', () => {
+    const both = { ...done('video'), also: { kind: 'audio' as const, totalBytes: 1 } };
+    expect(manageActionsFor(withVideo, both)).toEqual([
+      'delete-audio',
+      'delete-video',
+      'delete-all',
+    ]);
+  });
+
+  it('an audio-only episode: just "Delete download"', () => {
+    expect(manageActionsFor(audioOnly, done('audio'))).toEqual(['delete']);
+    // An item from before kinds existed is audio.
+    expect(manageActionsFor(audioOnly, { status: 'done' })).toEqual(['delete']);
+  });
+
+  it('offers both kinds for an archive-backed special (mp3 + mp4, no enclosure)', () => {
+    const special = episodes.find((e) => e.season === 0 && !e.audioUrl && e.archiveVideoUrl)!;
+    expect(special.archiveAudioUrl).toBeTruthy();
+    expect(manageActionsFor(special, done('audio'))).toEqual(['download-video', 'delete-audio']);
+  });
+});
+
+describe('<DownloadButton/> menu of a downloaded episode', () => {
+  const download = async (ep: Episode, kind: 'audio' | 'video', bytes: number) => {
+    startDownload(ep, kind);
+    lastTask().finish(bytes);
+    await settled();
+  };
+  const ids = () =>
+    ['download-audio', 'download-video', 'delete-audio', 'delete-video', 'delete-all', 'delete']
+      .map((a) => `manage-${a}`)
+      .filter((id) => screen.queryByTestId(id));
+
+  it('audio downloaded: "Download Video" fetches the mp4 and keeps the mp3', async () => {
+    await download(withVideo, 'audio', 1000);
+    await render(<DownloadButton episode={withVideo} />);
+    expect(ids()).toEqual([]);
+
+    await fireEvent.press(screen.getByTestId('downloaded-audio'));
+    expect(ids()).toEqual(['manage-download-video', 'manage-delete-audio']);
+    expect(screen.getByText('Download Video')).toBeTruthy();
+    expect(screen.getByText('Delete Audio')).toBeTruthy();
+
+    await fireEvent.press(screen.getByTestId('manage-download-video'));
+    expect(lastTask().url).toBe(withVideo.archiveVideoUrl);
+    expect(lastTask().to.uri).toBe(MP4);
+    expect(files.has(MP3)).toBe(true);
+    expect(screen.getByTestId('download-progress')).toBeTruthy();
+
+    lastTask().finish(5000);
+    await settled();
+    expect(screen.getByTestId('downloaded-both')).toBeTruthy();
+  });
+
+  it('video downloaded: "Download Audio" fetches the mp3; "Delete Video" removes the mp4', async () => {
+    await download(withVideo, 'video', 5000);
+    await render(<DownloadButton episode={withVideo} />);
+    await fireEvent.press(screen.getByTestId('downloaded-video'));
+    expect(ids()).toEqual(['manage-download-audio', 'manage-delete-video']);
+    expect(screen.getByText('Download Audio')).toBeTruthy();
+
+    await fireEvent.press(screen.getByTestId('manage-delete-video'));
+    expect(files.size).toBe(0);
+    expect(item(withVideo)).toBeUndefined();
+    expect(screen.getByTestId('download-button')).toBeTruthy();
+  });
+
+  it('both downloaded: deletes one and keeps the other, or deletes all', async () => {
+    await download(withVideo, 'audio', 1000);
+    await download(withVideo, 'video', 5000);
+    await render(<DownloadButton episode={withVideo} />);
+    await fireEvent.press(screen.getByTestId('downloaded-both'));
+    expect(ids()).toEqual(['manage-delete-audio', 'manage-delete-video', 'manage-delete-all']);
+
+    await fireEvent.press(screen.getByTestId('manage-delete-video'));
+    expect([...files.keys()]).toEqual([MP3]);
+    expect(item(withVideo)).toMatchObject({ kind: 'audio', status: 'done' });
+
+    // Back to one kind: the menu offers the video again.
+    await fireEvent.press(screen.getByTestId('downloaded-audio'));
+    expect(ids()).toEqual(['manage-download-video', 'manage-delete-audio']);
+    await fireEvent.press(screen.getByTestId('manage-download-video'));
+    lastTask().finish(5000);
+    await settled();
+
+    await fireEvent.press(screen.getByTestId('downloaded-both'));
+    await fireEvent.press(screen.getByTestId('manage-delete-all'));
+    expect(files.size).toBe(0);
+    expect(item(withVideo)).toBeUndefined();
+    expect(screen.getByTestId('download-button')).toBeTruthy();
+  });
+
+  it('audio-only episode: just "Delete download"', async () => {
+    await download(audioOnly, 'audio', 1000);
+    await render(<DownloadButton episode={audioOnly} />);
+    await fireEvent.press(screen.getByTestId('downloaded-audio'));
+    expect(ids()).toEqual(['manage-delete']);
+    expect(screen.getByText('Delete download')).toBeTruthy();
+
+    await fireEvent.press(screen.getByTestId('manage-delete'));
+    expect(files.size).toBe(0);
+    expect(item(audioOnly)).toBeUndefined();
+  });
+
+  it('does not crash when the file system throws on delete', async () => {
+    await download(withVideo, 'audio', 1000);
+    await render(<DownloadButton episode={withVideo} />);
+    const del = jest.spyOn(File.prototype, 'delete').mockImplementation(() => {
+      throw new Error('EBUSY');
+    });
+    await fireEvent.press(screen.getByTestId('downloaded-audio'));
+    await fireEvent.press(screen.getByTestId('manage-delete-audio'));
+    del.mockRestore();
+    expect(screen.getByTestId('download-button')).toBeTruthy();
   });
 });

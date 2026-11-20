@@ -1,3 +1,4 @@
+import type { Episode } from '@content/types';
 import { digits } from '@/i18n';
 import type { Locale } from '@/state/settings';
 
@@ -51,4 +52,21 @@ export function joinMeta(...parts: (string | undefined | null | false)[]): strin
     .filter((p): p is string => Boolean(p))
     .map((p) => `\u2068${p}\u2069`)
     .join('  ·  ');
+}
+
+/**
+ * The small line above an episode's title: "S07E07 · <date>". A special that is
+ * a talk reads "<conference> - <date>" instead of its "SP<n>" code, in the
+ * reader's language; one without a conference keeps the code.
+ */
+export function episodeMeta(
+  ep: Pick<Episode, 'season' | 'code' | 'publishedAt' | 'conferenceEn' | 'conferenceFa'>,
+  locale: Locale,
+): string {
+  const date = formatDate(ep.publishedAt, locale);
+  const conference =
+    locale === 'fa' ? (ep.conferenceFa ?? ep.conferenceEn) : (ep.conferenceEn ?? ep.conferenceFa);
+  if (ep.season !== 0 || !conference) return joinMeta(ep.code, date);
+  // Isolated like joinMeta's fragments: a Latin name next to a Persian date must not reorder.
+  return `\u2068${conference}\u2069 - \u2068${date}\u2069`;
 }

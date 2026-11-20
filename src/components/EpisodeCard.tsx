@@ -2,7 +2,7 @@ import { memo } from 'react';
 import { Pressable, View } from 'react-native';
 import type { Episode } from '@/content';
 import { useI18n } from '@/i18n';
-import { formatDate, formatTime, joinMeta } from '@/lib/format';
+import { episodeMeta, formatTime } from '@/lib/format';
 import { progressFraction, useProgress } from '@/state/progress';
 import { radius, space, useResponsive, useTheme } from '@/theme';
 import { CachedImage } from './CachedImage';
@@ -60,7 +60,7 @@ export const EpisodeCard = memo(function EpisodeCard({ episode, onPress, hero }:
   const fraction = progressFraction(progress);
   const primary = pick(episode.titleFa, episode.titleEn);
   const secondary = other(episode.titleFa, episode.titleEn);
-  const meta = joinMeta(episode.code, formatDate(episode.publishedAt, locale));
+  const meta = episodeMeta(episode, locale);
 
   const titles = (
     <View style={{ flex: 1, gap: 2 }}>
