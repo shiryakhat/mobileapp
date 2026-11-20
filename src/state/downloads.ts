@@ -3,7 +3,9 @@
  * Downloads are resumable: pausing stores the platform resume data, so a paused
  * download survives an app restart.
  *
- * An episode is downloaded as ONE kind at a time:
+ * An episode downloads one kind at a time, and can keep both on disk: the kind
+ * fetched last is the item itself (`kind`, `status`, …), a finished download of
+ * the other kind stays next to it as `also`.
  *  - audio : mirrors `audioSourceFor` in src/player/controller.ts — the RSS
  *            enclosure when present, else the archive.org mp3
  *            (`archiveAudioUrl`), which is how the talk specials (no enclosure)
@@ -31,6 +33,11 @@ export interface DownloadItem {
   fileUri?: string;
   pauseState?: DownloadPauseState;
   error?: string;
+  /**
+   * A finished download of the other kind, kept on disk next to this one (an
+   * episode with both an mp3 and an mp4 can hold both; v1.3.2).
+   */
+  also?: { kind: DownloadKind; totalBytes: number };
   updatedAt: number;
 }
 
@@ -145,6 +152,46 @@ export function downloadKindsFor(ep: Episode): DownloadKind[] {
   return kinds;
 }
 
+/** The kinds that are finished and kept on disk for an item: audio first, then video. */
+export function downloadedKinds(
+  item: Pick<DownloadItem, 'kind' | 'status' | 'also'> | undefined,
+): DownloadKind[] {
+  if (!item) return [];
+  const have = new Set<DownloadKind>();
+  if (item.status === 'done') have.add(downloadKind(item));
+  if (item.also) have.add(item.also.kind);
+  return (['audio', 'video'] as const).filter((k) => have.has(k));
+}
+
+/** What the menu of a downloaded episode offers, in order. */
+export type ManageAction =
+  | 'download-audio'
+  | 'download-video'
+  | 'delete-audio'
+  | 'delete-video'
+  /** Both kinds are on disk: remove them together. */
+  | 'delete-all'
+  /** The episode only exists as one kind: plain "Delete download". */
+  | 'delete';
+
+/**
+ * The choices for an episode that is already downloaded:
+ *  - one kind on disk, the other available → download the other, delete this one;
+ *  - both on disk → delete either, or both;
+ *  - one kind on disk and nothing else to get → delete the download.
+ */
+export function manageActionsFor(
+  ep: Episode,
+  item: Pick<DownloadItem, 'kind' | 'status' | 'also'> | undefined,
+): ManageAction[] {
+  const have = downloadedKinds(item);
+  if (have.length === 0) return [];
+  if (have.length > 1) return [...have.map((k) => `delete-${k}` as const), 'delete-all'];
+  const missing = downloadKindsFor(ep).filter((k) => !have.includes(k));
+  if (missing.length === 0) return ['delete'];
+  return [...missing.map((k) => `download-${k}` as const), `delete-${have[0]!}` as const];
+}
+
 /**
  * file:// URI of the finished download, if it is of `kind`.
  * The path is rebuilt on every call rather than read back from the persisted
@@ -154,31 +201,50 @@ export function downloadKindsFor(ep: Episode): DownloadKind[] {
  */
 function localUri(episodeId: string, kind: DownloadKind): string | undefined {
   const item = store().items[episodeId];
-  if (item?.status !== 'done' || downloadKind(item) !== kind) return undefined;
+  if (!item) return undefined;
+  const primary = item.status === 'done' && downloadKind(item) === kind;
+  if (!primary && item.also?.kind !== kind) return undefined;
   try {
     const file = fileFor(episodeId, kind);
     return file.exists ? file.uri : undefined;
   } catch {
-    return item.fileUri;
+    return primary ? item.fileUri : undefined;
   }
 }
 
-/** The downloaded mp3, if the episode was downloaded as audio. */
+/** The downloaded mp3, if the episode has an audio download. */
 export const localAudioUri = (episodeId: string) => localUri(episodeId, 'audio');
 
-/** The downloaded mp4, if the episode was downloaded as video. */
+/** The downloaded mp4, if the episode has a video download. */
 export const localVideoUri = (episodeId: string) => localUri(episodeId, 'video');
+
+/** Remove what is on disk for an episode as `kind`. Never throws. */
+function removeFile(episodeId: string, kind: DownloadKind): void {
+  try {
+    const file = fileFor(episodeId, kind);
+    if (file.exists) file.delete();
+  } catch {
+    // Nothing on disk — fine.
+  }
+}
 
 /** Remove whatever is on disk for an episode, of either kind. */
 function removeFiles(episodeId: string): void {
-  for (const kind of ['audio', 'video'] as const) {
-    try {
-      const file = fileFor(episodeId, kind);
-      if (file.exists) file.delete();
-    } catch {
-      // Nothing on disk — fine.
-    }
-  }
+  for (const kind of ['audio', 'video'] as const) removeFile(episodeId, kind);
+}
+
+const otherKind = (kind: DownloadKind): DownloadKind => (kind === 'video' ? 'audio' : 'video');
+
+/**
+ * The finished download of the other kind that stays on disk while `want` is
+ * (re)fetched — its file must really be there.
+ */
+function keptBeside(item: DownloadItem | undefined, want: DownloadKind): DownloadItem['also'] {
+  const other = otherKind(want);
+  if (!item || !localUri(item.episodeId, other)) return undefined;
+  return item.also?.kind === other
+    ? item.also
+    : { kind: other, totalBytes: toBytes(item.totalBytes) };
 }
 
 function track(episodeId: string, task: DownloadTask, run: Promise<File | null>): void {
@@ -234,14 +300,19 @@ export function startDownload(ep: Episode, kind?: DownloadKind): void {
   // Runs inside a press handler: whatever the file system or the native task
   // throws ends as the item's `error` state (tap to retry), never as a crash.
   try {
-    const want = kind ?? downloadKind(store().items[ep.id]);
+    const previous = store().items[ep.id];
+    const want = kind ?? downloadKind(previous);
     const src = downloadSourceFor(ep, want);
     // "Done" only counts while the file is really there; otherwise fetch it again.
     if (!src || tasks.has(ep.id) || localUri(ep.id, want)) return;
-    // One kind per episode: a leftover of this or the other kind goes first.
-    removeFiles(ep.id);
+    // A finished download of the other kind stays (audio next to video); any
+    // other leftover — of this kind, or an unfinished one of the other — goes first.
+    const also = keptBeside(previous, want);
+    removeFile(ep.id, want);
+    if (!also) removeFile(ep.id, otherKind(want));
     store().patch(ep.id, {
       kind: want,
+      also,
       status: 'downloading',
       bytesWritten: 0,
       totalBytes: 0,
@@ -294,7 +365,42 @@ export function resumeDownload(ep: Episode): void {
   }
 }
 
-export function deleteDownload(episodeId: string): void {
+/**
+ * Delete an episode's download. With a `kind`, only that file goes and a
+ * finished download of the other kind is kept; without one, everything goes.
+ */
+export function deleteDownload(episodeId: string, kind?: DownloadKind): void {
+  const item = store().items[episodeId];
+  if (kind && item) {
+    if (item.also?.kind === kind) {
+      removeFile(episodeId, kind);
+      store().patch(episodeId, { also: undefined });
+      return;
+    }
+    // Nothing of that kind here: leave the other one alone.
+    if (downloadKind(item) !== kind) return;
+    if (item.also) {
+      // The kept download of the other kind takes over as the item.
+      try {
+        tasks.get(episodeId)?.cancel();
+      } catch {
+        // Already finished or released — nothing to cancel.
+      }
+      tasks.delete(episodeId);
+      removeFile(episodeId, kind);
+      store().patch(episodeId, {
+        kind: item.also.kind,
+        status: 'done',
+        bytesWritten: item.also.totalBytes,
+        totalBytes: item.also.totalBytes,
+        fileUri: undefined, // rebuilt from the id on every read (see localUri)
+        pauseState: undefined,
+        error: undefined,
+        also: undefined,
+      });
+      return;
+    }
+  }
   try {
     tasks.get(episodeId)?.cancel();
   } catch {
@@ -318,14 +424,18 @@ export function downloadsBytes(): number {
   } catch {
     // Fall through to the bookkeeping figure (web, or an unreadable folder).
   }
-  return Object.values(store().items).reduce((n, i) => n + toBytes(i.bytesWritten), 0);
+  return Object.values(store().items).reduce(
+    (n, i) => n + toBytes(i.bytesWritten) + toBytes(i.also?.totalBytes),
+    0,
+  );
 }
 
 /** Bytes of finished downloads, of both kinds, by the bookkeeping. */
 export function storageStats(): { usedBytes: number; freeBytes: number } {
-  const usedBytes = Object.values(store().items)
-    .filter((i) => i.status === 'done')
-    .reduce((n, i) => n + toBytes(i.totalBytes), 0);
+  const usedBytes = Object.values(store().items).reduce(
+    (n, i) => n + (i.status === 'done' ? toBytes(i.totalBytes) : 0) + toBytes(i.also?.totalBytes),
+    0,
+  );
   let freeBytes = 0;
   try {
     freeBytes = toBytes(Paths.availableDiskSpace);

@@ -1,12 +1,14 @@
 import Feather from '@expo/vector-icons/Feather';
 import { useState } from 'react';
-import { Alert, Pressable, View } from 'react-native';
+import { Pressable, View } from 'react-native';
 import type { Episode } from '@/content';
 import { useI18n } from '@/i18n';
 import {
   deleteDownload,
+  downloadedKinds,
   downloadKind,
   downloadKindsFor,
+  manageActionsFor,
   pauseDownload,
   resumeDownload,
   startDownload,
@@ -14,6 +16,7 @@ import {
   useDownloads,
   type DownloadItem,
   type DownloadKind,
+  type ManageAction,
 } from '@/state/downloads';
 import { brand, dark, HIT_SLOP, radius, space, useTheme } from '@/theme';
 import { Icon, IconButton, ProgressRing, Sheet, Text, type IconName } from './ui';
@@ -110,8 +113,70 @@ function KindOption({ kind, onPress }: { kind: DownloadKind; onPress: () => void
   );
 }
 
+const MANAGE: Record<
+  ManageAction,
+  {
+    label:
+      'getAudio' | 'getVideo' | 'deleteAudio' | 'deleteVideo' | 'deleteBoth' | 'deleteDownload';
+    /** The kind the row is about; none for "everything". */
+    kind?: DownloadKind;
+    download?: boolean;
+  }
+> = {
+  'download-audio': { label: 'getAudio', kind: 'audio', download: true },
+  'download-video': { label: 'getVideo', kind: 'video', download: true },
+  'delete-audio': { label: 'deleteAudio', kind: 'audio' },
+  'delete-video': { label: 'deleteVideo', kind: 'video' },
+  'delete-all': { label: 'deleteBoth' },
+  delete: { label: 'deleteDownload' },
+};
+
+/** One row of the downloaded episode's menu: get the other kind, or delete one. */
+function ManageOption({ action, onPress }: { action: ManageAction; onPress: () => void }) {
+  const theme = useTheme();
+  const { t } = useI18n();
+  const { label, kind, download } = MANAGE[action];
+  const hint = download ? t(kind === 'video' ? 'downloadVideoHint' : 'downloadAudioHint') : null;
+  return (
+    <Pressable
+      testID={`manage-${action}`}
+      accessibilityRole="button"
+      accessibilityLabel={t(label)}
+      accessibilityHint={hint ?? undefined}
+      onPress={onPress}
+      style={({ pressed }) => ({
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: space.md,
+        padding: space.md,
+        borderRadius: radius.md,
+        backgroundColor: theme.raised,
+        opacity: pressed ? 0.7 : 1,
+      })}
+    >
+      <Icon
+        name={download && kind ? KIND_ICON[kind] : 'trash-2'}
+        size={20}
+        color={download ? 'accent' : 'danger'}
+      />
+      <View style={{ flex: 1, gap: 2 }}>
+        <Text weight="medium" color={download ? undefined : 'danger'}>
+          {t(label)}
+        </Text>
+        {hint ? (
+          <Text variant="small" color="muted">
+            {hint}
+          </Text>
+        ) : null}
+      </View>
+      {download ? <Icon name="download" size={18} color="muted" /> : null}
+    </Pressable>
+  );
+}
+
 /**
- * One button, four states: download → pause → resume → downloaded (tap to delete).
+ * One button, four states: download → pause → resume → downloaded (tap for the
+ * menu: get the other kind when the episode has one, delete what is on disk).
  *
  * Starting a download asks "Audio or Video?" in a bottom sheet when the episode
  * has both (an archive.org mp4 next to its audio); with a single kind on offer
@@ -121,11 +186,25 @@ export function DownloadButton({ episode }: { episode: Episode }) {
   const { t } = useI18n();
   const item = useDownloads((s) => s.items[episode.id]);
   const [choosing, setChoosing] = useState(false);
+  const [managing, setManaging] = useState(false);
   // Downloadable as audio (the RSS enclosure, or the archive.org mp3 fallback
   // the talk specials have) and / or as video (the archive.org mp4).
   const kinds = downloadKindsFor(episode);
   if (kinds.length === 0) return null;
   const kind = downloadKind(item);
+
+  const run = (action: ManageAction) => {
+    setManaging(false);
+    // A press handler: the downloader and the delete path swallow file-system
+    // errors themselves, and nothing else here may take the screen down either.
+    try {
+      const { kind: target, download } = MANAGE[action];
+      if (download) startDownload(episode, target);
+      else deleteDownload(episode.id, target);
+    } catch {
+      // The item is left as it was; the menu can be opened again.
+    }
+  };
 
   switch (item?.status) {
     case 'downloading':
@@ -149,26 +228,34 @@ export function DownloadButton({ episode }: { episode: Episode }) {
           onPress={() => startDownload(episode)}
         />
       );
-    case 'done':
-      return (
-        <IconButton
-          // The kind on disk is told apart at a glance: a film strip for video.
-          icon={kind === 'video' ? 'film' : 'check-circle'}
-          color="success"
-          testID={`downloaded-${kind}`}
-          label={t(kind === 'video' ? 'downloadedVideo' : 'downloadedAudio')}
-          onPress={() =>
-            Alert.alert(t(kind === 'video' ? 'downloadedVideo' : 'downloadedAudio'), undefined, [
-              { text: t('cancel'), style: 'cancel' },
-              {
-                text: t('delete'),
-                style: 'destructive',
-                onPress: () => deleteDownload(episode.id),
-              },
-            ])
-          }
-        />
+    case 'done': {
+      const have = downloadedKinds(item);
+      const title = t(
+        have.length > 1
+          ? 'downloadedBoth'
+          : kind === 'video'
+            ? 'downloadedVideo'
+            : 'downloadedAudio',
       );
+      return (
+        <>
+          <IconButton
+            // The kind on disk is told apart at a glance: a film strip for video.
+            icon={have.includes('video') ? 'film' : 'check-circle'}
+            color="success"
+            testID={`downloaded-${have.length > 1 ? 'both' : kind}`}
+            label={title}
+            onPress={() => setManaging(true)}
+          />
+          <Sheet visible={managing} onClose={() => setManaging(false)}>
+            <Text variant="title">{title}</Text>
+            {manageActionsFor(episode, item).map((action) => (
+              <ManageOption key={action} action={action} onPress={() => run(action)} />
+            ))}
+          </Sheet>
+        </>
+      );
+    }
     default:
       return (
         <>

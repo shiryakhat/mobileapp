@@ -17,6 +17,12 @@ export interface Episode {
   code: string;
   titleFa: string;
   titleEn: string;
+  /**
+   * Specials that are talks: the conference / venue / show the talk was given
+   * at (e.g. "Devcon 5"). Shown with the date in place of the "SP<n>" code.
+   */
+  conferenceEn?: string;
+  conferenceFa?: string;
   /** ISO date (YYYY-MM-DD). */
   publishedAt: string;
   durationSec: number;
