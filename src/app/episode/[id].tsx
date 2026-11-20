@@ -7,6 +7,7 @@ import { DownloadButton } from '@/components/DownloadButton';
 import { EpisodeArtwork } from '@/components/EpisodeArtwork';
 import { PlayerControls } from '@/components/PlayerControls';
 import { TranscriptView } from '@/components/TranscriptView';
+import { LocalVideoSurface } from '@/components/LocalVideoSurface';
 import { YoutubeSurface } from '@/components/YoutubeSurface';
 import {
   Button,
@@ -25,6 +26,7 @@ import { formatDate, formatMinutes, formatTime, joinMeta } from '@/lib/format';
 import { loadEpisode } from '@/player/controller';
 import { usePlayback } from '@/player/store';
 import { useBookmarks, useIsEpisodeBookmarked } from '@/state/bookmarks';
+import { localVideoUri } from '@/state/downloads';
 import { resumePosition, useProgress } from '@/state/progress';
 import { radius, space, useResponsive, useTheme } from '@/theme';
 import NotFound from '../+not-found';
@@ -180,6 +182,8 @@ function EpisodeScreen({ episode, startAt, cue, initialPane }: EpisodeScreenProp
   const secondary = other(episode.titleFa, episode.titleEn);
   const showVideo = isCurrent && engine === 'youtube' && mode === 'video';
   const youtubeAudio = isCurrent && engine === 'youtube' && mode === 'audio';
+  // Video mode with the mp4 on disk: the local player instead of the iframe.
+  const localVideo = isCurrent && engine === 'video' ? localVideoUri(episode.id) : undefined;
   const resumeAt = resumePosition(saved);
 
   const panes: { value: Pane; label: string }[] = [
@@ -227,7 +231,9 @@ function EpisodeScreen({ episode, startAt, cue, initialPane }: EpisodeScreenProp
           />
         </View>
 
-        {showVideo ? (
+        {localVideo ? (
+          <LocalVideoSurface key={localVideo} uri={localVideo} width={width} />
+        ) : showVideo ? (
           <YoutubeSurface videoId={episode.youtubeId} width={width} />
         ) : (
           <View

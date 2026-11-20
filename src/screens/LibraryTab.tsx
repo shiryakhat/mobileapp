@@ -10,6 +10,7 @@ import { liveBookmarks, useBookmarks, type Bookmark } from '@/state/bookmarks';
 import {
   deleteAllDownloads,
   deleteDownload,
+  downloadKind,
   startDownload,
   storageStats,
   useDownloads,
@@ -80,12 +81,14 @@ function DownloadRow({ item }: { item: DownloadItem }) {
   const { t, pick, locale } = useI18n();
   const episode = getEpisode(item.episodeId);
   if (!episode) return null;
+  const kind = t(downloadKind(item));
   const status =
     item.status === 'done'
-      ? formatBytes(item.totalBytes, locale)
+      ? joinMeta(kind, formatBytes(item.totalBytes, locale))
       : item.status === 'error'
         ? t('downloadFailed')
         : joinMeta(
+            kind,
             t(item.status === 'paused' ? 'paused' : 'downloading'),
             formatBytes(item.bytesWritten, locale),
           );

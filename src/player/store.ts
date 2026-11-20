@@ -2,7 +2,7 @@ import { create } from 'zustand';
 
 export type PlayerMode = 'audio' | 'video';
 /** Which engine is actually producing sound. */
-export type PlayerEngine = 'native' | 'youtube';
+export type PlayerEngine = 'native' | 'youtube' | 'video';
 
 interface PlaybackState {
   episodeId?: string;

@@ -17,7 +17,11 @@ jest.mock('expo-audio', () => ({
   setAudioModeAsync: jest.fn(() => Promise.resolve()),
 }));
 jest.mock('@/lib/cache', () => ({ cachedImageUri: jest.fn(() => undefined) }));
-jest.mock('@/state/downloads', () => ({ localAudioUri: jest.fn(() => undefined) }));
+jest.mock('@/state/downloads', () => ({
+  localAudioUri: jest.fn(() => undefined),
+  localVideoUri: jest.fn(() => undefined),
+  useDownloads: { subscribe: jest.fn() },
+}));
 jest.mock('expo-asset', () => {
   class FakeAsset {
     name: string;

@@ -1,5 +1,5 @@
 /**
- * Unified player: one API over two engines.
+ * Unified player: one API over three engines.
  *
  *  - native  : expo-audio, streams the podcast RSS enclosure (or a downloaded
  *              file; archive.org is the fallback). Survives navigation, plays
@@ -7,6 +7,9 @@
  *              controls.
  *  - youtube : the YouTube iframe on the episode screen (video mode, and the
  *              audio fallback for episodes with no audio URL at all).
+ *  - video   : expo-video on the episode screen, playing a DOWNLOADED mp4 in
+ *              video mode — offline video. Without a local file, video mode
+ *              streams through the YouTube iframe as before.
  *
  * Screens only talk to this module and to `usePlayback`.
  */
@@ -20,7 +23,7 @@ import { AppState, Platform } from 'react-native';
 import { getEpisode, type Episode } from '@/content';
 import { translate } from '@/i18n';
 import { cachedImageUri } from '@/lib/cache';
-import { localAudioUri } from '@/state/downloads';
+import { localAudioUri, localVideoUri, useDownloads } from '@/state/downloads';
 import { resumePosition, useProgress } from '@/state/progress';
 import { useSettings } from '@/state/settings';
 import { localArtworkUri, resolveLocalArtwork } from './artwork';
@@ -50,8 +53,17 @@ interface YoutubeHandle {
   resend: (playing: boolean) => void;
 }
 
+/** What <LocalVideoSurface/> exposes; commands are imperative, never mirrored props. */
+interface VideoHandle {
+  play: () => void;
+  pause: () => void;
+  seekTo: (sec: number) => void;
+  setRate: (rate: number) => void;
+}
+
 let audio: AudioPlayer | undefined;
 let youtube: YoutubeHandle | undefined;
+let video: VideoHandle | undefined;
 /** Position to jump to once the active engine is ready. */
 let pendingSeek: number | undefined;
 let lastSavedAt = -1;
@@ -86,7 +98,8 @@ const primaryFailed = new Set<string>();
 
 /**
  * Where the native engine plays an episode from: the downloaded file, else the
- * podcast RSS enclosure, else archive.org.
+ * podcast RSS enclosure, else archive.org. An episode downloaded as VIDEO plays
+ * its mp4's audio track here, so audio mode works offline for it too.
  *
  * archive.org mirrors every episode (creator "Shir Ya Khat"); the pipeline
  * resolves the file URLs at build time (pipeline/src/archive.ts) into
@@ -96,24 +109,22 @@ const primaryFailed = new Set<string>();
  * YouTube iframe), and as a one-off retry when the enclosure errors out.
  * For episodes uploaded as video, `archiveAudioUrl` is the item's mp4: the
  * native player streams its audio track.
- *
- * TODO: downloads (src/state/downloads.ts) still only fetch the RSS enclosure;
- * give them the same fallback, together with VIDEO downloads.
  */
 export function audioSourceFor(ep: Episode): string | undefined {
-  const local = localAudioUri(ep.id);
+  const local = localAudioUri(ep.id) ?? localVideoUri(ep.id);
   if (local) return local;
   if (primaryFailed.has(ep.id) && ep.archiveAudioUrl) return ep.archiveAudioUrl;
   return ep.audioUrl ?? ep.archiveAudioUrl;
 }
 
 /**
- * The archive.org mp4 (H.264) of an episode, for the video path.
+ * The archive.org mp4 (H.264) of an episode, for the video path. It is what a
+ * video download fetches (src/state/downloads.ts); once on disk it plays
+ * through the 'video' engine.
  *
- * TODO: not played yet. Video only streams through the YouTube iframe, which
- * may be filtered or geo-blocked for part of the audience; falling back to this
- * file needs a native video surface (expo-video — a new native module, hence a
- * new build) plus a third engine next to 'native' / 'youtube'. Cloudflare
+ * TODO: it is not STREAMED yet. Without a download, video only plays through
+ * the YouTube iframe, which may be filtered or geo-blocked for part of the
+ * audience; the 'video' engine could stream this URL as a fallback. Cloudflare
  * (R2 / Stream) is an alternative host if archive.org proves too slow.
  */
 export const archiveVideoSourceFor = (ep: Episode): string | undefined => ep.archiveVideoUrl;
@@ -135,6 +146,8 @@ function retryFromArchive(): boolean {
 }
 
 function engineFor(ep: Episode, mode: PlayerMode): PlayerEngine {
+  // Video mode plays the downloaded mp4 when there is one, else it streams.
+  if (mode === 'video' && localVideoUri(ep.id)) return 'video';
   return mode === 'audio' && audioSourceFor(ep) ? 'native' : 'youtube';
 }
 
@@ -281,11 +294,15 @@ export interface LoadOptions {
   autoplay?: boolean;
 }
 
-/** Make `ep` the current episode. No-op (apart from an optional seek) if it already is. */
-export function loadEpisode(ep: Episode, opts: LoadOptions = {}): void {
+/**
+ * Make `ep` the current episode. No-op (apart from an optional seek) if it
+ * already is — unless `force`d, to pick the engine again (see the downloads
+ * subscription below).
+ */
+export function loadEpisode(ep: Episode, opts: LoadOptions = {}, force = false): void {
   const current = state();
   const mode = opts.mode ?? (current.episodeId === ep.id ? current.mode : 'audio');
-  if (current.episodeId === ep.id && current.mode === mode) {
+  if (!force && current.episodeId === ep.id && current.mode === mode) {
     if (opts.startAt !== undefined) seekTo(opts.startAt);
     if (opts.autoplay) play();
     return;
@@ -309,7 +326,8 @@ export function loadEpisode(ep: Episode, opts: LoadOptions = {}): void {
     episodeId: ep.id,
     mode,
     engine,
-    playing: engine === 'youtube' ? autoplay : false,
+    // The surface engines start (or not) when their view attaches.
+    playing: engine === 'native' ? false : autoplay,
     buffering: false,
     positionSec: startAt,
     durationSec: ep.durationSec,
@@ -339,13 +357,15 @@ export function play(): void {
     // A player that lost its source ignores play(): load the episode again.
     if (needsReload) reloadNative();
     else ensureAudio().play();
-  } else awaitYoutube();
+  } else if (state().engine === 'video') video?.play();
+  else awaitYoutube();
   set({ playing: true });
 }
 
 export function pause(): void {
   wantPlaying = false;
   if (state().engine === 'native') audio?.pause();
+  else if (state().engine === 'video') video?.pause();
   else awaitYoutube();
   set({ playing: false });
   persistProgress(true);
@@ -363,6 +383,9 @@ export function seekTo(sec: number): void {
   if (engine === 'native') {
     if (audio?.isLoaded) void audio.seekTo(target);
     else pendingSeek = target;
+  } else if (engine === 'video') {
+    if (video) video.seekTo(target);
+    else pendingSeek = target;
   } else if (youtube) {
     youtube.seekTo(target);
     awaitYoutube();
@@ -375,6 +398,7 @@ export function setRate(rate: number): void {
   useSettings.getState().setPlaybackRate(rate);
   set({ rate });
   if (state().engine === 'native') audio?.setPlaybackRate(rate);
+  else if (state().engine === 'video') video?.setRate(rate);
 }
 
 export function cycleRate(): void {
@@ -388,6 +412,7 @@ export function stop(): void {
   wantPlaying = false;
   forgetYoutube();
   audio?.pause();
+  if (state().engine === 'video') video?.pause();
   try {
     audio?.clearLockScreenControls();
   } catch {
@@ -499,3 +524,66 @@ export function reportYoutube(update: {
   set({ ...rest, playing });
   persistProgress(!playing);
 }
+
+// ── Local video engine bridge (called by <LocalVideoSurface/>) ───────────────
+
+/** What the surface should do once its file is ready to play. */
+export interface VideoStart {
+  startAt?: number;
+  autoplay: boolean;
+  rate: number;
+}
+
+export function attachVideo(handle: VideoHandle): VideoStart {
+  video = handle;
+  const startAt = pendingSeek;
+  pendingSeek = undefined;
+  return { startAt, autoplay: wantPlaying, rate: state().rate };
+}
+
+export function detachVideo(handle: VideoHandle): void {
+  if (video !== handle) return;
+  video = undefined;
+  if (state().engine === 'video') {
+    persistProgress(true);
+    // Remember where we were so re-mounting (or switching to audio) resumes there.
+    pendingSeek = state().positionSec;
+    wantPlaying = false;
+    set({ playing: false, buffering: false });
+  }
+}
+
+/**
+ * The local player's own state. Unlike the iframe, it is commanded
+ * imperatively and plays from disk, so what it reports is simply the truth
+ * (its native controls, an interruption, the end of the file).
+ */
+export function reportVideo(update: {
+  positionSec?: number;
+  durationSec?: number;
+  playing?: boolean;
+  buffering?: boolean;
+  ended?: boolean;
+  error?: string;
+}): void {
+  if (state().engine !== 'video') return;
+  const { ended, ...rest } = update;
+  if (ended) {
+    wantPlaying = false;
+    set({ ...rest, playing: false, buffering: false });
+    persistProgress(true);
+    return;
+  }
+  if (rest.playing !== undefined) wantPlaying = rest.playing;
+  set(rest);
+  persistProgress(rest.playing === false);
+}
+
+// The mp4 under the 'video' engine was deleted (from the episode screen or the
+// library) while it was the current source: pick the engine again, at the same
+// position — video mode goes back to streaming through YouTube.
+useDownloads.subscribe(() => {
+  if (state().engine !== 'video') return;
+  const ep = getEpisode(state().episodeId);
+  if (ep && !localVideoUri(ep.id)) loadEpisode(ep, {}, true);
+});
