@@ -133,6 +133,35 @@ describe('an episode without an RSS enclosure', () => {
   });
 });
 
+describe('the bundled talk specials (sp02–sp15)', () => {
+  // Real bundle data, not fixtures: content/episodes.json is what the app
+  // imports (through content/index.generated.ts), so this fails if the
+  // pipeline's archive step has not resolved a special.
+  const talks = episodes.filter((e) => /^sp(0[2-9]|1[0-5])$/.test(e.id));
+
+  it('carry their archive.org mp3 in the app bundle', () => {
+    expect(talks).toHaveLength(14);
+    for (const ep of talks) {
+      expect(ep.audioUrl).toBeUndefined();
+      expect(ep.archiveId).toBe(`shiryakhat-${ep.youtubeId}`);
+      expect(ep.archiveAudioUrl).toMatch(
+        /^https:\/\/archive\.org\/download\/shiryakhat-[\w-]+\/.+\.mp3$/,
+      );
+      expect(ep.archiveAudioUrl).toContain(`/shiryakhat-${ep.youtubeId}/`);
+    }
+  });
+
+  it('play on the native engine by default, and through YouTube in video mode', () => {
+    for (const ep of talks) {
+      loadEpisode(ep);
+      expect(usePlayback.getState()).toMatchObject({ mode: 'audio', engine: 'native' });
+      expect(sources().at(-1)).toBe(ep.archiveAudioUrl);
+    }
+    loadEpisode(talks[0]!, { mode: 'video' });
+    expect(usePlayback.getState().engine).toBe('youtube');
+  });
+});
+
 describe('the RSS enclosure fails to load', () => {
   it('retries once from archive.org, at the same position', () => {
     const ep = fixture(2, {});

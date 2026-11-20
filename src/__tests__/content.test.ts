@@ -18,7 +18,7 @@ describe('content bundle', () => {
     expect(new Set(episodes.map((e) => e.id)).size).toBe(episodes.length);
   });
 
-  it('ships the conference talks as YouTube-only specials with chapters and key points', () => {
+  it('ships the conference talks as specials with chapters and key points', () => {
     const specials = episodes.filter((e) => e.season === 0);
     expect(specials.map((e) => e.id)).toEqual(
       Array.from({ length: 15 }, (_, i) => `sp${String(15 - i).padStart(2, '0')}`),
@@ -26,8 +26,9 @@ describe('content bundle', () => {
     for (const e of specials) {
       expect(e.code).toBe(e.id.toUpperCase());
       expect(e.episode).toBe(Number(e.id.slice(2)));
-      // No RSS enclosure: the player picks the YouTube engine for these.
+      // No RSS enclosure: the native player streams these from archive.org.
       expect(e.audioUrl).toBeUndefined();
+      expect(e.archiveAudioUrl).toContain(`/shiryakhat-${e.youtubeId}/`);
       expect(e.titleFa && e.titleEn).toBeTruthy();
       expect(e.chapters.length).toBeGreaterThan(2);
       expect(e.chapters[0]!.startSec).toBe(0);
