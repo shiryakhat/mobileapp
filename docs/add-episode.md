@@ -71,7 +71,7 @@ files (`<stem>.info.json`, `.fa.srt`, `.en.srt`) in the talks directory
 (`/Volumes/Beezhan/data/talks`, override `SYK_TALKS_DIR`); only ids listed in `SPECIALS`
 are read from there. Specials have no RSS audio, so they play from YouTube. To build the
 transcript of just the new one without rewriting the others from the corpus:
-`npm --prefix pipeline run transcripts -- --only sp15`.
+`npm --prefix pipeline run transcripts -- --only sp16`.
 
 ## 2. Transcribe (Whisper, bilingual)
 

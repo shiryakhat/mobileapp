@@ -132,4 +132,11 @@ export const SPECIALS: Record<
     titleFa: 'کدنویسی از سر خشم و مادرِ همهٔ وی‌پی‌ان‌ها: یادداشت‌هایی از قطعی‌های اینترنت ایران',
     titleEn: "Rage-Coding the Mother of All VPNs: Notes from Iran's Internet Blackouts",
   },
+  // Added after sp02-sp14, so it takes the next number although it dates from 2020.
+  'mSmp_-z3UOg': {
+    id: 'sp15',
+    titleFa: 'تقلب شفاف: حمله‌های فرانت‌رانینگ در بلاکچین (کنفرانس بلاکچین استنفورد ۲۰۲۰)',
+    titleEn:
+      'Transparent Dishonesty: front-running attacks on Blockchain (Stanford Blockchain Conference 2020)',
+  },
 };
