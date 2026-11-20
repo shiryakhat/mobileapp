@@ -3,10 +3,11 @@
  * Audio only — video stays streamed in v1. Downloads are resumable: pausing
  * stores the platform resume data, so a paused download survives an app restart.
  *
- * TODO: fall back to archive.org (`ep.archiveAudioUrl`, an mp3 only for the
- * audio-only seasons) when the RSS enclosure is unavailable, and add video
- * downloads (`ep.archiveVideoUrl`) — see `audioSourceFor` in
- * src/player/controller.ts.
+ * The download source mirrors `audioSourceFor` in src/player/controller.ts:
+ * the RSS enclosure when present, else the archive.org mp3 (`archiveAudioUrl`)
+ * — which is how the talk specials (no enclosure) download.
+ *
+ * TODO: add video downloads (`ep.archiveVideoUrl`) for offline video.
  */
 import { Directory, DownloadTask, File, Paths, type DownloadPauseState } from 'expo-file-system';
 import { create } from 'zustand';
@@ -141,8 +142,10 @@ const onProgress = (episodeId: string) => {
 };
 
 export function startDownload(ep: Episode): void {
+  // Audio source: RSS enclosure, else the archive.org mp3 fallback.
+  const src = ep.audioUrl ?? ep.archiveAudioUrl;
   // "Done" only counts while the file is really there; otherwise fetch it again.
-  if (!ep.audioUrl || tasks.has(ep.id) || localAudioUri(ep.id)) return;
+  if (!src || tasks.has(ep.id) || localAudioUri(ep.id)) return;
   const destination = fileFor(ep.id);
   if (destination.exists) destination.delete();
   store().patch(ep.id, {
@@ -153,7 +156,7 @@ export function startDownload(ep: Episode): void {
     pauseState: undefined,
     fileUri: undefined,
   });
-  const task = File.createDownloadTask(ep.audioUrl, destination, { onProgress: onProgress(ep.id) });
+  const task = File.createDownloadTask(src, destination, { onProgress: onProgress(ep.id) });
   track(ep.id, task, task.downloadAsync());
 }
 

@@ -69,7 +69,9 @@ function DownloadRing({
 export function DownloadButton({ episode }: { episode: Episode }) {
   const { t } = useI18n();
   const item = useDownloads((s) => s.items[episode.id]);
-  if (!episode.audioUrl) return null;
+  // Downloadable if there's any audio source: the RSS enclosure or the
+  // archive.org mp3 fallback (the talk specials have only the latter).
+  if (!episode.audioUrl && !episode.archiveAudioUrl) return null;
 
   switch (item?.status) {
     case 'downloading':
