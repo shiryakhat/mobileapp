@@ -111,10 +111,8 @@ Description (FA):
 
 ## What's New
 
-The Google Play release notes for the current version live in
-[`store/whatsnew/`](../store/whatsnew) (`en-US.txt`, `fa-IR.txt`). Those files are the source of truth:
-the Play Promote workflow sends them as is (see [release.md](release.md), section 6). The v1.0 text
-below is kept for reference.
+The text for the current release (everything since v1.2.0) is in
+[RELEASE_NOTES.md](../RELEASE_NOTES.md). The first-release text is kept below for reference.
 
 What's New (v1.0, EN):
 

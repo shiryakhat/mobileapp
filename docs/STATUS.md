@@ -12,8 +12,10 @@ process in [release.md](release.md).
 - **Full-text search** — across every transcript
 - **Tap-to-define glossary** — blockchain terms explained inline
 - **Chapters** — jump between topics
-- **Bookmarks / resume** — pick up where you left off
-- **Player** — stream or download for offline
+- **Bookmarks / resume** — bookmark an episode or a timestamped moment with a note; pick up where
+  you left off
+- **Player** — stream audio or video, with archive.org as the audio fallback
+- **Offline downloads** — audio for every episode, video where an archive.org video exists
 - **Light / dark themes + RTL** — full right-to-left Persian interface
 - **Deep links** — Universal Links (iOS) / App Links (Android)
 - **Coin-flip easter egg**
@@ -52,9 +54,10 @@ In production there is therefore:
 
 - **Archive.org, remaining work** — audio already falls back to each episode's
   archive.org item (`archiveAudioUrl`, resolved at build time; see `audioSourceFor` in
-  `src/player/controller.ts`). Still open: play `archiveVideoUrl` when YouTube is
-  unavailable (needs a native video surface), use archive.org for downloads, and surface
-  the item as an alternative download / view link on the episode screen and share sheet.
+  `src/player/controller.ts`), and downloads use it (audio for specials, `archiveVideoUrl`
+  for offline video). Still open: stream `archiveVideoUrl` when YouTube is unavailable, and
+  surface the item as an alternative download / view link on the episode screen and share
+  sheet.
 - **MCP server** — expose the podcast corpus (episodes, transcripts, glossary, search) as an
   MCP server wrapping `content/`, so agents can query the show without the app.
 
