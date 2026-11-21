@@ -1,0 +1,83 @@
+# Promote the build that is already on one Google Play track to another
+# (default: beta -> production), with the release notes in store/whatsnew/.
+#
+# Manual only: a human runs this from Actions -> Play Promote -> Run workflow.
+# It never runs on push, on a tag or when a GitHub Release is published, and
+# the Release workflow does not call it. No bundle is built or uploaded — the
+# versionCode that is live on the source track is reused as-is.
+#
+# Docs: docs/release.md (section 6)
+name: Play Promote
+
+on:
+  workflow_dispatch:
+    inputs:
+      source_track:
+        description: Track to promote from
+        type: string
+        default: beta
+      target_track:
+        description: Track to promote to
+        type: string
+        default: production
+      status:
+        description: Release status on the target track
+        type: choice
+        options: [completed, draft]
+        default: completed
+      dry_run:
+        description: Validate only — do not commit the promotion
+        type: boolean
+        default: false
+
+permissions:
+  contents: read
+
+concurrency:
+  group: play-promote
+  cancel-in-progress: false
+
+jobs:
+  promote:
+    name: Promote ${{ inputs.source_track }} -> ${{ inputs.target_track }}
+    # Belt and braces: even if another trigger is ever added above, this job
+    # only runs when a person dispatched it.
+    if: github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      GOOGLE_SERVICE_ACCOUNT_KEY_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_KEY_JSON }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          persist-credentials: false
+      - uses: actions/setup-node@v7
+        with:
+          node-version: 24
+
+      - name: Write Google Play service account key
+        run: |
+          set -euo pipefail
+          [ -n "$GOOGLE_SERVICE_ACCOUNT_KEY_JSON" ] || { echo "::error::GOOGLE_SERVICE_ACCOUNT_KEY_JSON not set"; exit 1; }
+          key_path="${RUNNER_TEMP}/google-service-account.json"
+          umask 077
+          case "$GOOGLE_SERVICE_ACCOUNT_KEY_JSON" in
+            "{"*) printf '%s' "$GOOGLE_SERVICE_ACCOUNT_KEY_JSON" > "$key_path" ;;
+            *) printf '%s' "$GOOGLE_SERVICE_ACCOUNT_KEY_JSON" | base64 --decode > "$key_path" ;;
+          esac
+          jq -e '.type == "service_account"' "$key_path" > /dev/null
+          echo "GOOGLE_SERVICE_ACCOUNT_KEY_PATH=${key_path}" >> "$GITHUB_ENV"
+
+      - name: Promote on Google Play
+        env:
+          PLAY_PACKAGE: net.shiryakhat.app
+          SOURCE_TRACK: ${{ inputs.source_track }}
+          TARGET_TRACK: ${{ inputs.target_track }}
+          PLAY_STATUS: ${{ inputs.status }}
+          PLAY_DRY_RUN: ${{ inputs.dry_run }}
+          WHATSNEW_DIR: store/whatsnew
+        run: node scripts/play-promote.mjs
+
+      - name: Remove key files
+        if: always()
+        run: rm -f "${RUNNER_TEMP}/google-service-account.json"
