@@ -38,6 +38,13 @@ export interface DownloadItem {
    * episode with both an mp3 and an mp4 can hold both; v1.3.2).
    */
   also?: { kind: DownloadKind; totalBytes: number };
+  /**
+   * When the episode entered the downloads list. Set once and never touched by
+   * progress, pause/resume or retry, so it is what the list is ordered by
+   * (v1.3.4). Absent on items persisted before that until they are rehydrated.
+   */
+  addedAt?: number;
+  /** Last change of any kind — moves on every progress tick; never sort by it. */
   updatedAt: number;
 }
 
@@ -52,20 +59,26 @@ export const useDownloads = create<DownloadsState>()(
     (set) => ({
       items: {},
       patch: (episodeId, patch) =>
-        set((s) => ({
-          items: {
-            ...s.items,
-            [episodeId]: {
-              episodeId,
-              status: 'downloading',
-              bytesWritten: 0,
-              totalBytes: 0,
-              ...s.items[episodeId],
-              ...patch,
-              updatedAt: Date.now(),
+        set((s) => {
+          const now = Date.now();
+          const previous = s.items[episodeId];
+          return {
+            items: {
+              ...s.items,
+              [episodeId]: {
+                episodeId,
+                status: 'downloading',
+                bytesWritten: 0,
+                totalBytes: 0,
+                ...previous,
+                ...patch,
+                // Fixed from the moment the item exists (see `sortDownloads`).
+                addedAt: previous ? (previous.addedAt ?? previous.updatedAt) : now,
+                updatedAt: now,
+              },
             },
-          },
-        })),
+          };
+        }),
       drop: (episodeId) =>
         set((s) => {
           const next = { ...s.items };
@@ -80,6 +93,8 @@ export const useDownloads = create<DownloadsState>()(
       onRehydrateStorage: () => (state) => {
         if (!state) return;
         for (const item of Object.values(state.items)) {
+          // Items from before v1.3.4: their last change is the best "added" we have.
+          item.addedAt ??= item.updatedAt;
           if (item.status === 'downloading') {
             item.status = item.pauseState ? 'paused' : 'error';
           }
@@ -88,6 +103,21 @@ export const useDownloads = create<DownloadsState>()(
     },
   ),
 );
+
+/**
+ * The downloads list, in display order: most recently added first.
+ *
+ * The order only depends on `addedAt` (and the id, to break ties), which do not
+ * change while bytes arrive. Sorting by `updatedAt` — as the list did up to
+ * v1.3.3 — made the rows of concurrent downloads swap places on every progress
+ * tick, because each tick bumps `updatedAt`.
+ */
+export function sortDownloads(items: Record<string, DownloadItem>): DownloadItem[] {
+  const added = (item: DownloadItem) => item.addedAt ?? item.updatedAt;
+  return Object.values(items).sort(
+    (a, b) => added(b) - added(a) || a.episodeId.localeCompare(b.episodeId),
+  );
+}
 
 const tasks = new Map<string, DownloadTask>();
 const store = () => useDownloads.getState();

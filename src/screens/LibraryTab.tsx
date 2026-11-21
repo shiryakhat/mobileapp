@@ -12,6 +12,7 @@ import {
   deleteDownload,
   downloadedKinds,
   downloadKind,
+  sortDownloads,
   startDownload,
   storageStats,
   useDownloads,
@@ -150,10 +151,8 @@ export function LibraryTab() {
   const allBookmarks = useBookmarks((s) => s.items);
   const downloadMap = useDownloads((s) => s.items);
   const bookmarks = useMemo(() => liveBookmarks(allBookmarks), [allBookmarks]);
-  const downloads = useMemo(
-    () => Object.values(downloadMap).sort((a, b) => b.updatedAt - a.updatedAt),
-    [downloadMap],
-  );
+  // Ordered by when each was added — not by anything a progress tick changes.
+  const downloads = useMemo(() => sortDownloads(downloadMap), [downloadMap]);
   // Recomputed whenever the download map changes.
   const stats = useMemo(() => storageStats(), [downloadMap]); // eslint-disable-line react-hooks/exhaustive-deps
 
