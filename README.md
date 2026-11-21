@@ -1,7 +1,66 @@
-# Shir ya Khat — mobile app
+<div align="center">
 
-Bilingual (Farsi / English), RTL-first archive and community app for **Shir ya Khat** (شیر یا خط,
-"Heads or Tails"), a non-profit Persian blockchain podcast recorded as live panels since 2017.
+<a href="https://shiryakhat.app">
+  <img src="https://shiryakhat.app/assets/icon-512.png" alt="Shir ya Khat logo" width="120" />
+</a>
+
+<h1>Shir ya Khat — شیر یا خط</h1>
+
+<p><b>The Persian blockchain podcast — bilingual, open, and free.</b></p>
+
+<a href="https://shiryakhat.app">
+  <img src="https://shiryakhat.app/assets/og-image.jpg" alt="Shir ya Khat — the Persian blockchain podcast" width="100%" />
+</a>
+
+<p>
+  <a href="https://shiryakhat.app"><img src="https://img.shields.io/badge/Website-shiryakhat.app-F5B301?style=flat-square" alt="Website: shiryakhat.app" /></a>
+  <a href="https://shiryakhat.net"><img src="https://img.shields.io/badge/Website-shiryakhat.net-F5B301?style=flat-square" alt="Website: shiryakhat.net" /></a>
+  <a href="https://play.google.com/store/apps/details?id=net.shiryakhat.app"><img src="https://img.shields.io/badge/Google%20Play-Android-414141?style=flat-square&logo=googleplay&logoColor=white" alt="Google Play" /></a>
+  <a href="https://testflight.apple.com/join/VtyyXkUt"><img src="https://img.shields.io/badge/TestFlight-iOS-0D96F6?style=flat-square&logo=testflight&logoColor=white" alt="TestFlight" /></a>
+</p>
+
+<p>
+  <a href="https://open.spotify.com/show/7AQ3C6yGz4haADinqtP63N"><img src="https://img.shields.io/badge/Spotify-1DB954?style=flat-square&logo=spotify&logoColor=white" alt="Spotify" /></a>
+  <a href="https://podcasts.apple.com/us/podcast/id1221206951"><img src="https://img.shields.io/badge/Apple%20Podcasts-9933CC?style=flat-square&logo=applepodcasts&logoColor=white" alt="Apple Podcasts" /></a>
+  <a href="https://www.youtube.com/playlist?list=PLDwI1rIhknpNmr4nno40seb6FAiJ-jsun"><img src="https://img.shields.io/badge/YouTube-FF0000?style=flat-square&logo=youtube&logoColor=white" alt="YouTube" /></a>
+  <a href="https://t.me/shiryakhatpod"><img src="https://img.shields.io/badge/Telegram-26A5E4?style=flat-square&logo=telegram&logoColor=white" alt="Telegram" /></a>
+  <a href="https://x.com/shiryakhat"><img src="https://img.shields.io/badge/X-000000?style=flat-square&logo=x&logoColor=white" alt="X" /></a>
+  <a href="https://coiniran.com"><img src="https://img.shields.io/badge/CoinIran-coiniran.com-2B6CB0?style=flat-square" alt="CoinIran" /></a>
+  <a href="https://coiniran.academy"><img src="https://img.shields.io/badge/CoinIran%20Academy-coiniran.academy-2B6CB0?style=flat-square" alt="CoinIran Academy" /></a>
+</p>
+
+</div>
+
+## Why this app
+
+**Shir ya Khat** (شیر یا خط, "Heads or Tails") is a non-profit, volunteer-run podcast that has been
+making blockchain and crypto accessible to Farsi speakers since 2016, with 7 seasons of in-depth
+bilingual conversations. This app is the full, continuous collection in one place: every episode
+with synced Farsi + English closed captions, offline downloads, bookmarks, sharing, and a complete
+crypto glossary. Part of the Coiniran family, alongside [Coiniran](https://coiniran.com) news and
+[Coiniran Academy](https://coiniran.academy).
+
+## Features
+
+- **55 episodes**: 40 podcast episodes across 7 seasons, plus 15 specials (conference talks and a
+  guest interview).
+- **Stream or download for offline.** Audio for every episode; video for the episodes that have
+  real video, picked in an Audio / Video chooser. Video downloads are compact 720p files.
+- **Archive.org-backed playback**, with an automatic fallback to the archive.org audio when the
+  primary source is unreachable.
+- **Synced bilingual transcripts** (Farsi / English closed captions) on every episode. Tap a line
+  to jump to that moment.
+- **Chapters** on every episode.
+- **Bookmarks and notes.** Mark a whole episode or a timestamped moment (long-press a transcript
+  line), add a note, and find them all in the Bookmarks library.
+- **Complete bilingual crypto glossary.** 442 terms with Farsi and English definitions, each
+  cross-referenced to the episodes where it is discussed, and tappable inline in transcripts.
+- **Full-text search** across episodes and transcripts, with timestamped hits.
+- **Share cards** (art + quote + QR), **resume playback** per episode, and **playback-speed
+  control**.
+- A hidden **شیر یا خط coin flip**, for those who find it.
+
+## Under the hood
 
 - **Expo SDK 58**, React Native 0.88, TypeScript (strict), expo-router
 - **Dark-first** custom design system, Vazirmatn typeface for both scripts

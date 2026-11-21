@@ -11,7 +11,6 @@ Watch offline! Download episodes as video or audio — and video downloads are n
 
 • Bookmark any moment in an episode, add a note, and jump back from Bookmarks
 • Conference talks play in the background and can be downloaded
-• The featured card shows a different episode each time you refresh
 • Fixed: play/pause in video mode, a crash when starting a download, and the downloads list jumping around
 • Early audio-only episodes no longer show a blank video
 ```
@@ -23,7 +22,6 @@ What's New (FA):
 
 • هر لحظه از قسمت را نشان کنید، یادداشت بگذارید و از بخش نشان‌شده‌ها به همان‌جا برگردید
 • سخنرانی‌های کنفرانسی در پس‌زمینه پخش می‌شوند و قابل دانلودند
-• کارت ویژه با هر بار تازه‌سازی قسمت دیگری را نشان می‌دهد
 • رفع اشکال: پخش/توقف در حالت ویدیو، بسته‌شدن برنامه هنگام شروع دانلود و جابه‌جا شدن فهرست دانلودها
 • قسمت‌های قدیمیِ فقط‌صوتی دیگر ویدیوی خالی نشان نمی‌دهند
 ```
