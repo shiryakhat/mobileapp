@@ -186,10 +186,13 @@ function EpisodeScreen({ episode, startAt, cue, initialPane }: EpisodeScreenProp
 
   const primary = pick(episode.titleFa, episode.titleEn);
   const secondary = other(episode.titleFa, episode.titleEn);
-  const showVideo = isCurrent && engine === 'youtube' && mode === 'video';
+  // A video surface is only ever shown for an episode that has a video; the
+  // controller never puts an audio-only episode in video mode either.
+  const inVideo = isCurrent && episode.hasVideo && mode === 'video';
+  const showVideo = inVideo && engine === 'youtube';
   const youtubeAudio = isCurrent && engine === 'youtube' && mode === 'audio';
   // Video mode with the mp4 on disk: the local player instead of the iframe.
-  const localVideo = isCurrent && engine === 'video' ? localVideoUri(episode.id) : undefined;
+  const localVideo = inVideo && engine === 'video' ? localVideoUri(episode.id) : undefined;
   const resumeAt = resumePosition(saved);
 
   const panes: { value: Pane; label: string }[] = [

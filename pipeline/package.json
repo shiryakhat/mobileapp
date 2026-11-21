@@ -11,7 +11,7 @@
     "enrich": "tsx src/enrich.ts",
     "finalize": "tsx src/finalize.ts",
     "build": "npm run episodes && npm run archive && npm run transcripts && npm run finalize",
-    "check:content": "tsx src/finalize.ts && git diff --exit-code --stat -- ../content/glossary.json ../content/search-index.json ../content/index.generated.ts ../content/transcripts || (echo 'Derived content is stale: run `npm --prefix pipeline run finalize` and commit the result.' >&2; exit 1)",
+    "check:content": "tsx src/finalize.ts && git diff --exit-code --stat -- ../content/episodes.json ../content/glossary.json ../content/search-index.json ../content/index.generated.ts ../content/transcripts || (echo 'Derived content is stale: run `npm --prefix pipeline run finalize` and commit the result.' >&2; exit 1)",
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
