@@ -2,12 +2,14 @@ import { router, useLocalSearchParams } from 'expo-router';
 import { useCallback, useEffect, useMemo, useState } from 'react';
 import { Linking, ScrollView, View } from 'react-native';
 import { CommentsPane } from '@/community/CommentsPane';
+import { BookmarkSheet } from '@/components/BookmarkSheet';
 import { ChapterList } from '@/components/ChapterList';
 import { DownloadButton } from '@/components/DownloadButton';
 import { EpisodeArtwork } from '@/components/EpisodeArtwork';
 import { PlayerControls } from '@/components/PlayerControls';
 import { TranscriptView } from '@/components/TranscriptView';
 import { LocalVideoSurface } from '@/components/LocalVideoSurface';
+import { MarkList } from '@/components/MarkList';
 import { YoutubeSurface } from '@/components/YoutubeSurface';
 import {
   Button,
@@ -25,7 +27,7 @@ import { communityEnabled } from '@/lib/flags';
 import { formatDate, formatMinutes, formatTime, joinMeta } from '@/lib/format';
 import { loadEpisode } from '@/player/controller';
 import { usePlayback } from '@/player/store';
-import { useBookmarks, useIsEpisodeBookmarked } from '@/state/bookmarks';
+import { useBookmarks, useEpisodeMarks, useHasBookmarks } from '@/state/bookmarks';
 import { localVideoUri } from '@/state/downloads';
 import { resumePosition, useProgress } from '@/state/progress';
 import { radius, space, useResponsive, useTheme } from '@/theme';
@@ -153,7 +155,11 @@ function EpisodeScreen({ episode, startAt, cue, initialPane }: EpisodeScreenProp
   const [pane, setPane] = useState<Pane>(
     initialPane ?? (cue !== undefined ? 'transcript' : 'about'),
   );
-  const bookmarked = useIsEpisodeBookmarked(episode.id);
+  // One bookmark button for the episode and for moments in it: lit when either exists.
+  const bookmarked = useHasBookmarks(episode.id);
+  const marks = useEpisodeMarks(episode.id);
+  /** The position the bookmark sheet was opened at; undefined while it is closed. */
+  const [markAt, setMarkAt] = useState<number>();
 
   const isCurrent = usePlayback((s) => s.episodeId === episode.id);
   const mode = usePlayback((s) => s.mode);
@@ -211,8 +217,13 @@ function EpisodeScreen({ episode, startAt, cue, initialPane }: EpisodeScreenProp
             testID="bookmark-button"
             icon="bookmark"
             color={bookmarked ? 'accent' : 'text'}
-            label={bookmarked ? t('removeBookmark') : t('bookmarkEpisode')}
-            onPress={() => useBookmarks.getState().toggleEpisode(episode.id)}
+            label={t('bookmarkAdd')}
+            accessibilityState={{ selected: bookmarked }}
+            onPress={() => {
+              // Where this episode is now: in the player, or where it was left off.
+              const { episodeId, positionSec } = usePlayback.getState();
+              setMarkAt(Math.floor(episodeId === episode.id ? positionSec : resumeAt));
+            }}
           />
           <IconButton
             testID="share-button"
@@ -294,6 +305,17 @@ function EpisodeScreen({ episode, startAt, cue, initialPane }: EpisodeScreenProp
           {pane === 'about' ? <AboutPane episode={episode} onSeek={seekHere} /> : null}
           {pane === 'chapters' ? (
             <ScrollView>
+              {marks.length > 0 ? (
+                <View
+                  testID="episode-marks"
+                  style={{ paddingHorizontal: space.md, paddingTop: space.lg, gap: space.sm }}
+                >
+                  <View style={{ paddingHorizontal: space.md }}>
+                    <SectionTitle>{t('yourBookmarks')}</SectionTitle>
+                  </View>
+                  <MarkList marks={marks} onSeek={seekHere} />
+                </View>
+              ) : null}
               <ChapterList episode={episode} onSeek={seekHere} />
             </ScrollView>
           ) : null}
@@ -310,6 +332,12 @@ function EpisodeScreen({ episode, startAt, cue, initialPane }: EpisodeScreenProp
           ) : null}
         </View>
       </Content>
+      <BookmarkSheet
+        episode={episode}
+        atSec={markAt}
+        onClose={() => setMarkAt(undefined)}
+        onSeek={seekHere}
+      />
     </Screen>
   );
 }
