@@ -25,14 +25,15 @@ npm version patch ──► git push --follow-tags ──► .github/workflows/r
               eas submit ──► TestFlight                        eas submit ──► Play internal track
 ```
 
-| File                                 | Role                                                                                                              |
-| ------------------------------------ | ----------------------------------------------------------------------------------------------------------------- |
-| `eas.json`                           | Build profiles (`development`, `development-device`, `preview`, `production`) and the `production` submit profile |
-| `.github/workflows/release.yml`      | Tag / manual release                                                                                              |
-| `.github/workflows/ci.yml`           | Lint, typecheck, test on PRs and `main`                                                                           |
-| `.github/workflows/play-promote.yml` | Manual-only promotion of a Play track to another (beta -> production), see section 6                              |
-| `scripts/play-promote.mjs`           | The promotion itself: Play Developer API, no bundle upload                                                        |
-| `store/whatsnew/<lang>.txt`          | Store release notes ("What's New"), one file per Play language                                                    |
+| File                                 | Role                                                                                                               |
+| ------------------------------------ | ------------------------------------------------------------------------------------------------------------------ |
+| `eas.json`                           | Build profiles (`development`, `development-device`, `preview`, `production`) and the `production` submit profile  |
+| `.github/workflows/release.yml`      | Tag / manual release                                                                                               |
+| `.github/workflows/ci.yml`           | Lint, typecheck, test on PRs and `main`                                                                            |
+| `.github/workflows/play-promote.yml` | Manual-only promotion of a Play track to another (beta -> production), see section 6                               |
+| `scripts/play-promote.mjs`           | The promotion itself: Play Developer API, no bundle upload                                                         |
+| `scripts/asc-prepare-release.mjs`    | Stages an iOS App Store version (version, "What's New", build) and reports readiness; never submits, see section 6 |
+| `store/whatsnew/<lang>.txt`          | Store release notes ("What's New") for both stores, one file per language                                          |
 
 What the store build contains (and what is flag-gated off) is tracked in
 [STATUS.md](STATUS.md); the listing copy for App Store Connect and Play is in
@@ -283,9 +284,9 @@ signal in GitHub and get it by email / on expo.dev instead.
 
 Nothing is released to the public automatically.
 
-- **iOS**: App Store Connect -> the app -> TestFlight to test; then
-  Distribution -> create the version -> select the build -> fill in "What's New"
-  -> Add for Review. External TestFlight groups need a one-time Beta App Review.
+- **iOS**: App Store Connect -> the app -> TestFlight to test; then stage the
+  version with `scripts/asc-prepare-release.mjs` (below) and press **Add for
+  Review** by hand. External TestFlight groups need a one-time Beta App Review.
 - **Android**: run the **Play Promote** workflow (below), or do it by hand in
   Play Console -> Testing -> the release -> **Promote release** -> Production,
   set the rollout percentage, send for review. New personal developer accounts
@@ -330,6 +331,52 @@ header lists the environment variables, including `PLAY_STATUS=inProgress` with
 
 To submit straight to another Play track, change `submit.production.android.track`
 in `eas.json` (`internal`, `alpha`, `beta`, `production`).
+
+### App Store prepare-release script (iOS)
+
+`scripts/asc-prepare-release.mjs` stages an App Store version through the App
+Store Connect API so that only the final click is left. It **never submits for
+review**: it can send four writes (create the version, rename it, set "What's
+New", select the build) and refuses every submission or release endpoint.
+
+```bash
+ASC_ISSUER_ID=<issuer id> APP_VERSION=1.3.5 BUILD_NUMBER=46 \
+  node scripts/asc-prepare-release.mjs
+```
+
+Run it locally from the repo root, with the API key from 1.2 on disk
+(`ASC_KEY_PATH`, a `.p8` that is never committed). The script header lists every
+environment variable; `ASC_DRY_RUN=1` reads and reports without writing.
+
+1. **Version.** Reuses version `APP_VERSION` if it is still editable, otherwise
+   creates it. If that version is already waiting for review, in review or
+   released, the script stops and changes nothing.
+2. **What's New.** Sets the text on every localization the listing already has,
+   from `store/whatsnew/<lang>.txt` — the same files the Play promotion uses.
+   A locale takes the file with its exact code (`en-US` -> `en-US.txt`), else
+   the only file in the same language (`fa` -> `fa-IR.txt`, `en-CA` ->
+   `en-US.txt`). A locale with no file in its language is left alone. Apple has
+   no "What's New" field on an app's very first version.
+3. **Build.** Selects build `BUILD_NUMBER` if it belongs to `APP_VERSION`, has
+   finished processing and has not expired; otherwise it says why not.
+4. **Readiness.** Re-reads the version and prints its state, the selected
+   build, export compliance, per-locale description / keywords / support URL /
+   "What's New" / screenshot counts by display size, age rating, category,
+   privacy policy URL and review contact, then `READY TO SUBMIT: yes/no` with
+   the blockers. The exit code is non-zero only when staging itself failed.
+
+**One open version at a time.** Apple refuses to create a version while another
+one is waiting for review or in review ("You cannot create a new version of the
+App in the current state"). Either wait until that version is approved and
+released, or remove it from review in App Store Connect and rerun with
+`ASC_REUSE_EDITABLE=1`, which renames the now-editable version to `APP_VERSION`
+instead of creating a second one.
+
+**Submitting (manual).** When the report says `READY TO SUBMIT: yes`: App Store
+Connect -> the app -> Distribution -> the version -> check the build, "What's
+New" and the release option (manual or automatic after approval) -> **Add for
+Review** -> **Submit for Review**. App Privacy answers, pricing and agreements
+are not visible to the API, so check those there too.
 
 ---
 
