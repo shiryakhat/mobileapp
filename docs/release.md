@@ -15,11 +15,14 @@ npm version patch ──► git push --follow-tags ──► .github/workflows/r
               eas submit ──► TestFlight                        eas submit ──► Play internal track
 ```
 
-| File                            | Role                                                                                                              |
-| ------------------------------- | ----------------------------------------------------------------------------------------------------------------- |
-| `eas.json`                      | Build profiles (`development`, `development-device`, `preview`, `production`) and the `production` submit profile |
-| `.github/workflows/release.yml` | Tag / manual release                                                                                              |
-| `.github/workflows/ci.yml`      | Lint, typecheck, test on PRs and `main`                                                                           |
+| File                                 | Role                                                                                                              |
+| ------------------------------------ | ----------------------------------------------------------------------------------------------------------------- |
+| `eas.json`                           | Build profiles (`development`, `development-device`, `preview`, `production`) and the `production` submit profile |
+| `.github/workflows/release.yml`      | Tag / manual release                                                                                              |
+| `.github/workflows/ci.yml`           | Lint, typecheck, test on PRs and `main`                                                                           |
+| `.github/workflows/play-promote.yml` | Manual-only promotion of a Play track to another (beta -> production), see section 6                              |
+| `scripts/play-promote.mjs`           | The promotion itself: Play Developer API, no bundle upload                                                        |
+| `store/whatsnew/<lang>.txt`          | Store release notes ("What's New"), one file per Play language                                                    |
 
 What the store build contains (and what is flag-gated off) is tracked in
 [STATUS.md](STATUS.md); the listing copy for App Store Connect and Play is in
@@ -273,10 +276,47 @@ Nothing is released to the public automatically.
 - **iOS**: App Store Connect -> the app -> TestFlight to test; then
   Distribution -> create the version -> select the build -> fill in "What's New"
   -> Add for Review. External TestFlight groups need a one-time Beta App Review.
-- **Android**: Play Console -> Testing -> Internal testing -> the release ->
-  **Promote release** -> Closed / Open testing or Production, set the rollout
-  percentage, send for review. New personal developer accounts must complete
-  Google's closed-test requirement before production access is granted.
+- **Android**: run the **Play Promote** workflow (below), or do it by hand in
+  Play Console -> Testing -> the release -> **Promote release** -> Production,
+  set the rollout percentage, send for review. New personal developer accounts
+  must complete Google's closed-test requirement before production access is
+  granted.
+
+### Play Promote workflow (Android)
+
+To promote the current beta build to production: Actions -> **Play Promote** ->
+Run workflow, keep the defaults, Run.
+
+| Input          | Default      | Meaning                                                          |
+| -------------- | ------------ | ---------------------------------------------------------------- |
+| `source_track` | `beta`       | Track to promote from                                            |
+| `target_track` | `production` | Track to promote to                                              |
+| `status`       | `completed`  | `completed` rolls out to everyone; `draft` leaves it for a human |
+| `dry_run`      | `false`      | Build and validate the Play edit, then stop without committing   |
+
+The workflow is `workflow_dispatch` only. It never runs on push, on a tag or
+when a GitHub Release is published, and the Release workflow does not call it,
+so nothing reaches production until someone presses Run.
+
+What it does (`scripts/play-promote.mjs`, same service account as the upload):
+
+1. Reads `source_track` and takes the highest versionCode that is rolled out
+   there (`completed` or `inProgress`; drafts and halted rollouts are ignored).
+   It fails if there is none.
+2. Assigns that same versionCode to `target_track` with the chosen status and
+   the release notes from `store/whatsnew/`. No bundle is built or uploaded.
+3. Validates the edit, then commits it. It refuses to run if the target track
+   already has a newer versionCode than the source.
+
+**Release notes.** `store/whatsnew/<lang>.txt` is the source of truth for the
+Play "What's New" text. The file name is the Play language code (`en-US.txt`,
+`fa-IR.txt`) and each file must stay within Google's 500-character limit; the
+script fails otherwise. Edit these files in a PR before promoting. Every
+language in the folder is sent, so add a file to add a language.
+
+The script also runs locally with `GOOGLE_SERVICE_ACCOUNT_KEY_PATH` set; its
+header lists the environment variables, including `PLAY_STATUS=inProgress` with
+`PLAY_USER_FRACTION` for a staged rollout.
 
 To submit straight to another Play track, change `submit.production.android.track`
 in `eas.json` (`internal`, `alpha`, `beta`, `production`).

@@ -169,5 +169,11 @@ and EAS Submit to TestFlight and the Play internal track. The app version comes 
 release command. One-time setup, the secrets table and troubleshooting are in
 [`docs/release.md`](docs/release.md).
 
+Production on Google Play is a separate, manual step. To promote the current beta build to
+production, run the **Play Promote** workflow (Actions -> Play Promote -> Run workflow). It reuses
+the versionCode already on the beta track and sends the release notes in `store/whatsnew/`
+(`en-US.txt`, `fa-IR.txt`), which are the source of truth for the store's "What's New" text. It
+never runs on its own. Details are in [`docs/release.md`](docs/release.md#6-promoting-to-production).
+
 Background audio and lock-screen controls need a development or store build to behave as they will
 in production; Expo Go is fine for everything else.

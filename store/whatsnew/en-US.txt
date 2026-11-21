@@ -1,0 +1,7 @@
+What's new — a big update since our last release:
+- YouTube video play/pause is fixed
+- Corrected a few episode videos and transcripts
+- Bookmark any moment and add notes (tap a transcript line to mark)
+- Offline video downloads are now about 50% smaller
+- All talks now play native audio via archive.org, with offline download
+- Smoother, more reliable downloads
