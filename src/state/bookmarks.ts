@@ -1,4 +1,5 @@
 import * as Crypto from 'expo-crypto';
+import { useMemo } from 'react';
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 import { jsonStorage } from './storage';
@@ -18,6 +19,7 @@ export interface Bookmark {
 
 interface BookmarksState {
   items: Bookmark[];
+  /** Bookmark the whole episode (`timeSec` null) or a moment in it, with an optional note. */
   add: (episodeId: string, timeSec: number | null, note?: string) => Bookmark;
   remove: (id: string) => void;
   toggleEpisode: (episodeId: string) => void;
@@ -31,11 +33,23 @@ export const useBookmarks = create<BookmarksState>()(
       items: [],
       add: (episodeId, timeSec, note) => {
         const now = Date.now();
+        const at = timeSec === null ? null : Math.max(0, Math.floor(timeSec));
+        const text = note?.trim() || undefined;
+        // Marking the same second twice keeps one mark; a new note replaces the old one.
+        const existing = get().items.find(
+          (b) => b.episodeId === episodeId && b.timeSec === at && !b.deletedAt,
+        );
+        if (existing) {
+          if (!text || text === existing.note) return existing;
+          const updated: Bookmark = { ...existing, note: text, updatedAt: now };
+          set((s) => ({ items: s.items.map((b) => (b.id === existing.id ? updated : b)) }));
+          return updated;
+        }
         const bookmark: Bookmark = {
           id: Crypto.randomUUID(),
           episodeId,
-          timeSec: timeSec === null ? null : Math.floor(timeSec),
-          note: note?.trim() || undefined,
+          timeSec: at,
+          note: text,
           createdAt: now,
           updatedAt: now,
         };
@@ -67,4 +81,24 @@ export function useIsEpisodeBookmarked(episodeId: string): boolean {
   return useBookmarks((s) =>
     s.items.some((b) => b.episodeId === episodeId && b.timeSec === null && !b.deletedAt),
   );
+}
+
+/** A bookmark at a moment of an episode, as opposed to the episode as a whole. */
+export type Mark = Bookmark & { timeSec: number };
+
+/** An episode's moment bookmarks in playback order. */
+export function episodeMarks(items: Bookmark[], episodeId: string): Mark[] {
+  return items
+    .filter((b): b is Mark => b.episodeId === episodeId && b.timeSec !== null && !b.deletedAt)
+    .sort((a, b) => a.timeSec - b.timeSec || a.createdAt - b.createdAt);
+}
+
+export function useEpisodeMarks(episodeId: string): Mark[] {
+  const items = useBookmarks((s) => s.items);
+  return useMemo(() => episodeMarks(items, episodeId), [items, episodeId]);
+}
+
+/** True when the episode has any bookmark: the episode itself or a moment in it. */
+export function useHasBookmarks(episodeId: string): boolean {
+  return useBookmarks((s) => s.items.some((b) => b.episodeId === episodeId && !b.deletedAt));
 }

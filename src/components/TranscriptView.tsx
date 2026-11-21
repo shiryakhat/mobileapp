@@ -8,11 +8,11 @@ import { segmentWithGlossary } from '@/content/glossaryMatch';
 import { useI18n } from '@/i18n';
 import { formatTime, joinMeta } from '@/lib/format';
 import { usePlayback } from '@/player/store';
-import { useBookmarks } from '@/state/bookmarks';
+import { useBookmarks, useEpisodeMarks } from '@/state/bookmarks';
 import { useSettings, type TranscriptLangs } from '@/state/settings';
 import { radius, space, useTheme } from '@/theme';
 import { GlossarySheet } from './GlossarySheet';
-import { Button, Chip, EmptyState, Sheet, Text } from './ui';
+import { Button, Chip, EmptyState, Input, Sheet, Text } from './ui';
 
 interface Props {
   episode: Episode;
@@ -26,6 +26,8 @@ interface RowProps {
   cue: Cue;
   index: number;
   active: boolean;
+  /** A bookmarked moment falls on this line. */
+  marked: boolean;
   langs: TranscriptLangs;
   uiRTL: boolean;
   timeLabel: string;
@@ -80,6 +82,7 @@ const Row = memo(function Row({
   cue,
   index,
   active,
+  marked,
   langs,
   uiRTL,
   timeLabel,
@@ -107,15 +110,23 @@ const Row = memo(function Row({
         backgroundColor: active ? theme.accentSoft : 'transparent',
       }}
     >
-      <Text
-        variant="micro"
-        color={active ? 'accent' : 'faint'}
-        dir="ltr"
-        align="center"
-        style={{ width: 48, paddingTop: 5, fontVariant: ['tabular-nums'] }}
-      >
-        {timeLabel}
-      </Text>
+      <View style={{ width: 48, alignItems: 'center', gap: space.xs }}>
+        <Text
+          variant="micro"
+          color={active || marked ? 'accent' : 'faint'}
+          dir="ltr"
+          align="center"
+          style={{ paddingTop: 5, fontVariant: ['tabular-nums'] }}
+        >
+          {timeLabel}
+        </Text>
+        {marked ? (
+          <View
+            testID={`cue-mark-${index}`}
+            style={{ width: 6, height: 6, borderRadius: 3, backgroundColor: theme.accent }}
+          />
+        ) : null}
+      </View>
       <View style={{ flex: 1, gap: 2 }}>
         {textOf(first) ? (
           <Line text={textOf(first)} lang={first} primary uiRTL={uiRTL} onTerm={onTerm} />
@@ -144,6 +155,8 @@ export function TranscriptView({ episode, transcript, onSeek, initialCueIndex }:
   const [termSlug, setTermSlug] = useState<string>();
   const [actionIndex, setActionIndex] = useState<number>();
   const [copied, setCopied] = useState(false);
+  const [note, setNote] = useState('');
+  const marks = useEpisodeMarks(episode.id);
 
   const active = usePlayback((s) =>
     transcript && s.episodeId === episode.id ? cueIndexAt(transcript, s.positionSec * 1000) : -1,
@@ -179,6 +192,13 @@ export function TranscriptView({ episode, transcript, onSeek, initialCueIndex }:
     reveal(active, prev >= 0 && Math.abs(active - prev) <= MAX_ANIMATED_HOP);
   }, [active, follow, loaded, reveal]);
 
+  // The line each bookmarked moment falls on. Marks are whole seconds, so a mark made
+  // from a line that starts mid-second is looked up at the end of that second.
+  const markedCues = useMemo(
+    () =>
+      new Set(transcript ? marks.map((m) => cueIndexAt(transcript, m.timeSec * 1000 + 999)) : []),
+    [marks, transcript],
+  );
   const cues = transcript?.cues;
   const onPress = useCallback(
     (index: number) => {
@@ -201,9 +221,11 @@ export function TranscriptView({ episode, transcript, onSeek, initialCueIndex }:
       ? actionCue[3] || actionCue[2]
       : actionCue[2] || actionCue[3]
     : '';
+  const actionMark = actionCue ? marks.find((m) => m.timeSec === actionSec) : undefined;
   const closeActions = () => {
     setActionIndex(undefined);
     setCopied(false);
+    setNote('');
   };
 
   return (
@@ -240,7 +262,7 @@ export function TranscriptView({ episode, transcript, onSeek, initialCueIndex }:
             ref={listRef}
             testID="transcript-list"
             data={transcript.cues}
-            extraData={`${active}|${langs}|${locale}`}
+            extraData={`${active}|${langs}|${locale}|${[...markedCues].join()}`}
             keyExtractor={(_, i) => String(i)}
             initialScrollIndex={openAt > 0 ? openAt : undefined}
             initialScrollIndexParams={{ viewOffset: -viewportHeight * REVEAL_POSITION }}
@@ -256,6 +278,7 @@ export function TranscriptView({ episode, transcript, onSeek, initialCueIndex }:
                 cue={item}
                 index={index}
                 active={index === active}
+                marked={markedCues.has(index)}
                 langs={langs}
                 uiRTL={isRTL}
                 timeLabel={formatTime(item[0] / 1000, locale)}
@@ -283,15 +306,42 @@ export function TranscriptView({ episode, transcript, onSeek, initialCueIndex }:
             closeActions();
           }}
         />
-        <Button
-          kind="secondary"
-          icon="bookmark"
-          label={t('bookmarkMoment')}
-          onPress={() => {
-            useBookmarks.getState().add(episode.id, actionSec, actionText);
-            closeActions();
-          }}
-        />
+        {actionMark ? (
+          <Button
+            testID="cue-remove-bookmark"
+            kind="secondary"
+            icon="x"
+            label={t('removeBookmark')}
+            onPress={() => {
+              useBookmarks.getState().remove(actionMark.id);
+              closeActions();
+            }}
+          />
+        ) : (
+          <>
+            <Input
+              testID="cue-note"
+              icon="edit-3"
+              value={note}
+              onChangeText={setNote}
+              onClear={() => setNote('')}
+              placeholder={t('notePlaceholder')}
+              autoCorrect
+              autoCapitalize="sentences"
+            />
+            <Button
+              testID="cue-bookmark"
+              kind="secondary"
+              icon="bookmark"
+              label={t('bookmarkMoment')}
+              onPress={() => {
+                // Without a note of the user's own, the line itself is the note.
+                useBookmarks.getState().add(episode.id, actionSec, note.trim() || actionText);
+                closeActions();
+              }}
+            />
+          </>
+        )}
         <Button
           kind="secondary"
           icon="share"
