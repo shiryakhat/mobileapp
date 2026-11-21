@@ -111,6 +111,9 @@ Description (FA):
 
 ## What's New
 
+The text for the current release (everything since v1.2.0) is in
+[RELEASE_NOTES.md](../RELEASE_NOTES.md). The first-release text is kept below for reference.
+
 What's New (v1.0, EN):
 
 ```text
