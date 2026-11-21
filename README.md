@@ -1,27 +1,99 @@
-# Shir ya Khat — mobile app
+<div align="center">
 
-Bilingual (Farsi / English), RTL-first archive and community app for **Shir ya Khat** (شیر یا خط,
-"Heads or Tails"), a non-profit Persian blockchain podcast recorded as live panels since 2017.
+<a href="https://shiryakhat.app">
+  <img src="https://shiryakhat.app/assets/icon-512.png" alt="Shir ya Khat logo" width="110" />
+</a>
+
+<h1>Shir ya Khat · شیر یا خط</h1>
+
+<p><b>The Persian blockchain media group — open, and free education.</b></p>
+
+<p>
+  <a href="https://shiryakhat.app"><img src="https://img.shields.io/badge/App-shiryakhat.app-F5B301?style=for-the-badge" alt="App: shiryakhat.app" height="44" /></a>
+  <a href="https://shiryakhat.net"><img src="https://img.shields.io/badge/Website-shiryakhat.net-F5B301?style=for-the-badge" alt="Website: shiryakhat.net" height="44" /></a>
+  <br />
+  <a href="https://play.google.com/store/apps/details?id=net.shiryakhat.app"><img src="https://img.shields.io/badge/Get%20it%20on-Google%20Play-414141?style=for-the-badge&logo=googleplay&logoColor=white" alt="Get it on Google Play" height="56" /></a>
+  <a href="https://testflight.apple.com/join/VtyyXkUt"><img src="https://img.shields.io/badge/Join%20the%20beta-TestFlight-0D96F6?style=for-the-badge&logo=testflight&logoColor=white" alt="Join the beta on TestFlight" height="56" /></a>
+</p>
+
+<p>
+  <a href="https://open.spotify.com/show/7AQ3C6yGz4haADinqtP63N"><img src="https://img.shields.io/badge/Spotify-1DB954?style=flat-square&logo=spotify&logoColor=white" alt="Spotify" /></a>
+  <a href="https://podcasts.apple.com/us/podcast/id1221206951"><img src="https://img.shields.io/badge/Apple%20Podcasts-9933CC?style=flat-square&logo=applepodcasts&logoColor=white" alt="Apple Podcasts" /></a>
+  <a href="https://www.youtube.com/playlist?list=PLDwI1rIhknpNmr4nno40seb6FAiJ-jsun"><img src="https://img.shields.io/badge/YouTube-FF0000?style=flat-square&logo=youtube&logoColor=white" alt="YouTube" /></a>
+</p>
+
+<p>
+  <a href="https://t.me/shiryakhat_podcast"><img src="https://img.shields.io/badge/Telegram-26A5E4?style=flat-square&logo=telegram&logoColor=white" alt="Telegram" /></a>
+  <a href="https://x.com/shiryakhat"><img src="https://img.shields.io/badge/X-000000?style=flat-square&logo=x&logoColor=white" alt="X" /></a>
+  <a href="https://instagram.com/shiryakhat"><img src="https://img.shields.io/badge/Instagram-E4405F?style=flat-square&logo=instagram&logoColor=white" alt="Instagram" /></a>
+</p>
+
+<p>
+  <b>Our network:</b>
+  <a href="https://coiniran.com">CoinIran</a> ·
+  <a href="https://coiniran.academy">CoinIran Academy</a> ·
+  <a href="https://smartcontract.coiniran.com/">انجمن توسعه قرارداد هوشمند</a>
+</p>
+
+<a href="https://shiryakhat.app">
+  <img src="https://shiryakhat.app/assets/og-image.jpg" alt="Shir ya Khat · شیر یا خط" width="100%" />
+</a>
+
+</div>
+
+## Why this app
+
+**Shir ya Khat** (شیر یا خط, "Heads or Tails") is a non-profit, volunteer-run podcast that has been
+making blockchain and crypto accessible to Farsi speakers since 2016, with 7 seasons of in-depth
+bilingual conversations. This app is the full, continuous collection in one place: every episode
+with synced Farsi + English closed captions, offline downloads, bookmarks, sharing, and a complete
+crypto glossary. Part of the Coiniran family, alongside [Coiniran](https://coiniran.com) news and
+[Coiniran Academy](https://coiniran.academy).
+
+## Features
+
+- **55 episodes**: 40 podcast episodes across 7 seasons, plus 15 specials (conference talks and a
+  guest interview).
+- **Stream or download for offline.** Audio for every episode; video for the episodes that have
+  real video, picked in an Audio / Video chooser. Video downloads are compact 720p files.
+- **Archive.org-backed playback**, with an automatic fallback to the archive.org audio when the
+  primary source is unreachable.
+- **Synced bilingual transcripts** (Farsi / English closed captions) on every episode. Tap a line
+  to jump to that moment.
+- **Chapters** on every episode.
+- **Bookmarks and notes.** Mark a whole episode or a timestamped moment (long-press a transcript
+  line), add a note, and find them all in the Bookmarks library.
+- **Complete bilingual crypto glossary.** 442 terms with Farsi and English definitions, each
+  cross-referenced to the episodes where it is discussed, and tappable inline in transcripts.
+- **Full-text search** across episodes and transcripts, with timestamped hits.
+- **Share cards** (art + quote + QR), **resume playback** per episode, and **playback-speed
+  control**.
+- A hidden **شیر یا خط coin flip**, for those who find it.
+
+## Under the hood
 
 - **Expo SDK 58**, React Native 0.88, TypeScript (strict), expo-router
 - **Dark-first** custom design system, Vazirmatn typeface for both scripts
 - **Farsi is the default** (full RTL); English is one tap away and needs no app reload
 - **No backend required**: the app launches and navigates from the committed `content/` bundle
 
-## What is in v1
+## What the app does
 
-| Area       | What it does                                                                                                                                 |
-| ---------- | -------------------------------------------------------------------------------------------------------------------------------------------- |
-| Episodes   | 41 episodes grouped by season, bilingual cards, Jalali dates in Farsi, continue-listening card                                               |
-| Player     | Video (YouTube) / audio (podcast RSS) toggle, background audio with lock-screen controls, resume per episode, chapter markers, speed control |
-| Transcript | Bilingual, synced to playback, tap a line to seek, long-press to bookmark / share / copy                                                     |
-| Search     | Full-archive search over every transcript (FA + EN) returning episode + timestamp hits                                                       |
-| Glossary   | 358 crypto terms with FA + EN definitions; tap-to-define inline in transcripts                                                               |
-| Bookmarks  | Per episode and per timestamp, local-first                                                                                                   |
-| Downloads  | Resumable offline audio downloads with storage management                                                                                    |
-| Offline    | Thumbnails, artwork and community lists are cached on disk; Settings → Storage shows usage and clears the cache (never downloads)            |
-| Share      | On-device image card (art + quote + QR) and plain quote + link sharing                                                                       |
-| Community  | Supabase schema, GitHub sign-in, minute comments, questions, bookmark sync — **flagged off**                                                 |
+| Area       | What it does                                                                                                                                                                                                                                                                                                                        |
+| ---------- | ----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Episodes   | 55 episodes: 40 podcast episodes in 7 seasons plus 15 specials (a guest interview and conference talks, shown with conference name and date). Bilingual cards, Jalali dates in Farsi, a continue-listening card, and a featured card that shows a random episode on each refresh (a new episode stays pinned for its first 14 days) |
+| Player     | Audio / Video switch: audio streams natively with background playback and lock-screen controls, video streams from YouTube or plays a downloaded file. Resume per episode, chapter markers, speed control                                                                                                                           |
+| Transcript | Bilingual, synced to playback, tap a line to seek, long-press to bookmark / share / copy                                                                                                                                                                                                                                            |
+| Search     | Full-archive search over every transcript (FA + EN) returning episode + timestamp hits                                                                                                                                                                                                                                              |
+| Glossary   | 442 crypto terms with FA + EN definitions; tap-to-define inline in transcripts                                                                                                                                                                                                                                                      |
+| Bookmarks  | Whole episodes and timestamped moments with an optional note, from the episode's bookmark button or a transcript line; listed on the episode and in Library, tap to jump back. Local-first                                                                                                                                          |
+| Downloads  | Resumable offline downloads with storage management: audio for every episode, and video for episodes that have an archive.org video. An episode can keep both; tap a downloaded item to get the other medium or delete                                                                                                              |
+| Offline    | Thumbnails, artwork and community lists are cached on disk; Settings → Storage shows usage and clears the cache (never downloads)                                                                                                                                                                                                   |
+| Share      | On-device image card (art + quote + QR) and plain quote + link sharing                                                                                                                                                                                                                                                              |
+| Community  | Supabase schema, GitHub sign-in, minute comments, questions, bookmark sync — **flagged off**                                                                                                                                                                                                                                        |
+
+Release history is in [CHANGELOG.md](CHANGELOG.md); the current store "What's New" text is in
+[RELEASE_NOTES.md](RELEASE_NOTES.md).
 
 Project status — what is shipped, what is flag-gated off, and what must change before community
 features are enabled — is tracked in [docs/STATUS.md](docs/STATUS.md). The store listing copy is in
@@ -61,28 +133,37 @@ content/            committed static bundle the app reads (generated by the pipe
   types.ts            shapes shared by the pipeline and the app
 pipeline/           Node/TS scripts that build content/ (own package.json)
 src/
-  app/                expo-router routes (home, episode/[id], share, questions)
+  app/                expo-router routes (home, episode/[id], share, questions, coinflip)
   screens/            the five home panes
   components/         feature components and components/ui primitives
-  player/             unified player (expo-audio + YouTube iframe)
+  player/             unified player (expo-audio, YouTube iframe, expo-video for downloaded video)
   content/            typed access to the bundle, search, glossary matching
   state/              local-first stores (settings, progress, bookmarks, downloads)
   community/          Supabase client, auth and API (only used when the flag is on)
+  coinflip/           the coin-flip easter egg
   theme/, i18n/       design tokens + responsive layout, FA/EN dictionaries
 supabase/           SQL migrations, RLS policies, local config
+site/               shiryakhat.app landing site + privacy policy (GitHub Pages)
 docs/               add-episode.md, updating-content.md (content runbooks), release.md,
                     STATUS.md (shipped vs flag-gated), store-listing.md (ASC + Play copy)
 ```
 
 ## Media strategy
 
-Nothing heavy is re-hosted.
+The app bundle carries no media. Every episode is mirrored on archive.org, and the pipeline
+resolves the file URLs at build time (`archiveAudioUrl` / `archiveVideoUrl` in
+`content/episodes.json`), so nothing is looked up at runtime.
 
-- **Video** streams from YouTube by video id.
-- **Audio** streams from the podcast's public RSS enclosures (all 40 regular episodes are matched by
-  episode code). Specials (season 0: a guest interview and Shayan's conference talks) have no RSS
-  item and play from YouTube.
-- **Thumbnails** are YouTube thumbnail URLs.
+- **Audio** streams from the podcast's public RSS enclosure (all 40 regular episodes are matched
+  by episode code) and falls back to the archive.org file if that fails. Specials (season 0) have
+  no RSS item and play their archive.org audio directly. See `audioSourceFor` in
+  `src/player/controller.ts`.
+- **Video** streams from YouTube by video id. A downloaded video plays from disk through
+  `expo-video` instead, and its audio track also serves audio mode.
+- **Downloads** fetch the same audio source (saved as mp3), or the archive.org mp4 for the 36
+  episodes that have one (S03E07 onward and the specials). From v1.3.5 the earlier episodes, whose
+  "video" was a static image, are audio-only in the player too.
+- **Thumbnails** are YouTube thumbnail URLs, cached on disk.
 
 The corpus holds 49 videos for 40 episodes plus one special, because seasons 4 to 6 were uploaded
 twice. The pipeline de-duplicates by episode code, prefers the upload that has chapters and then the
@@ -122,7 +203,7 @@ cd pipeline && npm install
 it on every PR. Adding an episode: [docs/add-episode.md](docs/add-episode.md). Fixing or updating
 existing content: [docs/updating-content.md](docs/updating-content.md).
 
-`npm run build` runs episodes, transcripts and finalize. The raw corpus
+`npm run build` runs episodes, archive, transcripts and finalize. The raw corpus
 (`/Volumes/Beezhan/data/podcasts`, override with `SYK_CORPUS_DIR`) is read-only and never copied.
 
 **Enrichment** sends each episode's bilingual transcript to Claude (`claude-sonnet-4-6`, override
@@ -163,11 +244,12 @@ npx eas-cli build --profile development --platform ios   # dev client for the si
 npx eas-cli build --profile preview                      # internal builds
 ```
 
-Pushing a `v*` tag runs `.github/workflows/release.yml`: lint, typecheck and test, then EAS Build
-and EAS Submit to TestFlight and the Play internal track. The app version comes from
-`package.json` (`app.config.js`), so `npm version patch && git push --follow-tags` is the whole
-release command. One-time setup, the secrets table and troubleshooting are in
-[`docs/release.md`](docs/release.md).
+Publishing a GitHub Release (or running the workflow manually) runs
+`.github/workflows/release.yml`: lint, typecheck and test, a check that the tag matches the app
+version, then a signed Android APK attached to the release and an AAB submitted to the Play
+internal track. The iOS build and TestFlight submit run only when the `RUN_IOS` repository
+variable is set. The app version comes from `package.json` (`app.config.js`). One-time setup, the
+secrets table and troubleshooting are in [`docs/release.md`](docs/release.md).
 
-Background audio and lock-screen controls need a development or store build to behave as they will
-in production; Expo Go is fine for everything else.
+Background audio, lock-screen controls and offline video need a development or store build to
+behave as they will in production.

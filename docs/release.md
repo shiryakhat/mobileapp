@@ -4,6 +4,16 @@ Push a `v*` tag and GitHub Actions builds the app on EAS and delivers it to
 **TestFlight** (iOS) and the **Google Play internal track** (Android).
 Promotion to the public stores is a deliberate manual step.
 
+> **Current trigger (check before following sections 4–5).** `release.yml` now runs when a
+> **GitHub Release is published** (or on a manual run), not on a bare tag push: after
+> `npm version` and `git push --follow-tags`, publish a release for the tag
+> (`gh release create vX.Y.Z --generate-notes`). Android is built on the runner
+> (`eas build --local`): a signed APK is attached to the GitHub Release and the AAB is uploaded
+> to the Play internal track by `scripts/play-upload.mjs`. The iOS job runs only when the
+> `RUN_IOS` repository variable is `true`. The header comment of
+> `.github/workflows/release.yml` is the source of truth; the diagram and sections 4–5 below
+> still describe the earlier tag-push / EAS-cloud flow.
+
 ```
 npm version patch ──► git push --follow-tags ──► .github/workflows/release.yml
                                                    │
