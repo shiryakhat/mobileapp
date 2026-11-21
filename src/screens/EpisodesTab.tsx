@@ -3,7 +3,8 @@ import { useCallback, useMemo, useState } from 'react';
 import { Pressable, ScrollView, SectionList, View } from 'react-native';
 import { EpisodeCard } from '@/components/EpisodeCard';
 import { Chip, Icon, ProgressBar, Text } from '@/components/ui';
-import { getEpisode, seasons, type Episode, type SeasonSection } from '@/content';
+import { episodes, getEpisode, seasons, type Episode, type SeasonSection } from '@/content';
+import { pickFeatured } from '@/content/featured';
 import { useI18n } from '@/i18n';
 import { formatTime } from '@/lib/format';
 import { progressFraction, resumePosition, useProgress } from '@/state/progress';
@@ -71,8 +72,9 @@ function ContinueCard() {
 type SeasonFilter = 'all' | number;
 
 /**
- * Episodes grouped by season; the newest episode leads as a hero card. The
- * season chips in the top bar filter the list to one season.
+ * Episodes grouped by season, led by a featured hero card: the newest episode
+ * for its first two weeks, otherwise a random one drawn on every mount and
+ * pull-to-refresh. The season chips in the top bar filter the list to one season.
  */
 export function EpisodesTab() {
   const theme = useTheme();
@@ -83,7 +85,10 @@ export function EpisodesTab() {
     () => (filter === 'all' ? seasons : seasons.filter((s) => s.season === filter)),
     [filter],
   );
-  const latestId = seasons[0]?.data[0]?.id;
+  // Drawn once per mount and again on pull-to-refresh, so re-renders keep the same card.
+  const [featured, setFeatured] = useState(() => pickFeatured(episodes));
+  // The content is bundled, so a refresh has nothing to wait for.
+  const onRefresh = useCallback(() => setFeatured(pickFeatured(episodes)), []);
 
   const seasonLabel = useCallback(
     (season: number) => (season === 0 ? t('specials') : t('season', { n: season })),
@@ -140,9 +145,12 @@ export function EpisodesTab() {
           ))}
         </ScrollView>
         <ContinueCard />
+        {featured && filter === 'all' ? (
+          <EpisodeCard episode={featured} onPress={openEpisode} hero testID="featured-card" />
+        ) : null}
       </View>
     ),
-    [filter, locale, seasonLabel, setLocale, t],
+    [featured, filter, locale, seasonLabel, setLocale, t],
   );
 
   return (
@@ -173,9 +181,9 @@ export function EpisodesTab() {
           </Text>
         </View>
       )}
-      renderItem={({ item }) => (
-        <EpisodeCard episode={item} onPress={openEpisode} hero={item.id === latestId} />
-      )}
+      refreshing={false}
+      onRefresh={onRefresh}
+      renderItem={({ item }) => <EpisodeCard episode={item} onPress={openEpisode} />}
     />
   );
 }

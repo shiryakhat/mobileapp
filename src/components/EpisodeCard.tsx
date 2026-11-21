@@ -11,8 +11,10 @@ import { ProgressBar, Text } from './ui';
 interface Props {
   episode: Episode;
   onPress: (episode: Episode) => void;
-  /** Large lead card (latest episode). */
+  /** Large lead card (the featured episode). */
   hero?: boolean;
+  /** Overrides the default `episode-card-<id>`, for a card shown outside the list. */
+  testID?: string;
 }
 
 function Thumb({ episode, width }: { episode: Episode; width: number | '100%' }) {
@@ -53,7 +55,7 @@ function Thumb({ episode, width }: { episode: Episode; width: number | '100%' })
   );
 }
 
-export const EpisodeCard = memo(function EpisodeCard({ episode, onPress, hero }: Props) {
+export const EpisodeCard = memo(function EpisodeCard({ episode, onPress, hero, testID }: Props) {
   const { pick, other, locale, isRTL } = useI18n();
   const { sizeScale } = useResponsive();
   const progress = useProgress((s) => s.byEpisode[episode.id]);
@@ -96,7 +98,7 @@ export const EpisodeCard = memo(function EpisodeCard({ episode, onPress, hero }:
 
   return (
     <Pressable
-      testID={`episode-card-${episode.id}`}
+      testID={testID ?? `episode-card-${episode.id}`}
       accessibilityRole="button"
       accessibilityLabel={`${primary}, ${episode.code}`}
       onPress={() => onPress(episode)}
