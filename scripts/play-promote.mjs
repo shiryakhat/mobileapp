@@ -16,6 +16,7 @@
 //        WHATSNEW_DIR        (default: store/whatsnew; one <lang>.txt per Play
 //                             language code, e.g. en-US.txt, fa-IR.txt)
 //        PLAY_DRY_RUN        (1/true: validate the edit, then stop — no commit)
+import { Buffer } from 'node:buffer';
 import fs from 'node:fs';
 import path from 'node:path';
 import crypto from 'node:crypto';
