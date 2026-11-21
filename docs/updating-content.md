@@ -18,6 +18,7 @@ git add content/
 CI enforces this. The "Content pipeline" job runs `npm run check:content` in `pipeline/`:
 it re-runs `finalize` and fails the PR if any of these change:
 
+- `content/episodes.json` (finalize re-derives `hasVideo` on every episode — see below)
 - `content/glossary.json`
 - `content/search-index.json`
 - `content/index.generated.ts`
@@ -108,6 +109,14 @@ holds: if YouTube **does** supply chapters, they win and replace your edits on t
 
 Other fields in `episodes.json` are not preserved this way (except `audioUrl`, kept when
 the RSS cache has no entry, and the archive.org fields below).
+
+**`hasVideo`.** Whether an episode has a real video is derived, never hand-edited: the rule
+is `hasVideoFor` in `pipeline/src/lib/video.ts` — true for the specials (season 0) and for
+numbered episodes from S03E07 on, false for the numbered episodes before that (their upload
+is the audio over a still image). `episodes` writes the flag and `finalize` re-derives it,
+so a hand-added episode gets it too and CI fails if the file disagrees with the rule. The
+app offers video (the Audio / Video switch, the video download, the video surface) only
+where the flag is true; to move the line, change `FIRST_VIDEO_EPISODE` and run `finalize`.
 
 **archive.org fallback.** `npm --prefix pipeline run archive` looks every episode up at
 `https://archive.org/metadata/shiryakhat-<youtubeId>` and writes `archiveId`,

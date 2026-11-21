@@ -132,6 +132,7 @@ interface SegmentedProps<T extends string> {
   value: T;
   onChange: (value: T) => void;
   style?: ViewStyle;
+  testID?: string;
 }
 
 export function Segmented<T extends string>({
@@ -139,11 +140,13 @@ export function Segmented<T extends string>({
   value,
   onChange,
   style,
+  testID,
 }: SegmentedProps<T>) {
   const theme = useTheme();
   const { dir } = useI18n();
   return (
     <View
+      testID={testID}
       accessibilityRole="tablist"
       style={[
         {

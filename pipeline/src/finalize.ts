@@ -1,5 +1,6 @@
 /**
  * Offline post-processing over the committed bundle (no corpus, no network):
+ *   0. re-derive `hasVideo` on every episode -> content/episodes.json
  *   1. merge per-episode enrichment glossaries -> content/glossary.json
  *   2. apply name/term corrections to content/transcripts/*.json (idempotent)
  *   3. build content/search-index.json (token -> episodes inverted index)
@@ -17,6 +18,7 @@ import {
 } from './config.js';
 import { readJson, readJsonIfExists, writeJson, writeText } from './lib/io.js';
 import { escapeRegExp, hasPersian, normalize, slugify, tokenize } from './lib/text.js';
+import { hasVideoFor } from './lib/video.js';
 import type {
   Correction,
   Enrichment,
@@ -46,6 +48,24 @@ const SHOW_NAME = /Shir[ -]?ya[ -]?Khat/gi;
 const UNSAFE_WRONG = new Set(['شناخت', 'خط', 'شیر']);
 
 const episodes = readJson<Episode[]>(EPISODES_JSON);
+
+// 0. derived episode fields --------------------------------------------------
+// `hasVideo` follows from the season / episode number alone (lib/video.ts). It
+// is stamped here as well as in build-episodes, so an episode added or edited
+// by hand gets it too, and CI (check:content) fails if the file disagrees.
+let restamped = 0;
+for (const ep of episodes) {
+  const hasVideo = hasVideoFor(ep);
+  if (ep.hasVideo === hasVideo) continue;
+  ep.hasVideo = hasVideo;
+  restamped++;
+}
+if (restamped > 0) writeJson(EPISODES_JSON, episodes);
+console.log(
+  `episodes: ${episodes.filter((e) => e.hasVideo).length}/${episodes.length} with video` +
+    (restamped > 0 ? ` (${restamped} updated)` : ''),
+);
+
 const enrichments = new Map<string, Enrichment>();
 for (const ep of episodes) {
   const e = readJsonIfExists<Enrichment>(path.join(ENRICHMENT_DIR, `${ep.id}.json`));

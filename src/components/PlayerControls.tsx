@@ -7,7 +7,10 @@ import { radius, space, useTheme } from '@/theme';
 import { Scrubber } from './Scrubber';
 import { Icon, IconButton, Segmented, Text } from './ui';
 
-/** Transport for the current episode: scrubber, skip, play/pause, speed, video/audio. */
+/**
+ * Transport for the current episode: scrubber, skip, play/pause, speed, and the
+ * audio / video switch — the latter only for an episode that has a video.
+ */
 export function PlayerControls({ episode }: { episode: Episode }) {
   const theme = useTheme();
   const { t, n } = useI18n();
@@ -81,15 +84,22 @@ export function PlayerControls({ episode }: { episode: Episode }) {
           <IconButton icon="rotate-cw" label={t('forward30')} onPress={() => skip(30)} />
         </View>
 
-        <Segmented
-          style={{ width: 112 }}
-          value={mode}
-          onChange={setMode}
-          options={[
-            { value: 'audio', label: t('audio') },
-            { value: 'video', label: t('video') },
-          ]}
-        />
+        {episode.hasVideo ? (
+          <Segmented
+            testID="mode-switch"
+            style={{ width: 112 }}
+            value={mode}
+            onChange={setMode}
+            options={[
+              { value: 'audio', label: t('audio') },
+              { value: 'video', label: t('video') },
+            ]}
+          />
+        ) : (
+          // Audio-only episode: nothing to switch to. The slot keeps its width
+          // so the transport stays centred, as it is with the switch.
+          <View style={{ width: 112 }} />
+        )}
       </View>
     </View>
   );

@@ -3,6 +3,7 @@ import { View } from 'react-native';
 import YoutubePlayer, { type YoutubeIframeRef } from 'react-native-youtube-iframe';
 import { attachYoutube, detachYoutube, reportYoutube } from '@/player/controller';
 import { usePlayback } from '@/player/store';
+import { YOUTUBE_BRIDGE_SCRIPT } from '@/player/youtubeBridge';
 
 interface Props {
   videoId: string;
@@ -11,7 +12,27 @@ interface Props {
   hidden?: boolean;
 }
 
-/** YouTube engine. Mirrors store state into the iframe and reports progress back. */
+/**
+ * The bridge goes in twice — at document start and again once the page has
+ * loaded (it installs itself only once): whichever the platform's WebView
+ * honours, the listeners are there before the player reports ready, which is
+ * when the first command is sent.
+ */
+const WEB_VIEW_PROPS = {
+  allowsInlineMediaPlayback: true,
+  mediaPlaybackRequiresUserAction: false,
+  injectedJavaScriptBeforeContentLoaded: YOUTUBE_BRIDGE_SCRIPT,
+  injectedJavaScript: YOUTUBE_BRIDGE_SCRIPT,
+};
+
+/**
+ * YouTube engine. Mirrors store state into the iframe and reports progress back.
+ *
+ * Play / pause is the `play` prop: the store's `playing`, which the transport
+ * (`play` / `pause` / `toggle` in the controller) writes for every engine. The
+ * library turns a change of that prop into a message to its player page; the
+ * injected bridge is what makes the page act on it (see youtubeBridge.ts).
+ */
 export function YoutubeSurface({ videoId, width, hidden }: Props) {
   const ref = useRef<YoutubeIframeRef>(null);
   const startRef = useRef<number | undefined>(undefined);
@@ -92,7 +113,7 @@ export function YoutubeSurface({ videoId, width, hidden }: Props) {
         onReady={onReady}
         onChangeState={onChangeState}
         initialPlayerParams={{ modestbranding: true, rel: false, preventFullScreen: false }}
-        webViewProps={{ allowsInlineMediaPlayback: true, mediaPlaybackRequiresUserAction: false }}
+        webViewProps={WEB_VIEW_PROPS}
       />
     </View>
   );
