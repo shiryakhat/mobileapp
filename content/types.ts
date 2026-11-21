@@ -46,6 +46,16 @@ export interface Episode {
   archiveAudioUrl?: string;
   /** Fallback H.264 mp4 from archive.org (absent for audio-only episodes). */
   archiveVideoUrl?: string;
+  /**
+   * Whether the episode has a real video. Derived by the pipeline
+   * (`hasVideoFor` in pipeline/src/lib/video.ts), never edited by hand: true for
+   * the specials (filmed talks) and for numbered episodes from S03E07 on; false
+   * for the numbered episodes before that, whose "video" is a still image over
+   * the audio. Everything that offers video in the app — the Audio / Video
+   * switch, the video download, the YouTube / local video surface — asks this
+   * flag and nothing else.
+   */
+  hasVideo: boolean;
   spotifyUrl?: string;
   appleUrl?: string;
   castboxUrl?: string;

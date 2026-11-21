@@ -127,7 +127,17 @@ export function audioSourceFor(ep: Episode): string | undefined {
  * audience; the 'video' engine could stream this URL as a fallback. Cloudflare
  * (R2 / Stream) is an alternative host if archive.org proves too slow.
  */
-export const archiveVideoSourceFor = (ep: Episode): string | undefined => ep.archiveVideoUrl;
+export const archiveVideoSourceFor = (ep: Episode): string | undefined =>
+  ep.hasVideo ? ep.archiveVideoUrl : undefined;
+
+/**
+ * The mode an episode can actually be played in. Video is only on offer for
+ * episodes that have a real one (`Episode.hasVideo`); the others — the numbered
+ * episodes before S03E07, whose "video" is a still image over the audio — are
+ * audio, whatever was asked for.
+ */
+export const modeFor = (ep: Episode, mode: PlayerMode): PlayerMode =>
+  ep.hasVideo ? mode : 'audio';
 
 /**
  * The RSS enclosure failed (host unreachable, file gone): load the archive.org
@@ -287,6 +297,22 @@ function activateLockScreen(ep: Episode): void {
   });
 }
 
+/**
+ * The lock-screen / headset controls belong to the native player: the system
+ * sends play and pause straight to it, with no say for JS. While another
+ * engine is playing (the YouTube iframe, the local video) they would start the
+ * paused audio underneath the video, out of sync and out of reach of the
+ * transport — so they are handed back until audio mode returns
+ * (`activateLockScreen`).
+ */
+function releaseLockScreen(): void {
+  try {
+    audio?.clearLockScreenControls();
+  } catch {
+    // best-effort
+  }
+}
+
 export interface LoadOptions {
   mode?: PlayerMode;
   /** Explicit start position (deep links, search hits). Defaults to the saved position. */
@@ -301,7 +327,7 @@ export interface LoadOptions {
  */
 export function loadEpisode(ep: Episode, opts: LoadOptions = {}, force = false): void {
   const current = state();
-  const mode = opts.mode ?? (current.episodeId === ep.id ? current.mode : 'audio');
+  const mode = modeFor(ep, opts.mode ?? (current.episodeId === ep.id ? current.mode : 'audio'));
   if (!force && current.episodeId === ep.id && current.mode === mode) {
     if (opts.startAt !== undefined) seekTo(opts.startAt);
     if (opts.autoplay) play();
@@ -343,6 +369,7 @@ export function loadEpisode(ep: Episode, opts: LoadOptions = {}, force = false):
     if (autoplay) player.play();
   } else {
     audio?.pause();
+    releaseLockScreen();
   }
 }
 

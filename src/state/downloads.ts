@@ -10,7 +10,8 @@
  *            enclosure when present, else the archive.org mp3
  *            (`archiveAudioUrl`), which is how the talk specials (no enclosure)
  *            download. Saved as `audio/<id>.mp3`.
- *  - video : the archive.org mp4 (`archiveVideoUrl`), saved as `video/<id>.mp4`
+ *  - video : the archive.org mp4 (`archiveVideoUrl`) of an episode that has a
+ *            real video (`hasVideo`), saved as `video/<id>.mp4`
  *            and played offline by <LocalVideoSurface/> (expo-video). Its audio
  *            track also serves audio mode, so a video download covers both.
  */
@@ -170,9 +171,17 @@ const fileFor = (episodeId: string, kind: DownloadKind) =>
 export const downloadKind = (item: Pick<DownloadItem, 'kind'> | undefined): DownloadKind =>
   item?.kind ?? 'audio';
 
-/** Where a download of `kind` comes from, if the episode has one. */
+/**
+ * Where a download of `kind` comes from, if the episode has one. Video only
+ * for an episode that has a real one (`Episode.hasVideo`), whatever archive.org
+ * holds for it.
+ */
 export const downloadSourceFor = (ep: Episode, kind: DownloadKind): string | undefined =>
-  kind === 'video' ? ep.archiveVideoUrl : (ep.audioUrl ?? ep.archiveAudioUrl);
+  kind === 'video'
+    ? ep.hasVideo
+      ? ep.archiveVideoUrl
+      : undefined
+    : (ep.audioUrl ?? ep.archiveAudioUrl);
 
 /** The kinds this episode can be downloaded as; more than one means "ask the user". */
 export function downloadKindsFor(ep: Episode): DownloadKind[] {
@@ -331,7 +340,10 @@ export function startDownload(ep: Episode, kind?: DownloadKind): void {
   // throws ends as the item's `error` state (tap to retry), never as a crash.
   try {
     const previous = store().items[ep.id];
-    const want = kind ?? downloadKind(previous);
+    // A retry of a kind the episode no longer offers (a video download begun
+    // before the episode became audio-only) fetches the audio instead.
+    const again = downloadKind(previous);
+    const want = kind ?? (downloadSourceFor(ep, again) ? again : 'audio');
     const src = downloadSourceFor(ep, want);
     // "Done" only counts while the file is really there; otherwise fetch it again.
     if (!src || tasks.has(ep.id) || localUri(ep.id, want)) return;

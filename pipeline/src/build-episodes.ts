@@ -21,6 +21,7 @@ import {
 } from './config.js';
 import { readJson, readJsonIfExists, writeJson } from './lib/io.js';
 import { hasPersian } from './lib/text.js';
+import { hasVideoFor } from './lib/video.js';
 import type { Chapter, Episode } from './types.js';
 
 interface InfoJson {
@@ -266,6 +267,7 @@ function main(): void {
         likeCount: v.info.like_count,
         sourceStem: v.stem,
         ...archiveFields(previous.get(special.id), v.info.id, special.archiveId),
+        hasVideo: hasVideoFor({ season: 0, episode: 0 }),
       });
       continue;
     }
@@ -322,6 +324,7 @@ function main(): void {
       likeCount: vids.reduce((n, v) => n + (v.info.like_count ?? 0), 0),
       sourceStem: primary.stem,
       ...archiveFields(previous.get(id), primary.info.id),
+      hasVideo: hasVideoFor({ season: Number(m[1]), episode: Number(m[2]) }),
     });
   }
 
