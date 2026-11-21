@@ -32,7 +32,7 @@
   <b>Our network:</b>
   <a href="https://coiniran.com">CoinIran</a> ·
   <a href="https://coiniran.academy">CoinIran Academy</a> ·
-  <a href="https://smartcontract.coiniran.com/">انجمن توسعه قرارداد هوشمند (Smart Contract Development Association)</a>
+  <a href="https://smartcontract.coiniran.com/">انجمن توسعه قرارداد هوشمند</a>
 </p>
 
 <a href="https://shiryakhat.app">
