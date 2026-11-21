@@ -1,33 +1,43 @@
 <div align="center">
 
 <a href="https://shiryakhat.app">
-  <img src="https://shiryakhat.app/assets/icon-512.png" alt="Shir ya Khat logo" width="120" />
+  <img src="https://shiryakhat.app/assets/icon-512.png" alt="Shir ya Khat logo" width="110" />
 </a>
 
-<h1>Shir ya Khat — شیر یا خط</h1>
+<h1>Shir ya Khat · شیر یا خط</h1>
 
-<p><b>The Persian blockchain podcast — bilingual, open, and free.</b></p>
-
-<a href="https://shiryakhat.app">
-  <img src="https://shiryakhat.app/assets/og-image.jpg" alt="Shir ya Khat — the Persian blockchain podcast" width="100%" />
-</a>
+<p><b>The Persian blockchain media group — open, and free education.</b></p>
 
 <p>
-  <a href="https://shiryakhat.app"><img src="https://img.shields.io/badge/Website-shiryakhat.app-F5B301?style=flat-square" alt="Website: shiryakhat.app" /></a>
-  <a href="https://shiryakhat.net"><img src="https://img.shields.io/badge/Website-shiryakhat.net-F5B301?style=flat-square" alt="Website: shiryakhat.net" /></a>
-  <a href="https://play.google.com/store/apps/details?id=net.shiryakhat.app"><img src="https://img.shields.io/badge/Google%20Play-Android-414141?style=flat-square&logo=googleplay&logoColor=white" alt="Google Play" /></a>
-  <a href="https://testflight.apple.com/join/VtyyXkUt"><img src="https://img.shields.io/badge/TestFlight-iOS-0D96F6?style=flat-square&logo=testflight&logoColor=white" alt="TestFlight" /></a>
+  <a href="https://shiryakhat.app"><img src="https://img.shields.io/badge/App-shiryakhat.app-F5B301?style=for-the-badge" alt="App: shiryakhat.app" height="44" /></a>
+  <a href="https://shiryakhat.net"><img src="https://img.shields.io/badge/Website-shiryakhat.net-F5B301?style=for-the-badge" alt="Website: shiryakhat.net" height="44" /></a>
+  <br />
+  <a href="https://play.google.com/store/apps/details?id=net.shiryakhat.app"><img src="https://img.shields.io/badge/Get%20it%20on-Google%20Play-414141?style=for-the-badge&logo=googleplay&logoColor=white" alt="Get it on Google Play" height="56" /></a>
+  <a href="https://testflight.apple.com/join/VtyyXkUt"><img src="https://img.shields.io/badge/Join%20the%20beta-TestFlight-0D96F6?style=for-the-badge&logo=testflight&logoColor=white" alt="Join the beta on TestFlight" height="56" /></a>
 </p>
 
 <p>
   <a href="https://open.spotify.com/show/7AQ3C6yGz4haADinqtP63N"><img src="https://img.shields.io/badge/Spotify-1DB954?style=flat-square&logo=spotify&logoColor=white" alt="Spotify" /></a>
   <a href="https://podcasts.apple.com/us/podcast/id1221206951"><img src="https://img.shields.io/badge/Apple%20Podcasts-9933CC?style=flat-square&logo=applepodcasts&logoColor=white" alt="Apple Podcasts" /></a>
   <a href="https://www.youtube.com/playlist?list=PLDwI1rIhknpNmr4nno40seb6FAiJ-jsun"><img src="https://img.shields.io/badge/YouTube-FF0000?style=flat-square&logo=youtube&logoColor=white" alt="YouTube" /></a>
-  <a href="https://t.me/shiryakhatpod"><img src="https://img.shields.io/badge/Telegram-26A5E4?style=flat-square&logo=telegram&logoColor=white" alt="Telegram" /></a>
-  <a href="https://x.com/shiryakhat"><img src="https://img.shields.io/badge/X-000000?style=flat-square&logo=x&logoColor=white" alt="X" /></a>
-  <a href="https://coiniran.com"><img src="https://img.shields.io/badge/CoinIran-coiniran.com-2B6CB0?style=flat-square" alt="CoinIran" /></a>
-  <a href="https://coiniran.academy"><img src="https://img.shields.io/badge/CoinIran%20Academy-coiniran.academy-2B6CB0?style=flat-square" alt="CoinIran Academy" /></a>
 </p>
+
+<p>
+  <a href="https://t.me/shiryakhat_podcast"><img src="https://img.shields.io/badge/Telegram-26A5E4?style=flat-square&logo=telegram&logoColor=white" alt="Telegram" /></a>
+  <a href="https://x.com/shiryakhat"><img src="https://img.shields.io/badge/X-000000?style=flat-square&logo=x&logoColor=white" alt="X" /></a>
+  <a href="https://instagram.com/shiryakhat"><img src="https://img.shields.io/badge/Instagram-E4405F?style=flat-square&logo=instagram&logoColor=white" alt="Instagram" /></a>
+</p>
+
+<p>
+  <b>Our network:</b>
+  <a href="https://coiniran.com">CoinIran</a> ·
+  <a href="https://coiniran.academy">CoinIran Academy</a> ·
+  <a href="https://smartcontract.coiniran.com/">انجمن توسعه قرارداد هوشمند (Smart Contract Development Association)</a>
+</p>
+
+<a href="https://shiryakhat.app">
+  <img src="https://shiryakhat.app/assets/og-image.jpg" alt="Shir ya Khat · شیر یا خط" width="100%" />
+</a>
 
 </div>
 
